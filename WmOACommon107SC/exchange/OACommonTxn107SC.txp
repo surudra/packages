@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <record name="transactions" javaclass="com.wm.util.Values">
+    <record name="getAcctPeriodId" javaclass="com.wm.util.Values">
+      <value name="transactionName">getAcctPeriodId</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="ACCT_PERIOD_ID" javaclass="com.wm.util.Values">
+        <value name="SQLOut">select acct_period_id from org_acct_periods OAP,
+hr_all_organization_units HAOU
+where  period_name = '&amp;PERIOD_NAME*' 
+and HAOU.name = '&amp;ORGANIZATION_NAME*'
+and OAP.organization_id = HAOU.organization_id 
+</value>
+        <value name="SQLAlias">ACCT_PERIOD_ID</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+    <record name="getActivityId" javaclass="com.wm.util.Values">
+      <value name="transactionName">getActivityId</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="ACTIVITY_NAME" javaclass="com.wm.util.Values">
+        <value name="SQLOut">SELECT ACTIVITY_ID FROM CST_ACTIVITIES WHERE ACTIVITY = '&amp;ACTIVITY_NAME*'</value>
+        <value name="SQLAlias">ACTIVITY_NAME</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+    <record name="getAwardId" javaclass="com.wm.util.Values">
+      <value name="transactionName">getAwardId</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="AWARD_ID" javaclass="com.wm.util.Values">
+        <value name="SQLOut">SELECT POD1.AWARD_ID
+FROM   GMS_AWARDS_ALL GAA , 
+PO_DISTRIBUTIONS_ALL POD1
+WHERE  POD1.AWARD_ID = GAA.AWARD_ID
+AND GAA.AWARD_FULL_NAME = '&amp;AWARD_FULL_NAME*'</value>
+        <value name="SQLAlias">AWARD_ID</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+    <record name="getCodeCombinationId" javaclass="com.wm.util.Values">
+      <value name="transactionName">getCodeCombinationId</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="CODECOMBINATION" javaclass="com.wm.util.Values">
+        <value name="SQLOut">SELECT /*+ rule */ gcc.CODE_COMBINATION_ID 
+FROM GL_CODE_COMBINATIONS_KFV gcc, gl_sets_of_books sob
+WHERE gcc.CONCATENATED_SEGMENTS = '&amp;CONCATENATED_SEGMENTS*'
+AND gcc.CHART_OF_ACCOUNTS_ID = sob.CHART_OF_ACCOUNTS_ID
+AND sob.NAME = NVL('&amp;SET_OF_BOOKS_NAME*', sob.NAME)
+</value>
+        <value name="SQLAlias">CODECOMBINATION</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+    <record name="getDepartmentId" javaclass="com.wm.util.Values">
+      <value name="transactionName">getDepartmentId</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="DEPARTMENT_ID" javaclass="com.wm.util.Values">
+        <value name="SQLOut">select department_id from bom_departments b,org_organization_definitions o
+where b.department_code='&amp;department_code*' and o.organization_id=b.organization_id
+and o.organization_name='&amp;organization_name*'</value>
+        <value name="SQLAlias">DEPARTMENT_ID</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+    <record name="getEmplIdFromFullName" javaclass="com.wm.util.Values">
+      <value name="transactionName">getEmplIdFromFullName</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="EMPLOYEE_ID_FROM_FULL_NAME" javaclass="com.wm.util.Values">
+        <value name="SQLOut">SELECT PERSON_ID FROM PER_ALL_PEOPLE_F WHERE UPPER(FULL_NAME) = UPPER('&amp;PERSON_FULL_NAME*') AND  SYSDATE &gt;= EFFECTIVE_START_DATE AND SYSDATE &lt;= EFFECTIVE_END_DATE</value>
+        <value name="SQLAlias">EMPLOYEE_ID_FROM_FULL_NAME</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+    <record name="getInventoryItemId" javaclass="com.wm.util.Values">
+      <value name="transactionName">getInventoryItemId</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="INVENTORY" javaclass="com.wm.util.Values">
+        <value name="SQLOut">SELECT INVENTORY_ITEM_ID FROM
+MTL_SYSTEM_ITEMS_KFV M,
+HR_ALL_ORGANIZATION_UNITS H
+WHERE M.CONCATENATED_SEGMENTS ='&amp;ITEM_CODE*'
+AND M.ORGANIZATION_ID = H.ORGANIZATION_ID
+
+AND H.NAME ='&amp;ORGANIZATION_NAME*'</value>
+        <value name="SQLAlias">INVENTORY</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+    <record name="getKanbanCardId" javaclass="com.wm.util.Values">
+      <value name="transactionName">getKanbanCardId</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="KANBAN_CARD_ID" javaclass="com.wm.util.Values">
+        <value name="SQLOut">SELECT kanban_card_id FROM mtl_kanban_cards MKC,
+hr_all_organization_units HAOU
+WHERE  kanban_card_number = '&amp;KANBAN_CARD_NUMBER*' 
+AND HAOU.name = '&amp;ORGANIZATION_NAME*'
+AND MKC.organization_id = HAOU.organization_id </value>
+        <value name="SQLAlias">KANBAN_CARD_ID</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+    <record name="getLocationCodeCombination" javaclass="com.wm.util.Values">
+      <value name="transactionName">getLocationCodeCombination</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="LOCATION_CODE_COMBINATIONS" javaclass="com.wm.util.Values">
+        <value name="SQLOut">SELECT LOCATION_ID FROM FA_LOCATIONS_KFV WHERE UPPER(CONCATENATED_SEGMENTS) = UPPER('&amp;CONCATENATED_LOCATION*')</value>
+        <value name="SQLAlias">LOCATION_CODE_COMBINATIONS</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+    <record name="getLocationId" javaclass="com.wm.util.Values">
+      <value name="transactionName">getLocationId</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="LOCID" javaclass="com.wm.util.Values">
+        <value name="SQLOut">SELECT LOCATION_ID FROM HR_LOCATIONS WHERE 
+UPPER(NVL(ADDRESS_LINE_1,'XXXX')) LIKE UPPER( NVL('&amp;ADDRESS_LINE_1*','XXXX')) AND 
+UPPER(NVL(ADDRESS_LINE_2,'XXXX')) LIKE UPPER( NVL('&amp;ADDRESS_LINE_2*','XXXX')) AND 
+UPPER(NVL(ADDRESS_LINE_3,'XXXX')) LIKE UPPER( NVL('&amp;ADDRESS_LINE_3*','XXXX')) AND 
+UPPER(NVL(TOWN_OR_CITY,'XXXX')) LIKE UPPER( NVL('&amp;TOWN_OR_CITY*','XXXX')) AND 
+UPPER(NVL(COUNTRY,'XXXX')) LIKE UPPER(NVL('&amp;COUNTRY*','XXXX')) AND 
+UPPER(NVL(POSTAL_CODE,'XXXX')) LIKE UPPER(NVL('&amp;POSTAL_CODE*','XXXX')) AND 
+UPPER(NVL(REGION_1,'XXXX')) LIKE UPPER(NVL('&amp;REGION_1*','XXXX')) AND 
+UPPER(NVL(REGION_2,'XXXX')) LIKE UPPER(NVL('&amp;REGION_2*','XXXX')) AND
+rownum = 1</value>
+        <value name="SQLAlias">LOCID</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+    <record name="getLocatorId" javaclass="com.wm.util.Values">
+      <value name="transactionName">getLocatorId</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="LOCATION_ID" javaclass="com.wm.util.Values">
+        <value name="SQLOut">SELECT INVENTORY_LOCATION_ID
+FROM MTL_ITEM_LOCATIONS_KFV M ,
+ORG_ORGANIZATION_DEFINITIONS O 
+WHERE CONCATENATED_SEGMENTS ='&amp;LOCATOR*'
+AND  M.ORGANIZATION_ID =O.ORGANIZATION_ID 
+AND O.ORGANIZATION_NAME='&amp;ORGANIZATION_NAME*'</value>
+        <value name="SQLAlias">LOCATION_ID</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+    <record name="getOASystemDate" javaclass="com.wm.util.Values">
+      <value name="transactionName">getOASystemDate</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="OASYSDATE" javaclass="com.wm.util.Values">
+        <value name="SQLOut">select sysdate from dual</value>
+        <value name="SQLAlias">OASYSDATE</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+    <record name="getOracleAppsUserId" javaclass="com.wm.util.Values">
+      <value name="transactionName">getOracleAppsUserId</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="ORACLE_APPS_USER_ID" javaclass="com.wm.util.Values">
+        <value name="SQLOut">SELECT USER_ID FROM FND_USER WHERE UPPER(user_name) = UPPER('&amp;ORACLE_APPS_USER_NAME*')</value>
+        <value name="SQLAlias">ORACLE_APPS_USER_ID</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+    <record name="getOrgId" javaclass="com.wm.util.Values">
+      <value name="transactionName">getOrgId</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="ORGID" javaclass="com.wm.util.Values">
+        <value name="SQLOut">SELECT ORGANIZATION_ID FROM ORG_ORGANIZATION_DEFINITIONS WHERE ORGANIZATION_NAME = '&amp;ORGANIZATION_NAME*'</value>
+        <value name="SQLAlias">ORGID</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+    <record name="getOrgIdAndCode" javaclass="com.wm.util.Values">
+      <value name="transactionName">getOrgIdAndCode</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="ORG_ID_CODE" javaclass="com.wm.util.Values">
+        <value name="SQLOut">SELECT ORGANIZATION_ID,ORGANIZATION_CODE FROM ORG_ORGANIZATION_DEFINITIONS WHERE ORGANIZATION_NAME = '&amp;ORGANIZATION_NAME*'</value>
+        <value name="SQLAlias">ORG_ID_CODE</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+    <record name="getProgramAndAppId" javaclass="com.wm.util.Values">
+      <value name="transactionName">getProgramAndAppId</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="PROG_ID" javaclass="com.wm.util.Values">
+        <value name="SQLOut">SELECT CONCURRENT_PROGRAM_ID,APPLICATION_ID FROM FND_CONCURRENT_PROGRAMS WHERE CONCURRENT_PROGRAM_NAME= '&amp;CONCURRENT_PROGRAM_NAME*'</value>
+        <value name="SQLAlias">PROG_ID</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+    <record name="getProjectAndTaskId" javaclass="com.wm.util.Values">
+      <value name="transactionName">getProjectAndTaskId</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="PROJECT_TASK_ID" javaclass="com.wm.util.Values">
+        <value name="SQLOut">SELECT PPA.PROJECT_ID, PT.TASK_ID
+FROM PA_PROJECTS_ALL PPA, PA_TASKS PT
+WHERE PPA.PROJECT_ID=PT.PROJECT_ID
+AND PT.TASK_NAME='&amp;TASK_NAME*'
+AND PPA.NAME='&amp;PROJECT_NAME*'</value>
+        <value name="SQLAlias">PROJECT_TASK_ID</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+    <record name="getProjectID" javaclass="com.wm.util.Values">
+      <value name="transactionName">getProjectID</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="PROJID" javaclass="com.wm.util.Values">
+        <value name="SQLOut">SELECT PROJECT_ID FROM PA_PROJECTS_ALL
+WHERE NAME = '&amp;PROJECT_NAME*'</value>
+        <value name="SQLAlias">PROJID</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+    <record name="getReasonId" javaclass="com.wm.util.Values">
+      <value name="transactionName">getReasonId</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="REASON_ID" javaclass="com.wm.util.Values">
+        <value name="SQLOut">SELECT REASON_ID FROM MTL_TRANSACTION_REASONS WHERE UPPER(REASON_NAME) = UPPER('&amp;REASON_NAME*')</value>
+        <value name="SQLAlias">REASON_ID</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+    <record name="getResourceId" javaclass="com.wm.util.Values">
+      <value name="transactionName">getResourceId</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="RESOURCE_ID" javaclass="com.wm.util.Values">
+        <value name="SQLOut">select resource_id from bom_resources b,org_organization_definitions o
+where b.resource_code='&amp;resource_code*' and o.organization_id=b.organization_id
+and o.organization_name='&amp;organization_name*'</value>
+        <value name="SQLAlias">RESOURCE_ID</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+    <record name="getTaskId" javaclass="com.wm.util.Values">
+      <value name="transactionName">getTaskId</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="TASKID" javaclass="com.wm.util.Values">
+        <value name="SQLOut">SELECT TASKS.TASK_ID  FROM PA_PROJECTS_ALL PROJ , PA_TASKS  TASKS
+WHERE PROJ.NAME = '&amp;PROJECT_NAME*'
+AND PROJ.PROJECT_ID = TASKS.PROJECT_ID
+AND TASKS.TASK_NUMBER = '&amp;TASK_NUMBER*'</value>
+        <value name="SQLAlias">TASKID</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+    <record name="getVendorSiteId" javaclass="com.wm.util.Values">
+      <value name="transactionName">getVendorSiteId</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="VENDOR_SITE_ID" javaclass="com.wm.util.Values">
+        <value name="SQLOut">SELECT VENDOR_SITE_ID  FROM PO_VENDOR_SITES_ALL 
+WHERE  UPPER( NVL(ADDRESS_LINE1,'XXXX') ) = UPPER( NVL('&amp;ADDRESS_LINE1*','XXXX' )) 
+AND  UPPER( NVL(ADDRESS_LINE2,'XXXX') ) = UPPER( NVL('&amp;ADDRESS_LINE2*','XXXX')) 
+AND UPPER( NVL(ADDRESS_LINE3,'XXXX') ) = UPPER( NVL('&amp;ADDRESS_LINE3*','XXXX')) 
+AND  UPPER( NVL(CITY,'XXXX') ) = UPPER( NVL('&amp;CITY*','XXXX')) 
+AND UPPER( NVL(STATE,'XXXX') ) = UPPER( NVL('&amp;STATE*','XXXX'))
+AND UPPER( NVL(ZIP,'XXXX') ) = UPPER( NVL('&amp;ZIP*','XXXX')) 
+AND UPPER( NVL(COUNTRY,'XXXX') ) = UPPER( NVL('&amp;COUNTRY*','XXXX')) 
+AND rownum = 1
+</value>
+        <value name="SQLAlias">VENDOR_SITE_ID</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+    <record name="getWIPEntityId" javaclass="com.wm.util.Values">
+      <value name="transactionName">getWIPEntityId</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="WIPENTITYID" javaclass="com.wm.util.Values">
+        <value name="SQLOut">SELECT WIP_ENTITY_ID
+FROM WIP_ENTITIES WIP, HR_ALL_ORGANIZATION_UNITS HOU
+WHERE 
+WIP.WIP_ENTITY_NAME ='&amp;WIP_ENTITY_NAME*'
+AND HOU.ORGANIZATION_ID=WIP.ORGANIZATION_ID
+AND HOU.NAME=NVL('&amp;ORGANIZATION_NAME*',HOU.NAME)</value>
+        <value name="SQLAlias">WIPENTITYID</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+    <record name="insertTransferERRInfo" javaclass="com.wm.util.Values">
+      <value name="transactionName">insertTransferERRInfo</value>
+      <value name="transactionType">OUT</value>
+      <value name="AcknowledgeSQL">INSERT INTO WM_TRACKCHANGES(WEB_TRANSACTION_ID, TRANSACTION_TYPE, TRANSACTION_ID, 
+DATE_CREATED,TRANSACTION_STATUS,COMMENTS,PROCESSED_FLAG) 
+VALUES(WM_WEB_TRANSACTION_S.NEXTVAL,'&amp;TRANSACTION_TYPE*','&amp;TRANSACTION_ID*',
+SYSDATE,DECODE('&amp;TRANSACTION_STATUS*','INSERT',1,'UPDATE',0,2),'&amp;errorInfo*','N')</value>
+    </record>
+    <record name="lockTxnCtrl" javaclass="com.wm.util.Values">
+      <value name="transactionName">lockTxnCtrl</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="LOCK_CONTROL" javaclass="com.wm.util.Values">
+        <value name="SQLOut">Wm_Track_Changes_Pkg.Lock_Control</value>
+        <value name="SQLAlias">LOCK_CONTROL</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+    <record name="pickSequence" javaclass="com.wm.util.Values">
+      <value name="transactionName">pickSequence</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="SEQ_NUMBER" javaclass="com.wm.util.Values">
+        <value name="SQLOut">WM_UTILS_PKG.WM_PICK_SEQUENCE</value>
+        <value name="SQLAlias">SEQ_NUMBER</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+    <record name="purgeTrackChanges" javaclass="com.wm.util.Values">
+      <value name="transactionName">purgeTrackChanges</value>
+      <value name="transactionType">OUT</value>
+      <value name="AcknowledgeSQL">DELETE FROM WM_TRACKCHANGES 
+WHERE WEB_TRANSACTION_ID &lt;='&amp;WEB_TRANSACTION_ID*' 
+AND TRANSACTION_TYPE='&amp;TRANSACTION_TYPE*' 
+AND TRANSACTION_ID='&amp;TRANSACTION_ID*'
+AND PROCESSED_FLAG='N'</value>
+    </record>
+    <record name="purgeUnqualifiedRec" javaclass="com.wm.util.Values">
+      <value name="transactionName">purgeUnqualifiedRec</value>
+      <value name="transactionType">OUT</value>
+      <value name="AcknowledgeSQL">delete from wm_trackchanges wt
+where wt.transaction_id in (select wtc.transaction_id 
+from wm_track_changes_vw wtc
+where wtc.transaction_id=wt.transaction_id
+and wtc.transaction_type=wt.transaction_type
+and wtc.transaction_status&gt;=3)
+and wt.processed_flag='N'
+and wt.transaction_type='&amp;TRANSACTION_TYPE*'</value>
+    </record>
+    <record name="unlockTxnCtrl" javaclass="com.wm.util.Values">
+      <value name="transactionName">unlockTxnCtrl</value>
+      <value name="transactionType">OUT</value>
+      <value name="AcknowledgeSQL">UPDATE WM_CONTROL SET STATUS='READY' WHERE TRANSACTION_TYPE='&amp;TRANSACTION_TYPE*'</value>
+    </record>
+    <record name="updateTrackChanges" javaclass="com.wm.util.Values">
+      <value name="transactionName">updateTrackChanges</value>
+      <value name="transactionType">OUT</value>
+      <value name="AcknowledgeSQL">UPDATE WM_TRACKCHANGES SET PROCESSED_FLAG='Y',DATE_PROCESSED= sysdate 
+WHERE WEB_TRANSACTION_ID&lt;='&amp;WEB_TRANSACTION_ID*' 
+AND TRANSACTION_TYPE='&amp;TRANSACTION_TYPE*'
+AND TRANSACTION_ID='&amp;TRANSACTION_ID*'
+AND PROCESSED_FLAG='N'</value>
+    </record>
+    <record name="updateUnqualifiedRec" javaclass="com.wm.util.Values">
+      <value name="transactionName">updateUnqualifiedRec</value>
+      <value name="transactionType">OUT</value>
+      <value name="AcknowledgeSQL">update wm_trackchanges wt
+set wt.processed_flag='Y', wt.date_processed=sysdate
+where wt.transaction_id in (select wtc.transaction_id 
+from wm_track_changes_vw wtc
+where wtc.transaction_id=wt.transaction_id
+and wtc.transaction_type=wt.transaction_type
+and wtc.transaction_status&gt;=3)
+and wt.processed_flag='N'
+and wt.transaction_type='&amp;TRANSACTION_TYPE*'
+</value>
+    </record>
+  </record>
+  <record name="FILE_INFO" javaclass="com.wm.util.Values">
+    <value name="OA_RELEASE">107SC</value>
+    <value name="DESCRIPTION">OA Common Transaction Definitions</value>
+    <value name="CREATE_HOST">webMethods</value>
+    <value name="CREATE_IM_VER">3.0</value>
+    <value name="CREATE_DATE">Dec 10, 2002 2:20:39 PM</value>
+  </record>
+</Values>

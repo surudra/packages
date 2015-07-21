@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<IDataXMLCoder version="1.0">
+  <record javaclass="com.wm.data.ISMemDataImpl">
+    <record name="transactions" javaclass="com.wm.data.ISMemDataImpl">
+      <record name="setBankStatementTxn" javaclass="com.wm.data.ISMemDataImpl">
+        <value name="transactionName">setBankStatementTxn</value>
+        <value name="transactionType">IN</value>
+        <value name="errSQL">SELECT 0 AS LINE_NUMBER, 'HEADER' AS ERROR_TYPE, E.STATEMENT_NUMBER,E.BANK_ACCOUNT_NUM,M.MESSAGE_TEXT FROM CE_HEADER_INTERFACE_ERRORS E, FND_NEW_MESSAGES M WHERE M.MESSAGE_NAME =E.MESSAGE_NAME AND E.STATEMENT_NUMBER = '&amp;STATEMENT_NUMBER*'  UNION SELECT LINE_NUMBER,'LINE' AS ERROR_TYPE, E.STATEMENT_NUMBER,E.BANK_ACCOUNT_NUM,M.MESSAGE_TEXT FROM CE_LINE_INTERFACE_ERRORS E, FND_NEW_MESSAGES M WHERE M.MESSAGE_NAME =E.MESSAGE_NAME AND E.STATEMENT_NUMBER = '&amp;STATEMENT_NUMBER*' </value>
+        <record name="table0" javaclass="com.wm.data.ISMemDataImpl">
+          <value name="tableName">CE_STATEMENT_HEADERS_INT</value>
+          <value name="required">true</value>
+        </record>
+        <record name="table1" javaclass="com.wm.data.ISMemDataImpl">
+          <value name="tableName">CE_STATEMENT_LINES_INTERFACE</value>
+          <value name="required">true</value>
+        </record>
+      </record>
+    </record>
+    <record name="FILE_INFO" javaclass="com.wm.data.ISMemDataImpl">
+      <value name="OA_RELEASE">1206</value>
+      <value name="DESCRIPTION"></value>
+      <value name="CREATE_HOST">webMethods</value>
+      <value name="CREATE_IM_VER"></value>
+      <value name="CREATE_DATE">May 2, 2005 4:58:58 PM</value>
+    </record>
+  </record>
+</IDataXMLCoder>

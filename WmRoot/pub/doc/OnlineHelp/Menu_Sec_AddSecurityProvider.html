@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <title>Add a Security Provider</title>
+    <link rel="StyleSheet" href="css/_is_admin_help.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+  <body style="background-color: White; margin-bottom: 25px; margin-left: 25px; margin-right: 25px; margin-top: 0px; padding-top: 0px" onload="WWHUpdate();" onunload="WWHUnload();" onkeydown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onkeypress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onkeyup="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <table align="left" role="presentation">
+      <tr>
+        <td class="WebWorks_Company_Logo_Top">
+          <img src="sag_online.png" />
+        </td>
+      </tr>
+    </table>
+    <br clear="all" />
+    <hr align="left" />
+    <blockquote>
+      <div class="Heading_3"><a name="3_5_17_15_7_2">Add a Security Provider</a></div>
+      <div class="Body"><span class="emphasis"><a name="3_5_17_15_7_6_2_3">Screen Heading</a></span>: <span class="uicontrol">Security &gt; Keystore &gt; Add Security Provider</span></div>
+      <div class="Body"><a name="3_5_17_15_7_6_2_5">Use the Add Security Provider screen to configure a new Security Provider that will provide support for the keystore type you want to use.</a></div>
+      <div class="Body"><a name="3_5_17_15_7_6_2_7">If you want to add an HTTPS or FTPS port with a listener that will use a private key and certificate chain residing in a keystore, and the keystore is managed by a non-standard Security Provider, you may need to add that Security Provider to the </a><span class="ph">Integration Server</span> Administrator.</div>
+      <div class="Body"><a name="3_5_17_15_7_6_2_9">When specifying keystore information in the HTTPS or FTPS port information screen, a non-standard Security Provider may not appear in the KeyStore Type parameter drop-down list. If the Security Provider that you want to use does not appear in the list, you can add it by clicking the </a><span class="uicontrol">Add New Security Provider</span> link and entering the fully qualified name of the security provider class.</div>
+      <div class="Body"><a name="3_5_17_15_7_6_2_11">To open the Add Security Provider screen, go to the </a><span class="heading-no-quotes"><a href="javascript:WWHClickedPopup('is_help', 'Menu_Sec_Keystore.html', '');" title="Keystore Screen">Keystore Screen</a></span> and click <span class="uicontrol">Add Security Provider</span>.</div>
+      <div class="List_1_outer" style="margin-left: 24px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_1_inner" style="width: 18pt; white-space: nowrap">
+                <img src="bullet1.png" alt="*" border="0" width="10" height="10" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_1_inner"><a name="3_5_17_15_7_6_2_13_2">Click </a><span class="uicontrol">Return to Keystore</span> to return to the list of ports that are currently defined on the server.Security Provider Class Enter the Java class name of the security provider used for additional keystore and truststore file types. If the keystore type supported by the HSM (Hardware Security Module) is different than that supported by the <span class="ph">Integration Server</span> default (JKS for truststores and keystores), then use this field to specify the supporting security provider. For nCipher, for example, the fully qualified name is com.ncipher.provider.km.nCipherKM.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Definition_Term"><a name="3_5_17_15_7_6_2_15_2_2">Security Provider Class</a></div>
+      <div class="Definition_Description"><a name="3_5_17_15_7_6_2_15_2_4">Enter the Java class name of the security provider used for additional keystore and truststore file types. If the keystore type supported by the HSM (Hardware Security Module) is different than that supported by the </a><span class="ph">Integration Server</span> default (JKS for keystores and truststores), then use this field to specify the supporting security provider. For nCipher, for example, the fully qualified name is com.ncipher.provider.km.nCipherKM.</div>
+      <div class="Definition_Term"><a name="3_5_17_15_7_6_2_15_4_2">Add Provider</a></div>
+      <div class="Definition_Description"><a name="3_5_17_15_7_6_2_15_4_4">The server adds the security provider to the KeyStore Type drop-down list and adds the security provider class to the java.security file for your JDK.</a></div>
+      <div class="Link_List_Title"><a name="3_5_17_15_7_8_1_2">Related Topics</a></div>
+      <div class="Related_Reference">
+        <img src="spacer_24.png" alt="*" border="0" width="24" height="6" /><span class="Link_Text"><a href="javascript:WWHClickedPopup('is_help', 'Menu_Sec_Keystore.html', '');" title="Keystore Screen" name="3_5_17_15_7_8_1_4">Keystore Screen</a></span></div>
+      <div class="Related_Reference">
+        <img src="spacer_24.png" alt="*" border="0" width="24" height="6" /><span class="Link_Text"><a href="javascript:WWHClickedPopup('is_help', 'Menu_Sec_CreateKeystoreAlias.html', '');" title="Create a Keystore Alias" name="3_5_17_15_7_8_1_6">Create a Keystore Alias</a></span></div>
+      <div class="Related_Reference">
+        <img src="spacer_24.png" alt="*" border="0" width="24" height="6" /><span class="Link_Text"><a href="javascript:WWHClickedPopup('is_help', 'Menu_Sec_CreateTruststoreAlias.html', '');" title="Create a Truststore Alias" name="3_5_17_15_7_8_1_8">Create a Truststore Alias</a></span></div>
+      <div class="Related_Reference">
+        <img src="spacer_24.png" alt="*" border="0" width="24" height="6" /><span class="Link_Text"><a href="javascript:WWHClickedPopup('is_help', 'Menu_Sec_KeystoreView.html', '');" title="View Keystore Alias Screen" name="3_5_17_15_7_8_1_10">View Keystore Alias Screen</a></span></div>
+      <div class="Related_Reference">
+        <img src="spacer_24.png" alt="*" border="0" width="24" height="6" /><span class="Link_Text"><a href="javascript:WWHClickedPopup('is_help', 'Menu_Sec_KeystoreEdit.html', '');" title="Edit Keystore Alias Screen" name="3_5_17_15_7_8_1_12">Edit Keystore Alias Screen</a></span></div>
+      <div class="Related_Reference">
+        <img src="spacer_24.png" alt="*" border="0" width="24" height="6" /><span class="Link_Text"><a href="javascript:WWHClickedPopup('is_help', 'Menu_Sec_TruststoreView.html', '');" title="View Truststore Alias Screen" name="3_5_17_15_7_8_1_14">View Truststore Alias Screen</a></span></div>
+      <div class="Related_Reference">
+        <img src="spacer_24.png" alt="*" border="0" width="24" height="6" /><span class="Link_Text"><a href="javascript:WWHClickedPopup('is_help', 'Menu_Sec_TruststoreEdit.html', '');" title="Edit Truststore Alias Screen" name="3_5_17_15_7_8_1_16">Edit Truststore Alias Screen</a></span></div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <div>
+      <hr />
+      <div style="font-family: Arial, Verdana, Helvetica, Sans-Serif; font-size: 12px;margin-top: 20px;margin-bottom: 20px;">
+        <span class="xref">
+          <a href="http://documentation.softwareag.com/legal/" target="external_window">Copyright © <span></span><span></span><span>2007</span><span>-2014</span> Software AG, Darmstadt, Germany</a>
+        </span>.</div>
+    </div>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+  </body>
+</html>

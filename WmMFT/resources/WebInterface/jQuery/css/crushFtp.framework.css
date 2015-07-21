@@ -1,0 +1,2533 @@
+body
+{
+    margin: 5px;
+    padding: 0px 5px 10px 5px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border-radius: 10px 10px 10px 10px;
+    font-family: Verdana, sans-serif;
+    font-size: 11px;
+	overflow-x:hidden;
+    -webkit-text-size-adjust: 100%;
+}
+
+.mainContentHolder
+{
+    padding-bottom: 10px;
+}
+
+#filesListing
+{
+    margin: 0px 0px 10px 0px;
+    min-height: 100px;
+}
+
+#filesListing.uiDragHover table, #filesListing.uiDragHover .dropzone, .fileBox.uiDragHover, .fileListWrapper.uiDragHover, #filesBasket.uiDragHover
+{
+    background: #FFFFCC;
+}
+
+.fileBox.uiDragHover
+{
+    border: 1px solid maroon;
+}
+
+#filesBasket
+{
+    margin: 2px;
+}
+
+#filesBasket.uiDragHover
+{
+    z-index: 1999;
+    background: #FFFFCC;
+    border: 2px dashed #000;
+    margin: 0px;
+    border-radius: 10px;
+    box-shadow: 0 0 0 4px #FFFFCC, 2px 1px 6px 4px rgba(10, 10, 0, 0.5);
+}
+
+#filesContainer, #filesContainerDiv
+{
+    margin: 0px;
+    padding: 0px;
+}
+
+#filesContainerDiv li
+{
+	list-style: none;
+}
+
+#filesListing td.listRootDir
+{
+    display: none;
+}
+
+#filesListing.searchResult td.listRootDir, #filesListing.showPathColumn td.listRootDir
+{
+    display: block;
+}
+
+TR.jqueryFileTree
+{
+    font-family: Verdana, sans-serif;
+    font-size: 11px;
+    line-height: 25px;
+    padding: 0px;
+    margin: 0px;
+}
+
+TR.jqueryFileTree TD
+{
+    list-style: none;
+    padding: 0px;
+    padding-left: 20px;
+    margin: 0px; /*	white-space: nowrap;*/
+    vertical-align: top;
+}
+
+TD.directory A
+{
+    text-decoration: underline;
+    display: block;
+    padding: 0px 20px;
+}
+
+TD.file A
+{
+    text-decoration: underline;
+    padding: 0px 20px 0px 5px;
+}
+
+.iconPreviewLink
+{
+    text-decoration: underline;
+    padding: 0px 20px 0px 5px;
+}
+
+/* Generic context menu styles */
+.contextMenu
+{
+    position: absolute;
+    width: 170px;
+    z-index: 99999;
+    padding: 0px;
+    margin: 0px;
+    display: none;
+    font-family: Verdana,sans-serif;
+    font-size: 11px;
+}
+
+.contextMenu LI
+{
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+	overflow:hidden;
+}
+
+.contextMenu A
+{
+    text-decoration: none;
+    display: block;
+    line-height: 20px;
+    height: 20px;
+    background-position: 6px center;
+    background-repeat: no-repeat;
+    outline: none;
+    padding: 1px 5px;
+    padding-left: 28px;
+}
+
+.contextMenu LI.disabled A
+{
+    cursor: default;
+}
+
+/*
+	Adding Icons
+
+	You can add icons to the context menu by adding
+	classes to the respective LI element(s)
+*/
+
+.contextMenu LI A
+{
+	background-image: url(/WebInterface/jQuery/images/bullet_go.png);
+}
+
+.contextMenu LI.edit A
+{
+    background-image: url(/WebInterface/jQuery/images/page_white_edit.png);
+}
+.contextMenu LI.rename A
+{
+    background-image: url(/WebInterface/jQuery/images/rename.png);
+}
+.contextMenu LI.cut A
+{
+    background-image: url(/WebInterface/jQuery/images/cut.png);
+}
+.contextMenu LI.parentLocation A
+{
+    background-image: url(/WebInterface/jQuery/images/folder_open.png);
+}
+.contextMenu LI.copy A
+{
+    background-image: url(/WebInterface/jQuery/images/page_white_copy.png);
+}
+.contextMenu LI.paste A
+{
+    background-image: url(/WebInterface/jQuery/images/page_white_paste.png);
+}
+.contextMenu LI.delete A
+{
+    background-image: url(/WebInterface/jQuery/images/page_white_delete.png);
+}
+.contextMenu LI.share A
+{
+    background-image: url(/WebInterface/jQuery/images/application_form_add.png);
+}
+.contextMenu LI.copylink A, .contextMenu LI.copydirectlink A
+{
+    background-image: url(/WebInterface/jQuery/images/page_white_link.png);
+}
+.contextMenu LI.quit A
+{
+    background-image: url(/WebInterface/jQuery/images/door.png);
+}
+.contextMenu LI.zip A, .contextMenu LI.zipdownload A, .contextMenu LI.zipitems A
+{
+    background-image: url(/WebInterface/jQuery/images/zipper.png);
+}
+.contextMenu LI.createfolder A
+{
+    background-image: url(/WebInterface/jQuery/images/folder_add.png);
+}
+.contextMenu LI.search A
+{
+    background-image: url(/WebInterface/jQuery/images/magnifier.png);
+}
+.contextMenu LI.useroptions A
+{
+    background-image: url(/WebInterface/jQuery/images/user_edit.png);
+}
+.contextMenu LI.slideshow A
+{
+    background-image: url(/WebInterface/jQuery/images/fullscreen.png);
+}
+.contextMenu LI.showbasket A
+{
+    background-image: url(/WebInterface/jQuery/images/basket_go.png);
+}
+.contextMenu LI.addtobasket A
+{
+    background-image: url(/WebInterface/jQuery/images/basket_add.png);
+}
+.contextMenu LI.help A
+{
+    background-image: url(/WebInterface/jQuery/images/help.png);
+}
+.contextMenu LI.login A
+{
+    background-image: url(/WebInterface/jQuery/images/bullet_green.png);
+}
+.contextMenu LI.logout A
+{
+    background-image: url(/WebInterface/jQuery/images/bullet_red.png);
+}
+.contextMenu LI.download A
+{
+    background-image: url(/WebInterface/jQuery/images/download.png);
+}
+.contextMenu LI.toggle A
+{
+    background-image: url(/WebInterface/jQuery/images/toggle.png);
+}
+.contextMenu LI.checkall A
+{
+    background-image: url(/WebInterface/jQuery/images/check-box.png);
+}
+.contextMenu LI.uncheckall A
+{
+    background-image: url(/WebInterface/jQuery/images/uncheck.png);
+}
+.contextMenu LI.addToBasket A
+{
+    background-image: url(/WebInterface/jQuery/images/basket_add.png);
+}
+.contextMenu LI.showDownloadBasket A
+{
+    background-image: url(/WebInterface/jQuery/images/basket_go.png);
+}
+.contextMenu LI.makedir A
+{
+    background-image: url(/WebInterface/jQuery/images/directory.png);
+}
+.contextMenu LI.browseruploader A,.contextMenu LI.upload A
+{
+    background-image: url(/WebInterface/jQuery/images/upload.png);
+}
+.contextMenu LI.manageshares A
+{
+    background-image: url(/WebInterface/jQuery/images/email_edit.png);
+}
+.contextMenu LI.updatekeywords A
+{
+    background-image: url(/WebInterface/jQuery/images/table_edit.png);
+}
+.contextMenu LI.quickview A
+{
+    background-image: url(/WebInterface/jQuery/images/pictures.png);
+}
+.contextMenu LI.checkallFiles A
+{
+    background-image: url(/WebInterface/jQuery/images/page_white_copy.png);
+}
+.contextMenu LI.checkallFolders A
+{
+    background-image: url(/WebInterface/jQuery/images/directory.png);
+}
+.contextMenu LI.checkItemsWithDot A
+{
+    background-image: url(/WebInterface/jQuery/images/file.png);
+}
+.contextMenu LI.checkToday A, .contextMenu LI.checkWeek A, .contextMenu LI.checkMonth A, .contextMenu LI.checkLastTwoMonth A, .contextMenu LI.checkLastThreeMonth A
+{
+    background-image: url(/WebInterface/jQuery/images/calendar.png);
+}
+
+/* Core Styles */
+.jqueryFileTree TD.directory a
+{
+    background: url(/WebInterface/jQuery/images/directory.png) left top no-repeat;
+    background-position: 0 4px;
+}
+.jqueryFileTree TD.expanded a
+{
+    background: url(/WebInterface/jQuery/images/folder_open.png) left top no-repeat;
+    background-position: 0 4px;
+}
+.jqueryFileTree TD.file
+{
+    background-position: 20px 4px;
+}
+
+.wait
+{
+    background-position: 0 4px;
+    font-size: 11px;
+    text-align: left !important;
+    padding-left: 18px;
+    height: 17px;
+    z-index: 999;
+}
+
+.bouncing_loader
+{
+    background: url(/WebInterface/jQuery/images/bouncing_loader.gif) right no-repeat;
+    background-position: 100% 50%;
+    padding-right: 21px !important;
+}
+
+/* Table structure*/
+.jqueryFilesTable
+{
+    width: 100%;
+    padding: 5px;
+    margin: 0px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border-radius: 10px 10px 10px 10px;
+}
+
+.jqueryFilesTable thead td
+{
+    padding: 5px;
+    font-size: 12px;
+    font-weight: bolder;
+    vertical-align: middle;
+}
+
+.thSelect, .columnSelect, .thSelectBox
+{
+    width: 5px;
+    padding: 0px !important;
+    text-align: center !important;
+}
+.thName, .columnName
+{
+    max-width: 45%;
+    text-align: left;
+}
+.thSize, .columnSize
+{
+    max-width: 15%;
+    text-align: center;
+    padding-left: 0px !important;
+}
+
+.thModified, .columnModified
+{
+    max-width: 15%;
+    text-align: center;
+    padding-left: 0px !important;
+}
+
+.thKeywords, .columnKeywords
+{
+    max-width: 23%;
+    text-align: left;
+    overflow: hidden !important;
+}
+
+.columnName, .columnKeywords
+{
+    text-align: left;
+}
+
+.columnName a
+{
+	text-decoration:none !important;
+}
+
+.columnSelect
+{
+    padding-left: 0px !important;
+    text-align: center;
+}
+
+.columnSize, .columnModified
+{
+    text-align: center;
+}
+
+td.subdirectory
+{
+    background-position: 20px 4px !important;
+    padding-left: 40px !important;
+    background-repeat: no-repeat !important;
+}
+
+.customForm
+{
+	width:100%;
+	font-size:13px;
+}
+
+.customForm td
+{
+    border-bottom: 1px solid #eee;
+    padding: 5px 0px;
+    vertical-align: top;
+}
+
+
+.customForm .formVal
+{
+    padding: 7px 5px 7px 0px;
+}
+
+.customForm .formLabel
+{
+    text-align: right;
+    padding: 7px 5px 7px 0px;
+    min-width: 120px;
+}
+
+/*Breadcrumbs*/
+#crumbs, #crumbs li
+{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+#crumbs
+{
+    height: 25px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border-radius: 10px 10px 10px 10px;
+    font: 13px "Lucida Grande" , Lucida, Verdana, sans-serif;
+}
+#crumbs li
+{
+    float: left;
+    line-height: 25px;
+    padding-left: .75em;
+}
+#crumbs li a
+{
+    background: url(/WebInterface/jQuery/images/crumbs.gif) no-repeat right center;
+    display: block;
+    padding: 0 19px 0 0;
+}
+#crumbs li.home
+{
+    background: url("/WebInterface/jQuery/images/home.png" ) no-repeat scroll 5px 5px transparent;
+    padding-left: 25px;
+}
+#crumbs li a:link, #crumbs li a:visited
+{
+    text-decoration: none;
+}
+
+.filterPanel
+{
+    font: 12px "Lucida Grande" , Lucida, Verdana, sans-serif;
+    margin: 5px 0px 5px 5px;
+    float: left;
+}
+
+.filterPanel a, .filterPanel a:visited
+{
+    text-decoration: underline;
+}
+
+.viewSelectorPanel, .themeSelectorPanel
+{
+    font: 12px "Lucida Grande" , Lucida, Verdana, sans-serif;
+    margin-right: 10px;
+    line-height: 17px;
+    height: 3px;
+}
+
+.viewSelectorPanel #slider
+{
+	margin:8px 5px 0px 0px;
+}
+
+.viewSelectorPanel a.viewlink, .viewSelectorPanel a.viewlink:visited
+{
+    font-size: 10px;
+    margin: 5px;
+	margin-left:10px;
+}
+.clear
+{
+    clear: both;
+}
+
+.selectionLink, .pageSizeSelectionLink, .themeSelectionLink
+{
+    padding-left: 18px;
+    display: inline-block;
+	line-height: 22px;
+    margin-left: 5px;
+    padding-left: 20px;
+}
+
+.selectionLink
+{
+	background: url(/WebInterface/jQuery/images/settings.png) no-repeat left 2px;
+}
+
+.pageSizeSelectionLink
+{
+	background: url(/WebInterface/jQuery/images/ui-paginator.png) no-repeat left 3px;
+	padding-left: 17px;
+}
+
+.treeViewLink
+{
+    background: url(/WebInterface/jQuery/images/tree_view.png) no-repeat left 2px;
+    padding-left: 18px;
+    display: block;
+    float: right;
+}
+
+.treeViewCollapseAllLink
+{
+    background: url(/WebInterface/jQuery/images/directory.png) no-repeat left 0px;
+    padding-left: 20px;
+    margin-left: 5px;
+}
+
+.treeViewExpandAllLink
+{
+    margin-left: 5px;
+    background: url(/WebInterface/jQuery/images/folder_open.png) no-repeat left 0px;
+    padding-left: 20px;
+}
+
+.themeSelectionLink
+{
+    background: url(/WebInterface/themed/images/color_swatch.png) no-repeat left 4px;
+    padding-left: 18px;
+    margin-top: 5px;
+    display: block;
+    float: left;
+}
+.themeBlock
+{
+    display: inline-block;
+    width:15px;
+    height:15px;
+    position: absolute;
+    margin-left:-24px;
+    margin-top:1px;
+}
+.themeBlock.default
+{
+    background-color: #F5B451;
+}
+.themeBlock.dark
+{
+    background-color: #000;
+}
+.themeBlock.green
+{
+    background-color: green;
+}
+.themeBlock.blue
+{
+    background-color: blue;
+}
+.thumbnailViewLink
+{
+    background: url(/WebInterface/jQuery/images/thumb_view.png) no-repeat left 2px;
+    padding-left: 19px;
+    display: block;
+    float: right;
+}
+
+#slider
+{
+    display: none;
+    float: right;
+    margin-top: 6px;
+    margin-right: 15px;
+}
+
+.saveButton
+{
+    background: url("/WebInterface/jQuery/images/accept.png" ) no-repeat 0px 6px transparent;
+    padding-left: 18px;
+    margin-left: 2px;
+    overflow: hidden;
+    float: left;
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 11px;
+    line-height: 25px;
+}
+
+.cancelButton,.refreshBtn
+{
+    margin-left: 5px;
+    background: url("/WebInterface/jQuery/images/cancel.png" ) no-repeat scroll 0 6px transparent;
+    padding-left: 18px;
+    margin-left: 4px;
+    overflow: hidden;
+    float: left;
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 11px;
+    line-height: 25px;
+}
+.refreshBtn
+{
+    background: url("/WebInterface/jQuery/images/refresh.png" ) no-repeat scroll 0 6px transparent;
+    float: right;
+}
+
+.expandButton, .refreshButton, .previewIcon
+{
+    cursor: pointer;
+    display: block;
+    float: left;
+    height: 16px;
+    margin: 3px 0 0 -20px;
+    width: 16px;
+}
+
+.rotateImgClockwise, .rotateImgCounterClockwise
+{
+    margin-right: 5px;
+    width: 18px;
+    overflow: hidden;
+    height: 18px;
+    display: block;
+    cursor: pointer;
+    position: absolute;
+    bottom: 5px;
+    right:30px;
+}
+
+.rotateImgClockwise
+{
+    background: url(/WebInterface/jQuery/images/arrow_rotate_clockwise.png) no-repeat left 3px;
+    right:50px;
+}
+
+.rotateImgCounterClockwise
+{
+    background: url(/WebInterface/jQuery/images/arrow_rotate_anticlockwise.png) no-repeat left 3px;
+}
+
+
+.previewIcon
+{
+    margin-left: 0px;
+    width: 20px;
+    overflow: hidden;
+    height: 18px;
+    display: block;
+	text-align:center;
+}
+
+.previewIcon img
+{
+    height: 16px !important;
+}
+
+.refreshButton
+{
+    margin: 5px 0 0 5px;
+	display:block;
+}
+
+.renameField
+{
+    float: left;
+    height: 18px;
+    padding: 0px;
+    margin: 0px;
+    width: 200px;
+}
+
+table.tablesorter .header
+{
+    background-repeat: no-repeat;
+    padding-left: 10px;
+    height: auto;
+    cursor: pointer;
+}
+
+table.tablesorter .headerSortUp
+{
+    background-image: url(/WebInterface/jQuery/images/bullet_arrow_up.png);
+    background-repeat: no-repeat;
+    background-position: right;
+}
+
+table.tablesorter .headerSortDown
+{
+    background-image: url(/WebInterface/jQuery/images/bullet_arrow_down.png);
+    background-repeat: no-repeat;
+    background-position: right;
+}
+
+/* File Extensions*/
+.jqueryFileTree TD.ext_3gp
+{
+    background: url(/WebInterface/jQuery/images/film.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_afp
+{
+    background: url(/WebInterface/jQuery/images/code.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_afpa
+{
+    background: url(/WebInterface/jQuery/images/code.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_asp
+{
+    background: url(/WebInterface/jQuery/images/code.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_aspx
+{
+    background: url(/WebInterface/jQuery/images/code.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_avi
+{
+    background: url(/WebInterface/jQuery/images/film.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_bat
+{
+    background: url(/WebInterface/jQuery/images/application.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_bmp
+{
+    background: url(/WebInterface/jQuery/images/picture.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_c
+{
+    background: url(/WebInterface/jQuery/images/code.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_cfm
+{
+    background: url(/WebInterface/jQuery/images/code.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_cgi
+{
+    background: url(/WebInterface/jQuery/images/code.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_com
+{
+    background: url(/WebInterface/jQuery/images/application.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_cpp
+{
+    background: url(/WebInterface/jQuery/images/code.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_css
+{
+    background: url(/WebInterface/jQuery/images/css.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_doc
+{
+    background: url(/WebInterface/jQuery/images/doc.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_exe
+{
+    background: url(/WebInterface/jQuery/images/application.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_gif
+{
+    background: url(/WebInterface/jQuery/images/picture.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_fla
+{
+    background: url(/WebInterface/jQuery/images/flash.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_h
+{
+    background: url(/WebInterface/jQuery/images/code.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_htm
+{
+    background: url(/WebInterface/jQuery/images/html.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_html
+{
+    background: url(/WebInterface/jQuery/images/html.png) left top no-repeat;
+    background-position: 20px 3px;
+}
+.jqueryFileTree TD.ext_jar
+{
+    background: url(/WebInterface/jQuery/images/java.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_jpg
+{
+    background: url(/WebInterface/jQuery/images/picture.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_jpeg
+{
+    background: url(/WebInterface/jQuery/images/picture.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_js
+{
+    background: url(/WebInterface/jQuery/images/script.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_lasso
+{
+    background: url(/WebInterface/jQuery/images/code.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_log
+{
+    background: url(/WebInterface/jQuery/images/txt.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_m4p
+{
+    background: url(/WebInterface/jQuery/images/music.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_mov
+{
+    background: url(/WebInterface/jQuery/images/film.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_mp3
+{
+    background: url(/WebInterface/jQuery/images/music.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_mp4
+{
+    background: url(/WebInterface/jQuery/images/film.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_mpg
+{
+    background: url(/WebInterface/jQuery/images/film.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_mpeg
+{
+    background: url(/WebInterface/jQuery/images/film.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_ogg
+{
+    background: url(/WebInterface/jQuery/images/music.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_pcx
+{
+    background: url(/WebInterface/jQuery/images/picture.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_pdf
+{
+    background: url(/WebInterface/jQuery/images/pdf.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_php
+{
+    background: url(/WebInterface/jQuery/images/php.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_png
+{
+    background: url(/WebInterface/jQuery/images/picture.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_ppt
+{
+    background: url(/WebInterface/jQuery/images/ppt.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_psd
+{
+    background: url(/WebInterface/jQuery/images/psd.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_pl
+{
+    background: url(/WebInterface/jQuery/images/script.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_py
+{
+    background: url(/WebInterface/jQuery/images/script.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_rb
+{
+    background: url(/WebInterface/jQuery/images/ruby.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_rbx
+{
+    background: url(/WebInterface/jQuery/images/ruby.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_rhtml
+{
+    background: url(/WebInterface/jQuery/images/ruby.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_rpm
+{
+    background: url(/WebInterface/jQuery/images/linux.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_ruby
+{
+    background: url(/WebInterface/jQuery/images/ruby.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_sql
+{
+    background: url(/WebInterface/jQuery/images/db.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_swf
+{
+    background: url(/WebInterface/jQuery/images/flash.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_tif
+{
+    background: url(/WebInterface/jQuery/images/picture.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_tiff
+{
+    background: url(/WebInterface/jQuery/images/picture.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_txt
+{
+    background: url(/WebInterface/jQuery/images/txt.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_vb
+{
+    background: url(/WebInterface/jQuery/images/code.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_wav
+{
+    background: url(/WebInterface/jQuery/images/music.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_wmv
+{
+    background: url(/WebInterface/jQuery/images/film.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_xls
+{
+    background: url(/WebInterface/jQuery/images/xls.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_xml
+{
+    background: url(/WebInterface/jQuery/images/code.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_zip
+{
+    background: url(/WebInterface/jQuery/images/zip.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+
+/*Boxes selectors*/
+.fileBox, .fileBoxBasket
+{
+    float: left;
+    margin: 2px;
+    padding: 8px;
+    overflow: hidden;
+    position: relative;
+	text-align: center;
+}
+
+.fileBox
+{
+	padding: 8px;
+}
+
+.fileBoxBasket
+{
+	padding: 7px;
+}
+
+.fileBox .imgBox, .fileBoxBasket .imgBox
+{
+    text-align: center;
+    overflow: hidden;
+    cursor: pointer;
+	display:inline-block;
+	width:99%;
+	margin-bottom:3px;
+}
+
+.fileBox .imgBox
+{
+	margin-bottom:3px;
+}
+
+.fileBoxBasket .imgBox
+{
+	margin-bottom:4px;
+}
+
+.fileBox .fileSelectionMark, .fileBoxBasket .fileSelectionMark
+{
+	display:none;
+}
+
+.fileBoxSelected .fileSelectionMark, .fileRemoveFromBasket, .fileRemoveFromBasketTree, .fileBoxSelected .fileSelectionMark
+{
+	background-image: url(/WebInterface/jQuery/images/checkmark.png);
+    background-position: right -2px;
+    background-repeat: no-repeat;
+	position:absolute;
+	right:11px;
+	top:11px;
+	width:16px;
+	height:16px;
+	display:inline-block;
+}
+
+#basketFilesContainerThumb .fileSelectionMark
+{
+	left:12px;
+	right:auto;
+}
+
+
+.fileRemoveFromBasket, .fileRemoveFromBasketTree
+{
+	background-image: url(/WebInterface/jQuery/images/cancel.png);
+	cursor:pointer;
+	background-position: right 0px;
+	right:-3px;
+	top:15px;
+}
+
+.fileRemoveFromBasketTree
+{
+	position:relative;
+	right:auto;
+	top:2px;
+	left:-2px;
+}
+
+.fileBoxBasket .imgWrapper
+{
+	padding:0px;
+}
+
+.fileBox .imgWrapper
+{
+	padding:0px;
+}
+
+.imgWrapper
+{
+	padding:0px;
+	margin:1px;
+	width:98%;
+	overflow:hidden;
+	display:inline-block;
+}
+
+.imgBox table
+{
+    height: 100%;
+}
+
+.fileBox .imgBox img, .fileBoxBasket .imgBox img
+{
+    padding:0px;
+}
+
+.fileBox .imgBox .imgLink, .fileBoxBasket .imgBox .imgLink
+{
+    border: 0px;
+}
+
+.fileBox .imgTitle, .fileBoxBasket .imgTitle
+{
+    text-align: center;
+    font-size: 11px;
+    height: 55px;
+    padding-top: 0px;
+}
+
+.tipsy
+{
+    padding: 5px;
+    font-size: 10px;
+}
+.tipsy-inner
+{
+    padding: 5px 8px 4px 8px;
+    max-width: 700px;;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    z-index: 9999;
+    font-size: 11px;
+    white-space: pre-wrap; /* css-3 */
+    white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+    white-space: -pre-wrap; /* Opera 4-6 */
+    white-space: -o-pre-wrap; /* Opera 7 */
+    word-wrap: break-word; /* Internet Explorer 5.5+ */
+}
+
+.tipsy-inner img
+{
+    text-align: center;
+    max-width: 600px;
+    max-height: 350px;
+}
+
+#thumbRenamePanel h2
+{
+    margin: 0px;
+    margin-bottom: 15px;
+    padding: 0px;
+    font-size: 13px;
+    font-weight: bolder;
+}
+
+#thumbRenamePanel input
+{
+    width: 285px;
+    margin-bottom: 10px;
+}
+
+.poweredby
+{
+    font-size: 11px;
+    text-align: left;
+}
+.copyright
+{
+    font-size: 11px;
+    text-align: right;
+}
+
+.backToTop
+{
+    background-image: url(/WebInterface/jQuery/images/arrow_turn_up.png);
+    background-position: 0px 0px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    padding-left: 20px;
+}
+
+/*Main Navigation Bar Menu*/
+.mainNavigation
+{
+    padding: 0px;
+    margin: 3px 0px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+	display:none;
+}
+
+.mainNavigation a img{
+    border: none !important;
+}
+
+ul.topnav
+{
+    list-style: none;
+    padding: 2px 0px;
+    margin: 0 5px 0 5px;
+    float: left;
+    font-size: 11px;
+}
+ul.topnav li
+{
+    float: left;
+    margin: 0;
+    padding: 0;
+    position: relative; /*--Declare X and Y axis base for sub navigation--*/
+}
+ul.topnav li a
+{
+    padding: 5px 10px;
+    display: block;
+    text-decoration: none;
+    float: left;
+    font-size: 12px;
+}
+ul.topnav li a:hover
+{
+    text-decoration: underline;
+}
+ul.topnav li span
+{
+    /*--Drop down trigger styles--*/
+    width: 17px;
+    height: 25px;
+    float: left;
+    cursor: pointer;
+}
+/*ul.topnav li span.subhover {background-position: center bottom; cursor: pointer;} /*--Hover effect for trigger--*/
+ul.topnav li ul.subnav
+{
+    list-style: none;
+    position: absolute; /*--Important - Keeps subnav from affecting main navigation flow--*/
+    left: 0;
+    top: 35px;
+    margin: 0;
+    padding: 0;
+    display: none;
+    float: left;
+    width: 170px;
+}
+ul.topnav li ul.subnav li
+{
+    margin: 0;
+    padding: 0; /*border-top: 1px solid #252525; /*--Create bevel effect--*/ /*border-bottom: 1px solid #444; /*--Create bevel effect--*/
+    clear: both;
+    width: 170px;
+}
+html ul.topnav li ul.subnav li a
+{
+    float: left;
+    width: 145px;
+    padding-left: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+#popupContent
+{
+    display: none;
+}
+
+h2
+{
+    padding: 0px;
+    margin: 0px;
+    font-weight: bolder;
+    font-size: 13px;
+    text-align: center;
+}
+
+.popupHeader
+{
+    padding: 4px;
+    -moz-border-radius: 0.5em;
+    border-radius: 0.5em;
+    -webkit-border-radius: 0.5em;
+}
+
+.buttonPanel
+{
+    margin: 10px 0px;
+    text-align: left;
+}
+
+.closeButton
+{
+    height: 16px;
+    width: 16px;
+    border: 0px;
+    float: right;
+    cursor: pointer;
+    margin-right: -12px;
+    margin-top: -13px;
+}
+
+
+/*Growl Message*/
+div.growlUI
+{
+    background: url(/WebInterface/jQuery/images/check.png) no-repeat 10px 10px;
+}
+div.growlUI h1, div.growlUI h2
+{
+    padding: 5px 5px 5px 75px;
+    text-align: left;
+    font-size: 12px;
+}
+
+.growlError
+{
+    background: url(/WebInterface/jQuery/images/cancel2.png) no-repeat 10px 10px !important;
+}
+.growlWarning
+{
+    background: url(/WebInterface/jQuery/images/warning.png) no-repeat 10px 10px !important;
+}
+
+.starredMenu
+{
+    background: url(  "/WebInterface/jQuery/images/bullet_green.png" ) no-repeat scroll right top transparent;
+}
+
+
+#searchDiv td
+{
+    vertical-align: middle;
+    text-align: left;
+    font-size: 11px;
+}
+
+/* Tabular Presentation */
+.tbl
+{
+    border-collapse: collapse;
+}
+
+.tbl td
+{
+    overflow: hidden !important;
+}
+
+.tbl td label
+{
+    padding: 0px;
+    margin: 0px;
+}
+
+.tbl td input
+{
+    padding: 0px;
+    margin: 0px;
+    vertical-align: middle;
+}
+.tblRow td, .tblAltRow td
+{
+    padding: 5px;
+}
+.pageHeader td
+{
+    padding: 5px;
+}
+.pageHeader h2
+{
+    margin: 2px;
+    padding: 0px;
+    font-size: 15px;
+}
+/* End of Tabular Presentation*/
+
+.pointer
+{
+	cursor:pointer;
+}
+
+.error, .errorOverwrite
+{
+    font-size: 11px;
+    text-align: left;
+}
+
+.requiredField
+{
+    font-size: 11px;
+}
+
+.error, .errorOverwrite
+{
+    font-size: 11px;
+    text-align: left;
+}
+
+.validationFail
+{
+    border: 1px solid red;
+}
+
+.popupNote
+{
+    text-decoration: underline;
+}
+
+#searchResultNotification, #selectionOfItemsOptions
+{
+    font-size: 11px;
+    text-align: left;
+    padding: 5px 0px 5px 23px;
+    display: none;
+}
+
+#selectionOfItemsOptions
+{
+	padding-top:10px;
+	padding-bottom:10px;
+}
+
+ul.filesSelected,ul.filesSelectedInBasket
+{
+    padding: 0px;
+    margin: 5px 0px;
+    text-align: left;
+    list-style: none;
+    font-size: 12px;
+    height: 360px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.basketWindow
+{
+    z-index: 1001 !important;
+}
+
+.filesSelectedInBasket
+{
+    text-align: left;
+    font-size: 12px;
+    height: 420px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.filesSelectedInBasket ul
+{
+	padding: 0px;
+    margin: 5px 0px;
+    text-align: left;
+    list-style: none;
+}
+
+.filesSelectedInBasket td
+{
+	padding:5px !important;
+}
+
+ul.groupedItems
+{
+	padding: 0px;
+    margin: 5px 0px 10px 0px;
+	list-style:none;
+}
+
+ul.groupedItems li
+{
+	padding: 0px;
+    margin: 2px;
+	list-style:none;
+}
+
+.progressBar
+{
+    width: 98%;
+}
+
+ul.filesSelected li, ul.filesSelectedInBasket li
+{
+    padding: 7px 0px 7px 14px;
+    clear: both;
+    background: url(/WebInterface/jQuery/images/bullet_green.png) no-repeat 0px 6px;
+}
+
+.upload,.shareUploadedItem, .shareAllUploaded
+{
+    margin: 10px 0px 0px 0px;
+    font-size: 11px;
+    text-align: left;
+    padding: 5px 5px 5px 23px;
+    background: url(/WebInterface/jQuery/images/upload.png) no-repeat 5px 4px;
+}
+
+.shareUploadedItem, .shareAllUploaded
+{
+    background-image: url(/WebInterface/jQuery/images/application_form_add.png);
+}
+
+.overwriteLink
+{
+    margin: 10px 0px 0px 0px;
+    font-size: 11px;
+    text-align: left;
+    padding: 5px 5px 5px 23px;
+    background: url(/WebInterface/jQuery/images/page_white_copy.png) no-repeat 5px 4px;
+}
+
+.file
+{
+	margin: 10px 0px 0px 0px;
+    font-size: 11px;
+    text-align: left;
+    padding: 5px 5px 5px 23px;
+    background: url(/WebInterface/jQuery/images/file.png) no-repeat 5px 4px;
+}
+
+#resetUploadForm
+{
+    float: right;
+}
+
+a.nextButton
+{
+	margin: 0px;
+    font-size: 13px;
+    text-align: left;
+    padding: 2px 18px 5px 6px;
+    background: url(/WebInterface/jQuery/images/forward.png) no-repeat right 4px;
+    float: right;
+}
+
+a.whiteError
+{
+    margin: 10px 0px 0px 0px;
+    font-size: 11px;
+    text-align: left;
+    padding: 5px 5px 5px 23px;
+}
+
+.reupload, .redownload
+{
+    margin: 10px 0px 0px 0px;
+    font-size: 11px;
+    text-align: left;
+    padding: 5px 5px 5px 23px;
+    background: url(/WebInterface/jQuery/images/upload.png) no-repeat 5px 4px;
+}
+
+.redownload
+{
+	background: url(/WebInterface/jQuery/images/download.png) no-repeat 5px 4px;
+}
+
+.clearCompleted
+{
+    margin: 10px 0px 0px 0px;
+    font-size: 11px;
+    text-align: left;
+    padding: 5px 5px 5px 25px;
+    background: url(/WebInterface/jQuery/images/image_delete.png) no-repeat 5px 4px;
+    float: right;
+}
+
+.download, .shareBasketItems
+{
+    margin: 10px 0px 0px 0px;
+    font-size: 11px;
+    text-align: left;
+    padding: 5px 5px 5px 25px;
+    background: url(/WebInterface/jQuery/images/download.png) no-repeat 5px 4px;
+}
+
+.download.advanced
+{
+	background: url(/WebInterface/jQuery/images/basket_put.png) no-repeat 5px 4px;
+}
+
+.shareBasketItems
+{
+    background: url(/WebInterface/jQuery/images/application_form_add.png) no-repeat 5px 4px;
+}
+
+.completed
+{
+    margin: 10px 0px 0px 0px;
+    font-size: 11px;
+    text-align: left;
+    padding: 5px 5px 5px 25px;
+    background: url(/WebInterface/jQuery/images/image_delete.png) no-repeat 5px 4px;
+}
+
+.advancedBrowse
+{
+	width:200px;
+	padding:5px;
+}
+
+#advancedBrowseOptions
+{
+	float:right;
+	margin: 2px 0px 0px 10px;
+}
+
+.status
+{
+	margin:3px 0px;
+}
+
+.pause
+{
+    margin: 10px 0px 0px 3px;
+    font-size: 11px;
+    text-align: left;
+    padding: 5px 5px 5px 23px;
+    background: url(/WebInterface/jQuery/images/pause.png) no-repeat 5px 4px;
+}
+
+.resume
+{
+    margin: 10px 0px 0px 3px;
+    font-size: 11px;
+    text-align: left;
+    padding: 5px 5px 5px 23px;
+    background: url(/WebInterface/jQuery/images/resume.png) no-repeat 5px 4px;
+}
+
+.skip
+{
+    margin: 10px 0px 0px 3px;
+    font-size: 11px;
+    text-align: left;
+    padding: 5px 5px 5px 23px;
+    background: url(/WebInterface/jQuery/images/control_fastforward.png) no-repeat 5px 4px;
+}
+
+.stop
+{
+    margin: 10px 0px 0px 0px;
+    font-size: 11px;
+    text-align: left;
+    padding: 5px 5px 5px 23px;
+    background: url(/WebInterface/jQuery/images/stop.png) no-repeat 5px 4px;
+}
+
+.appletActionButtons
+{
+    margin:5px 0;
+    padding:5px;
+}
+
+.attention
+{
+    margin: 10px 0px 0px 0px;
+    font-size: 12px;
+    text-align: left;
+    padding: 3px 0px 0px 24px;
+    background: url(/WebInterface/jQuery/images/exclamation.png) no-repeat 5px 4px;
+    float: left;
+}
+
+.uploadFormPanel
+{
+    margin: 10px 0px;
+}
+
+.time, .speed, .uploadPath
+{
+    font-size: 10px;
+    margin: 3px 0px;
+}
+
+.uploadStatusLabel
+{
+	font-size: 11px;
+	float: right;
+	margin: -2px 4px 0px 0px;
+}
+
+.autoReplyOptionPanel
+{
+    text-align: right;
+    margin: 5px 0px;
+    padding: 5px 0px 0px 0px;
+}
+
+.autoReplyOptionPanel label
+{
+    cursor: pointer;
+}
+
+.uploadCancel
+{
+    font-size: 10px;
+    margin-right: 7px;
+}
+
+.spinner
+{
+    background: url(/WebInterface/jQuery/images/spinner.gif) left no-repeat !important;
+    background-position: 0 0px;
+    height: 18px;
+}
+
+.spinnerAdvanced
+{
+	background-position: 5px 5px !important;
+	height:auto !important;
+}
+
+.padlock
+{
+    background: url(/WebInterface/jQuery/images/padlock.png) left no-repeat;
+    background-position: 9px 4px;
+    padding-left: 30px !important;
+    font-style: italic;
+}
+
+.attention2
+{
+    background: url(/WebInterface/jQuery/images/exclamation.png) left no-repeat;
+    background-position: 0 0px;
+}
+
+
+#browserFileUpload h2
+{
+    height: 18px;
+}
+
+.mainProcessIndicator
+{
+    right:30px;
+    margin-top: 5px;
+    margin-right: 5px;
+    display: none;
+    z-index: 999999;
+	position:absolute;
+}
+
+.wordwrap
+{
+    white-space: pre-wrap; /* css-3 */
+    white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+    white-space: -pre-wrap; /* Opera 4-6 */
+    white-space: -o-pre-wrap; /* Opera 7 */
+    word-wrap: break-word; /* Internet Explorer 5.5+ */
+}
+
+/*Custom tabs*/
+.customtabs
+{
+    margin: 20px 0px 0px 0px;
+}
+.customtabs a
+{
+    padding: 6px 19px;
+    text-decoration: none;
+    font-weight: bold;
+    -moz-border-radius: 0.5em 0.5em 0em 0em;
+    border-radius: 0.5em 0.5em 0em 0em;
+    -webkit-border-radius: 0.5em 0.5em 0em 0em;
+}
+
+.tab_content
+{
+    padding: 10px;
+    -moz-border-radius-topright: 0.5em;
+    border-radius-topright: 0.5em;
+    -webkit-border-radius-topright: 0.5em;
+    margin: 6px 0px 10px 0px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.dragOver
+{
+	margin:10px 0;
+	border-width: 5px;
+	border-style: dashed;
+}
+
+.itemCount, .comments
+{
+    font: 12px "Lucida Grande" , Lucida, Verdana, sans-serif;
+    margin: 2px 0px;
+	padding:5px;
+}
+
+.itemCount
+{
+	float:left;
+	line-height:20px;
+}
+
+/* CSS Form *****************************/
+.myForm
+{
+    display: block;
+    clear: both;
+    font-size: 12px;
+    color: black;
+    text-align: left;
+}
+
+.myForm input[type=text], .myForm textarea
+{
+    padding: 2px;
+}
+
+.myForm input[type=text]
+{
+    width: 375px;
+}
+
+.submit
+{
+    text-align: right;
+}
+
+.submit input
+{
+    margin: 2px;
+}
+
+.myForm fieldset
+{
+    width: 97%;
+    margin: 0px;
+    padding: 5px 5px 0px 10px;
+    margin-top: 10px;
+}
+
+.myForm legend
+{
+    padding: 0px;
+    padding: 3px 18px;
+    -moz-border-radius: 0.5em 0.5em 0 0;
+    border-radius: 0.5em 0.5em 0 0;
+    -webkit-border-radius: 0.5em 0.5em 0 0;
+    font-weight: bolder;
+    margin: 0px;
+}
+
+/* End of CSS Form *****************************/
+
+.filesProcessed
+{
+	float:left;
+	margin:0 0 5px 2px;
+}
+
+/*****************HEADER**************************/
+#header, #footer
+{
+	margin:5px 0px;
+	clear:both;
+	-moz-border-radius: 10px 10px 10px 10px;
+    border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+}
+
+div.headerContent
+{
+	padding:5px;
+}
+
+div#headerText
+{
+	float:left;
+	margin:5px;
+}
+
+#footer div.footerContent
+{
+	padding:5px;
+	-moz-border-radius: 10px 10px 10px 10px;
+    border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+}
+
+#headerImages div
+{
+	margin:0px;
+	display:inline-block;
+	padding: 2px;
+}
+
+#headerImages div.directoryPreview
+{
+	float:right;
+	margin-right:10px;
+	margin-top:7px;
+	margin-bottom:7px;
+	overflow:hidden;
+	text-align:right;
+}
+
+#headerImages div.logo
+{
+	float:left;
+	padding-left:5px;
+	padding-top:5px;
+}
+
+#headerImages img
+{
+	border:none;
+}
+
+#headerImages div.logoCenter
+{
+	margin-left:100px;
+}
+
+.sectionLabel
+{
+    padding: 0px;
+    margin: 0px;
+    font-weight: bolder;
+    font-size: 13px;
+}
+
+.popupWindow
+{
+	-moz-border-radius:10px 10px 10px 10px;
+    border-radius:10px 10px 10px 10px;
+	-webkit-border-radius: 10px 10px 10px 10px;
+	left:50%;
+	margin:0 0 0 -230px;
+	padding:15px;
+	text-align:center;
+	top:25px;
+	width:460px;
+	z-index:1000;
+}
+
+#filesListing .blockUI
+{
+	z-index:999 !important;
+}
+
+.manageShareTable tr
+{
+	cursor:pointer;
+}
+.manageShareTable th
+{
+	padding-right:20px;
+}
+.manageShareTable td
+{
+	padding:5px;
+	vertical-align:top;
+}
+
+.manageShareTable .thItems
+{
+	width:180px;
+	overflow:hidden;
+}
+
+.shareItemDetails
+{
+	text-align:left;
+	cursor:text;
+	float:left;
+	width:100%;
+}
+
+.shareItemDetails label
+{
+	font-weight:bolder;
+	margin-right:10px;
+}
+
+.shareItemDetails div
+{
+	padding:5px;
+}
+
+.itemDetails td
+{
+	padding:0px !important;
+	border:0px !important;
+	cursor:text;
+}
+
+.manageSharePaths
+{
+	width:180px;
+	overflow:hidden;
+	max-height:80px;
+}
+
+.manageShareDetails
+{
+    width: 950px;
+    overflow: hidden;
+    overflow-x: auto;
+}
+
+.ui-slider .ui-slider-handle
+{
+	cursor:move !important;
+}
+
+.chkBoxPanel
+{
+	padding:5px;
+	margin:0px 2px;
+}
+
+/*Pagination*/
+.pagination {
+	font-size: 80%;
+	margin:5px;
+}
+
+.pagination a {
+    text-decoration: none;
+}
+
+.pagination a, .pagination span {
+    display: block;
+    float: left;
+    padding: 0.3em 0.5em;
+    margin-right: 5px;
+	margin-bottom: 5px;
+}
+
+#mainNavigation.stick, #fileQueueInfo.stick, #dropItemsPanel.stick
+{
+    position: fixed !important;
+    top: -3px;
+	left:0px;
+	border-width:7px;
+    z-index: 98;
+	width:99%;
+	padding: 0px;
+    margin: 0px;
+}
+
+#fileQueueInfo.stick
+{
+    top:32px;
+    border-width:2px;
+    left:7px;
+    z-index:98;
+}
+
+#dropItemsPanel.stick
+{
+    z-index:100 !important;
+    top:32px;
+}
+
+#logoutLinkTopCorner
+{
+    position: absolute !important;
+    top: 15px;
+	right: 15px;
+	display: inline-block;
+    background: url("/WebInterface/jQuery/images/padlock.png" ) no-repeat scroll 5px 0px transparent;
+    padding-left: 25px;
+	height:20px;
+}
+
+.fastUploadIcon
+{
+    background: url(/WebInterface/jQuery/images/lightning.png) left no-repeat;
+	display: inline-block;
+	height:16px;
+	width:16px;
+	margin-top:6px;
+}
+
+.slowUploadIcon
+{
+    display: inline-block;
+	height:16px;
+	width:16px;
+}
+
+.ui-dialog-buttonpane
+{
+	border:0px;
+	margin:0px !important;
+}
+
+.ui-widget
+{
+	font-family: Verdana, sans-serif !important;
+}
+
+#cluetip
+{
+	text-align:left;
+    z-index: 1007 !important;
+    max-width: 800px;
+}
+
+.blockUI
+{
+    z-index: 1002 !important;
+}
+
+.growlNote
+{
+    font-size: 11px;
+    font-weight: normal;
+}
+
+#loadingIndicator {
+    background: url("/WebInterface/Resources/images/loading.gif") no-repeat 5px 5px !important;
+    padding-left: 25px;
+    margin:10px 0px 0px 20px;
+}
+
+.loadingIndicatorWindow .ui-dialog-titlebar {
+    display: none;
+}
+
+#javaAppletDiv
+{
+    bottom: 3px;
+    height: 50px !important;
+    width: 100% !important;
+    position: fixed !important;
+}
+
+.appletNote
+{
+    padding:5px;
+    font-weight: bold;
+    font-size: 12px;
+    text-align: center;
+    position: absolute;
+    margin-top: -20px;
+    display: block;
+    width: 100%;
+    background: #F0F7CD;
+    padding-bottom: 5px;
+    border-bottom:1px solid #90947B;
+}
+
+td.syncItem
+{
+    background: url("/WebInterface/Resources/images/logo_sync.png") no-repeat 98% 5px;
+    padding-right: 10px;
+}
+
+li.syncItem
+{
+    background: url("/WebInterface/Resources/images/logo_sync.png") no-repeat 15px 15px;
+}
+
+#manageSyncPanel
+{
+    overflow: hidden;
+}
+
+#cboxPhoto
+{
+    z-index: 120;
+}
+
+.exifInformationList
+{
+    max-height: 350px;
+    overflow: hidden;
+    overflow-y: auto;
+    padding: 0px;
+    margin: 0px;
+}
+
+.exifInfoPanel
+{
+    position: fixed;
+    left: 0px;
+    top: 10px;
+    -moz-opacity:.80 !important;
+    filter:alpha(opacity=80) !important;
+    opacity:.80 !important;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border-radius: 10px 10px 10px 10px;
+    width:500px;
+    padding: 10px;
+    margin:5px;
+    z-index: 9999;
+}
+
+.exifInfoPanel tr.hover
+{
+    background: #1A1A1A;
+}
+
+.exifInfoPanel td
+{
+    padding: 3px;
+    vertical-align: middle;
+}
+
+.exifInfoPanel td.key
+{
+    width: 220px;
+    text-align: right;
+    font-weight: bolder;
+}
+
+.exifInfoPanel td.val
+{
+    width: 235px;
+    display: inline-block;
+    white-space: pre-wrap; /* css-3 */
+    white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+    white-space: -pre-wrap; /* Opera 4-6 */
+    white-space: -o-pre-wrap; /* Opera 7 */
+    word-wrap: break-word; /* Internet Explorer 5.5+ */
+    overflow: hidden;
+}
+
+.exifInfoPanel td.edit
+{
+    width: 20px;
+}
+
+.exifClose
+{
+    height: 16px;
+    width: 16px;
+    border: 0px;
+    float: right;
+    cursor: pointer;
+    margin-right: -12px;
+    margin-top: -7px;
+    font-weight: bolder;
+}
+
+.exifInfoPanelCollapsed
+{
+    width: 62px;
+    height: 20px;
+    padding: 5px 7px 0px 9px;
+    cursor: pointer;
+}
+
+.exifInfoPanel .showExifLink
+{
+    display: none;
+}
+
+.exifInfoPanelCollapsed .exifContent
+{
+    display: none;
+}
+
+.exifInfoPanelCollapsed .showExifLink
+{
+    display: block !important;
+}
+
+.editExif
+{
+    height: 16px;
+    width: 16px;
+    border: 0px;
+    cursor: pointer;
+    background: url(/WebInterface/jQuery/images/pencil.png) no-repeat 0px 0px;
+    display: block;
+    cursor: pointer;
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%); -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%); -o-filter: grayscale(100%);
+    filter: gray;
+    -webkit-filter: grayscale(1);
+}
+
+.editExif:hover
+{
+    filter: grayscale(0%);
+    -webkit-filter: grayscale(0%); -moz-filter: grayscale(0%);
+    -ms-filter: grayscale(0%); -o-filter: grayscale(0%);
+    filter: none;
+    -webkit-filter: grayscale(0);
+}
+
+.syncSc
+{
+    font-size: 10px;
+    -moz-opacity:.70 !important;
+    filter:alpha(opacity=70) !important;
+    opacity:.70 !important;
+}
+
+.emptyFolder .imgWrapper img
+{
+    -moz-opacity:.50 !important;
+    filter:alpha(opacity=50) !important;
+    opacity:.50 !important;
+}
+
+.emptyFolder .directory a
+{
+    -moz-opacity:.50 !important;
+    filter:alpha(opacity=50) !important;
+    opacity:.50 !important;
+}
+
+.stop-scrolling {
+  height: 100%;
+  overflow: hidden;
+}
+
+li .framePreviewBox
+{
+    width: 110px;
+    height: 90px;
+    margin: 2px;
+    position: absolute;
+    left:50%;
+    top:50%;
+    margin-left:-55px;
+    margin-top:-68px;
+    overflow: hidden;
+}
+
+li .framePreviewBox div
+{
+    width:40px;
+    height:40px;
+    float: left;
+    margin: 0px 8px 3px 5px;
+    overflow: hidden;
+    -moz-opacity:.60 !important;
+    filter:alpha(opacity=60) !important;
+    opacity:.60 !important;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+}
+
+td .framePreviewBox
+{
+    width: 110px;
+    height: 20px;
+    margin: 2px;
+    overflow: hidden;
+    float: right;
+    right: 5px;
+}
+
+td .framePreviewBox div
+{
+    width:20px;
+    height:18px;
+    float: right;
+    margin: 0px 2px;
+    overflow: hidden;
+    -moz-opacity:.70 !important;
+    filter:alpha(opacity=70) !important;
+    opacity:.70 !important;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+}
+
+.framePreviewBox div:hover
+{
+    -moz-opacity:1 !important;
+    filter:alpha(opacity=100) !important;
+    opacity:1 !important;
+}
+
+.iOS td.columnName.directory a
+{
+    margin-top: -3px;
+    position: relative;
+    background-position: 0px 5px !important;
+    font-family: Verdana, sans-serif !important;
+    font-size: 11px !important;
+    line-height: 25px !important;
+}
+
+.iOS td.columnName.fileTR a
+{
+    margin-top: -3px;
+    position: absolute;
+    font-family: Verdana, sans-serif !important;
+    font-size: 11px !important;
+    line-height: 25px !important;
+}
+
+.ui-notify { width: 355px;position: fixed;top: 95px;right: 12px;}
+.ui-notify-message { padding:10px; margin-bottom:15px; -moz-border-radius:8px; -webkit-border-radius:8px; border-radius:8px }
+.ui-notify-message h2 { font-size:14px; margin:0; padding:0;text-align: left; }
+.ui-notify-message p { margin:3px 0; padding:0; line-height:18px }
+.ui-notify-message:last-child { margin-bottom:0 }
+.ui-notify-message-style { -moz-box-shadow: 0 0 6px #000; -webkit-box-shadow: 0 0 6px #000; box-shadow: 0 0 6px #000; }
+.ui-notify-message-style h2 {font-weight:bold }
+.ui-notify-message-style p { }
+.ui-notify-close { text-decoration:underline }
+.ui-notify-click { cursor:pointer }
+.ui-notify-cross { margin-top:-4px; float:right; cursor:pointer; text-decoration:none; font-size:12px; font-weight:bold; text-shadow:0 1px 1px #fff; padding:2px }
+.ui-notify-cross:hover { }
+.ui-notify-cross:active { position:relative; top:1px }
+
+.dragdropItems
+{
+    z-index: 2000;
+    padding: 5px;
+    margin:0px;
+    -moz-box-shadow: 0 0 6px #000; -webkit-box-shadow: 0 0 6px #000; box-shadow: 0 0 6px #000;
+}
+
+.dragdropItems li
+{
+    list-style: none;
+    padding: 4px;
+    margin: 2px;
+}
+
+#dragUIInformationPopup
+{
+    z-index: 1010;
+    display: none;
+    position: fixed;
+    width: 470px;
+    padding: 5px 10px;
+    left: 50%;
+    margin-left: -235px;
+    top: -3px;
+    -moz-box-shadow: 0 0 6px #000; -webkit-box-shadow: 0 0 6px #000; box-shadow: 0 0 6px #000;
+}
+
+#fileExistConfirm ul
+{
+    max-height: 150px;
+    overflow: auto;
+    list-style: none;
+    padding: 4px;
+    margin: 2px;
+}
+
+#fileExistConfirm ul li
+{
+    list-style: none;
+    padding: 2px 4px;
+    margin: 1px;
+}
+
+.confirmClass .ui-dialog-buttonpane
+{
+    background-color: inherit !important;
+    padding: 10px 5px !important;
+}
+
+.confirmClass .ui-dialog-buttonpane button
+{
+    padding: 0px !important;
+}
+
+.confirmClass .ui-dialog-buttonpane button
+{
+    margin: 3px !important;
+}
+
+.playBtn
+{
+    background-image: url(/WebInterface/jQuery/images/play.png);
+    background-repeat: no-repeat;
+    cursor: pointer;
+    width: 64px;
+    height: 64px;
+    position: absolute;
+    top:50%;
+    left:50%;
+    margin-left: -32px;
+    margin-top: -55px;
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%); -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%); -o-filter: grayscale(100%);
+    filter: gray;
+    -webkit-filter: grayscale(1);
+}
+
+.playBtn:hover
+{
+    filter: grayscale(0%);
+    -webkit-filter: grayscale(0%); -moz-filter: grayscale(0%);
+    -ms-filter: grayscale(0%); -o-filter: grayscale(0%);
+    filter: none;
+    -webkit-filter: grayscale(0);
+}
+
+#shareOptionDiv .multipleSelect label
+{
+    margin: 3px;
+    padding: 4px 7px 4px 3px;
+    float: left;
+}
+
+#shareOptionDiv .multipleSelect input
+{
+    margin-right:5px;
+}
+
+.leftborder
+{
+  border-right:0px !important;
+  border-top:0px !important;
+  border-bottom:0px !important;
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 0px;
+}

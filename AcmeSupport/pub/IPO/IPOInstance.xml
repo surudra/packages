@@ -1,0 +1,40 @@
+<ipo:purchaseOrder xmlns:ipo="http://www.example.com/IPO" orderDate="2012-08-15">
+  <shipTo export-code="1" xsi:type="ipo:EU-Address"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <ipo:name>Helen Smith</ipo:name>
+    <ipo:street>4711 Paradise Street</ipo:street>
+    <ipo:city>Oxford</ipo:city>
+    <ipo:postcode>126</ipo:postcode>
+  </shipTo>
+  <billTo xsi:type="ipo:US-Address"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <ipo:name>Robert Smith</ipo:name>
+    <ipo:street>8 Oak Avenue</ipo:street>
+    <ipo:city>North Hollywood</ipo:city>
+    <ipo:state>CA</ipo:state>
+    <ipo:zip>91606</ipo:zip>
+  </billTo>
+  <ipo:comment>This is a private order</ipo:comment>
+  <Items>
+    <item partNum="833-AA">
+      <productName>Lapislazuli necklace</productName>
+      <quantity>2</quantity>
+      <price>99.95</price>
+      <shipDate>2012-12-05</shipDate>
+    </item>
+    <item partNum="163-QQ">
+      <productName>Diamond Ring</productName>
+      <quantity>1</quantity>
+      <price>2199.99</price>
+      <ipo:comment>Please call me before shipping</ipo:comment>
+      <shipDate>2012-08-19</shipDate>
+    </item>
+    <item partNum="384-AM">
+      <productName>Cufflinks</productName>
+      <quantity>1</quantity>
+      <price>695.34</price>
+      <ipo:comment>For my own pleasure</ipo:comment>
+      <shipDate>2012-08-17</shipDate>
+    </item>
+  </Items>
+</ipo:purchaseOrder>

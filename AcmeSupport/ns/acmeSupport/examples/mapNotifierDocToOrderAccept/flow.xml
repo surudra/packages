@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<FLOW VERSION="3.0" CLEANUP="true">
+  <COMMENT>Note:  SenderID/ReceiverIDs are CROSS mapped</COMMENT>
+
+  <!-- nodes -->
+
+<MAP TIMEOUT="" MODE="STANDALONE">
+  <COMMENT>Note:  SenderID/ReceiverID are CROSS mapped</COMMENT>
+  <MAPTARGET>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="nillable">true</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="field_name">TestDBinfo</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="rec_closed">true</value>
+        <value name="rec_ref">acmeSupport.docs:TestDBinfo</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="field_name">OrderAccept</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="rec_closed">true</value>
+        <value name="rec_ref">acmeSupport.docs:OrderAccept</value>
+      </record>
+    </array>
+  </record>
+</Values>
+</MAPTARGET>
+  <MAPSOURCE>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="nillable">true</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="field_name">TestDBinfo</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="rec_closed">true</value>
+        <value name="rec_ref">acmeSupport.docs:TestDBinfo</value>
+      </record>
+    </array>
+  </record>
+</Values>
+</MAPSOURCE>
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/TestDBinfo;4;0;acmeSupport.docs:TestDBinfo/TOTAL_COST;1;0" TO="/OrderAccept;4;0;acmeSupport.docs:OrderAccept/PurchaseOrderAcceptance;2;0/PurchaseOrder;2;0/totalCost;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/TestDBinfo;4;0;acmeSupport.docs:TestDBinfo/RECEIVER_ID;1;0" TO="/OrderAccept;4;0;acmeSupport.docs:OrderAccept/PurchaseOrderAcceptance;2;0/fromRole;2;0/PartnerRoleDescription;4;0;acmeSupport.docs:docType_PartnerRoleDescription/DUNS;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/TestDBinfo;4;0;acmeSupport.docs:TestDBinfo/SENDER_ID;1;0" TO="/OrderAccept;4;0;acmeSupport.docs:OrderAccept/PurchaseOrderAcceptance;2;0/toRole;2;0/PartnerRoleDescription;4;0;acmeSupport.docs:docType_PartnerRoleDescription/DUNS;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/TestDBinfo;4;0;acmeSupport.docs:TestDBinfo/ORDER_DATE;1;0" TO="/OrderAccept;4;0;acmeSupport.docs:OrderAccept/PurchaseOrderAcceptance;2;0/thisDocumentGenerationDateTime;2;0/DateTimeStamp;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/TestDBinfo;4;0;acmeSupport.docs:TestDBinfo/ORDER_ID;1;0" TO="/OrderAccept;4;0;acmeSupport.docs:OrderAccept/PurchaseOrderAcceptance;2;0/thisDocumentIdentifier;2;0/ProprietaryDocumentIdentifier;1;0">
+</MAPCOPY>
+</MAP>
+</FLOW>

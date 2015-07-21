@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <record name="transactions" javaclass="com.wm.util.Values">
+    <record name="setAutoInvoiceTxn" javaclass="com.wm.util.Values">
+      <value name="transactionName">setAutoInvoiceTxn</value>
+      <value name="transactionType">IN</value>
+      <value name="errSQL">SELECT 
+rae.INTERFACE_LINE_ID, 
+rae.INTERFACE_SALESCREDIT_ID, 
+rae.INTERFACE_DISTRIBUTION_ID, 
+rae.MESSAGE_TEXT, 
+rae.INVALID_VALUE, 
+rae.LINK_TO_LINE_ID, 
+rae.ORG_ID 
+FROM RA_INTERFACE_ERRORS_ALL rae, 
+RA_INTERFACE_LINES_ALL ral 
+WHERE ral.INTERFACE_LINE_ID = rae.INTERFACE_LINE_ID 
+AND ral.BATCH_SOURCE_NAME = '&amp;BATCH_SOURCE_NAME*' </value>
+      <record name="table0" javaclass="com.wm.util.Values">
+        <value name="tableName">RA_INTERFACE_DISTRIBUTIONS_ALL</value>
+        <value name="required">false</value>
+      </record>
+      <record name="table1" javaclass="com.wm.util.Values">
+        <value name="tableName">RA_INTERFACE_LINES_ALL</value>
+        <value name="required">true</value>
+      </record>
+      <record name="table2" javaclass="com.wm.util.Values">
+        <value name="tableName">RA_INTERFACE_SALESCREDITS_ALL</value>
+        <value name="required">false</value>
+      </record>
+    </record>
+  </record>
+  <record name="FILE_INFO" javaclass="com.wm.util.Values">
+    <value name="OA_RELEASE">1159</value>
+    <value name="DESCRIPTION"></value>
+    <value name="CREATE_HOST">webMethods</value>
+    <value name="CREATE_IM_VER">3.1</value>
+    <value name="CREATE_DATE">May 6, 2004 8:33:07 PM</value>
+  </record>
+</Values>

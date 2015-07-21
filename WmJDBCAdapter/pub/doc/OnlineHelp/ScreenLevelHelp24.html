@@ -1,0 +1,477 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="GENERATOR" content="Quadralay WebWorks Publisher Professional Edition 7.0" />
+  <meta name="TEMPLATEBASE" content="wM_WWH20030908" />
+  <meta name="LASTUPDATED" content="12/04/06 19:31:53" />
+  <title>OrderedNotification Template Screens</title>
+  <link rel="StyleSheet" href="document.css" type="text/css" />
+  <link rel="StyleSheet" href="catalog.css" type="text/css" />
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+ </head>
+
+ <body onLoad="WWHUpdate();">
+
+
+<a name="wp1101083"> </a><h2 class="pNewHTMLPage">
+OrderedNotification Template Screens
+</h2><a name="wp1101084"> </a><p class="pBody">
+An OrderedNotification publishes notification data for multiple Insert, Update, or Delete operations on multiple tables.
+</p>
+<a name="wp1101085"> </a><p class="pBody">
+This adapter notification template includes the following tabs:
+</p>
+<a name="wp1101089"> </a><p class="pChapterTOC">
+<img src="images/bullet.gif" height="13" width="10" border="0" />
+<a  href="ScreenLevelHelp24.html#wp1101103">Notification Configure Tab</a>
+</p>
+<a name="wp1101093"> </a><p class="pChapterTOC">
+<img src="images/bullet.gif" height="13" width="10" border="0" />
+<a  href="ScreenLevelHelp24.html#wp1101148">Source Tables Tab</a>
+</p>
+<a name="wp1101097"> </a><p class="pChapterTOC">
+<img src="images/bullet.gif" height="13" width="10" border="0" />
+<a  href="ScreenLevelHelp24.html#wp1101179">SELECT Tab</a>
+</p>
+<a name="wp1101101"> </a><p class="pChapterTOC">
+<img src="images/bullet.gif" height="13" width="10" border="0" />
+<a  href="ScreenLevelHelp24.html#wp1101249">WHEN Tab</a>
+</p>
+<a name="wp1101103"> </a><h4 class="pHeading3">
+Notification Configure Tab
+</h4>
+<a name="wp1101104"> </a><p class="pBody">
+Use the <b class="cBold">Notification Configure</b> tab as follows:
+</p>
+<a name="wp1101145"> </a><p class="pAnchor">
+</p><div align="left">
+<table border="0">
+  <caption></caption>
+  <tr align="left" valign="bottom">    <th><a name="wp1101107"> </a><div style="text-align: left" class="pCellHeading">
+Field
+<hr />
+</div>
+</th>
+    <th><a name="wp1101109"> </a><div style="text-align: left" class="pCellHeading">
+Description
+<hr />
+</div>
+</th>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1107365"> </a><p class="pBody">
+<b class="cBold">Base Name</b>
+</p>
+</td>
+    <td><a name="wp1107367"> </a><p class="pBody">
+The base name used to generate the <b class="cBold">Resource Name</b> created by the JDBC Adapter.
+</p>
+<a name="wp1107371"> </a><p class="pBody">
+The base name determines the corresponding <b class="cBold">Resource Types </b>and<b class="cBold"> Resource Name</b>.
+</p>
+<a name="wp1107372"> </a><p class="pNote">
+<b>Note:</b> For OS/390 DB2V7.2, the <b class="cBold">Base Name </b>you create below must be no more than 5 characters because triggers on OS/390 name cannot be more than 8 characters.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1120523"> </a><p class="pBody">
+<b class="cBold">Publish Locally</b>
+</p>
+</td>
+    <td><a name="wp1120525"> </a><p class="pBody">
+Specifies whether to publish the notification’s publishable document to the local Integration Server.
+</p>
+<a name="wp1120529"> </a><p class="pBody">
+By default, this option is not selected, that is, if the webMethods Broker is configured to the Integration Server, the publishable document is published to the Broker; otherwise the publishable document is published to the local Integration Server.
+</p>
+<a name="wp1120533"> </a><p class="pBody">
+Selecting the <b class="cBold">Publish Locally</b> option reduces performance problems, if the Integration Server is connecting to a remotely located Broker that is in turn triggering a service on the local Integration Server.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1101119"> </a><p class="pBody">
+<b class="cBold">Resource Type</b>
+</p>
+</td>
+    <td><a name="wp1101121"> </a><p class="pBody">
+Types are buffer table, trigger, and sequence.
+</p>
+<a name="wp1101122"> </a><p class="pBody">
+For information about resource types, see the <em class="cEmphasis">webMethods JDBC Adapter User’s Guide</em>.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1101127"> </a><p class="pBody">
+<b class="cBold">Resource Name</b>
+</p>
+</td>
+    <td><a name="wp1101129"> </a><p class="pBody">
+To ensure uniqueness, the resource name combines the following elements. You do not edit this name.
+</p>
+<div class="pSmartList1" style="margin-top: 7pt"><ul class="pSmartList1" style="margin-top: 7pt">
+<a name="wp1101130"> </a><div style="margin-top: 7pt" class="pSmartList1"><li>Resource prefix (WMB, WMT, and WMS for buffer table, trigger, and sequence respectively)</li></div>
+<a name="wp1101131"> </a><div style="margin-top: 7pt" class="pSmartList1"><li>The name you typed in the <b class="cBold">Base Name </b>field</li></div>
+<a name="wp1101132"> </a><div style="margin-top: 7pt" class="pSmartList1"><li>A suffix, based on a system timestamp</li></div>
+</ul></div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1101134"> </a><p class="pBody">
+<b class="cBold">File Record Format</b>
+</p>
+</td>
+    <td><a name="wp1101136"> </a><p class="pBody">
+Optional field for DB2 for AS400 V4R5 only.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1101138"> </a><p class="pBody">
+<b class="cBold">Database Name</b>
+</p>
+</td>
+    <td><a name="wp1101878"> </a><p class="pBody">
+The name of the database where the buffer tables will be created.
+</p>
+<a name="wp1101879"> </a><p class="pBody">
+Optional field used by DB2 for OS/390 only.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1101142"> </a><p class="pBody">
+<b class="cBold">Table Space Name</b>
+</p>
+</td>
+    <td><a name="wp1101881"> </a><p class="pBody">
+The table space where the buffer tables will be created.
+</p>
+<a name="wp1101882"> </a><p class="pBody">
+Optional field used by DB2 for OS/390 only.
+</p>
+</td>
+</tr>
+</table>
+</div>
+<p class="pAnchor">
+</p>
+<a name="wp1101148"> </a><h4 class="pHeading3">
+Source Tables Tab
+</h4>
+<a name="wp1101149"> </a><p class="pBody">
+Use the Source Tables tab as follows:
+</p>
+<a name="wp1101176"> </a><p class="pAnchor">
+</p><div align="left">
+<table border="0">
+  <caption></caption>
+  <tr align="left" valign="bottom">    <th><a name="wp1101152"> </a><div style="text-align: left" class="pCellHeading">
+Field
+<hr />
+</div>
+</th>
+    <th><a name="wp1101154"> </a><div style="text-align: left" class="pCellHeading">
+Description/Action
+<hr />
+</div>
+</th>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1101156"> </a><p class="pBody">
+<b class="cBold">Table Alias</b>
+</p>
+</td>
+    <td><a name="wp1101158"> </a><p class="pBody">
+The table alias is automatically assigned when you select more than one table in the <b class="cBold">Table Name</b> field. The default is <code class="cCode">t1</code>. 
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1101160"> </a><p class="pBody">
+<b class="cBold">Table Name</b>
+</p>
+</td>
+    <td><a name="wp1101162"> </a><p class="pBody">
+Select a table name. The default for the associated catalog name is <code class="cCode">current catalog</code>. The default for the associated schema name is <code class="cCode">current schema</code>. 
+</p>
+<a name="wp1101163"> </a><p class="pBody">
+For AS400 DB2 V4R5 version using a jt400.jar file, the table name for the notification cannot exceed 10 characters; otherwise an exception will be generated when you try to enable the notification.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1101165"> </a><p class="pBody">
+<b class="cBold">Type</b>
+</p>
+</td>
+    <td><a name="wp1101167"> </a><p class="pBody">
+The table type displays automatically based on the table you select.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1101169"> </a><p class="pBody">
+<b class="cBold">Operation Type</b>
+</p>
+</td>
+    <td><a name="wp1101171"> </a><p class="pBody">
+Select INSERT, UPDATE, or DELETE operation.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1101173"> </a><p class="pBody">
+<b class="cBold">Operation ID</b>
+</p>
+</td>
+    <td><a name="wp1101175"> </a><p class="pBody">
+Assign an ID to unique identify the given operation for the notification.
+</p>
+</td>
+</tr>
+</table>
+</div>
+<p class="pAnchor">
+</p>
+<a name="wp1101179"> </a><h4 class="pHeading3">
+SELECT Tab
+</h4>
+<a name="wp1101180"> </a><p class="pBody">
+Use the <b class="cBold">SELECT</b> tab to define the columns and fields to be selected using the following fields: 
+</p>
+<div class="pSmartList1" style="margin-top: 5pt"><ol type="1" class="pSmartList1" style="margin-top: 5pt">
+<a name="wp1101181"> </a><div style="margin-top: 5pt" class="pSmartList1"><li>In the <b class="cBold">ALL/DISTINCT</b> field, select <b class="cBold">ALL</b> to include duplicate rows or <b class="cBold">DISTINCT</b> to suppress duplicate rows. Otherwise leave this field blank, which is the default value.</li></div>
+<a name="wp1101188"> </a><div style="margin-top: 7pt" class="pSmartList1"><li>Select the <b class="cBold">Insert Row</b> icon <img src="images/table_insertrow.gif" border="0" hspace="0" vspace="0"/> (or the <b class="cBold">Fill in all rows to the table</b> icon <img src="images/append_all_rows.gif" border="0" hspace="0" vspace="0"/>) to create new fields as needed. For each <b class="cBold">Expression</b> column you select, the corresponding <b class="cBold">Operation ID</b>, <b class="cBold">Column Type</b>, <b class="cBold">JDBC Type</b>, <b class="cBold">Output Field Type</b>, and <b class="cBold">Output Field </b>display.</li></div>
+<a name="wp1101201"> </a><p class="pAnchor">
+<div align="left">
+<table border="0">
+  <caption></caption>
+  <tr align="left" valign="top">    <td><a name="wp1101191"> </a><p class="px_Note">
+&#160;
+<img src="images/note_icon.gif" height="25" width="25" border="1" alt="Note" />
+</p>
+</td>
+    <td><a name="wp1101197"> </a><p class="pNote">
+<b>Note:</b>  You can use the BigDecimal data type with the JDBC Adapter. However, the webMethods Developer does not support the BigDecimal data type. This means that the Developer will not correctly display a BigDecimal data type result and you cannot enter a value of this data type. However, the JDBC Adapter will process the BigDecimal data type correctly.
+</p>
+</td>
+</tr>
+</table>
+</div>
+ 
+</p>
+<a name="wp1101246"> </a><p class="pBodyRelative">
+Use the following fields:<div align="left">
+<table border="0">
+  <caption></caption>
+  <tr align="left" valign="bottom">    <th><a name="wp1101204"> </a><div style="text-align: left" class="pCellHeading">
+Field
+<hr />
+</div>
+</th>
+    <th><a name="wp1101206"> </a><div style="text-align: left" class="pCellHeading">
+Description/Action
+<hr />
+</div>
+</th>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1101208"> </a><p class="pBody">
+<b class="cBold">Expression</b>
+</p>
+</td>
+    <td><a name="wp1101210"> </a><p class="pBody">
+The column name.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1101212"> </a><p class="pBody">
+<b class="cBold">Operation ID</b>
+</p>
+</td>
+    <td><a name="wp1101214"> </a><p class="pBody">
+The corresponding operation ID for the expression.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1101216"> </a><p class="pBody">
+<b class="cBold">Column Type</b>
+</p>
+</td>
+    <td><a name="wp1101218"> </a><p class="pBody">
+The column data type defined in the database table.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1101220"> </a><p class="pBody">
+<b class="cBold">JDBC Type</b>
+</p>
+</td>
+    <td><a name="wp1101222"> </a><p class="pBody">
+The JDBC type of the corresponding <b class="cBold">Output Field</b>.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1101224"> </a><p class="pBody">
+<b class="cBold">Output Field Type</b>
+</p>
+</td>
+    <td><a name="wp1101229"> </a><p class="pBody">
+The data type of the output field. The JDBC Adapter automatically converts database-specific types to Java data types. 
+</p>
+<a name="wp1101230"> </a><p class="pBody">
+For a list of JDBC-Type to Java-Type mappings, see the <em class="cEmphasis">webMethods JDBC Adapter User’s Guide</em>. 
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1101235"> </a><p class="pBody">
+<b class="cBold">Output Field</b>
+</p>
+</td>
+    <td><a name="wp1101237"> </a><p class="pBody">
+The name of the field containing the output from the SELECT operation. An output field name displays when you select an expression.
+</p>
+<a name="wp1101238"> </a><p class="pBody">
+You can also modify the output field names as required.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1101240"> </a><p class="pBody">
+<b class="cBold">Notify On Update</b>
+</p>
+</td>
+    <td><a name="wp1101242"> </a><p class="pBody">
+Enable this option to indicate which of the columns specified in the <b class="cBold">SELECT</b> tab you want notification if updated. Select:
+</p>
+<div class="pSmartList1" style="margin-top: 7pt"><ul class="pSmartList1" style="margin-top: 7pt">
+<a name="wp1101243"> </a><div style="margin-top: 7pt" class="pSmartList1"><li><b class="cBold">Yes</b>: you want notification if this column of data has been updated. <b class="cBold">Yes</b> is the default value</li></div>
+<a name="wp1101244"> </a><div style="margin-top: 7pt" class="pSmartList1"><li><b class="cBold">No</b>: you do not want notification if this column of data has been updated</li></div>
+<a name="wp1101245"> </a><p class="pBodyRelative">
+For example, you configure the following three output fields: <b class="cBold">MyName</b>, <b class="cBold">MyNumber</b>, and <b class="cBold">MyLocation</b>. You want notification only if the <b class="cBold">MyLocation</b> output field is updated. In this case, you would select <b class="cBold">Yes </b>for the <b class="cBold">MyLocation</b> output field, and select <b class="cBold">No</b> for the <b class="cBold">MyName</b> and <b class="cBold">MyNumber</b> output fields.
+</p>
+</ul></div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1120550"> </a><p class="pBody">
+<b class="cBold">Output Value Type</b>
+</p>
+</td>
+    <td><a name="wp1120552"> </a><p class="pBody">
+Used for Update operations only. Specifies which output value to retrieve from the database table. By default, the notification retrieves the new value from the database table. Select either of the following output value types:
+</p>
+<div class="pSmartList1" style="margin-top: 7pt"><ul class="pSmartList1" style="margin-top: 7pt">
+<a name="wp1120553"> </a><div style="margin-top: 7pt" class="pSmartList1"><li><b class="cBold">Old</b>: Retrieves the old value from the database table</li></div>
+<a name="wp1120554"> </a><div style="margin-top: 7pt" class="pSmartList1"><li><b class="cBold">New</b>: Retrieves the new value from the database table</li></div>
+</ul></div>
+<a name="wp1120556"> </a><p class="pBody">
+To retrieve both the old and the new values, you need to create two rows and then select an <b class="cBold">Output Value Type</b> as <b class="cBold">Old</b> in one row and an <b class="cBold">Output Value Type</b> as <b class="cBold">New</b> in the other row. While doing so, ensure that the <b class="cBold">Output Field</b> is unique for both the old and the new values.
+</p>
+<a name="wp1129143"> </a><p class="pNote">
+<b>Note:</b> If you created Ordered Notifications for update operation using the JDBC Adapter 6.0.3, the values of this field, that is, <b class="cBold">New</b> and <b class="cBold">Old </b>are not displayed in the list. The workaround is to click the icon <b class="cBold">Reload values from the adapter </b><img src="images/ScreenLevelHelpa9.gif" height="20" width="18" border="0" hspace="0" vspace="0"/>.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1120582"> </a><p class="pBody">
+<b class="cBold">Maximum Row</b>
+</p>
+</td>
+    <td><a name="wp1120584"> </a><p class="pBody">
+Specifies the number of rows to be retrieved from the buffer table. This field is useful when you are working with a large number of records and you want to limit the number of documents sent each time the notification polls.
+</p>
+<a name="wp1120585"> </a><p class="pBody">
+Use a value of 0 to indicate no limit on the number of rows retrieved.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1120598"> </a><p class="pBody">
+<b class="cBold">Query Time Out</b>
+</p>
+</td>
+    <td><a name="wp1123084"> </a><p class="pBody">
+Specify the query time out value in seconds. This value is the amount of time the JDBC Adapter waits for the notification to execute before stopping the SQL operation.
+</p>
+<a name="wp1123088"> </a><p class="pBody">
+The default value is -1. Use the default value to have the notification use the value indicated on the <code class="cCode">watt.adapter.JDBC.QueryTimeout</code> property as the time out. 
+</p>
+<a name="wp1123089"> </a><p class="pBody">
+If you specify a value equal to 0, or if the <code class="cCode">watt.adapter.JDBC.QueryTimeout</code> property is not set, the notification executes without a time out.
+</p>
+<a name="wp1123090"> </a><p class="pBody">
+If you specify a value greater than 0, the notification executes with the specified value as the time out.
+</p>
+<a name="wp1123091"> </a><p class="pNote">
+<b>Note:</b> -1 is the only permissible negative value for this field.
+</p>
+<a name="wp1123092"> </a><p class="pBody">
+For more information about the <code class="cCode">watt.adapter.JDBC.QueryTimeout</code> property, see the <em class="cEmphasis">webMethods JDBC Adapter User’s Guide.</em>
+</p>
+</td>
+</tr>
+</table>
+</div>
+
+</p>
+</ol></div>
+<a name="wp1101249"> </a><h4 class="pHeading3">
+WHEN Tab
+</h4>
+<a name="wp1101250"> </a><p class="pBody">
+Use the <b class="cBold">WHEN</b> tab to specify the conditions for selecting information using the following table.
+</p>
+<a name="wp1101256"> </a><p class="pAnchor">
+</p><div align="left">
+<table border="0">
+  <caption></caption>
+  <tr align="left" valign="top">    <td><a name="wp1101253"> </a><p class="px_Note">
+&#160;
+<img src="images/note_icon.gif" height="25" width="25" border="1" alt="Note" />
+</p>
+</td>
+    <td><a name="wp1101255"> </a><p class="pNote">
+<b>Note:</b> If you use Microsoft SQL Server or DB2 AS400 using a jt400.jar file, do not use the <b class="cBold">WHEN</b> tab because this feature is not supported. An exception will be generated if you try to use this tab in these cases.
+</p>
+</td>
+</tr>
+</table>
+</div>
+<p class="pAnchor">
+</p>
+<div class="pSmartList1" style="margin-top: 5pt"><ol type="1" class="pSmartList1" style="margin-top: 5pt">
+<a name="wp1101260"> </a><div style="margin-top: 5pt" class="pSmartList1"><li>Select the <b class="cBold">Insert Row</b> icon <img src="images/table_insertrow.gif" border="0" hspace="0" vspace="0"/> to define new WHEN clause fields. </li></div>
+<a name="wp1101261"> </a><div style="margin-top: 7pt" class="pSmartList1"><li>Select the <b class="cBold">Column</b> field and choose a column from the list. The <b class="cBold">Operation ID</b> will display after you make your selection.</li></div>
+<a name="wp1101262"> </a><div style="margin-top: 7pt" class="pSmartList1"><li>Select a logical operator from the <b class="cBold">AND/OR</b> field, an <b class="cBold">Operator</b>, and separators (the left and right parentheses) as needed.</li></div>
+<a name="wp1101317"> </a><div style="margin-top: 7pt" class="pSmartList1"><li>Type a fixed value in the <b class="cBold">Value</b> field now or at run time. Be sure that it is a valid value, or an exception will be generated at run time.</li></div>
+<a name="wp1101270"> </a><div style="margin-top: 7pt" class="pSmartList1"><li>If necessary, use the <b class="cBold">Shift Up</b> <img src="images/btn_shift_up.gif" border="0" hspace="0" vspace="0"/> or <b class="cBold">Shift Down</b> <img src="images/btn_shift_down.gif" border="0" hspace="0" vspace="0"/> icons to change the order of the WHEN clause to ensure the parameters are parsed in the correct order.</li></div>
+<a name="wp1101271"> </a><div style="margin-top: 7pt" class="pSmartList1"><li>Repeat until you have specified all WHEN parameters.<div align="left">
+<table border="0">
+  <caption></caption>
+  <tr align="left" valign="top">    <td><a name="wp1129180"> </a><p class="px_Note">
+&#160;
+<img src="images/note_icon.gif" height="25" width="25" border="1" alt="Note" />
+</p>
+</td>
+    <td><a name="wp1129182"> </a><p class="pNote">
+<b>Note:</b> While enabling the Ordered Notification that monitors a Sybase database, if you encounter an error that indicates data definition commands are not allowed in transactions, then you need to run the following command in your Sybase database: <code class="cCode">sp_dboption database_name,&quot;ddl in tran&quot;, true.</code>
+</p>
+</td>
+</tr>
+</table>
+</div>
+</li></div>
+</ol></div>
+
+ <hr />
+
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag());
+   // -->
+  </script>
+
+ </body>
+</html>

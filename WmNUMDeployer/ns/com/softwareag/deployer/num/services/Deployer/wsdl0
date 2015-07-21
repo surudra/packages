@@ -1,0 +1,566 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" name="DocLit" targetNamespace="http://www.softwareag.com/DeployerPlugin/RepositoryToRuntime" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+	xmlns:soapjms="http://www.w3.org/2010/soapjms/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://www.softwareag.com/DeployerPlugin/RepositoryToRuntime" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/">
+	<wsdl:types>
+		<xsd:schema targetNamespace="http://www.softwareag.com/DeployerPlugin/RepositoryToRuntime" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.softwareag.com/DeployerPlugin/RepositoryToRuntime">
+			<xsd:element name="ActivateCheckpoint" type="tns:ActivateCheckpoint" />
+			<xsd:element name="ActivateCheckpointResponse" type="tns:ActivateCheckpointResponse" />
+			<xsd:element name="ActivateDeployment" type="tns:ActivateDeployment" />
+			<xsd:element name="ActivateDeploymentResponse" type="tns:ActivateDeploymentResponse" />
+			<xsd:element name="Checkpoint" type="tns:Checkpoint" />
+			<xsd:element name="CheckpointResponse" type="tns:CheckpointResponse" />
+			<xsd:element name="DeleteAssets" type="tns:DeleteAssets" />
+			<xsd:element name="DeleteAssetsResponse" type="tns:DeleteAssetsResponse" />
+			<xsd:element name="DeleteCheckpoint" type="tns:DeleteCheckpoint" />
+			<xsd:element name="DeleteCheckpointResponse" type="tns:DeleteCheckpointResponse" />
+			<xsd:element name="DeleteDeliveredArtifacts" type="tns:DeleteDeliveredArtifacts" />
+			<xsd:element name="DeleteDeliveredArtifactsResponse" type="tns:DeleteDeliveredArtifactsResponse" />
+			<xsd:element name="DeliverArtifacts" type="tns:DeliverArtifacts" />
+			<xsd:element name="DeliverArtifactsResponse" type="tns:DeliverArtifactsResponse" />
+			<xsd:element name="ExecuteCommand" type="tns:ExecuteCommand" />
+			<xsd:element name="ExecuteCommandResponse" type="tns:ExecuteCommandResponse" />
+			<xsd:element name="GetAssetReferences" type="tns:GetAssetReferences" />
+			<xsd:element name="GetAssetReferencesResponse" type="tns:GetAssetReferencesResponse" />
+			<xsd:element name="ListAssets" type="tns:ListAssets" />
+			<xsd:element name="ListAssetsResponse" type="tns:ListAssetsResponse" />
+			<xsd:element name="Ping" type="tns:Ping" />
+			<xsd:element name="PingResponse" type="tns:PingResponse" />
+			<xsd:element name="VerifyAssets" type="tns:VerifyAssets" />
+			<xsd:element name="VerifyAssetsResponse" type="tns:VerifyAssetsResponse" />
+			<xsd:complexType name="ActivateCheckpoint">
+				<xsd:sequence>
+					<xsd:element name="checkpointId" type="xsd:string" />
+					<xsd:element name="connectionProperties" type="tns:property" minOccurs="0" maxOccurs="unbounded" />
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="property">
+				<xsd:sequence>
+					<xsd:element name="key" type="xsd:string" />
+					<xsd:element name="value" nillable="true" type="xsd:string" />
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="ActivateCheckpointResponse">
+				<xsd:sequence>
+					<xsd:element name="successful" type="xsd:boolean" />
+					<xsd:element name="messages" type="tns:messageWithAssetDetails" maxOccurs="unbounded" />
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="messageWithAssetDetails">
+				<xsd:sequence>
+					<xsd:element name="type" type="xsd:int" />
+					<xsd:element name="text" type="xsd:string" />
+					<xsd:element name="timestamp" type="xsd:dateTime" />
+					<xsd:element name="compositeName" type="xsd:string" minOccurs="0" />
+					<xsd:element name="compositeType" type="xsd:string" minOccurs="0" />
+					<xsd:element name="assetName" type="xsd:string" minOccurs="0" />
+					<xsd:element name="assetType" type="xsd:string" minOccurs="0" />
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="ActivateDeployment">
+				<xsd:sequence>
+					<xsd:element name="deploymentId" type="xsd:string" />
+					<xsd:element name="simulate" type="xsd:boolean" minOccurs="0" />
+					<xsd:element name="connectionProperties" type="tns:property" minOccurs="0" maxOccurs="unbounded" />
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="ActivateDeploymentResponse">
+				<xsd:sequence>
+					<xsd:element name="successful" type="xsd:boolean" />
+					<xsd:element name="messages" type="tns:messageWithAssetDetails" maxOccurs="unbounded" />
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="Checkpoint">
+				<xsd:sequence>
+					<xsd:element name="productNamespace" type="xsd:string" />
+					<xsd:element name="checkpointId" type="xsd:string" />
+					<xsd:element name="artifacts" type="tns:artifacts" maxOccurs="unbounded" />
+					<xsd:element name="connectionProperties" type="tns:property" minOccurs="0" maxOccurs="unbounded" />
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="artifacts">
+				<xsd:sequence>
+					<xsd:element name="compositeName" nillable="true" type="xsd:string" minOccurs="0" />
+					<xsd:element name="compositeType" nillable="true" type="xsd:string" minOccurs="0" />
+					<xsd:element name="assets" type="tns:assets" minOccurs="0" maxOccurs="unbounded" />
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="assets">
+				<xsd:sequence>
+					<xsd:element name="type" type="xsd:string" />
+					<xsd:element name="id" type="xsd:string" />
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="CheckpointResponse">
+				<xsd:sequence>
+					<xsd:element name="successful" type="xsd:boolean" />
+					<xsd:element name="messages" type="tns:messageWithAssetDetails" maxOccurs="unbounded" />
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="DeleteAssets">
+				<xsd:sequence>
+					<xsd:element name="productNamespace" type="xsd:string" />
+					<xsd:element name="assetIdentifiers" type="tns:assetIdentifiers" maxOccurs="unbounded" />
+					<xsd:element name="connectionProperties" type="tns:property" minOccurs="0" maxOccurs="unbounded" />
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="assetIdentifiers">
+				<xsd:sequence>
+					<xsd:element name="type" type="xsd:string" />
+					<xsd:element name="id" type="xsd:string" />
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="DeleteAssetsResponse">
+				<xsd:sequence>
+					<xsd:element name="successful" type="xsd:boolean" />
+					<xsd:element name="messages" type="tns:messageWithAssetDetails" maxOccurs="unbounded" />
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="DeleteCheckpoint">
+				<xsd:sequence>
+					<xsd:element name="checkpointId" type="xsd:string" />
+					<xsd:element name="connectionProperties" type="tns:property" minOccurs="0" maxOccurs="unbounded" />
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="DeleteCheckpointResponse">
+				<xsd:sequence>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="DeleteDeliveredArtifacts">
+				<xsd:sequence>
+					<xsd:element name="deploymentId" type="xsd:string" />
+					<xsd:element name="connectionProperties" type="tns:property" minOccurs="0" maxOccurs="unbounded" />
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="DeleteDeliveredArtifactsResponse">
+				<xsd:sequence>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="DeliverArtifacts">
+				<xsd:sequence>
+					<xsd:element name="productNamespace" type="xsd:string" />
+					<xsd:element name="deploymentId" type="xsd:string" />
+					<xsd:element name="artifacts" type="tns:artifact" maxOccurs="unbounded" />
+					<xsd:element name="connectionProperties" type="tns:property" minOccurs="0" maxOccurs="unbounded" />
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="artifact">
+				<xsd:sequence>
+					<xsd:element name="acdl" type="xsd:base64Binary" />
+					<xsd:element name="binary" type="xsd:base64Binary" />
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="DeliverArtifactsResponse">
+				<xsd:sequence>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="ExecuteCommand">
+				<xsd:sequence>
+					<xsd:element name="command" type="xsd:string" />
+					<xsd:element name="commandInput" type="tns:property" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element name="connectionProperties" type="tns:property" minOccurs="0" maxOccurs="unbounded" />
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="ExecuteCommandResponse">
+				<xsd:sequence>
+					<xsd:element name="commandOutput" type="tns:property" minOccurs="0" maxOccurs="unbounded" />
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="GetAssetReferences">
+				<xsd:sequence>
+					<xsd:element name="productNamespace" type="xsd:string" />
+					<xsd:element name="assets" type="tns:objectKey" maxOccurs="unbounded" />
+					<xsd:element name="connectionProperties" type="tns:property" minOccurs="0" maxOccurs="unbounded" />
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="objectKey">
+				<xsd:sequence>
+					<xsd:element name="type" type="xsd:string" />
+					<xsd:element name="id" type="xsd:string" />
+					<xsd:element name="name" type="xsd:string" />
+					<xsd:element name="path" type="xsd:string" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element name="parentId" type="xsd:string" minOccurs="0" />
+					<xsd:element name="fullName" type="xsd:string" minOccurs="0" />
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="GetAssetReferencesResponse">
+				<xsd:sequence>
+					<xsd:element name="assetReferences" type="tns:assetReferences" minOccurs="0" maxOccurs="unbounded" />
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="assetReferences">
+				<xsd:sequence>
+					<xsd:element name="type" type="xsd:string" />
+					<xsd:element name="id" type="xsd:string" />
+					<xsd:element name="name" type="xsd:string" />
+					<xsd:element name="compositeName" nillable="true" type="xsd:string" minOccurs="0" />
+					<xsd:element name="compositeType" nillable="true" type="xsd:string" minOccurs="0" />
+					<xsd:element name="path" type="xsd:string" maxOccurs="unbounded" />
+					<xsd:element name="parentId" type="xsd:string" />
+					<xsd:element name="fullName" type="xsd:string" minOccurs="0" />
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="ListAssets">
+				<xsd:sequence>
+					<xsd:element name="productNamespace" type="xsd:string" />
+					<xsd:element name="assetIdentifiers" type="tns:assetIdentifiers2" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element name="connectionProperties" type="tns:property" minOccurs="0" maxOccurs="unbounded" />
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="assetIdentifiers2">
+				<xsd:sequence>
+					<xsd:element name="type" type="xsd:string" />
+					<xsd:element name="id" type="xsd:string" />
+					<xsd:element name="name" type="xsd:string" />
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="ListAssetsResponse">
+				<xsd:sequence>
+					<xsd:element name="assets" type="tns:assets2" minOccurs="0" maxOccurs="unbounded" />
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="assets2">
+				<xsd:sequence>
+					<xsd:element name="type" type="xsd:string" />
+					<xsd:element name="id" type="xsd:string" />
+					<xsd:element name="name" type="xsd:string" />
+					<xsd:element name="compositeName" nillable="true" type="xsd:string" minOccurs="0" />
+					<xsd:element name="compositeType" nillable="true" type="xsd:string" minOccurs="0" />
+					<xsd:element name="path" type="xsd:string" maxOccurs="unbounded" />
+					<xsd:element name="parentId" type="xsd:string" minOccurs="0" />
+					<xsd:element name="fullName" type="xsd:string" minOccurs="0" />
+					<xsd:element name="hasChildren" type="xsd:boolean" />
+					<xsd:element name="status" type="xsd:string" minOccurs="0" />
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="Ping">
+				<xsd:sequence>
+					<xsd:element name="type" type="xsd:string" />
+					<xsd:element name="connectionProperties" type="tns:property" minOccurs="0" maxOccurs="unbounded" />
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="PingResponse">
+				<xsd:sequence>
+					<xsd:element name="productDetails" type="tns:productDetails" maxOccurs="unbounded" />
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="productDetails">
+				<xsd:sequence>
+					<xsd:element name="namespace" type="xsd:string" />
+					<xsd:element name="version" type="xsd:string" />
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="VerifyAssets">
+				<xsd:sequence>
+					<xsd:element name="productNamespace" type="xsd:string" />
+					<xsd:element name="assetIdentifiers" type="tns:assetIdentifiers3" maxOccurs="unbounded" />
+					<xsd:element name="connectionProperties" type="tns:property" minOccurs="0" maxOccurs="unbounded" />
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="assetIdentifiers3">
+				<xsd:sequence>
+					<xsd:element name="type" type="xsd:string" />
+					<xsd:element name="id" type="xsd:string" />
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="VerifyAssetsResponse">
+				<xsd:sequence>
+					<xsd:element name="assetInfo" type="tns:assetInfo" maxOccurs="unbounded" />
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="assetInfo">
+				<xsd:sequence>
+					<xsd:element name="type" type="xsd:string" />
+					<xsd:element name="id" type="xsd:string" />
+					<xsd:element name="exists" type="xsd:boolean" />
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="DocLit_PortType_DeliverArtifactsResponse">
+		<wsdl:part name="parameters" element="tns:DeliverArtifactsResponse">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="DocLit_PortType_ListAssets">
+		<wsdl:part name="parameters" element="tns:ListAssets">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="DocLit_PortType_ActivateDeploymentResponse">
+		<wsdl:part name="parameters" element="tns:ActivateDeploymentResponse">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="DocLit_PortType_DeleteAssets">
+		<wsdl:part name="parameters" element="tns:DeleteAssets">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="DocLit_PortType_DeleteCheckpointResponse">
+		<wsdl:part name="parameters" element="tns:DeleteCheckpointResponse">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="DocLit_PortType_ListAssetsResponse">
+		<wsdl:part name="parameters" element="tns:ListAssetsResponse">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="DocLit_PortType_DeleteAssetsResponse">
+		<wsdl:part name="parameters" element="tns:DeleteAssetsResponse">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="DocLit_PortType_DeliverArtifacts">
+		<wsdl:part name="parameters" element="tns:DeliverArtifacts">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="DocLit_PortType_Checkpoint">
+		<wsdl:part name="parameters" element="tns:Checkpoint">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="DocLit_PortType_DeleteDeliveredArtifacts">
+		<wsdl:part name="parameters" element="tns:DeleteDeliveredArtifacts">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="DocLit_PortType_DeleteDeliveredArtifactsResponse">
+		<wsdl:part name="parameters" element="tns:DeleteDeliveredArtifactsResponse">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="DocLit_PortType_ActivateCheckpoint">
+		<wsdl:part name="parameters" element="tns:ActivateCheckpoint">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="DocLit_PortType_GetAssetReferencesResponse">
+		<wsdl:part name="parameters" element="tns:GetAssetReferencesResponse">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="DocLit_PortType_DeleteCheckpoint">
+		<wsdl:part name="parameters" element="tns:DeleteCheckpoint">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="DocLit_PortType_VerifyAssetsResponse">
+		<wsdl:part name="parameters" element="tns:VerifyAssetsResponse">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="DocLit_PortType_VerifyAssets">
+		<wsdl:part name="parameters" element="tns:VerifyAssets">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="DocLit_PortType_Ping">
+		<wsdl:part name="parameters" element="tns:Ping">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="DocLit_PortType_ExecuteCommand">
+		<wsdl:part name="parameters" element="tns:ExecuteCommand">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="DocLit_PortType_ActivateCheckpointResponse">
+		<wsdl:part name="parameters" element="tns:ActivateCheckpointResponse">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="DocLit_PortType_ActivateDeployment">
+		<wsdl:part name="parameters" element="tns:ActivateDeployment">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="DocLit_PortType_GetAssetReferences">
+		<wsdl:part name="parameters" element="tns:GetAssetReferences">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="DocLit_PortType_ExecuteCommandResponse">
+		<wsdl:part name="parameters" element="tns:ExecuteCommandResponse">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="DocLit_PortType_PingResponse">
+		<wsdl:part name="parameters" element="tns:PingResponse">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="DocLit_PortType_CheckpointResponse">
+		<wsdl:part name="parameters" element="tns:CheckpointResponse">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:portType name="DocLit_PortType">
+		<wsdl:operation name="DeleteDeliveredArtifacts">
+			<wsdl:input message="tns:DocLit_PortType_DeleteDeliveredArtifacts">
+			</wsdl:input>
+			<wsdl:output message="tns:DocLit_PortType_DeleteDeliveredArtifactsResponse">
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ActivateDeployment">
+			<wsdl:input message="tns:DocLit_PortType_ActivateDeployment">
+			</wsdl:input>
+			<wsdl:output message="tns:DocLit_PortType_ActivateDeploymentResponse">
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteCheckpoint">
+			<wsdl:input message="tns:DocLit_PortType_DeleteCheckpoint">
+			</wsdl:input>
+			<wsdl:output message="tns:DocLit_PortType_DeleteCheckpointResponse">
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ListAssets">
+			<wsdl:input message="tns:DocLit_PortType_ListAssets">
+			</wsdl:input>
+			<wsdl:output message="tns:DocLit_PortType_ListAssetsResponse">
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteAssets">
+			<wsdl:input message="tns:DocLit_PortType_DeleteAssets">
+			</wsdl:input>
+			<wsdl:output message="tns:DocLit_PortType_DeleteAssetsResponse">
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ExecuteCommand">
+			<wsdl:input message="tns:DocLit_PortType_ExecuteCommand">
+			</wsdl:input>
+			<wsdl:output message="tns:DocLit_PortType_ExecuteCommandResponse">
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ActivateCheckpoint">
+			<wsdl:input message="tns:DocLit_PortType_ActivateCheckpoint">
+			</wsdl:input>
+			<wsdl:output message="tns:DocLit_PortType_ActivateCheckpointResponse">
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="DeliverArtifacts">
+			<wsdl:input message="tns:DocLit_PortType_DeliverArtifacts">
+			</wsdl:input>
+			<wsdl:output message="tns:DocLit_PortType_DeliverArtifactsResponse">
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="Ping">
+			<wsdl:input message="tns:DocLit_PortType_Ping">
+			</wsdl:input>
+			<wsdl:output message="tns:DocLit_PortType_PingResponse">
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="GetAssetReferences">
+			<wsdl:input message="tns:DocLit_PortType_GetAssetReferences">
+			</wsdl:input>
+			<wsdl:output message="tns:DocLit_PortType_GetAssetReferencesResponse">
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="Checkpoint">
+			<wsdl:input message="tns:DocLit_PortType_Checkpoint">
+			</wsdl:input>
+			<wsdl:output message="tns:DocLit_PortType_CheckpointResponse">
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="VerifyAssets">
+			<wsdl:input message="tns:DocLit_PortType_VerifyAssets">
+			</wsdl:input>
+			<wsdl:output message="tns:DocLit_PortType_VerifyAssetsResponse">
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="RepositoryToRuntimeServices_DocLit_Binder" type="tns:DocLit_PortType">
+		<soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="DeleteDeliveredArtifacts">
+			<soap12:operation soapAction="DeleteDeliveredArtifacts" style="document" />
+			<wsdl:input>
+				<soap12:body parts="parameters" use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body parts="parameters" use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ActivateDeployment">
+			<soap12:operation soapAction="ActivateDeployment" style="document" />
+			<wsdl:input>
+				<soap12:body parts="parameters" use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body parts="parameters" use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteCheckpoint">
+			<soap12:operation soapAction="DeleteCheckpoint" style="document" />
+			<wsdl:input>
+				<soap12:body parts="parameters" use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body parts="parameters" use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ListAssets">
+			<soap12:operation soapAction="ListAssets" style="document" />
+			<wsdl:input>
+				<soap12:body parts="parameters" use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body parts="parameters" use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteAssets">
+			<soap12:operation soapAction="DeleteAssets" style="document" />
+			<wsdl:input>
+				<soap12:body parts="parameters" use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body parts="parameters" use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ExecuteCommand">
+			<soap12:operation soapAction="ExecuteCommand" style="document" />
+			<wsdl:input>
+				<soap12:body parts="parameters" use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body parts="parameters" use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ActivateCheckpoint">
+			<soap12:operation soapAction="ActivateCheckpoint" style="document" />
+			<wsdl:input>
+				<soap12:body parts="parameters" use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body parts="parameters" use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="DeliverArtifacts">
+			<soap12:operation soapAction="DeliverArtifacts" style="document" />
+			<wsdl:input>
+				<soap12:body parts="parameters" use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body parts="parameters" use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="Ping">
+			<soap12:operation soapAction="Ping" style="document" />
+			<wsdl:input>
+				<soap12:body parts="parameters" use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body parts="parameters" use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="GetAssetReferences">
+			<soap12:operation soapAction="GetAssetReferences" style="document" />
+			<wsdl:input>
+				<soap12:body parts="parameters" use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body parts="parameters" use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="Checkpoint">
+			<soap12:operation soapAction="Checkpoint" style="document" />
+			<wsdl:input>
+				<soap12:body parts="parameters" use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body parts="parameters" use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="VerifyAssets">
+			<soap12:operation soapAction="VerifyAssets" style="document" />
+			<wsdl:input>
+				<soap12:body parts="parameters" use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body parts="parameters" use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="DocLit">
+		<wsdl:port name="RepositoryToRuntimeServices_DocLit_Port" binding="tns:RepositoryToRuntimeServices_DocLit_Binder">
+			<soap12:address location="http://hostname:5555/ws/RepositoryToRuntimeServices:DocLit/RepositoryToRuntimeServices_DocLit_Port" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

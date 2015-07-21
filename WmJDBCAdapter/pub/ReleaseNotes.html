@@ -1,0 +1,550 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+<TITLE>webMethods JDBC Adapter Release Notes</TITLE>
+<META HTTP-EQUIV="ContentType" CONTENT="text/html; charset=iso-8859-1">
+<META HTTP-EQUIV="ContentType" CONTENT="text/html; charset=UTF-8">
+</HEAD>
+
+<BODY vLink=#666666 link=#003399 bgColor=#ffffff STYLE="FONT-FAMILY:Arial">
+<CENTER><H1><FONT COLOR="#3366CC">webMethods JDBC Adapter</FONT></H1></CENTER>
+<CENTER><H2><FONT COLOR="#3366CC">Release Notes</FONT></H2></CENTER>
+
+
+<hr>
+<CENTER><H3>webMethods JDBC Adapter Version 6.5</H3></CENTER>
+
+<P>
+webMethods is pleased to introduce version 6.5 of the webMethods JDBC Adapter. This is a major release of the adapter that simplifies the management of your JDBC Adapter components, as well as provides you greater flexibility in designing and maintaining your JDBC Adapter integrations. This release provides features to help you better manage your adapter connections and polling notifications, as well as several features that will make users of the adapter with Oracle databases more productive. This release includes the following major enhancements.</p>
+
+<h3>
+Connection Management Enhancements
+</h3>
+
+<h4>
+Ability to Programmatically Configure Adapter Connections
+</h4>
+
+<p>
+If you need to define a large number of adapter connections at one time, the process can be time consuming and prone to error. To streamline this process, the adapter now provides a new public service that you can use to read in adapter connection properties from an XML file and automatically create a set of adapter connections.
+</p>
+
+<h4>
+Ability to Specify Username and Password Credentials Dynamically at Run Time
+</h4>
+
+<p>
+All adapter services and notifications are associated with a specific adapter connection when they are defined. Previous versions of the adapter provided the ability to change the connection associated with a service at design time, and also the ability to dynamically associate a different connection with a service at run time. However, in both of these cases you must define an adapter connection that can be swapped out for the original adapter connection. In some cases this can mean that you must create a large number of possible adapter connections that might or might not be used frequently. To simplify the management of adapter connections, and to provide better visibility into which user initiates a service, this release introduces the ability to dynamically specify just the username and password credentials for a connection at run time.
+</p>
+
+<h4>
+Utility Service to Programmatically Update Passwords for Existing Adapter Connections
+</h4>
+
+<p>
+Previously, the only way to update the password for an adapter connection was to manually edit it in the adapter's Edit Connection screen in the Integration Server Administrator. However, this process can be time consuming for users who have many adapter connections, especially if they have to update the passwords regularly for compliance reasons. This release of the adapter provides a new public service that allows you to programmatically update passwords for adapter connections, enabling you to automate the process of updating multiple adapter connection credentials quickly.
+</p>
+
+<h4>
+Ability to Obtain Adapter Connections from the JDBC Adapter Connection Pool for Your Custom Services
+</h4>
+
+<p>
+This release of the adapter provides a new adapter service called the Execute Service that enables you to obtain JDBC Adapter connection objects from the adapter's connection pool and use them for user-defined services. In earlier versions of the adapter, there was no public service available that allowed you to obtain connection objects from the connection pool. With this new adapter service, you can now write your own custom Java services and execute them against the database within the Adapter Run Time framework.
+</p>
+
+<h3>
+Polling Notification Enhancements
+</h3>
+
+<h4>
+Ability to Enable Update Notifications to Publish Old Values as Well as New Values
+</h4>
+
+<p>
+In previous releases of the adapter, Update polling notifications always published the updated values for event columns. For example, if a notification monitored a column where the value changed from &quot;3&quot; to &quot;5,&quot; the notification would publish the new value of &quot;5.&quot; The adapter did not have the ability to publish the original value of &quot;3.&quot; However, users want the flexibility to capture and publish the original value and/or the new value. This release of the adapter enhances the Update polling notifications by adding a new column in the notification template called &quot;Output Value Type&quot;. In this column you can choose either &quot;Old&quot; or &quot;New,&quot; depending on what data you want the notification to publish.
+</p>
+
+<h4>
+Ability to Configure Polling Notifications to Always Publish Locally
+</h4>
+
+<p>
+You can now configure a polling notification to always publish its documents to the local Integration Server, even if the Integration Server is configured with a Broker. In earlier releases of the adapter, polling notifications would publish to a Broker if there was one configured for the Integration Server. If there was no Broker configured, then the polling notification would publish directly to the hosting Integration Server. This behavior could potentially cause performance problems if you have multiple Integration Servers hosting similar applications and all of these Integration Servers are configured with a central Broker. If a polling notification always invokes a service on the local Integration Server, then the document would first be published to the Broker, and then would be published back to the local Integration Server, potentially impacting performance. This feature enables you to avoid this potential performance problem.
+</p>
+
+<h4>
+Improved Error Handling when Migrating Polling Notifications
+</h4>
+
+<p>
+When migrating a polling notification between Integration Server environments (for example, between a development or staging environment and a production environment), the polling notification must be in the same state (Disabled or Suspended) on both Integration Servers. If the notifications are in different states, the polling notifications could potentially encounter problems where the notification's database objects (that is, the buffer tables and triggers) might not be created or dropped correctly. This feature improves the migration of polling notifications by providing better error handling messages when migrating notifications that are in non-suspended states.
+</p>
+
+<h4>
+Support for WHERE Clauses with Basic Notifications
+</h4>
+
+<p>
+Basic Notifications now provide the ability to configure a WHERE clause, enabling users to specify more sophisticated event criteria. For example, you can now use a Basic Notification to monitor a table of supplier company names and only publish events for company names that match a specified first letter or prefix, as defined by the WHERE clause.
+</p>
+
+<h4>
+Ability to Configure Basic Notifications to Not Delete Records upon Processing
+</h4>
+
+<p>
+This release enhances Basic Notifications to not delete records in the notification's associated table when an event has been processed. Basic Notifications are provided for users to manage their own database tables and triggers, rather than having the adapter manage them. Basic Notifications are designed to delete a record from the database table after the record has been processed. However, in some cases users might want to use the Basic Notification's database table as a way to persist the records, or users might want to associate a Basic Notification directly with a production table and therefore do not want the Basic Notification to delete the record from the database. Rather than delete an event, users want the ability to update an event record to indicate that it has been processed.
+</p>
+
+<h4>
+Utility Service to Clean up Database Objects for Polling Notifications
+</h4>
+
+<p>
+This release of the adapter provides a new public utility service that cleans up a polling notification's associated database objects if they are not dropped correctly. This service allows you to build logic directly in your flow or Java services if the notification encounters a problem. In earlier releases of the adapter, if the notification encountered a problem with its associated database objects (for example, if an administrator accidentally deleted a database trigger but not a buffer table), the notification may fail to drop all of the database objects. In this case, the adapter cannot enable the notification until an administrator manually drops the existing database objects. To prevent this type of manual intervention, this utility service automatically drops a polling notification's associated database objects.
+</p>
+
+<h4>
+Utility Service to Identify Database Object Information for Notifications
+</h4>
+
+<p>
+Polling notifications automatically create objects (that is, triggers, buffer tables, sequences) on the database to manage notification data. This release of the adapter introduces a new public utility service that enables you to easily obtain a list of all database objects associated with your JDBC Adapter notifications. You can then use this list to simplify or even automate the management of those objects.
+</p>
+
+<h3>
+Oracle-Specific Enhancements
+</h3>
+
+<h4>
+Support for the Oracle CLOB and BLOB Data Types
+</h4>
+
+<p>
+The adapter now supports the Oracle-specific CLOB and BLOB data types (java.sql.Clob and java.sql.Blob) as input parameter data types for use in adapter services.
+</p>
+
+<h4>
+Streaming Support of BLOB and CLOB Data with Oracle Databases
+</h4>
+
+<p>
+In earlier versions of the adapter, the adapter only supported the byte array and String data types when retrieving BLOB or CLOB fields. However, users sometimes encountered out of memory errors when converting large BLOB data into bytes. This version of the adapter introduces two new data types, java.io.Reader for CLOB and java.io.InputStream for BLOB, to support the streaming of byte data when working with Oracle databases.
+</p>
+
+<h4>
+Support for ARRAY and STRUCT Data Types with Oracle Databases
+</h4>
+
+<p>
+The adapter now supports the ARRAY and STRUCT data type objects as input and output parameters in adapter services. In earlier versions of the adapter there was no way to insert or retrieve a record or list as an input or output to an adapter service. To provide this capability, the adapter now supports the java.sql.STRUCT and java.sql.ARRAY data types as input and output parameters for adapter services.
+</p>
+
+<h4>
+Ability to Process Oracle Nested Cursors in a Result Set
+</h4>
+
+<p>
+The Stored Procedure adapter service has been enhanced to fully process result sets from Oracle databases that contain nested cursors. If a Stored Procedure adapter service contains an Oracle cursor, the adapter now checks for the presence of nested cursors in a service's ResultSet and processes them recursively. In previous versions of the adapter, the service only allowed the processing of Oracle cursors that were returned at the top level.
+</p>
+
+<h3>
+Other Notable Features
+</h3>
+
+<h4>
+Ability to Provide the Size of Result Set Data for Select Statements
+</h4>
+
+<p>
+This release of the adapter enables you to include the size of a select statement's result set in the output signature of an adapter service. You can now use this data when defining your application logic within your flow or Java services.
+</p>
+
+<h4>
+Ability to Set the Transaction Isolation Level in an Adapter Connection
+</h4>
+
+<p>
+The adapter now allows you to specify a database driver-specific transaction isolation level in your adapter connections.
+</p>
+
+<h4>
+Ability to Retrieve Row Count Data for Insert and Update Adapter Services
+</h4>
+
+<p>
+For Input and Update adapter services, the adapter now provides the ability to retrieve the total number rows of data that have been inserted or updated in the database and make this data available in the output signature of the services. You can now use this data within the application logic of your flow or Java services.
+</p>
+
+<h4>
+Ability to Not Require Output Signature Configuration for CustomSQL and DynamicSQL Adapter Services
+</h4>
+
+<p>
+In earlier versions of the adapter you had to specify the output columns for Custom SQL and Dynamic SQL adapter services at design time. However, you might have a SQL statement that selects a large number of columns, or, for a Select SQL, you might not know all of the columns that the statement will return. To simplify the configuration of the Custom SQL and Dynamic SQL services if you do not want to configure the output signature at design time, the adapter now inspects the result set metadata and constructs the output signature.
+</p>
+
+<h4>
+Support for New Object Data Type
+</h4>
+
+<p>
+This release adds a new data type called &quot;Object.&quot; This data type is useful when you want to configure an adapter service to use a database driver's setObject method instead of its setString method for CHAR, VARCHAR, and LONGVARCHAR data types because the performance of the setObject method can be faster than when calling the setString method.
+</p>
+
+<h4>
+Ability to Set a Query Timeout Limit at the Individual Adapter Service and Notification Level
+</h4>
+
+<p>
+The adapter now includes a query timeout parameter that allows you to configure a query timeout limit at the individual adapter service and notification level. This parameter, if specified, overrides the global <b>watt.adapter.JDBC.QueryTimeout</b> property.
+</p>
+
+<h4>
+Expansion of  Update Schema/Notification Services to Additional Services and Notifications
+</h4>
+
+<p>
+Earlier versions of the adapter provided services to update the schema for adapter services and connections. However, those services only provided support for the Insert, Update, Delete, and Select services and notifications. This release of the adapter expands the UpdateServiceSchema and UpdateNotificationSchema services to support adapter services and notifications that were not previously supported by these utility services.
+</p>
+
+<p>
+For a list of all the changes and issues resolved since the last release, see the readme.html file for the webMethods JDBC Adapter on the webMethods software download site or in the directories in which you installed the webMethods JDBC Adapter.
+</p>
+
+<p>
+For information about previous releases of the webMethods JDBC Adapter, see the release notes for those releases, below.
+</p>
+
+
+<hr>
+<CENTER><H3>webMethods JDBC Adapter Version 6.0.3 Feature Pack 1</H3></CENTER>
+
+<p>
+This feature pack contains the following new features:
+</p>
+
+<p>
+StoredProcedureWithSignature - This template simplifies configuring a stored procedure service by providing automatic signature introspection. The user no longer needs to reference and enter the parameters. Signatures of in, out, inout, and oracle cursor parameter types and return values are automatically listed in the configuration tab.
+</p>
+
+<p>
+StoredProcedureNotificationWithSignature - This template simplifies configuring stored procedure notifications by providing automatic signature introspection. The user no longer needs to reference and enter the parameters. Signatures of in, out, inout, and oracle cursor parameter types and return values are automatically listed in the configuration tab.
+</p>
+
+<p>
+UpdateServiceSchema - This service programmatically changes the schema settings for an adapter service.
+</p>
+
+<p>
+UpdateNotificationSchema - This service programmatically changes the schema settings for an adapter notification.
+</p>
+
+
+
+
+<hr>
+<CENTER><H3>webMethods JDBC Adapter Version 6.0.3</H3></CENTER>
+
+<P>
+The webMethods JDBC Adapter is an add-on to the webMethods Integration Platform that provides seamless and real-time integration with many relational database systems that support and provide JDBC drivers.
+</p>
+<p>
+This adapter supports not only standard database operations, such as Insert, Update, and Delete, but also provides extensive support for stored procedures and notifications.
+</p>
+
+<h3>Summary of Major Features for Version 6.0.3</h3>
+
+<h4>Additional Database and Driver Support</h4>
+
+<p>The JDBC Adapter now supports the following additional databases running on
+the operating systems supported by the database vendors:</p>
+
+<ul>
+<li>Sybase v11.9.2, 12, and 12.5 with the Sybase jConnect for JDBC Type 4 driver version 5.5<p></p></li>
+
+<li>Informix Dynamic Server 7.31, 9.21 and higher with the Informix JDBC 2.21 driver<p></p></li>
+
+<li>Version 6.0.3 drops support for the JTOpen v3.3 driver for the AS/400 and replaces it with support for JTOpen v4.1<p></p></li>
+
+<li>HP-UX 11i for Itanium is supported<p></p></li>
+</ul>
+
+<p>JDBC Adapter 6.0.3 also adds support for DataDirect Connect for JDBC,
+edition 3.3, where appropriate. See the <i>webMethods JDBC Adapter Installation
+Guide</i> for a detailed list of supported operating systems and drivers.</p>
+
+<h4>Batch Services </h4>
+
+<p>The JDBC Adapter now supports two new services for performing faster Inserts and Updates of large amounts of data:</p>
+
+<table border=1 cellpadding=0 width="100%">
+ <tr>
+  <td>
+  <p><b>Template</b></p>
+  </td>
+  <td>
+  <p><b>Description</b></p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p>BatchInsertSQL</p>
+  </td>
+  <td>
+  <p>Inserts new information into a database table in a batch manner,
+  where a COMMIT does not occur until all data has been inserted successfully.</p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p>BatchUpdateSQL</p>
+  </td>
+  <td>
+  <p>Updates existing information in a database table in a batch manner, where a COMMIT does not occur until all update operations have
+  completed successfully.</p>
+  </td>
+ </tr>
+</table>
+
+<p>These templates include a mapping for an output field to reflect the number of affected rows. The services return either the number of rows or an integer that indicates successful execution.</p>
+
+
+
+<hr>
+<CENTER><H3>webMethods JDBC Adapter Version 6.0.2</H3></CENTER>
+
+<h3>Additional Database and Driver Support</h3>
+<p>The JDBC Adapter now supports the following additional databases running on
+the operating systems supported by the database vendors.</p>
+<ul>
+<li>DB2 for OS/390 v6 and v7<p></p></li>
+<li>DB2 for AS/400 V4R5, V5R1, and V5R2<p></p></li>
+<li>Universal Database (UDB) v7.2 and v8.1<p></p></li>
+<li>Teradata V2R5<p></p></li>
+</ul>
+
+<p>JDBC Adapter 6.0.2 also adds support for Solaris 2.9 and DataDirect Connect for JDBC, edition 3.2, where appropriate. See the <i>webMethods JDBC Adapter Installation Guide</i> for a detailed list of supported operating systems and drivers.</p>
+
+<h3>Support for Ordered Notifications </h3>
+<p>The JDBC adapter can now publish notification data for multiple Insert, Update, and Delete operations on multiple tables in the order in which the events occurred. An Ordered Notification template is provided in the webMethods Developer.</p>
+
+<h3>Enhanced Logging Support</h3>
+<p>The JDBC Adapter uses the Integration Server&#146;s logging mechanism to capture messages and write them to the Audit, Error, or Server logs. Information for the JDBC Adapter&#146;s error codes is also now provided in the <i>webMethods JDBC Adapter User's Guide</i>.</p>
+
+<h3>Enhanced Adapter Service Template Scalability</h3>
+<p>Users can now provide a schema list to be used as a table filter as a better performing alternative to the default behavior of automatic introspection of <i>all</i> database objects when creating an adapter service or notification for a large database.</p>
+
+<h3>Upgrade Utility Support</h3>
+<p>The <i>webMethods JDBC Adapter Installation Guide</i> references a utility available for assisting users upgrading from the Enterprise JDBC Adapter Version 4.6 to the webMethods JDBC Adapter Version 6.0.2.</p>
+
+<hr>
+<CENTER><H3>webMethods JDBC Adapter Version 6.0.1</H3></CENTER>
+
+<h3>Support for Notifications</h3>
+<p>
+The JDBC Adapter supports notifications, which are changes of interest that have taken place in the database. The adapter supports notifications that result from Insert, Update and Delete operations, as well as those prompted through stored procedure calls. There are Automatic, Basic, and Stored Procedure Notifications.  Automatic notifications create triggers on a database and buffer tables to hold data.
+</p>
+
+<h3>Support for Multiple Transaction Types</h3>
+<p>
+The JDBC Adapter supports Automatic (NO_TRANSACTION), Controlled (LOCAL_TRANSACTION), and 2-phased (XA_TRANSACTION) transactions. In Automatic transaction mode, the adapter handles the transaction boundaries. In Controlled transaction mode, users have control over the transactions. Using XA JDBC drivers, the adapter can support 2-phase transactions executed across multiple databases. The adapter works with the webMethods Integration Server to act as the transaction manager for 2-phase transactions.
+</p>
+
+<h3>Support for Connection Pooling</h3>
+<p>
+The JDBC Adapter supports connection pooling, which provides for efficient use of connections. The connections are held by the various flow services while they are actively processing database transactions and returned to the pool as soon as transactions are over. This is particularly efficient in cases where the flow service does several things besides doing transactions with a database.
+</p>
+
+<h3>Support for Exactly Once Notification</h3>
+
+<p>
+The JDBC Adapter supports exactly once notification in association with the Integration Server configuration for transient storage. This feature ensures that duplicate documents are not forwarded to the Integration Server even under fault/failure situations.
+</p>
+
+<h3>Template-Based Integrations</h3>
+<p>
+The JDBC Adapter provides service templates and notification templates for interactions with databases. This makes it easy to develop flow services to interact with a database without having to type the SQL.
+</p>
+
+<p>
+Service templates and notification templates represent specific tasks for doing work within a database. For example, a JDBC adapter service that deletes data from a database might be based on the DeleteSQL service template included with the adapter. You can create specific adapter services using the templates and execute them using parameters specified when the adapter runs. These parameters include the actual data required by the adapter to perform the operation, such as a table name.
+</p>
+
+<p>
+The JDBC Adapter supports the following templates:
+</P>
+
+<TABLE WIDTH="100%" BORDER="1">
+
+		  <TR>
+			 <TD><B>Template</B></TD>
+			 <TD><B>Description</B></TD>
+		  </TR>
+		 <TR>
+			 <TD>CustomSQL</TD>
+			 <TD>Executes free format SQL on a database.</TD>
+		  </TR>
+		 <TR>
+			 <TD>DeleteSQL</TD>
+			 <TD>Deletes rows from a table and includes a mapping for an output field that stores the number of affected rows.</TD>
+		  </TR>
+		   <TR>
+			 <TD>InsertSQL</TD>
+			 <TD>Inserts new information into a database table.</TD>
+		  </TR>
+		  <TR>
+			 <TD>SelectSQL</TD>
+			 <TD>Retrieves specified information from a database table.</TD>
+		  </TR>
+		  <TR>
+			 <TD>StoredProcedure</TD>
+			 <TD>Calls a stored procedure to perform database operations.</TD>
+		  </TR>
+		  <TR>
+			 <TD>UpdateSQL</TD>
+			 <TD>Updates existing information in a database table and includes a mapping for an output field that stores the number of affected rows.</TD>
+		  </TR>
+		   <TR>
+			 <TD>DynamicSQL</TD>
+			 <TD>Configures a dynamic SQL statement, part of which is set at runtime using the Input field.</TD>
+		  </TR>
+		 		  <TR>
+			 <TD>BasicNotification</TD>
+			 <TD>Polls a database table for data using a SELECT operation.</TD>
+		  </TR>
+		  <TR>
+			 <TD>DeleteNotification</TD>
+			 <TD>Publishes notification of DELETE operations on a database
+				table.</TD>
+		  </TR>
+		    <TR>
+			 <TD>InsertNotification</TD>
+			 <TD>Publishes notification of INSERT operations on a database
+				table.</TD>
+		  </TR>
+		  <TR>
+			 <TD>StoredProcedureNotification</TD>
+			 <TD>Publishes notification data by calling a stored procedure
+				on a database.</TD>
+		  </TR>
+		  <TR>
+			 <TD>UpdateNotification</TD>
+			 <TD>Publishes notification of UPDATE operations on a database
+				table.</TD>
+		  </TR>
+
+
+
+	 </TABLE>
+
+<H3>Platform Support for JDBC Adapter 6.0.1</H3>
+
+<p>
+The JDBC Adapter supports the following databases and operating systems:
+</p>
+
+	<TABLE WIDTH="100%" BORDER="1">
+
+		  <TR>
+			 <TD><B>Database &amp; Version</B></TD>
+			 <TD><B>Operating System</B></TD>
+		  </TR>
+
+		 <TR>
+           <TD valign="top">Oracle 8.0.5, 8.1.7, 9.0.1, 9.2.0</TD>
+		   <TD>
+		   		<ul>
+				<li>Windows NT 4.0</li>
+				<li>Windows 2000 Professional</li>
+				<li>Windows 2000 Server</li>
+				<li>Windows 2000 Advanced Server</li>
+				<li>Windows XP Professional</li>
+				<li>Sun Solaris 2.7, 2.8</li>
+				<li>HP-UX 11, 11i</li>
+				<li>AIX 4.3.3, 5.1</li>
+				<li>Linux 2.2</li>
+				<li>Mac OS X</li>
+				</ul>
+			</TD>
+         </TR>
+		 <TR>
+           <TD valign="TOP">Microsoft SQL Server 7.0 &amp; 2000</TD>
+		   <TD>
+		   		<UL>
+				<li>Windows NT 4.0</li>
+				<li>Windows 2000 Professional</li>
+				<li>Windows 2000 Server</li>
+				<li>Windows 2000 Advanced Server</li>
+				<li>Windows XP Professional</li>
+				</UL>
+			</TD>
+
+		  </TR>
+
+
+	 </TABLE>
+
+
+
+<p>
+The JDBC Adapter supports the following JDBC drivers:
+</p>
+
+ 	 <TABLE WIDTH="100%" BORDER="1">
+		  <TR>
+			 <TD><B>Database &amp; Version</B></TD>
+			 <TD><B>Driver &amp; Version</B></TD>
+		  </TR>
+		  <TR>
+			 <TD>Oracle 8.0.5, 8.1.7, 9.0.1, 9.2.0</TD>
+			 <TD>Oracle JDBC Thin Driver and OCI Driver</TD>
+		  </TR>
+		  <TR>
+			 <TD>Microsoft SQL Server 7.0</TD>
+			 <TD>DataDirect Connect for JDBC, edition 3.1</TD>
+		  </TR>
+		  <TR>
+			 <TD>Microsoft SQL Server 2000</TD>
+			 <TD>Microsoft SQL Server 2000 Driver for JDBC, version 2.2.0019</TD>
+		  </TR>
+	 </TABLE>
+
+<p></p>
+<p>
+	 <b>Note:</b> For a complete listing of the combinations of databases, operating systems, and drivers the JDBC Adapter supports, see the <i>webMethods JDBC Adapter Installation Guide Version 6.0.1</i>.
+</p>
+
+
+<HR>
+<P>
+B2B Integration Server, Business Process Integration, Cerebra,
+Get There Faster, Glue, Glueprints, Glueware, Guided SOA
+Governance, Infravio X-Broker, Infravio X-Registry, Infravio, My
+webMethods Server, My webMethods, Process Improvement Lifecycle,
+Process Improvement Lifecycle Methodology, webMethods Access,
+webMethods Administrator, webMethods Broker, webMethods Central
+Configuration, webMethods Dashboard, webMethods Designer,
+webMethods Developer, webMethods Fabric, webMethods Glue,
+webMethods Infrastructure Data Collector, webMethods Infravio
+X-Broker, webMethods Infravio X-Registry, webMethods Installer,
+webMethods Integration Server, webMethods logo, webMethods
+Mainframe, webMethods Manager, webMethods Modeler, webMethods
+Monitor, webMethods Optimize for Infrastructure, webMethods
+Optimize for Process, webMethods Optimize, webMethods Portal,
+webMethods Process Engine, webMethods Servicenet, webMethods
+SOA Governance, webMethods SOA Management, webMethods Task
+Engine, webMethods Trading Networks, webMethods Workflow, and
+webMethods are either registered trademarks or trademarks of
+webMethods, Inc. in the United States and/or other countries.
+</P>
+<P>All other marks are the property of their respective owners.
+Copyright © 2006 by webMethods, Inc.  All rights reserved,
+including the right of reproduction in whole or in part in any
+form.
+</P>
+
+</BODY>
+</HTML>

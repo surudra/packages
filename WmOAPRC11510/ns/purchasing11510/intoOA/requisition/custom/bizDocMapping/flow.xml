@@ -1,0 +1,3779 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<FLOW VERSION="3.0" CLEANUP="true">
+  <COMMENT></COMMENT>
+
+  <!-- nodes -->
+
+<LOOP TIMEOUT="" IN-ARRAY="/requisitionBizDoc/PO_REQUISITIONS">
+  <COMMENT></COMMENT>
+
+  <!-- nodes -->
+
+<LOOP TIMEOUT="" IN-ARRAY="/requisitionBizDoc/PO_REQUISITIONS/PO_REQ_LINES" OUT-ARRAY="/outArrayRequisition">
+  <COMMENT></COMMENT>
+
+  <!-- nodes -->
+
+<MAP MODE="STANDALONE">
+  <COMMENT>Map Requisition Business Document Header &amp; Lines  to Temp Array</COMMENT>
+  <MAPTARGET>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="nillable">true</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="field_name">requisitionBizDoc</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="rec_ref">purchasing11510.intoOA.requisition.rec:requisitionBizDoc</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">BATCH_ID</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">$dbAlias</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">outArrayRequisition</value>
+        <value name="field_type">record</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <array name="rec_fields" type="record" depth="1">
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">REQ_DIST_SEQUENCE_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">INTERFACE_SOURCE_CODE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">SOURCE_TYPE_CODE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">REQUISITION_TYPE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">DESTINATION_TYPE_CODE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">QUANTITY</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">UNIT_PRICE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">AUTHORIZATION_STATUS</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">BATCH_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">APPROVER_NAME</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">NOTE_TO_APPROVER</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">AUTOSOURCE_FLAG</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">HEADER_DESCRIPTION</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">URGENT_FLAG</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">RFQ_REQUIRED_FLAG</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">JUSTIFICATION</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">NOTE_TO_BUYER</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">NOTE_TO_RECEIVER</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">ITEM_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">ITEM_REVISION</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">CATEGORY_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">UNIT_OF_MEASURE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">UOM_CODE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">LINE_TYPE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">UN_NUMBER</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">HAZARD_CLASS</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">REFERENCE_NUM</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">WIP_ENTITY_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">WIP_LINE_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">WIP_OPERATION_SEQ_NUM</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">WIP_RESOURCE_SEQ_NUM</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">WIP_REPETITIVE_SCHEDULE_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">SOURCE_ORGANIZATION_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">SOURCE_SUBINVENTORY</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">DESTINATION_ORGANIZATION_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">DESTINATION_SUBINVENTORY</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">DELIVER_TO_LOCATION_CODE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">DELIVER_TO_LOCATION_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">DELIVER_TO_REQUESTOR_NAME</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">SUGGESTED_BUYER_NAME</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">SUGGESTED_VENDOR_NAME</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">SUGGESTED_VENDOR_SITE_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">SUGGESTED_VENDOR_CONTACT</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">SUGGESTED_VENDOR_PHONE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">SUGGESTED_VENDOR_ITEM_NUM</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">NEED_BY_DATE</value>
+            <value name="field_type">object</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">PREPARER_NAME</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">BOM_RESOURCE_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">CURRENCY_CODE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">CURRENCY_UNIT_PRICE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">RATE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">RATE_DATE</value>
+            <value name="field_type">object</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">RATE_TYPE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">AUTOSOURCE_DOC_LINE_NUM</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">DOCUMENT_TYPE_CODE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">TRANSACTION_REASON_CODE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">KANBAN_CARD_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">TAX_CODE_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+        </array>
+      </record>
+    </array>
+  </record>
+</Values>
+</MAPTARGET>
+  <MAPSOURCE>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="nillable">true</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="field_name">requisitionBizDoc</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="rec_ref">purchasing11510.intoOA.requisition.rec:requisitionBizDoc</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">BATCH_ID</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">$dbAlias</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">$iteration</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+    </array>
+  </record>
+</Values>
+</MAPSOURCE>
+
+  <!-- nodes -->
+
+<MAPINVOKE SERVICE="commonOA11510.utils:getKanbanCardId_tf" INVOKE-ORDER="0">
+
+  <!-- nodes -->
+
+<MAP MODE="INVOKEINPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/$dbAlias;1;0" TO="/$dbAlias;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc/PO_REQUISITIONS;2;0/KANBAN_CARD_NUMBER;1;0" TO="/queryParams;2;0/KANBAN_CARD_NUMBER;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc/PO_REQUISITIONS;2;0/ORGANIZATION_NAME;1;0" TO="/queryParams;2;0/ORGANIZATION_NAME;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="INVOKEOUTPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/KANBAN_CARD_ID;1;0" TO="/outArrayRequisition(0);2;0/KANBAN_CARD_ID;1;0">
+</MAPCOPY>
+</MAP>
+</MAPINVOKE>
+
+<MAPINVOKE SERVICE="commonOA11510.utils:getInventoryItemId_tf" INVOKE-ORDER="0">
+
+  <!-- nodes -->
+
+<MAP MODE="INVOKEINPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/$dbAlias;1;0" TO="/$dbAlias;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc/PO_REQUISITIONS;2;0/PO_REQ_LINES;2;0/ITEM;1;0" TO="/queryParams;2;0/ITEM_CODE;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc/PO_REQUISITIONS;2;0/ORGANIZATION_NAME;1;0" TO="/queryParams;2;0/ORGANIZATION_NAME;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="INVOKEOUTPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/INVENTORY_ITEM_ID;1;0" TO="/outArrayRequisition(0);2;0/ITEM_ID;1;0">
+</MAPCOPY>
+</MAP>
+</MAPINVOKE>
+
+<MAPINVOKE SERVICE="commonOA11510.utils:getOrgId_tf" INVOKE-ORDER="0">
+
+  <!-- nodes -->
+
+<MAP MODE="INVOKEINPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/$dbAlias;1;0" TO="/$dbAlias;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc/PO_REQUISITIONS;2;0/PO_REQ_LINES;2;0/SOURCE_ORGANIZATION_NAME;1;0" TO="/queryParams;2;0/ORGANIZATION_NAME;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="INVOKEOUTPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/ORGANIZATION_ID;1;0" TO="/outArrayRequisition(0);2;0/SOURCE_ORGANIZATION_ID;1;0">
+</MAPCOPY>
+</MAP>
+</MAPINVOKE>
+
+<MAPINVOKE SERVICE="commonOA11510.utils:getOrgId_tf" INVOKE-ORDER="0">
+
+  <!-- nodes -->
+
+<MAP MODE="INVOKEINPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/$dbAlias;1;0" TO="/$dbAlias;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc/PO_REQUISITIONS;2;0/PO_REQ_LINES;2;0/DESTINATION_ORGANIZATION_NAME;1;0" TO="/queryParams;2;0/ORGANIZATION_NAME;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="INVOKEOUTPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/ORGANIZATION_ID;1;0" TO="/outArrayRequisition(0);2;0/DESTINATION_ORGANIZATION_ID;1;0">
+</MAPCOPY>
+</MAP>
+</MAPINVOKE>
+
+<MAPINVOKE SERVICE="commonOA11510.utils:getLocationId_tf" INVOKE-ORDER="0">
+
+  <!-- nodes -->
+
+<MAP MODE="INVOKEINPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/$dbAlias;1;0" TO="/$dbAlias;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc/PO_REQUISITIONS;2;0/PO_REQ_LINES;2;0/DELIVER_TO_LOCATION_ADDRESS_1;1;0" TO="/queryParams;2;0/ADDRESS_LINE_1;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc/PO_REQUISITIONS;2;0/PO_REQ_LINES;2;0/DELIVER_TO_LOCATION_ADDRESS_2;1;0" TO="/queryParams;2;0/ADDRESS_LINE_2;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc/PO_REQUISITIONS;2;0/PO_REQ_LINES;2;0/DELIVER_TO_LOCATION_ADDRESS_3;1;0" TO="/queryParams;2;0/ADDRESS_LINE_3;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc/PO_REQUISITIONS;2;0/PO_REQ_LINES;2;0/DELIVER_TO_LOCATION_TOWN_OR_CITY;1;0" TO="/queryParams;2;0/TOWN_OR_CITY;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc/PO_REQUISITIONS;2;0/PO_REQ_LINES;2;0/DELIVER_TO_LOCATION_COUNTRY;1;0" TO="/queryParams;2;0/COUNTRY;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc/PO_REQUISITIONS;2;0/PO_REQ_LINES;2;0/DELIVER_TO_LOCATION_POSTAL_CODE;1;0" TO="/queryParams;2;0/POSTAL_CODE;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc/PO_REQUISITIONS;2;0/PO_REQ_LINES;2;0/DELIVER_TO_LOCATION_COUNTY;1;0" TO="/queryParams;2;0/REGION_1;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc/PO_REQUISITIONS;2;0/PO_REQ_LINES;2;0/DELIVER_TO_LOCATION_STATE;1;0" TO="/queryParams;2;0/REGION_2;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="INVOKEOUTPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/LOCATION_ID;1;0" TO="/outArrayRequisition(0);2;0/DELIVER_TO_LOCATION_ID;1;0">
+</MAPCOPY>
+</MAP>
+</MAPINVOKE>
+
+<MAPINVOKE SERVICE="commonOA11510.utils:getVendorSiteId_tf" VALIDATE-IN="$none" VALIDATE-OUT="$none" INVOKE-ORDER="0">
+
+  <!-- nodes -->
+
+<MAP MODE="INVOKEINPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/$dbAlias;1;0" TO="/$dbAlias;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc/PO_REQUISITIONS;2;0/PO_REQ_LINES;2;0/SUGGESTED_VENODR_SITE_ADDRESS_1;1;0" TO="/queryParams;2;0/ADDRESS_LINE1;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc/PO_REQUISITIONS;2;0/PO_REQ_LINES;2;0/SUGGESTED_VENODR_SITE_ADDRESS_2;1;0" TO="/queryParams;2;0/ADDRESS_LINE2;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc/PO_REQUISITIONS;2;0/PO_REQ_LINES;2;0/SUGGESTED_VENODR_SITE_ADDRESS_3;1;0" TO="/queryParams;2;0/ADDRESS_LINE3;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc/PO_REQUISITIONS;2;0/PO_REQ_LINES;2;0/SUGGESTED_VENODR_SITE_TOWN_OR_CITY;1;0" TO="/queryParams;2;0/CITY;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc/PO_REQUISITIONS;2;0/PO_REQ_LINES;2;0/SUGGESTED_VENODR_SITE_STATE;1;0" TO="/queryParams;2;0/STATE;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc/PO_REQUISITIONS;2;0/PO_REQ_LINES;2;0/SUGGESTED_VENODR_SITE_POSTAL_CODE;1;0" TO="/queryParams;2;0/ZIP;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc/PO_REQUISITIONS;2;0/PO_REQ_LINES;2;0/SUGGESTED_VENODR_SITE_COUNTRY;1;0" TO="/queryParams;2;0/COUNTRY;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc/PO_REQUISITIONS;2;0/PO_REQ_LINES;2;0/SOURCE_ORGANIZATION_NAME;1;0" TO="/queryParams;2;0/ORGANIZATION_NAME;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc/PO_REQUISITIONS;2;0/PO_REQ_LINES;2;0/SUGGESTED_VENDOR_NAME;1;0" TO="/queryParams;2;0/VENDOR_NAME;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="INVOKEOUTPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/VENDOR_SITE_ID;1;0" TO="/outArrayRequisition;2;0/SUGGESTED_VENDOR_SITE_ID;1;0">
+</MAPCOPY>
+</MAP>
+</MAPINVOKE>
+
+<MAPINVOKE SERVICE="commonOA11510.utils:getWIPEntityId_tf" INVOKE-ORDER="0">
+
+  <!-- nodes -->
+
+<MAP MODE="INVOKEINPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/$dbAlias;1;0" TO="/$dbAlias;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc/PO_REQUISITIONS;2;0/PO_REQ_LINES;2;0/WIP_ENTITY_NAME;1;0" TO="/queryParams;2;0/WIP_ENTITY_NAME;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc/PO_REQUISITIONS;2;0/ORGANIZATION_NAME;1;0" TO="/queryParams;2;0/ORGANIZATION_NAME;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="INVOKEOUTPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/WIP_ENTITY_ID;1;0" TO="/outArrayRequisition(0);2;0/WIP_ENTITY_ID;1;0">
+</MAPCOPY>
+</MAP>
+</MAPINVOKE>
+
+<MAPINVOKE SERVICE="commonOA11510.utils:getResourceId_tf" INVOKE-ORDER="0">
+
+  <!-- nodes -->
+
+<MAP MODE="INVOKEINPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/$dbAlias;1;0" TO="/$dbAlias;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc/PO_REQUISITIONS;2;0/PO_REQ_LINES;2;0/BOM_RESOURCE;1;0" TO="/queryParams;2;0/RESOURCE_CODE;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc/PO_REQUISITIONS;2;0/ORGANIZATION_NAME;1;0" TO="/queryParams;2;0/ORGANIZATION_NAME;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="INVOKEOUTPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/RESOURCE_ID;1;0" TO="/outArrayRequisition(0);2;0/BOM_RESOURCE_ID;1;0">
+</MAPCOPY>
+</MAP>
+</MAPINVOKE>
+
+<MAPCOPY NAME="Link" FROM="/BATCH_ID;1;0" TO="/outArrayRequisition;2;0/BATCH_ID;1;0">
+</MAPCOPY>
+
+<MAPINVOKE SERVICE="purchasing11510.intoOA.requisition.utils:getItemNumber_tf" INVOKE-ORDER="0">
+
+  <!-- nodes -->
+
+<MAP MODE="INVOKEINPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/$dbAlias;1;0" TO="/$dbAlias;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc/PO_REQUISITIONS;2;0/PO_REQ_LINES;2;0/SUGGESTED_VENDOR_ITEM;1;0" TO="/queryParams;2;0/ITEM;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc/PO_REQUISITIONS;2;0/ORGANIZATION_NAME;1;0" TO="/queryParams;2;0/ORGANIZATION_NAME;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="INVOKEOUTPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/ITEM_NUMBER;1;0" TO="/outArrayRequisition;2;0/SUGGESTED_VENDOR_ITEM_NUM;1;0">
+</MAPCOPY>
+</MAP>
+</MAPINVOKE>
+
+<MAPINVOKE SERVICE="purchasing11510.intoOA.requisition.utils:getWIPLineId_tf" INVOKE-ORDER="0">
+
+  <!-- nodes -->
+
+<MAP MODE="INVOKEINPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/$dbAlias;1;0" TO="/$dbAlias;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc/PO_REQUISITIONS;2;0/PO_REQ_LINES;2;0/WIP_LINE_CODE;1;0" TO="/queryParams;2;0/LINE_CODE;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc/PO_REQUISITIONS;2;0/ORGANIZATION_NAME;1;0" TO="/queryParams;2;0/ORGANIZATION_NAME;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="INVOKEOUTPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/LINE_ID;1;0" TO="/outArrayRequisition;2;0/WIP_LINE_ID;1;0">
+</MAPCOPY>
+</MAP>
+</MAPINVOKE>
+
+<MAPINVOKE SERVICE="purchasing11510.intoOA.requisition.utils:getCategoryId_tf" INVOKE-ORDER="0">
+
+  <!-- nodes -->
+
+<MAP MODE="INVOKEINPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/$dbAlias;1;0" TO="/$dbAlias;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc/PO_REQUISITIONS;2;0/PO_REQ_LINES;2;0/CATEGORY;1;0" TO="/queryParams;2;0/CATEGORY;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="INVOKEOUTPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/CATEGORY_ID;1;0" TO="/outArrayRequisition;2;0/CATEGORY_ID;1;0">
+</MAPCOPY>
+</MAP>
+</MAPINVOKE>
+
+<MAPINVOKE SERVICE="purchasing11510.intoOA.requisition.utils:getTaxCodeId_tf" INVOKE-ORDER="0">
+
+  <!-- nodes -->
+
+<MAP MODE="INVOKEINPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/$dbAlias;1;0" TO="/$dbAlias;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc/PO_REQUISITIONS;2;0/PO_REQ_LINES;2;0/TAX_CODE;1;0" TO="/queryParams;2;0/NAME;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc/PO_REQUISITIONS;2;0/ORGANIZATION_NAME;1;0" TO="/queryParams;2;0/ORGANIZATION_NAME;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="INVOKEOUTPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/TAX_ID;1;0" TO="/outArrayRequisition;2;0/TAX_CODE_ID;1;0">
+</MAPCOPY>
+</MAP>
+</MAPINVOKE>
+
+<MAPCOPY NAME="Link" FROM="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc/PO_REQUISITIONS;2;0/INTERFACE_SOURCE_CODE;1;0" TO="/outArrayRequisition;2;0/INTERFACE_SOURCE_CODE;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc/PO_REQUISITIONS;2;0/PO_REQ_LINES;2;0/SOURCE_TYPE_CODE;1;0" TO="/outArrayRequisition;2;0/SOURCE_TYPE_CODE;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc/PO_REQUISITIONS;2;0/REQUISITION_TYPE;1;0" TO="/outArrayRequisition;2;0/REQUISITION_TYPE;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc/PO_REQUISITIONS;2;0/PO_REQ_LINES;2;0/DESTINATION_TYPE_CODE;1;0" TO="/outArrayRequisition;2;0/DESTINATION_TYPE_CODE;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc/PO_REQUISITIONS;2;0/PO_REQ_LINES;2;0/QUANTITY;1;0" TO="/outArrayRequisition;2;0/QUANTITY;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc/PO_REQUISITIONS;2;0/PO_REQ_LINES;2;0/UNIT_PRICE;1;0" TO="/outArrayRequisition;2;0/UNIT_PRICE;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc/PO_REQUISITIONS;2;0/AUTHORIZATION_STATUS;1;0" TO="/outArrayRequisition;2;0/AUTHORIZATION_STATUS;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc/PO_REQUISITIONS;2;0/APPROVER_NAME;1;0" TO="/outArrayRequisition;2;0/APPROVER_NAME;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc/PO_REQUISITIONS;2;0/NOTE_TO_APPROVER;1;0" TO="/outArrayRequisition;2;0/NOTE_TO_APPROVER;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc/PO_REQUISITIONS;2;0/PO_REQ_LINES;2;0/AUTOSOURCE_FLAG;1;0" TO="/outArrayRequisition;2;0/AUTOSOURCE_FLAG;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc/PO_REQUISITIONS;2;0/HEADER_DESCRIPTION;1;0" TO="/outArrayRequisition;2;0/HEADER_DESCRIPTION;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc/PO_REQUISITIONS;2;0/PO_REQ_LINES;2;0/URGENT_FLAG;1;0" TO="/outArrayRequisition;2;0/URGENT_FLAG;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc/PO_REQUISITIONS;2;0/PO_REQ_LINES;2;0/RFQ_REQUIRED_FLAG;1;0" TO="/outArrayRequisition;2;0/RFQ_REQUIRED_FLAG;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc/PO_REQUISITIONS;2;0/PO_REQ_LINES;2;0/JUSTIFICATION;1;0" TO="/outArrayRequisition;2;0/JUSTIFICATION;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc/PO_REQUISITIONS;2;0/PO_REQ_LINES;2;0/NOTE_TO_BUYER;1;0" TO="/outArrayRequisition;2;0/NOTE_TO_BUYER;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc/PO_REQUISITIONS;2;0/PO_REQ_LINES;2;0/NOTE_TO_RECEIVER;1;0" TO="/outArrayRequisition;2;0/NOTE_TO_RECEIVER;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc/PO_REQUISITIONS;2;0/PO_REQ_LINES;2;0/ITEM_REVISION;1;0" TO="/outArrayRequisition;2;0/ITEM_REVISION;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc/PO_REQUISITIONS;2;0/PO_REQ_LINES;2;0/UNIT_OF_MEASURE;1;0" TO="/outArrayRequisition;2;0/UNIT_OF_MEASURE;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc/PO_REQUISITIONS;2;0/PO_REQ_LINES;2;0/UOM_CODE;1;0" TO="/outArrayRequisition;2;0/UOM_CODE;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc/PO_REQUISITIONS;2;0/PO_REQ_LINES;2;0/LINE_TYPE;1;0" TO="/outArrayRequisition;2;0/LINE_TYPE;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc/PO_REQUISITIONS;2;0/PO_REQ_LINES;2;0/UN_NUMBER;1;0" TO="/outArrayRequisition;2;0/UN_NUMBER;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc/PO_REQUISITIONS;2;0/PO_REQ_LINES;2;0/HAZARD_CLASS;1;0" TO="/outArrayRequisition;2;0/HAZARD_CLASS;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc/PO_REQUISITIONS;2;0/PO_REQ_LINES;2;0/REFERENCE_NUM;1;0" TO="/outArrayRequisition;2;0/REFERENCE_NUM;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc/PO_REQUISITIONS;2;0/PO_REQ_LINES;2;0/WIP_OPERATION_SEQ_NUM;1;0" TO="/outArrayRequisition;2;0/WIP_OPERATION_SEQ_NUM;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc/PO_REQUISITIONS;2;0/PO_REQ_LINES;2;0/WIP_RESOURCE_SEQ_NUM;1;0" TO="/outArrayRequisition;2;0/WIP_RESOURCE_SEQ_NUM;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc/PO_REQUISITIONS;2;0/PO_REQ_LINES;2;0/WIP_REPETITIVE_SCHEDULE_ID;1;0" TO="/outArrayRequisition;2;0/WIP_REPETITIVE_SCHEDULE_ID;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc/PO_REQUISITIONS;2;0/PO_REQ_LINES;2;0/SOURCE_SUBINVENTORY;1;0" TO="/outArrayRequisition;2;0/SOURCE_SUBINVENTORY;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc/PO_REQUISITIONS;2;0/PO_REQ_LINES;2;0/DESTINATION_SUBINVENTORY;1;0" TO="/outArrayRequisition;2;0/DESTINATION_SUBINVENTORY;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc/PO_REQUISITIONS;2;0/PO_REQ_LINES;2;0/DELIVER_TO_REQUESTOR_NAME;1;0" TO="/outArrayRequisition;2;0/DELIVER_TO_REQUESTOR_NAME;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc/PO_REQUISITIONS;2;0/PO_REQ_LINES;2;0/SUGGESTED_BUYER_NAME;1;0" TO="/outArrayRequisition;2;0/SUGGESTED_BUYER_NAME;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc/PO_REQUISITIONS;2;0/PO_REQ_LINES;2;0/SUGGESTED_VENDOR_NAME;1;0" TO="/outArrayRequisition;2;0/SUGGESTED_VENDOR_NAME;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc/PO_REQUISITIONS;2;0/PO_REQ_LINES;2;0/SUGGESTED_VENDOR_CONTACT;1;0" TO="/outArrayRequisition;2;0/SUGGESTED_VENDOR_CONTACT;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc/PO_REQUISITIONS;2;0/PO_REQ_LINES;2;0/SUGGESTED_VENDOR_PHONE;1;0" TO="/outArrayRequisition;2;0/SUGGESTED_VENDOR_PHONE;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc/PO_REQUISITIONS;2;0/PO_REQ_LINES;2;0/NEED_BY_DATE;1;0" TO="/outArrayRequisition;2;0/NEED_BY_DATE;3;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc/PO_REQUISITIONS;2;0/PREPARER_NAME;1;0" TO="/outArrayRequisition;2;0/PREPARER_NAME;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc/PO_REQUISITIONS;2;0/PO_REQ_LINES;2;0/CURRENCY_CODE;1;0" TO="/outArrayRequisition;2;0/CURRENCY_CODE;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc/PO_REQUISITIONS;2;0/PO_REQ_LINES;2;0/CURRENCY_UNIT_PRICE;1;0" TO="/outArrayRequisition;2;0/CURRENCY_UNIT_PRICE;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc/PO_REQUISITIONS;2;0/PO_REQ_LINES;2;0/RATE;1;0" TO="/outArrayRequisition;2;0/RATE;1;0">
+</MAPCOPY>
+
+<MAPINVOKE SERVICE="commonOA11510.custom:convertToDateObject" INVOKE-ORDER="0">
+
+  <!-- nodes -->
+
+<MAP MODE="INVOKEINPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc/PO_REQUISITIONS;2;0/PO_REQ_LINES;2;0/RATE_DATE;1;0" TO="/inDate;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="INVOKEOUTPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/outDate;3;0" TO="/outArrayRequisition;2;0/RATE_DATE;3;0">
+</MAPCOPY>
+</MAP>
+</MAPINVOKE>
+
+<MAPCOPY NAME="Link" FROM="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc/PO_REQUISITIONS;2;0/PO_REQ_LINES;2;0/RATE_TYPE;1;0" TO="/outArrayRequisition;2;0/RATE_TYPE;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc/PO_REQUISITIONS;2;0/PO_REQ_LINES;2;0/AUTOSOURCE_DOC_LINE_NUMBER;1;0" TO="/outArrayRequisition;2;0/AUTOSOURCE_DOC_LINE_NUM;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc/PO_REQUISITIONS;2;0/PO_REQ_LINES;2;0/DOCUMENT_TYPE_CODE;1;0" TO="/outArrayRequisition;2;0/DOCUMENT_TYPE_CODE;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc/PO_REQUISITIONS;2;0/PO_REQ_LINES;2;0/TRANSACTION_REASON_CODE;1;0" TO="/outArrayRequisition;2;0/TRANSACTION_REASON_CODE;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc/PO_REQUISITIONS;2;0/PO_REQ_LINES;2;0/DELIVER_TO_LOCATION_CODE;1;0" TO="/outArrayRequisition;2;0/DELIVER_TO_LOCATION_CODE;1;0">
+</MAPCOPY>
+
+<MAPINVOKE SERVICE="commonOA11510.utils:pickSequence" INVOKE-ORDER="0">
+
+  <!-- nodes -->
+
+<MAP MODE="INVOKEINPUT">
+
+  <!-- nodes -->
+
+<MAPSET NAME="Setter" OVERWRITE="true" VARIABLES="false" FIELD="/pickSequenceInput;2;0">
+  <DATA ENCODING="XMLValues" I18N="true">
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="P_SEQUENCE_NAME">WM_REQ_DIST_S</value>
+  </record>
+  <record name="type" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_name">pickSequenceInput</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="nillable">true</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">P_SEQUENCE_NAME</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+    </array>
+  </record>
+</Values>
+</DATA>
+</MAPSET>
+</MAP>
+
+<MAP MODE="INVOKEOUTPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/pickSequenceOutput;2;0/results;2;0/O_SEQUENCE_VALUE;1;0" TO="/outArrayRequisition;2;0/REQ_DIST_SEQUENCE_ID;1;0">
+</MAPCOPY>
+</MAP>
+</MAPINVOKE>
+</MAP>
+
+<LOOP TIMEOUT="" IN-ARRAY="/requisitionBizDoc/PO_REQUISITIONS/PO_REQ_LINES/PO_REQ_DISTRIBUTIONS" OUT-ARRAY="/outArrayDistribution">
+  <COMMENT></COMMENT>
+
+  <!-- nodes -->
+
+<MAP MODE="STANDALONE">
+  <COMMENT>Map Requisition Business Document Distribution to Temp Array</COMMENT>
+  <MAPTARGET>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="nillable">true</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="field_name">requisitionBizDoc</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="rec_ref">purchasing11510.intoOA.requisition.rec:requisitionBizDoc</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">BATCH_ID</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">$dbAlias</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">outArrayRequisition</value>
+        <value name="field_type">record</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <array name="rec_fields" type="record" depth="1">
+        </array>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">$iteration</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">outArrayDistribution</value>
+        <value name="field_type">record</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <array name="rec_fields" type="record" depth="1">
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">DIST_SEQUENCE_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">ACCRUAL_ACCOUNT_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">ALLOCATION_TYPE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">ALLOCATION_VALUE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">BATCH_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">BUDGET_ACCOUNT_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">CHARGE_ACCOUNT_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">DESTINATION_ORGANIZATION_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">DESTINATION_SUBINVENTORY</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">DESTINATION_TYPE_CODE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">DISTRIBUTION_NUMBER</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">EXPENDITURE_ITEM_DATE</value>
+            <value name="field_type">object</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">EXPENDITURE_ORGANIZATION_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">EXPENDITURE_TYPE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">GL_DATE</value>
+            <value name="field_type">object</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">INTERFACE_SOURCE_CODE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">ORG_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">PROJECT_ACCOUNTING_CONTEXT</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">PROJECT_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">QUANTITY</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">TASK_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">VARIANCE_ACCOUNT_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+        </array>
+      </record>
+    </array>
+  </record>
+</Values>
+</MAPTARGET>
+  <MAPSOURCE>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="nillable">true</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="field_name">requisitionBizDoc</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="rec_ref">purchasing11510.intoOA.requisition.rec:requisitionBizDoc</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">BATCH_ID</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">$dbAlias</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">outArrayRequisition</value>
+        <value name="field_type">record</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <array name="rec_fields" type="record" depth="1">
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">REQ_DIST_SEQUENCE_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">INTERFACE_SOURCE_CODE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">SOURCE_TYPE_CODE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">REQUISITION_TYPE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">DESTINATION_TYPE_CODE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">QUANTITY</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">UNIT_PRICE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">AUTHORIZATION_STATUS</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">BATCH_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">APPROVER_NAME</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">NOTE_TO_APPROVER</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">AUTOSOURCE_FLAG</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">HEADER_DESCRIPTION</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">URGENT_FLAG</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">RFQ_REQUIRED_FLAG</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">JUSTIFICATION</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">NOTE_TO_BUYER</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">NOTE_TO_RECEIVER</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">ITEM_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">ITEM_REVISION</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">CATEGORY_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">UNIT_OF_MEASURE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">UOM_CODE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">LINE_TYPE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">UN_NUMBER</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">HAZARD_CLASS</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">REFERENCE_NUM</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">WIP_ENTITY_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">WIP_LINE_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">WIP_OPERATION_SEQ_NUM</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">WIP_RESOURCE_SEQ_NUM</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">WIP_REPETITIVE_SCHEDULE_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">SOURCE_ORGANIZATION_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">SOURCE_SUBINVENTORY</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">DESTINATION_ORGANIZATION_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">DESTINATION_SUBINVENTORY</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">DELIVER_TO_LOCATION_CODE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">DELIVER_TO_LOCATION_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">DELIVER_TO_REQUESTOR_NAME</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">SUGGESTED_BUYER_NAME</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">SUGGESTED_VENDOR_NAME</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">SUGGESTED_VENDOR_SITE_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">SUGGESTED_VENDOR_CONTACT</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">SUGGESTED_VENDOR_PHONE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">SUGGESTED_VENDOR_ITEM_NUM</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">NEED_BY_DATE</value>
+            <value name="field_type">object</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">PREPARER_NAME</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">BOM_RESOURCE_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">CURRENCY_CODE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">CURRENCY_UNIT_PRICE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">RATE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">RATE_DATE</value>
+            <value name="field_type">object</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">RATE_TYPE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">AUTOSOURCE_DOC_LINE_NUM</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">DOCUMENT_TYPE_CODE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">TRANSACTION_REASON_CODE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">KANBAN_CARD_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">TAX_CODE_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+        </array>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">$iteration</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+    </array>
+  </record>
+</Values>
+</MAPSOURCE>
+
+  <!-- nodes -->
+
+<MAPINVOKE SERVICE="commonOA11510.utils:getOrgId_tf" INVOKE-ORDER="0">
+
+  <!-- nodes -->
+
+<MAP MODE="INVOKEINPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/$dbAlias;1;0" TO="/$dbAlias;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc/PO_REQUISITIONS;2;0/PO_REQ_LINES;2;0/DESTINATION_ORGANIZATION_NAME;1;0" TO="/queryParams;2;0/ORGANIZATION_NAME;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="INVOKEOUTPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/ORGANIZATION_ID;1;0" TO="/outArrayDistribution(0);2;0/DESTINATION_ORGANIZATION_ID;1;0">
+</MAPCOPY>
+</MAP>
+</MAPINVOKE>
+
+<MAPINVOKE SERVICE="commonOA11510.utils:getOrgId_tf" INVOKE-ORDER="0">
+
+  <!-- nodes -->
+
+<MAP MODE="INVOKEINPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/$dbAlias;1;0" TO="/$dbAlias;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc/PO_REQUISITIONS;2;0/ORGANIZATION_NAME;1;0" TO="/queryParams;2;0/ORGANIZATION_NAME;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="INVOKEOUTPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/ORGANIZATION_ID;1;0" TO="/outArrayDistribution(0);2;0/ORG_ID;1;0">
+</MAPCOPY>
+</MAP>
+</MAPINVOKE>
+
+<MAPINVOKE SERVICE="commonOA11510.utils:getOrgId_tf" INVOKE-ORDER="0">
+
+  <!-- nodes -->
+
+<MAP MODE="INVOKEINPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/$dbAlias;1;0" TO="/$dbAlias;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc/PO_REQUISITIONS;2;0/PO_REQ_LINES;2;0/PO_REQ_DISTRIBUTIONS;2;0/EXPENDITURE_ORGANIZATION_NAME;1;0" TO="/queryParams;2;0/ORGANIZATION_NAME;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="INVOKEOUTPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/ORGANIZATION_ID;1;0" TO="/outArrayDistribution(0);2;0/EXPENDITURE_ORGANIZATION_ID;1;0">
+</MAPCOPY>
+</MAP>
+</MAPINVOKE>
+
+<MAPINVOKE SERVICE="commonOA11510.utils:getProjectAndTaskId_tf" VALIDATE-IN="$none" VALIDATE-OUT="$none" INVOKE-ORDER="0">
+
+  <!-- nodes -->
+
+<MAP MODE="INVOKEINPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/$dbAlias;1;0" TO="/$dbAlias;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc/PO_REQUISITIONS;2;0/PO_REQ_LINES;2;0/PO_REQ_DISTRIBUTIONS;2;0/TASK_NAME;1;0" TO="/queryParams;2;0/TASK_NAME;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc/PO_REQUISITIONS;2;0/PO_REQ_LINES;2;0/PO_REQ_DISTRIBUTIONS;2;0/PROJECT_NAME;1;0" TO="/queryParams;2;0/PROJECT_NAME;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="INVOKEOUTPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/PROJECT_ID;1;0" TO="/outArrayDistribution(0);2;0/PROJECT_ID;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/TASK_ID;1;0" TO="/outArrayDistribution(0);2;0/TASK_ID;1;0">
+</MAPCOPY>
+</MAP>
+</MAPINVOKE>
+
+<MAPINVOKE SERVICE="commonOA11510.custom:convertToDateObject" INVOKE-ORDER="0">
+
+  <!-- nodes -->
+
+<MAP MODE="INVOKEINPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc/PO_REQUISITIONS;2;0/PO_REQ_LINES;2;0/PO_REQ_DISTRIBUTIONS;2;0/EXPENDITURE_ITEM_DATE;1;0" TO="/inDate;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="INVOKEOUTPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/outDate;3;0" TO="/outArrayDistribution(0);2;0/EXPENDITURE_ITEM_DATE;3;0">
+</MAPCOPY>
+</MAP>
+</MAPINVOKE>
+
+<MAPINVOKE SERVICE="commonOA11510.custom:convertToDateObject" INVOKE-ORDER="0">
+
+  <!-- nodes -->
+
+<MAP MODE="INVOKEINPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc/PO_REQUISITIONS;2;0/PO_REQ_LINES;2;0/PO_REQ_DISTRIBUTIONS;2;0/GL_DATE;1;0" TO="/inDate;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="INVOKEOUTPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/outDate;3;0" TO="/outArrayDistribution(0);2;0/GL_DATE;3;0">
+</MAPCOPY>
+</MAP>
+</MAPINVOKE>
+
+<MAPINVOKE SERVICE="commonOA11510.utils:getCodeCombinationId_tf" INVOKE-ORDER="0">
+
+  <!-- nodes -->
+
+<MAP MODE="INVOKEINPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/$dbAlias;1;0" TO="/$dbAlias;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc/PO_REQUISITIONS;2;0/PO_REQ_LINES;2;0/PO_REQ_DISTRIBUTIONS;2;0/CHARGE_ACCOUNT;1;0" TO="/queryParams;2;0/CONCATENATED_SEGMENTS;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc/PO_REQUISITIONS;2;0/SET_OF_BOOKS_NAME;1;0" TO="/queryParams;2;0/SET_OF_BOOKS_NAME;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="INVOKEOUTPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/CODE_COMBINATION_ID;1;0" TO="/outArrayDistribution(0);2;0/CHARGE_ACCOUNT_ID;1;0">
+</MAPCOPY>
+</MAP>
+</MAPINVOKE>
+
+<MAPINVOKE SERVICE="commonOA11510.utils:getCodeCombinationId_tf" INVOKE-ORDER="0">
+
+  <!-- nodes -->
+
+<MAP MODE="INVOKEINPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/$dbAlias;1;0" TO="/$dbAlias;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc/PO_REQUISITIONS;2;0/PO_REQ_LINES;2;0/PO_REQ_DISTRIBUTIONS;2;0/BUDGET_ACCOUNT;1;0" TO="/queryParams;2;0/CONCATENATED_SEGMENTS;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc/PO_REQUISITIONS;2;0/SET_OF_BOOKS_NAME;1;0" TO="/queryParams;2;0/SET_OF_BOOKS_NAME;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="INVOKEOUTPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/CODE_COMBINATION_ID;1;0" TO="/outArrayDistribution(0);2;0/BUDGET_ACCOUNT_ID;1;0">
+</MAPCOPY>
+</MAP>
+</MAPINVOKE>
+
+<MAPINVOKE SERVICE="commonOA11510.utils:getCodeCombinationId_tf" INVOKE-ORDER="0">
+
+  <!-- nodes -->
+
+<MAP MODE="INVOKEINPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/$dbAlias;1;0" TO="/$dbAlias;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc/PO_REQUISITIONS;2;0/PO_REQ_LINES;2;0/PO_REQ_DISTRIBUTIONS;2;0/ACCRUAL_ACCOUNT;1;0" TO="/queryParams;2;0/CONCATENATED_SEGMENTS;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc/PO_REQUISITIONS;2;0/SET_OF_BOOKS_NAME;1;0" TO="/queryParams;2;0/SET_OF_BOOKS_NAME;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="INVOKEOUTPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/CODE_COMBINATION_ID;1;0" TO="/outArrayDistribution(0);2;0/ACCRUAL_ACCOUNT_ID;1;0">
+</MAPCOPY>
+</MAP>
+</MAPINVOKE>
+
+<MAPCOPY NAME="Link" FROM="/$iteration;1;0" TO="/outArrayDistribution(0);2;0/DISTRIBUTION_NUMBER;1;0">
+</MAPCOPY>
+
+<MAPINVOKE SERVICE="commonOA11510.utils:getCodeCombinationId_tf" INVOKE-ORDER="0">
+
+  <!-- nodes -->
+
+<MAP MODE="INVOKEINPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/$dbAlias;1;0" TO="/$dbAlias;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc/PO_REQUISITIONS;2;0/PO_REQ_LINES;2;0/PO_REQ_DISTRIBUTIONS;2;0/VARIANCE_ACCOUNT;1;0" TO="/queryParams;2;0/CONCATENATED_SEGMENTS;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc/PO_REQUISITIONS;2;0/SET_OF_BOOKS_NAME;1;0" TO="/queryParams;2;0/SET_OF_BOOKS_NAME;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="INVOKEOUTPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/CODE_COMBINATION_ID;1;0" TO="/outArrayDistribution(0);2;0/VARIANCE_ACCOUNT_ID;1;0">
+</MAPCOPY>
+</MAP>
+</MAPINVOKE>
+
+<MAPCOPY NAME="Link" FROM="/BATCH_ID;1;0" TO="/outArrayDistribution;2;0/BATCH_ID;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/outArrayRequisition;2;0/REQ_DIST_SEQUENCE_ID;1;0" TO="/outArrayDistribution;2;0/DIST_SEQUENCE_ID;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc/PO_REQUISITIONS;2;0/PO_REQ_LINES;2;0/PO_REQ_DISTRIBUTIONS;2;0/ALLOCATION_TYPE;1;0" TO="/outArrayDistribution;2;0/ALLOCATION_TYPE;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc/PO_REQUISITIONS;2;0/PO_REQ_LINES;2;0/PO_REQ_DISTRIBUTIONS;2;0/ALLOCATION_VALUE;1;0" TO="/outArrayDistribution;2;0/ALLOCATION_VALUE;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc/PO_REQUISITIONS;2;0/PO_REQ_LINES;2;0/DESTINATION_SUBINVENTORY;1;0" TO="/outArrayDistribution;2;0/DESTINATION_SUBINVENTORY;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc/PO_REQUISITIONS;2;0/PO_REQ_LINES;2;0/DESTINATION_TYPE_CODE;1;0" TO="/outArrayDistribution;2;0/DESTINATION_TYPE_CODE;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc/PO_REQUISITIONS;2;0/PO_REQ_LINES;2;0/PO_REQ_DISTRIBUTIONS;2;0/EXPENDITURE_TYPE;1;0" TO="/outArrayDistribution;2;0/EXPENDITURE_TYPE;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc/PO_REQUISITIONS;2;0/INTERFACE_SOURCE_CODE;1;0" TO="/outArrayDistribution;2;0/INTERFACE_SOURCE_CODE;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc/PO_REQUISITIONS;2;0/PO_REQ_LINES;2;0/PO_REQ_DISTRIBUTIONS;2;0/PROJECT_ACCOUNTING_CONTEXT;1;0" TO="/outArrayDistribution;2;0/PROJECT_ACCOUNTING_CONTEXT;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc/PO_REQUISITIONS;2;0/PO_REQ_LINES;2;0/PO_REQ_DISTRIBUTIONS;2;0/QUANTITY;1;0" TO="/outArrayDistribution;2;0/QUANTITY;1;0">
+</MAPCOPY>
+</MAP>
+</LOOP>
+
+<MAP TIMEOUT="" MODE="STANDALONE">
+  <COMMENT>Map Temp Distribution Array to Temp Requisition Array</COMMENT>
+  <MAPTARGET>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="nillable">true</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="field_name">requisitionBizDoc</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="rec_ref">purchasing11510.intoOA.requisition.rec:requisitionBizDoc</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">BATCH_ID</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">$dbAlias</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">outArrayRequisition</value>
+        <value name="field_type">record</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <array name="rec_fields" type="record" depth="1">
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">REQ_DIST_SEQUENCE_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">INTERFACE_SOURCE_CODE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">SOURCE_TYPE_CODE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">REQUISITION_TYPE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">DESTINATION_TYPE_CODE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">QUANTITY</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">UNIT_PRICE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">AUTHORIZATION_STATUS</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">BATCH_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">APPROVER_NAME</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">NOTE_TO_APPROVER</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">AUTOSOURCE_FLAG</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">HEADER_DESCRIPTION</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">URGENT_FLAG</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">RFQ_REQUIRED_FLAG</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">JUSTIFICATION</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">NOTE_TO_BUYER</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">NOTE_TO_RECEIVER</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">ITEM_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">ITEM_REVISION</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">CATEGORY_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">UNIT_OF_MEASURE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">UOM_CODE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">LINE_TYPE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">UN_NUMBER</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">HAZARD_CLASS</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">REFERENCE_NUM</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">WIP_ENTITY_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">WIP_LINE_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">WIP_OPERATION_SEQ_NUM</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">WIP_RESOURCE_SEQ_NUM</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">WIP_REPETITIVE_SCHEDULE_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">SOURCE_ORGANIZATION_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">SOURCE_SUBINVENTORY</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">DESTINATION_ORGANIZATION_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">DESTINATION_SUBINVENTORY</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">DELIVER_TO_LOCATION_CODE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">DELIVER_TO_LOCATION_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">DELIVER_TO_REQUESTOR_NAME</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">SUGGESTED_BUYER_NAME</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">SUGGESTED_VENDOR_NAME</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">SUGGESTED_VENDOR_SITE_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">SUGGESTED_VENDOR_CONTACT</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">SUGGESTED_VENDOR_PHONE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">SUGGESTED_VENDOR_ITEM_NUM</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">NEED_BY_DATE</value>
+            <value name="field_type">object</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">PREPARER_NAME</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">BOM_RESOURCE_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">CURRENCY_CODE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">CURRENCY_UNIT_PRICE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">RATE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">RATE_DATE</value>
+            <value name="field_type">object</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">RATE_TYPE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">AUTOSOURCE_DOC_LINE_NUM</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">DOCUMENT_TYPE_CODE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">TRANSACTION_REASON_CODE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">KANBAN_CARD_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">TAX_CODE_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">ACCRUAL_ACCOUNT_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">BUDGET_ACCOUNT_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">CHARGE_ACCOUNT_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+        </array>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">$iteration</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">outArrayDistribution</value>
+        <value name="field_type">record</value>
+        <value name="field_dim">1</value>
+        <value name="nillable">true</value>
+        <array name="rec_fields" type="record" depth="1">
+        </array>
+      </record>
+    </array>
+  </record>
+</Values>
+</MAPTARGET>
+  <MAPSOURCE>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="nillable">true</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="field_name">requisitionBizDoc</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="rec_ref">purchasing11510.intoOA.requisition.rec:requisitionBizDoc</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">BATCH_ID</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">$dbAlias</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">outArrayRequisition</value>
+        <value name="field_type">record</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <array name="rec_fields" type="record" depth="1">
+        </array>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">$iteration</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">outArrayDistribution</value>
+        <value name="field_type">record</value>
+        <value name="field_dim">1</value>
+        <value name="nillable">true</value>
+        <array name="rec_fields" type="record" depth="1">
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">DIST_SEQUENCE_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">ACCRUAL_ACCOUNT_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">ALLOCATION_TYPE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">ALLOCATION_VALUE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">BATCH_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">BUDGET_ACCOUNT_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">CHARGE_ACCOUNT_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">DESTINATION_ORGANIZATION_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">DESTINATION_SUBINVENTORY</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">DESTINATION_TYPE_CODE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">DISTRIBUTION_NUMBER</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">EXPENDITURE_ITEM_DATE</value>
+            <value name="field_type">object</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">EXPENDITURE_ORGANIZATION_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">EXPENDITURE_TYPE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">GL_DATE</value>
+            <value name="field_type">object</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">INTERFACE_SOURCE_CODE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">ORG_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">PROJECT_ACCOUNTING_CONTEXT</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">PROJECT_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">QUANTITY</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">TASK_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">VARIANCE_ACCOUNT_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+        </array>
+      </record>
+    </array>
+  </record>
+</Values>
+</MAPSOURCE>
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/outArrayDistribution;2;1/ACCRUAL_ACCOUNT_ID;1;0" TO="/outArrayRequisition;2;0/ACCRUAL_ACCOUNT_ID;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/outArrayDistribution;2;1/BUDGET_ACCOUNT_ID;1;0" TO="/outArrayRequisition;2;0/BUDGET_ACCOUNT_ID;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/outArrayDistribution;2;1/CHARGE_ACCOUNT_ID(0);1;0" TO="/outArrayRequisition;2;0/CHARGE_ACCOUNT_ID;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="STANDALONE">
+  <COMMENT>Map Temp Array to Requistion Distribution Interface Table</COMMENT>
+  <MAPTARGET>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="nillable">true</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="field_name">requisitionBizDoc</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="rec_ref">purchasing11510.intoOA.requisition.rec:requisitionBizDoc</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">BATCH_ID</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">$dbAlias</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">outArrayRequisition</value>
+        <value name="field_type">record</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <array name="rec_fields" type="record" depth="1">
+        </array>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">$iteration</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">requisitionRecordSet</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="rec_ref">purchasing11510.intoOA.requisition.rec:setRequisitionTxnInputRec</value>
+      </record>
+    </array>
+  </record>
+</Values>
+</MAPTARGET>
+  <MAPSOURCE>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="nillable">true</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="field_name">requisitionBizDoc</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="rec_ref">purchasing11510.intoOA.requisition.rec:requisitionBizDoc</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">BATCH_ID</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">$dbAlias</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">outArrayRequisition</value>
+        <value name="field_type">record</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <array name="rec_fields" type="record" depth="1">
+        </array>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">$iteration</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">outArrayDistribution</value>
+        <value name="field_type">record</value>
+        <value name="field_dim">1</value>
+        <value name="nillable">true</value>
+        <array name="rec_fields" type="record" depth="1">
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">DIST_SEQUENCE_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">ACCRUAL_ACCOUNT_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">ALLOCATION_TYPE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">ALLOCATION_VALUE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">BATCH_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">BUDGET_ACCOUNT_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">CHARGE_ACCOUNT_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">DESTINATION_ORGANIZATION_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">DESTINATION_SUBINVENTORY</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">DESTINATION_TYPE_CODE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">DISTRIBUTION_NUMBER</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">EXPENDITURE_ITEM_DATE</value>
+            <value name="field_type">object</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">EXPENDITURE_ORGANIZATION_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">EXPENDITURE_TYPE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">GL_DATE</value>
+            <value name="field_type">object</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">INTERFACE_SOURCE_CODE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">ORG_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">PROJECT_ACCOUNTING_CONTEXT</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">PROJECT_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">QUANTITY</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">TASK_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">VARIANCE_ACCOUNT_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+        </array>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">requisitionRecordSet</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="rec_ref">purchasing11510.intoOA.requisition.rec:setRequisitionTxnInputRec</value>
+      </record>
+    </array>
+  </record>
+</Values>
+</MAPSOURCE>
+
+  <!-- nodes -->
+
+<MAPINVOKE SERVICE="pub.list:appendToRecordList" VALIDATE-IN="$none" VALIDATE-OUT="$none" INVOKE-ORDER="0">
+
+  <!-- nodes -->
+
+<MAP MODE="INVOKEINPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/outArrayDistribution;2;1" TO="/fromList;2;1">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/requisitionRecordSet;4;0;purchasing11510.intoOA.requisition.rec:setRequisitionTxnInputRec/PO_REQ_DIST_INTERFACE_ALL;2;1" TO="/toList;2;1">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="INVOKEOUTPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/toList;2;1" TO="/requisitionRecordSet;4;0;purchasing11510.intoOA.requisition.rec:setRequisitionTxnInputRec/PO_REQ_DIST_INTERFACE_ALL;2;1">
+</MAPCOPY>
+</MAP>
+</MAPINVOKE>
+
+<MAPDELETE NAME="Dropper" FIELD="/outArrayDistribution;2;1">
+</MAPDELETE>
+</MAP>
+</LOOP>
+
+<MAP MODE="STANDALONE">
+  <COMMENT>Map Temp Array to Requistion Lines Interface Table</COMMENT>
+  <MAPTARGET>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="nillable">true</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="field_name">requisitionBizDoc</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="rec_ref">purchasing11510.intoOA.requisition.rec:requisitionBizDoc</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">BATCH_ID</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">$dbAlias</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">$iteration</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">requisitionRecordSet</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="rec_ref">purchasing11510.intoOA.requisition.rec:setRequisitionTxnInputRec</value>
+      </record>
+    </array>
+  </record>
+</Values>
+</MAPTARGET>
+  <MAPSOURCE>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="nillable">true</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="field_name">requisitionBizDoc</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="rec_ref">purchasing11510.intoOA.requisition.rec:requisitionBizDoc</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">BATCH_ID</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">$dbAlias</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">outArrayRequisition</value>
+        <value name="field_type">record</value>
+        <value name="field_dim">1</value>
+        <value name="nillable">true</value>
+        <array name="rec_fields" type="record" depth="1">
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">REQ_DIST_SEQUENCE_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">INTERFACE_SOURCE_CODE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">SOURCE_TYPE_CODE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">REQUISITION_TYPE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">DESTINATION_TYPE_CODE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">QUANTITY</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">UNIT_PRICE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">AUTHORIZATION_STATUS</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">BATCH_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">APPROVER_NAME</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">NOTE_TO_APPROVER</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">AUTOSOURCE_FLAG</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">HEADER_DESCRIPTION</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">URGENT_FLAG</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">RFQ_REQUIRED_FLAG</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">JUSTIFICATION</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">NOTE_TO_BUYER</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">NOTE_TO_RECEIVER</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">ITEM_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">ITEM_REVISION</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">CATEGORY_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">UNIT_OF_MEASURE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">UOM_CODE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">LINE_TYPE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">UN_NUMBER</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">HAZARD_CLASS</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">REFERENCE_NUM</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">WIP_ENTITY_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">WIP_LINE_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">WIP_OPERATION_SEQ_NUM</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">WIP_RESOURCE_SEQ_NUM</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">WIP_REPETITIVE_SCHEDULE_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">SOURCE_ORGANIZATION_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">SOURCE_SUBINVENTORY</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">DESTINATION_ORGANIZATION_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">DESTINATION_SUBINVENTORY</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">DELIVER_TO_LOCATION_CODE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">DELIVER_TO_LOCATION_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">DELIVER_TO_REQUESTOR_NAME</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">SUGGESTED_BUYER_NAME</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">SUGGESTED_VENDOR_NAME</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">SUGGESTED_VENDOR_SITE_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">SUGGESTED_VENDOR_CONTACT</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">SUGGESTED_VENDOR_PHONE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">SUGGESTED_VENDOR_ITEM_NUM</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">NEED_BY_DATE</value>
+            <value name="field_type">object</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">PREPARER_NAME</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">BOM_RESOURCE_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">CURRENCY_CODE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">CURRENCY_UNIT_PRICE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">RATE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">RATE_DATE</value>
+            <value name="field_type">object</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">RATE_TYPE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">AUTOSOURCE_DOC_LINE_NUM</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">DOCUMENT_TYPE_CODE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">TRANSACTION_REASON_CODE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">KANBAN_CARD_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">TAX_CODE_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">ACCRUAL_ACCOUNT_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">BUDGET_ACCOUNT_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">CHARGE_ACCOUNT_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">GL_DATE</value>
+            <value name="field_type">object</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+        </array>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">$iteration</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">requisitionRecordSet</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="rec_ref">purchasing11510.intoOA.requisition.rec:setRequisitionTxnInputRec</value>
+      </record>
+    </array>
+  </record>
+</Values>
+</MAPSOURCE>
+
+  <!-- nodes -->
+
+<MAPDELETE NAME="Dropper" FIELD="/outArrayRequisition;2;1">
+</MAPDELETE>
+
+<MAPINVOKE SERVICE="pub.list:appendToRecordList" VALIDATE-IN="$none" VALIDATE-OUT="$none" INVOKE-ORDER="0">
+
+  <!-- nodes -->
+
+<MAP MODE="INVOKEINPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/outArrayRequisition;2;1" TO="/fromList;2;1">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/requisitionRecordSet;4;0;purchasing11510.intoOA.requisition.rec:setRequisitionTxnInputRec/PO_REQUISITIONS_INTERFACE_ALL;2;1" TO="/toList;2;1">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="INVOKEOUTPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/toList;2;1" TO="/requisitionRecordSet;4;0;purchasing11510.intoOA.requisition.rec:setRequisitionTxnInputRec/PO_REQUISITIONS_INTERFACE_ALL;2;1">
+</MAPCOPY>
+</MAP>
+</MAPINVOKE>
+</MAP>
+</LOOP>
+
+<MAP MODE="STANDALONE">
+  <COMMENT>Clear Unwanted Variables</COMMENT>
+  <MAPTARGET>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="nillable">true</value>
+    <array name="rec_fields" type="record" depth="1">
+    </array>
+  </record>
+</Values>
+</MAPTARGET>
+  <MAPSOURCE>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="nillable">true</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="field_name">requisitionBizDoc</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="rec_ref">purchasing11510.intoOA.requisition.rec:requisitionBizDoc</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">BATCH_ID</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">$dbAlias</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">$iteration</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">requisitionRecordSet</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="rec_ref">purchasing11510.intoOA.requisition.rec:setRequisitionTxnInputRec</value>
+      </record>
+    </array>
+  </record>
+</Values>
+</MAPSOURCE>
+
+  <!-- nodes -->
+
+<MAPDELETE NAME="Dropper" FIELD="/BATCH_ID;1;0">
+</MAPDELETE>
+
+<MAPDELETE NAME="Dropper" FIELD="/$dbAlias;1;0">
+</MAPDELETE>
+
+<MAPDELETE NAME="Dropper" FIELD="/$iteration;1;0">
+</MAPDELETE>
+
+<MAPDELETE NAME="Dropper" FIELD="/requisitionBizDoc;4;0;purchasing11510.intoOA.requisition.rec:requisitionBizDoc">
+</MAPDELETE>
+</MAP>
+</FLOW>

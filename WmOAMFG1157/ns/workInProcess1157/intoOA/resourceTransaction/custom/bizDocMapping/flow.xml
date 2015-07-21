@@ -1,0 +1,946 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<FLOW VERSION="3.0" CLEANUP="true">
+  <COMMENT>Get OA sysdate required for the mapping</COMMENT>
+
+  <!-- nodes -->
+
+<INVOKE TIMEOUT="" SERVICE="commonOA1157.custom:getOASystemDateObject" VALIDATE-IN="$none" VALIDATE-OUT="$none">
+  <COMMENT>Get OA sysdate required for the mapping</COMMENT>
+
+  <!-- nodes -->
+
+<MAP MODE="INPUT">
+</MAP>
+
+<MAP MODE="OUTPUT">
+</MAP>
+</INVOKE>
+
+<INVOKE TIMEOUT="" SERVICE="commonOA1157.utils:getOracleAppsUserId" VALIDATE-IN="$none" VALIDATE-OUT="$none">
+  <COMMENT>Get OA user Id required for the mapping</COMMENT>
+
+  <!-- nodes -->
+
+<MAP MODE="INPUT">
+  <MAPTARGET>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_name">in</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="field_opt">false</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">$dbAlias</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">queryParams</value>
+        <value name="field_type">record</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">false</value>
+        <array name="rec_fields" type="record" depth="1">
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">ORACLE_APPS_USER_NAME</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="field_opt">false</value>
+          </record>
+        </array>
+        <value name="rec_closed">false</value>
+      </record>
+    </array>
+    <value name="rec_closed">false</value>
+  </record>
+</Values>
+</MAPTARGET>
+  <MAPSOURCE>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="field_opt">false</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">$dbAlias</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">ResourceTransactionBizDoc</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">false</value>
+        <value name="rec_closed">false</value>
+        <value name="rec_ref">workInProcess1157.intoOA.resourceTransaction.rec:ResourceTransactionBizDoc</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">OracleAppsUserName</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">SYSDATE</value>
+        <value name="field_type">object</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">false</value>
+      </record>
+    </array>
+    <value name="rec_closed">false</value>
+  </record>
+</Values>
+</MAPSOURCE>
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/OracleAppsUserName;1;0" TO="/queryParams;2;0/ORACLE_APPS_USER_NAME;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="OUTPUT">
+  <MAPTARGET>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="field_opt">false</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">$dbAlias</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">queryParams</value>
+        <value name="field_type">record</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">false</value>
+        <array name="rec_fields" type="record" depth="1">
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">ORACLE_APPS_USER_NAME</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="field_opt">false</value>
+          </record>
+        </array>
+        <value name="rec_closed">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">ResourceTransactionBizDoc</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">false</value>
+        <value name="rec_closed">false</value>
+        <value name="rec_ref">workInProcess1157.intoOA.resourceTransaction.rec:ResourceTransactionBizDoc</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">OracleAppsUserName</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">SYSDATE</value>
+        <value name="field_type">object</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">USER_ID</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">false</value>
+      </record>
+    </array>
+    <value name="rec_closed">false</value>
+  </record>
+</Values>
+</MAPTARGET>
+  <MAPSOURCE>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_name">out</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="field_opt">false</value>
+    <list name="rec_fields">
+    </list>
+    <value name="rec_closed">false</value>
+  </record>
+</Values>
+</MAPSOURCE>
+
+  <!-- nodes -->
+
+<MAPDELETE NAME="Dropper" FIELD="/queryParams;2;0">
+</MAPDELETE>
+</MAP>
+</INVOKE>
+
+<LOOP TIMEOUT="" IN-ARRAY="/ResourceTransactionBizDoc/WIP_COST_TXN" OUT-ARRAY="/ResourceTransactionRecordSet/WIP_COST_TXN_INTERFACE">
+  <COMMENT></COMMENT>
+
+  <!-- nodes -->
+
+<MAP MODE="STANDALONE">
+  <COMMENT>Map Business Document to ResourceTransactionRecordSet</COMMENT>
+  <MAPTARGET>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="field_opt">false</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">$dbAlias</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="field_name">ResourceTransactionBizDoc</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">false</value>
+        <value name="rec_closed">false</value>
+        <value name="rec_ref">workInProcess1157.intoOA.resourceTransaction.rec:ResourceTransactionBizDoc</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">OracleAppsUserName</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">SYSDATE</value>
+        <value name="field_type">object</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">USER_ID</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">ResourceTransactionRecordSet</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">false</value>
+        <value name="rec_closed">false</value>
+        <value name="rec_ref">workInProcess1157.intoOA.resourceTransaction.rec:setResourceTransactionTxnInputRec</value>
+      </record>
+    </array>
+    <value name="rec_closed">false</value>
+  </record>
+</Values>
+</MAPTARGET>
+  <MAPSOURCE>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="field_opt">false</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">$dbAlias</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="field_name">ResourceTransactionBizDoc</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">false</value>
+        <value name="rec_closed">false</value>
+        <value name="rec_ref">workInProcess1157.intoOA.resourceTransaction.rec:ResourceTransactionBizDoc</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">OracleAppsUserName</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">SYSDATE</value>
+        <value name="field_type">object</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">USER_ID</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">ResourceTransactionRecordSet</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">false</value>
+        <value name="rec_closed">false</value>
+        <value name="rec_ref">workInProcess1157.intoOA.resourceTransaction.rec:setResourceTransactionTxnInputRec</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">$iteration</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">false</value>
+      </record>
+    </array>
+    <value name="rec_closed">false</value>
+  </record>
+</Values>
+</MAPSOURCE>
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/ResourceTransactionBizDoc;4;0;workInProcess1157.intoOA.resourceTransaction.rec:ResourceTransactionBizDoc/WIP_COST_TXN;2;0/SOURCE_CODE;1;0" TO="/ResourceTransactionRecordSet;4;0;workInProcess1157.intoOA.resourceTransaction.rec:setResourceTransactionTxnInputRec/WIP_COST_TXN_INTERFACE;2;0/SOURCE_CODE;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/ResourceTransactionBizDoc;4;0;workInProcess1157.intoOA.resourceTransaction.rec:ResourceTransactionBizDoc/WIP_COST_TXN;2;0/WIP_ENTITY_NAME;1;0" TO="/ResourceTransactionRecordSet;4;0;workInProcess1157.intoOA.resourceTransaction.rec:setResourceTransactionTxnInputRec/WIP_COST_TXN_INTERFACE;2;0/WIP_ENTITY_NAME;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/ResourceTransactionBizDoc;4;0;workInProcess1157.intoOA.resourceTransaction.rec:ResourceTransactionBizDoc/WIP_COST_TXN;2;0/LINE_CODE;1;0" TO="/ResourceTransactionRecordSet;4;0;workInProcess1157.intoOA.resourceTransaction.rec:setResourceTransactionTxnInputRec/WIP_COST_TXN_INTERFACE;2;0/LINE_CODE;1;0">
+</MAPCOPY>
+
+<MAPINVOKE SERVICE="workInProcess1157.intoOA.resourceTransaction.utils:getPOLineId" INVOKE-ORDER="0">
+
+  <!-- nodes -->
+
+<MAP MODE="INVOKEINPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/$dbAlias;1;0" TO="/$dbAlias;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/ResourceTransactionBizDoc;4;0;workInProcess1157.intoOA.resourceTransaction.rec:ResourceTransactionBizDoc/WIP_COST_TXN;2;0/PO_LINE_NUM;1;0" TO="/queryParams;2;0/LINE_NUM;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/ResourceTransactionBizDoc;4;0;workInProcess1157.intoOA.resourceTransaction.rec:ResourceTransactionBizDoc/WIP_COST_TXN;2;0/PO_HEADER_NUM;1;0" TO="/queryParams;2;0/PO_HEADER_NUMBER;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="INVOKEOUTPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/PO_LINE_ID;1;0" TO="/ResourceTransactionRecordSet;4;0;workInProcess1157.intoOA.resourceTransaction.rec:setResourceTransactionTxnInputRec/WIP_COST_TXN_INTERFACE;2;0/PO_LINE_ID;1;0">
+</MAPCOPY>
+</MAP>
+</MAPINVOKE>
+
+<MAPINVOKE SERVICE="commonOA1157.utils:getProjectId" INVOKE-ORDER="0">
+
+  <!-- nodes -->
+
+<MAP MODE="INVOKEINPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/$dbAlias;1;0" TO="/$dbAlias;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/ResourceTransactionBizDoc;4;0;workInProcess1157.intoOA.resourceTransaction.rec:ResourceTransactionBizDoc/WIP_COST_TXN;2;0/PROJECT;1;0" TO="/queryParams;2;0/PROJECT_NAME;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="INVOKEOUTPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/PROJECT_ID;1;0" TO="/ResourceTransactionRecordSet;4;0;workInProcess1157.intoOA.resourceTransaction.rec:setResourceTransactionTxnInputRec/WIP_COST_TXN_INTERFACE;2;0/PROJECT_ID;1;0">
+</MAPCOPY>
+</MAP>
+</MAPINVOKE>
+
+<MAPINVOKE SERVICE="commonOA1157.utils:getTaskId" INVOKE-ORDER="0">
+
+  <!-- nodes -->
+
+<MAP MODE="INVOKEINPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/ResourceTransactionBizDoc;4;0;workInProcess1157.intoOA.resourceTransaction.rec:ResourceTransactionBizDoc/WIP_COST_TXN;2;0/TASK;1;0" TO="/queryParams;2;0/TASK_NUMBER;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/ResourceTransactionBizDoc;4;0;workInProcess1157.intoOA.resourceTransaction.rec:ResourceTransactionBizDoc/WIP_COST_TXN;2;0/PROJECT;1;0" TO="/queryParams;2;0/PROJECT_NAME;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/$dbAlias;1;0" TO="/$dbAlias;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="INVOKEOUTPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/TASK_ID;1;0" TO="/ResourceTransactionRecordSet;4;0;workInProcess1157.intoOA.resourceTransaction.rec:setResourceTransactionTxnInputRec/WIP_COST_TXN_INTERFACE;2;0/TASK_ID;1;0">
+</MAPCOPY>
+</MAP>
+</MAPINVOKE>
+
+<MAPINVOKE SERVICE="commonOA1157.utils:getAcctPeriodId" VALIDATE-IN="$none" VALIDATE-OUT="$none" INVOKE-ORDER="0">
+
+  <!-- nodes -->
+
+<MAP MODE="INVOKEINPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/ResourceTransactionBizDoc;4;0;workInProcess1157.intoOA.resourceTransaction.rec:ResourceTransactionBizDoc/WIP_COST_TXN;2;0/ACCT_PERIOD_NAME;1;0" TO="/queryParams;2;0/PERIOD_NAME;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/ResourceTransactionBizDoc;4;0;workInProcess1157.intoOA.resourceTransaction.rec:ResourceTransactionBizDoc/WIP_COST_TXN;2;0/ORGANIZATION_NAME;1;0" TO="/queryParams;2;0/ORGANIZATION_NAME;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/$dbAlias;1;0" TO="/$dbAlias;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="INVOKEOUTPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/ACCT_PERIOD_ID;1;0" TO="/ResourceTransactionRecordSet;4;0;workInProcess1157.intoOA.resourceTransaction.rec:setResourceTransactionTxnInputRec/WIP_COST_TXN_INTERFACE;2;0/ACCT_PERIOD_ID;1;0">
+</MAPCOPY>
+</MAP>
+</MAPINVOKE>
+
+<MAPINVOKE SERVICE="commonOA1157.utils:getCodeCombinationId" INVOKE-ORDER="0">
+
+  <!-- nodes -->
+
+<MAP MODE="INVOKEINPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/ResourceTransactionBizDoc;4;0;workInProcess1157.intoOA.resourceTransaction.rec:ResourceTransactionBizDoc/WIP_COST_TXN;2;0/RECEIVING_ACCOUNT_NUMBER;1;0" TO="/queryParams;2;0/CONCATENATED_SEGMENTS;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/$dbAlias;1;0" TO="/$dbAlias;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/ResourceTransactionBizDoc;4;0;workInProcess1157.intoOA.resourceTransaction.rec:ResourceTransactionBizDoc/WIP_COST_TXN;2;0/SET_OF_BOOKS_NAME;1;0" TO="/queryParams;2;0/SET_OF_BOOKS_NAME;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="INVOKEOUTPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/CODE_COMBINATION_ID;1;0" TO="/ResourceTransactionRecordSet;4;0;workInProcess1157.intoOA.resourceTransaction.rec:setResourceTransactionTxnInputRec/WIP_COST_TXN_INTERFACE;2;0/RECEIVING_ACCOUNT_ID;1;0">
+</MAPCOPY>
+</MAP>
+</MAPINVOKE>
+
+<MAPINVOKE SERVICE="workInProcess1157.intoOA.resourceTransaction.utils:getPOHeaderId" INVOKE-ORDER="0">
+
+  <!-- nodes -->
+
+<MAP MODE="INVOKEINPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/ResourceTransactionBizDoc;4;0;workInProcess1157.intoOA.resourceTransaction.rec:ResourceTransactionBizDoc/WIP_COST_TXN;2;0/PO_HEADER_NUM;1;0" TO="/queryParams;2;0/PO_HEADER_NUMBER;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/$dbAlias;1;0" TO="/$dbAlias;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="INVOKEOUTPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/PO_HEADER_ID;1;0" TO="/ResourceTransactionRecordSet;4;0;workInProcess1157.intoOA.resourceTransaction.rec:setResourceTransactionTxnInputRec/WIP_COST_TXN_INTERFACE;2;0/PO_HEADER_ID;1;0">
+</MAPCOPY>
+</MAP>
+</MAPINVOKE>
+
+<MAPINVOKE SERVICE="commonOA1157.utils:getDepartmentId" VALIDATE-IN="$none" VALIDATE-OUT="$none" INVOKE-ORDER="0">
+
+  <!-- nodes -->
+
+<MAP MODE="INVOKEINPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/ResourceTransactionBizDoc;4;0;workInProcess1157.intoOA.resourceTransaction.rec:ResourceTransactionBizDoc/WIP_COST_TXN;2;0/DEPARTMENT_CODE;1;0" TO="/queryParams;2;0/department_code;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/ResourceTransactionBizDoc;4;0;workInProcess1157.intoOA.resourceTransaction.rec:ResourceTransactionBizDoc/WIP_COST_TXN;2;0/ORGANIZATION_NAME;1;0" TO="/queryParams;2;0/organization_name;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/$dbAlias;1;0" TO="/$dbAlias;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="INVOKEOUTPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/DEPARTMENT_ID;1;0" TO="/ResourceTransactionRecordSet;4;0;workInProcess1157.intoOA.resourceTransaction.rec:setResourceTransactionTxnInputRec/WIP_COST_TXN_INTERFACE;2;0/DEPARTMENT_ID;1;0">
+</MAPCOPY>
+</MAP>
+</MAPINVOKE>
+
+<MAPCOPY NAME="Link" FROM="/SYSDATE;3;0" TO="/ResourceTransactionRecordSet;4;0;workInProcess1157.intoOA.resourceTransaction.rec:setResourceTransactionTxnInputRec/WIP_COST_TXN_INTERFACE;2;0/LAST_UPDATE_DATE;3;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/SYSDATE;3;0" TO="/ResourceTransactionRecordSet;4;0;workInProcess1157.intoOA.resourceTransaction.rec:setResourceTransactionTxnInputRec/WIP_COST_TXN_INTERFACE;2;0/CREATION_DATE;3;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/USER_ID;1;0" TO="/ResourceTransactionRecordSet;4;0;workInProcess1157.intoOA.resourceTransaction.rec:setResourceTransactionTxnInputRec/WIP_COST_TXN_INTERFACE;2;0/LAST_UPDATED_BY;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/USER_ID;1;0" TO="/ResourceTransactionRecordSet;4;0;workInProcess1157.intoOA.resourceTransaction.rec:setResourceTransactionTxnInputRec/WIP_COST_TXN_INTERFACE;2;0/CREATED_BY;1;0">
+</MAPCOPY>
+
+<MAPINVOKE SERVICE="commonOA1157.utils:getInventoryItemId" INVOKE-ORDER="0">
+
+  <!-- nodes -->
+
+<MAP MODE="INVOKEINPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/$dbAlias;1;0" TO="/$dbAlias;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/ResourceTransactionBizDoc;4;0;workInProcess1157.intoOA.resourceTransaction.rec:ResourceTransactionBizDoc/WIP_COST_TXN;2;0/PRIMARY_ITEM_CODE;1;0" TO="/queryParams;2;0/ITEM_CODE;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/ResourceTransactionBizDoc;4;0;workInProcess1157.intoOA.resourceTransaction.rec:ResourceTransactionBizDoc/WIP_COST_TXN;2;0/ORGANIZATION_NAME;1;0" TO="/queryParams;2;0/ORGANIZATION_NAME;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="INVOKEOUTPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/INVENTORY_ITEM_ID;1;0" TO="/ResourceTransactionRecordSet;4;0;workInProcess1157.intoOA.resourceTransaction.rec:setResourceTransactionTxnInputRec/WIP_COST_TXN_INTERFACE;2;0/PRIMARY_ITEM_ID;1;0">
+</MAPCOPY>
+</MAP>
+</MAPINVOKE>
+
+<MAPCOPY NAME="Link" FROM="/ResourceTransactionBizDoc;4;0;workInProcess1157.intoOA.resourceTransaction.rec:ResourceTransactionBizDoc/WIP_COST_TXN;2;0/TRANSACTION_TYPE;1;0" TO="/ResourceTransactionRecordSet;4;0;workInProcess1157.intoOA.resourceTransaction.rec:setResourceTransactionTxnInputRec/WIP_COST_TXN_INTERFACE;2;0/TRANSACTION_TYPE;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/ResourceTransactionBizDoc;4;0;workInProcess1157.intoOA.resourceTransaction.rec:ResourceTransactionBizDoc/WIP_COST_TXN;2;0/OPERATION_SEQ_NUM;1;0" TO="/ResourceTransactionRecordSet;4;0;workInProcess1157.intoOA.resourceTransaction.rec:setResourceTransactionTxnInputRec/WIP_COST_TXN_INTERFACE;2;0/OPERATION_SEQ_NUM;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/ResourceTransactionBizDoc;4;0;workInProcess1157.intoOA.resourceTransaction.rec:ResourceTransactionBizDoc/WIP_COST_TXN;2;0/RESOURCE_SEQ_NUM;1;0" TO="/ResourceTransactionRecordSet;4;0;workInProcess1157.intoOA.resourceTransaction.rec:setResourceTransactionTxnInputRec/WIP_COST_TXN_INTERFACE;2;0/RESOURCE_SEQ_NUM;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/ResourceTransactionBizDoc;4;0;workInProcess1157.intoOA.resourceTransaction.rec:ResourceTransactionBizDoc/WIP_COST_TXN;2;0/EMPLOYEE_NUM;1;0" TO="/ResourceTransactionRecordSet;4;0;workInProcess1157.intoOA.resourceTransaction.rec:setResourceTransactionTxnInputRec/WIP_COST_TXN_INTERFACE;2;0/EMPLOYEE_NUM;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/ResourceTransactionBizDoc;4;0;workInProcess1157.intoOA.resourceTransaction.rec:ResourceTransactionBizDoc/WIP_COST_TXN;2;0/RESOURCE_CODE;1;0" TO="/ResourceTransactionRecordSet;4;0;workInProcess1157.intoOA.resourceTransaction.rec:setResourceTransactionTxnInputRec/WIP_COST_TXN_INTERFACE;2;0/RESOURCE_CODE;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/ResourceTransactionBizDoc;4;0;workInProcess1157.intoOA.resourceTransaction.rec:ResourceTransactionBizDoc/WIP_COST_TXN;2;0/RESOURCE_TYPE;1;0" TO="/ResourceTransactionRecordSet;4;0;workInProcess1157.intoOA.resourceTransaction.rec:setResourceTransactionTxnInputRec/WIP_COST_TXN_INTERFACE;2;0/RESOURCE_TYPE;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/ResourceTransactionBizDoc;4;0;workInProcess1157.intoOA.resourceTransaction.rec:ResourceTransactionBizDoc/WIP_COST_TXN;2;0/USAGE_RATE_OR_AMOUNT;1;0" TO="/ResourceTransactionRecordSet;4;0;workInProcess1157.intoOA.resourceTransaction.rec:setResourceTransactionTxnInputRec/WIP_COST_TXN_INTERFACE;2;0/USAGE_RATE_OR_AMOUNT;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/ResourceTransactionBizDoc;4;0;workInProcess1157.intoOA.resourceTransaction.rec:ResourceTransactionBizDoc/WIP_COST_TXN;2;0/BASIS_TYPE;1;0" TO="/ResourceTransactionRecordSet;4;0;workInProcess1157.intoOA.resourceTransaction.rec:setResourceTransactionTxnInputRec/WIP_COST_TXN_INTERFACE;2;0/BASIS_TYPE;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/ResourceTransactionBizDoc;4;0;workInProcess1157.intoOA.resourceTransaction.rec:ResourceTransactionBizDoc/WIP_COST_TXN;2;0/AUTOCHARGE_TYPE;1;0" TO="/ResourceTransactionRecordSet;4;0;workInProcess1157.intoOA.resourceTransaction.rec:setResourceTransactionTxnInputRec/WIP_COST_TXN_INTERFACE;2;0/AUTOCHARGE_TYPE;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/ResourceTransactionBizDoc;4;0;workInProcess1157.intoOA.resourceTransaction.rec:ResourceTransactionBizDoc/WIP_COST_TXN;2;0/STANDARD_RATE_FLAG;1;0" TO="/ResourceTransactionRecordSet;4;0;workInProcess1157.intoOA.resourceTransaction.rec:setResourceTransactionTxnInputRec/WIP_COST_TXN_INTERFACE;2;0/STANDARD_RATE_FLAG;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/ResourceTransactionBizDoc;4;0;workInProcess1157.intoOA.resourceTransaction.rec:ResourceTransactionBizDoc/WIP_COST_TXN;2;0/TRANSACTION_QUANTITY;1;0" TO="/ResourceTransactionRecordSet;4;0;workInProcess1157.intoOA.resourceTransaction.rec:setResourceTransactionTxnInputRec/WIP_COST_TXN_INTERFACE;2;0/TRANSACTION_QUANTITY;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/ResourceTransactionBizDoc;4;0;workInProcess1157.intoOA.resourceTransaction.rec:ResourceTransactionBizDoc/WIP_COST_TXN;2;0/TRANSACTION_UOM;1;0" TO="/ResourceTransactionRecordSet;4;0;workInProcess1157.intoOA.resourceTransaction.rec:setResourceTransactionTxnInputRec/WIP_COST_TXN_INTERFACE;2;0/TRANSACTION_UOM;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/ResourceTransactionBizDoc;4;0;workInProcess1157.intoOA.resourceTransaction.rec:ResourceTransactionBizDoc/WIP_COST_TXN;2;0/PRIMARY_QUANTITY;1;0" TO="/ResourceTransactionRecordSet;4;0;workInProcess1157.intoOA.resourceTransaction.rec:setResourceTransactionTxnInputRec/WIP_COST_TXN_INTERFACE;2;0/PRIMARY_QUANTITY;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/ResourceTransactionBizDoc;4;0;workInProcess1157.intoOA.resourceTransaction.rec:ResourceTransactionBizDoc/WIP_COST_TXN;2;0/PRIMARY_UOM;1;0" TO="/ResourceTransactionRecordSet;4;0;workInProcess1157.intoOA.resourceTransaction.rec:setResourceTransactionTxnInputRec/WIP_COST_TXN_INTERFACE;2;0/PRIMARY_UOM;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/ResourceTransactionBizDoc;4;0;workInProcess1157.intoOA.resourceTransaction.rec:ResourceTransactionBizDoc/WIP_COST_TXN;2;0/PRIMARY_UOM_CLASS;1;0" TO="/ResourceTransactionRecordSet;4;0;workInProcess1157.intoOA.resourceTransaction.rec:setResourceTransactionTxnInputRec/WIP_COST_TXN_INTERFACE;2;0/PRIMARY_UOM_CLASS;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/ResourceTransactionBizDoc;4;0;workInProcess1157.intoOA.resourceTransaction.rec:ResourceTransactionBizDoc/WIP_COST_TXN;2;0/ACTUAL_RESOURCE_RATE;1;0" TO="/ResourceTransactionRecordSet;4;0;workInProcess1157.intoOA.resourceTransaction.rec:setResourceTransactionTxnInputRec/WIP_COST_TXN_INTERFACE;2;0/ACTUAL_RESOURCE_RATE;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/ResourceTransactionBizDoc;4;0;workInProcess1157.intoOA.resourceTransaction.rec:ResourceTransactionBizDoc/WIP_COST_TXN;2;0/CURRENCY_CODE;1;0" TO="/ResourceTransactionRecordSet;4;0;workInProcess1157.intoOA.resourceTransaction.rec:setResourceTransactionTxnInputRec/WIP_COST_TXN_INTERFACE;2;0/CURRENCY_CODE;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/ResourceTransactionBizDoc;4;0;workInProcess1157.intoOA.resourceTransaction.rec:ResourceTransactionBizDoc/WIP_COST_TXN;2;0/CURRENCY_CONVERSION_RATE;1;0" TO="/ResourceTransactionRecordSet;4;0;workInProcess1157.intoOA.resourceTransaction.rec:setResourceTransactionTxnInputRec/WIP_COST_TXN_INTERFACE;2;0/CURRENCY_CONVERSION_RATE;1;0">
+</MAPCOPY>
+
+<MAPINVOKE SERVICE="commonOA1157.custom:convertToDateObject" INVOKE-ORDER="0">
+
+  <!-- nodes -->
+
+<MAP MODE="INVOKEINPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/ResourceTransactionBizDoc;4;0;workInProcess1157.intoOA.resourceTransaction.rec:ResourceTransactionBizDoc/WIP_COST_TXN;2;0/CURRENCY_CONVERSION_DATE;1;0" TO="/inDate;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="INVOKEOUTPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/outDate;3;0" TO="/ResourceTransactionRecordSet;4;0;workInProcess1157.intoOA.resourceTransaction.rec:setResourceTransactionTxnInputRec/WIP_COST_TXN_INTERFACE;2;0/CURRENCY_CONVERSION_DATE;3;0">
+</MAPCOPY>
+</MAP>
+</MAPINVOKE>
+
+<MAPCOPY NAME="Link" FROM="/ResourceTransactionBizDoc;4;0;workInProcess1157.intoOA.resourceTransaction.rec:ResourceTransactionBizDoc/WIP_COST_TXN;2;0/CURRENCY_ACTUAL_RESOURCE_RATE;1;0" TO="/ResourceTransactionRecordSet;4;0;workInProcess1157.intoOA.resourceTransaction.rec:setResourceTransactionTxnInputRec/WIP_COST_TXN_INTERFACE;2;0/CURRENCY_ACTUAL_RESOURCE_RATE;1;0">
+</MAPCOPY>
+
+<MAPINVOKE SERVICE="commonOA1157.utils:getActivityId" VALIDATE-IN="$none" VALIDATE-OUT="$none" INVOKE-ORDER="0">
+
+  <!-- nodes -->
+
+<MAP MODE="INVOKEINPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/ResourceTransactionBizDoc;4;0;workInProcess1157.intoOA.resourceTransaction.rec:ResourceTransactionBizDoc/WIP_COST_TXN;2;0/ACTIVITY_NAME;1;0" TO="/queryParams;2;0/ACTIVITY_NAME;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/$dbAlias;1;0" TO="/$dbAlias;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="INVOKEOUTPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/ACTIVITY_ID;1;0" TO="/ResourceTransactionRecordSet;4;0;workInProcess1157.intoOA.resourceTransaction.rec:setResourceTransactionTxnInputRec/WIP_COST_TXN_INTERFACE;2;0/ACTIVITY_ID;1;0">
+</MAPCOPY>
+</MAP>
+</MAPINVOKE>
+
+<MAPCOPY NAME="Link" FROM="/ResourceTransactionBizDoc;4;0;workInProcess1157.intoOA.resourceTransaction.rec:ResourceTransactionBizDoc/WIP_COST_TXN;2;0/REASON_NAME;1;0" TO="/ResourceTransactionRecordSet;4;0;workInProcess1157.intoOA.resourceTransaction.rec:setResourceTransactionTxnInputRec/WIP_COST_TXN_INTERFACE;2;0/REASON_NAME;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/ResourceTransactionBizDoc;4;0;workInProcess1157.intoOA.resourceTransaction.rec:ResourceTransactionBizDoc/WIP_COST_TXN;2;0/REFERENCE;1;0" TO="/ResourceTransactionRecordSet;4;0;workInProcess1157.intoOA.resourceTransaction.rec:setResourceTransactionTxnInputRec/WIP_COST_TXN_INTERFACE;2;0/REFERENCE;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/ResourceTransactionBizDoc;4;0;workInProcess1157.intoOA.resourceTransaction.rec:ResourceTransactionBizDoc/WIP_COST_TXN;2;0/MOVE_TRANSACTION_ID;1;0" TO="/ResourceTransactionRecordSet;4;0;workInProcess1157.intoOA.resourceTransaction.rec:setResourceTransactionTxnInputRec/WIP_COST_TXN_INTERFACE;2;0/MOVE_TRANSACTION_ID;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/ResourceTransactionBizDoc;4;0;workInProcess1157.intoOA.resourceTransaction.rec:ResourceTransactionBizDoc/WIP_COST_TXN;2;0/RCV_TRANSACTION_ID;1;0" TO="/ResourceTransactionRecordSet;4;0;workInProcess1157.intoOA.resourceTransaction.rec:setResourceTransactionTxnInputRec/WIP_COST_TXN_INTERFACE;2;0/RCV_TRANSACTION_ID;1;0">
+</MAPCOPY>
+
+<MAPINVOKE SERVICE="commonOA1157.utils:getOrgIdAndCode" INVOKE-ORDER="0">
+
+  <!-- nodes -->
+
+<MAP MODE="INVOKEINPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/ResourceTransactionBizDoc;4;0;workInProcess1157.intoOA.resourceTransaction.rec:ResourceTransactionBizDoc/WIP_COST_TXN;2;0/ORGANIZATION_NAME;1;0" TO="/queryParams;2;0/ORGANIZATION_NAME;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/$dbAlias;1;0" TO="/$dbAlias;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="INVOKEOUTPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/ORGANIZATION_ID;1;0" TO="/ResourceTransactionRecordSet;4;0;workInProcess1157.intoOA.resourceTransaction.rec:setResourceTransactionTxnInputRec/WIP_COST_TXN_INTERFACE;2;0/ORGANIZATION_ID;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/ORGANIZATION_CODE;1;0" TO="/ResourceTransactionRecordSet;4;0;workInProcess1157.intoOA.resourceTransaction.rec:setResourceTransactionTxnInputRec/WIP_COST_TXN_INTERFACE;2;0/ORGANIZATION_CODE;1;0">
+</MAPCOPY>
+</MAP>
+</MAPINVOKE>
+
+<MAPCOPY NAME="Link" FROM="/OracleAppsUserName;1;0" TO="/ResourceTransactionRecordSet;4;0;workInProcess1157.intoOA.resourceTransaction.rec:setResourceTransactionTxnInputRec/WIP_COST_TXN_INTERFACE;2;0/CREATED_BY_NAME;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/OracleAppsUserName;1;0" TO="/ResourceTransactionRecordSet;4;0;workInProcess1157.intoOA.resourceTransaction.rec:setResourceTransactionTxnInputRec/WIP_COST_TXN_INTERFACE;2;0/LAST_UPDATED_BY_NAME;1;0">
+</MAPCOPY>
+
+<MAPINVOKE SERVICE="commonOA1157.custom:convertToDateObject" VALIDATE-IN="$none" VALIDATE-OUT="$none" INVOKE-ORDER="0">
+
+  <!-- nodes -->
+
+<MAP MODE="INVOKEINPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/ResourceTransactionBizDoc;4;0;workInProcess1157.intoOA.resourceTransaction.rec:ResourceTransactionBizDoc/WIP_COST_TXN;2;0/TRANSACTION_DATE;1;0" TO="/inDate;1;0">
+</MAPCOPY>
+
+<MAPSET NAME="Setter" OVERWRITE="true" VARIABLES="false" FIELD="/currentPattern;1;0">
+  <DATA ENCODING="XMLValues" I18N="true">
+
+<Values version="2.0">
+  <value name="xml">dd-MMM-yy HH:mm:ss</value>
+  <record name="type" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_name">currentPattern</value>
+    <value name="field_type">string</value>
+    <value name="field_dim">0</value>
+    <value name="field_opt">false</value>
+  </record>
+</Values>
+</DATA>
+</MAPSET>
+</MAP>
+
+<MAP MODE="INVOKEOUTPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/outDate;3;0" TO="/ResourceTransactionRecordSet;4;0;workInProcess1157.intoOA.resourceTransaction.rec:setResourceTransactionTxnInputRec/WIP_COST_TXN_INTERFACE;2;0/TRANSACTION_DATE;3;0">
+</MAPCOPY>
+</MAP>
+</MAPINVOKE>
+
+<MAPINVOKE SERVICE="workInProcess1157.intoOA.resourceTransaction.utils:getWIPEntityType" INVOKE-ORDER="0">
+
+  <!-- nodes -->
+
+<MAP MODE="INVOKEINPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/ResourceTransactionBizDoc;4;0;workInProcess1157.intoOA.resourceTransaction.rec:ResourceTransactionBizDoc/WIP_COST_TXN;2;0/WIP_ENTITY_NAME;1;0" TO="/queryParams;2;0/WIP_ENTITY_NAME;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/$dbAlias;1;0" TO="/$dbAlias;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/ResourceTransactionBizDoc;4;0;workInProcess1157.intoOA.resourceTransaction.rec:ResourceTransactionBizDoc/WIP_COST_TXN;2;0/ORGANIZATION_NAME;1;0" TO="/queryParams;2;0/ORGANIZATION_NAME;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="INVOKEOUTPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/ENTITY_TYPE;1;0" TO="/ResourceTransactionRecordSet;4;0;workInProcess1157.intoOA.resourceTransaction.rec:setResourceTransactionTxnInputRec/WIP_COST_TXN_INTERFACE;2;0/ENTITY_TYPE;1;0">
+</MAPCOPY>
+</MAP>
+</MAPINVOKE>
+
+<MAPSET NAME="Setter" OVERWRITE="true" VARIABLES="false" FIELD="/ResourceTransactionRecordSet;4;0;workInProcess1157.intoOA.resourceTransaction.rec:setResourceTransactionTxnInputRec/WIP_COST_TXN_INTERFACE;2;0/PROCESS_STATUS;1;0">
+  <DATA ENCODING="XMLValues" I18N="true">
+
+<Values version="2.0">
+  <value name="xml">1</value>
+  <record name="type" javaclass="com.wm.util.Values">
+    <value name="node_type">unknown</value>
+    <value name="field_name">PROCESS_STATUS</value>
+    <value name="field_type">string</value>
+    <value name="field_dim">0</value>
+    <value name="field_opt">false</value>
+  </record>
+</Values>
+</DATA>
+</MAPSET>
+
+<MAPSET NAME="Setter" OVERWRITE="true" VARIABLES="false" FIELD="/ResourceTransactionRecordSet;4;0;workInProcess1157.intoOA.resourceTransaction.rec:setResourceTransactionTxnInputRec/WIP_COST_TXN_INTERFACE;2;0/PROCESS_PHASE;1;0">
+  <DATA ENCODING="XMLValues" I18N="true">
+
+<Values version="2.0">
+  <value name="xml">1</value>
+  <record name="type" javaclass="com.wm.util.Values">
+    <value name="node_type">unknown</value>
+    <value name="field_name">PROCESS_PHASE</value>
+    <value name="field_type">string</value>
+    <value name="field_dim">0</value>
+    <value name="field_opt">false</value>
+  </record>
+</Values>
+</DATA>
+</MAPSET>
+</MAP>
+</LOOP>
+
+<MAP MODE="STANDALONE">
+  <COMMENT>Drop unused variable</COMMENT>
+  <MAPTARGET>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="field_opt">false</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">OracleAppsUserName</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">ResourceTransactionRecordSet</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">false</value>
+        <value name="rec_closed">false</value>
+        <value name="rec_ref">workInProcess1157.intoOA.resourceTransaction.rec:setResourceTransactionTxnInputRec</value>
+      </record>
+    </array>
+    <value name="rec_closed">false</value>
+  </record>
+</Values>
+</MAPTARGET>
+  <MAPSOURCE>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="field_opt">false</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">$dbAlias</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="field_name">ResourceTransactionBizDoc</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">false</value>
+        <value name="rec_closed">false</value>
+        <value name="rec_ref">workInProcess1157.intoOA.resourceTransaction.rec:ResourceTransactionBizDoc</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">OracleAppsUserName</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">SYSDATE</value>
+        <value name="field_type">object</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">USER_ID</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">ResourceTransactionRecordSet</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">false</value>
+        <value name="rec_closed">false</value>
+        <value name="rec_ref">workInProcess1157.intoOA.resourceTransaction.rec:setResourceTransactionTxnInputRec</value>
+      </record>
+    </array>
+    <value name="rec_closed">false</value>
+  </record>
+</Values>
+</MAPSOURCE>
+
+  <!-- nodes -->
+
+<MAPDELETE NAME="Dropper" FIELD="/$dbAlias;1;0">
+</MAPDELETE>
+
+<MAPDELETE NAME="Dropper" FIELD="/SYSDATE;3;0">
+</MAPDELETE>
+
+<MAPDELETE NAME="Dropper" FIELD="/USER_ID;1;0">
+</MAPDELETE>
+
+<MAPDELETE NAME="Dropper" FIELD="/ResourceTransactionBizDoc;4;0;workInProcess1157.intoOA.resourceTransaction.rec:ResourceTransactionBizDoc">
+</MAPDELETE>
+
+<MAPDELETE NAME="Dropper" FIELD="/OracleAppsUserName;1;0">
+</MAPDELETE>
+</MAP>
+</FLOW>

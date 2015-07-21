@@ -1,0 +1,2641 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <record name="schema" javaclass="com.wm.util.Values">
+    <value name="node_type">schema</value>
+    <value name="node_nsName">pub.schema.w3c:wsdl_2</value>
+    <value name="node_pkg">WmPublic</value>
+    <value name="contentType">3</value>
+    <value name="targetNamespace">http://schemas.xmlsoap.org/wsdl/</value>
+    <record name="attributes" javaclass="com.wm.util.Values">
+      <list name="table">
+        <record javaclass="com.wm.util.Values">
+          <value name="tagType">attribute</value>
+          <value name="name">required</value>
+          <record name="type" javaclass="com.wm.util.Values">
+            <value name="contentType">1</value>
+            <value name="internalType">reference</value>
+            <value name="dataTypeVersion">dtVersion2</value>
+            <array name="targetNames" type="record" depth="1">
+              <record javaclass="com.wm.util.Values">
+                <value name="xmlns">http://www.w3.org/2001/XMLSchema</value>
+                <value name="ncName">boolean</value>
+              </record>
+            </array>
+          </record>
+          <value name="required">false</value>
+          <value name="internalType">instance</value>
+          <value name="classname">com.wm.lang.schema.WmAttribute</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="tagType">attribute</value>
+          <value name="name">arrayType</value>
+          <record name="type" javaclass="com.wm.util.Values">
+            <value name="contentType">1</value>
+            <value name="internalType">reference</value>
+            <value name="dataTypeVersion">dtVersion2</value>
+            <array name="targetNames" type="record" depth="1">
+              <record javaclass="com.wm.util.Values">
+                <value name="xmlns">http://www.w3.org/2001/XMLSchema</value>
+                <value name="ncName">string</value>
+              </record>
+            </array>
+          </record>
+          <value name="required">false</value>
+          <value name="internalType">instance</value>
+          <value name="classname">com.wm.lang.schema.WmAttribute</value>
+        </record>
+      </list>
+    </record>
+    <record name="elements" javaclass="com.wm.util.Values">
+      <list name="table">
+        <record javaclass="com.wm.util.Values">
+          <value name="tagType">element</value>
+          <value name="name">definitions</value>
+          <record name="type" javaclass="com.wm.util.Values">
+            <value name="contentType">2</value>
+            <value name="internalType">reference</value>
+            <record name="targetName" javaclass="com.wm.util.Values">
+              <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+              <value name="ncName">tDefinitions</value>
+            </record>
+          </record>
+          <value name="internalType">instance</value>
+          <value name="classname">com.wm.lang.schema.WmElement</value>
+        </record>
+      </list>
+    </record>
+    <record name="types" javaclass="com.wm.util.Values">
+      <list name="table">
+        <record javaclass="com.wm.util.Values">
+          <value name="contentType">2</value>
+          <value name="internalType">instance</value>
+          <value name="name">tBindingOperationFault</value>
+          <list name="elements">
+            <record javaclass="com.wm.util.Values">
+              <value name="tagType">element</value>
+              <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+              <value name="name">documentation</value>
+              <record name="type" javaclass="com.wm.util.Values">
+                <value name="contentType">2</value>
+                <value name="internalType">reference</value>
+                <record name="targetName" javaclass="com.wm.util.Values">
+                  <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+                  <value name="ncName">tDocumentation</value>
+                </record>
+              </record>
+              <value name="form">true</value>
+              <value name="internalType">instance</value>
+            </record>
+          </list>
+          <list name="attributes">
+            <record javaclass="com.wm.util.Values">
+              <value name="tagType">attribute</value>
+              <value name="name">name</value>
+              <record name="type" javaclass="com.wm.util.Values">
+                <value name="contentType">1</value>
+                <value name="internalType">reference</value>
+                <value name="dataTypeVersion">dtVersion2</value>
+                <array name="targetNames" type="record" depth="1">
+                  <record javaclass="com.wm.util.Values">
+                    <value name="xmlns">http://www.w3.org/2001/XMLSchema</value>
+                    <value name="ncName">NCName</value>
+                  </record>
+                </array>
+              </record>
+              <value name="required">true</value>
+              <value name="internalType">instance</value>
+            </record>
+          </list>
+          <record name="contentModel" javaclass="com.wm.util.Values">
+            <record name="symbol" javaclass="com.wm.util.Values">
+              <value name="ncName">$$SEQUENCE</value>
+            </record>
+            <value name="minOccurs">1</value>
+            <value name="maxOccurs">1</value>
+            <value name="modelType">sequence</value>
+            <list name="children">
+              <record javaclass="com.wm.util.Values">
+                <record name="symbol" javaclass="com.wm.util.Values">
+                  <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+                  <value name="ncName">documentation</value>
+                </record>
+                <value name="minOccurs">0</value>
+                <value name="maxOccurs">1</value>
+                <value name="modelType">simple</value>
+              </record>
+            </list>
+          </record>
+          <array name="parent-ancestors" type="record" depth="1">
+            <record javaclass="com.wm.util.Values">
+              <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+              <value name="ncName">tDocumented</value>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+              <value name="ncName">tExtensibleDocumented</value>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="xmlns">http://www.w3.org/2001/XMLSchema</value>
+              <value name="ncName">anyType</value>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+              <value name="ncName">tBindingOperationFault</value>
+            </record>
+          </array>
+          <value name="classname">com.wm.lang.schema.WmComplexType</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="contentType">2</value>
+          <value name="internalType">instance</value>
+          <value name="name">tPortType</value>
+          <list name="elements">
+            <record javaclass="com.wm.util.Values">
+              <value name="tagType">element</value>
+              <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+              <value name="name">documentation</value>
+              <record name="type" javaclass="com.wm.util.Values">
+                <value name="contentType">2</value>
+                <value name="internalType">reference</value>
+                <record name="targetName" javaclass="com.wm.util.Values">
+                  <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+                  <value name="ncName">tDocumentation</value>
+                </record>
+              </record>
+              <value name="form">true</value>
+              <value name="internalType">instance</value>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="tagType">element</value>
+              <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+              <value name="name">operation</value>
+              <record name="type" javaclass="com.wm.util.Values">
+                <value name="contentType">2</value>
+                <value name="internalType">reference</value>
+                <record name="targetName" javaclass="com.wm.util.Values">
+                  <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+                  <value name="ncName">tOperation</value>
+                </record>
+              </record>
+              <value name="form">true</value>
+              <value name="internalType">instance</value>
+            </record>
+          </list>
+          <list name="attributes">
+            <record javaclass="com.wm.util.Values">
+              <value name="tagType">attribute</value>
+              <value name="name">name</value>
+              <record name="type" javaclass="com.wm.util.Values">
+                <value name="contentType">1</value>
+                <value name="internalType">reference</value>
+                <value name="dataTypeVersion">dtVersion2</value>
+                <array name="targetNames" type="record" depth="1">
+                  <record javaclass="com.wm.util.Values">
+                    <value name="xmlns">http://www.w3.org/2001/XMLSchema</value>
+                    <value name="ncName">NCName</value>
+                  </record>
+                </array>
+              </record>
+              <value name="required">true</value>
+              <value name="internalType">instance</value>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="tagType">attribute</value>
+              <value name="name">$$ANY_ATTRIBUTE</value>
+              <value name="required">false</value>
+              <value name="internalType">any</value>
+              <record name="wildcard" javaclass="com.wm.util.Values">
+                <record name="symbol" javaclass="com.wm.util.Values">
+                  <value name="ncName">$$ANY</value>
+                </record>
+                <value name="minOccurs">1</value>
+                <value name="maxOccurs">1</value>
+                <value name="modelType">any</value>
+                <value name="qualifier">1</value>
+                <array name="uris" type="value" depth="1">
+                  <value>http://schemas.xmlsoap.org/wsdl/</value>
+                  <value>$$unqualified</value>
+                </array>
+                <value name="processContents">0</value>
+              </record>
+            </record>
+          </list>
+          <record name="contentModel" javaclass="com.wm.util.Values">
+            <record name="symbol" javaclass="com.wm.util.Values">
+              <value name="ncName">$$SEQUENCE</value>
+            </record>
+            <value name="minOccurs">1</value>
+            <value name="maxOccurs">1</value>
+            <value name="modelType">sequence</value>
+            <list name="children">
+              <record javaclass="com.wm.util.Values">
+                <record name="symbol" javaclass="com.wm.util.Values">
+                  <value name="ncName">$$SEQUENCE</value>
+                </record>
+                <value name="minOccurs">1</value>
+                <value name="maxOccurs">1</value>
+                <value name="modelType">sequence</value>
+                <list name="children">
+                  <record javaclass="com.wm.util.Values">
+                    <record name="symbol" javaclass="com.wm.util.Values">
+                      <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+                      <value name="ncName">documentation</value>
+                    </record>
+                    <value name="minOccurs">0</value>
+                    <value name="maxOccurs">1</value>
+                    <value name="modelType">simple</value>
+                  </record>
+                </list>
+              </record>
+              <record javaclass="com.wm.util.Values">
+                <record name="symbol" javaclass="com.wm.util.Values">
+                  <value name="ncName">$$SEQUENCE</value>
+                </record>
+                <value name="minOccurs">1</value>
+                <value name="maxOccurs">1</value>
+                <value name="modelType">sequence</value>
+                <list name="children">
+                  <record javaclass="com.wm.util.Values">
+                    <record name="symbol" javaclass="com.wm.util.Values">
+                      <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+                      <value name="ncName">operation</value>
+                    </record>
+                    <value name="minOccurs">0</value>
+                    <value name="maxOccurs">*</value>
+                    <value name="modelType">simple</value>
+                  </record>
+                </list>
+              </record>
+            </list>
+          </record>
+          <array name="parent-ancestors" type="record" depth="1">
+            <record javaclass="com.wm.util.Values">
+              <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+              <value name="ncName">tDocumented</value>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+              <value name="ncName">tExtensibleAttributesDocumented</value>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="xmlns">http://www.w3.org/2001/XMLSchema</value>
+              <value name="ncName">anyType</value>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+              <value name="ncName">tPortType</value>
+            </record>
+          </array>
+          <value name="classname">com.wm.lang.schema.WmComplexType</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="contentType">2</value>
+          <value name="internalType">instance</value>
+          <value name="name">tBinding</value>
+          <list name="elements">
+            <record javaclass="com.wm.util.Values">
+              <value name="tagType">element</value>
+              <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+              <value name="name">documentation</value>
+              <record name="type" javaclass="com.wm.util.Values">
+                <value name="contentType">2</value>
+                <value name="internalType">reference</value>
+                <record name="targetName" javaclass="com.wm.util.Values">
+                  <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+                  <value name="ncName">tDocumentation</value>
+                </record>
+              </record>
+              <value name="form">true</value>
+              <value name="internalType">instance</value>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="tagType">element</value>
+              <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+              <value name="name">operation</value>
+              <record name="type" javaclass="com.wm.util.Values">
+                <value name="contentType">2</value>
+                <value name="internalType">reference</value>
+                <record name="targetName" javaclass="com.wm.util.Values">
+                  <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+                  <value name="ncName">tBindingOperation</value>
+                </record>
+              </record>
+              <value name="form">true</value>
+              <value name="internalType">instance</value>
+            </record>
+          </list>
+          <list name="attributes">
+            <record javaclass="com.wm.util.Values">
+              <value name="tagType">attribute</value>
+              <value name="name">name</value>
+              <record name="type" javaclass="com.wm.util.Values">
+                <value name="contentType">1</value>
+                <value name="internalType">reference</value>
+                <value name="dataTypeVersion">dtVersion2</value>
+                <array name="targetNames" type="record" depth="1">
+                  <record javaclass="com.wm.util.Values">
+                    <value name="xmlns">http://www.w3.org/2001/XMLSchema</value>
+                    <value name="ncName">NCName</value>
+                  </record>
+                </array>
+              </record>
+              <value name="required">true</value>
+              <value name="internalType">instance</value>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="tagType">attribute</value>
+              <value name="name">type</value>
+              <record name="type" javaclass="com.wm.util.Values">
+                <value name="contentType">1</value>
+                <value name="internalType">reference</value>
+                <value name="dataTypeVersion">dtVersion2</value>
+                <array name="targetNames" type="record" depth="1">
+                  <record javaclass="com.wm.util.Values">
+                    <value name="xmlns">http://www.w3.org/2001/XMLSchema</value>
+                    <value name="ncName">QName</value>
+                  </record>
+                </array>
+              </record>
+              <value name="required">true</value>
+              <value name="internalType">instance</value>
+            </record>
+          </list>
+          <record name="contentModel" javaclass="com.wm.util.Values">
+            <record name="symbol" javaclass="com.wm.util.Values">
+              <value name="ncName">$$SEQUENCE</value>
+            </record>
+            <value name="minOccurs">1</value>
+            <value name="maxOccurs">1</value>
+            <value name="modelType">sequence</value>
+            <list name="children">
+              <record javaclass="com.wm.util.Values">
+                <record name="symbol" javaclass="com.wm.util.Values">
+                  <value name="ncName">$$SEQUENCE</value>
+                </record>
+                <value name="minOccurs">1</value>
+                <value name="maxOccurs">1</value>
+                <value name="modelType">sequence</value>
+                <list name="children">
+                  <record javaclass="com.wm.util.Values">
+                    <record name="symbol" javaclass="com.wm.util.Values">
+                      <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+                      <value name="ncName">documentation</value>
+                    </record>
+                    <value name="minOccurs">0</value>
+                    <value name="maxOccurs">1</value>
+                    <value name="modelType">simple</value>
+                  </record>
+                </list>
+              </record>
+              <record javaclass="com.wm.util.Values">
+                <record name="symbol" javaclass="com.wm.util.Values">
+                  <value name="ncName">$$SEQUENCE</value>
+                </record>
+                <value name="minOccurs">1</value>
+                <value name="maxOccurs">1</value>
+                <value name="modelType">sequence</value>
+                <list name="children">
+                  <record javaclass="com.wm.util.Values">
+                    <record name="symbol" javaclass="com.wm.util.Values">
+                      <value name="ncName">$$ANY</value>
+                    </record>
+                    <value name="minOccurs">0</value>
+                    <value name="maxOccurs">*</value>
+                    <value name="modelType">any</value>
+                    <value name="qualifier">1</value>
+                    <array name="uris" type="value" depth="1">
+                      <value>http://schemas.xmlsoap.org/wsdl/</value>
+                      <value>$$unqualified</value>
+                    </array>
+                    <value name="processContents">0</value>
+                  </record>
+                </list>
+              </record>
+              <record javaclass="com.wm.util.Values">
+                <record name="symbol" javaclass="com.wm.util.Values">
+                  <value name="ncName">$$SEQUENCE</value>
+                </record>
+                <value name="minOccurs">1</value>
+                <value name="maxOccurs">1</value>
+                <value name="modelType">sequence</value>
+                <list name="children">
+                  <record javaclass="com.wm.util.Values">
+                    <record name="symbol" javaclass="com.wm.util.Values">
+                      <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+                      <value name="ncName">operation</value>
+                    </record>
+                    <value name="minOccurs">0</value>
+                    <value name="maxOccurs">*</value>
+                    <value name="modelType">simple</value>
+                  </record>
+                </list>
+              </record>
+            </list>
+          </record>
+          <array name="parent-ancestors" type="record" depth="1">
+            <record javaclass="com.wm.util.Values">
+              <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+              <value name="ncName">tDocumented</value>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+              <value name="ncName">tExtensibleDocumented</value>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="xmlns">http://www.w3.org/2001/XMLSchema</value>
+              <value name="ncName">anyType</value>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+              <value name="ncName">tBinding</value>
+            </record>
+          </array>
+          <value name="classname">com.wm.lang.schema.WmComplexType</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="contentType">2</value>
+          <value name="internalType">instance</value>
+          <value name="name">tPort</value>
+          <list name="elements">
+            <record javaclass="com.wm.util.Values">
+              <value name="tagType">element</value>
+              <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+              <value name="name">documentation</value>
+              <record name="type" javaclass="com.wm.util.Values">
+                <value name="contentType">2</value>
+                <value name="internalType">reference</value>
+                <record name="targetName" javaclass="com.wm.util.Values">
+                  <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+                  <value name="ncName">tDocumentation</value>
+                </record>
+              </record>
+              <value name="form">true</value>
+              <value name="internalType">instance</value>
+            </record>
+          </list>
+          <list name="attributes">
+            <record javaclass="com.wm.util.Values">
+              <value name="tagType">attribute</value>
+              <value name="name">name</value>
+              <record name="type" javaclass="com.wm.util.Values">
+                <value name="contentType">1</value>
+                <value name="internalType">reference</value>
+                <value name="dataTypeVersion">dtVersion2</value>
+                <array name="targetNames" type="record" depth="1">
+                  <record javaclass="com.wm.util.Values">
+                    <value name="xmlns">http://www.w3.org/2001/XMLSchema</value>
+                    <value name="ncName">NCName</value>
+                  </record>
+                </array>
+              </record>
+              <value name="required">true</value>
+              <value name="internalType">instance</value>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="tagType">attribute</value>
+              <value name="name">binding</value>
+              <record name="type" javaclass="com.wm.util.Values">
+                <value name="contentType">1</value>
+                <value name="internalType">reference</value>
+                <value name="dataTypeVersion">dtVersion2</value>
+                <array name="targetNames" type="record" depth="1">
+                  <record javaclass="com.wm.util.Values">
+                    <value name="xmlns">http://www.w3.org/2001/XMLSchema</value>
+                    <value name="ncName">QName</value>
+                  </record>
+                </array>
+              </record>
+              <value name="required">true</value>
+              <value name="internalType">instance</value>
+            </record>
+          </list>
+          <record name="contentModel" javaclass="com.wm.util.Values">
+            <record name="symbol" javaclass="com.wm.util.Values">
+              <value name="ncName">$$SEQUENCE</value>
+            </record>
+            <value name="minOccurs">1</value>
+            <value name="maxOccurs">1</value>
+            <value name="modelType">sequence</value>
+            <list name="children">
+              <record javaclass="com.wm.util.Values">
+                <record name="symbol" javaclass="com.wm.util.Values">
+                  <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+                  <value name="ncName">documentation</value>
+                </record>
+                <value name="minOccurs">0</value>
+                <value name="maxOccurs">1</value>
+                <value name="modelType">simple</value>
+              </record>
+            </list>
+          </record>
+          <array name="parent-ancestors" type="record" depth="1">
+            <record javaclass="com.wm.util.Values">
+              <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+              <value name="ncName">tDocumented</value>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+              <value name="ncName">tExtensibleDocumented</value>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="xmlns">http://www.w3.org/2001/XMLSchema</value>
+              <value name="ncName">anyType</value>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+              <value name="ncName">tPort</value>
+            </record>
+          </array>
+          <value name="classname">com.wm.lang.schema.WmComplexType</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="contentType">2</value>
+          <value name="internalType">instance</value>
+          <value name="name">tDefinitions</value>
+          <list name="elements">
+            <record javaclass="com.wm.util.Values">
+              <value name="tagType">element</value>
+              <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+              <value name="name">documentation</value>
+              <record name="type" javaclass="com.wm.util.Values">
+                <value name="contentType">2</value>
+                <value name="internalType">reference</value>
+                <record name="targetName" javaclass="com.wm.util.Values">
+                  <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+                  <value name="ncName">tDocumentation</value>
+                </record>
+              </record>
+              <value name="form">true</value>
+              <value name="internalType">instance</value>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="tagType">element</value>
+              <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+              <value name="name">import</value>
+              <record name="type" javaclass="com.wm.util.Values">
+                <value name="contentType">2</value>
+                <value name="internalType">reference</value>
+                <record name="targetName" javaclass="com.wm.util.Values">
+                  <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+                  <value name="ncName">tImport</value>
+                </record>
+              </record>
+              <value name="form">true</value>
+              <value name="internalType">instance</value>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="tagType">element</value>
+              <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+              <value name="name">types</value>
+              <record name="type" javaclass="com.wm.util.Values">
+                <value name="contentType">2</value>
+                <value name="internalType">reference</value>
+                <record name="targetName" javaclass="com.wm.util.Values">
+                  <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+                  <value name="ncName">tTypes</value>
+                </record>
+              </record>
+              <value name="form">true</value>
+              <value name="internalType">instance</value>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="tagType">element</value>
+              <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+              <value name="name">message</value>
+              <record name="type" javaclass="com.wm.util.Values">
+                <value name="contentType">2</value>
+                <value name="internalType">reference</value>
+                <record name="targetName" javaclass="com.wm.util.Values">
+                  <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+                  <value name="ncName">tMessage</value>
+                </record>
+              </record>
+              <value name="form">true</value>
+              <value name="internalType">instance</value>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="tagType">element</value>
+              <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+              <value name="name">portType</value>
+              <record name="type" javaclass="com.wm.util.Values">
+                <value name="contentType">2</value>
+                <value name="internalType">reference</value>
+                <record name="targetName" javaclass="com.wm.util.Values">
+                  <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+                  <value name="ncName">tPortType</value>
+                </record>
+              </record>
+              <value name="form">true</value>
+              <value name="internalType">instance</value>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="tagType">element</value>
+              <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+              <value name="name">binding</value>
+              <record name="type" javaclass="com.wm.util.Values">
+                <value name="contentType">2</value>
+                <value name="internalType">reference</value>
+                <record name="targetName" javaclass="com.wm.util.Values">
+                  <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+                  <value name="ncName">tBinding</value>
+                </record>
+              </record>
+              <value name="form">true</value>
+              <value name="internalType">instance</value>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="tagType">element</value>
+              <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+              <value name="name">service</value>
+              <record name="type" javaclass="com.wm.util.Values">
+                <value name="contentType">2</value>
+                <value name="internalType">reference</value>
+                <record name="targetName" javaclass="com.wm.util.Values">
+                  <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+                  <value name="ncName">tService</value>
+                </record>
+              </record>
+              <value name="form">true</value>
+              <value name="internalType">instance</value>
+            </record>
+          </list>
+          <list name="attributes">
+            <record javaclass="com.wm.util.Values">
+              <value name="tagType">attribute</value>
+              <value name="name">targetNamespace</value>
+              <record name="type" javaclass="com.wm.util.Values">
+                <value name="contentType">1</value>
+                <value name="internalType">reference</value>
+                <value name="dataTypeVersion">dtVersion2</value>
+                <array name="targetNames" type="record" depth="1">
+                  <record javaclass="com.wm.util.Values">
+                    <value name="xmlns">http://www.w3.org/2001/XMLSchema</value>
+                    <value name="ncName">anyURI</value>
+                  </record>
+                </array>
+              </record>
+              <value name="required">false</value>
+              <value name="internalType">instance</value>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="tagType">attribute</value>
+              <value name="name">name</value>
+              <record name="type" javaclass="com.wm.util.Values">
+                <value name="contentType">1</value>
+                <value name="internalType">reference</value>
+                <value name="dataTypeVersion">dtVersion2</value>
+                <array name="targetNames" type="record" depth="1">
+                  <record javaclass="com.wm.util.Values">
+                    <value name="xmlns">http://www.w3.org/2001/XMLSchema</value>
+                    <value name="ncName">NCName</value>
+                  </record>
+                </array>
+              </record>
+              <value name="required">false</value>
+              <value name="internalType">instance</value>
+            </record>
+          </list>
+          <record name="contentModel" javaclass="com.wm.util.Values">
+            <record name="symbol" javaclass="com.wm.util.Values">
+              <value name="ncName">$$SEQUENCE</value>
+            </record>
+            <value name="minOccurs">1</value>
+            <value name="maxOccurs">1</value>
+            <value name="modelType">sequence</value>
+            <list name="children">
+              <record javaclass="com.wm.util.Values">
+                <record name="symbol" javaclass="com.wm.util.Values">
+                  <value name="ncName">$$SEQUENCE</value>
+                </record>
+                <value name="minOccurs">1</value>
+                <value name="maxOccurs">1</value>
+                <value name="modelType">sequence</value>
+                <list name="children">
+                  <record javaclass="com.wm.util.Values">
+                    <record name="symbol" javaclass="com.wm.util.Values">
+                      <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+                      <value name="ncName">documentation</value>
+                    </record>
+                    <value name="minOccurs">0</value>
+                    <value name="maxOccurs">1</value>
+                    <value name="modelType">simple</value>
+                  </record>
+                </list>
+              </record>
+              <record javaclass="com.wm.util.Values">
+                <record name="symbol" javaclass="com.wm.util.Values">
+                  <value name="ncName">$$SEQUENCE</value>
+                </record>
+                <value name="minOccurs">1</value>
+                <value name="maxOccurs">1</value>
+                <value name="modelType">sequence</value>
+                <list name="children">
+                  <record javaclass="com.wm.util.Values">
+                    <record name="symbol" javaclass="com.wm.util.Values">
+                      <value name="ncName">$$ANY</value>
+                    </record>
+                    <value name="minOccurs">0</value>
+                    <value name="maxOccurs">*</value>
+                    <value name="modelType">any</value>
+                    <value name="qualifier">1</value>
+                    <array name="uris" type="value" depth="1">
+                      <value>http://schemas.xmlsoap.org/wsdl/</value>
+                      <value>$$unqualified</value>
+                    </array>
+                    <value name="processContents">0</value>
+                  </record>
+                </list>
+              </record>
+              <record javaclass="com.wm.util.Values">
+                <record name="symbol" javaclass="com.wm.util.Values">
+                  <value name="ncName">$$SEQUENCE</value>
+                </record>
+                <value name="minOccurs">1</value>
+                <value name="maxOccurs">1</value>
+                <value name="modelType">sequence</value>
+                <list name="children">
+                  <record javaclass="com.wm.util.Values">
+                    <record name="symbol" javaclass="com.wm.util.Values">
+                      <value name="ncName">$$SEQUENCE</value>
+                    </record>
+                    <value name="minOccurs">0</value>
+                    <value name="maxOccurs">*</value>
+                    <value name="modelType">sequence</value>
+                    <list name="children">
+                      <record javaclass="com.wm.util.Values">
+                        <record name="symbol" javaclass="com.wm.util.Values">
+                          <value name="ncName">$$CHOICE</value>
+                        </record>
+                        <value name="minOccurs">1</value>
+                        <value name="maxOccurs">1</value>
+                        <value name="modelType">choice</value>
+                        <list name="children">
+                          <record javaclass="com.wm.util.Values">
+                            <record name="symbol" javaclass="com.wm.util.Values">
+                              <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+                              <value name="ncName">import</value>
+                            </record>
+                            <value name="minOccurs">1</value>
+                            <value name="maxOccurs">1</value>
+                            <value name="modelType">simple</value>
+                          </record>
+                          <record javaclass="com.wm.util.Values">
+                            <record name="symbol" javaclass="com.wm.util.Values">
+                              <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+                              <value name="ncName">types</value>
+                            </record>
+                            <value name="minOccurs">1</value>
+                            <value name="maxOccurs">1</value>
+                            <value name="modelType">simple</value>
+                          </record>
+                          <record javaclass="com.wm.util.Values">
+                            <record name="symbol" javaclass="com.wm.util.Values">
+                              <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+                              <value name="ncName">message</value>
+                            </record>
+                            <value name="minOccurs">1</value>
+                            <value name="maxOccurs">1</value>
+                            <value name="modelType">simple</value>
+                          </record>
+                          <record javaclass="com.wm.util.Values">
+                            <record name="symbol" javaclass="com.wm.util.Values">
+                              <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+                              <value name="ncName">portType</value>
+                            </record>
+                            <value name="minOccurs">1</value>
+                            <value name="maxOccurs">1</value>
+                            <value name="modelType">simple</value>
+                          </record>
+                          <record javaclass="com.wm.util.Values">
+                            <record name="symbol" javaclass="com.wm.util.Values">
+                              <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+                              <value name="ncName">binding</value>
+                            </record>
+                            <value name="minOccurs">1</value>
+                            <value name="maxOccurs">1</value>
+                            <value name="modelType">simple</value>
+                          </record>
+                          <record javaclass="com.wm.util.Values">
+                            <record name="symbol" javaclass="com.wm.util.Values">
+                              <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+                              <value name="ncName">service</value>
+                            </record>
+                            <value name="minOccurs">1</value>
+                            <value name="maxOccurs">1</value>
+                            <value name="modelType">simple</value>
+                          </record>
+                        </list>
+                      </record>
+                    </list>
+                  </record>
+                </list>
+              </record>
+            </list>
+          </record>
+          <array name="parent-ancestors" type="record" depth="1">
+            <record javaclass="com.wm.util.Values">
+              <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+              <value name="ncName">tDocumented</value>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+              <value name="ncName">tExtensibleDocumented</value>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="xmlns">http://www.w3.org/2001/XMLSchema</value>
+              <value name="ncName">anyType</value>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+              <value name="ncName">tDefinitions</value>
+            </record>
+          </array>
+          <value name="classname">com.wm.lang.schema.WmComplexType</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="contentType">2</value>
+          <value name="internalType">instance</value>
+          <value name="name">tService</value>
+          <list name="elements">
+            <record javaclass="com.wm.util.Values">
+              <value name="tagType">element</value>
+              <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+              <value name="name">documentation</value>
+              <record name="type" javaclass="com.wm.util.Values">
+                <value name="contentType">2</value>
+                <value name="internalType">reference</value>
+                <record name="targetName" javaclass="com.wm.util.Values">
+                  <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+                  <value name="ncName">tDocumentation</value>
+                </record>
+              </record>
+              <value name="form">true</value>
+              <value name="internalType">instance</value>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="tagType">element</value>
+              <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+              <value name="name">port</value>
+              <record name="type" javaclass="com.wm.util.Values">
+                <value name="contentType">2</value>
+                <value name="internalType">reference</value>
+                <record name="targetName" javaclass="com.wm.util.Values">
+                  <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+                  <value name="ncName">tPort</value>
+                </record>
+              </record>
+              <value name="form">true</value>
+              <value name="internalType">instance</value>
+            </record>
+          </list>
+          <list name="attributes">
+            <record javaclass="com.wm.util.Values">
+              <value name="tagType">attribute</value>
+              <value name="name">name</value>
+              <record name="type" javaclass="com.wm.util.Values">
+                <value name="contentType">1</value>
+                <value name="internalType">reference</value>
+                <value name="dataTypeVersion">dtVersion2</value>
+                <array name="targetNames" type="record" depth="1">
+                  <record javaclass="com.wm.util.Values">
+                    <value name="xmlns">http://www.w3.org/2001/XMLSchema</value>
+                    <value name="ncName">NCName</value>
+                  </record>
+                </array>
+              </record>
+              <value name="required">true</value>
+              <value name="internalType">instance</value>
+            </record>
+          </list>
+          <record name="contentModel" javaclass="com.wm.util.Values">
+            <record name="symbol" javaclass="com.wm.util.Values">
+              <value name="ncName">$$SEQUENCE</value>
+            </record>
+            <value name="minOccurs">1</value>
+            <value name="maxOccurs">1</value>
+            <value name="modelType">sequence</value>
+            <list name="children">
+              <record javaclass="com.wm.util.Values">
+                <record name="symbol" javaclass="com.wm.util.Values">
+                  <value name="ncName">$$SEQUENCE</value>
+                </record>
+                <value name="minOccurs">1</value>
+                <value name="maxOccurs">1</value>
+                <value name="modelType">sequence</value>
+                <list name="children">
+                  <record javaclass="com.wm.util.Values">
+                    <record name="symbol" javaclass="com.wm.util.Values">
+                      <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+                      <value name="ncName">documentation</value>
+                    </record>
+                    <value name="minOccurs">0</value>
+                    <value name="maxOccurs">1</value>
+                    <value name="modelType">simple</value>
+                  </record>
+                </list>
+              </record>
+              <record javaclass="com.wm.util.Values">
+                <record name="symbol" javaclass="com.wm.util.Values">
+                  <value name="ncName">$$SEQUENCE</value>
+                </record>
+                <value name="minOccurs">1</value>
+                <value name="maxOccurs">1</value>
+                <value name="modelType">sequence</value>
+                <list name="children">
+                  <record javaclass="com.wm.util.Values">
+                    <record name="symbol" javaclass="com.wm.util.Values">
+                      <value name="ncName">$$ANY</value>
+                    </record>
+                    <value name="minOccurs">0</value>
+                    <value name="maxOccurs">*</value>
+                    <value name="modelType">any</value>
+                    <value name="qualifier">1</value>
+                    <array name="uris" type="value" depth="1">
+                      <value>http://schemas.xmlsoap.org/wsdl/</value>
+                      <value>$$unqualified</value>
+                    </array>
+                    <value name="processContents">0</value>
+                  </record>
+                </list>
+              </record>
+              <record javaclass="com.wm.util.Values">
+                <record name="symbol" javaclass="com.wm.util.Values">
+                  <value name="ncName">$$SEQUENCE</value>
+                </record>
+                <value name="minOccurs">1</value>
+                <value name="maxOccurs">1</value>
+                <value name="modelType">sequence</value>
+                <list name="children">
+                  <record javaclass="com.wm.util.Values">
+                    <record name="symbol" javaclass="com.wm.util.Values">
+                      <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+                      <value name="ncName">port</value>
+                    </record>
+                    <value name="minOccurs">0</value>
+                    <value name="maxOccurs">*</value>
+                    <value name="modelType">simple</value>
+                  </record>
+                </list>
+              </record>
+            </list>
+          </record>
+          <array name="parent-ancestors" type="record" depth="1">
+            <record javaclass="com.wm.util.Values">
+              <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+              <value name="ncName">tDocumented</value>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+              <value name="ncName">tExtensibleDocumented</value>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="xmlns">http://www.w3.org/2001/XMLSchema</value>
+              <value name="ncName">anyType</value>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+              <value name="ncName">tService</value>
+            </record>
+          </array>
+          <value name="classname">com.wm.lang.schema.WmComplexType</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="contentType">2</value>
+          <value name="internalType">instance</value>
+          <value name="name">tExtensibleDocumented</value>
+          <list name="elements">
+            <record javaclass="com.wm.util.Values">
+              <value name="tagType">element</value>
+              <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+              <value name="name">documentation</value>
+              <record name="type" javaclass="com.wm.util.Values">
+                <value name="contentType">2</value>
+                <value name="internalType">reference</value>
+                <record name="targetName" javaclass="com.wm.util.Values">
+                  <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+                  <value name="ncName">tDocumentation</value>
+                </record>
+              </record>
+              <value name="form">true</value>
+              <value name="internalType">instance</value>
+            </record>
+          </list>
+          <list name="attributes">
+          </list>
+          <record name="contentModel" javaclass="com.wm.util.Values">
+            <record name="symbol" javaclass="com.wm.util.Values">
+              <value name="ncName">$$SEQUENCE</value>
+            </record>
+            <value name="minOccurs">1</value>
+            <value name="maxOccurs">1</value>
+            <value name="modelType">sequence</value>
+            <list name="children">
+              <record javaclass="com.wm.util.Values">
+                <record name="symbol" javaclass="com.wm.util.Values">
+                  <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+                  <value name="ncName">documentation</value>
+                </record>
+                <value name="minOccurs">0</value>
+                <value name="maxOccurs">1</value>
+                <value name="modelType">simple</value>
+              </record>
+            </list>
+          </record>
+          <value name="abstract">true</value>
+          <array name="parent-ancestors" type="record" depth="1">
+            <record javaclass="com.wm.util.Values">
+              <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+              <value name="ncName">tDocumented</value>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="xmlns">http://www.w3.org/2001/XMLSchema</value>
+              <value name="ncName">anyType</value>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+              <value name="ncName">tExtensibleDocumented</value>
+            </record>
+          </array>
+          <value name="classname">com.wm.lang.schema.WmComplexType</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="contentType">2</value>
+          <value name="internalType">instance</value>
+          <value name="name">tPart</value>
+          <list name="elements">
+            <record javaclass="com.wm.util.Values">
+              <value name="tagType">element</value>
+              <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+              <value name="name">documentation</value>
+              <record name="type" javaclass="com.wm.util.Values">
+                <value name="contentType">2</value>
+                <value name="internalType">reference</value>
+                <record name="targetName" javaclass="com.wm.util.Values">
+                  <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+                  <value name="ncName">tDocumentation</value>
+                </record>
+              </record>
+              <value name="form">true</value>
+              <value name="internalType">instance</value>
+            </record>
+          </list>
+          <list name="attributes">
+            <record javaclass="com.wm.util.Values">
+              <value name="tagType">attribute</value>
+              <value name="name">name</value>
+              <record name="type" javaclass="com.wm.util.Values">
+                <value name="contentType">1</value>
+                <value name="internalType">reference</value>
+                <value name="dataTypeVersion">dtVersion2</value>
+                <array name="targetNames" type="record" depth="1">
+                  <record javaclass="com.wm.util.Values">
+                    <value name="xmlns">http://www.w3.org/2001/XMLSchema</value>
+                    <value name="ncName">NCName</value>
+                  </record>
+                </array>
+              </record>
+              <value name="required">true</value>
+              <value name="internalType">instance</value>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="tagType">attribute</value>
+              <value name="name">element</value>
+              <record name="type" javaclass="com.wm.util.Values">
+                <value name="contentType">1</value>
+                <value name="internalType">reference</value>
+                <value name="dataTypeVersion">dtVersion2</value>
+                <array name="targetNames" type="record" depth="1">
+                  <record javaclass="com.wm.util.Values">
+                    <value name="xmlns">http://www.w3.org/2001/XMLSchema</value>
+                    <value name="ncName">QName</value>
+                  </record>
+                </array>
+              </record>
+              <value name="required">false</value>
+              <value name="internalType">instance</value>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="tagType">attribute</value>
+              <value name="name">type</value>
+              <record name="type" javaclass="com.wm.util.Values">
+                <value name="contentType">1</value>
+                <value name="internalType">reference</value>
+                <value name="dataTypeVersion">dtVersion2</value>
+                <array name="targetNames" type="record" depth="1">
+                  <record javaclass="com.wm.util.Values">
+                    <value name="xmlns">http://www.w3.org/2001/XMLSchema</value>
+                    <value name="ncName">QName</value>
+                  </record>
+                </array>
+              </record>
+              <value name="required">false</value>
+              <value name="internalType">instance</value>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="tagType">attribute</value>
+              <value name="name">$$ANY_ATTRIBUTE</value>
+              <value name="required">false</value>
+              <value name="internalType">any</value>
+              <record name="wildcard" javaclass="com.wm.util.Values">
+                <record name="symbol" javaclass="com.wm.util.Values">
+                  <value name="ncName">$$ANY</value>
+                </record>
+                <value name="minOccurs">1</value>
+                <value name="maxOccurs">1</value>
+                <value name="modelType">any</value>
+                <value name="qualifier">1</value>
+                <array name="uris" type="value" depth="1">
+                  <value>http://schemas.xmlsoap.org/wsdl/</value>
+                  <value>$$unqualified</value>
+                </array>
+                <value name="processContents">0</value>
+              </record>
+            </record>
+          </list>
+          <record name="contentModel" javaclass="com.wm.util.Values">
+            <record name="symbol" javaclass="com.wm.util.Values">
+              <value name="ncName">$$SEQUENCE</value>
+            </record>
+            <value name="minOccurs">1</value>
+            <value name="maxOccurs">1</value>
+            <value name="modelType">sequence</value>
+            <list name="children">
+              <record javaclass="com.wm.util.Values">
+                <record name="symbol" javaclass="com.wm.util.Values">
+                  <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+                  <value name="ncName">documentation</value>
+                </record>
+                <value name="minOccurs">0</value>
+                <value name="maxOccurs">1</value>
+                <value name="modelType">simple</value>
+              </record>
+            </list>
+          </record>
+          <array name="parent-ancestors" type="record" depth="1">
+            <record javaclass="com.wm.util.Values">
+              <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+              <value name="ncName">tDocumented</value>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+              <value name="ncName">tExtensibleAttributesDocumented</value>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="xmlns">http://www.w3.org/2001/XMLSchema</value>
+              <value name="ncName">anyType</value>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+              <value name="ncName">tPart</value>
+            </record>
+          </array>
+          <value name="classname">com.wm.lang.schema.WmComplexType</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="contentType">2</value>
+          <value name="internalType">instance</value>
+          <value name="name">tExtensibilityElement</value>
+          <list name="elements">
+          </list>
+          <list name="attributes">
+            <record javaclass="com.wm.util.Values">
+              <value name="tagType">attribute</value>
+              <value name="required">false</value>
+              <value name="internalType">reference</value>
+              <record name="targetName" javaclass="com.wm.util.Values">
+                <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+                <value name="ncName">required</value>
+              </record>
+            </record>
+          </list>
+          <record name="contentModel" javaclass="com.wm.util.Values">
+            <record name="symbol" javaclass="com.wm.util.Values">
+              <value name="ncName">$$SEQUENCE</value>
+            </record>
+            <value name="minOccurs">1</value>
+            <value name="maxOccurs">1</value>
+            <value name="modelType">sequence</value>
+            <list name="children">
+            </list>
+          </record>
+          <value name="abstract">true</value>
+          <array name="parent-ancestors" type="record" depth="1">
+            <record javaclass="com.wm.util.Values">
+              <value name="xmlns">http://www.w3.org/2001/XMLSchema</value>
+              <value name="ncName">anyType</value>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+              <value name="ncName">tExtensibilityElement</value>
+            </record>
+          </array>
+          <value name="classname">com.wm.lang.schema.WmComplexType</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="contentType">2</value>
+          <value name="internalType">instance</value>
+          <value name="name">tImport</value>
+          <list name="elements">
+            <record javaclass="com.wm.util.Values">
+              <value name="tagType">element</value>
+              <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+              <value name="name">documentation</value>
+              <record name="type" javaclass="com.wm.util.Values">
+                <value name="contentType">2</value>
+                <value name="internalType">reference</value>
+                <record name="targetName" javaclass="com.wm.util.Values">
+                  <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+                  <value name="ncName">tDocumentation</value>
+                </record>
+              </record>
+              <value name="form">true</value>
+              <value name="internalType">instance</value>
+            </record>
+          </list>
+          <list name="attributes">
+            <record javaclass="com.wm.util.Values">
+              <value name="tagType">attribute</value>
+              <value name="name">namespace</value>
+              <record name="type" javaclass="com.wm.util.Values">
+                <value name="contentType">1</value>
+                <value name="internalType">reference</value>
+                <value name="dataTypeVersion">dtVersion2</value>
+                <array name="targetNames" type="record" depth="1">
+                  <record javaclass="com.wm.util.Values">
+                    <value name="xmlns">http://www.w3.org/2001/XMLSchema</value>
+                    <value name="ncName">anyURI</value>
+                  </record>
+                </array>
+              </record>
+              <value name="required">true</value>
+              <value name="internalType">instance</value>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="tagType">attribute</value>
+              <value name="name">location</value>
+              <record name="type" javaclass="com.wm.util.Values">
+                <value name="contentType">1</value>
+                <value name="internalType">reference</value>
+                <value name="dataTypeVersion">dtVersion2</value>
+                <array name="targetNames" type="record" depth="1">
+                  <record javaclass="com.wm.util.Values">
+                    <value name="xmlns">http://www.w3.org/2001/XMLSchema</value>
+                    <value name="ncName">anyURI</value>
+                  </record>
+                </array>
+              </record>
+              <value name="required">true</value>
+              <value name="internalType">instance</value>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="tagType">attribute</value>
+              <value name="name">$$ANY_ATTRIBUTE</value>
+              <value name="required">false</value>
+              <value name="internalType">any</value>
+              <record name="wildcard" javaclass="com.wm.util.Values">
+                <record name="symbol" javaclass="com.wm.util.Values">
+                  <value name="ncName">$$ANY</value>
+                </record>
+                <value name="minOccurs">1</value>
+                <value name="maxOccurs">1</value>
+                <value name="modelType">any</value>
+                <value name="qualifier">1</value>
+                <array name="uris" type="value" depth="1">
+                  <value>http://schemas.xmlsoap.org/wsdl/</value>
+                  <value>$$unqualified</value>
+                </array>
+                <value name="processContents">0</value>
+              </record>
+            </record>
+          </list>
+          <record name="contentModel" javaclass="com.wm.util.Values">
+            <record name="symbol" javaclass="com.wm.util.Values">
+              <value name="ncName">$$SEQUENCE</value>
+            </record>
+            <value name="minOccurs">1</value>
+            <value name="maxOccurs">1</value>
+            <value name="modelType">sequence</value>
+            <list name="children">
+              <record javaclass="com.wm.util.Values">
+                <record name="symbol" javaclass="com.wm.util.Values">
+                  <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+                  <value name="ncName">documentation</value>
+                </record>
+                <value name="minOccurs">0</value>
+                <value name="maxOccurs">1</value>
+                <value name="modelType">simple</value>
+              </record>
+            </list>
+          </record>
+          <array name="parent-ancestors" type="record" depth="1">
+            <record javaclass="com.wm.util.Values">
+              <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+              <value name="ncName">tDocumented</value>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+              <value name="ncName">tExtensibleAttributesDocumented</value>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="xmlns">http://www.w3.org/2001/XMLSchema</value>
+              <value name="ncName">anyType</value>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+              <value name="ncName">tImport</value>
+            </record>
+          </array>
+          <value name="classname">com.wm.lang.schema.WmComplexType</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="contentType">2</value>
+          <value name="internalType">instance</value>
+          <value name="name">tBindingOperationMessage</value>
+          <list name="elements">
+            <record javaclass="com.wm.util.Values">
+              <value name="tagType">element</value>
+              <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+              <value name="name">documentation</value>
+              <record name="type" javaclass="com.wm.util.Values">
+                <value name="contentType">2</value>
+                <value name="internalType">reference</value>
+                <record name="targetName" javaclass="com.wm.util.Values">
+                  <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+                  <value name="ncName">tDocumentation</value>
+                </record>
+              </record>
+              <value name="form">true</value>
+              <value name="internalType">instance</value>
+            </record>
+          </list>
+          <list name="attributes">
+            <record javaclass="com.wm.util.Values">
+              <value name="tagType">attribute</value>
+              <value name="name">name</value>
+              <record name="type" javaclass="com.wm.util.Values">
+                <value name="contentType">1</value>
+                <value name="internalType">reference</value>
+                <value name="dataTypeVersion">dtVersion2</value>
+                <array name="targetNames" type="record" depth="1">
+                  <record javaclass="com.wm.util.Values">
+                    <value name="xmlns">http://www.w3.org/2001/XMLSchema</value>
+                    <value name="ncName">NCName</value>
+                  </record>
+                </array>
+              </record>
+              <value name="required">false</value>
+              <value name="internalType">instance</value>
+            </record>
+          </list>
+          <record name="contentModel" javaclass="com.wm.util.Values">
+            <record name="symbol" javaclass="com.wm.util.Values">
+              <value name="ncName">$$SEQUENCE</value>
+            </record>
+            <value name="minOccurs">1</value>
+            <value name="maxOccurs">1</value>
+            <value name="modelType">sequence</value>
+            <list name="children">
+              <record javaclass="com.wm.util.Values">
+                <record name="symbol" javaclass="com.wm.util.Values">
+                  <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+                  <value name="ncName">documentation</value>
+                </record>
+                <value name="minOccurs">0</value>
+                <value name="maxOccurs">1</value>
+                <value name="modelType">simple</value>
+              </record>
+            </list>
+          </record>
+          <array name="parent-ancestors" type="record" depth="1">
+            <record javaclass="com.wm.util.Values">
+              <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+              <value name="ncName">tDocumented</value>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+              <value name="ncName">tExtensibleDocumented</value>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="xmlns">http://www.w3.org/2001/XMLSchema</value>
+              <value name="ncName">anyType</value>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+              <value name="ncName">tBindingOperationMessage</value>
+            </record>
+          </array>
+          <value name="classname">com.wm.lang.schema.WmComplexType</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="contentType">2</value>
+          <value name="internalType">instance</value>
+          <value name="name">tBindingOperation</value>
+          <list name="elements">
+            <record javaclass="com.wm.util.Values">
+              <value name="tagType">element</value>
+              <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+              <value name="name">documentation</value>
+              <record name="type" javaclass="com.wm.util.Values">
+                <value name="contentType">2</value>
+                <value name="internalType">reference</value>
+                <record name="targetName" javaclass="com.wm.util.Values">
+                  <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+                  <value name="ncName">tDocumentation</value>
+                </record>
+              </record>
+              <value name="form">true</value>
+              <value name="internalType">instance</value>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="tagType">element</value>
+              <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+              <value name="name">input</value>
+              <record name="type" javaclass="com.wm.util.Values">
+                <value name="contentType">2</value>
+                <value name="internalType">reference</value>
+                <record name="targetName" javaclass="com.wm.util.Values">
+                  <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+                  <value name="ncName">tBindingOperationMessage</value>
+                </record>
+              </record>
+              <value name="form">true</value>
+              <value name="internalType">instance</value>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="tagType">element</value>
+              <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+              <value name="name">output</value>
+              <record name="type" javaclass="com.wm.util.Values">
+                <value name="contentType">2</value>
+                <value name="internalType">reference</value>
+                <record name="targetName" javaclass="com.wm.util.Values">
+                  <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+                  <value name="ncName">tBindingOperationMessage</value>
+                </record>
+              </record>
+              <value name="form">true</value>
+              <value name="internalType">instance</value>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="tagType">element</value>
+              <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+              <value name="name">fault</value>
+              <record name="type" javaclass="com.wm.util.Values">
+                <value name="contentType">2</value>
+                <value name="internalType">reference</value>
+                <record name="targetName" javaclass="com.wm.util.Values">
+                  <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+                  <value name="ncName">tBindingOperationFault</value>
+                </record>
+              </record>
+              <value name="form">true</value>
+              <value name="internalType">instance</value>
+            </record>
+          </list>
+          <list name="attributes">
+            <record javaclass="com.wm.util.Values">
+              <value name="tagType">attribute</value>
+              <value name="name">name</value>
+              <record name="type" javaclass="com.wm.util.Values">
+                <value name="contentType">1</value>
+                <value name="internalType">reference</value>
+                <value name="dataTypeVersion">dtVersion2</value>
+                <array name="targetNames" type="record" depth="1">
+                  <record javaclass="com.wm.util.Values">
+                    <value name="xmlns">http://www.w3.org/2001/XMLSchema</value>
+                    <value name="ncName">NCName</value>
+                  </record>
+                </array>
+              </record>
+              <value name="required">true</value>
+              <value name="internalType">instance</value>
+            </record>
+          </list>
+          <record name="contentModel" javaclass="com.wm.util.Values">
+            <record name="symbol" javaclass="com.wm.util.Values">
+              <value name="ncName">$$SEQUENCE</value>
+            </record>
+            <value name="minOccurs">1</value>
+            <value name="maxOccurs">1</value>
+            <value name="modelType">sequence</value>
+            <list name="children">
+              <record javaclass="com.wm.util.Values">
+                <record name="symbol" javaclass="com.wm.util.Values">
+                  <value name="ncName">$$SEQUENCE</value>
+                </record>
+                <value name="minOccurs">1</value>
+                <value name="maxOccurs">1</value>
+                <value name="modelType">sequence</value>
+                <list name="children">
+                  <record javaclass="com.wm.util.Values">
+                    <record name="symbol" javaclass="com.wm.util.Values">
+                      <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+                      <value name="ncName">documentation</value>
+                    </record>
+                    <value name="minOccurs">0</value>
+                    <value name="maxOccurs">1</value>
+                    <value name="modelType">simple</value>
+                  </record>
+                </list>
+              </record>
+              <record javaclass="com.wm.util.Values">
+                <record name="symbol" javaclass="com.wm.util.Values">
+                  <value name="ncName">$$SEQUENCE</value>
+                </record>
+                <value name="minOccurs">1</value>
+                <value name="maxOccurs">1</value>
+                <value name="modelType">sequence</value>
+                <list name="children">
+                  <record javaclass="com.wm.util.Values">
+                    <record name="symbol" javaclass="com.wm.util.Values">
+                      <value name="ncName">$$ANY</value>
+                    </record>
+                    <value name="minOccurs">0</value>
+                    <value name="maxOccurs">*</value>
+                    <value name="modelType">any</value>
+                    <value name="qualifier">1</value>
+                    <array name="uris" type="value" depth="1">
+                      <value>http://schemas.xmlsoap.org/wsdl/</value>
+                      <value>$$unqualified</value>
+                    </array>
+                    <value name="processContents">0</value>
+                  </record>
+                </list>
+              </record>
+              <record javaclass="com.wm.util.Values">
+                <record name="symbol" javaclass="com.wm.util.Values">
+                  <value name="ncName">$$SEQUENCE</value>
+                </record>
+                <value name="minOccurs">1</value>
+                <value name="maxOccurs">1</value>
+                <value name="modelType">sequence</value>
+                <list name="children">
+                  <record javaclass="com.wm.util.Values">
+                    <record name="symbol" javaclass="com.wm.util.Values">
+                      <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+                      <value name="ncName">input</value>
+                    </record>
+                    <value name="minOccurs">0</value>
+                    <value name="maxOccurs">1</value>
+                    <value name="modelType">simple</value>
+                  </record>
+                  <record javaclass="com.wm.util.Values">
+                    <record name="symbol" javaclass="com.wm.util.Values">
+                      <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+                      <value name="ncName">output</value>
+                    </record>
+                    <value name="minOccurs">0</value>
+                    <value name="maxOccurs">1</value>
+                    <value name="modelType">simple</value>
+                  </record>
+                  <record javaclass="com.wm.util.Values">
+                    <record name="symbol" javaclass="com.wm.util.Values">
+                      <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+                      <value name="ncName">fault</value>
+                    </record>
+                    <value name="minOccurs">0</value>
+                    <value name="maxOccurs">*</value>
+                    <value name="modelType">simple</value>
+                  </record>
+                </list>
+              </record>
+            </list>
+          </record>
+          <array name="parent-ancestors" type="record" depth="1">
+            <record javaclass="com.wm.util.Values">
+              <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+              <value name="ncName">tDocumented</value>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+              <value name="ncName">tExtensibleDocumented</value>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="xmlns">http://www.w3.org/2001/XMLSchema</value>
+              <value name="ncName">anyType</value>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+              <value name="ncName">tBindingOperation</value>
+            </record>
+          </array>
+          <value name="classname">com.wm.lang.schema.WmComplexType</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="contentType">2</value>
+          <value name="internalType">instance</value>
+          <value name="name">tDocumented</value>
+          <list name="elements">
+            <record javaclass="com.wm.util.Values">
+              <value name="tagType">element</value>
+              <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+              <value name="name">documentation</value>
+              <record name="type" javaclass="com.wm.util.Values">
+                <value name="contentType">2</value>
+                <value name="internalType">reference</value>
+                <record name="targetName" javaclass="com.wm.util.Values">
+                  <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+                  <value name="ncName">tDocumentation</value>
+                </record>
+              </record>
+              <value name="form">true</value>
+              <value name="internalType">instance</value>
+            </record>
+          </list>
+          <list name="attributes">
+          </list>
+          <record name="contentModel" javaclass="com.wm.util.Values">
+            <record name="symbol" javaclass="com.wm.util.Values">
+              <value name="ncName">$$SEQUENCE</value>
+            </record>
+            <value name="minOccurs">1</value>
+            <value name="maxOccurs">1</value>
+            <value name="modelType">sequence</value>
+            <list name="children">
+              <record javaclass="com.wm.util.Values">
+                <record name="symbol" javaclass="com.wm.util.Values">
+                  <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+                  <value name="ncName">documentation</value>
+                </record>
+                <value name="minOccurs">0</value>
+                <value name="maxOccurs">1</value>
+                <value name="modelType">simple</value>
+              </record>
+            </list>
+          </record>
+          <array name="parent-ancestors" type="record" depth="1">
+            <record javaclass="com.wm.util.Values">
+              <value name="xmlns">http://www.w3.org/2001/XMLSchema</value>
+              <value name="ncName">anyType</value>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+              <value name="ncName">tDocumented</value>
+            </record>
+          </array>
+          <value name="classname">com.wm.lang.schema.WmComplexType</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="contentType">2</value>
+          <value name="internalType">instance</value>
+          <value name="name">tParam</value>
+          <list name="elements">
+            <record javaclass="com.wm.util.Values">
+              <value name="tagType">element</value>
+              <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+              <value name="name">documentation</value>
+              <record name="type" javaclass="com.wm.util.Values">
+                <value name="contentType">2</value>
+                <value name="internalType">reference</value>
+                <record name="targetName" javaclass="com.wm.util.Values">
+                  <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+                  <value name="ncName">tDocumentation</value>
+                </record>
+              </record>
+              <value name="form">true</value>
+              <value name="internalType">instance</value>
+            </record>
+          </list>
+          <list name="attributes">
+            <record javaclass="com.wm.util.Values">
+              <value name="tagType">attribute</value>
+              <value name="name">name</value>
+              <record name="type" javaclass="com.wm.util.Values">
+                <value name="contentType">1</value>
+                <value name="internalType">reference</value>
+                <value name="dataTypeVersion">dtVersion2</value>
+                <array name="targetNames" type="record" depth="1">
+                  <record javaclass="com.wm.util.Values">
+                    <value name="xmlns">http://www.w3.org/2001/XMLSchema</value>
+                    <value name="ncName">NCName</value>
+                  </record>
+                </array>
+              </record>
+              <value name="required">false</value>
+              <value name="internalType">instance</value>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="tagType">attribute</value>
+              <value name="name">message</value>
+              <record name="type" javaclass="com.wm.util.Values">
+                <value name="contentType">1</value>
+                <value name="internalType">reference</value>
+                <value name="dataTypeVersion">dtVersion2</value>
+                <array name="targetNames" type="record" depth="1">
+                  <record javaclass="com.wm.util.Values">
+                    <value name="xmlns">http://www.w3.org/2001/XMLSchema</value>
+                    <value name="ncName">QName</value>
+                  </record>
+                </array>
+              </record>
+              <value name="required">true</value>
+              <value name="internalType">instance</value>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="tagType">attribute</value>
+              <value name="name">$$ANY_ATTRIBUTE</value>
+              <value name="required">false</value>
+              <value name="internalType">any</value>
+              <record name="wildcard" javaclass="com.wm.util.Values">
+                <record name="symbol" javaclass="com.wm.util.Values">
+                  <value name="ncName">$$ANY</value>
+                </record>
+                <value name="minOccurs">1</value>
+                <value name="maxOccurs">1</value>
+                <value name="modelType">any</value>
+                <value name="qualifier">1</value>
+                <array name="uris" type="value" depth="1">
+                  <value>http://schemas.xmlsoap.org/wsdl/</value>
+                  <value>$$unqualified</value>
+                </array>
+                <value name="processContents">0</value>
+              </record>
+            </record>
+          </list>
+          <record name="contentModel" javaclass="com.wm.util.Values">
+            <record name="symbol" javaclass="com.wm.util.Values">
+              <value name="ncName">$$SEQUENCE</value>
+            </record>
+            <value name="minOccurs">1</value>
+            <value name="maxOccurs">1</value>
+            <value name="modelType">sequence</value>
+            <list name="children">
+              <record javaclass="com.wm.util.Values">
+                <record name="symbol" javaclass="com.wm.util.Values">
+                  <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+                  <value name="ncName">documentation</value>
+                </record>
+                <value name="minOccurs">0</value>
+                <value name="maxOccurs">1</value>
+                <value name="modelType">simple</value>
+              </record>
+            </list>
+          </record>
+          <array name="parent-ancestors" type="record" depth="1">
+            <record javaclass="com.wm.util.Values">
+              <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+              <value name="ncName">tDocumented</value>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+              <value name="ncName">tExtensibleAttributesDocumented</value>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="xmlns">http://www.w3.org/2001/XMLSchema</value>
+              <value name="ncName">anyType</value>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+              <value name="ncName">tParam</value>
+            </record>
+          </array>
+          <value name="classname">com.wm.lang.schema.WmComplexType</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="contentType">2</value>
+          <value name="internalType">instance</value>
+          <value name="name">tFault</value>
+          <list name="elements">
+            <record javaclass="com.wm.util.Values">
+              <value name="tagType">element</value>
+              <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+              <value name="name">documentation</value>
+              <record name="type" javaclass="com.wm.util.Values">
+                <value name="contentType">2</value>
+                <value name="internalType">reference</value>
+                <record name="targetName" javaclass="com.wm.util.Values">
+                  <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+                  <value name="ncName">tDocumentation</value>
+                </record>
+              </record>
+              <value name="form">true</value>
+              <value name="internalType">instance</value>
+            </record>
+          </list>
+          <list name="attributes">
+            <record javaclass="com.wm.util.Values">
+              <value name="tagType">attribute</value>
+              <value name="name">name</value>
+              <record name="type" javaclass="com.wm.util.Values">
+                <value name="contentType">1</value>
+                <value name="internalType">reference</value>
+                <value name="dataTypeVersion">dtVersion2</value>
+                <array name="targetNames" type="record" depth="1">
+                  <record javaclass="com.wm.util.Values">
+                    <value name="xmlns">http://www.w3.org/2001/XMLSchema</value>
+                    <value name="ncName">NCName</value>
+                  </record>
+                </array>
+              </record>
+              <value name="required">true</value>
+              <value name="internalType">instance</value>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="tagType">attribute</value>
+              <value name="name">message</value>
+              <record name="type" javaclass="com.wm.util.Values">
+                <value name="contentType">1</value>
+                <value name="internalType">reference</value>
+                <value name="dataTypeVersion">dtVersion2</value>
+                <array name="targetNames" type="record" depth="1">
+                  <record javaclass="com.wm.util.Values">
+                    <value name="xmlns">http://www.w3.org/2001/XMLSchema</value>
+                    <value name="ncName">QName</value>
+                  </record>
+                </array>
+              </record>
+              <value name="required">true</value>
+              <value name="internalType">instance</value>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="tagType">attribute</value>
+              <value name="name">$$ANY_ATTRIBUTE</value>
+              <value name="required">false</value>
+              <value name="internalType">any</value>
+              <record name="wildcard" javaclass="com.wm.util.Values">
+                <record name="symbol" javaclass="com.wm.util.Values">
+                  <value name="ncName">$$ANY</value>
+                </record>
+                <value name="minOccurs">1</value>
+                <value name="maxOccurs">1</value>
+                <value name="modelType">any</value>
+                <value name="qualifier">1</value>
+                <array name="uris" type="value" depth="1">
+                  <value>http://schemas.xmlsoap.org/wsdl/</value>
+                  <value>$$unqualified</value>
+                </array>
+                <value name="processContents">0</value>
+              </record>
+            </record>
+          </list>
+          <record name="contentModel" javaclass="com.wm.util.Values">
+            <record name="symbol" javaclass="com.wm.util.Values">
+              <value name="ncName">$$SEQUENCE</value>
+            </record>
+            <value name="minOccurs">1</value>
+            <value name="maxOccurs">1</value>
+            <value name="modelType">sequence</value>
+            <list name="children">
+              <record javaclass="com.wm.util.Values">
+                <record name="symbol" javaclass="com.wm.util.Values">
+                  <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+                  <value name="ncName">documentation</value>
+                </record>
+                <value name="minOccurs">0</value>
+                <value name="maxOccurs">1</value>
+                <value name="modelType">simple</value>
+              </record>
+            </list>
+          </record>
+          <array name="parent-ancestors" type="record" depth="1">
+            <record javaclass="com.wm.util.Values">
+              <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+              <value name="ncName">tDocumented</value>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+              <value name="ncName">tExtensibleAttributesDocumented</value>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="xmlns">http://www.w3.org/2001/XMLSchema</value>
+              <value name="ncName">anyType</value>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+              <value name="ncName">tFault</value>
+            </record>
+          </array>
+          <value name="classname">com.wm.lang.schema.WmComplexType</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="contentType">2</value>
+          <value name="internalType">instance</value>
+          <value name="name">tExtensibleAttributesDocumented</value>
+          <list name="elements">
+            <record javaclass="com.wm.util.Values">
+              <value name="tagType">element</value>
+              <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+              <value name="name">documentation</value>
+              <record name="type" javaclass="com.wm.util.Values">
+                <value name="contentType">2</value>
+                <value name="internalType">reference</value>
+                <record name="targetName" javaclass="com.wm.util.Values">
+                  <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+                  <value name="ncName">tDocumentation</value>
+                </record>
+              </record>
+              <value name="form">true</value>
+              <value name="internalType">instance</value>
+            </record>
+          </list>
+          <list name="attributes">
+            <record javaclass="com.wm.util.Values">
+              <value name="tagType">attribute</value>
+              <value name="name">$$ANY_ATTRIBUTE</value>
+              <value name="required">false</value>
+              <value name="internalType">any</value>
+              <record name="wildcard" javaclass="com.wm.util.Values">
+                <record name="symbol" javaclass="com.wm.util.Values">
+                  <value name="ncName">$$ANY</value>
+                </record>
+                <value name="minOccurs">1</value>
+                <value name="maxOccurs">1</value>
+                <value name="modelType">any</value>
+                <value name="qualifier">1</value>
+                <array name="uris" type="value" depth="1">
+                  <value>http://schemas.xmlsoap.org/wsdl/</value>
+                  <value>$$unqualified</value>
+                </array>
+                <value name="processContents">0</value>
+              </record>
+            </record>
+          </list>
+          <record name="contentModel" javaclass="com.wm.util.Values">
+            <record name="symbol" javaclass="com.wm.util.Values">
+              <value name="ncName">$$SEQUENCE</value>
+            </record>
+            <value name="minOccurs">1</value>
+            <value name="maxOccurs">1</value>
+            <value name="modelType">sequence</value>
+            <list name="children">
+              <record javaclass="com.wm.util.Values">
+                <record name="symbol" javaclass="com.wm.util.Values">
+                  <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+                  <value name="ncName">documentation</value>
+                </record>
+                <value name="minOccurs">0</value>
+                <value name="maxOccurs">1</value>
+                <value name="modelType">simple</value>
+              </record>
+            </list>
+          </record>
+          <value name="abstract">true</value>
+          <array name="parent-ancestors" type="record" depth="1">
+            <record javaclass="com.wm.util.Values">
+              <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+              <value name="ncName">tDocumented</value>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="xmlns">http://www.w3.org/2001/XMLSchema</value>
+              <value name="ncName">anyType</value>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+              <value name="ncName">tExtensibleAttributesDocumented</value>
+            </record>
+          </array>
+          <value name="classname">com.wm.lang.schema.WmComplexType</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="contentType">2</value>
+          <value name="internalType">instance</value>
+          <value name="name">tMessage</value>
+          <list name="elements">
+            <record javaclass="com.wm.util.Values">
+              <value name="tagType">element</value>
+              <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+              <value name="name">documentation</value>
+              <record name="type" javaclass="com.wm.util.Values">
+                <value name="contentType">2</value>
+                <value name="internalType">reference</value>
+                <record name="targetName" javaclass="com.wm.util.Values">
+                  <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+                  <value name="ncName">tDocumentation</value>
+                </record>
+              </record>
+              <value name="form">true</value>
+              <value name="internalType">instance</value>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="tagType">element</value>
+              <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+              <value name="name">part</value>
+              <record name="type" javaclass="com.wm.util.Values">
+                <value name="contentType">2</value>
+                <value name="internalType">reference</value>
+                <record name="targetName" javaclass="com.wm.util.Values">
+                  <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+                  <value name="ncName">tPart</value>
+                </record>
+              </record>
+              <value name="form">true</value>
+              <value name="internalType">instance</value>
+            </record>
+          </list>
+          <list name="attributes">
+            <record javaclass="com.wm.util.Values">
+              <value name="tagType">attribute</value>
+              <value name="name">name</value>
+              <record name="type" javaclass="com.wm.util.Values">
+                <value name="contentType">1</value>
+                <value name="internalType">reference</value>
+                <value name="dataTypeVersion">dtVersion2</value>
+                <array name="targetNames" type="record" depth="1">
+                  <record javaclass="com.wm.util.Values">
+                    <value name="xmlns">http://www.w3.org/2001/XMLSchema</value>
+                    <value name="ncName">NCName</value>
+                  </record>
+                </array>
+              </record>
+              <value name="required">true</value>
+              <value name="internalType">instance</value>
+            </record>
+          </list>
+          <record name="contentModel" javaclass="com.wm.util.Values">
+            <record name="symbol" javaclass="com.wm.util.Values">
+              <value name="ncName">$$SEQUENCE</value>
+            </record>
+            <value name="minOccurs">1</value>
+            <value name="maxOccurs">1</value>
+            <value name="modelType">sequence</value>
+            <list name="children">
+              <record javaclass="com.wm.util.Values">
+                <record name="symbol" javaclass="com.wm.util.Values">
+                  <value name="ncName">$$SEQUENCE</value>
+                </record>
+                <value name="minOccurs">1</value>
+                <value name="maxOccurs">1</value>
+                <value name="modelType">sequence</value>
+                <list name="children">
+                  <record javaclass="com.wm.util.Values">
+                    <record name="symbol" javaclass="com.wm.util.Values">
+                      <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+                      <value name="ncName">documentation</value>
+                    </record>
+                    <value name="minOccurs">0</value>
+                    <value name="maxOccurs">1</value>
+                    <value name="modelType">simple</value>
+                  </record>
+                </list>
+              </record>
+              <record javaclass="com.wm.util.Values">
+                <record name="symbol" javaclass="com.wm.util.Values">
+                  <value name="ncName">$$SEQUENCE</value>
+                </record>
+                <value name="minOccurs">1</value>
+                <value name="maxOccurs">1</value>
+                <value name="modelType">sequence</value>
+                <list name="children">
+                  <record javaclass="com.wm.util.Values">
+                    <record name="symbol" javaclass="com.wm.util.Values">
+                      <value name="ncName">$$ANY</value>
+                    </record>
+                    <value name="minOccurs">0</value>
+                    <value name="maxOccurs">*</value>
+                    <value name="modelType">any</value>
+                    <value name="qualifier">1</value>
+                    <array name="uris" type="value" depth="1">
+                      <value>http://schemas.xmlsoap.org/wsdl/</value>
+                      <value>$$unqualified</value>
+                    </array>
+                    <value name="processContents">0</value>
+                  </record>
+                </list>
+              </record>
+              <record javaclass="com.wm.util.Values">
+                <record name="symbol" javaclass="com.wm.util.Values">
+                  <value name="ncName">$$SEQUENCE</value>
+                </record>
+                <value name="minOccurs">1</value>
+                <value name="maxOccurs">1</value>
+                <value name="modelType">sequence</value>
+                <list name="children">
+                  <record javaclass="com.wm.util.Values">
+                    <record name="symbol" javaclass="com.wm.util.Values">
+                      <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+                      <value name="ncName">part</value>
+                    </record>
+                    <value name="minOccurs">0</value>
+                    <value name="maxOccurs">*</value>
+                    <value name="modelType">simple</value>
+                  </record>
+                </list>
+              </record>
+            </list>
+          </record>
+          <array name="parent-ancestors" type="record" depth="1">
+            <record javaclass="com.wm.util.Values">
+              <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+              <value name="ncName">tDocumented</value>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+              <value name="ncName">tExtensibleDocumented</value>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="xmlns">http://www.w3.org/2001/XMLSchema</value>
+              <value name="ncName">anyType</value>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+              <value name="ncName">tMessage</value>
+            </record>
+          </array>
+          <value name="classname">com.wm.lang.schema.WmComplexType</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="contentType">2</value>
+          <value name="internalType">instance</value>
+          <value name="name">tDocumentation</value>
+          <list name="elements">
+          </list>
+          <list name="attributes">
+          </list>
+          <record name="contentModel" javaclass="com.wm.util.Values">
+            <record name="symbol" javaclass="com.wm.util.Values">
+              <value name="ncName">$$MIXED</value>
+            </record>
+            <value name="minOccurs">1</value>
+            <value name="maxOccurs">1</value>
+            <value name="modelType">mixed</value>
+            <list name="children">
+              <record javaclass="com.wm.util.Values">
+                <record name="symbol" javaclass="com.wm.util.Values">
+                  <value name="ncName">$$SEQUENCE</value>
+                </record>
+                <value name="minOccurs">1</value>
+                <value name="maxOccurs">1</value>
+                <value name="modelType">sequence</value>
+                <list name="children">
+                  <record javaclass="com.wm.util.Values">
+                    <record name="symbol" javaclass="com.wm.util.Values">
+                      <value name="ncName">$$ANY</value>
+                    </record>
+                    <value name="minOccurs">0</value>
+                    <value name="maxOccurs">*</value>
+                    <value name="modelType">any</value>
+                    <value name="qualifier">0</value>
+                    <value name="processContents">2</value>
+                  </record>
+                </list>
+              </record>
+            </list>
+          </record>
+          <array name="parent-ancestors" type="record" depth="1">
+            <record javaclass="com.wm.util.Values">
+              <value name="xmlns">http://www.w3.org/2001/XMLSchema</value>
+              <value name="ncName">anyType</value>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+              <value name="ncName">tDocumentation</value>
+            </record>
+          </array>
+          <value name="classname">com.wm.lang.schema.WmComplexType</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="contentType">2</value>
+          <value name="internalType">instance</value>
+          <value name="name">tTypes</value>
+          <list name="elements">
+            <record javaclass="com.wm.util.Values">
+              <value name="tagType">element</value>
+              <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+              <value name="name">documentation</value>
+              <record name="type" javaclass="com.wm.util.Values">
+                <value name="contentType">2</value>
+                <value name="internalType">reference</value>
+                <record name="targetName" javaclass="com.wm.util.Values">
+                  <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+                  <value name="ncName">tDocumentation</value>
+                </record>
+              </record>
+              <value name="form">true</value>
+              <value name="internalType">instance</value>
+            </record>
+          </list>
+          <list name="attributes">
+          </list>
+          <record name="contentModel" javaclass="com.wm.util.Values">
+            <record name="symbol" javaclass="com.wm.util.Values">
+              <value name="ncName">$$SEQUENCE</value>
+            </record>
+            <value name="minOccurs">1</value>
+            <value name="maxOccurs">1</value>
+            <value name="modelType">sequence</value>
+            <list name="children">
+              <record javaclass="com.wm.util.Values">
+                <record name="symbol" javaclass="com.wm.util.Values">
+                  <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+                  <value name="ncName">documentation</value>
+                </record>
+                <value name="minOccurs">0</value>
+                <value name="maxOccurs">1</value>
+                <value name="modelType">simple</value>
+              </record>
+            </list>
+          </record>
+          <array name="parent-ancestors" type="record" depth="1">
+            <record javaclass="com.wm.util.Values">
+              <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+              <value name="ncName">tDocumented</value>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+              <value name="ncName">tExtensibleDocumented</value>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="xmlns">http://www.w3.org/2001/XMLSchema</value>
+              <value name="ncName">anyType</value>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+              <value name="ncName">tTypes</value>
+            </record>
+          </array>
+          <value name="classname">com.wm.lang.schema.WmComplexType</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="contentType">2</value>
+          <value name="internalType">instance</value>
+          <value name="name">tOperation</value>
+          <list name="elements">
+            <record javaclass="com.wm.util.Values">
+              <value name="tagType">element</value>
+              <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+              <value name="name">documentation</value>
+              <record name="type" javaclass="com.wm.util.Values">
+                <value name="contentType">2</value>
+                <value name="internalType">reference</value>
+                <record name="targetName" javaclass="com.wm.util.Values">
+                  <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+                  <value name="ncName">tDocumentation</value>
+                </record>
+              </record>
+              <value name="form">true</value>
+              <value name="internalType">instance</value>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="tagType">element</value>
+              <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+              <value name="name">input</value>
+              <record name="type" javaclass="com.wm.util.Values">
+                <value name="contentType">2</value>
+                <value name="internalType">reference</value>
+                <record name="targetName" javaclass="com.wm.util.Values">
+                  <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+                  <value name="ncName">tParam</value>
+                </record>
+              </record>
+              <value name="form">true</value>
+              <value name="internalType">instance</value>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="tagType">element</value>
+              <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+              <value name="name">output</value>
+              <record name="type" javaclass="com.wm.util.Values">
+                <value name="contentType">2</value>
+                <value name="internalType">reference</value>
+                <record name="targetName" javaclass="com.wm.util.Values">
+                  <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+                  <value name="ncName">tParam</value>
+                </record>
+              </record>
+              <value name="form">true</value>
+              <value name="internalType">instance</value>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="tagType">element</value>
+              <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+              <value name="name">fault</value>
+              <record name="type" javaclass="com.wm.util.Values">
+                <value name="contentType">2</value>
+                <value name="internalType">reference</value>
+                <record name="targetName" javaclass="com.wm.util.Values">
+                  <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+                  <value name="ncName">tFault</value>
+                </record>
+              </record>
+              <value name="form">true</value>
+              <value name="internalType">instance</value>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="tagType">element</value>
+              <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+              <value name="name">output</value>
+              <record name="type" javaclass="com.wm.util.Values">
+                <value name="contentType">2</value>
+                <value name="internalType">reference</value>
+                <record name="targetName" javaclass="com.wm.util.Values">
+                  <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+                  <value name="ncName">tParam</value>
+                </record>
+              </record>
+              <value name="form">true</value>
+              <value name="internalType">instance</value>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="tagType">element</value>
+              <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+              <value name="name">input</value>
+              <record name="type" javaclass="com.wm.util.Values">
+                <value name="contentType">2</value>
+                <value name="internalType">reference</value>
+                <record name="targetName" javaclass="com.wm.util.Values">
+                  <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+                  <value name="ncName">tParam</value>
+                </record>
+              </record>
+              <value name="form">true</value>
+              <value name="internalType">instance</value>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="tagType">element</value>
+              <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+              <value name="name">fault</value>
+              <record name="type" javaclass="com.wm.util.Values">
+                <value name="contentType">2</value>
+                <value name="internalType">reference</value>
+                <record name="targetName" javaclass="com.wm.util.Values">
+                  <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+                  <value name="ncName">tFault</value>
+                </record>
+              </record>
+              <value name="form">true</value>
+              <value name="internalType">instance</value>
+            </record>
+          </list>
+          <list name="attributes">
+            <record javaclass="com.wm.util.Values">
+              <value name="tagType">attribute</value>
+              <value name="name">name</value>
+              <record name="type" javaclass="com.wm.util.Values">
+                <value name="contentType">1</value>
+                <value name="internalType">reference</value>
+                <value name="dataTypeVersion">dtVersion2</value>
+                <array name="targetNames" type="record" depth="1">
+                  <record javaclass="com.wm.util.Values">
+                    <value name="xmlns">http://www.w3.org/2001/XMLSchema</value>
+                    <value name="ncName">NCName</value>
+                  </record>
+                </array>
+              </record>
+              <value name="required">true</value>
+              <value name="internalType">instance</value>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="tagType">attribute</value>
+              <value name="name">parameterOrder</value>
+              <record name="type" javaclass="com.wm.util.Values">
+                <value name="contentType">1</value>
+                <value name="internalType">reference</value>
+                <value name="dataTypeVersion">dtVersion2</value>
+                <array name="targetNames" type="record" depth="1">
+                  <record javaclass="com.wm.util.Values">
+                    <value name="xmlns">http://www.w3.org/2001/XMLSchema</value>
+                    <value name="ncName">NMTOKENS</value>
+                  </record>
+                </array>
+              </record>
+              <value name="required">false</value>
+              <value name="internalType">instance</value>
+            </record>
+          </list>
+          <record name="contentModel" javaclass="com.wm.util.Values">
+            <record name="symbol" javaclass="com.wm.util.Values">
+              <value name="ncName">$$SEQUENCE</value>
+            </record>
+            <value name="minOccurs">1</value>
+            <value name="maxOccurs">1</value>
+            <value name="modelType">sequence</value>
+            <list name="children">
+              <record javaclass="com.wm.util.Values">
+                <record name="symbol" javaclass="com.wm.util.Values">
+                  <value name="ncName">$$SEQUENCE</value>
+                </record>
+                <value name="minOccurs">1</value>
+                <value name="maxOccurs">1</value>
+                <value name="modelType">sequence</value>
+                <list name="children">
+                  <record javaclass="com.wm.util.Values">
+                    <record name="symbol" javaclass="com.wm.util.Values">
+                      <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+                      <value name="ncName">documentation</value>
+                    </record>
+                    <value name="minOccurs">0</value>
+                    <value name="maxOccurs">1</value>
+                    <value name="modelType">simple</value>
+                  </record>
+                </list>
+              </record>
+              <record javaclass="com.wm.util.Values">
+                <record name="symbol" javaclass="com.wm.util.Values">
+                  <value name="ncName">$$SEQUENCE</value>
+                </record>
+                <value name="minOccurs">1</value>
+                <value name="maxOccurs">1</value>
+                <value name="modelType">sequence</value>
+                <list name="children">
+                  <record javaclass="com.wm.util.Values">
+                    <record name="symbol" javaclass="com.wm.util.Values">
+                      <value name="ncName">$$ANY</value>
+                    </record>
+                    <value name="minOccurs">0</value>
+                    <value name="maxOccurs">*</value>
+                    <value name="modelType">any</value>
+                    <value name="qualifier">1</value>
+                    <array name="uris" type="value" depth="1">
+                      <value>http://schemas.xmlsoap.org/wsdl/</value>
+                      <value>$$unqualified</value>
+                    </array>
+                    <value name="processContents">0</value>
+                  </record>
+                </list>
+              </record>
+              <record javaclass="com.wm.util.Values">
+                <record name="symbol" javaclass="com.wm.util.Values">
+                  <value name="ncName">$$CHOICE</value>
+                </record>
+                <value name="minOccurs">1</value>
+                <value name="maxOccurs">1</value>
+                <value name="modelType">choice</value>
+                <list name="children">
+                  <record javaclass="com.wm.util.Values">
+                    <record name="symbol" javaclass="com.wm.util.Values">
+                      <value name="ncName">$$SEQUENCE</value>
+                    </record>
+                    <value name="minOccurs">1</value>
+                    <value name="maxOccurs">1</value>
+                    <value name="modelType">sequence</value>
+                    <list name="children">
+                      <record javaclass="com.wm.util.Values">
+                        <record name="symbol" javaclass="com.wm.util.Values">
+                          <value name="ncName">$$SEQUENCE</value>
+                        </record>
+                        <value name="minOccurs">1</value>
+                        <value name="maxOccurs">1</value>
+                        <value name="modelType">sequence</value>
+                        <list name="children">
+                          <record javaclass="com.wm.util.Values">
+                            <record name="symbol" javaclass="com.wm.util.Values">
+                              <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+                              <value name="ncName">input</value>
+                            </record>
+                            <value name="minOccurs">1</value>
+                            <value name="maxOccurs">1</value>
+                            <value name="modelType">simple</value>
+                          </record>
+                          <record javaclass="com.wm.util.Values">
+                            <record name="symbol" javaclass="com.wm.util.Values">
+                              <value name="ncName">$$CHOICE</value>
+                            </record>
+                            <value name="minOccurs">1</value>
+                            <value name="maxOccurs">1</value>
+                            <value name="modelType">choice</value>
+                            <list name="children">
+                              <record javaclass="com.wm.util.Values">
+                                <record name="symbol" javaclass="com.wm.util.Values">
+                                  <value name="ncName">$$SEQUENCE</value>
+                                </record>
+                                <value name="minOccurs">1</value>
+                                <value name="maxOccurs">1</value>
+                                <value name="modelType">sequence</value>
+                                <list name="children">
+                                </list>
+                              </record>
+                              <record javaclass="com.wm.util.Values">
+                                <record name="symbol" javaclass="com.wm.util.Values">
+                                  <value name="ncName">$$SEQUENCE</value>
+                                </record>
+                                <value name="minOccurs">1</value>
+                                <value name="maxOccurs">1</value>
+                                <value name="modelType">sequence</value>
+                                <list name="children">
+                                  <record javaclass="com.wm.util.Values">
+                                    <record name="symbol" javaclass="com.wm.util.Values">
+                                      <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+                                      <value name="ncName">output</value>
+                                    </record>
+                                    <value name="minOccurs">1</value>
+                                    <value name="maxOccurs">1</value>
+                                    <value name="modelType">simple</value>
+                                  </record>
+                                  <record javaclass="com.wm.util.Values">
+                                    <record name="symbol" javaclass="com.wm.util.Values">
+                                      <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+                                      <value name="ncName">fault</value>
+                                    </record>
+                                    <value name="minOccurs">0</value>
+                                    <value name="maxOccurs">*</value>
+                                    <value name="modelType">simple</value>
+                                  </record>
+                                </list>
+                              </record>
+                            </list>
+                          </record>
+                        </list>
+                      </record>
+                    </list>
+                  </record>
+                  <record javaclass="com.wm.util.Values">
+                    <record name="symbol" javaclass="com.wm.util.Values">
+                      <value name="ncName">$$SEQUENCE</value>
+                    </record>
+                    <value name="minOccurs">1</value>
+                    <value name="maxOccurs">1</value>
+                    <value name="modelType">sequence</value>
+                    <list name="children">
+                      <record javaclass="com.wm.util.Values">
+                        <record name="symbol" javaclass="com.wm.util.Values">
+                          <value name="ncName">$$SEQUENCE</value>
+                        </record>
+                        <value name="minOccurs">1</value>
+                        <value name="maxOccurs">1</value>
+                        <value name="modelType">sequence</value>
+                        <list name="children">
+                          <record javaclass="com.wm.util.Values">
+                            <record name="symbol" javaclass="com.wm.util.Values">
+                              <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+                              <value name="ncName">output</value>
+                            </record>
+                            <value name="minOccurs">1</value>
+                            <value name="maxOccurs">1</value>
+                            <value name="modelType">simple</value>
+                          </record>
+                          <record javaclass="com.wm.util.Values">
+                            <record name="symbol" javaclass="com.wm.util.Values">
+                              <value name="ncName">$$CHOICE</value>
+                            </record>
+                            <value name="minOccurs">1</value>
+                            <value name="maxOccurs">1</value>
+                            <value name="modelType">choice</value>
+                            <list name="children">
+                              <record javaclass="com.wm.util.Values">
+                                <record name="symbol" javaclass="com.wm.util.Values">
+                                  <value name="ncName">$$SEQUENCE</value>
+                                </record>
+                                <value name="minOccurs">1</value>
+                                <value name="maxOccurs">1</value>
+                                <value name="modelType">sequence</value>
+                                <list name="children">
+                                </list>
+                              </record>
+                              <record javaclass="com.wm.util.Values">
+                                <record name="symbol" javaclass="com.wm.util.Values">
+                                  <value name="ncName">$$SEQUENCE</value>
+                                </record>
+                                <value name="minOccurs">1</value>
+                                <value name="maxOccurs">1</value>
+                                <value name="modelType">sequence</value>
+                                <list name="children">
+                                  <record javaclass="com.wm.util.Values">
+                                    <record name="symbol" javaclass="com.wm.util.Values">
+                                      <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+                                      <value name="ncName">input</value>
+                                    </record>
+                                    <value name="minOccurs">1</value>
+                                    <value name="maxOccurs">1</value>
+                                    <value name="modelType">simple</value>
+                                  </record>
+                                  <record javaclass="com.wm.util.Values">
+                                    <record name="symbol" javaclass="com.wm.util.Values">
+                                      <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+                                      <value name="ncName">fault</value>
+                                    </record>
+                                    <value name="minOccurs">0</value>
+                                    <value name="maxOccurs">*</value>
+                                    <value name="modelType">simple</value>
+                                  </record>
+                                </list>
+                              </record>
+                            </list>
+                          </record>
+                        </list>
+                      </record>
+                    </list>
+                  </record>
+                </list>
+              </record>
+            </list>
+          </record>
+          <array name="parent-ancestors" type="record" depth="1">
+            <record javaclass="com.wm.util.Values">
+              <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+              <value name="ncName">tDocumented</value>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+              <value name="ncName">tExtensibleDocumented</value>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="xmlns">http://www.w3.org/2001/XMLSchema</value>
+              <value name="ncName">anyType</value>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="xmlns">http://schemas.xmlsoap.org/wsdl/</value>
+              <value name="ncName">tOperation</value>
+            </record>
+          </array>
+          <value name="classname">com.wm.lang.schema.WmComplexType</value>
+        </record>
+      </list>
+    </record>
+    <record name="uriReferencePrefixPairs" javaclass="com.wm.util.Values">
+      <value name="http://schemas.xmlsoap.org/wsdl/">wsdl</value>
+      <value name="http://www.w3.org/2001/XMLSchema">ns</value>
+      <value name="TestCases/WellKnown/test01">tns</value>
+    </record>
+  </record>
+</Values>

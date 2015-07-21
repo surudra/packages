@@ -1,0 +1,172 @@
+<!DOCTYPE HTML PUBLIC >
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" VALUE="text/html;charset=UTF-8">
+	
+	<LINK REL="stylesheet" TYPE="text/css" MEDIA="screen and (max-width:1024px)" HREF="%value approvalpg_hostport%/WmPublic/approvalpage-m.css">
+	<LINK REL="stylesheet" TYPE="text/css" MEDIA="screen and (min-width:1024px)" HREF="%value approvalpg_hostport%/WmPublic/approvalpage.css"> 
+	<!--[if lt IE 9]> <link rel="stylesheet" type="text/css"   HREF="%value approvalpg_hostport%/WmPublic/approvalpage.css"/> <![endif]--> 
+	
+	<script>
+	 	function fnapprove() {
+	 		var theForm=document.forms["approval-form"];
+	 		theForm.approved.value = "true";
+	        collectData();
+	        if(theForm.scope.value==null  || theForm.scope.value==""){
+	        	alert("Atleast one scope must be selected for approval.");
+	        	return false;
+	        }
+	       	return true;
+	    }
+
+	 	function fndeny() {
+			document.forms["approval-form"]["approved"].value = "false";
+			return true;
+		 }
+
+	 	function collectData(){
+	 		var theForm=document.forms["approval-form"];
+    		var theScope="";
+    		if(theForm.selectScope.length){
+    			for (var i=0; i <theForm.selectScope.length; i++){
+		   			if (theForm.selectScope[i].checked){
+		   				theScope=theScope!=""? theScope+" "+theForm.selectScope[i].value:theForm.selectScope[i].value;
+       				}
+				}
+    		}else{
+    			if(theForm.selectScope.checked){
+    				theScope=theForm.selectScope.value;
+    			}
+    		}
+
+    		theForm.scope.value=theScope;
+    	}
+
+	 	function enableDisableApprove(){
+	 		var theForm=document.forms["approval-form"];
+			var nonechecked=true;
+			var notAllChecked=false;
+			if(theForm.selectScope.length){
+				for (var i=0; i <theForm.selectScope.length; i++){
+	   				if (theForm.selectScope[i].checked){
+	   					nonechecked=false;
+   					}else{
+   						notAllChecked=true;
+   					}
+
+				}
+			}else{
+				if(theForm.selectScope.checked){
+					nonechecked=false;
+				}
+			}
+			if(nonechecked){
+				document.getElementById("approve").disabled=true;
+				theForm.selectAll.checked=false;
+			}else{
+				document.getElementById("approve").disabled=false;
+				if(notAllChecked){
+					theForm.selectAll.checked=false;
+				}else{
+					theForm.selectAll.checked=true;
+				}
+
+			}
+	 	}
+
+	 	function selectdeselectScopes(){
+	 		var theForm=document.forms["approval-form"];
+	 		var isChecked=theForm.selectAll.checked;
+	 		if(theForm.selectScope.length){
+	 			for(var i=0; i<theForm.selectScope.length;i++){
+	 				theForm.selectScope[i].checked=isChecked;
+	 			}
+	 		}else{
+	 			theForm.selectScope.checked=isChecked;
+	 		}
+	 		if(isChecked){
+	 			document.getElementById("approve").disabled=false;
+	 		}else{
+	 			document.getElementById("approve").disabled=true;
+	 		}
+
+	 	}
+
+	</script>
+<TITLE>
+%ifvar approvalpg_title -notempty%
+	 %value approvalpg_title%
+%else%
+	Access Approval
+%endif%
+</TITLE>
+</HEAD>
+
+
+<BODY>
+<form name="approval-form" action="%value approvalpg_hostport%/invoke/wm.server.oauth/approve" method="post">
+<div id="FW-canvas">
+	<div id="FW-nonFooterWrapper" class="CO-clearfix">
+		<div id="headpart" >
+			<img id="FW-logo" alt="logo" src="%value approvalpg_logo_filename%">
+		</div>
+		<div id="HP-containerContent">
+
+				<input type="hidden" name="client_id" value="%value client_id%">
+				<input type="hidden" name="redirect_uri" value="%value redirect_uri%">
+				<input type="hidden" name="scope" value="%value scope%">
+				<input type="hidden" name="state" value="%value state%">
+				<input type="hidden" name="approved" value="false">
+	    		<input type="hidden" name="response_type" value="%value response_type%">
+
+			%ifvar approvalpg_heading -notempty%
+				<h1> %value approvalpg_heading%</h1>
+			%else%
+				<h1> Resource access approval </h1>
+			%endif%
+			<h2> The application <u>%value client_name% (%value version%)</u> is requesting access to the following scopes. If you trust this application, select the scopes to which you want to grant access,
+				 and then click Approve.
+			</h2>
+			<div id="all-selection">
+				<input type="checkbox" name="selectAll" id="selectAll" value="yes" checked onclick="selectdeselectScopes()" ><label id="label-name" class="bold-font">All</label>
+			</div>
+			<div id="scope-div">
+			%loop scopes%
+				<span id="scope-list"><input type="checkbox" name="selectScope" id="selectScope" value="%value%"checked onclick="enableDisableApprove()"><label id="label-name" >%value%</label><BR/></span>
+			%endloop%
+			</div>
+			<div id="actions-div">
+				<span id="deny-span">
+					<input type="submit" name="deny" id="deny" value="Deny" onclick="return fndeny();">
+				</span>
+				<span id="approve-span">
+					<input type="submit" name="approve" id="approve" value="Approve" onclick="return fnapprove();">
+				</span>
+			</div>
+		</div>
+
+	</div>
+
+	<div id="FW-footer">
+ 		<span id="FW-copyright">
+ 			%ifvar approvalpg_footer -notempty%
+ 				%value approvalpg_footer%
+ 			%endif%
+ 		</span>
+	</div>
+</div>
+%ifvar $debug equals('true')%
+<br><hr>
+<b>Debugging Output:</b><br><br>
+%loop -struct%
+  %value $key% = %value% <br>
+%endloop%
+%endif%
+</form>
+<script>
+	document.forms['approval-form'].approve.focus();
+</script>
+</BODY>
+</HTML>
+
+

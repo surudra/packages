@@ -1,0 +1,137 @@
+#
+# webMethods Deployer plugin configuration file
+# 
+
+#
+# Unique identifier for the plugin
+#
+type=ProcessModel
+
+#
+# Deployment Support Type for your plugin server
+# RUNTIME/OFFLINE/BOTH
+#
+deploymentSupportType=BOTH
+
+#
+# The display name for your plugin server
+#
+label=BPM(ProcessModel)
+
+#
+# Whether or not the Plugin Instance A will be referring to dependencies
+# on Plugin or Server Instance B
+# 
+referencesOtherServers=TRUE
+
+#
+# Just put false here
+#
+isLocal=FALSE
+
+#
+# Path to the web service logic in your plugin web service container
+#
+#listObjectsPath=wm.designer.Modeler
+#pingPath=wm.designer.Modeler
+#getObjectsPath=wm.designer.Modeler
+#deployObjectsPath=wm.designer.Modeler
+#verifyObjectPath=wm.designer.Modeler
+#getDependenciesPath=wm.designer.Modeler
+#getConnectionInfoPath=wm.designer.Modeler
+#getObjectVarSubPath=wm.designer.Modeler
+#deployObjectsWithVarsub=wm.designer.Modeler
+#hostSuffix=soap/rpc
+
+isDocumentLiteralEnabled=true
+hostSuffix_SPI_0=soap/rpc/wm.designer.Modeler
+hostSuffix_SPI_1=ws/wm.designer.deployer.spiWS
+hostSuffix_SPI_2=ws/wm.designer.deployer.spiWS2
+
+jar=
+className=
+
+#
+# Fields that will be displayed on the plugin connection configuration
+# page for each plugin instance that needs to be accessed by the
+# Deployer.  Leaving a blank value for any of these fields will prevent
+# the Deployer from displaying it
+#
+hostLabel=Host
+portLabel=Port
+userLabel=User
+passwordLabel=Password
+SSLLabel=Use SSL
+connectionProperties=
+versionLabel=Version
+validVersions=9.7@SPI_2,9.6@SPI_2,9.5@SPI_2,9.0@SPI_2,8.2@SPI_1,8.0@SPI_0,7.1@SPI_0
+
+#
+# List of object types that can be deployed 
+# 
+objectTypes=csp,eform,ProcessModel
+
+#
+# For each object type listed above, need to to know how to label
+# a folder of them, what icon to use, and whether or not an entire
+# folder of them can be deployed as a unique object (usually not)
+#
+objectType.ProcessModel.folderName=Models
+objectType.ProcessModel.iconName=bpm.gif
+objectType.ProcessModel.foldersAreDeployable=FALSE
+
+objectType.eform.folderName=E-forms
+objectType.eform.iconName=e-form.gif
+objectType.eform.foldersAreDeployable=FALSE
+
+objectType.csp.folderName=Content Service Platform
+objectType.csp.iconName=e-form.gif
+objectType.csp.foldersAreDeployable=FALSE
+
+#
+# Optional list of properties to display (at the project level).
+# Data would be gathered from the user for each one of these objects
+# and that data would be passed to the plugin during each invocation
+# of getObjects (during the Build phase) and deployObjects (during 
+# the deploy phase)
+# 
+projectProperties=executionEnabled,trackingEnabled
+
+projectProperty.executionEnabled.label=Enable process for execution
+projectProperty.executionEnabled.type=BOOLEAN
+projectProperty.executionEnabled.default=FALSE
+
+projectProperty.trackingEnabled.label=Enable process for analysis
+projectProperty.trackingEnabled.type=BOOLEAN
+projectProperty.trackingEnabled.default=FALSE
+
+implementsVarsub=true
+
+# Variable substitutions configuration
+objectType.eform.varSubFields=host,port,login,password
+objectType.eform.varSubField.host.type=STRING
+objectType.eform.varSubField.host.label=Host
+objectType.eform.varSubField.port.type=STRING
+objectType.eform.varSubField.port.label=Port
+objectType.eform.varSubField.login.type=STRING
+objectType.eform.varSubField.login.label=User
+objectType.eform.varSubField.password.type=STRING
+objectType.eform.varSubField.password.label=Password
+
+objectType.csp.varSubFields=host,port,login,password,isHost,isPort,isLogin,isPassword
+objectType.csp.varSubField.host.type=STRING
+objectType.csp.varSubField.host.label=Host
+objectType.csp.varSubField.port.type=STRING
+objectType.csp.varSubField.port.label=Port
+objectType.csp.varSubField.login.type=STRING
+objectType.csp.varSubField.login.label=User
+objectType.csp.varSubField.password.type=STRING
+objectType.csp.varSubField.password.label=Password
+objectType.csp.varSubField.isHost.type=STRING
+objectType.csp.varSubField.isHost.label=Integration Server Host
+objectType.csp.varSubField.isPort.type=STRING
+objectType.csp.varSubField.isPort.label=Integration Server Port
+objectType.csp.varSubField.isLogin.type=STRING
+objectType.csp.varSubField.isLogin.label=Integration Server Username
+objectType.csp.varSubField.isPassword.type=STRING
+objectType.csp.varSubField.isPassword.label=Integration Server Password

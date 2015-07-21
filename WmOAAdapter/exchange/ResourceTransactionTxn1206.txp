@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<IDataXMLCoder version="1.0">
+  <record javaclass="com.wm.data.ISMemDataImpl">
+    <record name="transactions" javaclass="com.wm.data.ISMemDataImpl">
+      <record name="getPOHeaderId" javaclass="com.wm.data.ISMemDataImpl">
+        <value name="transactionName">getPOHeaderId</value>
+        <value name="transactionType">OUT</value>
+        <null name="AcknowledgeSQL"/>
+        <record name="PO_HEADER" javaclass="com.wm.util.Values">
+          <value name="SQLOut">SELECT PO_HEADER_ID FROM PO_HEADERS_ALL WHERE SEGMENT1='&amp;PO_HEADER_NUMBER*'</value>
+          <value name="SQLAlias">PO_HEADER</value>
+          <value name="SQLRelation"></value>
+        </record>
+      </record>
+      <record name="getPOLineId" javaclass="com.wm.data.ISMemDataImpl">
+        <value name="transactionName">getPOLineId</value>
+        <value name="transactionType">OUT</value>
+        <null name="AcknowledgeSQL"/>
+        <record name="PO_LINE" javaclass="com.wm.util.Values">
+          <value name="SQLOut">SELECT PO_LINE_ID FROM PO_LINES_ALL,PO_HEADERS_ALL WHERE  SEGMENT1='&amp;PO_HEADER_NUMBER*' AND PO_LINES_ALL.PO_HEADER_ID =PO_HEADERS_ALL.PO_HEADER_ID AND PO_LINES_ALL.LINE_NUM ='&amp;LINE_NUM*'</value>
+          <value name="SQLAlias">PO_LINE</value>
+          <value name="SQLRelation"></value>
+        </record>
+      </record>
+    </record>
+    <record name="FILE_INFO" javaclass="com.wm.data.ISMemDataImpl">
+      <value name="OA_RELEASE">1206</value>
+      <value name="DESCRIPTION"></value>
+      <value name="CREATE_HOST">webmethods</value>
+      <value name="CREATE_IM_VER"></value>
+      <value name="CREATE_DATE">May 5, 2005 7:10:53 PM</value>
+    </record>
+  </record>
+</IDataXMLCoder>

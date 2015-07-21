@@ -1,0 +1,681 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<FLOW VERSION="3.0" CLEANUP="true">
+  <COMMENT></COMMENT>
+
+  <!-- nodes -->
+
+<INVOKE TIMEOUT="" SERVICE="commonOA1159.custom:getOASystemDateObject" VALIDATE-IN="$none" VALIDATE-OUT="$none">
+  <COMMENT></COMMENT>
+
+  <!-- nodes -->
+
+<MAP MODE="INPUT">
+</MAP>
+
+<MAP MODE="OUTPUT">
+</MAP>
+</INVOKE>
+
+<INVOKE TIMEOUT="" SERVICE="commonOA1159.utils:getOracleAppsUserId" VALIDATE-IN="$none" VALIDATE-OUT="$none">
+  <COMMENT></COMMENT>
+
+  <!-- nodes -->
+
+<MAP MODE="INPUT">
+  <MAPTARGET>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_name">in</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="nillable">true</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">queryParams</value>
+        <value name="field_type">record</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <array name="rec_fields" type="record" depth="1">
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">ORACLE_APPS_USER_NAME</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+        </array>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">$dbAlias</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+    </array>
+  </record>
+</Values>
+</MAPTARGET>
+  <MAPSOURCE>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="nillable">true</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">JournalBizDoc</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="rec_ref">generalLedger1159.intoOA.journal.rec:JournalBizDoc</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">$dbAlias</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">OAUSERNAME</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">GROUP_ID</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">SYSDATE</value>
+        <value name="field_type">object</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+    </array>
+  </record>
+</Values>
+</MAPSOURCE>
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/OAUSERNAME;1;0" TO="/queryParams;2;0/ORACLE_APPS_USER_NAME;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="OUTPUT">
+  <MAPTARGET>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="nillable">true</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">JournalBizDoc</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="rec_ref">generalLedger1159.intoOA.journal.rec:JournalBizDoc</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">queryParams</value>
+        <value name="field_type">record</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <array name="rec_fields" type="record" depth="1">
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">ORACLE_APPS_USER_NAME</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+        </array>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">$dbAlias</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">OAUSERNAME</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">GROUP_ID</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">SYSDATE</value>
+        <value name="field_type">object</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">USER_ID</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+    </array>
+  </record>
+</Values>
+</MAPTARGET>
+  <MAPSOURCE>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_name">out</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="nillable">true</value>
+    <list name="rec_fields">
+    </list>
+  </record>
+</Values>
+</MAPSOURCE>
+
+  <!-- nodes -->
+
+<MAPDELETE NAME="Dropper" FIELD="/OAUSERNAME;1;0">
+</MAPDELETE>
+
+<MAPDELETE NAME="Dropper" FIELD="/queryParams;2;0">
+</MAPDELETE>
+</MAP>
+</INVOKE>
+
+<LOOP TIMEOUT="" IN-ARRAY="/JournalBizDoc/GL" OUT-ARRAY="/JournalRecordSet/GL_INTERFACE">
+  <COMMENT></COMMENT>
+
+  <!-- nodes -->
+
+<MAP TIMEOUT="" MODE="STANDALONE">
+  <COMMENT>Map the JournalBizDoc to JournalRecordSet</COMMENT>
+  <MAPTARGET>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="nillable">true</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">JournalBizDoc</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="rec_ref">generalLedger1159.intoOA.journal.rec:JournalBizDoc</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">$dbAlias</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">GROUP_ID</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">SYSDATE</value>
+        <value name="field_type">object</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">USER_ID</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">JournalRecordSet</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="rec_ref">generalLedger1159.intoOA.journal.rec:setJournalTxnInputRec</value>
+      </record>
+    </array>
+  </record>
+</Values>
+</MAPTARGET>
+  <MAPSOURCE>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="nillable">true</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">JournalBizDoc</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="rec_ref">generalLedger1159.intoOA.journal.rec:JournalBizDoc</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">$dbAlias</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">GROUP_ID</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">SYSDATE</value>
+        <value name="field_type">object</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">USER_ID</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">JournalRecordSet</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="rec_ref">generalLedger1159.intoOA.journal.rec:setJournalTxnInputRec</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">$iteration</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+    </array>
+  </record>
+</Values>
+</MAPSOURCE>
+
+  <!-- nodes -->
+
+<MAPINVOKE SERVICE="generalLedger1159.intoOA.journal.utils:getSOBId" VALIDATE-IN="$none" VALIDATE-OUT="$none" INVOKE-ORDER="0">
+
+  <!-- nodes -->
+
+<MAP MODE="INVOKEINPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/JournalBizDoc;4;0;generalLedger1159.intoOA.journal.rec:JournalBizDoc/GL;2;0/SET_OF_BOOKS_SHORT_NAME;1;0" TO="/queryParams;2;0/SHORT_NAME;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/$dbAlias;1;0" TO="/$dbAlias;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="INVOKEOUTPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/SET_OF_BOOKS_ID;1;0" TO="/JournalRecordSet;4;0;generalLedger1159.intoOA.journal.rec:setJournalTxnInputRec/GL_INTERFACE;2;0/SET_OF_BOOKS_ID;1;0">
+</MAPCOPY>
+</MAP>
+</MAPINVOKE>
+
+<MAPCOPY NAME="Link" FROM="/JournalBizDoc;4;0;generalLedger1159.intoOA.journal.rec:JournalBizDoc/GL;2;0/CURRENCY_CODE;1;0" TO="/JournalRecordSet;4;0;generalLedger1159.intoOA.journal.rec:setJournalTxnInputRec/GL_INTERFACE;2;0/CURRENCY_CODE;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/JournalBizDoc;4;0;generalLedger1159.intoOA.journal.rec:JournalBizDoc/GL;2;0/ACTUAL_FLAG;1;0" TO="/JournalRecordSet;4;0;generalLedger1159.intoOA.journal.rec:setJournalTxnInputRec/GL_INTERFACE;2;0/ACTUAL_FLAG;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/JournalBizDoc;4;0;generalLedger1159.intoOA.journal.rec:JournalBizDoc/GL;2;0/CATEGORY_NAME;1;0" TO="/JournalRecordSet;4;0;generalLedger1159.intoOA.journal.rec:setJournalTxnInputRec/GL_INTERFACE;2;0/USER_JE_CATEGORY_NAME;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/JournalBizDoc;4;0;generalLedger1159.intoOA.journal.rec:JournalBizDoc/GL;2;0/SOURCE_NAME;1;0" TO="/JournalRecordSet;4;0;generalLedger1159.intoOA.journal.rec:setJournalTxnInputRec/GL_INTERFACE;2;0/USER_JE_SOURCE_NAME;1;0">
+</MAPCOPY>
+
+<MAPINVOKE SERVICE="generalLedger1159.intoOA.journal.utils:getEncumTypeId" VALIDATE-IN="$none" VALIDATE-OUT="$none" INVOKE-ORDER="0">
+
+  <!-- nodes -->
+
+<MAP MODE="INVOKEINPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/JournalBizDoc;4;0;generalLedger1159.intoOA.journal.rec:JournalBizDoc/GL;2;0/ENCUMBRANCE_TYPE;1;0" TO="/queryParams;2;0/ENCUMBRANCE_TYPE;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/$dbAlias;1;0" TO="/$dbAlias;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="INVOKEOUTPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/ENCUMBRANCE_TYPE_ID;1;0" TO="/JournalRecordSet;4;0;generalLedger1159.intoOA.journal.rec:setJournalTxnInputRec/GL_INTERFACE;2;0/ENCUMBRANCE_TYPE_ID;1;0">
+</MAPCOPY>
+</MAP>
+</MAPINVOKE>
+
+<MAPINVOKE SERVICE="generalLedger1159.intoOA.journal.utils:getBudgetVersionId" VALIDATE-IN="$none" VALIDATE-OUT="$none" INVOKE-ORDER="0">
+
+  <!-- nodes -->
+
+<MAP MODE="INVOKEINPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/JournalBizDoc;4;0;generalLedger1159.intoOA.journal.rec:JournalBizDoc/GL;2;0/BUDGET_NAME;1;0" TO="/queryParams;2;0/BUDGET_NAME;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/$dbAlias;1;0" TO="/$dbAlias;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="INVOKEOUTPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/BUDGET_VERSION_ID;1;0" TO="/JournalRecordSet;4;0;generalLedger1159.intoOA.journal.rec:setJournalTxnInputRec/GL_INTERFACE;2;0/BUDGET_VERSION_ID;1;0">
+</MAPCOPY>
+</MAP>
+</MAPINVOKE>
+
+<MAPCOPY NAME="Link" FROM="/JournalBizDoc;4;0;generalLedger1159.intoOA.journal.rec:JournalBizDoc/GL;2;0/USER_CURRENCY_CONVERSION_TYPE;1;0" TO="/JournalRecordSet;4;0;generalLedger1159.intoOA.journal.rec:setJournalTxnInputRec/GL_INTERFACE;2;0/USER_CURRENCY_CONVERSION_TYPE;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/JournalBizDoc;4;0;generalLedger1159.intoOA.journal.rec:JournalBizDoc/GL;2;0/CURRENCY_CONVERSION_RATE;1;0" TO="/JournalRecordSet;4;0;generalLedger1159.intoOA.journal.rec:setJournalTxnInputRec/GL_INTERFACE;2;0/CURRENCY_CONVERSION_RATE;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/JournalBizDoc;4;0;generalLedger1159.intoOA.journal.rec:JournalBizDoc/GL;2;0/ENTERED_DR;1;0" TO="/JournalRecordSet;4;0;generalLedger1159.intoOA.journal.rec:setJournalTxnInputRec/GL_INTERFACE;2;0/ENTERED_DR;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/JournalBizDoc;4;0;generalLedger1159.intoOA.journal.rec:JournalBizDoc/GL;2;0/ENTERED_CR;1;0" TO="/JournalRecordSet;4;0;generalLedger1159.intoOA.journal.rec:setJournalTxnInputRec/GL_INTERFACE;2;0/ENTERED_CR;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/JournalBizDoc;4;0;generalLedger1159.intoOA.journal.rec:JournalBizDoc/GL;2;0/ACCOUNTED_DR;1;0" TO="/JournalRecordSet;4;0;generalLedger1159.intoOA.journal.rec:setJournalTxnInputRec/GL_INTERFACE;2;0/ACCOUNTED_DR;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/JournalBizDoc;4;0;generalLedger1159.intoOA.journal.rec:JournalBizDoc/GL;2;0/ACCOUNTED_CR;1;0" TO="/JournalRecordSet;4;0;generalLedger1159.intoOA.journal.rec:setJournalTxnInputRec/GL_INTERFACE;2;0/ACCOUNTED_CR;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/JournalBizDoc;4;0;generalLedger1159.intoOA.journal.rec:JournalBizDoc/GL;2;0/REFERENCE;1;0" TO="/JournalRecordSet;4;0;generalLedger1159.intoOA.journal.rec:setJournalTxnInputRec/GL_INTERFACE;2;0/REFERENCE1;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/JournalBizDoc;4;0;generalLedger1159.intoOA.journal.rec:JournalBizDoc/GL;2;0/PERIOD_NAME;1;0" TO="/JournalRecordSet;4;0;generalLedger1159.intoOA.journal.rec:setJournalTxnInputRec/GL_INTERFACE;2;0/PERIOD_NAME;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/JournalBizDoc;4;0;generalLedger1159.intoOA.journal.rec:JournalBizDoc/GL;2;0/TAX_CODE;1;0" TO="/JournalRecordSet;4;0;generalLedger1159.intoOA.journal.rec:setJournalTxnInputRec/GL_INTERFACE;2;0/TAX_CODE;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/JournalBizDoc;4;0;generalLedger1159.intoOA.journal.rec:JournalBizDoc/GL;2;0/INVOICE_IDENTIFIER;1;0" TO="/JournalRecordSet;4;0;generalLedger1159.intoOA.journal.rec:setJournalTxnInputRec/GL_INTERFACE;2;0/INVOICE_IDENTIFIER;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/JournalBizDoc;4;0;generalLedger1159.intoOA.journal.rec:JournalBizDoc/GL;2;0/INVOICE_AMOUNT;1;0" TO="/JournalRecordSet;4;0;generalLedger1159.intoOA.journal.rec:setJournalTxnInputRec/GL_INTERFACE;2;0/INVOICE_AMOUNT;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/JournalBizDoc;4;0;generalLedger1159.intoOA.journal.rec:JournalBizDoc/GL;2;0/USSGL_TRANSACTION_CODE;1;0" TO="/JournalRecordSet;4;0;generalLedger1159.intoOA.journal.rec:setJournalTxnInputRec/GL_INTERFACE;2;0/USSGL_TRANSACTION_CODE;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/JournalBizDoc;4;0;generalLedger1159.intoOA.journal.rec:JournalBizDoc/GL;2;0/JGZZ_RECON_REF;1;0" TO="/JournalRecordSet;4;0;generalLedger1159.intoOA.journal.rec:setJournalTxnInputRec/GL_INTERFACE;2;0/JGZZ_RECON_REF;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/JournalBizDoc;4;0;generalLedger1159.intoOA.journal.rec:JournalBizDoc/GL;2;0/ORIGINATING_BAL_SEGMENT_VALUE;1;0" TO="/JournalRecordSet;4;0;generalLedger1159.intoOA.journal.rec:setJournalTxnInputRec/GL_INTERFACE;2;0/ORIGINATING_BAL_SEG_VALUE;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GROUP_ID;1;0" TO="/JournalRecordSet;4;0;generalLedger1159.intoOA.journal.rec:setJournalTxnInputRec/GL_INTERFACE;2;0/GROUP_ID;1;0">
+</MAPCOPY>
+
+<MAPINVOKE SERVICE="commonOA1159.utils:getCodeCombinationId" VALIDATE-IN="$none" VALIDATE-OUT="$none" INVOKE-ORDER="0">
+
+  <!-- nodes -->
+
+<MAP MODE="INVOKEINPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/JournalBizDoc;4;0;generalLedger1159.intoOA.journal.rec:JournalBizDoc/GL;2;0/ACCOUNT_CODE;1;0" TO="/queryParams;2;0/CONCATENATED_SEGMENTS;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/$dbAlias;1;0" TO="/$dbAlias;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="INVOKEOUTPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/CODE_COMBINATION_ID;1;0" TO="/JournalRecordSet;4;0;generalLedger1159.intoOA.journal.rec:setJournalTxnInputRec/GL_INTERFACE;2;0/CODE_COMBINATION_ID;1;0">
+</MAPCOPY>
+</MAP>
+</MAPINVOKE>
+
+<MAPCOPY NAME="Link" FROM="/JournalBizDoc;4;0;generalLedger1159.intoOA.journal.rec:JournalBizDoc/GL;2;0/STAT_AMOUNT;1;0" TO="/JournalRecordSet;4;0;generalLedger1159.intoOA.journal.rec:setJournalTxnInputRec/GL_INTERFACE;2;0/STAT_AMOUNT;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/USER_ID;1;0" TO="/JournalRecordSet;4;0;generalLedger1159.intoOA.journal.rec:setJournalTxnInputRec/GL_INTERFACE;2;0/CREATED_BY;1;0">
+</MAPCOPY>
+
+<MAPINVOKE SERVICE="commonOA1159.custom:convertToDateObject" VALIDATE-IN="$none" VALIDATE-OUT="$none" INVOKE-ORDER="0">
+
+  <!-- nodes -->
+
+<MAP MODE="INVOKEINPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/JournalBizDoc;4;0;generalLedger1159.intoOA.journal.rec:JournalBizDoc/GL;2;0/CURRENCY_CONVERSION_DATE;1;0" TO="/inDate;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="INVOKEOUTPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/outDate;3;0" TO="/JournalRecordSet;4;0;generalLedger1159.intoOA.journal.rec:setJournalTxnInputRec/GL_INTERFACE;2;0/CURRENCY_CONVERSION_DATE;3;0">
+</MAPCOPY>
+</MAP>
+</MAPINVOKE>
+
+<MAPINVOKE SERVICE="commonOA1159.custom:convertToDateObject" VALIDATE-IN="$none" VALIDATE-OUT="$none" INVOKE-ORDER="0">
+
+  <!-- nodes -->
+
+<MAP MODE="INVOKEINPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/JournalBizDoc;4;0;generalLedger1159.intoOA.journal.rec:JournalBizDoc/GL;2;0/INVOICE_DATE;1;0" TO="/inDate;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="INVOKEOUTPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/outDate;3;0" TO="/JournalRecordSet;4;0;generalLedger1159.intoOA.journal.rec:setJournalTxnInputRec/GL_INTERFACE;2;0/INVOICE_DATE;3;0">
+</MAPCOPY>
+</MAP>
+</MAPINVOKE>
+
+<MAPCOPY NAME="Link" FROM="/SYSDATE;3;0" TO="/JournalRecordSet;4;0;generalLedger1159.intoOA.journal.rec:setJournalTxnInputRec/GL_INTERFACE;2;0/DATE_CREATED;3;0">
+</MAPCOPY>
+
+<MAPINVOKE SERVICE="commonOA1159.custom:convertToDateObject" VALIDATE-IN="$none" VALIDATE-OUT="$none" INVOKE-ORDER="0">
+
+  <!-- nodes -->
+
+<MAP MODE="INVOKEINPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/JournalBizDoc;4;0;generalLedger1159.intoOA.journal.rec:JournalBizDoc/GL;2;0/ACCOUNTING_DATE;1;0" TO="/inDate;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="INVOKEOUTPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/outDate;3;0" TO="/JournalRecordSet;4;0;generalLedger1159.intoOA.journal.rec:setJournalTxnInputRec/GL_INTERFACE;2;0/ACCOUNTING_DATE;3;0">
+</MAPCOPY>
+</MAP>
+</MAPINVOKE>
+
+<MAPSET NAME="Setter" OVERWRITE="true" VARIABLES="false" FIELD="/JournalRecordSet;4;0;generalLedger1159.intoOA.journal.rec:setJournalTxnInputRec/GL_INTERFACE;2;0/STATUS;1;0">
+  <DATA ENCODING="XMLValues" I18N="true">
+
+<Values version="2.0">
+  <value name="xml">NEW</value>
+  <record name="type" javaclass="com.wm.util.Values">
+    <value name="node_type">unknown</value>
+    <value name="field_name">STATUS</value>
+    <value name="field_type">string</value>
+    <value name="field_dim">0</value>
+    <value name="nillable">true</value>
+  </record>
+</Values>
+</DATA>
+</MAPSET>
+</MAP>
+</LOOP>
+
+<MAP TIMEOUT="" MODE="STANDALONE">
+  <COMMENT>Drop unused variables</COMMENT>
+  <MAPTARGET>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="nillable">true</value>
+    <list name="rec_fields">
+    </list>
+  </record>
+</Values>
+</MAPTARGET>
+  <MAPSOURCE>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="nillable">true</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">JournalBizDoc</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="rec_ref">generalLedger1159.intoOA.journal.rec:JournalBizDoc</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">$dbAlias</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">GROUP_ID</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">SYSDATE</value>
+        <value name="field_type">object</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">USER_ID</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">JournalRecordSet</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="rec_ref">generalLedger1159.intoOA.journal.rec:setJournalTxnInputRec</value>
+      </record>
+    </array>
+  </record>
+</Values>
+</MAPSOURCE>
+
+  <!-- nodes -->
+
+<MAPDELETE NAME="Dropper" FIELD="/JournalBizDoc;4;0;generalLedger1159.intoOA.journal.rec:JournalBizDoc">
+</MAPDELETE>
+
+<MAPDELETE NAME="Dropper" FIELD="/GROUP_ID;1;0">
+</MAPDELETE>
+
+<MAPDELETE NAME="Dropper" FIELD="/$dbAlias;1;0">
+</MAPDELETE>
+
+<MAPDELETE NAME="Dropper" FIELD="/USER_ID;1;0">
+</MAPDELETE>
+
+<MAPDELETE NAME="Dropper" FIELD="/SYSDATE;3;0">
+</MAPDELETE>
+</MAP>
+</FLOW>

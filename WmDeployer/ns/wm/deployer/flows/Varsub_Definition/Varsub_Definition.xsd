@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  <xsd:element name="DeploymentSets">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="DeploymentSet" type="DeploymentSetType" minOccurs="0" maxOccurs="unbounded"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:complexType name="DeploymentSetType">
+    <xsd:sequence>
+      <xsd:element name="VarSubAssets" minOccurs="0">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="VarSubAsset" type="VarSubAssetType" minOccurs="0" maxOccurs="unbounded"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:sequence>
+    <xsd:attribute name="name" type="xsd:string" use="required"/>
+    <xsd:attribute name="pluginType" type="xsd:string" use="required"/>
+    <xsd:attribute name="sourceAlias" type="xsd:string" use="required"/>
+    <xsd:attribute name="targetAlias" type="xsd:string" use="required"/>
+    <xsd:attribute name="pluginGroup" type="xsd:string" use="required"/>
+  </xsd:complexType>
+  
+  <xsd:complexType name="VarSubAssetType">
+    <xsd:sequence>
+      <xsd:element name="attributeList" minOccurs="0">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="attribute" type="attributeType" minOccurs="0" maxOccurs="unbounded"/>
+            <xsd:element name="attributes" type="attributesType" minOccurs="0" maxOccurs="unbounded"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:sequence>
+    <xsd:attribute name="assetName" type="xsd:string" use="required"/>
+    <xsd:attribute name="assetType" type="xsd:string" use="required"/>
+  </xsd:complexType>
+  
+  <xsd:complexType name="attributeType">
+    <xsd:attribute name="name" type="xsd:string" use="required"/>
+    <xsd:attribute name="value" type="xsd:string" use="required"/>
+  </xsd:complexType>
+  
+  <xsd:complexType name="attributesType">
+    <xsd:sequence>
+      <xsd:element name="attribute" type="attributeType" maxOccurs="unbounded"/>
+    </xsd:sequence>
+    <xsd:attribute name="name" type="xsd:string" use="required"/>
+  </xsd:complexType>
+  
+</xsd:schema>
+

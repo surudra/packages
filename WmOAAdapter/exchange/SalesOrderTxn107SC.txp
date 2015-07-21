@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <record name="transactions" javaclass="com.wm.util.Values">
+    <record name="checkSalesOrderImportStatus" javaclass="com.wm.util.Values">
+      <value name="transactionName">checkSalesOrderImportStatus</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="SALESORDER_ERRCOUNT" javaclass="com.wm.util.Values">
+        <value name="SQLOut">SELECT COUNT(*) AS SALESORDER_ERRCOUNT 
+FROM SO_HEADERS_INTERFACE 
+WHERE REQUEST_ID = '&amp;REQUEST_ID*'
+AND ERROR_FLAG = 'Y'</value>
+        <value name="SQLAlias">SALESORDER_ERRCOUNT</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+    <record name="execSalesOrderConcProg" javaclass="com.wm.util.Values">
+      <value name="transactionName">execSalesOrderConcProg</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="CONC_PROG" javaclass="com.wm.util.Values">
+        <value name="SQLOut">WM_ORDER_IMP_HANDLER_PKG.WM_HANDLE_ORDER_IMPORT</value>
+        <value name="SQLAlias">CONC_PROG</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+    <record name="getCommitmentId" javaclass="com.wm.util.Values">
+      <value name="transactionName">getCommitmentId</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="COMMITMENT_ID" javaclass="com.wm.util.Values">
+        <value name="SQLOut">select CUSTOMER_TRX_ID as COMMITMENT_ID from RA_CUSTOMER_TRX_ALL 
+where TRX_NUMBER = '&amp;TRX_NUMBER*'</value>
+        <value name="SQLAlias">COMMITMENT_ID</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+    <record name="getInventoryItemIdFromCode" javaclass="com.wm.util.Values">
+      <value name="transactionName">getInventoryItemIdFromCode</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="INVENTORY_ITEM_ID" javaclass="com.wm.util.Values">
+        <value name="SQLOut">SELECT INVENTORY_ITEM_ID FROM MTL_SYSTEM_ITEMS_KFV M, MTL_PARAMETERS P
+WHERE M.CONCATENATED_SEGMENTS ='&amp;ITEM_CODE*'
+AND M.ORGANIZATION_ID = P.ORGANIZATION_ID
+AND P.ORGANIZATION_CODE ='&amp;WAREHOUSE_CODE*'</value>
+        <value name="SQLAlias">INVENTORY_ITEM_ID</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+    <record name="getOrderSourceId" javaclass="com.wm.util.Values">
+      <value name="transactionName">getOrderSourceId</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="ORDER_SOURCE_ID" javaclass="com.wm.util.Values">
+        <value name="SQLOut">SELECT 
+ORDER_SOURCE_ID
+FROM SO_ORDER_SOURCES
+WHERE NAME = '&amp;ORDER_SOURCE*'</value>
+        <value name="SQLAlias">ORDER_SOURCE_ID</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+    <record name="getWarehouseId" javaclass="com.wm.util.Values">
+      <value name="transactionName">getWarehouseId</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="WAREHOUSE_ID" javaclass="com.wm.util.Values">
+        <value name="SQLOut">select ORGANIZATION_ID from MTL_PARAMETERS
+where ORGANIZATION_CODE = '&amp;WAREHOUSE_CODE*'</value>
+        <value name="SQLAlias">WAREHOUSE_ID</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+  </record>
+  <record name="FILE_INFO" javaclass="com.wm.util.Values">
+    <value name="OA_RELEASE">107SC</value>
+    <value name="DESCRIPTION">Salesorder utils transaction definition</value>
+    <value name="CREATE_HOST">webMethods</value>
+    <value name="CREATE_IM_VER">3.0</value>
+    <value name="CREATE_DATE">Nov 25, 2002 10:54:59 AM</value>
+  </record>
+</Values>

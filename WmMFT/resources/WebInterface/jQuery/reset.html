@@ -1,0 +1,203 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <title>ActiveTransfer Web Client :: Reset Password</title>
+	<link rel="stylesheet" type="text/css" href="/WebInterface/jQuery/css/login.css" />
+	<script type="text/javascript" src="/WebInterface/jQuery/js/jquery-1.4.2.min.js"></script>
+	<script type="text/javascript" src="/WebInterface/jQuery/js/jquery-ui-1.8.2.custom.min.js"></script>
+	<script type="text/javascript" src="/WebInterface/jQuery/js/jquery.blockUI.js"></script>
+</head>
+<body style="overflow-x: hidden; overflow-y: auto;" class="login">
+	<form method="post" id="frmReset" action="/WebInterface/function/">
+		<div id="login">
+			<div id="panelbody">
+				<div id="branding" class="clearfix">
+					<a id="defaultLogoLink" href="http://www.softwareag.com/"><img id="imgLogo" src="/WebInterface/images/logo.png" style="border-width:0px;float:left;" /></a>
+					<img id="resetWheel" src="/WebInterface/images/wheel.gif"/>
+				</div>
+				<div id="panelLogin" style="padding:10px;">
+					<div>
+						<label for="reset_username_email">Username or Email : </label>
+						<input autocomplete="on" type="text" class="textbox" name="reset_username_email" id="reset_username_email" value="" />
+					</div>
+					<div class="resetPanel">
+						<label for="password">Password : </label>
+						<input type="password" class="textbox" name="password" id="password" />
+					</div>
+					<div class="resetPanel">
+						<label for="passwordConfirm">Password Confirm : </label>
+						<input type="password" class="textbox" name="passwordConfirm" id="passwordConfirm" />
+					</div>
+					<div style="clear:both;"></div>
+					<div class="submit clearfix">
+						<input type="hidden" name="command" id="command" value="no_action" />
+						<input type="hidden" name="resetToken" id="resetToken" value="" />
+						<a class="button" id="resetButton" href="javascript:void(0);"><span>Submit</span></a>
+						<a class="button" id="Back to Login" href="/WebInterface/login.html"><span>Login Page</span></a>
+						<a class="button" id="Back to Reset" href="/WebInterface/jQuery/reset.html"><span>Start Over</span></a>
+					</div>
+					<div style="clear:both;"></div>
+
+				</div>
+			</div>
+		</div>
+	</form>
+	<script type="text/javascript">
+			var _serverError = "The server is unavailable or your IP has been banned.";
+			$(document).ready(function () {
+				var urlParams = {};
+				(function () {
+					var e,
+						a = /\+/g,  // Regex for replacing addition symbol with a space
+						r = /([^&=]+)=?([^&]*)/g,
+						d = function (s) { return decodeURIComponent(s.replace(a, " ")); },
+						q = window.location.search.substring(1);
+
+					while (e = r.exec(q))
+					   urlParams[d(e[1]).toString().toLowerCase()] = d(e[2]);
+				})();
+				var isResetForm = false;
+				if(urlParams.token && urlParams.username)
+				{
+					isResetForm =  true;
+				}
+				if(isResetForm)
+				{
+					$("#reset_username_email").val(urlParams.username).attr("readonly", "readonly");
+					$("#resetToken").val(urlParams.token);
+					$("#resetButton").find("span").text("Submit");
+					$("#password").focus();
+					$("#command").val("reset_password");
+				}
+				else
+				{
+					$("div.resetPanel").hide();
+					$("#reset_username_email").focus();
+					$("#command").val("request_reset");
+				}
+				$("#frmReset").bind("submit", function(){
+					return false;
+				});
+				$("#reset_username_email, #password, #passwordConfirm").keypress(function(evt){
+					var evt  = (evt) ? evt : ((event) ? event : null);
+					if (evt.keyCode == 13)
+					{
+						$("#resetButton").trigger("click");
+						evt.stopPropagation();
+						return false;
+					}
+				});
+				$("#resetWheel").hide();
+				$("#resetButton").click(function(evt){
+					if(isResetForm)
+					{
+						doReset();
+					}
+					else
+					{
+						sendResetRequest();
+					}
+					evt.stopPropagation();
+					evt.preventDefault();
+					return false;
+				});
+			});
+
+			function doReset()
+			{
+				var password1 = encodeURIComponent($("#password").val());
+				var password2 = encodeURIComponent($("#passwordConfirm").val());
+				if(password1 != password2)
+				{
+					$.growlUI("Passwords do not match", "Password and confirm password are not the same.", 0, "", false);
+					$("#passwordConfirm").focus();
+					return false;
+				}
+				$("#resetWheel").show();
+				$("#resetButton").attr("disabled","disabled");
+				$.growlUI("Please wait...", "", 0, "", false);
+				var username = $("#reset_username_email").val();
+				$.ajax({
+					type: "POST",
+					url: "/WebInterface/function/",
+					data: {
+						command: $("#command").val(),
+						reset_username_email: encodeURIComponent(username),
+						password1 : password1,
+						password2 : password2,
+						resetToken :  encodeURIComponent($("#resetToken").val()),
+						currentURL : window.location.toString(),
+						random : Math.random()
+					},
+					error: function (XMLHttpRequest, textStatus, errorThrown) {
+						$("#resetButton").removeAttr("disabled");
+						if (!errorThrown) errorThrown = "Error";
+						$.growlUI(errorThrown, _serverError, 0, "", false);
+						$("#resetWheel").hide();
+					},
+					success: function (msg) {
+						$("#resetWheel").hide();
+						$("#resetButton").removeAttr("disabled");
+						var response = IE(msg.getElementsByTagName("response")[0]).textContent;
+						$.growlUI("", response, 0, "", false);
+					}
+				});
+				return false;
+			}
+
+			function sendResetRequest()
+			{
+				$("#resetWheel").show();
+				$("#resetButton").attr("disabled","disabled");
+				$.growlUI("Please wait...", "", 0, "", false);
+				var username = $("#reset_username_email").val();
+				$.ajax({
+					type: "POST",
+					url: "/WebInterface/function/",
+					data: {
+						command: $("#command").val(),
+						reset_username_email: encodeURIComponent(username),
+						currentURL : window.location.toString(),
+						random : Math.random()
+					},
+					error: function (XMLHttpRequest, textStatus, errorThrown) {
+						$("#resetButton").removeAttr("disabled");
+						if (!errorThrown) errorThrown = "Error";
+						$.growlUI(errorThrown, _serverError, 0, "", false);
+						$("#resetWheel").hide();
+					},
+					success: function (msg) {
+						$("#resetWheel").hide();
+						$("#resetButton").removeAttr("disabled");
+						var response = IE(msg.getElementsByTagName("response")[0]).textContent;
+						$.growlUI("", response, 0, "", false);
+					}
+				});
+				return false;
+			}
+			function IE(obj) {
+				if ($.browser.msie && parseInt(jQuery.browser.version) == 10) {
+                    var itm = {};
+                    itm.textContent = $(obj).text();
+                    return itm;
+                }
+                else
+                {
+					if (window.ActiveXObject) {
+						var obj2 = {};
+						try {
+							if(typeof obj.text != "undefined")
+                                obj2.textContent = obj.text;
+                            else
+                                obj2.textContent = $(obj).text();
+						} catch (ex) {}
+						return obj2;
+					} else {
+						return obj;
+					}
+                }
+			}
+		</script>
+	</body>
+</html>

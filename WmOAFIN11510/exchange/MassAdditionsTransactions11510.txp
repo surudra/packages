@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<IDataXMLCoder version="1.0">
+  <record javaclass="com.wm.data.ISMemDataImpl">
+    <record name="transactions" javaclass="com.wm.data.ISMemDataImpl">
+      <record name="execMassAddConcProg" javaclass="com.wm.data.ISMemDataImpl">
+        <value name="transactionName">execMassAddConcProg</value>
+        <value name="transactionType">OUT</value>
+        <null name="AcknowledgeSQL"/>
+        <record name="WM_HANDLE_FA_MASSADD" javaclass="com.wm.util.Values">
+          <value name="SQLOut">WM_FA_MASSADD_IMP_HANDLER_PKG.WM_HANDLE_FA_MASSADD</value>
+          <value name="SQLAlias">WM_HANDLE_FA_MASSADD</value>
+          <value name="SQLRelation"></value>
+        </record>
+      </record>
+      <record name="getAdditionalAssetId" javaclass="com.wm.data.ISMemDataImpl">
+        <value name="transactionName">getAdditionalAssetId</value>
+        <value name="transactionType">OUT</value>
+        <null name="AcknowledgeSQL"/>
+        <record name="ADDITIONAL_ASSET_ID" javaclass="com.wm.util.Values">
+          <value name="SQLOut">SELECT ASSET_ID FROM FA_ADDITIONS_B WHERE ASSET_NUMBER = '&amp;PARENT_ASSET_NUMBER*'</value>
+          <value name="SQLAlias">ADDITIONAL_ASSET_ID</value>
+          <value name="SQLRelation"></value>
+        </record>
+      </record>
+      <record name="getAssetCategoryId" javaclass="com.wm.data.ISMemDataImpl">
+        <value name="transactionName">getAssetCategoryId</value>
+        <value name="transactionType">OUT</value>
+        <null name="AcknowledgeSQL"/>
+        <record name="ASSET_CATEGORY_ID" javaclass="com.wm.util.Values">
+          <value name="SQLOut">SELECT CATEGORY_ID FROM FA_CATEGORIES_VL WHERE UPPER(DESCRIPTION) = UPPER('&amp;ASSET_CATEGORY_DESCRIPTION*')</value>
+          <value name="SQLAlias">ASSET_CATEGORY_ID</value>
+          <value name="SQLRelation"></value>
+        </record>
+      </record>
+      <record name="getAssetKeyCCId" javaclass="com.wm.data.ISMemDataImpl">
+        <value name="transactionName">getAssetKeyCCId</value>
+        <value name="transactionType">OUT</value>
+        <null name="AcknowledgeSQL"/>
+        <record name="ASSET_KEY_CCID" javaclass="com.wm.util.Values">
+          <value name="SQLOut">SELECT CODE_COMBINATION_ID FROM FA_ASSET_KEYWORDS_KFV WHERE UPPER(CONCATENATED_SEGMENTS) = UPPER('&amp;ASSET_KEY_ACCOUNT_CODE*')</value>
+          <value name="SQLAlias">ASSET_KEY_CCID</value>
+          <value name="SQLRelation"></value>
+        </record>
+      </record>
+      <record name="getMassAddNotPostedStatus" javaclass="com.wm.data.ISMemDataImpl">
+        <value name="transactionName">getMassAddNotPostedStatus</value>
+        <value name="transactionType">OUT</value>
+        <null name="AcknowledgeSQL"/>
+        <record name="MASS_ADD_NOT_POSTED_STATUS" javaclass="com.wm.util.Values">
+          <value name="SQLOut">SELECT COUNT(*) AS NOT_POSTED_ROW_COUNT FROM fa_mass_additions WHERE UPPER(BOOK_TYPE_CODE) = UPPER('&amp;P_BOOK_NAME*') AND POSTING_STATUS != 'POSTED'  AND CREATE_BATCH_ID=('&amp;BATCH_ID*')</value>
+          <value name="SQLAlias">MASS_ADD_NOT_POSTED_STATUS</value>
+          <value name="SQLRelation"></value>
+        </record>
+      </record>
+      <record name="getMassAddPostedStatus" javaclass="com.wm.data.ISMemDataImpl">
+        <value name="transactionName">getMassAddPostedStatus</value>
+        <value name="transactionType">OUT</value>
+        <null name="AcknowledgeSQL"/>
+        <record name="MASS_ADD_POSTED_STATUS" javaclass="com.wm.util.Values">
+          <value name="SQLOut">SELECT COUNT(*) AS POSTED_ROW_COUNT FROM fa_mass_additions WHERE UPPER(BOOK_TYPE_CODE) = UPPER('&amp;P_BOOK_NAME*') AND posting_status = 'POSTED' AND CREATE_BATCH_ID=('&amp;BATCH_ID*')</value>
+          <value name="SQLAlias">MASS_ADD_POSTED_STATUS</value>
+          <value name="SQLRelation"></value>
+        </record>
+      </record>
+    </record>
+    <record name="FILE_INFO" javaclass="com.wm.data.ISMemDataImpl">
+      <value name="OA_RELEASE">11510</value>
+      <value name="DESCRIPTION"></value>
+      <value name="CREATE_HOST">webMethods</value>
+      <value name="CREATE_IM_VER"></value>
+      <value name="CREATE_DATE">May 2, 2005 4:42:08 PM</value>
+    </record>
+  </record>
+</IDataXMLCoder>

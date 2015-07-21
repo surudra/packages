@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <record name="transactions" javaclass="com.wm.util.Values">
+    <record name="checkLaborImportStatus" javaclass="com.wm.util.Values">
+      <value name="transactionName">checkLaborImportStatus</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="CHECKINTERFACE" javaclass="com.wm.util.Values">
+        <value name="SQLOut">SELECT count(*) as rowcount
+FROM  pa_transaction_interface_all pat
+WHERE pat.batch_name = '&amp;BATCH_NAME*' AND pat.transaction_status_code = 'R'</value>
+        <value name="SQLAlias">CHECKINTERFACE</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+    <record name="execLaborConcProg" javaclass="com.wm.util.Values">
+      <value name="transactionName">execLaborConcProg</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="WM_HANDLE_LABORTXN" javaclass="com.wm.util.Values">
+        <value name="SQLOut">WM_LABORTXN_IMP_HANDLER_PKG.WM_HANDLE_LABORTXN</value>
+        <value name="SQLAlias">WM_HANDLE_LABORTXN</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+    <record name="getSystemLinkage" javaclass="com.wm.util.Values">
+      <value name="transactionName">getSystemLinkage</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="SYSTEM_LINKAGE" javaclass="com.wm.util.Values">
+        <value name="SQLOut">select function from PA_SYSTEM_LINKAGES 
+where meaning = '&amp;EXPENDITURE_CLASS*'
+and rownum = 1</value>
+        <value name="SQLAlias">SYSTEM_LINKAGE</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+  </record>
+  <record name="FILE_INFO" javaclass="com.wm.util.Values">
+    <value name="OA_RELEASE">11i</value>
+    <value name="DESCRIPTION">Labor Inbound Transaction Definitions</value>
+    <value name="CREATE_HOST">webMethods</value>
+    <value name="CREATE_IM_VER">3.0</value>
+    <value name="CREATE_DATE">Oct 2, 2002 3:40:12 PM</value>
+  </record>
+</Values>

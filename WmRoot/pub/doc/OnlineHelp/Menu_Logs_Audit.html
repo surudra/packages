@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="keywords" content="servers,logs,Audit Log,logs,Audit Log,audit trails,viewing,audit trail,services,viewing audit trail" />
+    <title>Service Log Screen</title>
+    <link rel="StyleSheet" href="css/_is_admin_help.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+  <body style="background-color: White; margin-bottom: 25px; margin-left: 25px; margin-right: 25px; margin-top: 0px; padding-top: 0px" onload="WWHUpdate();" onunload="WWHUnload();" onkeydown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onkeypress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onkeyup="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <table align="left" role="presentation">
+      <tr>
+        <td class="WebWorks_Company_Logo_Top">
+          <img src="sag_online.png" />
+        </td>
+      </tr>
+    </table>
+    <br clear="all" />
+    <hr align="left" />
+    <blockquote>
+      <div class="Heading_2"><a name="3_5_9_10_2">Service Log Screen</a></div>
+      <div class="Body"><span class="emphasis"><a name="3_5_9_10_6_2_3">Screen Heading</a></span>: <span class="uicontrol">Logs &gt; Service</span></div>
+      <div class="Body"><a name="3_5_9_10_6_2_5">Use the Service Log screen to view the most recent Service Log (WMSERVICE_</a><span class="varname">yyyymmdd_hhmmss</span>.log) entries. The Service Log maintains an audit trail for all services that the server executes. Depending on the Audit property settings you specified for the service in <span class="ph">Software&nbsp;AG Designer</span>, the server can add records to the log at various times, such as when the service starts and again when it ends, or only when there is an error. For more information about collecting auditing information about services, see <span class="ph"> </span><span class="Citation">webMethods Service Development Help</span><span class="ph"> </span>. For information about changing the display of this log, see <span class="ph"> </span><span class="Citation">webMethods Audit Logging Guide</span><span class="ph"> </span>.</div>
+      <table class="note1" summary="">
+        <tr>
+          <td class="Table_Cell" style="vertical-align: top; width: 14.285714285714284%">
+            <div class="Note">
+              <span style="font-family: Arial, Verdana, Helvetica, Sans-Serif; font-weight: bold">Note:    </span><a name="3_5_9_10_6_2_7_1_3_1_1_2">&nbsp;</a></div>
+          </td>
+          <td class="Table_Cell" style="vertical-align: top; width: 85.71428571428571%">
+            <div class="Table_Cell"><a name="3_5_9_10_6_2_7_1_3_1_2">For security purposes, you should regularly check your audit logs for security breaches. In addition, you should back them up regularly in case the machine where the logs are stored becomes unavailable.</a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="Body"><a name="3_5_9_10_6_2_9">To open the Service Log screen, click </a><span class="uicontrol">Service</span> under the <span class="uicontrol">Logs</span> menu on the Navigation panel.</div>
+      <div class="Section_Title"><a name="3_5_9_10_6_4_3">Log display controls</a></div>
+      <div class="Definition_Term"><a name="3_5_9_10_6_4_5_2_2">Display Log Entries oldest to the newest starting from the beginning</a></div>
+      <div class="Definition_Description"><a name="3_5_9_10_6_4_5_2_4">View entries in the log from the oldest to the most current.</a></div>
+      <div class="Definition_Term"><a name="3_5_9_10_6_4_5_4_2">Display Log Entries newest to the oldest starting from the end</a></div>
+      <div class="Definition_Description"><a name="3_5_9_10_6_4_5_4_4">View entries in the log from the most current to the oldest.</a></div>
+      <div class="Definition_Term"><a name="3_5_9_10_6_4_5_6_2">Number of entries to display</a></div>
+      <div class="Definition_Description"><a name="3_5_9_10_6_4_5_6_4">By default, the </a><span class="ph">Integration Server Administrator</span> displays the 35 most recent entries in the log. You can change the number of entries displayed.</div>
+      <table class="note2" summary="">
+        <tr>
+          <td class="Table_Cell" style="vertical-align: top; width: 14.285714285714284%">
+            <div class="tip">
+              <span style="font-family: Arial, Verdana, Helvetica, Sans-Serif; font-weight: bold">Tip!    </span><a name="3_5_9_10_6_4_5_6_4_5_1_3_1_2_2">&nbsp;</a></div>
+          </td>
+          <td class="Table_Cell" style="vertical-align: top; width: 85.71428571428571%">
+            <div class="Table_Cell"><a name="3_5_9_10_6_4_5_6_4_5_1_3_1_3">If you have Administrator privileges, you can permanently change the default value of this field. Go to the </a><span class="uicontrol">Settings &gt; Extended</span> page and modify the watt.server.log.maxEntries parameter.</div>
+          </td>
+        </tr>
+      </table>
+      <div class="Definition_Term"><a name="3_5_9_10_6_4_5_8_2">From/To</a></div>
+      <div class="Definition_Description"><a name="3_5_9_10_6_4_5_8_4">Specify, in </a><span class="codeph">YYYY-MM-DD HH:MM:SS</span> date format, the range of dates and times for which you want log entries to be displayed.</div>
+      <table class="note2" summary="">
+        <tr>
+          <td class="Table_Cell" style="vertical-align: top; width: 14.285714285714284%">
+            <div class="Note">
+              <span style="font-family: Arial, Verdana, Helvetica, Sans-Serif; font-weight: bold">Note:    </span><a name="3_5_9_10_6_4_5_8_4_5_1_3_1_2_2">&nbsp;</a></div>
+          </td>
+          <td class="Table_Cell" style="vertical-align: top; width: 85.71428571428571%">
+            <div class="Table_Cell"><a name="3_5_9_10_6_4_5_8_4_5_1_3_1_3">The </a><span class="uicontrol">From/To</span> fields are displayed only if the logger associated with this log is configured to write to a database. For more information, see the <span class="ph"> </span><span class="Citation">webMethods Audit Logging Guide</span><span class="ph"> </span>.</div>
+          </td>
+        </tr>
+      </table>
+      <div class="Definition_Term"><a name="3_5_9_10_6_4_5_10_2">Refresh</a></div>
+      <div class="Definition_Description"><a name="3_5_9_10_6_4_5_10_4">Click this button to update the display after changing the log display controls.</a></div>
+      <table class="note2" summary="">
+        <tr>
+          <td class="Table_Cell" style="vertical-align: top; width: 14.285714285714284%">
+            <div class="tip">
+              <span style="font-family: Arial, Verdana, Helvetica, Sans-Serif; font-weight: bold">Tip!    </span><a name="3_5_9_10_6_4_5_10_4_3_1_3_1_2_2">&nbsp;</a></div>
+          </td>
+          <td class="Table_Cell" style="vertical-align: top; width: 85.71428571428571%">
+            <div class="Table_Cell"><a name="3_5_9_10_6_4_5_10_4_3_1_3_1_3">If you have Administrator privileges, you can change the default refresh interval for log entries (the default is 90 seconds). Go to the </a><span class="uicontrol">Settings &gt; Extended</span> page and modify the watt.server.log.refreshInterval.</div>
+          </td>
+        </tr>
+      </table>
+      <div class="Section_Title"><a name="3_5_9_10_6_6_3">Service Log Entries as of </a><span class="varname">mm-dd hh:mm:ss</span></div>
+      <div class="Definition_Term"><a name="3_5_9_10_6_6_5_2_2">Time Stamp</a></div>
+      <div class="Definition_Description"><a name="3_5_9_10_6_6_5_2_4">Date and time the entry was written to the log.</a></div>
+      <div class="Definition_Term"><a name="3_5_9_10_6_6_5_4_2">User Id</a></div>
+      <div class="Definition_Description"><a name="3_5_9_10_6_6_5_4_4">Identity of the user that invoked the service that generated the audit event.</a></div>
+      <div class="Definition_Term"><a name="3_5_9_10_6_6_5_6_2">Server Id</a></div>
+      <div class="Definition_Description"><a name="3_5_9_10_6_6_5_6_4">Identity of the server on which the service that generated the audit event executed.</a></div>
+      <div class="Definition_Term"><a name="3_5_9_10_6_6_5_8_2">Service Name</a></div>
+      <div class="Definition_Description"><a name="3_5_9_10_6_6_5_8_4">Name of the service that generated the audit event.</a></div>
+      <div class="Definition_Term"><a name="3_5_9_10_6_6_5_10_2">Resubmittable</a></div>
+      <div class="Definition_Description"><a name="3_5_9_10_6_6_5_10_4">Whether or not </a><span class="ph">webMethods Monitor</span> can resubmit the service. A service is resubmittable only if it is a top-level service and the pipeline was included.</div>
+      <div class="Definition_Term"><a name="3_5_9_10_6_6_5_12_2">Status</a></div>
+      <div class="Definition_Description"><a name="3_5_9_10_6_6_5_12_4">Status of service execution. The status can be either STARTED, ENDED or FAILED.</a></div>
+      <div class="Definition_Term"><a name="3_5_9_10_6_6_5_14_2">Duration</a></div>
+      <div class="Definition_Description"><a name="3_5_9_10_6_6_5_14_4">How long the service ran (in milliseconds) before the error occurred.</a></div>
+      <div class="Definition_Term"><a name="3_5_9_10_6_6_5_16_2">Error Message</a></div>
+      <div class="Definition_Description"><a name="3_5_9_10_6_6_5_16_4">Optional error message, describing the type of error.</a></div>
+      <div class="Definition_Term"><a name="3_5_9_10_6_6_5_18_2">Root Context, Parent Context, Current Context</a></div>
+      <div class="Definition_Description"><a name="3_5_9_10_6_6_5_18_4">Context information that provides a consistent, interpretable audit trail of activity that the </a><span class="ph">webMethods Monitor</span> can use to relate entries within the log.</div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <div>
+      <hr />
+      <div style="font-family: Arial, Verdana, Helvetica, Sans-Serif; font-size: 12px;margin-top: 20px;margin-bottom: 20px;">
+        <span class="xref">
+          <a href="http://documentation.softwareag.com/legal/" target="external_window">Copyright © <span></span><span></span><span>2007</span><span>-2014</span> Software AG, Darmstadt, Germany</a>
+        </span>.</div>
+    </div>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+  </body>
+</html>

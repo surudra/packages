@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <record name="transactions" javaclass="com.wm.util.Values">
+    <record name="setGLBudgetTxn" javaclass="com.wm.util.Values">
+      <value name="transactionName">setGLBudgetTxn</value>
+      <value name="transactionType">IN</value>
+      <value name="errSQL">SELECT *
+FROM GL_BUDGET_INTERFACE 
+WHERE BUDGET_NAME='&amp;BUDGET_NAME*' 
+AND BUDGET_ENTITY_NAME ='&amp;BUDGET_ENTITY_NAME*'</value>
+      <record name="table0" javaclass="com.wm.util.Values">
+        <value name="tableName">GL_BUDGET_INTERFACE</value>
+        <value name="required">true</value>
+      </record>
+    </record>
+  </record>
+  <record name="FILE_INFO" javaclass="com.wm.util.Values">
+    <value name="OA_RELEASE">11i</value>
+    <value name="DESCRIPTION"></value>
+    <value name="CREATE_HOST">webMethods</value>
+    <value name="CREATE_IM_VER">3.0</value>
+    <value name="CREATE_DATE">Sep 24, 2002 3:26:55 PM</value>
+  </record>
+</Values>

@@ -1,0 +1,101 @@
+#
+# webMethods Deployer plugin Configuration File
+# 
+
+#
+# Unique identifier for the plugin
+#
+type=RULES
+
+#
+# Deployment Support Type for your plugin server
+# RUNTIME/OFFLINE/BOTH
+#
+deploymentSupportType=OFFLINE
+
+#
+# The display name for your plugin server
+label=Business Rules
+
+isDocumentLiteralEnabled=true
+
+#
+# Whether or not the Plugin Instance A will be referring to dependencies
+# on Plugin or Server Instance B
+# 
+referencesOtherServers=FALSE
+
+#
+# Just put false here
+#
+isLocal=FALSE
+
+deploymentOrder=RULES
+#
+# Path to the web service logic in your plugin web service container
+# (only needed if isLocal is FALSE)
+#
+# listObjectsPath=wm.businessrules.deployer
+# pingPath=wm.businessrules.deployer
+# getObjectsPath=wm.businessrules.deployer
+# deployObjectsPath=wm.businessrules.deployer
+# verifyObjectPath=wm.businessrules.deployer
+# getDependenciesPath=wm.businessrules.deployer
+# getConnectionInfoPath=wm.businessrules.deployer
+# getObjectVarSubPath=wm.businessrules.deployer
+# pingPath=wm.businessrules.deployer.ws
+# deployObjectWithACDLPath=wm.businessrules.deployer.ws
+hostSuffix_SPI_0=ws/wm.businessrules.deployer.ws
+hostSuffix_SPI_1=ws/wm.businessrules.deployer.ws
+
+#
+# Path to local plugin jar
+# (only needed if isLocal is TRUE)
+#
+#jar=Sample.jar
+#className=com.wm.sample.deployer.plugin.SamplePlugin
+
+#
+# Fields that will be displayed on the plugin connection configuration
+# page for each plugin instance that needs to be accessed by the
+# Deployer.  Leaving a blank value for any of these fields will prevent
+# the Deployer from displaying it
+#
+hostLabel=Host
+portLabel=Port
+userLabel=User
+passwordLabel=Password
+versionLabel=Version
+validVersions=9.7@SPI_1,9.6@SPI_1,9.5@SPI_1,9.0@SPI_1,8.2@SPI_1
+
+# Add this attribute if SSL is supported for this web service
+SSLLabel=Use SSL
+
+objectTypes=ruleproject
+
+#
+# For each object type listed above, Deployer needs to to know how to 
+# label a folder of them, what icon to use, and whether or not an entire
+# folder of them can be deployed as a unique object (usually not)
+#
+objectType.ruleproject.folderName=Rule Project
+objectType.ruleproject.iconName=icon_page.gif
+objectType.ruleproject.foldersAreDeployable=FALSE
+
+#
+# Optional list of properties to display (at the project level).
+# Data would be gathered from the user for each one of these objects
+# and that data would be passed to the plugin during each invocation
+# of getObjects (during the Build phase) and deployObjects (during 
+# the deploy phase)
+# 
+# projectProperties=sampleProperty
+
+#
+# For each one of the plugin project properties above, need to
+# know how to present the field to the user that will capture
+# the data about the property
+#
+# projectProperty.sampleProperty.label=Sample Property
+# projectProperty.sampleProperty.type=BOOLEAN
+# projectProperty.sampleProperty.default=FALSE

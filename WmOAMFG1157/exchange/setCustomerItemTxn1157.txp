@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <record name="transactions" javaclass="com.wm.util.Values">
+    <record name="setCustomerItemTxn" javaclass="com.wm.util.Values">
+      <value name="transactionName">setCustomerItemTxn</value>
+      <value name="transactionType">IN</value>
+      <value name="errSQL">SELECT CUSTOMER_NAME, CUSTOMER_ITEM_NUMBER, CUSTOMER_ITEM_DESC, ERROR_CODE,ERROR_EXPLANATION FROM MTL_CI_INTERFACE WHERE PROCESS_MODE = 2</value>
+      <record name="table0" javaclass="com.wm.util.Values">
+        <value name="tableName">MTL_CI_INTERFACE</value>
+        <value name="required">true</value>
+      </record>
+    </record>
+  </record>
+  <record name="FILE_INFO" javaclass="com.wm.util.Values">
+    <value name="OA_RELEASE">11i</value>
+    <value name="DESCRIPTION">Inbound Customer Item Transaction Definition</value>
+    <value name="CREATE_HOST">webMethods</value>
+    <value name="CREATE_IM_VER">3.0</value>
+    <value name="CREATE_DATE">Nov 2, 2002 12:38:44 PM</value>
+  </record>
+</Values>

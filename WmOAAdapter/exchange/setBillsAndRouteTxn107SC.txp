@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <record name="transactions" javaclass="com.wm.util.Values">
+    <record name="setBillsAndRouteTxn" javaclass="com.wm.util.Values">
+      <value name="transactionName">setBillsAndRouteTxn</value>
+      <value name="transactionType">IN</value>
+      <value name="errSQL">SELECT mie.REQUEST_ID,NAME AS ORGANIZATION_NAME, ERROR_MESSAGE,TABLE_NAME,COLUMN_NAME,MESSAGE_NAME FROM mtl_interface_errors mie,hr_all_organization_units haou
+WHERE mie.organization_id = haou.organization_id
+AND mie.REQUEST_ID = '&amp;REQUEST_ID*' </value>
+      <record name="table0" javaclass="com.wm.util.Values">
+        <value name="tableName">BOM_INVENTORY_COMPS_INTERFACE</value>
+        <value name="required">false</value>
+      </record>
+      <record name="table1" javaclass="com.wm.util.Values">
+        <value name="tableName">BOM_SUB_COMPS_INTERFACE</value>
+        <value name="required">false</value>
+      </record>
+      <record name="table2" javaclass="com.wm.util.Values">
+        <value name="tableName">BOM_REF_DESGS_INTERFACE</value>
+        <value name="required">false</value>
+      </record>
+      <record name="table3" javaclass="com.wm.util.Values">
+        <value name="tableName">MTL_RTG_ITEM_REVS_INTERFACE</value>
+        <value name="required">false</value>
+      </record>
+      <record name="table4" javaclass="com.wm.util.Values">
+        <value name="tableName">BOM_OP_SEQUENCES_INTERFACE</value>
+        <value name="required">false</value>
+      </record>
+      <record name="table5" javaclass="com.wm.util.Values">
+        <value name="tableName">BOM_OP_RESOURCES_INTERFACE</value>
+        <value name="required">false</value>
+      </record>
+      <record name="table6" javaclass="com.wm.util.Values">
+        <value name="tableName">BOM_OP_ROUTINGS_INTERFACE</value>
+        <value name="required">false</value>
+      </record>
+      <record name="table7" javaclass="com.wm.util.Values">
+        <value name="tableName">MTL_ITEM_REVISIONS_INTERFACE</value>
+        <value name="required">false</value>
+      </record>
+      <record name="table8" javaclass="com.wm.util.Values">
+        <value name="tableName">BOM_BILL_OF_MTLS_INTERFACE</value>
+        <value name="required">false</value>
+      </record>
+    </record>
+  </record>
+  <record name="FILE_INFO" javaclass="com.wm.util.Values">
+    <value name="OA_RELEASE">107SC</value>
+    <value name="DESCRIPTION"></value>
+    <value name="CREATE_HOST">webMethods</value>
+    <value name="CREATE_IM_VER">3.0</value>
+    <value name="CREATE_DATE">Nov 21, 2002 12:47:05 PM</value>
+  </record>
+</Values>

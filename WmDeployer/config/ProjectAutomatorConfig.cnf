@@ -1,0 +1,43 @@
+# XML Tag names corresponding to Connection props listed below have a pattern
+# <..XmlTagName..{i}> where i is positive non-zero integer and reprsents the 
+# sequence index in the schema defination.Incase it's only <..XmlTagName..> 
+# i.e. no ordering is specified, it will be in the order which  present in
+# response of invocation wm.deployer.gui:UIPlugin:getPluginServer.Deployer will
+# strip off this meta info before creating dom element, provided its a proper pattern.
+
+# MWS Related Connection Properties.
+MWS.rootFolders=rootFolderAliases{4}
+MWS.includeSecurity=includeSecurityDependencies{3}
+MWS.maxFolderChildren=maximumFolderObjectCount{5}
+MWS.maxFolderDepth=maxFolderDepth{7}
+MWS.debugLogging=enableAddtionalLogging{6}
+MWS.excludeTaskEngine=excludeCoreTaskEngineDependencies{1}
+MWS.cacheTimeout=cacheTimeOut{2}
+
+Broker.BrokerName=brokerName{1}
+Broker.ClientGroup=clientGroup{2}
+Broker.BasicAuth_Username=user{3}
+Broker.BasicAuth_Password=pwd{4}
+
+# Broker Related Connection Properties.
+Broker.SSL_DeployerKeystore_1=keyStorePath{5}
+Broker.SSL_KeystoreType_2=keyStoreType{6}
+Broker.SSL_Password_KeystorePassword_3=keyStorepassword{7}
+Broker.SSL_DeployerTruststore_4=trustStorePath{8}
+Broker.SSL_TruststoreType_5=trustStoreType{9}
+Broker.BrokerContext=Context{10}
+
+# UniversalMessaging Related Connection Properties.
+UniversalMessaging.SSL_DeployerKeystore_1=keyStorePath{1}
+UniversalMessaging.SSL_Password_KeystorePassword_2=keyStorepassword{2}
+UniversalMessaging.SSL_DeployerTruststore_3=trustStorePath{3}
+UniversalMessaging.SSL_Password_TruststorePassword_4=trustStorepassword{4}
+
+MWS=mwsalias
+ProcessModel=pmalias
+Optimize=optimizealias
+EventServer=eventserveralias
+RULES=rulesserveralias
+Broker=brokeralias
+EDA=edaserveralias
+UniversalMessaging=universalmessagingalias

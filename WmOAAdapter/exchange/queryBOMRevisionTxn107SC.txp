@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <record name="transactions" javaclass="com.wm.util.Values">
+    <record name="queryBOMRevisionTxn" javaclass="com.wm.util.Values">
+      <value name="transactionName">queryBOMRevisionTxn</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="BOM_REVISIONS" javaclass="com.wm.util.Values">
+        <value name="SQLOut">SELECT ITEM, INV_ORG_NAME, REVISION, CHANGE_NOTICE, ECN_INITIATION_DATE, 
+IMPLEMENTATION_DATE, EFFECTIVITY_DATE 
+FROM WM_BOM_REVISIONS_QRY_VW 
+WHERE NVL(INV_ORG_NAME,'XXXXX') LIKE NVL('&amp;ORGANIZATION_NAME*', NVL( INV_ORG_NAME, 'XXXXX' ))
+AND NVL(ITEM,'XXXXX') LIKE NVL('&amp;ITEM*', NVL( ITEM, 'XXXXX' ))
+AND NVL(REVISION,'XXXXX') LIKE NVL('&amp;REVISION*', NVL( REVISION, 'XXXXX' ))
+AND NVL(EFFECTIVITY_DATE,trunc(SYSDATE)) BETWEEN 
+NVL(to_date('&amp;EFFECTIVITY_DATE_FROM*'),NVL(EFFECTIVITY_DATE,trunc(SYSDATE))) 
+AND NVL(to_date('&amp;EFFECTIVITY_DATE_TO*'),NVL(EFFECTIVITY_DATE,trunc(SYSDATE)))</value>
+        <value name="SQLAlias">BOM_REVISIONS</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+  </record>
+  <record name="FILE_INFO" javaclass="com.wm.util.Values">
+    <value name="OA_RELEASE">107SC</value>
+    <value name="DESCRIPTION"></value>
+    <value name="CREATE_HOST">webMethods</value>
+    <value name="CREATE_IM_VER">3.0</value>
+    <value name="CREATE_DATE">Nov 22, 2002 11:03:21 AM</value>
+  </record>
+</Values>

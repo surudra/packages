@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <title>Denial of Service Options Screen</title>
+    <link rel="StyleSheet" href="css/_is_admin_help.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+  <body style="background-color: White; margin-bottom: 25px; margin-left: 25px; margin-right: 25px; margin-top: 0px; padding-top: 0px" onload="WWHUpdate();" onunload="WWHUnload();" onkeydown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onkeypress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onkeyup="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <table align="left" role="presentation">
+      <tr>
+        <td class="WebWorks_Company_Logo_Top">
+          <img src="sag_online.png" />
+        </td>
+      </tr>
+    </table>
+    <br clear="all" />
+    <hr align="left" />
+    <blockquote>
+      <div class="Heading_3"><a name="3_5_17_13_7_2">Denial of Service Options Screen</a></div>
+      <div class="Body"><span class="emphasis"><a name="3_5_17_13_7_6_2_3">Screen Heading</a></span>: <span class="uicontrol">Security &gt;</span> <span class="uicontrol">Enterprise Gateway</span> <span class="uicontrol">Rules &gt; Denial of Service Options</span></div>
+      <div class="Body"><a name="3_5_17_13_7_6_2_5">Use the Denial of Service Options screen to limit the number of requests an </a><span class="ph">Enterprise Gateway Server</span> will accept and the number it will process concurrently. By limiting requests this way, you can prevent Denial of Service (DoS) attacks that flood <span class="ph">Enterprise Gateway Server</span> with requests in an attempt to interfere with server processing.</div>
+      <div class="Body"><a name="3_5_17_13_7_6_2_7">To ensure that requests from trusted servers are not denied, you can configure a whitelist of IP addresses so that requests from these IP addresses are always allowed.</a></div>
+      <table class="note1" summary="">
+        <tr>
+          <td class="Table_Cell" style="vertical-align: top; width: 14.285714285714284%">
+            <div class="important">
+              <span style="font-family: Arial, Verdana, Helvetica, Sans-Serif; font-weight: bold">Important!    </span><a name="3_5_17_13_7_6_2_9_1_3_1_1_2">&nbsp;</a></div>
+          </td>
+          <td class="Table_Cell" style="vertical-align: top; width: 85.71428571428571%">
+            <div class="Table_Cell"><span class="ph"><a name="3_5_17_13_7_6_2_9_1_3_1_2">Enterprise Gateway</a></span> runs on an <span class="ph">Integration Server</span> that has been configured as an <span class="ph">Enterprise Gateway Server</span> running in your DMZ. The <span class="ph">Enterprise Gateway Server</span> requires a <span class="ph">webMethods Enterprise Gateway</span> license.</div>
+          </td>
+        </tr>
+      </table>
+      <div class="Body"><a name="3_5_17_13_7_6_2_11">To open the Denial of Service Options screen, click </a><span class="uicontrol">Enterprise Gateway</span> <span class="uicontrol">Rules</span> under the <span class="uicontrol">Security</span> menu on the Navigation panel, and then click <span class="uicontrol">Denial of Service Options</span>.</div>
+      <div class="List_1_outer" style="margin-left: 24px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_1_inner" style="width: 18pt; white-space: nowrap">
+                <img src="bullet1.png" alt="*" border="0" width="10" height="10" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_1_inner"><a name="3_5_17_13_7_6_2_13_2">Click </a><span class="uicontrol">Configure Global Denial of Service</span> to configure global limits on requests. When global settings are in effect, <span class="ph">Enterprise Gateway Server</span> considers all requests, regardless of the IP address from which a request was sent.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_1_outer" style="margin-left: 24px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_1_inner" style="width: 18pt; white-space: nowrap">
+                <img src="bullet1.png" alt="*" border="0" width="10" height="10" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_1_inner"><a name="3_5_17_13_7_6_2_13_4">Click </a><span class="uicontrol">Configure Denial of Service by IP Address</span> to configure limits on requests based on the IP address from which a request was sent.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Section_Title"><a name="3_5_17_13_7_6_4_3">Global Denial of Service</a></div>
+      <div class="Definition_Term"><a name="3_5_17_13_7_6_4_5_2_2">Enabled</a></div>
+      <div class="Definition_Description"><a name="3_5_17_13_7_6_4_5_2_4">Whether </a><span class="ph">Enterprise Gateway Server</span> is enforcing limits on the total number of requests it will accept and the total number it will process concurrently, regardless of IP address from which a request was sent.</div>
+      <div class="Definition_Term"><a name="3_5_17_13_7_6_4_5_4_2">Maximum Requests</a></div>
+      <div class="Definition_Description"><a name="3_5_17_13_7_6_4_5_4_4">Maximum number of requests </a><span class="ph">Enterprise Gateway Server</span> will accept in the specified number of seconds.</div>
+      <div class="Definition_Term"><a name="3_5_17_13_7_6_4_5_6_2">Maximum Requests in Progress</a></div>
+      <div class="Definition_Description"><a name="3_5_17_13_7_6_4_5_6_4">Maximum number of requests </a><span class="ph">Enterprise Gateway Server</span> will run concurrently.</div>
+      <div class="Definition_Term"><a name="3_5_17_13_7_6_4_5_8_2">Block Interval</a></div>
+      <div class="Definition_Description"><a name="3_5_17_13_7_6_4_5_8_4">Length of time (in minutes) that </a><span class="ph">Enterprise Gateway Server</span> is to block client requests on every <span class="ph">Enterprise Gateway</span> external port.</div>
+      <div class="Definition_Term"><a name="3_5_17_13_7_6_4_5_10_2">Error Message</a></div>
+      <div class="Definition_Description"><a name="3_5_17_13_7_6_4_5_10_4">Custom message to send to the client, if desired, when a request is denied.</a></div>
+      <div class="Definition_Term"><a name="3_5_17_13_7_6_4_5_12_2">Trusted IP Address Range</a></div>
+      <div class="Definition_Description"><a name="3_5_17_13_7_6_4_5_12_4">The trusted IPv4 or IPv6 addresses so that requests from these IP addresses are always allowed. Use the classless inter-domain routing (CIDR) notation to specify a range of IP addresses. To specify an IP address range, enter the first IP address in the range followed by a forward slash (/) and a CIDR suffix.</a></div>
+      <div class="Definition_Description"><a name="3_5_17_13_7_6_4_5_12_4_3">Example IPv4 address range:</a></div>
+      <div class="List_2_outer" style="margin-left: 48px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_2_inner" style="width: 18pt; white-space: nowrap">
+                <img src="bullet2.png" alt="*" border="0" width="12" height="12" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_2_inner"><span class="codeph"><a name="3_5_17_13_7_6_4_5_12_4_5_2">192.168.100.0/22</a></span> represents the IPv4 addresses from <span class="codeph">192.168.100.0</span> to <span class="codeph">192.168.103.255</span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_2_outer" style="margin-left: 48px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_2_inner" style="width: 18pt; white-space: nowrap">
+                <img src="bullet2.png" alt="*" border="0" width="12" height="12" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_2_inner"><span class="codeph"><a name="3_5_17_13_7_6_4_5_12_4_5_4">148.20.57.0/30</a></span> represents the IPv4 addresses from <span class="codeph">148.20.57.0</span> to <span class="codeph">148.20.57.3</span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Definition_Description"><a name="3_5_17_13_7_6_4_5_12_4_7">Example IPv6 address range:</a></div>
+      <div class="List_2_outer" style="margin-left: 48px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_2_inner" style="width: 18pt; white-space: nowrap">
+                <img src="bullet2.png" alt="*" border="0" width="12" height="12" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_2_inner"><span class="codeph"><a name="3_5_17_13_7_6_4_5_12_4_9_2">f000::/1</a></span> represents the IPv6 addresses from <span class="codeph">f000::</span> to <span class="codeph">ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_2_outer" style="margin-left: 48px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_2_inner" style="width: 18pt; white-space: nowrap">
+                <img src="bullet2.png" alt="*" border="0" width="12" height="12" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_2_inner"><span class="codeph"><a name="3_5_17_13_7_6_4_5_12_4_9_4">2001:db8::/48</a></span> represents the IPv6 addresses from <span class="codeph">2001:db8:0:0:0:0:0:0 to 2001:db8:0:ffff:ffff:ffff:ffff:ffff</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Definition_Description"><a name="3_5_17_13_7_6_4_5_12_4_11">You can also specify a single IP address instead of an IP address range.</a></div>
+      <div class="Definition_Description"><a name="3_5_17_13_7_6_4_5_12_4_13">You can specify multiple IP addresses or IP address ranges separated by commas (,).</a></div>
+      <div class="Section_Title"><a name="3_5_17_13_7_6_6_3">Denial of Service by IP Address</a></div>
+      <div class="Definition_Term"><a name="3_5_17_13_7_6_6_5_2_2">Enabled</a></div>
+      <div class="Definition_Description"><a name="3_5_17_13_7_6_6_5_2_4">Whether </a><span class="ph">Enterprise Gateway Server</span> is to enforce limits on the number of requests it will accept or the number of requests it will process concurrently from any individual IP address. For example, you can specify that, if <span class="ph">Enterprise Gateway Server</span> receives more than 15 requests from any individual IP address in 10 seconds, subsequent requests from that IP address will be denied.</div>
+      <div class="Definition_Term"><a name="3_5_17_13_7_6_6_5_4_2">Maximum Requests</a></div>
+      <div class="Definition_Description"><a name="3_5_17_13_7_6_6_5_4_4">Maximum number of requests </a><span class="ph">Enterprise Gateway Server</span> will accept from any individual IP address in the specified number of seconds.</div>
+      <div class="Definition_Term"><a name="3_5_17_13_7_6_6_5_6_2">Maximum Requests in Progress</a></div>
+      <div class="Definition_Description"><a name="3_5_17_13_7_6_6_5_6_4">Maximum number of requests </a><span class="ph">Enterprise Gateway Server</span> will run concurrently from the same IP address.</div>
+      <div class="Definition_Term"><a name="3_5_17_13_7_6_6_5_8_2">When Limit Exceeds</a></div>
+      <div class="Definition_Description"><a name="3_5_17_13_7_6_6_5_8_4">Action to take when the number of requests from a non-trusted IP address exceeds the limits specified in the </a><span class="uicontrol">Maximum Requests</span> or <span class="uicontrol">Maximum Requests in Progress</span> fields.</div>
+      <table class="norules1" summary="">
+        <tr>
+          <td class="norules-head" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: bottom; width: 90pt">
+            <div class="norules-head"><a name="3_5_17_13_7_6_6_5_8_4_7_2_6_2_2">This value...</a></div>
+          </td>
+          <td class="norules-head" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: bottom; width: 342pt">
+            <div class="norules-head"><a name="3_5_17_13_7_6_6_5_8_4_7_2_6_2_4">Indicates...</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td class="Table_Cell" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: top">
+            <div class="Table_Cell"><span class="uicontrol"><a name="3_5_17_13_7_6_6_5_8_4_7_2_8_2_2">Add to Deny List</a></span></div>
+          </td>
+          <td class="Table_Cell" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: top">
+            <div class="Table_Cell"><span class="ph"><a name="3_5_17_13_7_6_6_5_8_4_7_2_8_2_4">Enterprise Gateway Server</a></span> will permanently add the IP address that exceeded the limit to the <span class="ph">Enterprise Gateway</span> deny list. With this setting in effect, the server blocks requests from the IP address at every <span class="ph">Enterprise Gateway</span> external port. The address remains in the deny list until an administrator deletes it from the list.</div>
+          </td>
+        </tr>
+        <tr>
+          <td class="Table_Cell" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: top">
+            <div class="Table_Cell"><span class="uicontrol"><a name="3_5_17_13_7_6_6_5_8_4_7_2_8_4_2">Block</a></span></div>
+          </td>
+          <td class="Table_Cell" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: top">
+            <div class="Table_Cell"><span class="ph"><a name="3_5_17_13_7_6_6_5_8_4_7_2_8_4_4">Enterprise Gateway Server</a></span> will temporarily add the IP address that exceeded the limit to the <span class="ph">Enterprise Gateway</span> deny list. With this setting in effect, the server blocks requests from the IP address at every <span class="ph">Enterprise Gateway</span> external port for a period of time that you specify.</div>
+          </td>
+        </tr>
+      </table>
+      <div class="Definition_Term"><a name="3_5_17_13_7_6_6_5_10_2">Block Interval</a></div>
+      <div class="Definition_Description"><a name="3_5_17_13_7_6_6_5_10_4">Length of time (in minutes) that </a><span class="ph">Enterprise Gateway Server</span> is to block requests from an IP address when the number of requests exceeds the value specified in the <span class="uicontrol">Maximum Requests</span> or <span class="uicontrol">Maximum Requests in Progress</span> field. The server blocks client requests from this IP address at every <span class="ph">Enterprise Gateway</span> external port.</div>
+      <div class="Definition_Term"><a name="3_5_17_13_7_6_6_5_12_2">Error Message</a></div>
+      <div class="Definition_Description"><a name="3_5_17_13_7_6_6_5_12_4">Custom message to send to the client, if desired, when a request is denied.</a></div>
+      <div class="Definition_Term"><a name="3_5_17_13_7_6_6_5_14_2">Trusted IP Address Range</a></div>
+      <div class="Definition_Description"><a name="3_5_17_13_7_6_6_5_14_4">The trusted IPv4 or IPv6 addresses so that requests from these IP addresses are always allowed. Use the classless inter-domain routing (CIDR) notation to specify a range of IP addresses. To specify an IP range, enter the first IP address in the range followed by a forward slash (/) and a CIDR suffix.</a></div>
+      <div class="Definition_Description"><a name="3_5_17_13_7_6_6_5_14_4_3">Example IPv4 address range:</a></div>
+      <div class="List_2_outer" style="margin-left: 48px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_2_inner" style="width: 18pt; white-space: nowrap">
+                <img src="bullet2.png" alt="*" border="0" width="12" height="12" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_2_inner"><span class="codeph"><a name="3_5_17_13_7_6_6_5_14_4_5_2">192.168.100.0/22</a></span> represents the IPv4 addresses from <span class="codeph">192.168.100.0</span> to <span class="codeph">192.168.103.255</span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_2_outer" style="margin-left: 48px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_2_inner" style="width: 18pt; white-space: nowrap">
+                <img src="bullet2.png" alt="*" border="0" width="12" height="12" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_2_inner"><span class="codeph"><a name="3_5_17_13_7_6_6_5_14_4_5_4">148.20.57.0/30</a></span> represents the IPv4 addresses from <span class="codeph">148.20.57.0</span> to <span class="codeph">148.20.57.3</span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Definition_Description"><a name="3_5_17_13_7_6_6_5_14_4_7">Example IPv6 address range:</a></div>
+      <div class="List_2_outer" style="margin-left: 48px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_2_inner" style="width: 18pt; white-space: nowrap">
+                <img src="bullet2.png" alt="*" border="0" width="12" height="12" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_2_inner"><span class="codeph"><a name="3_5_17_13_7_6_6_5_14_4_9_2">f000::/1</a></span> represents the IPv6 addresses from <span class="codeph">f000::</span> to <span class="codeph">ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_2_outer" style="margin-left: 48px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_2_inner" style="width: 18pt; white-space: nowrap">
+                <img src="bullet2.png" alt="*" border="0" width="12" height="12" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_2_inner"><span class="codeph"><a name="3_5_17_13_7_6_6_5_14_4_9_4">2001:db8::/48</a></span> represents the IPv6 addresses from <span class="codeph">2001:db8:0:0:0:0:0:0 to 2001:db8:0:ffff:ffff:ffff:ffff:ffff</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Definition_Description"><a name="3_5_17_13_7_6_6_5_14_4_11">You can also specify a single IP address instead of an IP address range.</a></div>
+      <div class="Definition_Description"><a name="3_5_17_13_7_6_6_5_14_4_13">You can specify multiple IP addresses or IP address ranges separated by commas (,).</a></div>
+      <div class="Section_Title"><a name="3_5_17_13_7_6_8_3">Denied IP Address List</a></div>
+      <div class="Definition_Term"><a name="3_5_17_13_7_6_8_5_2_2">IP Address</a></div>
+      <div class="Definition_Description"><a name="3_5_17_13_7_6_8_5_2_4">List of IP addresses that have been blocked or added to the </a><span class="ph">Enterprise Gateway</span> deny list for sending requests that exceed configured limits for the number of requests received or the number of requests to process concurrently. When the requested action is Block, an IP address is displayed in the list until it is automatically deleted after the block interval has passed. If the requested action is Add to Deny List, the IP address remains in the list until an administrator deletes it.</div>
+      <table class="note2" summary="">
+        <tr>
+          <td class="Table_Cell" style="vertical-align: top; width: 14.285714285714284%">
+            <div class="important">
+              <span style="font-family: Arial, Verdana, Helvetica, Sans-Serif; font-weight: bold">Important!    </span><a name="3_5_17_13_7_6_8_5_2_4_5_1_3_1_2_2">&nbsp;</a></div>
+          </td>
+          <td class="Table_Cell" style="vertical-align: top; width: 85.71428571428571%">
+            <div class="Table_Cell"><a name="3_5_17_13_7_6_8_5_2_4_5_1_3_1_3">The </a><span class="ph">Enterprise Gateway</span> deny list takes precedence over the allow/deny list for the <span class="ph">Enterprise Gateway</span> external port.</div>
+          </td>
+        </tr>
+      </table>
+      <div class="Definition_Term"><a name="3_5_17_13_7_6_8_5_4_2">Delete</a></div>
+      <div class="Definition_Description"><a name="3_5_17_13_7_6_8_5_4_4">Deletes the IP address from the deny list. After you delete the IP address, </a><span class="ph">Enterprise Gateway Server</span> will allow requests from this IP address again.</div>
+      <div class="Link_List_Title"><a name="3_5_17_13_7_8_1_2">Related Topics</a></div>
+      <div class="Related_Reference">
+        <img src="spacer_24.png" alt="*" border="0" width="24" height="6" /><span class="Link_Text"><a href="javascript:WWHClickedPopup('is_help', 'Menu_Security_EnterpriseGatewayRules_GlobalDenialofService.html', '');" title="Configure Global Denial of Service Screen" name="3_5_17_13_7_8_1_4">Configure Global Denial of Service Screen</a></span></div>
+      <div class="Related_Reference">
+        <img src="spacer_24.png" alt="*" border="0" width="24" height="6" /><span class="Link_Text"><a href="javascript:WWHClickedPopup('is_help', 'Menu_Security_EnterpriseGatewayRules_DenialofServiceOptions_DoSByIPAddress.html', '');" title="Configure Denial of Service by IP Address Screen" name="3_5_17_13_7_8_1_6">Configure Denial of Service by IP Address Screen</a></span></div>
+      <div class="Related_Reference">
+        <img src="spacer_24.png" alt="*" border="0" width="24" height="6" /><span class="Link_Text"><a href="javascript:WWHClickedPopup('is_help', 'Menu_Security_EnterpriseGatewayRules.html', '');" title="Enterprise Gateway Rules Screen" name="3_5_17_13_7_8_1_8">Enterprise Gateway Rules Screen</a></span></div>
+      <div class="Related_Reference">
+        <img src="spacer_24.png" alt="*" border="0" width="24" height="6" /><span class="Link_Text"><a href="javascript:WWHClickedPopup('is_help', 'Menu_Security_EnterpriseGatewayRules_DefaultAlertOptions.html', '');" title="Default Alert Options Screen" name="3_5_17_13_7_8_1_10">Default Alert Options Screen</a></span></div>
+      <div class="Related_Reference">
+        <img src="spacer_24.png" alt="*" border="0" width="24" height="6" /><span class="Link_Text"><a href="javascript:WWHClickedPopup('is_help', 'Menu_Security_EnterpriseGatewayRules_MobileApplicationProtectionOptions.html', '');" title="Mobile Application Protection Options Screen" name="3_5_17_13_7_8_1_12">Mobile Application Protection Options Screen</a></span></div>
+      <div class="Related_Reference">
+        <img src="spacer_24.png" alt="*" border="0" width="24" height="6" /><span class="Link_Text"><a href="javascript:WWHClickedPopup('is_help', 'Menu_Security_EnterpriseGatewayRules_CreateRule.html', '');" title="Create Rule Screen" name="3_5_17_13_7_8_1_14">Create Rule Screen</a></span></div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <div>
+      <hr />
+      <div style="font-family: Arial, Verdana, Helvetica, Sans-Serif; font-size: 12px;margin-top: 20px;margin-bottom: 20px;">
+        <span class="xref">
+          <a href="http://documentation.softwareag.com/legal/" target="external_window">Copyright © <span></span><span></span><span>2007</span><span>-2014</span> Software AG, Darmstadt, Germany</a>
+        </span>.</div>
+    </div>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+  </body>
+</html>

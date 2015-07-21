@@ -1,0 +1,26 @@
+function FileData_Pairs(x)
+{
+x.t("available","folder:");
+x.t("folder:","element");
+x.t("publishes","metadata");
+x.t("description","pub.asset:publish");
+x.t("integration","server");
+x.t("summary","elements");
+x.t("packages","trading");
+x.t("networks","assets");
+x.t("element","package");
+x.t("assets","metadata");
+x.t("specified","integration");
+x.t("pub.asset:publish","wmassetpublisher.");
+x.t("metadata","library.");
+x.t("metadata","specified");
+x.t("trading","networks");
+x.t("folder","summary");
+x.t("folder","following");
+x.t("package","description");
+x.t("wmassetpublisher.","publishes");
+x.t("elements","available");
+x.t("elements","folder");
+x.t("following","elements");
+x.t("server","packages");
+}

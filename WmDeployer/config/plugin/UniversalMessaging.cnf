@@ -1,0 +1,111 @@
+#
+# webMethods Deployer plugin configuration file
+# 
+
+#
+# Unique identifier for the plugin
+#
+type=UniversalMessaging
+
+#
+# Deployment Support Type for your plugin server
+# RUNTIME/OFFLINE/BOTH
+#
+deploymentSupportType=OFFLINE
+
+#
+# The display name for your plugin server
+#
+label=UniversalMessaging
+
+#
+# Whether or not the Plugin Instance A will be referring to dependencies
+# on Plugin or Server Instance B
+# 
+referencesOtherServers=FALSE
+
+#
+# Just put false here
+#
+isLocal=TRUE
+
+#
+# Path to the web service logic in your plugin web service container
+#
+listObjectsPath=
+pingPath=
+getObjectsPath=
+deployObjectsPath=
+verifyObjectPath=
+getDependenciesPath=
+getConnectionInfoPath=
+
+
+#
+# Fields that will be displayed on the plugin connection configuration
+# page for each plugin instance that needs to be accessed by the
+# Deployer.  Leaving a blank value for any of these fields will prevent
+# the Deployer from displaying it
+#
+
+realmURL=Realm URL
+SSLLabel=
+versionLabel=Version
+validVersions=9.7@SPI_2,9.6@SPI_2,9.5@SPI_2
+connectionProperties=SSL_DeployerKeystore_1,SSL_Password_KeystorePassword_2,SSL_DeployerTruststore_3,SSL_Password_TruststorePassword_4
+
+connection.SSL_DeployerKeystore_1.label=Deployer Keystore
+connection.SSL_DeployerKeystore_1.type=STRING
+connection.SSL_DeployerKeystore_1.default=
+connection.SSL_DeployerKeystore_1.required=TRUE
+
+connection.SSL_Password_KeystorePassword_2.label=Keystore Password
+connection.SSL_Password_KeystorePassword_2.type=STRING
+connection.SSL_Password_KeystorePassword_2.default=
+connection.SSL_Password_KeystorePassword_2.required=TRUE
+
+connection.SSL_DeployerTruststore_3.label=Deployer Truststore
+connection.SSL_DeployerTruststore_3.type=STRING
+connection.SSL_DeployerTruststore_3.default=
+connection.SSL_DeployerTruststore_3.required=TRUE
+
+connection.SSL_Password_TruststorePassword_4.label=Truststore Password
+connection.SSL_Password_TruststorePassword_4.type=STRING
+connection.SSL_Password_TruststorePassword_4.default=
+connection.SSL_Password_TruststorePassword_4.required=TRUE
+
+
+#
+# List of object types that can be deployed 
+# 
+objectTypes=DocumentType,ClientGroup
+
+#
+# For each object type listed above, need to to know how to label
+# a folder of them, what icon to use, and whether or not an entire
+# folder of them can be deployed as a unique object (usually not)
+#
+objectType.DocumentType.folderName=Document Types
+objectType.DocumentType.iconName=broker-doc.gif
+objectType.DocumentType.foldersAreDeployable=FALSE
+
+objectType.ClientGroup.folderName=Client Groups
+objectType.ClientGroup.iconName=client-group.gif
+objectType.ClientGroup.foldersAreDeployable=FALSE
+
+#
+# Optional list of properties to display (at the project level).
+# Data would be gathered from the user for each one of these objects
+# and that data would be passed to the plugin during each invocation
+# of getObjects (during the Build phase) and deployObjects (during 
+# the deploy phase)
+# 
+projectProperties=
+
+objectType.DocumentType.varSubFields=dummyVarSubField1,dummyVarSubField2,dummyVarSubField3
+objectType.DocumentType.varSubField.dummyVarSubField1.type=STRING
+objectType.DocumentType.varSubField.dummyVarSubField1.label="Dummy Var Sub Field 1"
+objectType.DocumentType.varSubField.dummyVarSubField2.type=STRING
+objectType.DocumentType.varSubField.dummyVarSubField2.label="Dummy Var Sub Field 2"
+objectType.DocumentType.varSubField.dummyVarSubField3.type=BOOLEAN
+objectType.DocumentType.varSubField.dummyVarSubField3.label="Dummy Var Sub Field 3"

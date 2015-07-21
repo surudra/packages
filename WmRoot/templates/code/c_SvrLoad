@@ -1,0 +1,10 @@
+static {
+    try {
+        System.loadLibrary("%value ifcName%");
+        JournalLogger.log(DebugMsg.LOG_MSG, JournalLogger.FAC_PACKAGE, JournalLogger.INFO, 
+			"Loading native library: %value ifcName%");
+    } catch (UnsatisfiedLinkError e) {
+        JournalLogger.logError(DebugMsg.LOG_MSG, JournalLogger.FAC_PACKAGE, 
+			e.getMessage());
+    }
+}

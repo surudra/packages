@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <record name="transactions" javaclass="com.wm.util.Values">
+    <record name="setLaborTxn" javaclass="com.wm.util.Values">
+      <value name="transactionName">setLaborTxn</value>
+      <value name="transactionType">IN</value>
+      <value name="errSQL">SELECT pat.batch_name, 
+       pat.employee_number,
+       pat.organization_name,
+	   pat.expenditure_type,
+	   pat.project_number,
+	   pat.task_number,
+	   pat.expenditure_item_date,
+	   pat.expenditure_ending_date,
+	   pat.transaction_rejection_code,
+	   pal.meaning
+FROM   pa_transaction_interface_all pat,
+	   pa_lookups pal
+WHERE  pal.lookup_code = pat.transaction_rejection_code
+AND    pal.lookup_type='TRANSACTION REJECTION REASON'
+AND    pat.transaction_status_code = 'R'
+AND    pat.batch_name = '&amp;BATCH_NAME*'</value>
+      <record name="table0" javaclass="com.wm.util.Values">
+        <value name="tableName">PA_TRANSACTION_INTERFACE_ALL</value>
+        <value name="required">true</value>
+      </record>
+    </record>
+  </record>
+  <record name="FILE_INFO" javaclass="com.wm.util.Values">
+    <value name="OA_RELEASE">11i</value>
+    <value name="DESCRIPTION">Labor Transaction Definition</value>
+    <value name="CREATE_HOST">webMethods</value>
+    <value name="CREATE_IM_VER">3.0</value>
+    <value name="CREATE_DATE">Oct 15, 2002 3:37:04 PM</value>
+  </record>
+</Values>

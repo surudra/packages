@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  <xsd:element name="DeploymentMap">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="DeploymentSets" type="DeploymentSetsType"/>
+      </xsd:sequence>
+      <xsd:attribute name="mapName" type="xsd:string" use="required"/>
+      <xsd:attribute name="description" type="xsd:string" use="required"/>
+      <xsd:attribute name="projectType" type="xsd:string"/>
+    </xsd:complexType>
+  </xsd:element>
+  
+  <xsd:complexType name="DeploymentSetsType">
+    <xsd:sequence>
+      <xsd:element name="DeploymentSet" type="DeploymentSetType" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  
+  <xsd:complexType name="DeploymentSetType">
+    <xsd:sequence>
+      <xsd:element name="targetGroups" type="targetGroupsType" minOccurs="0"/>
+      <xsd:element name="targetServers" type="targetServersType" minOccurs="0"/>
+    </xsd:sequence>
+    <xsd:attribute name="name" type="xsd:string" use="required"/>
+    <xsd:attribute name="pluginType" use="required">
+      <xsd:simpleType>
+        <xsd:restriction base="xsd:string">
+          <xsd:whiteSpace value="preserve"/>
+          <xsd:enumeration value="IS"/>
+          <xsd:enumeration value="TN"/>
+          <xsd:enumeration value="IS &amp; TN"/>
+          <xsd:enumeration value="Broker"/>
+          <xsd:enumeration value="ProcessModel"/>
+          <xsd:enumeration value="MWS"/>
+          <xsd:enumeration value="Optimize"/>
+          <xsd:enumeration value="Repository"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+    </xsd:attribute>
+  </xsd:complexType>
+  
+  <xsd:complexType name="targetGroupsType">
+    <xsd:sequence>
+      <xsd:element name="targetGroup" type="aliasType" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  
+  <xsd:complexType name="aliasType">
+    <xsd:attribute name="alias" type="xsd:string" use="required"/>
+    <xsd:attribute name="type" type="xsd:string"/>
+  </xsd:complexType>
+  
+  <xsd:complexType name="targetServersType">
+    <xsd:sequence>
+      <xsd:element name="targetServer" type="aliasType" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  
+</xsd:schema>
+

@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <title>SFTP User Alias Settings Screen</title>
+    <link rel="StyleSheet" href="css/_is_admin_help.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+  <body style="background-color: White; margin-bottom: 25px; margin-left: 25px; margin-right: 25px; margin-top: 0px; padding-top: 0px" onload="WWHUpdate();" onunload="WWHUnload();" onkeydown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onkeypress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onkeyup="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <table align="left" role="presentation">
+      <tr>
+        <td class="WebWorks_Company_Logo_Top">
+          <img src="sag_online.png" />
+        </td>
+      </tr>
+    </table>
+    <br clear="all" />
+    <hr align="left" />
+    <blockquote>
+      <div class="Heading_3"><a name="3_5_19_33_7_2">SFTP User Alias Settings Screen</a></div>
+      <div class="Body"><span class="emphasis"><a name="3_5_19_33_7_6_2_3">Screen Heading</a></span>: <span class="uicontrol">Settings &gt; SFTP &gt; User Alias Settings</span></div>
+      <div class="Body"><a name="3_5_19_33_7_6_2_5">Use the SFTP User Alias screen to view the list of SFTP user alias definitions in </a><span class="ph">webMethods Integration Server</span>. An SFTP user alias contains the SFTP client configurations for a specific user account in the SFTP server. In many organizations, a system administrator provides the SFTP user account information that you require to create an SFTP user alias.</div>
+      <div class="Body"><a name="3_5_19_33_7_6_2_7">You can have multiple SFTP user aliases for the same SFTP user account. Each SFTP user alias name in an </a><span class="ph">Integration Server</span> must be unique.</div>
+      <div class="Body"><a name="3_5_19_33_7_6_2_9">Keep the following points in mind when configuring </a><span class="ph">Integration Server</span> to act as an SFTP client:</div>
+      <div class="List_1_outer" style="margin-left: 24px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_1_inner" style="width: 18pt; white-space: nowrap">
+                <img src="bullet1.png" alt="*" border="0" width="10" height="10" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_1_inner"><span class="ph"><a name="3_5_19_33_7_6_2_11_2">Integration Server</a></span> supports password authentication and public key authentication for authenticating itself as the client to the SFTP server.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_1_outer" style="margin-left: 24px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_1_inner" style="width: 18pt; white-space: nowrap">
+                <img src="bullet1.png" alt="*" border="0" width="10" height="10" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_1_inner"><a name="3_5_19_33_7_6_2_11_4">For both password and public key authentication, you must have an account on the SFTP server that is set up for SFTP access.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_1_outer" style="margin-left: 24px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_1_inner" style="width: 18pt; white-space: nowrap">
+                <img src="bullet1.png" alt="*" border="0" width="10" height="10" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_1_inner"><a name="3_5_19_33_7_6_2_11_6">For public key authentication, the SFTP server and </a><span class="ph">Integration Server</span> must have access to their own private key and each other's public key.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <table class="note1" summary="">
+        <tr>
+          <td class="Table_Cell" style="vertical-align: top; width: 14.285714285714284%">
+            <div class="important">
+              <span style="font-family: Arial, Verdana, Helvetica, Sans-Serif; font-weight: bold">Important!    </span><a name="3_5_19_33_7_6_2_13_1_3_1_1_2">&nbsp;</a></div>
+          </td>
+          <td class="Table_Cell" style="vertical-align: top; width: 85.71428571428571%">
+            <div class="Table_Cell"><a name="3_5_19_33_7_6_2_13_1_3_1_2">You must create at least one SFTP server alias before creating an SFTP user alias.</a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="Body"><a name="3_5_19_33_7_6_2_15">To open the SFTP User Alias Settings screen, click </a><span class="uicontrol">SFTP</span> under the <span class="uicontrol">Settings</span> menu on the Navigation panel. Click <span class="uicontrol">User Alias Settings</span>.</div>
+      <div class="List_1_outer" style="margin-left: 24px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_1_inner" style="width: 18pt; white-space: nowrap">
+                <img src="bullet1.png" alt="*" border="0" width="10" height="10" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_1_inner"><a name="3_5_19_33_7_6_2_17_2">Click </a><span class="uicontrol">Create User Alias</span> to create new SFTP user aliases.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_1_outer" style="margin-left: 24px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_1_inner" style="width: 18pt; white-space: nowrap">
+                <img src="bullet1.png" alt="*" border="0" width="10" height="10" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_1_inner"><a name="3_5_19_33_7_6_2_17_4">Click </a><span class="uicontrol">Return to SFTP</span> to return to the list of SFTP server aliases defined in your <span class="ph">Integration Server</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Definition_Term"><a name="3_5_19_33_7_6_2_19_2_2">SFTP User List</a></div>
+      <div class="Definition_Description"><a name="3_5_19_33_7_6_2_19_2_4_3">Displays the SFTP user aliases that are defined in your </a><span class="ph">Integration Server</span>.</div>
+      <div class="Definition_Term"><a name="3_5_19_33_7_6_2_19_4_2">SFTP User Alias</a></div>
+      <div class="Definition_Description"><a name="3_5_19_33_7_6_2_19_4_4_3">Displays the SFTP user alias name.</a></div>
+      <div class="Definition_Term"><a name="3_5_19_33_7_6_2_19_6_2">SFTP Server Alias</a></div>
+      <div class="Definition_Description"><a name="3_5_19_33_7_6_2_19_6_4_3">Displays the alias of the SFTP server to which you want the specified user to connect.</a></div>
+      <div class="Definition_Term"><a name="3_5_19_33_7_6_2_19_8_2">User</a></div>
+      <div class="Definition_Description"><a name="3_5_19_33_7_6_2_19_8_4_3">Displays the user name for the SFTP user account.</a></div>
+      <div class="Definition_Term"><a name="3_5_19_33_7_6_2_19_10_2">Authentication Type</a></div>
+      <div class="Definition_Description"><a name="3_5_19_33_7_6_2_19_10_4_3">Displays the type of authentication that </a><span class="ph">Integration Server</span> uses to authenticate itself to the SFTP server. Client authentication can be either by password or by public/private keys.</div>
+      <div class="Definition_Term"><a name="3_5_19_33_7_6_2_19_12_2">Proxy Alias</a></div>
+      <div class="Definition_Description"><a name="3_5_19_33_7_6_2_19_12_4_3">Displays the proxy alias through which the request is to be routed.</a></div>
+      <div class="Definition_Term"><a name="3_5_19_33_7_6_2_19_14_2">Test</a></div>
+      <div class="Definition_Description"><a name="3_5_19_33_7_6_2_19_14_4_3">Tests the connection to the SFTP server to ensure that </a><span class="ph">Integration Server</span> can establish a connection using the credentials and details you specified for the alias.</div>
+      <div class="Definition_Term"><a name="3_5_19_33_7_6_2_19_16_2">Delete</a></div>
+      <div class="Definition_Description"><a name="3_5_19_33_7_6_2_19_16_4_3">Deletes the SFTP user alias definition from </a><span class="ph">Integration Server</span>.</div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <div>
+      <hr />
+      <div style="font-family: Arial, Verdana, Helvetica, Sans-Serif; font-size: 12px;margin-top: 20px;margin-bottom: 20px;">
+        <span class="xref">
+          <a href="http://documentation.softwareag.com/legal/" target="external_window">Copyright © <span></span><span></span><span>2007</span><span>-2014</span> Software AG, Darmstadt, Germany</a>
+        </span>.</div>
+    </div>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+  </body>
+</html>

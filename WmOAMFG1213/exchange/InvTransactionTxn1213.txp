@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<IDataXMLCoder version="1.0">
+  <record javaclass="com.wm.data.ISMemDataImpl">
+    <record name="transactions" javaclass="com.wm.data.ISMemDataImpl">
+      <record name="checkInvTransactionImportStatus" javaclass="com.wm.data.ISMemDataImpl">
+        <value name="transactionName">checkInvTransactionImportStatus</value>
+        <value name="transactionType">OUT</value>
+        <null name="AcknowledgeSQL"/>
+        <record name="IMPORT_STATUS" javaclass="com.wm.util.Values">
+          <value name="SQLOut">SELECT COUNT(*) AS ROWCOUNT FROM MTL_TRANSACTIONS_INTERFACE WHERE REQUEST_ID ='&amp;TRANSACTION_HEADER_ID*' AND PROCESS_FLAG=3</value>
+          <value name="SQLAlias">IMPORT_STATUS</value>
+          <value name="SQLRelation"></value>
+        </record>
+      </record>
+      <record name="execInvTransactionConcProg" javaclass="com.wm.data.ISMemDataImpl">
+        <value name="transactionName">execInvTransactionConcProg</value>
+        <value name="transactionType">OUT</value>
+        <null name="AcknowledgeSQL"/>
+        <record name="WM_HANDLE_INV_TXN" javaclass="com.wm.util.Values">
+          <value name="SQLOut">WM_INV_TXN_IMP_HANDLER_PKG.WM_HANDLE_INV_TXN</value>
+          <value name="SQLAlias">WM_HANDLE_INV_TXN</value>
+          <value name="SQLRelation"></value>
+        </record>
+      </record>
+      <record name="getCostGroupId2" javaclass="com.wm.data.ISMemDataImpl">
+        <value name="transactionName">getCostGroupId2</value>
+        <value name="transactionType">OUT</value>
+        <null name="AcknowledgeSQL"/>
+        <record name="COST_GROUP" javaclass="com.wm.util.Values">
+          <value name="SQLOut">SELECT COST_GROUP_ID FROM CST_COST_GROUPS WHERE COST_GROUP ='&amp;COST_GROUP*'</value>
+          <value name="SQLAlias">COST_GROUP</value>
+          <value name="SQLRelation"></value>
+        </record>
+      </record>
+      <record name="getDispositionId" javaclass="com.wm.data.ISMemDataImpl">
+        <value name="transactionName">getDispositionId</value>
+        <value name="transactionType">OUT</value>
+        <null name="AcknowledgeSQL"/>
+        <record name="DISPOSION_ID" javaclass="com.wm.util.Values">
+          <value name="SQLOut">SELECT DISPOSITION_ID FROM MTL_GENERIC_DISPOSITIONS WHERE DESCRIPTION ='&amp;ACCOUNT_ALIAS*'</value>
+          <value name="SQLAlias">DISPOSION_ID</value>
+          <value name="SQLRelation"></value>
+        </record>
+      </record>
+      <record name="getRequisitionLineId" javaclass="com.wm.data.ISMemDataImpl">
+        <value name="transactionName">getRequisitionLineId</value>
+        <value name="transactionType">OUT</value>
+        <null name="AcknowledgeSQL"/>
+        <record name="REQUISITION_LINE_ID" javaclass="com.wm.util.Values">
+          <value name="SQLOut">SELECT REQUISITION_LINE_ID  FROM PO_REQUISITION_HEADERS_ALL H, PO_REQUISITION_LINES_ALL L  WHERE H.SEGMENT1= '&amp;PO_REQUISITION_LINE_NUMBER*' AND  L.REQUISITION_HEADER_ID =H.REQUISITION_HEADER_ID</value>
+          <value name="SQLAlias">REQUISITION_LINE_ID</value>
+          <value name="SQLRelation"></value>
+        </record>
+      </record>
+      <record name="getSalesOrderHeaderId" javaclass="com.wm.data.ISMemDataImpl">
+        <value name="transactionName">getSalesOrderHeaderId</value>
+        <value name="transactionType">OUT</value>
+        <null name="AcknowledgeSQL"/>
+        <record name="ORDER_HEADER" javaclass="com.wm.util.Values">
+          <value name="SQLOut">SELECT HEADER_ID FROM OE_ORDER_HEADERS_ALL WHERE ORDER_NUMBER ='&amp;SALES_ORDER*'</value>
+          <value name="SQLAlias">ORDER_HEADER</value>
+          <value name="SQLRelation"></value>
+        </record>
+      </record>
+      <record name="getTransactionTypeId" javaclass="com.wm.data.ISMemDataImpl">
+        <value name="transactionName">getTransactionTypeId</value>
+        <value name="transactionType">OUT</value>
+        <null name="AcknowledgeSQL"/>
+        <record name="TRANSACTION_TYPE_ID" javaclass="com.wm.util.Values">
+          <value name="SQLOut">SELECT TRANSACTION_TYPE_ID, TRANSACTION_ACTION_ID,TRANSACTION_SOURCE_TYPE_ID FROM MTL_TRANSACTION_TYPES  WHERE  TRANSACTION_TYPE_NAME ='&amp;TRANSACTION_TYPE_NAME*'</value>
+          <value name="SQLAlias">TRANSACTION_TYPE_ID</value>
+          <value name="SQLRelation"></value>
+        </record>
+      </record>
+    </record>
+    <record name="FILE_INFO" javaclass="com.wm.data.ISMemDataImpl">
+      <value name="OA_RELEASE">1213</value>
+      <value name="DESCRIPTION"></value>
+      <value name="CREATE_HOST">webmethods</value>
+      <value name="CREATE_IM_VER"></value>
+      <value name="CREATE_DATE">May 6, 2005 2:51:06 PM</value>
+    </record>
+  </record>
+</IDataXMLCoder>

@@ -1,0 +1,49 @@
+<PUBLIC:COMPONENT>
+<PUBLIC:ATTACH EVENT="onmousedown" ONEVENT="buttonMouseDown()"/>
+<PUBLIC:ATTACH EVENT="onmouseup" ONEVENT="buttonMouseUp()"/>
+<PUBLIC:ATTACH EVENT="onmouseout" ONEVENT="buttonMouseOut()"/>
+<PUBLIC:ATTACH EVENT="onmouseover" ONEVENT="buttonMouseOver()"/>
+<PUBLIC:ATTACH EVENT="oncontentready" ONEVENT="buttonInit()"/>
+
+<SCRIPT>
+
+function buttonMouseOver() {
+}
+
+function buttonMouseOut() {
+	makeFlat();
+}
+
+function buttonMouseDown() {
+	makePressed();
+}
+
+function buttonMouseUp() {
+	makeFlat();
+}
+
+function buttonInit() {
+}
+
+
+function makePressed() {
+	with (style) {
+		paddingTop    = "4px";
+		paddingLeft   = "7px";
+		paddingBottom = "0px";
+		paddingRight  = "3px";
+	}
+}
+
+function makeFlat() {
+	with (style) {
+		paddingTop    = "2px";
+		paddingLeft   = "5px";
+		paddingBottom = "2px";
+		paddingRight  = "5px";
+	}
+}
+
+
+</SCRIPT>
+</PUBLIC:COMPONENT>

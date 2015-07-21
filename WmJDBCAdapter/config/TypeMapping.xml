@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseConfiguration>
+	<defaultTypeDefinition>
+		<javaType name="InputStream" setter="setBinaryStream" getter="getBinaryStream">
+			<implementingClass>java.io.InputStream</implementingClass>
+		</javaType>
+		<javaType name="ARRAY" setter="setArray" getter="getArray">
+			<implementingClass>java.sql.Array</implementingClass>
+		</javaType>
+		<javaType name="OBJECT" setter="setObject" getter="getObject">
+			<implementingClass>java.lang.Object</implementingClass>
+		</javaType>
+		<javaType name="BOOLEAN" setter="setBoolean" getter="getBoolean">
+			<implementingClass usePrimitive="true">java.lang.Boolean</implementingClass>
+		</javaType>
+		<javaType name="SQLTIMESTAMP" setter="setTimestamp" getter="getTimestamp">
+			<implementingClass>java.sql.Timestamp</implementingClass>
+		</javaType>
+		<javaType name="LONG" setter="setLong" getter="getLong">
+			<implementingClass usePrimitive="true">java.lang.Long</implementingClass>
+		</javaType>
+		<javaType name="STRING" setter="setString" getter="getString">
+			<implementingClass>java.lang.String</implementingClass>
+		</javaType>
+		<javaType name="INT" setter="setInt" getter="getInt">
+			<implementingClass usePrimitive="true">java.lang.Integer</implementingClass>
+		</javaType>
+		<javaType name="SHORT" setter="setShort" getter="getShort">
+			<implementingClass usePrimitive="true">java.lang.Short</implementingClass>
+		</javaType>
+		<javaType name="DATE" setter="setDate" getter="getDate">
+			<implementingClass>java.util.Date</implementingClass>
+		</javaType>
+		<javaType name="BLOB" setter="setBlob" getter="getBlob">
+			<implementingClass>java.sql.Blob</implementingClass>
+		</javaType>
+		<javaType name="CLOB" setter="setClob" getter="getClob">
+			<implementingClass>java.sql.Clob</implementingClass>
+		</javaType>
+		<javaType name="FLOAT" setter="setFloat" getter="getFloat">
+			<implementingClass usePrimitive="true">java.lang.Float</implementingClass>
+		</javaType>
+		<javaType name="SQLDATE" setter="setDate" getter="getDate">
+			<implementingClass>java.sql.Date</implementingClass>
+		</javaType>
+		<javaType name="DOUBLE" setter="setDouble" getter="getDouble">
+			<implementingClass usePrimitive="true">java.lang.Double</implementingClass>
+		</javaType>
+		<javaType name="STRUCT" setter="setObject" getter="getObject">
+			<implementingClass>java.sql.Struct</implementingClass>
+		</javaType>
+		<javaType name="CHAR" setter="setString" getter="getString">
+			<implementingClass usePrimitive="true">java.lang.Character</implementingClass>
+		</javaType>
+		<javaType name="SQLTIME" setter="setTime" getter="getTime">
+			<implementingClass>java.sql.Time</implementingClass>
+		</javaType>
+		<javaType name="BIGDECIMAL" setter="setBigDecimal" getter="getBigDecimal">
+			<implementingClass>java.math.BigDecimal</implementingClass>
+		</javaType>
+		<javaType name="BYTESEQ" setter="setBytes" getter="getBytes" alternateName="byte array">
+			<implementingClass usePrimitive="true" isArray="true">java.lang.Byte</implementingClass>
+		</javaType>
+		<javaType name="BYTE" setter="setByte" getter="getByte">
+			<implementingClass usePrimitive="true">java.lang.Byte</implementingClass>
+		</javaType>
+		<javaType name="Reader" setter="setCharacterStream" getter="getCharacterStream">
+			<implementingClass>java.io.Reader</implementingClass>
+		</javaType>
+		<javaType name="SQLXML" setter="setString" getter="getSQLXML">
+			<implementingClass>java.sql.SQLXML</implementingClass>
+		</javaType>
+	</defaultTypeDefinition>
+	<typeMapping>
+		<jdbcType name="BIGINT" >
+			<javaType name="LONG" />
+			<javaType name="STRING"/>
+			<javaType name="OBJECT" />
+		</jdbcType>
+		<jdbcType name="BIT" >
+			<javaType name="BOOLEAN" />
+			<javaType name="STRING" />
+			<javaType name="OBJECT" />
+		</jdbcType>
+		<jdbcType name="TINYINT" >
+			<javaType name="BYTE" />
+			<javaType name="INT" />
+			<javaType name="STRING" />
+			<javaType name="OBJECT" />
+		</jdbcType>
+		<jdbcType name="SMALLINT" >
+			<javaType name="SHORT" />
+			<javaType name="INT" />
+			<javaType name="STRING" />
+			<javaType name="OBJECT" />
+		</jdbcType>
+		<jdbcType name="INTEGER" >
+			<javaType name="INT" />
+			<javaType name="STRING" />
+			<javaType name="OBJECT" />
+		</jdbcType>
+		<jdbcType name="FLOAT" >
+			<javaType name="DOUBLE" />
+			<javaType name="STRING" />
+			<javaType name="OBJECT" />
+		</jdbcType>
+		<jdbcType name="REAL" >
+			<javaType name="FLOAT"  />
+			<javaType name="STRING"  />
+			<javaType name="OBJECT"  />
+		</jdbcType>
+		<jdbcType name="DOUBLE" >
+			<javaType name="DOUBLE"  />
+			<javaType name="STRING"  />
+			<javaType name="OBJECT"  />
+		</jdbcType>
+		<jdbcType name="NUMERIC" typeClassName="com.wm.adapter.wmjdbc.config.impl.DecimalType">
+			<javaType name="BIGDECIMAL"  />
+			<javaType name="STRING"  />
+			<javaType name="OBJECT"  />
+		</jdbcType>
+		<jdbcType name="DECIMAL" typeClassName="com.wm.adapter.wmjdbc.config.impl.DecimalType">
+			<javaType name="BIGDECIMAL"  />
+			<javaType name="STRING"  />
+			<javaType name="OBJECT"  />
+		</jdbcType>
+		<jdbcType name="CHAR" >
+			<javaType name="STRING"  />
+			<javaType name="CHAR"  />
+			<javaType name="OBJECT"  />
+		</jdbcType>
+		<jdbcType name="NCHAR" >
+			<javaType name="STRING"  />
+			<javaType name="CHAR"  />
+			<javaType name="OBJECT"  />
+		</jdbcType>
+		<jdbcType name="VARCHAR" >
+			<javaType name="STRING"  />
+			<javaType name="OBJECT"  />
+		</jdbcType>
+		<jdbcType name="LONGVARCHAR" >
+			<javaType name="STRING"  />
+			<javaType name="OBJECT"  />
+		</jdbcType>
+		<jdbcType name="LONGNVARCHAR" >
+			<javaType name="STRING"  />
+			<javaType name="OBJECT"  />
+		</jdbcType>
+		<jdbcType name="DATE" typeClassName="com.wm.adapter.wmjdbc.config.impl.DateType">
+			<javaType name="SQLDATE"  />
+			<javaType name="DATE"  />
+			<javaType name="STRING"  />
+			<javaType name="OBJECT"  />
+		</jdbcType>
+		<jdbcType name="TIME" typeClassName="com.wm.adapter.wmjdbc.config.impl.TimeType">
+			<javaType name="SQLTIME"  />
+			<javaType name="DATE"  />
+			<javaType name="STRING"  />
+			<javaType name="OBJECT"  />
+		</jdbcType>
+		<jdbcType name="TIMESTAMP" typeClassName="com.wm.adapter.wmjdbc.config.impl.TimeStampType">
+			<javaType name="SQLTIMESTAMP"  />
+			<javaType name="DATE"  />
+			<javaType name="STRING"  />
+			<javaType name="OBJECT"  />
+		</jdbcType>
+		<jdbcType name="BINARY" >
+			<javaType name="BYTESEQ"  />
+			<javaType name="OBJECT"  />
+		</jdbcType>
+		<jdbcType name="VARBINARY" >
+			<javaType name="BYTESEQ"  />
+			<javaType name="OBJECT"  />
+		</jdbcType>
+		<jdbcType name="LONGVARBINARY" >
+			<javaType name="BYTESEQ"  />
+			<javaType name="OBJECT"  />
+		</jdbcType>
+		<jdbcType name="OTHER" typeClassName="com.wm.adapter.wmjdbc.config.impl.OtherType">
+			<javaType name="STRING"  />
+			<javaType name="OBJECT"  />
+			<javaType name="STRUCT"  />
+			<javaType name="ARRAY"  />
+		</jdbcType>
+		<jdbcType name="NULL" >
+			<javaType name="STRING"  />
+			<javaType name="OBJECT"  />
+		</jdbcType>
+		<jdbcType name="NVARCHAR">
+			<javaType name="STRING"/>
+			<javaType name="OBJECT"/>
+		</jdbcType>
+		<jdbcType name="CLOB">
+			<javaType name="CLOB"/>
+			<javaType name="STRING"/>
+			<javaType name="Reader"/>
+			<javaType name="OBJECT"/>
+		</jdbcType> 
+	 	<jdbcType name="BLOB">
+			<javaType name="BLOB"/>
+			<javaType name="BYTESEQ"/>
+			<javaType name="InputStream"/>
+			<javaType name="OBJECT"/>
+		</jdbcType>
+		<jdbcType name="ARRAY">
+			<javaType name="ARRAY"/>
+			<javaType name="OBJECT"/>
+		</jdbcType>
+		<jdbcType name="STRUCT" typeClassName="com.wm.adapter.wmjdbc.config.impl.StructType">
+			<javaType name="STRUCT"/>
+			<javaType name="OBJECT"/>
+		</jdbcType>
+		<jdbcType name="BOOLEAN">
+			<javaType name="BOOLEAN"/>
+			<javaType name="STRING"/>
+			<javaType name="OBJECT"/>
+		</jdbcType>
+	</typeMapping>
+</databaseConfiguration>

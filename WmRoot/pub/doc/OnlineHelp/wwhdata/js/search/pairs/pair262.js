@@ -1,0 +1,25 @@
+function FileData_Pairs(x)
+{
+x.t("efficiently","addressed");
+x.t("within","efficiently");
+x.t("addressed","linked");
+x.t("expresses","document");
+x.t("tree-like","structure");
+x.t("parsing","operation");
+x.t("document","tree-like");
+x.t("document","result");
+x.t("operation","node");
+x.t("allows","data");
+x.t("linked","services");
+x.t("representation","xml");
+x.t("xml","document");
+x.t("xml","node");
+x.t("node","expresses");
+x.t("node","xml");
+x.t("node","element-based");
+x.t("element-based","representation");
+x.t("services","parsing");
+x.t("data","within");
+x.t("result","parsing");
+x.t("structure","allows");
+}

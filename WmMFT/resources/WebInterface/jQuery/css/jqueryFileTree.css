@@ -1,0 +1,2580 @@
+body
+{
+    margin: 5px;
+    padding: 0px 5px 10px 5px;
+    border: 1px solid #eee;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border-radius: 10px 10px 10px 10px;
+    font-family: Verdana, sans-serif;
+    font-size: 11px;
+	overflow-x:hidden;
+    -webkit-text-size-adjust: 100%;
+}
+
+.mainContentHolder
+{
+    padding-bottom: 10px;
+}
+
+a, a:visited
+{
+    color: #051E42;
+}
+a:hover, a:active
+{
+    color: #6C6C6C;
+}
+
+#filesListing
+{
+    margin: 0px 0px 10px 0px;
+    min-height: 100px;
+}
+
+#filesContainer, #filesContainerDiv
+{
+    margin: 0px;
+    padding: 0px;
+}
+
+#filesContainerDiv li
+{
+	list-style: none;
+}
+
+TR.jqueryFileTree
+{
+    font-family: Verdana, sans-serif;
+    font-size: 11px;
+    line-height: 25px;
+    padding: 0px;
+    margin: 0px;
+}
+
+TR.jqueryFileTree TD
+{
+    list-style: none;
+    padding: 0px;
+    padding-left: 20px;
+    margin: 0px; /*	white-space: nowrap;*/
+    vertical-align: top;
+}
+
+TD.directory A
+{
+    color: #333;
+    text-decoration: underline;
+    display: block;
+    padding: 0px 20px;
+}
+
+TD.file A
+{
+    color: #333;
+    text-decoration: underline;
+    padding: 0px 20px 0px 5px;
+}
+
+.iconPreviewLink
+{
+    color: #333;
+    text-decoration: underline;
+    padding: 0px 20px 0px 5px;
+}
+
+.rowHover
+{
+    background-color: #BDF !important;
+}
+
+.rowHoverFixed
+{
+    background-color: #BDF !important;
+}
+
+.rowHover2
+{
+    background-color: #EDF4FB !important;
+}
+
+/* Generic context menu styles */
+.contextMenu
+{
+    position: absolute;
+    width: 170px;
+    z-index: 99999;
+    border: solid 1px #CCC;
+    background: #FFF;
+    padding: 0px;
+    margin: 0px;
+    display: none;
+    font-family: Verdana,sans-serif;
+    font-size: 11px;
+}
+
+.contextMenu LI
+{
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+	overflow:hidden;
+}
+
+.contextMenu A
+{
+    color: #333;
+    text-decoration: none;
+    display: block;
+    line-height: 20px;
+    height: 20px;
+    background-position: 6px center;
+    background-repeat: no-repeat;
+    outline: none;
+    padding: 1px 5px;
+    padding-left: 28px;
+}
+
+.contextMenu LI.hover A
+{
+    color: #FFF;
+    background-color: #3399FF;
+}
+
+.contextMenu LI.disabled A
+{
+    color: #AAA;
+    cursor: default;
+}
+
+.contextMenu LI.hover.disabled A
+{
+    background-color: transparent;
+}
+
+.contextMenu LI.separator
+{
+    border-top: solid 1px #CCC;
+}
+
+/*
+	Adding Icons
+
+	You can add icons to the context menu by adding
+	classes to the respective LI element(s)
+*/
+
+.contextMenu LI A
+{
+	background-image: url(/WebInterface/jQuery/images/bullet_go.png);
+}
+
+.contextMenu LI.edit A
+{
+    background-image: url(/WebInterface/jQuery/images/page_white_edit.png);
+}
+.contextMenu LI.rename A
+{
+    background-image: url(/WebInterface/jQuery/images/rename.png);
+}
+.contextMenu LI.cut A
+{
+    background-image: url(/WebInterface/jQuery/images/cut.png);
+}
+.contextMenu LI.copy A
+{
+    background-image: url(/WebInterface/jQuery/images/page_white_copy.png);
+}
+.contextMenu LI.paste A
+{
+    background-image: url(/WebInterface/jQuery/images/page_white_paste.png);
+}
+.contextMenu LI.delete A
+{
+    background-image: url(/WebInterface/jQuery/images/page_white_delete.png);
+}
+.contextMenu LI.share A
+{
+    background-image: url(/WebInterface/jQuery/images/application_form_add.png);
+}
+.contextMenu LI.copylink A, .contextMenu LI.copydirectlink A
+{
+    background-image: url(/WebInterface/jQuery/images/page_white_link.png);
+}
+.contextMenu LI.quit A
+{
+    background-image: url(/WebInterface/jQuery/images/door.png);
+}
+.contextMenu LI.zip A, .contextMenu LI.zipdownload A, .contextMenu LI.zipitems A
+{
+    background-image: url(/WebInterface/jQuery/images/zipper.png);
+}
+.contextMenu LI.createfolder A
+{
+    background-image: url(/WebInterface/jQuery/images/folder_add.png);
+}
+.contextMenu LI.search A
+{
+    background-image: url(/WebInterface/jQuery/images/magnifier.png);
+}
+.contextMenu LI.useroptions A
+{
+    background-image: url(/WebInterface/jQuery/images/user_edit.png);
+}
+.contextMenu LI.slideshow A
+{
+    background-image: url(/WebInterface/jQuery/images/fullscreen.png);
+}
+.contextMenu LI.showbasket A
+{
+    background-image: url(/WebInterface/jQuery/images/basket_go.png);
+}
+.contextMenu LI.addtobasket A
+{
+    background-image: url(/WebInterface/jQuery/images/basket_add.png);
+}
+.contextMenu LI.help A
+{
+    background-image: url(/WebInterface/jQuery/images/help.png);
+}
+.contextMenu LI.login A
+{
+    background-image: url(/WebInterface/jQuery/images/bullet_green.png);
+}
+.contextMenu LI.logout A
+{
+    background-image: url(/WebInterface/jQuery/images/bullet_red.png);
+}
+.contextMenu LI.download A
+{
+    background-image: url(/WebInterface/jQuery/images/download.png);
+}
+.contextMenu LI.toggle A
+{
+    background-image: url(/WebInterface/jQuery/images/toggle.png);
+}
+.contextMenu LI.checkall A
+{
+    background-image: url(/WebInterface/jQuery/images/check-box.png);
+}
+.contextMenu LI.uncheckall A
+{
+    background-image: url(/WebInterface/jQuery/images/uncheck.png);
+}
+.contextMenu LI.addToBasket A
+{
+    background-image: url(/WebInterface/jQuery/images/basket_add.png);
+}
+.contextMenu LI.showDownloadBasket A
+{
+    background-image: url(/WebInterface/jQuery/images/basket_go.png);
+}
+.contextMenu LI.makedir A
+{
+    background-image: url(/WebInterface/jQuery/images/directory.png);
+}
+.contextMenu LI.browseruploader A,.contextMenu LI.upload A
+{
+    background-image: url(/WebInterface/jQuery/images/upload.png);
+}
+.contextMenu LI.manageshares A
+{
+    background-image: url(/WebInterface/jQuery/images/email_edit.png);
+}
+.contextMenu LI.updatekeywords A
+{
+    background-image: url(/WebInterface/jQuery/images/table_edit.png);
+}
+.contextMenu LI.quickview A
+{
+    background-image: url(/WebInterface/jQuery/images/pictures.png);
+}
+.contextMenu LI.checkallFiles A
+{
+    background-image: url(/WebInterface/jQuery/images/page_white_copy.png);
+}
+.contextMenu LI.checkallFolders A
+{
+    background-image: url(/WebInterface/jQuery/images/directory.png);
+}
+.contextMenu LI.checkItemsWithDot A
+{
+    background-image: url(/WebInterface/jQuery/images/file.png);
+}
+.contextMenu LI.checkToday A, .contextMenu LI.checkWeek A, .contextMenu LI.checkMonth A, .contextMenu LI.checkLastTwoMonth A, .contextMenu LI.checkLastThreeMonth A
+{
+    background-image: url(/WebInterface/jQuery/images/calendar.png);
+}
+.disabled
+{
+    background-color: #eee !important;
+}
+
+/* Core Styles */
+.jqueryFileTree TD.directory a
+{
+    background: url(/WebInterface/jQuery/images/directory.png) left top no-repeat;
+    background-position: 0 4px;
+}
+.jqueryFileTree TD.expanded a
+{
+    background: url(/WebInterface/jQuery/images/folder_open.png) left top no-repeat;
+    background-position: 0 4px;
+}
+.jqueryFileTree TD.file
+{
+    /*background: url(/WebInterface/jQuery/images/file.png) left top no-repeat;*/
+    background-position: 20px 4px;
+}
+
+.wait
+{
+    /*background: url(/WebInterface/jQuery/images/spinner.gif) left no-repeat;*/
+    background-position: 0 4px;
+    font-size: 11px;
+    text-align: left !important;
+    padding-left: 18px;
+    height: 17px;
+    z-index: 999;
+}
+
+.bouncing_loader
+{
+    background: url(/WebInterface/jQuery/images/bouncing_loader.gif) right no-repeat;
+    background-position: 100% 50%;
+    padding-right: 21px !important;
+}
+
+/* Table structure*/
+.jqueryFilesTable
+{
+    width: 100%;
+    padding: 5px;
+    margin: 0px;
+    border-left: 1px solid #eee;
+    border-right: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+}
+
+.jqueryFilesTable thead td
+{
+    background: #eee;
+    padding: 5px;
+    font-size: 12px;
+    font-weight: bolder;
+    vertical-align: middle;
+}
+
+.jqueryFilesTable td
+{
+    border-right: 1px solid #eee;
+}
+
+.thSelect, .columnSelect, .thSelectBox
+{
+    width: 5px;
+    padding: 0px !important;
+    text-align: center !important;
+}
+.thName, .columnName
+{
+    max-width: 45%;
+    text-align: left;
+}
+.thSize, .columnSize
+{
+    max-width: 15%;
+    text-align: center;
+    padding-left: 0px !important;
+}
+
+.thModified, .columnModified
+{
+    max-width: 15%;
+    text-align: center;
+    padding-left: 0px !important;
+}
+
+.thKeywords, .columnKeywords
+{
+    max-width: 23%;
+    text-align: left;
+    overflow: hidden !important;
+}
+
+.columnName, .columnKeywords
+{
+    text-align: left;
+}
+
+.columnName a
+{
+	text-decoration:none !important;
+}
+
+.columnSelect
+{
+    padding-left: 0px !important;
+    text-align: center;
+}
+
+.columnSize, .columnModified
+{
+    text-align: center;
+}
+
+td.subdirectory
+{
+    background-position: 20px 4px !important;
+    padding-left: 40px !important;
+    background-repeat: no-repeat !important;
+}
+
+.customForm
+{
+    border-top: 1px solid #FFF;
+	width:100%;
+	font-size:13px;
+}
+
+.customForm td
+{
+    border-bottom: 1px solid #eee;
+    padding: 5px 0px;
+    vertical-align: top;
+}
+
+
+.customForm .formVal
+{
+    padding: 7px 5px 7px 0px;
+}
+
+.customForm .formLabel
+{
+    text-align: right;
+    padding: 7px 5px 7px 0px;
+    min-width: 120px;
+}
+
+/*Breadcrumbs*/
+#crumbs, #crumbs li
+{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+#crumbs
+{
+    height: 25px;
+    border: 1px solid #dedede;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    font: 13px "Lucida Grande" , Lucida, Verdana, sans-serif;
+}
+#crumbs li
+{
+    float: left;
+    line-height: 25px;
+    color: #777;
+    padding-left: .75em;
+}
+#crumbs li a
+{
+    background: url(/WebInterface/jQuery/images/crumbs.gif) no-repeat right center;
+    display: block;
+    padding: 0 19px 0 0;
+}
+#crumbs li.home
+{
+    background: url("/WebInterface/jQuery/images/home.png" ) no-repeat scroll 5px 5px transparent;
+    padding-left: 25px;
+}
+#crumbs li a:link, #crumbs li a:visited
+{
+    text-decoration: none;
+}
+
+.filterPanel
+{
+    font: 12px "Lucida Grande" , Lucida, Verdana, sans-serif;
+    margin: 5px 0px 5px 5px;
+    float: left;
+}
+
+.filterPanel a, .filterPanel a:visited
+{
+    color: #777;
+    text-decoration: underline;
+}
+
+.viewSelectorPanel
+{
+    font: 12px "Lucida Grande" , Lucida, Verdana, sans-serif;
+    margin-right: 10px;
+    line-height: 17px;
+    height: 3px;
+}
+
+.viewSelectorPanel #slider
+{
+	margin:8px 5px 0px 0px;
+}
+
+.viewSelectorPanel a.viewlink, .viewSelectorPanel a.viewlink:visited
+{
+    color: Black;
+    font-size: 10px;
+    margin: 5px;
+	margin-left:10px;
+}
+.clear
+{
+    clear: both;
+}
+
+.selectionLink, .pageSizeSelectionLink
+{
+    padding-left: 18px;
+    display: inline-block;
+	line-height: 22px;
+    margin-left: 5px;
+    padding-left: 20px;
+}
+
+.selectionLink
+{
+	background: url(/WebInterface/jQuery/images/settings.png) no-repeat left 2px;
+}
+
+.pageSizeSelectionLink
+{
+	background: url(/WebInterface/jQuery/images/ui-paginator.png) no-repeat left 3px;
+	padding-left: 17px;
+}
+
+.treeViewLink
+{
+    background: url(/WebInterface/jQuery/images/tree_view.png) no-repeat left 2px;
+    padding-left: 18px;
+    display: block;
+    float: right;
+}
+
+.thumbnailViewLink
+{
+    background: url(/WebInterface/jQuery/images/thumb_view.png) no-repeat left 2px;
+    padding-left: 19px;
+    display: block;
+    float: right;
+}
+
+#slider
+{
+    display: none;
+    float: right;
+    margin-top: 6px;
+    margin-right: 15px;
+}
+
+.saveButton
+{
+    background: url("/WebInterface/jQuery/images/accept.png" ) no-repeat 0px 6px transparent;
+    padding-left: 18px;
+    margin-left: 2px;
+    overflow: hidden;
+    float: left;
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 11px;
+    line-height: 25px;
+}
+
+.cancelButton,.refreshBtn
+{
+    margin-left: 5px;
+    background: url("/WebInterface/jQuery/images/cancel.png" ) no-repeat scroll 0 6px transparent;
+    padding-left: 18px;
+    margin-left: 4px;
+    overflow: hidden;
+    float: left;
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 11px;
+    line-height: 25px;
+}
+.refreshBtn
+{
+    background: url("/WebInterface/jQuery/images/refresh.png" ) no-repeat scroll 0 6px transparent;
+    float: right;
+}
+
+.expandButton, .refreshButton, .previewIcon
+{
+    cursor: pointer;
+    display: block;
+    float: left;
+    height: 16px;
+    margin: 3px 0 0 -20px;
+    width: 16px;
+}
+
+.rotateImgClockwise, .rotateImgCounterClockwise
+{
+    margin-right: 5px;
+    width: 18px;
+    overflow: hidden;
+    height: 18px;
+    display: block;
+    cursor: pointer;
+    position: absolute;
+    bottom: 5px;
+    right:30px;
+}
+
+.rotateImgClockwise
+{
+    background: url(/WebInterface/jQuery/images/arrow_rotate_clockwise.png) no-repeat left 3px;
+    right:50px;
+}
+
+.rotateImgCounterClockwise
+{
+    background: url(/WebInterface/jQuery/images/arrow_rotate_anticlockwise.png) no-repeat left 3px;
+}
+
+
+.previewIcon
+{
+    margin-left: 0px;
+    width: 20px;
+    overflow: hidden;
+    height: 18px;
+    display: block;
+	text-align:center;
+}
+
+.previewIcon img
+{
+    height: 16px !important;
+}
+
+.refreshButton
+{
+    margin: 5px 0 0 5px;
+	display:block;
+	/*right:15px;
+	position:absolute;*/
+}
+
+.renameField
+{
+    float: left;
+    height: 18px;
+    padding: 0px;
+    margin: 0px;
+    width: 200px;
+}
+
+table.tablesorter .header
+{
+    background-repeat: no-repeat;
+    border-left: 1px solid #FFF;
+    border-top: 1px solid #FFF;
+    padding-left: 10px;
+    height: auto;
+    cursor: pointer;
+}
+
+table.tablesorter .headerSortUp
+{
+    background-image: url(/WebInterface/jQuery/images/bullet_arrow_up.png);
+    background-repeat: no-repeat;
+    background-position: right;
+}
+
+table.tablesorter .headerSortDown
+{
+    background-image: url(/WebInterface/jQuery/images/bullet_arrow_down.png);
+    background-repeat: no-repeat;
+    background-position: right;
+}
+
+/* File Extensions*/
+.jqueryFileTree TD.ext_3gp
+{
+    background: url(/WebInterface/jQuery/images/film.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_afp
+{
+    background: url(/WebInterface/jQuery/images/code.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_afpa
+{
+    background: url(/WebInterface/jQuery/images/code.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_asp
+{
+    background: url(/WebInterface/jQuery/images/code.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_aspx
+{
+    background: url(/WebInterface/jQuery/images/code.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_avi
+{
+    background: url(/WebInterface/jQuery/images/film.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_bat
+{
+    background: url(/WebInterface/jQuery/images/application.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_bmp
+{
+    background: url(/WebInterface/jQuery/images/picture.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_c
+{
+    background: url(/WebInterface/jQuery/images/code.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_cfm
+{
+    background: url(/WebInterface/jQuery/images/code.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_cgi
+{
+    background: url(/WebInterface/jQuery/images/code.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_com
+{
+    background: url(/WebInterface/jQuery/images/application.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_cpp
+{
+    background: url(/WebInterface/jQuery/images/code.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_css
+{
+    background: url(/WebInterface/jQuery/images/css.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_doc
+{
+    background: url(/WebInterface/jQuery/images/doc.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_exe
+{
+    background: url(/WebInterface/jQuery/images/application.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_gif
+{
+    background: url(/WebInterface/jQuery/images/picture.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_fla
+{
+    background: url(/WebInterface/jQuery/images/flash.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_h
+{
+    background: url(/WebInterface/jQuery/images/code.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_htm
+{
+    background: url(/WebInterface/jQuery/images/html.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_html
+{
+    background: url(/WebInterface/jQuery/images/html.png) left top no-repeat;
+    background-position: 20px 3px;
+}
+.jqueryFileTree TD.ext_jar
+{
+    background: url(/WebInterface/jQuery/images/java.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_jpg
+{
+    background: url(/WebInterface/jQuery/images/picture.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_jpeg
+{
+    background: url(/WebInterface/jQuery/images/picture.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_js
+{
+    background: url(/WebInterface/jQuery/images/script.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_lasso
+{
+    background: url(/WebInterface/jQuery/images/code.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_log
+{
+    background: url(/WebInterface/jQuery/images/txt.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_m4p
+{
+    background: url(/WebInterface/jQuery/images/music.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_mov
+{
+    background: url(/WebInterface/jQuery/images/film.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_mp3
+{
+    background: url(/WebInterface/jQuery/images/music.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_mp4
+{
+    background: url(/WebInterface/jQuery/images/film.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_mpg
+{
+    background: url(/WebInterface/jQuery/images/film.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_mpeg
+{
+    background: url(/WebInterface/jQuery/images/film.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_ogg
+{
+    background: url(/WebInterface/jQuery/images/music.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_pcx
+{
+    background: url(/WebInterface/jQuery/images/picture.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_pdf
+{
+    background: url(/WebInterface/jQuery/images/pdf.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_php
+{
+    background: url(/WebInterface/jQuery/images/php.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_png
+{
+    background: url(/WebInterface/jQuery/images/picture.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_ppt
+{
+    background: url(/WebInterface/jQuery/images/ppt.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_psd
+{
+    background: url(/WebInterface/jQuery/images/psd.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_pl
+{
+    background: url(/WebInterface/jQuery/images/script.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_py
+{
+    background: url(/WebInterface/jQuery/images/script.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_rb
+{
+    background: url(/WebInterface/jQuery/images/ruby.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_rbx
+{
+    background: url(/WebInterface/jQuery/images/ruby.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_rhtml
+{
+    background: url(/WebInterface/jQuery/images/ruby.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_rpm
+{
+    background: url(/WebInterface/jQuery/images/linux.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_ruby
+{
+    background: url(/WebInterface/jQuery/images/ruby.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_sql
+{
+    background: url(/WebInterface/jQuery/images/db.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_swf
+{
+    background: url(/WebInterface/jQuery/images/flash.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_tif
+{
+    background: url(/WebInterface/jQuery/images/picture.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_tiff
+{
+    background: url(/WebInterface/jQuery/images/picture.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_txt
+{
+    background: url(/WebInterface/jQuery/images/txt.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_vb
+{
+    background: url(/WebInterface/jQuery/images/code.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_wav
+{
+    background: url(/WebInterface/jQuery/images/music.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_wmv
+{
+    background: url(/WebInterface/jQuery/images/film.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_xls
+{
+    background: url(/WebInterface/jQuery/images/xls.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_xml
+{
+    background: url(/WebInterface/jQuery/images/code.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+.jqueryFileTree TD.ext_zip
+{
+    background: url(/WebInterface/jQuery/images/zip.png) left top no-repeat;
+    background-position: 20px 4px;
+}
+
+/*Boxes selectors*/
+.fileBox, .fileBoxBasket
+{
+    float: left;
+    margin: 2px;
+    padding: 8px;
+    overflow: hidden;
+    position: relative;
+    border: solid 1px transparent;
+	text-align: center;
+}
+
+.fileBox
+{
+	padding: 8px;
+}
+
+.fileBoxBasket
+{
+	padding: 7px;
+}
+
+.fileBox:hover, .fileBoxBasket:hover
+{
+    border: solid 1px #951919;
+}
+
+.fileBox .imgBox, .fileBoxBasket .imgBox
+{
+    text-align: center;
+    overflow: hidden;
+    border: solid 1px #ccc;
+    cursor: pointer;
+	display:inline-block;
+	width:99%;
+	-moz-box-shadow: 3px 2px 4px #ccc;
+	-webkit-box-shadow: 3px 2px 4px #ccc;
+	box-shadow: 3px 2px 4px #ccc;
+	margin-bottom:3px;
+}
+
+.fileBox .imgBox
+{
+	margin-bottom:3px;
+}
+
+.fileBoxBasket .imgBox
+{
+	margin-bottom:4px;
+}
+
+.fileBox .fileSelectionMark, .fileBoxBasket .fileSelectionMark
+{
+	display:none;
+}
+.fileBoxSelected
+{
+	border: solid 1px #CCC;
+	-moz-box-shadow: 2px 1px 3px #CCC;
+	-webkit-box-shadow: 2px 1px 3px #CCC;
+	box-shadow: 2px 1px 3px #CCC;
+	background-color:#FEFFD3;
+}
+.fileBoxSelected .fileSelectionMark, .fileRemoveFromBasket, .fileRemoveFromBasketTree, .fileBoxSelected .fileSelectionMark
+{
+	background-image: url(/WebInterface/jQuery/images/checkmark.png);
+    background-position: right -2px;
+    background-repeat: no-repeat;
+	position:absolute;
+	right:11px;
+	top:11px;
+	width:16px;
+	height:16px;
+	display:inline-block;
+}
+
+#basketFilesContainerThumb .fileSelectionMark
+{
+	left:12px;
+	right:auto;
+}
+
+.fileBoxSelected div
+{
+	background-color:#FEFFD3 !important;
+}
+
+.fileRemoveFromBasket, .fileRemoveFromBasketTree
+{
+	background-image: url(/WebInterface/jQuery/images/cancel.png);
+	cursor:pointer;
+	background-position: right 0px;
+	right:-3px;
+	top:15px;
+}
+
+.fileRemoveFromBasketTree
+{
+	position:relative;
+	right:auto;
+	top:2px;
+	left:-2px;
+}
+
+.fileBoxBasket .imgWrapper
+{
+	padding:0px;
+}
+
+.fileBox .imgWrapper
+{
+	padding:0px;
+}
+
+.imgWrapper
+{
+	padding:0px;
+	margin:1px;
+	width:98%;
+	overflow:hidden;
+	display:inline-block;
+}
+
+.imgBox table
+{
+    height: 100%;
+}
+
+.fileBox .imgBox img, .fileBoxBasket .imgBox img
+{
+    padding:0px;
+}
+
+.fileBox .imgBox .imgLink, .fileBoxBasket .imgBox .imgLink
+{
+    border: 0px;
+    color: black;
+}
+
+.fileBox a, .fileBox a:visited, .fileBoxBasket a, .fileBox a:visited
+{
+    color: Black;
+}
+
+.fileBox .imgTitle, .fileBoxBasket .imgTitle
+{
+    text-align: center;
+    font-size: 11px;
+    height: 55px;
+    padding-top: 0px;
+}
+
+.tipsy
+{
+    padding: 5px;
+    font-size: 10px;
+}
+.tipsy-inner
+{
+    padding: 5px 8px 4px 8px;
+    background-color: #ffffee;
+    color: black;
+    max-width: 700px;
+    border: 1px solid #a6c9e2;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    z-index: 9999;
+    font-size: 11px;
+    white-space: pre-wrap; /* css-3 */
+    white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+    white-space: -pre-wrap; /* Opera 4-6 */
+    white-space: -o-pre-wrap; /* Opera 7 */
+    word-wrap: break-word; /* Internet Explorer 5.5+ */
+}
+
+.tipsy-inner img
+{
+    text-align: center;
+    max-width: 600px;
+    max-height: 350px;
+}
+
+#thumbRenamePanel h2
+{
+    margin: 0px;
+    margin-bottom: 15px;
+    padding: 0px;
+    font-size: 13px;
+    font-weight: bolder;
+}
+
+#thumbRenamePanel input
+{
+    width: 285px;
+    margin-bottom: 10px;
+}
+
+.poweredby
+{
+    color: #2D2D2D;
+    font-size: 11px;
+    text-align: left;
+}
+.copyright
+{
+    color: #B8B8B8;
+    font-size: 11px;
+    text-align: right;
+}
+
+.backToTop
+{
+    background-image: url(/WebInterface/jQuery/images/arrow_turn_up.png);
+    background-position: 0px 0px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    padding-left: 20px;
+}
+
+/*Main Navigation Bar Menu*/
+.mainNavigation
+{
+    padding: 0px;
+    margin: 3px 0px;
+    background-color: #000;
+    border: 1px solid #eee;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    background-color: #F5B451;
+	display:none;
+}
+
+.mainNavigation a img{
+    border: none !important;
+}
+
+ul.topnav
+{
+    list-style: none;
+    padding: 2px 0px;
+    margin: 0 5px 0 5px;
+    float: left;
+    font-size: 11px;
+}
+ul.topnav li
+{
+    float: left;
+    margin: 0;
+    padding: 0;
+    position: relative; /*--Declare X and Y axis base for sub navigation--*/
+    border-right: 1px solid #eee;
+}
+ul.topnav li a
+{
+    padding: 5px 10px;
+    color: #000;
+    display: block;
+    text-decoration: none;
+    float: left;
+    font-size: 12px;
+}
+ul.topnav li a:hover
+{
+    text-decoration: underline;
+    background-color: #eee;
+}
+ul.topnav li span
+{
+    /*--Drop down trigger styles--*/
+    width: 17px;
+    height: 25px;
+    float: left;
+    background-color: #C6DD82;
+    cursor: pointer;
+}
+/*ul.topnav li span.subhover {background-position: center bottom; cursor: pointer;} /*--Hover effect for trigger--*/
+ul.topnav li ul.subnav
+{
+    list-style: none;
+    position: absolute; /*--Important - Keeps subnav from affecting main navigation flow--*/
+    left: 0;
+    top: 35px;
+    background: #fff;
+    margin: 0;
+    padding: 0;
+    display: none;
+    float: left;
+    width: 170px;
+    border: 1px solid #eee;
+}
+ul.topnav li ul.subnav li
+{
+    margin: 0;
+    padding: 0; /*border-top: 1px solid #252525; /*--Create bevel effect--*/ /*border-bottom: 1px solid #444; /*--Create bevel effect--*/
+    clear: both;
+    width: 170px;
+}
+html ul.topnav li ul.subnav li a
+{
+    float: left;
+    width: 145px;
+    background-color: #C6DD82;
+    padding-left: 20px;
+    border-bottom: 1px solid #eee;
+}
+html ul.topnav li ul.subnav li a:hover
+{
+    /*--Hover effect for subnav links--*/
+    background-color: #C6DD82;
+}
+
+#popupContent
+{
+    display: none;
+}
+
+h2
+{
+    padding: 0px;
+    margin: 0px;
+    font-weight: bolder;
+    font-size: 13px;
+    text-align: center;
+}
+
+.popupHeader
+{
+    padding: 4px;
+    background-color: #F1EEEE;
+    -moz-border-radius: 0.5em;
+    -webkit-border-radius: 0.5em;
+}
+
+.buttonPanel
+{
+    margin: 10px 0px;
+    text-align: left;
+}
+
+.closeButton
+{
+    height: 16px;
+    width: 16px;
+    border: 0px;
+    float: right;
+    cursor: pointer;
+    margin-right: -12px;
+    margin-top: -13px;
+}
+
+
+/*Growl Message*/
+div.growlUI
+{
+    background: url(/WebInterface/jQuery/images/check.png) no-repeat 10px 10px;
+}
+div.growlUI h1, div.growlUI h2
+{
+    padding: 5px 5px 5px 75px;
+    text-align: left;
+    font-size: 12px;
+}
+
+.growlError
+{
+    background: url(/WebInterface/jQuery/images/cancel2.png) no-repeat 10px 10px !important;
+}
+.growlWarning
+{
+    background: url(/WebInterface/jQuery/images/warning.png) no-repeat 10px 10px !important;
+}
+
+.starredMenu
+{
+    background: url(  "/WebInterface/jQuery/images/bullet_green.png" ) no-repeat scroll right top transparent;
+}
+
+
+#searchDiv td
+{
+    vertical-align: middle;
+    text-align: left;
+    font-size: 11px;
+}
+
+/* Tabular Presentation */
+.tbl
+{
+    color: #333333;
+    border-collapse: collapse;
+}
+
+.tbl td
+{
+    overflow: hidden !important;
+}
+
+.tbl td label
+{
+    padding: 0px;
+    margin: 0px;
+}
+
+.tbl td input
+{
+    padding: 0px;
+    margin: 0px;
+    vertical-align: middle;
+}
+.tblRow
+{
+    color: #333333;
+    background-color: #F7FAFC;
+}
+.tblRow td, .tblAltRow td
+{
+    padding: 5px;
+}
+.tblAltRow
+{
+    color: #284775;
+    background-color: White;
+}
+.pageHeader
+{
+    background-color: #E9EEF5;
+}
+.pageHeader td
+{
+    padding: 5px;
+    border-bottom: 5px solid white;
+}
+.pageHeader h2
+{
+    margin: 2px;
+    padding: 0px;
+    font-size: 15px;
+}
+/* End of Tabular Presentation*/
+
+.pointer
+{
+	cursor:pointer;
+}
+
+.error, .errorOverwrite
+{
+    color: #FF0000;
+    font-size: 11px;
+    text-align: left;
+}
+
+.requiredField
+{
+    font-size: 11px;
+    color: Red;
+}
+
+.validationFail
+{
+    border: 1px solid red;
+}
+
+a.error:hover, a.errorOverwrite:hover
+{
+    color: #A8B35E;
+}.error, .errorOverwrite
+{
+    color: #FF0000;
+    font-size: 11px;
+    text-align: left;
+}
+
+.requiredField
+{
+    font-size: 11px;
+    color: Red;
+}
+
+.validationFail
+{
+    border: 1px solid red;
+}
+
+a.error:hover, a.errorOverwrite:hover
+{
+    color: #A8B35E;
+}
+
+.popupNote
+{
+    color: #A8B35E;
+    text-decoration: underline;
+}
+
+#searchResultNotification, #selectionOfItemsOptions
+{
+    font-size: 11px;
+    text-align: left;
+    padding: 5px 0px 5px 23px;
+    background: url(/WebInterface/jQuery/images/folder_magnify.png) no-repeat 5px 1px #fffeee;
+    display: none;
+    color: Black;
+}
+
+#selectionOfItemsOptions
+{
+	background: url(/WebInterface/jQuery/images/help.png) no-repeat 5px 9px #fffeee;
+	padding-top:10px;
+	padding-bottom:10px;
+}
+
+#searchResultNotification a, #searchResultNotification a:visited, #selectionOfItemsOptions a, #selectionOfItemsOptions a:visited
+{
+    color: Black;
+}
+
+ul.filesSelected,ul.filesSelectedInBasket
+{
+    padding: 0px;
+    margin: 5px 0px;
+    text-align: left;
+    list-style: none;
+    font-size: 12px;
+    border-top: 1px solid #eee;
+    height: 360px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    /*width: 98%;*/
+}
+
+.filesSelectedInBasket
+{
+    text-align: left;
+    font-size: 12px;
+    height: 420px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.filesSelectedInBasket ul
+{
+	padding: 0px;
+    margin: 5px 0px;
+    text-align: left;
+    list-style: none;
+    border-top: 1px solid #eee;
+}
+
+.filesSelectedInBasket td
+{
+	padding:5px !important;
+}
+
+ul.groupedItems
+{
+	padding: 0px;
+    margin: 5px 0px 10px 0px;
+	list-style:none;
+}
+
+ul.groupedItems li
+{
+	padding: 0px;
+    margin: 2px;
+	list-style:none;
+	border: 1px solid #eee;
+}
+
+.progressBar
+{
+    width: 98%;
+}
+
+ul.filesSelected li, ul.filesSelectedInBasket li
+{
+    padding: 7px 0px 7px 14px;
+    clear: both;
+    background: url(/WebInterface/jQuery/images/bullet_green.png) no-repeat 0px 6px;
+    border-bottom: 1px solid #eee;
+}
+
+.upload,.shareUploadedItem, .shareAllUploaded
+{
+    margin: 10px 0px 0px 0px;
+    font-size: 11px;
+    text-align: left;
+    padding: 5px 5px 5px 23px;
+    background: url(/WebInterface/jQuery/images/upload.png) no-repeat 5px 4px;
+    color: #000 !important;
+    /*float: right;*/
+}
+
+.shareUploadedItem, .shareAllUploaded
+{
+    background-image: url(/WebInterface/jQuery/images/application_form_add.png);
+}
+
+.overwriteLink
+{
+    margin: 10px 0px 0px 0px;
+    font-size: 11px;
+    text-align: left;
+    padding: 5px 5px 5px 23px;
+    background: url(/WebInterface/jQuery/images/page_white_copy.png) no-repeat 5px 4px;
+    color: #000 !important;
+    /*float: right;*/
+}
+
+.file
+{
+	margin: 10px 0px 0px 0px;
+    font-size: 11px;
+    text-align: left;
+    padding: 5px 5px 5px 23px;
+    background: url(/WebInterface/jQuery/images/file.png) no-repeat 5px 4px;
+    color: #000 !important;
+}
+
+#resetUploadForm
+{
+    float: right;
+}
+
+a.nextButton
+{
+	margin: 0px;
+    font-size: 13px;
+    text-align: left;
+    padding: 2px 18px 5px 6px;
+    background: url(/WebInterface/jQuery/images/forward.png) no-repeat right 4px;
+    color: #000 !important;
+    float: right;
+}
+
+a.whiteError
+{
+    margin: 10px 0px 0px 0px;
+    font-size: 11px;
+    text-align: left;
+    padding: 5px 5px 5px 23px;
+    color: white;
+}
+
+.reupload, .redownload
+{
+    margin: 10px 0px 0px 0px;
+    font-size: 11px;
+    text-align: left;
+    padding: 5px 5px 5px 23px;
+    background: url(/WebInterface/jQuery/images/upload.png) no-repeat 5px 4px;
+    color: #000;
+}
+
+.redownload
+{
+	background: url(/WebInterface/jQuery/images/download.png) no-repeat 5px 4px;
+}
+
+.clearCompleted
+{
+    margin: 10px 0px 0px 0px;
+    font-size: 11px;
+    text-align: left;
+    padding: 5px 5px 5px 25px;
+    background: url(/WebInterface/jQuery/images/image_delete.png) no-repeat 5px 4px;
+    color: #000 !important;
+    float: right;
+}
+
+.download, .shareBasketItems
+{
+    margin: 10px 0px 0px 0px;
+    font-size: 11px;
+    text-align: left;
+    padding: 5px 5px 5px 25px;
+    background: url(/WebInterface/jQuery/images/download.png) no-repeat 5px 4px;
+    color: #000;
+    /*float: right;*/
+}
+
+.download.advanced
+{
+	background: url(/WebInterface/jQuery/images/basket_put.png) no-repeat 5px 4px;
+}
+
+.shareBasketItems
+{
+    background: url(/WebInterface/jQuery/images/application_form_add.png) no-repeat 5px 4px;
+}
+
+.completed
+{
+    margin: 10px 0px 0px 0px;
+    font-size: 11px;
+    text-align: left;
+    padding: 5px 5px 5px 25px;
+    background: url(/WebInterface/jQuery/images/image_delete.png) no-repeat 5px 4px;
+    color: #000;
+}
+
+.advancedBrowse
+{
+    /*margin: 2px 0px 10px 0px;
+    font-size: 11px;
+    text-align: left;
+    padding: 5px 5px 5px 25px;
+    background: url(/WebInterface/jQuery/images/attach.png) no-repeat 5px 4px;
+    color: #000;
+	border:1px solid #eee;
+	cursor:pointer;*/
+	width:200px;
+	padding:5px;
+}
+
+#advancedBrowseOptions
+{
+	float:right;
+	margin: 2px 0px 0px 10px;
+}
+
+.status
+{
+	margin:3px 0px;
+}
+
+.pause
+{
+    margin: 10px 0px 0px 3px;
+    font-size: 11px;
+    text-align: left;
+    padding: 5px 5px 5px 23px;
+    background: url(/WebInterface/jQuery/images/pause.png) no-repeat 5px 4px;
+    color: #000;
+}
+
+.resume
+{
+    margin: 10px 0px 0px 3px;
+    font-size: 11px;
+    text-align: left;
+    padding: 5px 5px 5px 23px;
+    background: url(/WebInterface/jQuery/images/resume.png) no-repeat 5px 4px;
+    color: #000;
+}
+
+.skip
+{
+    margin: 10px 0px 0px 3px;
+    font-size: 11px;
+    text-align: left;
+    padding: 5px 5px 5px 23px;
+    background: url(/WebInterface/jQuery/images/control_fastforward.png) no-repeat 5px 4px;
+    color: #000;
+}
+
+.stop
+{
+    margin: 10px 0px 0px 0px;
+    font-size: 11px;
+    text-align: left;
+    padding: 5px 5px 5px 23px;
+    background: url(/WebInterface/jQuery/images/stop.png) no-repeat 5px 4px;
+    color: #000;
+}
+
+.appletActionButtons
+{
+    border:1px solid #ccc;
+    margin:5px 0;
+    padding:5px;
+}
+
+.attention
+{
+    margin: 10px 0px 0px 0px;
+    font-size: 12px;
+    text-align: left;
+    padding: 3px 0px 0px 24px;
+    background: url(/WebInterface/jQuery/images/exclamation.png) no-repeat 5px 4px;
+    color: #FF0404;
+    float: left;
+}
+
+
+.uploadFormPanel
+{
+    margin: 10px 0px;
+}
+
+.time, .speed, .uploadPath
+{
+    font-size: 10px;
+    margin: 3px 0px;
+}
+
+.uploadStatusLabel
+{
+	font-size: 11px;
+	float: right;
+	margin: -2px 4px 0px 0px;
+}
+
+.autoReplyOptionPanel
+{
+    text-align: right;
+    border-top: 1px solid #fff;
+    margin: 5px 0px;
+    padding: 5px 0px 0px 0px;
+}
+
+.autoReplyOptionPanel label
+{
+    cursor: pointer;
+}
+
+.uploadCancel
+{
+    font-size: 10px;
+    color: #000 !important;
+    margin-right: 7px;
+}
+
+.spinner
+{
+    background: url(/WebInterface/jQuery/images/spinner.gif) left no-repeat !important;
+    background-position: 0 0px;
+    height: 18px;
+}
+
+.spinnerAdvanced
+{
+	background-position: 5px 5px !important;
+	height:auto !important;
+}
+
+.padlock
+{
+    background: url(/WebInterface/jQuery/images/padlock.png) left no-repeat;
+    background-position: 9px 4px;
+    padding-left: 30px !important;
+    font-style: italic;
+}
+
+.attention2
+{
+    background: url(/WebInterface/jQuery/images/exclamation.png) left no-repeat;
+    background-position: 0 0px;
+}
+
+
+#browserFileUpload h2
+{
+    height: 18px;
+}
+
+.mainProcessIndicator
+{
+    right:30px;
+    margin-top: 5px;
+    margin-right: 5px;
+    display: none;
+    z-index: 999999;
+	position:absolute;
+}
+
+.wordwrap
+{
+    white-space: pre-wrap; /* css-3 */
+    white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+    white-space: -pre-wrap; /* Opera 4-6 */
+    white-space: -o-pre-wrap; /* Opera 7 */
+    word-wrap: break-word; /* Internet Explorer 5.5+ */
+}
+
+/*Custom tabs*/
+.customtabs
+{
+    margin: 20px 0px 0px 0px;
+}
+.customtabs a
+{
+    background-color: #EEEEEE;
+    color: #2C2A2A !important;
+    padding: 6px 19px;
+    text-decoration: none;
+    font-weight: bold;
+    -moz-border-radius: 0.5em 0.5em 0em 0em;
+    -webkit-border-radius: 0.5em 0.5em 0em 0em;
+}
+
+.customtabs a.active
+{
+    background-color: #807B7B;
+    color: #FFFFFF !important;
+}
+
+.tab_content
+{
+    padding: 10px;
+    -moz-border-radius-topright: 0.5em;
+    -webkit-border-radius-topright: 0.5em;
+    border: 1px solid #B8B7B7;
+    margin: 6px 0px 10px 0px;
+    /*max-height: 450px;*/
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.dragOver
+{
+    border: 3px solid #F47373;
+	margin:10px 0;
+	border-width: 5px;
+	border-style: dashed;
+	border-color: green;
+}
+
+.itemCount, .comments
+{
+    font: 12px "Lucida Grande" , Lucida, Verdana, sans-serif;
+    margin: 2px 0px;
+	padding:5px;
+}
+
+.itemCount
+{
+	float:left;
+	line-height:20px;
+}
+
+/* CSS Form *****************************/
+.myForm
+{
+    display: block;
+    clear: both;
+    font-size: 12px;
+    color: black;
+    text-align: left;
+}
+
+.myForm input[type=text], .myForm textarea
+{
+    color: #051E42;
+    background: #F5F5F5;
+    border: 1px solid black;
+    padding: 2px;
+}
+
+.myForm input[type=text]
+{
+    width: 375px;
+}
+
+.submit
+{
+    text-align: right;
+}
+
+.submit input
+{
+    color: black;
+    background: #F7FAFC;
+    border: 2px solid #EBEBEB;
+    margin: 2px;
+}
+
+.myForm fieldset
+{
+    border: 1px solid black;
+    width: 97%;
+    margin: 0px;
+    padding: 5px 5px 0px 10px;
+    margin-top: 10px;
+}
+
+.myForm legend
+{
+    color: White;
+    background: black;
+    border: 1px solid black;
+    padding: 0px;
+    padding: 3px 18px;
+    -moz-border-radius: 0.5em 0.5em 0 0;
+    -webkit-border-radius: 0.5em 0.5em 0 0;
+    font-weight: bolder;
+    margin: 0px;
+    /*margin-top: -21px;
+    margin-left: -11px;
+    position: relative;*/
+}
+/* End of CSS Form *****************************/
+
+.filesProcessed
+{
+	float:left;
+	margin:0 0 5px 2px;
+}
+
+/*****************HEADER**************************/
+#header, #footer
+{
+	margin:5px 0px;
+	clear:both;
+	-moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+}
+
+div.headerContent
+{
+	padding:5px;
+}
+
+div#headerText
+{
+	float:left;
+	margin:5px;
+}
+
+#footer div.footerContent
+{
+	padding:5px;
+	-moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+}
+
+#headerImages div
+{
+	margin:0px;
+	display:inline-block;
+	padding: 2px;
+}
+
+#headerImages div.directoryPreview
+{
+	float:right;
+	margin-right:10px;
+	margin-top:7px;
+	margin-bottom:7px;
+	overflow:hidden;
+	text-align:right;
+}
+
+#headerImages div.logo
+{
+	float:left;
+	padding-left:5px;
+	padding-top:5px;
+}
+
+#headerImages img
+{
+	border:none;
+}
+
+#headerImages div.logoCenter
+{
+	margin-left:100px;
+}
+
+.sectionLabel
+{
+    padding: 0px;
+    margin: 0px;
+    font-weight: bolder;
+    font-size: 13px;
+}
+
+.popupWindow
+{
+	-moz-border-radius:10px 10px 10px 10px;
+	-webkit-border-radius: 10px 10px 10px 10px;
+	left:50%;
+	margin:0 0 0 -230px;
+	padding:15px;
+	text-align:center;
+	top:25px;
+	width:460px;
+	z-index:1000;
+}
+
+#filesListing .blockUI
+{
+	z-index:999 !important;
+}
+
+.manageShareTable {
+ border: 1px solid #eee;
+}
+.manageShareTable tr
+{
+	cursor:pointer;
+}
+.manageShareTable th
+{
+	padding-right:20px;
+}
+.manageShareTable td
+{
+	padding:5px;
+	vertical-align:top;
+}
+
+.manageShareTable .thItems
+{
+	width:180px;
+	overflow:hidden;
+}
+
+.shareItemDetails
+{
+	text-align:left;
+	cursor:text;
+	float:left;
+	width:100%;
+	border-top: 1px solid #eee;
+	border-bottom: 1px solid #eee;
+}
+
+.shareItemDetails label
+{
+	font-weight:bolder;
+	margin-right:10px;
+}
+
+.shareItemDetails div
+{
+	padding:5px;
+}
+
+.itemDetails td
+{
+	padding:0px !important;
+	border:0px !important;
+	cursor:text;
+}
+
+.highlight
+{
+	background-color:#F2F9BE;
+}
+
+.manageSharePaths
+{
+	width:180px;
+	overflow:hidden;
+	max-height:80px;
+}
+
+.manageShareDetails
+{
+    width: 950px;
+    overflow: hidden;
+    overflow-x: auto;
+}
+
+/*a.button {
+    background: transparent url('/WebInterface/jQuery/images/button-end.png') no-repeat scroll top right;
+    color: #444;
+    display: block;
+    float: right;
+    font: bolder 12px arial, sans-serif;
+    height: 35px;
+    margin-right: 3px;
+    padding-right: 24px; /* sliding doors padding */
+    /*text-decoration: none;
+	color:#000;
+}
+
+a.button span {
+    background: transparent url('/WebInterface/jQuery/images/button-bg.png') no-repeat;
+    display: block;
+    line-height: 35px;
+    padding: 0px 10px 0px 35px;
+	text-align:center;
+}*/
+
+.ui-slider .ui-slider-handle
+{
+	cursor:move !important;
+}
+
+.chkBoxPanel
+{
+	padding:5px;
+	margin:0px 2px;
+}
+
+/*Pagination*/
+.pagination {
+	font-size: 80%;
+	margin:5px;
+	/*float:right;*/
+}
+
+.pagination a {
+    text-decoration: none;
+	border: solid 1px #AAE;
+	color: #15B;
+}
+
+.pagination a, .pagination span {
+    display: block;
+    float: left;
+    padding: 0.3em 0.5em;
+    margin-right: 5px;
+	margin-bottom: 5px;
+}
+
+.pagination .current {
+    background: #26B;
+    color: #fff;
+	border: solid 1px #AAE;
+}
+
+.pagination .current.prev, .pagination .current.next{
+	color:#999;
+	border-color:#999;
+	background:#fff;
+}
+
+#mainNavigation.stick, #fileQueueInfo.stick, #dropItemsPanel.stick
+{
+    position: fixed !important;
+    top: -3px;
+	left:0px;
+	border-width:7px;
+    z-index: 98;
+	width:99%;
+	padding: 0px;
+    margin: 0px;
+}
+
+#fileQueueInfo.stick
+{
+    top:32px;
+    border-width:2px;
+    left:7px;
+    z-index:98;
+}
+
+#dropItemsPanel.stick
+{
+    z-index:100 !important;
+    top:32px;
+}
+
+
+#logoutLinkTopCorner
+{
+    position: absolute !important;
+    top: 15px;
+	right: 15px;
+	display: inline-block;
+    background: url("/WebInterface/jQuery/images/padlock.png" ) no-repeat scroll 5px 0px transparent;
+    padding-left: 25px;
+	height:20px;
+}
+
+.fastUploadIcon
+{
+    background: url(/WebInterface/jQuery/images/lightning.png) left no-repeat;
+	display: inline-block;
+	height:16px;
+	width:16px;
+	margin-top:6px;
+}
+
+.slowUploadIcon
+{
+    background: white;
+    display: inline-block;
+	height:16px;
+	width:16px;
+}
+
+.ui-dialog .ui-widget-content
+{
+	background-color:white;
+}
+
+.ui-dialog-buttonpane
+{
+	border:0px;
+	margin:0px !important;
+}
+
+.ui-widget
+{
+	font-family: Verdana, sans-serif !important;
+}
+
+#cluetip
+{
+	text-align:left;
+    z-index: 1007 !important;
+}
+
+.blockUI
+{
+    z-index: 1002 !important;
+    /*-moz-opacity:.70 !important;
+    filter:alpha(opacity=70) !important;
+    opacity:.70 !important;*/
+}
+
+.growlNote
+{
+    font-size: 11px;
+    font-weight: normal;
+}
+
+#filesBasket
+{
+    background-color: white;
+}
+
+#loadingIndicator {
+    background: url("/WebInterface/Resources/images/loading.gif") no-repeat 5px 5px;
+    padding-left: 25px;
+    margin:10px 0px 0px 20px;
+}
+
+.loadingIndicatorWindow .ui-dialog-titlebar {
+    display: none;
+}
+
+#javaAppletDiv
+{
+    bottom: 5px;
+    height: 50px !important;
+    width: 100% !important;
+    position: fixed !important;
+}
+
+.appletNote
+{
+    padding:5px;
+    font-weight: bold;
+    font-size: 12px;
+    text-align: center;
+}
+
+td.syncItem
+{
+    background: url("/WebInterface/Resources/images/logo_sync.png") no-repeat 98% 5px;
+    padding-right: 10px;
+}
+
+li.syncItem
+{
+    background: url("/WebInterface/Resources/images/logo_sync.png") no-repeat 15px 15px;
+}
+
+#manageSyncPanel
+{
+    overflow: hidden;
+    background-color: #fff;
+}
+
+#cboxPhoto
+{
+    z-index: 120;
+}
+
+.exifInfoPanel
+{
+    position: fixed;
+    left: 0px;
+    top: 10px;
+    background-color: black;
+    color: white;
+    -moz-opacity:.60 !important;
+    filter:alpha(opacity=60) !important;
+    opacity:.60 !important;
+    border: 1px solid #ccc;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border-radius: 10px 10px 10px 10px;
+    width:400px;
+    padding: 10px;
+    margin:5px;
+    z-index: 9999;
+}
+
+.exifInfoPanel td
+{
+    padding: 3px;
+}
+
+.exifInfoPanel td.key
+{
+    width: 160px;
+    text-align: right;
+}
+
+.exifInfoPanel td.val
+{
+    width: 220px;
+    display: inline-block;
+    white-space: pre-wrap; /* css-3 */
+    white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+    white-space: -pre-wrap; /* Opera 4-6 */
+    white-space: -o-pre-wrap; /* Opera 7 */
+    word-wrap: break-word; /* Internet Explorer 5.5+ */
+    overflow: hidden;
+}
+
+.exifInfoPanel td.edit
+{
+    width: 20px;
+}
+
+.exifClose
+{
+    height: 16px;
+    width: 16px;
+    border: 0px;
+    float: right;
+    cursor: pointer;
+    margin-right: -12px;
+    margin-top: -7px;
+    font-weight: bolder;
+}
+
+.exifInfoPanelCollapsed
+{
+    width: 62px;
+    height: 20px;
+    padding: 5px 7px 0px 9px;
+    cursor: pointer;
+    color: white;
+}
+
+.exifInfoPanel .showExifLink
+{
+    display: none;
+}
+
+.exifInfoPanelCollapsed .exifContent
+{
+    display: none;
+}
+
+.exifInfoPanelCollapsed .showExifLink
+{
+    display: block !important;
+}
+
+.editExif
+{
+    height: 16px;
+    width: 16px;
+    border: 0px;
+    cursor: pointer;
+    background: url(/WebInterface/jQuery/images/pencil.png) no-repeat 0px 0px;
+    display: inline-block;
+    cursor: pointer;
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%); -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%); -o-filter: grayscale(100%);
+    filter: gray;
+    -webkit-filter: grayscale(1);
+}
+
+.editExif:hover
+{
+    filter: grayscale(0%);
+    -webkit-filter: grayscale(0%); -moz-filter: grayscale(0%);
+    -ms-filter: grayscale(0%); -o-filter: grayscale(0%);
+    filter: none;
+    -webkit-filter: grayscale(0);
+}
+
+.syncSc
+{
+    font-size: 10px;
+    -moz-opacity:.70 !important;
+    filter:alpha(opacity=70) !important;
+    opacity:.70 !important;
+}
+
+.emptyFolder .imgWrapper img
+{
+    -moz-opacity:.50 !important;
+    filter:alpha(opacity=50) !important;
+    opacity:.50 !important;
+}
+
+.emptyFolder .directory a
+{
+    -moz-opacity:.50 !important;
+    filter:alpha(opacity=50) !important;
+    opacity:.50 !important;
+}
+
+.stop-scrolling {
+  height: 100%;
+  overflow: hidden;
+}
+
+li .framePreviewBox
+{
+    width: 110px;
+    height: 90px;
+    margin: 2px;
+    position: absolute;
+    left:50%;
+    top:50%;
+    margin-left:-55px;
+    margin-top:-68px;
+    overflow: hidden;
+}
+
+li .framePreviewBox div
+{
+    width:40px;
+    height:40px;
+    float: left;
+    margin: 0px 8px 3px 5px;
+    border: 1px solid #CCC;
+    overflow: hidden;
+    -moz-opacity:.60 !important;
+    filter:alpha(opacity=60) !important;
+    opacity:.60 !important;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    -moz-box-shadow: 2px 2px 3px #ccc;
+    -webkit-box-shadow: 2px 2px 3px #ccc;
+    box-shadow: 2px 2px 3px #ccc;
+}
+
+td .framePreviewBox
+{
+    width: 110px;
+    height: 20px;
+    margin: 2px;
+    overflow: hidden;
+    float: right;
+    right: 5px;
+}
+
+td .framePreviewBox div
+{
+    width:20px;
+    height:18px;
+    float: right;
+    margin: 0px 2px;
+    border: 1px solid #CCC;
+    overflow: hidden;
+    -moz-opacity:.70 !important;
+    filter:alpha(opacity=70) !important;
+    opacity:.70 !important;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+}
+
+.framePreviewBox div:hover
+{
+    -moz-opacity:1 !important;
+    filter:alpha(opacity=100) !important;
+    opacity:1 !important;
+}
+
+.iOS td.columnName.directory a
+{
+    margin-top: -3px;
+    position: relative;
+    background-position: 0px 5px !important;
+    font-family: Verdana, sans-serif !important;
+    font-size: 11px !important;
+    line-height: 25px !important;
+}
+
+.iOS td.columnName.fileTR a
+{
+    margin-top: -3px;
+    position: absolute;
+    font-family: Verdana, sans-serif !important;
+    font-size: 11px !important;
+    line-height: 25px !important;
+}

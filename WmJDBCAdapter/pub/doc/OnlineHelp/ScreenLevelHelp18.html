@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="GENERATOR" content="Quadralay WebWorks Publisher Professional Edition 7.0" />
+  <meta name="TEMPLATEBASE" content="wM_WWH20030908" />
+  <meta name="LASTUPDATED" content="12/04/06 19:31:53" />
+  <title>StoredProcedure Service Template Screens   </title>
+  <link rel="StyleSheet" href="document.css" type="text/css" />
+  <link rel="StyleSheet" href="catalog.css" type="text/css" />
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+ </head>
+
+ <body onLoad="WWHUpdate();">
+
+
+<a name="wp1067402"> </a><h2 class="pNewHTMLPage">
+StoredProcedure Service Template Screens   
+</h2><a name="wp1093444"> </a><p class="pBody">
+The StoredProcedure adapter service calls a stored procedure to perform database operations. This service template includes the following tabs:
+</p>
+<a name="wp1085286"> </a><p class="pChapterTOC">
+<img src="images/bullet.gif" height="13" width="10" border="0" />
+<a  href="ScreenLevelHelp18.html#wp1128676">Call Tab</a>
+</p>
+<a name="wp1090550"> </a><p class="pChapterTOC">
+<img src="images/bullet.gif" height="13" width="10" border="0" />
+<a  href="ScreenLevelHelp18.html#wp1090551">Parameter Tab</a>
+</p>
+<a name="wp1128673"> </a><p class="pChapterTOC">
+<img src="images/bullet.gif" height="13" width="10" border="0" />
+<a  href="ScreenLevelHelp18.html#wp1082038">ResultSet Tab</a></p><div align="left">
+<table border="0">
+  <caption></caption>
+  <tr align="left" valign="top">    <td><a name="wp1128684"> </a><p class="px_Note">
+&#160;
+<img src="images/note_icon.gif" height="25" width="25" border="1" alt="Note" />
+</p>
+</td>
+    <td><a name="wp1128686"> </a><p class="pNote">
+<b>Note:</b> StoredProcedure services do not support stored procedures that have Array or Struct as OUT parameters. Instead you can use the StoredProcedureWithSignature service.
+</p>
+</td>
+</tr>
+</table>
+</div>
+<p class="pChapterTOC">
+</p>
+<a name="wp1128676"> </a><h4 class="pHeading3">
+Call Tab
+</h4>
+<a name="wp1090632"> </a><p class="pBody">
+Use the <b class="cBold">Call</b> tab to specify the stored procedure to call. Set the <b class="cBold">Call</b> parameters as follows:</p><div align="left">
+<table border="0">
+  <caption></caption>
+  <tr align="left" valign="bottom">    <th><a name="wp1090635"> </a><div style="text-align: left" class="pCellHeading">
+Field
+<hr />
+</div>
+</th>
+    <th><a name="wp1090637"> </a><div style="text-align: left" class="pCellHeading">
+Description
+<hr />
+</div>
+</th>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1095944"> </a><p class="pBody">
+<b class="cBold">Catalog Name</b>
+</p>
+</td>
+    <td><a name="wp1095946"> </a><p class="pBody">
+The name of the catalog. The default for the catalog name is <code class="cCode">current catalog</code>.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1095948"> </a><p class="pBody">
+<b class="cBold">Schema Name</b>
+</p>
+</td>
+    <td><a name="wp1095950"> </a><p class="pBody">
+The name of the schema. The default for the schema name is <code class="cCode">current schema</code>.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1095952"> </a><p class="pBody">
+<b class="cBold">Enable Procedure Name Lookup (Optional)</b>
+</p>
+</td>
+    <td><a name="wp1095954"> </a><p class="pBody">
+To type in the <b class="cBold">Procedure Name</b>, set this field to <code class="cCode">False</code>. To select the <b class="cBold">Procedure Name</b> from a list, set this field to <code class="cCode">True</code>.
+</p>
+<a name="wp1095955"> </a><p class="pBody">
+The default is <code class="cCode">False</code>.
+</p>
+<a name="wp1095956"> </a><p class="pBody">
+To save you time, use the default value (typing the name) if you know the name of the procedure and you are working with a large database which may have a long list of procedures.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1095958"> </a><p class="pBody">
+<b class="cBold">Procedure Name</b>
+</p>
+</td>
+    <td><a name="wp1095960"> </a><p class="pBody">
+Type or select the stored procedure name, depending on how you set the <b class="cBold">Enable Procedure Name Lookup</b> field. 
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1095962"> </a><p class="pBody">
+<b class="cBold">JDBC Type</b>
+</p>
+</td>
+    <td><a name="wp1095967"> </a><p class="pBody">
+Use the <b class="cBold">Insert Row</b> icon <img src="images/table_insertrow.gif" border="0" hspace="0" vspace="0"/> (or the <b class="cBold">Fill in all rows to the table</b> icon <img src="images/append_all_rows.gif" border="0" hspace="0" vspace="0"/>) and specify the JDBC type of the corresponding return field for the stored procedure.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1095972"> </a><p class="pBody">
+<b class="cBold">Return Field Name </b>
+</p>
+</td>
+    <td><a name="wp1095977"> </a><p class="pBody">
+Use the <b class="cBold">Insert Row</b> icon <img src="images/table_insertrow.gif" border="0" hspace="0" vspace="0"/> (or the <b class="cBold">Fill in all rows to the table</b> icon <img src="images/append_all_rows.gif" border="0" hspace="0" vspace="0"/>) to add return field names for the stored procedure.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1117751"> </a><p class="pBody">
+<b class="cBold">Query Time Out</b>
+</p>
+</td>
+    <td><a name="wp1122647"> </a><p class="pBody">
+Specify the query time out value in seconds. This value is the amount of time the JDBC Adapter waits for the service to execute before stopping the SQL operation.
+</p>
+<a name="wp1122651"> </a><p class="pBody">
+The default value is -1. Use the default value to have the service use the value indicated on the <code class="cCode">watt.adapter.JDBC.QueryTimeout</code> property as the time out. 
+</p>
+<a name="wp1122652"> </a><p class="pBody">
+If you specify a value equal to 0, or if the <code class="cCode">watt.adapter.JDBC.QueryTimeout</code> property is not set, the service executes without a time out.
+</p>
+<a name="wp1122653"> </a><p class="pBody">
+If you specify a value greater than 0, the service executes with the specified value as the time out.
+</p>
+<a name="wp1122654"> </a><p class="pNote">
+<b>Note:</b> -1 is the only permissible negative value for this field.
+</p>
+<a name="wp1122655"> </a><p class="pBody">
+For more information about the <code class="cCode">watt.adapter.JDBC.QueryTimeout</code> property, see the <em class="cEmphasis">webMethods JDBC Adapter User’s Guide.</em>
+</p>
+</td>
+</tr>
+</table>
+</div>
+<p class="pBody">
+</p>
+<a name="wp1090551"> </a><h4 class="pHeading3">
+Parameter Tab 
+</h4>
+<a name="wp1090454"> </a><p class="pBody">
+Use the <b class="cBold">Parameter</b> tab to specify the stored procedure’s parameters.
+</p>
+<a name="wp1093638"> </a><p class="pBody">
+Use the <b class="cBold">Insert Row</b> icon <img src="images/table_insertrow.gif" border="0" hspace="0" vspace="0"/> (or the <b class="cBold">Fill in all rows to the table</b> icon <img src="images/append_all_rows.gif" border="0" hspace="0" vspace="0"/>) to create new stored procedure parameters as needed.</p><div align="left">
+<table border="0">
+  <caption></caption>
+  <tr align="left" valign="bottom">    <th><a name="wp1090463"> </a><div style="text-align: left" class="pCellHeading">
+Field
+<hr />
+</div>
+</th>
+    <th><a name="wp1090465"> </a><div style="text-align: left" class="pCellHeading">
+Description
+<hr />
+</div>
+</th>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1095987"> </a><p class="pBody">
+<b class="cBold">Param JDBC Type</b>
+</p>
+</td>
+    <td><a name="wp1095989"> </a><p class="pBody">
+The JDBC type of the stored procedure parameter.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1095991"> </a><p class="pBody">
+<b class="cBold">Param Name</b>
+</p>
+</td>
+    <td><a name="wp1095993"> </a><p class="pBody">
+The stored procedure parameter name.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1095995"> </a><p class="pBody">
+<b class="cBold">Param Type</b>
+</p>
+</td>
+    <td><a name="wp1095997"> </a><p class="pBody">
+Define the parameter type as IN, INOUT, or OUT. If you select IN or INOUT, you may also set the input expression in the <b class="cBold">Expression</b> field.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1095999"> </a><p class="pBody">
+<b class="cBold">Expression</b>
+</p>
+</td>
+    <td><a name="wp1096001"> </a><p class="pBody">
+The default value is <code class="cCode">?</code>, which acts as a placeholder for the variable so that you can set the input variable for that column at run time, or get input external to this adapter service. It adds one row with the same column name to the table.
+</p>
+<a name="wp1096002"> </a><p class="pBody">
+You can also type a fixed value as input now or at run time. If you choose to type a fixed value, you type a stored procedure call statement with values you set using this field.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1096004"> </a><p class="pBody">
+<b class="cBold">Input Name</b>
+</p>
+</td>
+    <td><a name="wp1096006"> </a><p class="pBody">
+The name of any input parameters. 
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1096008"> </a><p class="pBody">
+<b class="cBold">Input Type</b>
+</p>
+</td>
+    <td><a name="wp1096010"> </a><p class="pBody">
+The input parameter Java type. 
+</p>
+<a name="wp1096013"> </a><p class="pBody">
+For a list of JDBC-Type to Java-Type mappings, see the <em class="cEmphasis">webMethods JDBC Adapter User’s Guide</em>.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1096016"> </a><p class="pBody">
+<b class="cBold">Output Name</b>
+</p>
+</td>
+    <td><a name="wp1096018"> </a><p class="pBody">
+The name of any output parameters.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1096020"> </a><p class="pBody">
+<b class="cBold">Output Type</b>
+</p>
+</td>
+    <td><a name="wp1096022"> </a><p class="pBody">
+The output parameter Java type.
+</p>
+<a name="wp1096025"> </a><p class="pBody">
+For a list of JDBC-Type to Java-Type mappings, see the <em class="cEmphasis">webMethods JDBC Adapter User’s Guide</em>.
+</p>
+</td>
+</tr>
+</table>
+</div>
+<p class="pBody">
+</p>
+<a name="wp1082038"> </a><h4 class="pHeading3">
+ResultSet Tab 
+</h4>
+<a name="wp1096068"> </a><p class="pBody">
+If the procedure returns a result set, select the <b style="font-weight: bold" class="cBold">ResultSet</b><span style="font-weight: bold"> </span>tab to specify result set parameters using the fields in the following table. 
+</p>
+<a name="wp1117801"> </a><p class="pBody">
+StoredProcedure services can support multiple results sets. The result set can contain nested cursors.
+</p>
+<a name="wp1117812"> </a><p class="pAnchor">
+</p><div align="left">
+<table border="0">
+  <caption></caption>
+  <tr align="left" valign="top">    <td><a name="wp1117818"> </a><p class="px_Note">
+&#160;
+<img src="images/note_icon.gif" height="25" width="25" border="1" alt="Note" />
+</p>
+</td>
+    <td><a name="wp1117827"> </a><p class="pNote">
+<b>Note:</b> When using the result set that contains nested cursors, the performance of the JDBC Adapter could degrade. Since the nested cursors are recursively processed, the JDBC Adapter may also return data that may not be required.
+</p>
+</td>
+</tr>
+</table>
+</div>
+<p class="pAnchor">
+</p>
+<a name="wp1117809"> </a><p class="pBody">
+Use the <b class="cBold">Insert Row</b> icon <img src="images/table_insertrow.gif" border="0" hspace="0" vspace="0"/> to create additional result sets as needed. Use the following fields. </p><div align="left">
+<table border="0">
+  <caption></caption>
+  <tr align="left" valign="bottom">    <th><a name="wp1090794"> </a><div style="text-align: left" class="pCellHeading">
+Field
+<hr />
+</div>
+</th>
+    <th><a name="wp1090796"> </a><div style="text-align: left" class="pCellHeading">
+Description
+<hr />
+</div>
+</th>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1096095"> </a><p class="pBody">
+<b class="cBold">Result Set Index</b>
+</p>
+</td>
+    <td><a name="wp1096097"> </a><p class="pBody">
+An index is automatically assigned to each result set. The first row default value is 1. 
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1096099"> </a><p class="pBody">
+<b class="cBold">Result Set Name</b>
+</p>
+</td>
+    <td><a name="wp1096101"> </a><p class="pBody">
+The name of the result set you want to create. 
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1096103"> </a><p class="pBody">
+<b class="cBold">Result Set Name (from second row)</b>
+</p>
+</td>
+    <td><a name="wp1096105"> </a><p class="pBody">
+Select result set name. 
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1096107"> </a><p class="pBody">
+<b class="cBold">Column Name</b>
+</p>
+</td>
+    <td><a name="wp1096109"> </a><p class="pBody">
+The name of the column of the result set.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1096111"> </a><p class="pBody">
+<b class="cBold">JDBC Type</b>
+</p>
+</td>
+    <td><a name="wp1096113"> </a><p class="pBody">
+The JDBC type of the result column.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1096115"> </a><p class="pBody">
+<b class="cBold">Output Type</b>
+</p>
+</td>
+    <td><a name="wp1096117"> </a><p class="pBody">
+The Java type of the result column.
+</p>
+<a name="wp1096120"> </a><p class="pBody">
+For a list of JDBC-Type to Java-Type mappings, see the <em class="cEmphasis">webMethods JDBC Adapter User’s Guide</em>.
+</p>
+</td>
+</tr>
+</table>
+</div>
+<p class="pBody">
+</p>
+
+ <hr />
+
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag());
+   // -->
+  </script>
+
+ </body>
+</html>

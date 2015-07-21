@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="keywords" content="statistics,services,services,service usage statistics,services,cache usage,services,server usage of,cache,utilization,cache,performance monitoring" />
+    <title>Service Usage Screen</title>
+    <link rel="StyleSheet" href="css/_is_admin_help.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+  <body style="background-color: White; margin-bottom: 25px; margin-left: 25px; margin-right: 25px; margin-top: 0px; padding-top: 0px" onload="WWHUpdate();" onunload="WWHUnload();" onkeydown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onkeypress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onkeyup="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <table align="left" role="presentation">
+      <tr>
+        <td class="WebWorks_Company_Logo_Top">
+          <img src="sag_online.png" />
+        </td>
+      </tr>
+    </table>
+    <br clear="all" />
+    <hr align="left" />
+    <blockquote>
+      <div class="Heading_2"><a name="3_5_7_6_2">Service Usage Screen</a></div>
+      <div class="Body"><span class="emphasis"><a name="3_5_7_6_6_2_3">Screen Heading</a></span>: <span class="uicontrol">Server &gt; Service Usage</span></div>
+      <div class="Body"><a name="3_5_7_6_6_2_5">Use the Service Usage screen to view statistics for services that the </a><span class="ph">webMethods Integration Server</span> has executed since it was last started. This screen also includes information about cache usage, so you can monitor the effectiveness of your cache settings.</div>
+      <div class="Body"><a name="3_5_7_6_6_2_7">To open the Service Usage screen, click </a><span class="uicontrol">Service Usage</span> under the <span class="uicontrol">Server</span> menu on the Navigation panel.</div>
+      <div class="List_1_outer" style="margin-left: 24px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_1_inner" style="width: 18pt; white-space: nowrap">
+                <img src="bullet1.png" alt="*" border="0" width="10" height="10" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_1_inner"><a name="3_5_7_6_6_2_9_2"> </a> Click <span class="uicontrol">Reset Server Cache</span> to clear the cache for all services.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_1_outer" style="margin-left: 24px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_1_inner" style="width: 18pt; white-space: nowrap">
+                <img src="bullet1.png" alt="*" border="0" width="10" height="10" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_1_inner"><a name="3_5_7_6_6_2_9_4"> </a> Select <span class="uicontrol">Show running services on top</span> to move all currently running services to the top of the service list. (Deselect it to restore the list to alphabetical order.) Running services are identified by a number in brackets, at the right of the service name.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Section_Title"><a name="3_5_7_6_6_4_3">Service</a></div>
+      <div class="Body"><a name="3_5_7_6_6_4_5">The fields in this section display the list of services executed since the </a><span class="ph">Integration Server</span> was started.</div>
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_2_2">Name</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_2_4">Displays the name of the service. A bracketed number to the right of the service name identifies how many instances of the service, if any, are currently running.</a></div>
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Count</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">Displays the number of times that the service has executed since the server was last started.</a></div>
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_6_2">Last Ran</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_6_4">Displays the date and time the service was last executed.</a></div>
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_8_2">Cached</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_8_4">Indicates whether the service's caching option is enabled. To enable/disable the cache setting for a service, you use </a><span class="ph">Software&nbsp;AG Designer</span>.</div>
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_10_2">Prefetched</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_10_4"> </a> Indicates whether the service's prefetch option (for caching) is enabled. To enable/disable the prefetch setting for a service, you use <span class="ph">Software&nbsp;AG Designer</span>.</div>
+      <div class="Section_Title"><a name="3_5_7_6_6_6_3">Cache and Prefetch Information</a></div>
+      <div class="Body"><a name="3_5_7_6_6_6_5">The fields in this section display information about cache utilization for those services that are currently using cache.</a></div>
+      <div class="Definition_Term"><a name="3_5_7_6_6_6_7_2_2">Name</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_6_7_2_4">Displays the name of the service.</a></div>
+      <div class="Definition_Term"><a name="3_5_7_6_6_6_7_4_2">Last Cache Hit</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_6_7_4_4">Displays the date and time that a cached result for this service was last accessed (hit).</a></div>
+      <div class="Definition_Term"><a name="3_5_7_6_6_6_7_6_2">Cache Hits</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_6_7_6_4">Displays the total number of times that a cached result for this service has been accessed (hit).</a></div>
+      <div class="Definition_Term"><a name="3_5_7_6_6_6_7_8_2">Cache Hits/Total Count</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_6_7_8_4">Displays the percentage of service requests that have been fulfilled by retrieving the results from cache.</a></div>
+      <div class="Definition_Term"><a name="3_5_7_6_6_6_7_10_2">Cache Entries</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_6_7_10_4">Displays the number of active cache entries for the service.</a></div>
+      <div class="Definition_Term"><a name="3_5_7_6_6_6_7_12_2">Cache Expires</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_6_7_12_4">Displays the number of expired cache entries for the service.</a></div>
+      <div class="Definition_Term"><a name="3_5_7_6_6_6_7_14_2">Last Prefetch</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_6_7_14_4">Displays the date and time that the server last prefetched and cached the results for the service.</a></div>
+      <table class="note2" summary="">
+        <tr>
+          <td class="Table_Cell" style="vertical-align: top; width: 14.285714285714284%">
+            <div class="Note">
+              <span style="font-family: Arial, Verdana, Helvetica, Sans-Serif; font-weight: bold">Note:    </span><a name="3_5_7_6_6_6_7_14_4_3_1_3_1_2_2">&nbsp;</a></div>
+          </td>
+          <td class="Table_Cell" style="vertical-align: top; width: 85.71428571428571%">
+            <div class="Table_Cell"><a name="3_5_7_6_6_6_7_14_4_3_1_3_1_3">The cache may not be refreshed at the exact time specified in </a><span class="uicontrol">Cache Expires</span>. It may vary from 0 to 15 seconds, according to the cache sweeper thread. Select watt.server.cache.flushMins setting on the <span class="heading-no-quotes"><a href="javascript:WWHClickedPopup('is_help', 'Menu_Settings_Extended_Keys.html', '');" title="Show and Hide Keys Screen">Show and Hide Keys Screen</a></span> to enable the display of the actual cache refresh time on the <span class="heading-no-quotes"><a href="javascript:WWHClickedPopup('is_help', 'Menu_Settings_Extended.html', '');" title="Extended Settings Screen">Extended Settings Screen</a></span>.</div>
+          </td>
+        </tr>
+      </table>
+      <div class="Definition_Term"><a name="3_5_7_6_6_6_7_16_2">Total Prefetches</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_6_7_16_4">Displays the total number of times the server has prefetched and cached the results for the service.</a></div>
+      <div class="Definition_Term"><a name="3_5_7_6_6_6_7_18_2">Recent Prefetch</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_6_7_18_4">Displays the total number of times the server has prefetched and cached the results for the service in the last poll interval. (The poll interval is set to 10 minutes on most servers.)</a></div>
+      <div class="Link_List_Title"><a name="3_5_7_6_8_1_2">Related Topics</a></div>
+      <div class="Related_Reference">
+        <img src="spacer_24.png" alt="*" border="0" width="24" height="6" /><span class="Link_Text"><a href="javascript:WWHClickedPopup('is_help', 'Menu_Server_Statistics.html', '');" title="Statistics Screen" name="3_5_7_6_8_1_4">Statistics Screen</a></span></div>
+      <div class="Related_Reference">
+        <img src="spacer_24.png" alt="*" border="0" width="24" height="6" /><span class="Link_Text"><a href="javascript:WWHClickedPopup('is_help', 'Menu_Server_Scheduler.html', '');" title="Scheduler Screen" name="3_5_7_6_8_1_6">Scheduler Screen</a></span></div>
+      <div class="Related_Reference">
+        <img src="spacer_24.png" alt="*" border="0" width="24" height="6" /><span class="Link_Text"><a href="javascript:WWHClickedPopup('is_help', 'Menu_Server_ShutdownRestart.html', '');" title="Shut Down and Restart Screen" name="3_5_7_6_8_1_8">Shut Down and Restart Screen</a></span></div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <div>
+      <hr />
+      <div style="font-family: Arial, Verdana, Helvetica, Sans-Serif; font-size: 12px;margin-top: 20px;margin-bottom: 20px;">
+        <span class="xref">
+          <a href="http://documentation.softwareag.com/legal/" target="external_window">Copyright © <span></span><span></span><span>2007</span><span>-2014</span> Software AG, Darmstadt, Germany</a>
+        </span>.</div>
+    </div>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+  </body>
+</html>

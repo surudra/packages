@@ -1,0 +1,2232 @@
+<?xml version="1.0"?>
+<!--
+webMethods Integration Platform Overview Training Course
+Sample XML Message Purchase Order Request
+-->
+<PurchaseOrderRequest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="OrderRequest.xsd">
+   <PurchaseOrder>
+      <deliverTo>
+         <PhysicalAddress>
+            <cityName>
+               <FreeFormText>Fairfax VA</FreeFormText>
+            </cityName>
+            <addressLine1>
+               <FreeFormText>webMethods</FreeFormText>
+            </addressLine1>
+            <addressLine2>
+               <FreeFormText>3877 Fairfax Ridge Road   South Tower</FreeFormText>
+            </addressLine2>
+            <addressLine3>
+               <FreeFormText>Fairfax VA</FreeFormText>
+            </addressLine3>
+            <NationalPostalCode>22030</NationalPostalCode>
+            <regionName>
+               <FreeFormText>USA</FreeFormText>
+            </regionName>
+            <postOfficeBoxIdentifier>
+               <FreeFormText/>
+            </postOfficeBoxIdentifier>
+            <GlobalLocationIdentifier>North America</GlobalLocationIdentifier>
+            <GlobalCountryCode>001</GlobalCountryCode>
+         </PhysicalAddress>
+      </deliverTo>
+      <comment>
+         <FreeFormText>Comments go here</FreeFormText>
+      </comment>
+      <packListRequirements>
+         <FreeFormText>Packing List Requirements</FreeFormText>
+      </packListRequirements>
+      <totalCost>6510</totalCost>
+      <!-- This is the items array series -->
+      <!-- Item 1 -->
+      <ProductLineItem>
+         <shipFrom>
+            <GlobalLocationIdentifier>Warehouse 1</GlobalLocationIdentifier>
+         </shipFrom>
+         <ProductQuantity>150</ProductQuantity>
+         <LineNumber>1</LineNumber>
+         <productUnit>
+            <ProductPackageDescription>
+               <ProductIdentification>
+                  <GlobalProductIdentifier>Anvil</GlobalProductIdentifier>
+                  <PartnerProductIdentification>
+                     <GlobalPartnerClassificationCode>5644</GlobalPartnerClassificationCode>
+                     <ProprietaryProductIdentifier>CS-1100</ProprietaryProductIdentifier>
+                  </PartnerProductIdentification>
+               </ProductIdentification>
+            </ProductPackageDescription>
+         </productUnit>
+         <GlobalSpecialFulfillmentRequestCode>3122</GlobalSpecialFulfillmentRequestCode>
+         <countryOfOrigin>
+            <GlobalCountryCode>001</GlobalCountryCode>
+         </countryOfOrigin>
+         <requestedShipDate>
+            <DateStamp>15 NOVEMBER 2011</DateStamp>
+         </requestedShipDate>
+         <contractIdentifier>
+            <ProprietaryDocumentIdentifier/>
+         </contractIdentifier>
+         <GlobalProductUnitOfMeasureCode>N/A</GlobalProductUnitOfMeasureCode>
+         <SpecialHandlingInstruction>
+            <specialHandlingText>
+               <FreeFormText>Fragile -- contains electronic equipment</FreeFormText>
+            </specialHandlingText>
+         </SpecialHandlingInstruction>
+         <requestedPrice>
+            <FinancialAmount>
+               <GlobalCurrencyCode>001</GlobalCurrencyCode>
+               <MonetaryAmount>25</MonetaryAmount>
+            </FinancialAmount>
+         </requestedPrice>
+      </ProductLineItem>
+      <!-- Item 2 -->
+      <ProductLineItem>
+         <shipFrom>
+            <GlobalLocationIdentifier>Computer Warehouse 1</GlobalLocationIdentifier>
+         </shipFrom>
+         <ProductQuantity>120</ProductQuantity>
+         <LineNumber>2</LineNumber>
+         <productUnit>
+            <ProductPackageDescription>
+               <ProductIdentification>
+                  <GlobalProductIdentifier>Hammer</GlobalProductIdentifier>
+                  <PartnerProductIdentification>
+                     <GlobalPartnerClassificationCode>5672</GlobalPartnerClassificationCode>
+                     <ProprietaryProductIdentifier>CS-1150</ProprietaryProductIdentifier>
+                  </PartnerProductIdentification>
+               </ProductIdentification>
+            </ProductPackageDescription>
+         </productUnit>
+         <GlobalSpecialFulfillmentRequestCode>3235</GlobalSpecialFulfillmentRequestCode>
+         <countryOfOrigin>
+            <GlobalCountryCode>001</GlobalCountryCode>
+         </countryOfOrigin>
+         <requestedShipDate>
+            <DateStamp>15 NOVEMBER 2011</DateStamp>
+         </requestedShipDate>
+         <contractIdentifier>
+            <ProprietaryDocumentIdentifier/>
+         </contractIdentifier>
+         <GlobalProductUnitOfMeasureCode>N/A</GlobalProductUnitOfMeasureCode>
+         <SpecialHandlingInstruction>
+            <specialHandlingText>
+               <FreeFormText>Fragile -- contains electronic equipment</FreeFormText>
+            </specialHandlingText>
+         </SpecialHandlingInstruction>
+         <requestedPrice>
+            <FinancialAmount>
+               <GlobalCurrencyCode>001</GlobalCurrencyCode>
+               <MonetaryAmount>23</MonetaryAmount>
+            </FinancialAmount>
+         </requestedPrice>
+      </ProductLineItem>
+      <!-- Item 3 -->
+      <ProductLineItem>
+         <shipFrom>
+            <GlobalLocationIdentifier>Computer Warehouse 1</GlobalLocationIdentifier>
+         </shipFrom>
+         <ProductQuantity>20</ProductQuantity>
+         <LineNumber>3</LineNumber>
+         <productUnit>
+            <ProductPackageDescription>
+               <ProductIdentification>
+                  <GlobalProductIdentifier>Power saw</GlobalProductIdentifier>
+                  <PartnerProductIdentification>
+                     <GlobalPartnerClassificationCode>6666</GlobalPartnerClassificationCode>
+                     <ProprietaryProductIdentifier>CS-6666</ProprietaryProductIdentifier>
+                  </PartnerProductIdentification>
+               </ProductIdentification>
+            </ProductPackageDescription>
+         </productUnit>
+         <GlobalSpecialFulfillmentRequestCode>4321</GlobalSpecialFulfillmentRequestCode>
+         <countryOfOrigin>
+            <GlobalCountryCode>001</GlobalCountryCode>
+         </countryOfOrigin>
+         <requestedShipDate>
+            <DateStamp>15 NOVEMBER 2011</DateStamp>
+         </requestedShipDate>
+         <contractIdentifier>
+            <ProprietaryDocumentIdentifier/>
+         </contractIdentifier>
+         <GlobalProductUnitOfMeasureCode>N/A</GlobalProductUnitOfMeasureCode>
+         <SpecialHandlingInstruction>
+            <specialHandlingText>
+               <FreeFormText>Be careful</FreeFormText>
+            </specialHandlingText>
+         </SpecialHandlingInstruction>
+         <requestedPrice>
+            <FinancialAmount>
+               <GlobalCurrencyCode>001</GlobalCurrencyCode>
+               <MonetaryAmount>400</MonetaryAmount>
+            </FinancialAmount>
+         </requestedPrice>
+      </ProductLineItem>
+      <!-- Item 4 -->
+      <ProductLineItem>
+         <shipFrom>
+            <GlobalLocationIdentifier>Computer Warehouse 2</GlobalLocationIdentifier>
+         </shipFrom>
+         <ProductQuantity>9000</ProductQuantity>
+         <LineNumber>4</LineNumber>
+         <productUnit>
+            <ProductPackageDescription>
+               <ProductIdentification>
+                  <GlobalProductIdentifier>Box of nails</GlobalProductIdentifier>
+                  <PartnerProductIdentification>
+                     <GlobalPartnerClassificationCode>9876</GlobalPartnerClassificationCode>
+                     <ProprietaryProductIdentifier>CS-9876</ProprietaryProductIdentifier>
+                  </PartnerProductIdentification>
+               </ProductIdentification>
+            </ProductPackageDescription>
+         </productUnit>
+         <GlobalSpecialFulfillmentRequestCode>7464</GlobalSpecialFulfillmentRequestCode>
+         <countryOfOrigin>
+            <GlobalCountryCode>001</GlobalCountryCode>
+         </countryOfOrigin>
+         <requestedShipDate>
+            <DateStamp>15 NOVEMBER 2011</DateStamp>
+         </requestedShipDate>
+         <contractIdentifier>
+            <ProprietaryDocumentIdentifier/>
+         </contractIdentifier>
+         <GlobalProductUnitOfMeasureCode>N/A</GlobalProductUnitOfMeasureCode>
+         <SpecialHandlingInstruction>
+            <specialHandlingText>
+               <FreeFormText>no special handling</FreeFormText>
+            </specialHandlingText>
+         </SpecialHandlingInstruction>
+         <requestedPrice>
+            <FinancialAmount>
+               <GlobalCurrencyCode>001</GlobalCurrencyCode>
+               <MonetaryAmount>35</MonetaryAmount>
+            </FinancialAmount>
+         </requestedPrice>
+      </ProductLineItem>
+      <!-- Item 5 -->
+      <ProductLineItem>
+         <shipFrom>
+            <GlobalLocationIdentifier>Computer Warehouse 1</GlobalLocationIdentifier>
+         </shipFrom>
+         <ProductQuantity>45</ProductQuantity>
+         <LineNumber>5</LineNumber>
+         <productUnit>
+            <ProductPackageDescription>
+               <ProductIdentification>
+                  <GlobalProductIdentifier>Screw drivers</GlobalProductIdentifier>
+                  <PartnerProductIdentification>
+                     <GlobalPartnerClassificationCode>5363</GlobalPartnerClassificationCode>
+                     <ProprietaryProductIdentifier>CS-5363</ProprietaryProductIdentifier>
+                  </PartnerProductIdentification>
+               </ProductIdentification>
+            </ProductPackageDescription>
+         </productUnit>
+         <GlobalSpecialFulfillmentRequestCode>3245</GlobalSpecialFulfillmentRequestCode>
+         <countryOfOrigin>
+            <GlobalCountryCode>001</GlobalCountryCode>
+         </countryOfOrigin>
+         <requestedShipDate>
+            <DateStamp>15 NOVEMBER 2011</DateStamp>
+         </requestedShipDate>
+         <contractIdentifier>
+            <ProprietaryDocumentIdentifier/>
+         </contractIdentifier>
+         <GlobalProductUnitOfMeasureCode>N/A</GlobalProductUnitOfMeasureCode>
+         <SpecialHandlingInstruction>
+            <specialHandlingText>
+               <FreeFormText>sharp</FreeFormText>
+            </specialHandlingText>
+         </SpecialHandlingInstruction>
+         <requestedPrice>
+            <FinancialAmount>
+               <GlobalCurrencyCode>001</GlobalCurrencyCode>
+               <MonetaryAmount>4.5</MonetaryAmount>
+            </FinancialAmount>
+         </requestedPrice>
+      </ProductLineItem>
+	        <!-- Item 5 -->
+      <ProductLineItem>
+         <shipFrom>
+            <GlobalLocationIdentifier>Computer Warehouse 1</GlobalLocationIdentifier>
+         </shipFrom>
+         <ProductQuantity>45</ProductQuantity>
+         <LineNumber>5</LineNumber>
+         <productUnit>
+            <ProductPackageDescription>
+               <ProductIdentification>
+                  <GlobalProductIdentifier>Screw drivers</GlobalProductIdentifier>
+                  <PartnerProductIdentification>
+                     <GlobalPartnerClassificationCode>5363</GlobalPartnerClassificationCode>
+                     <ProprietaryProductIdentifier>CS-5363</ProprietaryProductIdentifier>
+                  </PartnerProductIdentification>
+               </ProductIdentification>
+            </ProductPackageDescription>
+         </productUnit>
+         <GlobalSpecialFulfillmentRequestCode>3245</GlobalSpecialFulfillmentRequestCode>
+         <countryOfOrigin>
+            <GlobalCountryCode>001</GlobalCountryCode>
+         </countryOfOrigin>
+         <requestedShipDate>
+            <DateStamp>15 NOVEMBER 2011</DateStamp>
+         </requestedShipDate>
+         <contractIdentifier>
+            <ProprietaryDocumentIdentifier/>
+         </contractIdentifier>
+         <GlobalProductUnitOfMeasureCode>N/A</GlobalProductUnitOfMeasureCode>
+         <SpecialHandlingInstruction>
+            <specialHandlingText>
+               <FreeFormText>sharp</FreeFormText>
+            </specialHandlingText>
+         </SpecialHandlingInstruction>
+         <requestedPrice>
+            <FinancialAmount>
+               <GlobalCurrencyCode>001</GlobalCurrencyCode>
+               <MonetaryAmount>4.5</MonetaryAmount>
+            </FinancialAmount>
+         </requestedPrice>
+      </ProductLineItem>
+	        <!-- Item 5 -->
+      <ProductLineItem>
+         <shipFrom>
+            <GlobalLocationIdentifier>Computer Warehouse 1</GlobalLocationIdentifier>
+         </shipFrom>
+         <ProductQuantity>45</ProductQuantity>
+         <LineNumber>5</LineNumber>
+         <productUnit>
+            <ProductPackageDescription>
+               <ProductIdentification>
+                  <GlobalProductIdentifier>Screw drivers</GlobalProductIdentifier>
+                  <PartnerProductIdentification>
+                     <GlobalPartnerClassificationCode>5363</GlobalPartnerClassificationCode>
+                     <ProprietaryProductIdentifier>CS-5363</ProprietaryProductIdentifier>
+                  </PartnerProductIdentification>
+               </ProductIdentification>
+            </ProductPackageDescription>
+         </productUnit>
+         <GlobalSpecialFulfillmentRequestCode>3245</GlobalSpecialFulfillmentRequestCode>
+         <countryOfOrigin>
+            <GlobalCountryCode>001</GlobalCountryCode>
+         </countryOfOrigin>
+         <requestedShipDate>
+            <DateStamp>15 NOVEMBER 2011</DateStamp>
+         </requestedShipDate>
+         <contractIdentifier>
+            <ProprietaryDocumentIdentifier/>
+         </contractIdentifier>
+         <GlobalProductUnitOfMeasureCode>N/A</GlobalProductUnitOfMeasureCode>
+         <SpecialHandlingInstruction>
+            <specialHandlingText>
+               <FreeFormText>sharp</FreeFormText>
+            </specialHandlingText>
+         </SpecialHandlingInstruction>
+         <requestedPrice>
+            <FinancialAmount>
+               <GlobalCurrencyCode>001</GlobalCurrencyCode>
+               <MonetaryAmount>4.5</MonetaryAmount>
+            </FinancialAmount>
+         </requestedPrice>
+      </ProductLineItem>
+	        <!-- Item 5 -->
+      <ProductLineItem>
+         <shipFrom>
+            <GlobalLocationIdentifier>Computer Warehouse 1</GlobalLocationIdentifier>
+         </shipFrom>
+         <ProductQuantity>45</ProductQuantity>
+         <LineNumber>5</LineNumber>
+         <productUnit>
+            <ProductPackageDescription>
+               <ProductIdentification>
+                  <GlobalProductIdentifier>Screw drivers</GlobalProductIdentifier>
+                  <PartnerProductIdentification>
+                     <GlobalPartnerClassificationCode>5363</GlobalPartnerClassificationCode>
+                     <ProprietaryProductIdentifier>CS-5363</ProprietaryProductIdentifier>
+                  </PartnerProductIdentification>
+               </ProductIdentification>
+            </ProductPackageDescription>
+         </productUnit>
+         <GlobalSpecialFulfillmentRequestCode>3245</GlobalSpecialFulfillmentRequestCode>
+         <countryOfOrigin>
+            <GlobalCountryCode>001</GlobalCountryCode>
+         </countryOfOrigin>
+         <requestedShipDate>
+            <DateStamp>15 NOVEMBER 2011</DateStamp>
+         </requestedShipDate>
+         <contractIdentifier>
+            <ProprietaryDocumentIdentifier/>
+         </contractIdentifier>
+         <GlobalProductUnitOfMeasureCode>N/A</GlobalProductUnitOfMeasureCode>
+         <SpecialHandlingInstruction>
+            <specialHandlingText>
+               <FreeFormText>sharp</FreeFormText>
+            </specialHandlingText>
+         </SpecialHandlingInstruction>
+         <requestedPrice>
+            <FinancialAmount>
+               <GlobalCurrencyCode>001</GlobalCurrencyCode>
+               <MonetaryAmount>4.5</MonetaryAmount>
+            </FinancialAmount>
+         </requestedPrice>
+      </ProductLineItem>
+	        <!-- Item 5 -->
+      <ProductLineItem>
+         <shipFrom>
+            <GlobalLocationIdentifier>Computer Warehouse 1</GlobalLocationIdentifier>
+         </shipFrom>
+         <ProductQuantity>45</ProductQuantity>
+         <LineNumber>5</LineNumber>
+         <productUnit>
+            <ProductPackageDescription>
+               <ProductIdentification>
+                  <GlobalProductIdentifier>Screw drivers</GlobalProductIdentifier>
+                  <PartnerProductIdentification>
+                     <GlobalPartnerClassificationCode>5363</GlobalPartnerClassificationCode>
+                     <ProprietaryProductIdentifier>CS-5363</ProprietaryProductIdentifier>
+                  </PartnerProductIdentification>
+               </ProductIdentification>
+            </ProductPackageDescription>
+         </productUnit>
+         <GlobalSpecialFulfillmentRequestCode>3245</GlobalSpecialFulfillmentRequestCode>
+         <countryOfOrigin>
+            <GlobalCountryCode>001</GlobalCountryCode>
+         </countryOfOrigin>
+         <requestedShipDate>
+            <DateStamp>15 NOVEMBER 2011</DateStamp>
+         </requestedShipDate>
+         <contractIdentifier>
+            <ProprietaryDocumentIdentifier/>
+         </contractIdentifier>
+         <GlobalProductUnitOfMeasureCode>N/A</GlobalProductUnitOfMeasureCode>
+         <SpecialHandlingInstruction>
+            <specialHandlingText>
+               <FreeFormText>sharp</FreeFormText>
+            </specialHandlingText>
+         </SpecialHandlingInstruction>
+         <requestedPrice>
+            <FinancialAmount>
+               <GlobalCurrencyCode>001</GlobalCurrencyCode>
+               <MonetaryAmount>4.5</MonetaryAmount>
+            </FinancialAmount>
+         </requestedPrice>
+      </ProductLineItem>
+	        <!-- Item 5 -->
+      <ProductLineItem>
+         <shipFrom>
+            <GlobalLocationIdentifier>Computer Warehouse 1</GlobalLocationIdentifier>
+         </shipFrom>
+         <ProductQuantity>45</ProductQuantity>
+         <LineNumber>5</LineNumber>
+         <productUnit>
+            <ProductPackageDescription>
+               <ProductIdentification>
+                  <GlobalProductIdentifier>Screw drivers</GlobalProductIdentifier>
+                  <PartnerProductIdentification>
+                     <GlobalPartnerClassificationCode>5363</GlobalPartnerClassificationCode>
+                     <ProprietaryProductIdentifier>CS-5363</ProprietaryProductIdentifier>
+                  </PartnerProductIdentification>
+               </ProductIdentification>
+            </ProductPackageDescription>
+         </productUnit>
+         <GlobalSpecialFulfillmentRequestCode>3245</GlobalSpecialFulfillmentRequestCode>
+         <countryOfOrigin>
+            <GlobalCountryCode>001</GlobalCountryCode>
+         </countryOfOrigin>
+         <requestedShipDate>
+            <DateStamp>15 NOVEMBER 2011</DateStamp>
+         </requestedShipDate>
+         <contractIdentifier>
+            <ProprietaryDocumentIdentifier/>
+         </contractIdentifier>
+         <GlobalProductUnitOfMeasureCode>N/A</GlobalProductUnitOfMeasureCode>
+         <SpecialHandlingInstruction>
+            <specialHandlingText>
+               <FreeFormText>sharp</FreeFormText>
+            </specialHandlingText>
+         </SpecialHandlingInstruction>
+         <requestedPrice>
+            <FinancialAmount>
+               <GlobalCurrencyCode>001</GlobalCurrencyCode>
+               <MonetaryAmount>4.5</MonetaryAmount>
+            </FinancialAmount>
+         </requestedPrice>
+      </ProductLineItem>
+	        <!-- Item 5 -->
+      <ProductLineItem>
+         <shipFrom>
+            <GlobalLocationIdentifier>Computer Warehouse 1</GlobalLocationIdentifier>
+         </shipFrom>
+         <ProductQuantity>45</ProductQuantity>
+         <LineNumber>5</LineNumber>
+         <productUnit>
+            <ProductPackageDescription>
+               <ProductIdentification>
+                  <GlobalProductIdentifier>Screw drivers</GlobalProductIdentifier>
+                  <PartnerProductIdentification>
+                     <GlobalPartnerClassificationCode>5363</GlobalPartnerClassificationCode>
+                     <ProprietaryProductIdentifier>CS-5363</ProprietaryProductIdentifier>
+                  </PartnerProductIdentification>
+               </ProductIdentification>
+            </ProductPackageDescription>
+         </productUnit>
+         <GlobalSpecialFulfillmentRequestCode>3245</GlobalSpecialFulfillmentRequestCode>
+         <countryOfOrigin>
+            <GlobalCountryCode>001</GlobalCountryCode>
+         </countryOfOrigin>
+         <requestedShipDate>
+            <DateStamp>15 NOVEMBER 2011</DateStamp>
+         </requestedShipDate>
+         <contractIdentifier>
+            <ProprietaryDocumentIdentifier/>
+         </contractIdentifier>
+         <GlobalProductUnitOfMeasureCode>N/A</GlobalProductUnitOfMeasureCode>
+         <SpecialHandlingInstruction>
+            <specialHandlingText>
+               <FreeFormText>sharp</FreeFormText>
+            </specialHandlingText>
+         </SpecialHandlingInstruction>
+         <requestedPrice>
+            <FinancialAmount>
+               <GlobalCurrencyCode>001</GlobalCurrencyCode>
+               <MonetaryAmount>4.5</MonetaryAmount>
+            </FinancialAmount>
+         </requestedPrice>
+      </ProductLineItem>
+	        <!-- Item 5 -->
+      <ProductLineItem>
+         <shipFrom>
+            <GlobalLocationIdentifier>Computer Warehouse 1</GlobalLocationIdentifier>
+         </shipFrom>
+         <ProductQuantity>45</ProductQuantity>
+         <LineNumber>5</LineNumber>
+         <productUnit>
+            <ProductPackageDescription>
+               <ProductIdentification>
+                  <GlobalProductIdentifier>Screw drivers</GlobalProductIdentifier>
+                  <PartnerProductIdentification>
+                     <GlobalPartnerClassificationCode>5363</GlobalPartnerClassificationCode>
+                     <ProprietaryProductIdentifier>CS-5363</ProprietaryProductIdentifier>
+                  </PartnerProductIdentification>
+               </ProductIdentification>
+            </ProductPackageDescription>
+         </productUnit>
+         <GlobalSpecialFulfillmentRequestCode>3245</GlobalSpecialFulfillmentRequestCode>
+         <countryOfOrigin>
+            <GlobalCountryCode>001</GlobalCountryCode>
+         </countryOfOrigin>
+         <requestedShipDate>
+            <DateStamp>15 NOVEMBER 2011</DateStamp>
+         </requestedShipDate>
+         <contractIdentifier>
+            <ProprietaryDocumentIdentifier/>
+         </contractIdentifier>
+         <GlobalProductUnitOfMeasureCode>N/A</GlobalProductUnitOfMeasureCode>
+         <SpecialHandlingInstruction>
+            <specialHandlingText>
+               <FreeFormText>sharp</FreeFormText>
+            </specialHandlingText>
+         </SpecialHandlingInstruction>
+         <requestedPrice>
+            <FinancialAmount>
+               <GlobalCurrencyCode>001</GlobalCurrencyCode>
+               <MonetaryAmount>4.5</MonetaryAmount>
+            </FinancialAmount>
+         </requestedPrice>
+      </ProductLineItem>
+	        <!-- Item 5 -->
+      <ProductLineItem>
+         <shipFrom>
+            <GlobalLocationIdentifier>Computer Warehouse 1</GlobalLocationIdentifier>
+         </shipFrom>
+         <ProductQuantity>45</ProductQuantity>
+         <LineNumber>5</LineNumber>
+         <productUnit>
+            <ProductPackageDescription>
+               <ProductIdentification>
+                  <GlobalProductIdentifier>Screw drivers</GlobalProductIdentifier>
+                  <PartnerProductIdentification>
+                     <GlobalPartnerClassificationCode>5363</GlobalPartnerClassificationCode>
+                     <ProprietaryProductIdentifier>CS-5363</ProprietaryProductIdentifier>
+                  </PartnerProductIdentification>
+               </ProductIdentification>
+            </ProductPackageDescription>
+         </productUnit>
+         <GlobalSpecialFulfillmentRequestCode>3245</GlobalSpecialFulfillmentRequestCode>
+         <countryOfOrigin>
+            <GlobalCountryCode>001</GlobalCountryCode>
+         </countryOfOrigin>
+         <requestedShipDate>
+            <DateStamp>15 NOVEMBER 2011</DateStamp>
+         </requestedShipDate>
+         <contractIdentifier>
+            <ProprietaryDocumentIdentifier/>
+         </contractIdentifier>
+         <GlobalProductUnitOfMeasureCode>N/A</GlobalProductUnitOfMeasureCode>
+         <SpecialHandlingInstruction>
+            <specialHandlingText>
+               <FreeFormText>sharp</FreeFormText>
+            </specialHandlingText>
+         </SpecialHandlingInstruction>
+         <requestedPrice>
+            <FinancialAmount>
+               <GlobalCurrencyCode>001</GlobalCurrencyCode>
+               <MonetaryAmount>4.5</MonetaryAmount>
+            </FinancialAmount>
+         </requestedPrice>
+      </ProductLineItem>
+	        <!-- Item 5 -->
+      <ProductLineItem>
+         <shipFrom>
+            <GlobalLocationIdentifier>Computer Warehouse 1</GlobalLocationIdentifier>
+         </shipFrom>
+         <ProductQuantity>45</ProductQuantity>
+         <LineNumber>5</LineNumber>
+         <productUnit>
+            <ProductPackageDescription>
+               <ProductIdentification>
+                  <GlobalProductIdentifier>Screw drivers</GlobalProductIdentifier>
+                  <PartnerProductIdentification>
+                     <GlobalPartnerClassificationCode>5363</GlobalPartnerClassificationCode>
+                     <ProprietaryProductIdentifier>CS-5363</ProprietaryProductIdentifier>
+                  </PartnerProductIdentification>
+               </ProductIdentification>
+            </ProductPackageDescription>
+         </productUnit>
+         <GlobalSpecialFulfillmentRequestCode>3245</GlobalSpecialFulfillmentRequestCode>
+         <countryOfOrigin>
+            <GlobalCountryCode>001</GlobalCountryCode>
+         </countryOfOrigin>
+         <requestedShipDate>
+            <DateStamp>15 NOVEMBER 2011</DateStamp>
+         </requestedShipDate>
+         <contractIdentifier>
+            <ProprietaryDocumentIdentifier/>
+         </contractIdentifier>
+         <GlobalProductUnitOfMeasureCode>N/A</GlobalProductUnitOfMeasureCode>
+         <SpecialHandlingInstruction>
+            <specialHandlingText>
+               <FreeFormText>sharp</FreeFormText>
+            </specialHandlingText>
+         </SpecialHandlingInstruction>
+         <requestedPrice>
+            <FinancialAmount>
+               <GlobalCurrencyCode>001</GlobalCurrencyCode>
+               <MonetaryAmount>4.5</MonetaryAmount>
+            </FinancialAmount>
+         </requestedPrice>
+      </ProductLineItem>
+	        <!-- Item 5 -->
+      <ProductLineItem>
+         <shipFrom>
+            <GlobalLocationIdentifier>Computer Warehouse 1</GlobalLocationIdentifier>
+         </shipFrom>
+         <ProductQuantity>45</ProductQuantity>
+         <LineNumber>5</LineNumber>
+         <productUnit>
+            <ProductPackageDescription>
+               <ProductIdentification>
+                  <GlobalProductIdentifier>Screw drivers</GlobalProductIdentifier>
+                  <PartnerProductIdentification>
+                     <GlobalPartnerClassificationCode>5363</GlobalPartnerClassificationCode>
+                     <ProprietaryProductIdentifier>CS-5363</ProprietaryProductIdentifier>
+                  </PartnerProductIdentification>
+               </ProductIdentification>
+            </ProductPackageDescription>
+         </productUnit>
+         <GlobalSpecialFulfillmentRequestCode>3245</GlobalSpecialFulfillmentRequestCode>
+         <countryOfOrigin>
+            <GlobalCountryCode>001</GlobalCountryCode>
+         </countryOfOrigin>
+         <requestedShipDate>
+            <DateStamp>15 NOVEMBER 2011</DateStamp>
+         </requestedShipDate>
+         <contractIdentifier>
+            <ProprietaryDocumentIdentifier/>
+         </contractIdentifier>
+         <GlobalProductUnitOfMeasureCode>N/A</GlobalProductUnitOfMeasureCode>
+         <SpecialHandlingInstruction>
+            <specialHandlingText>
+               <FreeFormText>sharp</FreeFormText>
+            </specialHandlingText>
+         </SpecialHandlingInstruction>
+         <requestedPrice>
+            <FinancialAmount>
+               <GlobalCurrencyCode>001</GlobalCurrencyCode>
+               <MonetaryAmount>4.5</MonetaryAmount>
+            </FinancialAmount>
+         </requestedPrice>
+      </ProductLineItem>
+	        <!-- Item 5 -->
+      <ProductLineItem>
+         <shipFrom>
+            <GlobalLocationIdentifier>Computer Warehouse 1</GlobalLocationIdentifier>
+         </shipFrom>
+         <ProductQuantity>45</ProductQuantity>
+         <LineNumber>5</LineNumber>
+         <productUnit>
+            <ProductPackageDescription>
+               <ProductIdentification>
+                  <GlobalProductIdentifier>Screw drivers</GlobalProductIdentifier>
+                  <PartnerProductIdentification>
+                     <GlobalPartnerClassificationCode>5363</GlobalPartnerClassificationCode>
+                     <ProprietaryProductIdentifier>CS-5363</ProprietaryProductIdentifier>
+                  </PartnerProductIdentification>
+               </ProductIdentification>
+            </ProductPackageDescription>
+         </productUnit>
+         <GlobalSpecialFulfillmentRequestCode>3245</GlobalSpecialFulfillmentRequestCode>
+         <countryOfOrigin>
+            <GlobalCountryCode>001</GlobalCountryCode>
+         </countryOfOrigin>
+         <requestedShipDate>
+            <DateStamp>15 NOVEMBER 2011</DateStamp>
+         </requestedShipDate>
+         <contractIdentifier>
+            <ProprietaryDocumentIdentifier/>
+         </contractIdentifier>
+         <GlobalProductUnitOfMeasureCode>N/A</GlobalProductUnitOfMeasureCode>
+         <SpecialHandlingInstruction>
+            <specialHandlingText>
+               <FreeFormText>sharp</FreeFormText>
+            </specialHandlingText>
+         </SpecialHandlingInstruction>
+         <requestedPrice>
+            <FinancialAmount>
+               <GlobalCurrencyCode>001</GlobalCurrencyCode>
+               <MonetaryAmount>4.5</MonetaryAmount>
+            </FinancialAmount>
+         </requestedPrice>
+      </ProductLineItem>
+	        <!-- Item 5 -->
+      <ProductLineItem>
+         <shipFrom>
+            <GlobalLocationIdentifier>Computer Warehouse 1</GlobalLocationIdentifier>
+         </shipFrom>
+         <ProductQuantity>45</ProductQuantity>
+         <LineNumber>5</LineNumber>
+         <productUnit>
+            <ProductPackageDescription>
+               <ProductIdentification>
+                  <GlobalProductIdentifier>Screw drivers</GlobalProductIdentifier>
+                  <PartnerProductIdentification>
+                     <GlobalPartnerClassificationCode>5363</GlobalPartnerClassificationCode>
+                     <ProprietaryProductIdentifier>CS-5363</ProprietaryProductIdentifier>
+                  </PartnerProductIdentification>
+               </ProductIdentification>
+            </ProductPackageDescription>
+         </productUnit>
+         <GlobalSpecialFulfillmentRequestCode>3245</GlobalSpecialFulfillmentRequestCode>
+         <countryOfOrigin>
+            <GlobalCountryCode>001</GlobalCountryCode>
+         </countryOfOrigin>
+         <requestedShipDate>
+            <DateStamp>15 NOVEMBER 2011</DateStamp>
+         </requestedShipDate>
+         <contractIdentifier>
+            <ProprietaryDocumentIdentifier/>
+         </contractIdentifier>
+         <GlobalProductUnitOfMeasureCode>N/A</GlobalProductUnitOfMeasureCode>
+         <SpecialHandlingInstruction>
+            <specialHandlingText>
+               <FreeFormText>sharp</FreeFormText>
+            </specialHandlingText>
+         </SpecialHandlingInstruction>
+         <requestedPrice>
+            <FinancialAmount>
+               <GlobalCurrencyCode>001</GlobalCurrencyCode>
+               <MonetaryAmount>4.5</MonetaryAmount>
+            </FinancialAmount>
+         </requestedPrice>
+      </ProductLineItem>
+	        <!-- Item 5 -->
+      <ProductLineItem>
+         <shipFrom>
+            <GlobalLocationIdentifier>Computer Warehouse 1</GlobalLocationIdentifier>
+         </shipFrom>
+         <ProductQuantity>45</ProductQuantity>
+         <LineNumber>5</LineNumber>
+         <productUnit>
+            <ProductPackageDescription>
+               <ProductIdentification>
+                  <GlobalProductIdentifier>Screw drivers</GlobalProductIdentifier>
+                  <PartnerProductIdentification>
+                     <GlobalPartnerClassificationCode>5363</GlobalPartnerClassificationCode>
+                     <ProprietaryProductIdentifier>CS-5363</ProprietaryProductIdentifier>
+                  </PartnerProductIdentification>
+               </ProductIdentification>
+            </ProductPackageDescription>
+         </productUnit>
+         <GlobalSpecialFulfillmentRequestCode>3245</GlobalSpecialFulfillmentRequestCode>
+         <countryOfOrigin>
+            <GlobalCountryCode>001</GlobalCountryCode>
+         </countryOfOrigin>
+         <requestedShipDate>
+            <DateStamp>15 NOVEMBER 2011</DateStamp>
+         </requestedShipDate>
+         <contractIdentifier>
+            <ProprietaryDocumentIdentifier/>
+         </contractIdentifier>
+         <GlobalProductUnitOfMeasureCode>N/A</GlobalProductUnitOfMeasureCode>
+         <SpecialHandlingInstruction>
+            <specialHandlingText>
+               <FreeFormText>sharp</FreeFormText>
+            </specialHandlingText>
+         </SpecialHandlingInstruction>
+         <requestedPrice>
+            <FinancialAmount>
+               <GlobalCurrencyCode>001</GlobalCurrencyCode>
+               <MonetaryAmount>4.5</MonetaryAmount>
+            </FinancialAmount>
+         </requestedPrice>
+      </ProductLineItem>
+	        <!-- Item 5 -->
+      <ProductLineItem>
+         <shipFrom>
+            <GlobalLocationIdentifier>Computer Warehouse 1</GlobalLocationIdentifier>
+         </shipFrom>
+         <ProductQuantity>45</ProductQuantity>
+         <LineNumber>5</LineNumber>
+         <productUnit>
+            <ProductPackageDescription>
+               <ProductIdentification>
+                  <GlobalProductIdentifier>Screw drivers</GlobalProductIdentifier>
+                  <PartnerProductIdentification>
+                     <GlobalPartnerClassificationCode>5363</GlobalPartnerClassificationCode>
+                     <ProprietaryProductIdentifier>CS-5363</ProprietaryProductIdentifier>
+                  </PartnerProductIdentification>
+               </ProductIdentification>
+            </ProductPackageDescription>
+         </productUnit>
+         <GlobalSpecialFulfillmentRequestCode>3245</GlobalSpecialFulfillmentRequestCode>
+         <countryOfOrigin>
+            <GlobalCountryCode>001</GlobalCountryCode>
+         </countryOfOrigin>
+         <requestedShipDate>
+            <DateStamp>15 NOVEMBER 2011</DateStamp>
+         </requestedShipDate>
+         <contractIdentifier>
+            <ProprietaryDocumentIdentifier/>
+         </contractIdentifier>
+         <GlobalProductUnitOfMeasureCode>N/A</GlobalProductUnitOfMeasureCode>
+         <SpecialHandlingInstruction>
+            <specialHandlingText>
+               <FreeFormText>sharp</FreeFormText>
+            </specialHandlingText>
+         </SpecialHandlingInstruction>
+         <requestedPrice>
+            <FinancialAmount>
+               <GlobalCurrencyCode>001</GlobalCurrencyCode>
+               <MonetaryAmount>4.5</MonetaryAmount>
+            </FinancialAmount>
+         </requestedPrice>
+      </ProductLineItem>
+	        <!-- Item 5 -->
+      <ProductLineItem>
+         <shipFrom>
+            <GlobalLocationIdentifier>Computer Warehouse 1</GlobalLocationIdentifier>
+         </shipFrom>
+         <ProductQuantity>45</ProductQuantity>
+         <LineNumber>5</LineNumber>
+         <productUnit>
+            <ProductPackageDescription>
+               <ProductIdentification>
+                  <GlobalProductIdentifier>Screw drivers</GlobalProductIdentifier>
+                  <PartnerProductIdentification>
+                     <GlobalPartnerClassificationCode>5363</GlobalPartnerClassificationCode>
+                     <ProprietaryProductIdentifier>CS-5363</ProprietaryProductIdentifier>
+                  </PartnerProductIdentification>
+               </ProductIdentification>
+            </ProductPackageDescription>
+         </productUnit>
+         <GlobalSpecialFulfillmentRequestCode>3245</GlobalSpecialFulfillmentRequestCode>
+         <countryOfOrigin>
+            <GlobalCountryCode>001</GlobalCountryCode>
+         </countryOfOrigin>
+         <requestedShipDate>
+            <DateStamp>15 NOVEMBER 2011</DateStamp>
+         </requestedShipDate>
+         <contractIdentifier>
+            <ProprietaryDocumentIdentifier/>
+         </contractIdentifier>
+         <GlobalProductUnitOfMeasureCode>N/A</GlobalProductUnitOfMeasureCode>
+         <SpecialHandlingInstruction>
+            <specialHandlingText>
+               <FreeFormText>sharp</FreeFormText>
+            </specialHandlingText>
+         </SpecialHandlingInstruction>
+         <requestedPrice>
+            <FinancialAmount>
+               <GlobalCurrencyCode>001</GlobalCurrencyCode>
+               <MonetaryAmount>4.5</MonetaryAmount>
+            </FinancialAmount>
+         </requestedPrice>
+      </ProductLineItem>
+	        <!-- Item 5 -->
+      <ProductLineItem>
+         <shipFrom>
+            <GlobalLocationIdentifier>Computer Warehouse 1</GlobalLocationIdentifier>
+         </shipFrom>
+         <ProductQuantity>45</ProductQuantity>
+         <LineNumber>5</LineNumber>
+         <productUnit>
+            <ProductPackageDescription>
+               <ProductIdentification>
+                  <GlobalProductIdentifier>Screw drivers</GlobalProductIdentifier>
+                  <PartnerProductIdentification>
+                     <GlobalPartnerClassificationCode>5363</GlobalPartnerClassificationCode>
+                     <ProprietaryProductIdentifier>CS-5363</ProprietaryProductIdentifier>
+                  </PartnerProductIdentification>
+               </ProductIdentification>
+            </ProductPackageDescription>
+         </productUnit>
+         <GlobalSpecialFulfillmentRequestCode>3245</GlobalSpecialFulfillmentRequestCode>
+         <countryOfOrigin>
+            <GlobalCountryCode>001</GlobalCountryCode>
+         </countryOfOrigin>
+         <requestedShipDate>
+            <DateStamp>15 NOVEMBER 2011</DateStamp>
+         </requestedShipDate>
+         <contractIdentifier>
+            <ProprietaryDocumentIdentifier/>
+         </contractIdentifier>
+         <GlobalProductUnitOfMeasureCode>N/A</GlobalProductUnitOfMeasureCode>
+         <SpecialHandlingInstruction>
+            <specialHandlingText>
+               <FreeFormText>sharp</FreeFormText>
+            </specialHandlingText>
+         </SpecialHandlingInstruction>
+         <requestedPrice>
+            <FinancialAmount>
+               <GlobalCurrencyCode>001</GlobalCurrencyCode>
+               <MonetaryAmount>4.5</MonetaryAmount>
+            </FinancialAmount>
+         </requestedPrice>
+      </ProductLineItem>
+	        <!-- Item 5 -->
+      <ProductLineItem>
+         <shipFrom>
+            <GlobalLocationIdentifier>Computer Warehouse 1</GlobalLocationIdentifier>
+         </shipFrom>
+         <ProductQuantity>45</ProductQuantity>
+         <LineNumber>5</LineNumber>
+         <productUnit>
+            <ProductPackageDescription>
+               <ProductIdentification>
+                  <GlobalProductIdentifier>Screw drivers</GlobalProductIdentifier>
+                  <PartnerProductIdentification>
+                     <GlobalPartnerClassificationCode>5363</GlobalPartnerClassificationCode>
+                     <ProprietaryProductIdentifier>CS-5363</ProprietaryProductIdentifier>
+                  </PartnerProductIdentification>
+               </ProductIdentification>
+            </ProductPackageDescription>
+         </productUnit>
+         <GlobalSpecialFulfillmentRequestCode>3245</GlobalSpecialFulfillmentRequestCode>
+         <countryOfOrigin>
+            <GlobalCountryCode>001</GlobalCountryCode>
+         </countryOfOrigin>
+         <requestedShipDate>
+            <DateStamp>15 NOVEMBER 2011</DateStamp>
+         </requestedShipDate>
+         <contractIdentifier>
+            <ProprietaryDocumentIdentifier/>
+         </contractIdentifier>
+         <GlobalProductUnitOfMeasureCode>N/A</GlobalProductUnitOfMeasureCode>
+         <SpecialHandlingInstruction>
+            <specialHandlingText>
+               <FreeFormText>sharp</FreeFormText>
+            </specialHandlingText>
+         </SpecialHandlingInstruction>
+         <requestedPrice>
+            <FinancialAmount>
+               <GlobalCurrencyCode>001</GlobalCurrencyCode>
+               <MonetaryAmount>4.5</MonetaryAmount>
+            </FinancialAmount>
+         </requestedPrice>
+      </ProductLineItem>
+	        <!-- Item 5 -->
+      <ProductLineItem>
+         <shipFrom>
+            <GlobalLocationIdentifier>Computer Warehouse 1</GlobalLocationIdentifier>
+         </shipFrom>
+         <ProductQuantity>45</ProductQuantity>
+         <LineNumber>5</LineNumber>
+         <productUnit>
+            <ProductPackageDescription>
+               <ProductIdentification>
+                  <GlobalProductIdentifier>Screw drivers</GlobalProductIdentifier>
+                  <PartnerProductIdentification>
+                     <GlobalPartnerClassificationCode>5363</GlobalPartnerClassificationCode>
+                     <ProprietaryProductIdentifier>CS-5363</ProprietaryProductIdentifier>
+                  </PartnerProductIdentification>
+               </ProductIdentification>
+            </ProductPackageDescription>
+         </productUnit>
+         <GlobalSpecialFulfillmentRequestCode>3245</GlobalSpecialFulfillmentRequestCode>
+         <countryOfOrigin>
+            <GlobalCountryCode>001</GlobalCountryCode>
+         </countryOfOrigin>
+         <requestedShipDate>
+            <DateStamp>15 NOVEMBER 2011</DateStamp>
+         </requestedShipDate>
+         <contractIdentifier>
+            <ProprietaryDocumentIdentifier/>
+         </contractIdentifier>
+         <GlobalProductUnitOfMeasureCode>N/A</GlobalProductUnitOfMeasureCode>
+         <SpecialHandlingInstruction>
+            <specialHandlingText>
+               <FreeFormText>sharp</FreeFormText>
+            </specialHandlingText>
+         </SpecialHandlingInstruction>
+         <requestedPrice>
+            <FinancialAmount>
+               <GlobalCurrencyCode>001</GlobalCurrencyCode>
+               <MonetaryAmount>4.5</MonetaryAmount>
+            </FinancialAmount>
+         </requestedPrice>
+      </ProductLineItem>
+	        <!-- Item 5 -->
+      <ProductLineItem>
+         <shipFrom>
+            <GlobalLocationIdentifier>Computer Warehouse 1</GlobalLocationIdentifier>
+         </shipFrom>
+         <ProductQuantity>45</ProductQuantity>
+         <LineNumber>5</LineNumber>
+         <productUnit>
+            <ProductPackageDescription>
+               <ProductIdentification>
+                  <GlobalProductIdentifier>Screw drivers</GlobalProductIdentifier>
+                  <PartnerProductIdentification>
+                     <GlobalPartnerClassificationCode>5363</GlobalPartnerClassificationCode>
+                     <ProprietaryProductIdentifier>CS-5363</ProprietaryProductIdentifier>
+                  </PartnerProductIdentification>
+               </ProductIdentification>
+            </ProductPackageDescription>
+         </productUnit>
+         <GlobalSpecialFulfillmentRequestCode>3245</GlobalSpecialFulfillmentRequestCode>
+         <countryOfOrigin>
+            <GlobalCountryCode>001</GlobalCountryCode>
+         </countryOfOrigin>
+         <requestedShipDate>
+            <DateStamp>15 NOVEMBER 2011</DateStamp>
+         </requestedShipDate>
+         <contractIdentifier>
+            <ProprietaryDocumentIdentifier/>
+         </contractIdentifier>
+         <GlobalProductUnitOfMeasureCode>N/A</GlobalProductUnitOfMeasureCode>
+         <SpecialHandlingInstruction>
+            <specialHandlingText>
+               <FreeFormText>sharp</FreeFormText>
+            </specialHandlingText>
+         </SpecialHandlingInstruction>
+         <requestedPrice>
+            <FinancialAmount>
+               <GlobalCurrencyCode>001</GlobalCurrencyCode>
+               <MonetaryAmount>4.5</MonetaryAmount>
+            </FinancialAmount>
+         </requestedPrice>
+      </ProductLineItem>
+	        <!-- Item 5 -->
+      <ProductLineItem>
+         <shipFrom>
+            <GlobalLocationIdentifier>Computer Warehouse 1</GlobalLocationIdentifier>
+         </shipFrom>
+         <ProductQuantity>45</ProductQuantity>
+         <LineNumber>5</LineNumber>
+         <productUnit>
+            <ProductPackageDescription>
+               <ProductIdentification>
+                  <GlobalProductIdentifier>Screw drivers</GlobalProductIdentifier>
+                  <PartnerProductIdentification>
+                     <GlobalPartnerClassificationCode>5363</GlobalPartnerClassificationCode>
+                     <ProprietaryProductIdentifier>CS-5363</ProprietaryProductIdentifier>
+                  </PartnerProductIdentification>
+               </ProductIdentification>
+            </ProductPackageDescription>
+         </productUnit>
+         <GlobalSpecialFulfillmentRequestCode>3245</GlobalSpecialFulfillmentRequestCode>
+         <countryOfOrigin>
+            <GlobalCountryCode>001</GlobalCountryCode>
+         </countryOfOrigin>
+         <requestedShipDate>
+            <DateStamp>15 NOVEMBER 2011</DateStamp>
+         </requestedShipDate>
+         <contractIdentifier>
+            <ProprietaryDocumentIdentifier/>
+         </contractIdentifier>
+         <GlobalProductUnitOfMeasureCode>N/A</GlobalProductUnitOfMeasureCode>
+         <SpecialHandlingInstruction>
+            <specialHandlingText>
+               <FreeFormText>sharp</FreeFormText>
+            </specialHandlingText>
+         </SpecialHandlingInstruction>
+         <requestedPrice>
+            <FinancialAmount>
+               <GlobalCurrencyCode>001</GlobalCurrencyCode>
+               <MonetaryAmount>4.5</MonetaryAmount>
+            </FinancialAmount>
+         </requestedPrice>
+      </ProductLineItem>
+	        <!-- Item 5 -->
+      <ProductLineItem>
+         <shipFrom>
+            <GlobalLocationIdentifier>Computer Warehouse 1</GlobalLocationIdentifier>
+         </shipFrom>
+         <ProductQuantity>45</ProductQuantity>
+         <LineNumber>5</LineNumber>
+         <productUnit>
+            <ProductPackageDescription>
+               <ProductIdentification>
+                  <GlobalProductIdentifier>Screw drivers</GlobalProductIdentifier>
+                  <PartnerProductIdentification>
+                     <GlobalPartnerClassificationCode>5363</GlobalPartnerClassificationCode>
+                     <ProprietaryProductIdentifier>CS-5363</ProprietaryProductIdentifier>
+                  </PartnerProductIdentification>
+               </ProductIdentification>
+            </ProductPackageDescription>
+         </productUnit>
+         <GlobalSpecialFulfillmentRequestCode>3245</GlobalSpecialFulfillmentRequestCode>
+         <countryOfOrigin>
+            <GlobalCountryCode>001</GlobalCountryCode>
+         </countryOfOrigin>
+         <requestedShipDate>
+            <DateStamp>15 NOVEMBER 2011</DateStamp>
+         </requestedShipDate>
+         <contractIdentifier>
+            <ProprietaryDocumentIdentifier/>
+         </contractIdentifier>
+         <GlobalProductUnitOfMeasureCode>N/A</GlobalProductUnitOfMeasureCode>
+         <SpecialHandlingInstruction>
+            <specialHandlingText>
+               <FreeFormText>sharp</FreeFormText>
+            </specialHandlingText>
+         </SpecialHandlingInstruction>
+         <requestedPrice>
+            <FinancialAmount>
+               <GlobalCurrencyCode>001</GlobalCurrencyCode>
+               <MonetaryAmount>4.5</MonetaryAmount>
+            </FinancialAmount>
+         </requestedPrice>
+      </ProductLineItem>
+	        <!-- Item 5 -->
+      <ProductLineItem>
+         <shipFrom>
+            <GlobalLocationIdentifier>Computer Warehouse 1</GlobalLocationIdentifier>
+         </shipFrom>
+         <ProductQuantity>45</ProductQuantity>
+         <LineNumber>5</LineNumber>
+         <productUnit>
+            <ProductPackageDescription>
+               <ProductIdentification>
+                  <GlobalProductIdentifier>Screw drivers</GlobalProductIdentifier>
+                  <PartnerProductIdentification>
+                     <GlobalPartnerClassificationCode>5363</GlobalPartnerClassificationCode>
+                     <ProprietaryProductIdentifier>CS-5363</ProprietaryProductIdentifier>
+                  </PartnerProductIdentification>
+               </ProductIdentification>
+            </ProductPackageDescription>
+         </productUnit>
+         <GlobalSpecialFulfillmentRequestCode>3245</GlobalSpecialFulfillmentRequestCode>
+         <countryOfOrigin>
+            <GlobalCountryCode>001</GlobalCountryCode>
+         </countryOfOrigin>
+         <requestedShipDate>
+            <DateStamp>15 NOVEMBER 2011</DateStamp>
+         </requestedShipDate>
+         <contractIdentifier>
+            <ProprietaryDocumentIdentifier/>
+         </contractIdentifier>
+         <GlobalProductUnitOfMeasureCode>N/A</GlobalProductUnitOfMeasureCode>
+         <SpecialHandlingInstruction>
+            <specialHandlingText>
+               <FreeFormText>sharp</FreeFormText>
+            </specialHandlingText>
+         </SpecialHandlingInstruction>
+         <requestedPrice>
+            <FinancialAmount>
+               <GlobalCurrencyCode>001</GlobalCurrencyCode>
+               <MonetaryAmount>4.5</MonetaryAmount>
+            </FinancialAmount>
+         </requestedPrice>
+      </ProductLineItem>
+	        <!-- Item 5 -->
+      <ProductLineItem>
+         <shipFrom>
+            <GlobalLocationIdentifier>Computer Warehouse 1</GlobalLocationIdentifier>
+         </shipFrom>
+         <ProductQuantity>45</ProductQuantity>
+         <LineNumber>5</LineNumber>
+         <productUnit>
+            <ProductPackageDescription>
+               <ProductIdentification>
+                  <GlobalProductIdentifier>Screw drivers</GlobalProductIdentifier>
+                  <PartnerProductIdentification>
+                     <GlobalPartnerClassificationCode>5363</GlobalPartnerClassificationCode>
+                     <ProprietaryProductIdentifier>CS-5363</ProprietaryProductIdentifier>
+                  </PartnerProductIdentification>
+               </ProductIdentification>
+            </ProductPackageDescription>
+         </productUnit>
+         <GlobalSpecialFulfillmentRequestCode>3245</GlobalSpecialFulfillmentRequestCode>
+         <countryOfOrigin>
+            <GlobalCountryCode>001</GlobalCountryCode>
+         </countryOfOrigin>
+         <requestedShipDate>
+            <DateStamp>15 NOVEMBER 2011</DateStamp>
+         </requestedShipDate>
+         <contractIdentifier>
+            <ProprietaryDocumentIdentifier/>
+         </contractIdentifier>
+         <GlobalProductUnitOfMeasureCode>N/A</GlobalProductUnitOfMeasureCode>
+         <SpecialHandlingInstruction>
+            <specialHandlingText>
+               <FreeFormText>sharp</FreeFormText>
+            </specialHandlingText>
+         </SpecialHandlingInstruction>
+         <requestedPrice>
+            <FinancialAmount>
+               <GlobalCurrencyCode>001</GlobalCurrencyCode>
+               <MonetaryAmount>4.5</MonetaryAmount>
+            </FinancialAmount>
+         </requestedPrice>
+      </ProductLineItem>
+	        <!-- Item 5 -->
+      <ProductLineItem>
+         <shipFrom>
+            <GlobalLocationIdentifier>Computer Warehouse 1</GlobalLocationIdentifier>
+         </shipFrom>
+         <ProductQuantity>45</ProductQuantity>
+         <LineNumber>5</LineNumber>
+         <productUnit>
+            <ProductPackageDescription>
+               <ProductIdentification>
+                  <GlobalProductIdentifier>Screw drivers</GlobalProductIdentifier>
+                  <PartnerProductIdentification>
+                     <GlobalPartnerClassificationCode>5363</GlobalPartnerClassificationCode>
+                     <ProprietaryProductIdentifier>CS-5363</ProprietaryProductIdentifier>
+                  </PartnerProductIdentification>
+               </ProductIdentification>
+            </ProductPackageDescription>
+         </productUnit>
+         <GlobalSpecialFulfillmentRequestCode>3245</GlobalSpecialFulfillmentRequestCode>
+         <countryOfOrigin>
+            <GlobalCountryCode>001</GlobalCountryCode>
+         </countryOfOrigin>
+         <requestedShipDate>
+            <DateStamp>15 NOVEMBER 2011</DateStamp>
+         </requestedShipDate>
+         <contractIdentifier>
+            <ProprietaryDocumentIdentifier/>
+         </contractIdentifier>
+         <GlobalProductUnitOfMeasureCode>N/A</GlobalProductUnitOfMeasureCode>
+         <SpecialHandlingInstruction>
+            <specialHandlingText>
+               <FreeFormText>sharp</FreeFormText>
+            </specialHandlingText>
+         </SpecialHandlingInstruction>
+         <requestedPrice>
+            <FinancialAmount>
+               <GlobalCurrencyCode>001</GlobalCurrencyCode>
+               <MonetaryAmount>4.5</MonetaryAmount>
+            </FinancialAmount>
+         </requestedPrice>
+      </ProductLineItem>
+	        <!-- Item 5 -->
+      <ProductLineItem>
+         <shipFrom>
+            <GlobalLocationIdentifier>Computer Warehouse 1</GlobalLocationIdentifier>
+         </shipFrom>
+         <ProductQuantity>45</ProductQuantity>
+         <LineNumber>5</LineNumber>
+         <productUnit>
+            <ProductPackageDescription>
+               <ProductIdentification>
+                  <GlobalProductIdentifier>Screw drivers</GlobalProductIdentifier>
+                  <PartnerProductIdentification>
+                     <GlobalPartnerClassificationCode>5363</GlobalPartnerClassificationCode>
+                     <ProprietaryProductIdentifier>CS-5363</ProprietaryProductIdentifier>
+                  </PartnerProductIdentification>
+               </ProductIdentification>
+            </ProductPackageDescription>
+         </productUnit>
+         <GlobalSpecialFulfillmentRequestCode>3245</GlobalSpecialFulfillmentRequestCode>
+         <countryOfOrigin>
+            <GlobalCountryCode>001</GlobalCountryCode>
+         </countryOfOrigin>
+         <requestedShipDate>
+            <DateStamp>15 NOVEMBER 2011</DateStamp>
+         </requestedShipDate>
+         <contractIdentifier>
+            <ProprietaryDocumentIdentifier/>
+         </contractIdentifier>
+         <GlobalProductUnitOfMeasureCode>N/A</GlobalProductUnitOfMeasureCode>
+         <SpecialHandlingInstruction>
+            <specialHandlingText>
+               <FreeFormText>sharp</FreeFormText>
+            </specialHandlingText>
+         </SpecialHandlingInstruction>
+         <requestedPrice>
+            <FinancialAmount>
+               <GlobalCurrencyCode>001</GlobalCurrencyCode>
+               <MonetaryAmount>4.5</MonetaryAmount>
+            </FinancialAmount>
+         </requestedPrice>
+      </ProductLineItem>
+	        <!-- Item 5 -->
+      <ProductLineItem>
+         <shipFrom>
+            <GlobalLocationIdentifier>Computer Warehouse 1</GlobalLocationIdentifier>
+         </shipFrom>
+         <ProductQuantity>45</ProductQuantity>
+         <LineNumber>5</LineNumber>
+         <productUnit>
+            <ProductPackageDescription>
+               <ProductIdentification>
+                  <GlobalProductIdentifier>Screw drivers</GlobalProductIdentifier>
+                  <PartnerProductIdentification>
+                     <GlobalPartnerClassificationCode>5363</GlobalPartnerClassificationCode>
+                     <ProprietaryProductIdentifier>CS-5363</ProprietaryProductIdentifier>
+                  </PartnerProductIdentification>
+               </ProductIdentification>
+            </ProductPackageDescription>
+         </productUnit>
+         <GlobalSpecialFulfillmentRequestCode>3245</GlobalSpecialFulfillmentRequestCode>
+         <countryOfOrigin>
+            <GlobalCountryCode>001</GlobalCountryCode>
+         </countryOfOrigin>
+         <requestedShipDate>
+            <DateStamp>15 NOVEMBER 2011</DateStamp>
+         </requestedShipDate>
+         <contractIdentifier>
+            <ProprietaryDocumentIdentifier/>
+         </contractIdentifier>
+         <GlobalProductUnitOfMeasureCode>N/A</GlobalProductUnitOfMeasureCode>
+         <SpecialHandlingInstruction>
+            <specialHandlingText>
+               <FreeFormText>sharp</FreeFormText>
+            </specialHandlingText>
+         </SpecialHandlingInstruction>
+         <requestedPrice>
+            <FinancialAmount>
+               <GlobalCurrencyCode>001</GlobalCurrencyCode>
+               <MonetaryAmount>4.5</MonetaryAmount>
+            </FinancialAmount>
+         </requestedPrice>
+      </ProductLineItem>
+	        <!-- Item 5 -->
+      <ProductLineItem>
+         <shipFrom>
+            <GlobalLocationIdentifier>Computer Warehouse 1</GlobalLocationIdentifier>
+         </shipFrom>
+         <ProductQuantity>45</ProductQuantity>
+         <LineNumber>5</LineNumber>
+         <productUnit>
+            <ProductPackageDescription>
+               <ProductIdentification>
+                  <GlobalProductIdentifier>Screw drivers</GlobalProductIdentifier>
+                  <PartnerProductIdentification>
+                     <GlobalPartnerClassificationCode>5363</GlobalPartnerClassificationCode>
+                     <ProprietaryProductIdentifier>CS-5363</ProprietaryProductIdentifier>
+                  </PartnerProductIdentification>
+               </ProductIdentification>
+            </ProductPackageDescription>
+         </productUnit>
+         <GlobalSpecialFulfillmentRequestCode>3245</GlobalSpecialFulfillmentRequestCode>
+         <countryOfOrigin>
+            <GlobalCountryCode>001</GlobalCountryCode>
+         </countryOfOrigin>
+         <requestedShipDate>
+            <DateStamp>15 NOVEMBER 2011</DateStamp>
+         </requestedShipDate>
+         <contractIdentifier>
+            <ProprietaryDocumentIdentifier/>
+         </contractIdentifier>
+         <GlobalProductUnitOfMeasureCode>N/A</GlobalProductUnitOfMeasureCode>
+         <SpecialHandlingInstruction>
+            <specialHandlingText>
+               <FreeFormText>sharp</FreeFormText>
+            </specialHandlingText>
+         </SpecialHandlingInstruction>
+         <requestedPrice>
+            <FinancialAmount>
+               <GlobalCurrencyCode>001</GlobalCurrencyCode>
+               <MonetaryAmount>4.5</MonetaryAmount>
+            </FinancialAmount>
+         </requestedPrice>
+      </ProductLineItem>
+	        <!-- Item 5 -->
+      <ProductLineItem>
+         <shipFrom>
+            <GlobalLocationIdentifier>Computer Warehouse 1</GlobalLocationIdentifier>
+         </shipFrom>
+         <ProductQuantity>45</ProductQuantity>
+         <LineNumber>5</LineNumber>
+         <productUnit>
+            <ProductPackageDescription>
+               <ProductIdentification>
+                  <GlobalProductIdentifier>Screw drivers</GlobalProductIdentifier>
+                  <PartnerProductIdentification>
+                     <GlobalPartnerClassificationCode>5363</GlobalPartnerClassificationCode>
+                     <ProprietaryProductIdentifier>CS-5363</ProprietaryProductIdentifier>
+                  </PartnerProductIdentification>
+               </ProductIdentification>
+            </ProductPackageDescription>
+         </productUnit>
+         <GlobalSpecialFulfillmentRequestCode>3245</GlobalSpecialFulfillmentRequestCode>
+         <countryOfOrigin>
+            <GlobalCountryCode>001</GlobalCountryCode>
+         </countryOfOrigin>
+         <requestedShipDate>
+            <DateStamp>15 NOVEMBER 2011</DateStamp>
+         </requestedShipDate>
+         <contractIdentifier>
+            <ProprietaryDocumentIdentifier/>
+         </contractIdentifier>
+         <GlobalProductUnitOfMeasureCode>N/A</GlobalProductUnitOfMeasureCode>
+         <SpecialHandlingInstruction>
+            <specialHandlingText>
+               <FreeFormText>sharp</FreeFormText>
+            </specialHandlingText>
+         </SpecialHandlingInstruction>
+         <requestedPrice>
+            <FinancialAmount>
+               <GlobalCurrencyCode>001</GlobalCurrencyCode>
+               <MonetaryAmount>4.5</MonetaryAmount>
+            </FinancialAmount>
+         </requestedPrice>
+      </ProductLineItem>
+	        <!-- Item 5 -->
+      <ProductLineItem>
+         <shipFrom>
+            <GlobalLocationIdentifier>Computer Warehouse 1</GlobalLocationIdentifier>
+         </shipFrom>
+         <ProductQuantity>45</ProductQuantity>
+         <LineNumber>5</LineNumber>
+         <productUnit>
+            <ProductPackageDescription>
+               <ProductIdentification>
+                  <GlobalProductIdentifier>Screw drivers</GlobalProductIdentifier>
+                  <PartnerProductIdentification>
+                     <GlobalPartnerClassificationCode>5363</GlobalPartnerClassificationCode>
+                     <ProprietaryProductIdentifier>CS-5363</ProprietaryProductIdentifier>
+                  </PartnerProductIdentification>
+               </ProductIdentification>
+            </ProductPackageDescription>
+         </productUnit>
+         <GlobalSpecialFulfillmentRequestCode>3245</GlobalSpecialFulfillmentRequestCode>
+         <countryOfOrigin>
+            <GlobalCountryCode>001</GlobalCountryCode>
+         </countryOfOrigin>
+         <requestedShipDate>
+            <DateStamp>15 NOVEMBER 2011</DateStamp>
+         </requestedShipDate>
+         <contractIdentifier>
+            <ProprietaryDocumentIdentifier/>
+         </contractIdentifier>
+         <GlobalProductUnitOfMeasureCode>N/A</GlobalProductUnitOfMeasureCode>
+         <SpecialHandlingInstruction>
+            <specialHandlingText>
+               <FreeFormText>sharp</FreeFormText>
+            </specialHandlingText>
+         </SpecialHandlingInstruction>
+         <requestedPrice>
+            <FinancialAmount>
+               <GlobalCurrencyCode>001</GlobalCurrencyCode>
+               <MonetaryAmount>4.5</MonetaryAmount>
+            </FinancialAmount>
+         </requestedPrice>
+      </ProductLineItem>
+	        <!-- Item 5 -->
+      <ProductLineItem>
+         <shipFrom>
+            <GlobalLocationIdentifier>Computer Warehouse 1</GlobalLocationIdentifier>
+         </shipFrom>
+         <ProductQuantity>45</ProductQuantity>
+         <LineNumber>5</LineNumber>
+         <productUnit>
+            <ProductPackageDescription>
+               <ProductIdentification>
+                  <GlobalProductIdentifier>Screw drivers</GlobalProductIdentifier>
+                  <PartnerProductIdentification>
+                     <GlobalPartnerClassificationCode>5363</GlobalPartnerClassificationCode>
+                     <ProprietaryProductIdentifier>CS-5363</ProprietaryProductIdentifier>
+                  </PartnerProductIdentification>
+               </ProductIdentification>
+            </ProductPackageDescription>
+         </productUnit>
+         <GlobalSpecialFulfillmentRequestCode>3245</GlobalSpecialFulfillmentRequestCode>
+         <countryOfOrigin>
+            <GlobalCountryCode>001</GlobalCountryCode>
+         </countryOfOrigin>
+         <requestedShipDate>
+            <DateStamp>15 NOVEMBER 2011</DateStamp>
+         </requestedShipDate>
+         <contractIdentifier>
+            <ProprietaryDocumentIdentifier/>
+         </contractIdentifier>
+         <GlobalProductUnitOfMeasureCode>N/A</GlobalProductUnitOfMeasureCode>
+         <SpecialHandlingInstruction>
+            <specialHandlingText>
+               <FreeFormText>sharp</FreeFormText>
+            </specialHandlingText>
+         </SpecialHandlingInstruction>
+         <requestedPrice>
+            <FinancialAmount>
+               <GlobalCurrencyCode>001</GlobalCurrencyCode>
+               <MonetaryAmount>4.5</MonetaryAmount>
+            </FinancialAmount>
+         </requestedPrice>
+      </ProductLineItem>
+	        <!-- Item 5 -->
+      <ProductLineItem>
+         <shipFrom>
+            <GlobalLocationIdentifier>Computer Warehouse 1</GlobalLocationIdentifier>
+         </shipFrom>
+         <ProductQuantity>45</ProductQuantity>
+         <LineNumber>5</LineNumber>
+         <productUnit>
+            <ProductPackageDescription>
+               <ProductIdentification>
+                  <GlobalProductIdentifier>Screw drivers</GlobalProductIdentifier>
+                  <PartnerProductIdentification>
+                     <GlobalPartnerClassificationCode>5363</GlobalPartnerClassificationCode>
+                     <ProprietaryProductIdentifier>CS-5363</ProprietaryProductIdentifier>
+                  </PartnerProductIdentification>
+               </ProductIdentification>
+            </ProductPackageDescription>
+         </productUnit>
+         <GlobalSpecialFulfillmentRequestCode>3245</GlobalSpecialFulfillmentRequestCode>
+         <countryOfOrigin>
+            <GlobalCountryCode>001</GlobalCountryCode>
+         </countryOfOrigin>
+         <requestedShipDate>
+            <DateStamp>15 NOVEMBER 2011</DateStamp>
+         </requestedShipDate>
+         <contractIdentifier>
+            <ProprietaryDocumentIdentifier/>
+         </contractIdentifier>
+         <GlobalProductUnitOfMeasureCode>N/A</GlobalProductUnitOfMeasureCode>
+         <SpecialHandlingInstruction>
+            <specialHandlingText>
+               <FreeFormText>sharp</FreeFormText>
+            </specialHandlingText>
+         </SpecialHandlingInstruction>
+         <requestedPrice>
+            <FinancialAmount>
+               <GlobalCurrencyCode>001</GlobalCurrencyCode>
+               <MonetaryAmount>4.5</MonetaryAmount>
+            </FinancialAmount>
+         </requestedPrice>
+      </ProductLineItem>
+	        <!-- Item 5 -->
+      <ProductLineItem>
+         <shipFrom>
+            <GlobalLocationIdentifier>Computer Warehouse 1</GlobalLocationIdentifier>
+         </shipFrom>
+         <ProductQuantity>45</ProductQuantity>
+         <LineNumber>5</LineNumber>
+         <productUnit>
+            <ProductPackageDescription>
+               <ProductIdentification>
+                  <GlobalProductIdentifier>Screw drivers</GlobalProductIdentifier>
+                  <PartnerProductIdentification>
+                     <GlobalPartnerClassificationCode>5363</GlobalPartnerClassificationCode>
+                     <ProprietaryProductIdentifier>CS-5363</ProprietaryProductIdentifier>
+                  </PartnerProductIdentification>
+               </ProductIdentification>
+            </ProductPackageDescription>
+         </productUnit>
+         <GlobalSpecialFulfillmentRequestCode>3245</GlobalSpecialFulfillmentRequestCode>
+         <countryOfOrigin>
+            <GlobalCountryCode>001</GlobalCountryCode>
+         </countryOfOrigin>
+         <requestedShipDate>
+            <DateStamp>15 NOVEMBER 2011</DateStamp>
+         </requestedShipDate>
+         <contractIdentifier>
+            <ProprietaryDocumentIdentifier/>
+         </contractIdentifier>
+         <GlobalProductUnitOfMeasureCode>N/A</GlobalProductUnitOfMeasureCode>
+         <SpecialHandlingInstruction>
+            <specialHandlingText>
+               <FreeFormText>sharp</FreeFormText>
+            </specialHandlingText>
+         </SpecialHandlingInstruction>
+         <requestedPrice>
+            <FinancialAmount>
+               <GlobalCurrencyCode>001</GlobalCurrencyCode>
+               <MonetaryAmount>4.5</MonetaryAmount>
+            </FinancialAmount>
+         </requestedPrice>
+      </ProductLineItem>
+	        <!-- Item 5 -->
+      <ProductLineItem>
+         <shipFrom>
+            <GlobalLocationIdentifier>Computer Warehouse 1</GlobalLocationIdentifier>
+         </shipFrom>
+         <ProductQuantity>45</ProductQuantity>
+         <LineNumber>5</LineNumber>
+         <productUnit>
+            <ProductPackageDescription>
+               <ProductIdentification>
+                  <GlobalProductIdentifier>Screw drivers</GlobalProductIdentifier>
+                  <PartnerProductIdentification>
+                     <GlobalPartnerClassificationCode>5363</GlobalPartnerClassificationCode>
+                     <ProprietaryProductIdentifier>CS-5363</ProprietaryProductIdentifier>
+                  </PartnerProductIdentification>
+               </ProductIdentification>
+            </ProductPackageDescription>
+         </productUnit>
+         <GlobalSpecialFulfillmentRequestCode>3245</GlobalSpecialFulfillmentRequestCode>
+         <countryOfOrigin>
+            <GlobalCountryCode>001</GlobalCountryCode>
+         </countryOfOrigin>
+         <requestedShipDate>
+            <DateStamp>15 NOVEMBER 2011</DateStamp>
+         </requestedShipDate>
+         <contractIdentifier>
+            <ProprietaryDocumentIdentifier/>
+         </contractIdentifier>
+         <GlobalProductUnitOfMeasureCode>N/A</GlobalProductUnitOfMeasureCode>
+         <SpecialHandlingInstruction>
+            <specialHandlingText>
+               <FreeFormText>sharp</FreeFormText>
+            </specialHandlingText>
+         </SpecialHandlingInstruction>
+         <requestedPrice>
+            <FinancialAmount>
+               <GlobalCurrencyCode>001</GlobalCurrencyCode>
+               <MonetaryAmount>4.5</MonetaryAmount>
+            </FinancialAmount>
+         </requestedPrice>
+      </ProductLineItem>
+	        <!-- Item 5 -->
+      <ProductLineItem>
+         <shipFrom>
+            <GlobalLocationIdentifier>Computer Warehouse 1</GlobalLocationIdentifier>
+         </shipFrom>
+         <ProductQuantity>45</ProductQuantity>
+         <LineNumber>5</LineNumber>
+         <productUnit>
+            <ProductPackageDescription>
+               <ProductIdentification>
+                  <GlobalProductIdentifier>Screw drivers</GlobalProductIdentifier>
+                  <PartnerProductIdentification>
+                     <GlobalPartnerClassificationCode>5363</GlobalPartnerClassificationCode>
+                     <ProprietaryProductIdentifier>CS-5363</ProprietaryProductIdentifier>
+                  </PartnerProductIdentification>
+               </ProductIdentification>
+            </ProductPackageDescription>
+         </productUnit>
+         <GlobalSpecialFulfillmentRequestCode>3245</GlobalSpecialFulfillmentRequestCode>
+         <countryOfOrigin>
+            <GlobalCountryCode>001</GlobalCountryCode>
+         </countryOfOrigin>
+         <requestedShipDate>
+            <DateStamp>15 NOVEMBER 2011</DateStamp>
+         </requestedShipDate>
+         <contractIdentifier>
+            <ProprietaryDocumentIdentifier/>
+         </contractIdentifier>
+         <GlobalProductUnitOfMeasureCode>N/A</GlobalProductUnitOfMeasureCode>
+         <SpecialHandlingInstruction>
+            <specialHandlingText>
+               <FreeFormText>sharp</FreeFormText>
+            </specialHandlingText>
+         </SpecialHandlingInstruction>
+         <requestedPrice>
+            <FinancialAmount>
+               <GlobalCurrencyCode>001</GlobalCurrencyCode>
+               <MonetaryAmount>4.5</MonetaryAmount>
+            </FinancialAmount>
+         </requestedPrice>
+      </ProductLineItem>
+	        <!-- Item 5 -->
+      <ProductLineItem>
+         <shipFrom>
+            <GlobalLocationIdentifier>Computer Warehouse 1</GlobalLocationIdentifier>
+         </shipFrom>
+         <ProductQuantity>45</ProductQuantity>
+         <LineNumber>5</LineNumber>
+         <productUnit>
+            <ProductPackageDescription>
+               <ProductIdentification>
+                  <GlobalProductIdentifier>Screw drivers</GlobalProductIdentifier>
+                  <PartnerProductIdentification>
+                     <GlobalPartnerClassificationCode>5363</GlobalPartnerClassificationCode>
+                     <ProprietaryProductIdentifier>CS-5363</ProprietaryProductIdentifier>
+                  </PartnerProductIdentification>
+               </ProductIdentification>
+            </ProductPackageDescription>
+         </productUnit>
+         <GlobalSpecialFulfillmentRequestCode>3245</GlobalSpecialFulfillmentRequestCode>
+         <countryOfOrigin>
+            <GlobalCountryCode>001</GlobalCountryCode>
+         </countryOfOrigin>
+         <requestedShipDate>
+            <DateStamp>15 NOVEMBER 2011</DateStamp>
+         </requestedShipDate>
+         <contractIdentifier>
+            <ProprietaryDocumentIdentifier/>
+         </contractIdentifier>
+         <GlobalProductUnitOfMeasureCode>N/A</GlobalProductUnitOfMeasureCode>
+         <SpecialHandlingInstruction>
+            <specialHandlingText>
+               <FreeFormText>sharp</FreeFormText>
+            </specialHandlingText>
+         </SpecialHandlingInstruction>
+         <requestedPrice>
+            <FinancialAmount>
+               <GlobalCurrencyCode>001</GlobalCurrencyCode>
+               <MonetaryAmount>4.5</MonetaryAmount>
+            </FinancialAmount>
+         </requestedPrice>
+      </ProductLineItem>
+	        <!-- Item 5 -->
+      <ProductLineItem>
+         <shipFrom>
+            <GlobalLocationIdentifier>Computer Warehouse 1</GlobalLocationIdentifier>
+         </shipFrom>
+         <ProductQuantity>45</ProductQuantity>
+         <LineNumber>5</LineNumber>
+         <productUnit>
+            <ProductPackageDescription>
+               <ProductIdentification>
+                  <GlobalProductIdentifier>Screw drivers</GlobalProductIdentifier>
+                  <PartnerProductIdentification>
+                     <GlobalPartnerClassificationCode>5363</GlobalPartnerClassificationCode>
+                     <ProprietaryProductIdentifier>CS-5363</ProprietaryProductIdentifier>
+                  </PartnerProductIdentification>
+               </ProductIdentification>
+            </ProductPackageDescription>
+         </productUnit>
+         <GlobalSpecialFulfillmentRequestCode>3245</GlobalSpecialFulfillmentRequestCode>
+         <countryOfOrigin>
+            <GlobalCountryCode>001</GlobalCountryCode>
+         </countryOfOrigin>
+         <requestedShipDate>
+            <DateStamp>15 NOVEMBER 2011</DateStamp>
+         </requestedShipDate>
+         <contractIdentifier>
+            <ProprietaryDocumentIdentifier/>
+         </contractIdentifier>
+         <GlobalProductUnitOfMeasureCode>N/A</GlobalProductUnitOfMeasureCode>
+         <SpecialHandlingInstruction>
+            <specialHandlingText>
+               <FreeFormText>sharp</FreeFormText>
+            </specialHandlingText>
+         </SpecialHandlingInstruction>
+         <requestedPrice>
+            <FinancialAmount>
+               <GlobalCurrencyCode>001</GlobalCurrencyCode>
+               <MonetaryAmount>4.5</MonetaryAmount>
+            </FinancialAmount>
+         </requestedPrice>
+      </ProductLineItem>
+	        <!-- Item 5 -->
+      <ProductLineItem>
+         <shipFrom>
+            <GlobalLocationIdentifier>Computer Warehouse 1</GlobalLocationIdentifier>
+         </shipFrom>
+         <ProductQuantity>45</ProductQuantity>
+         <LineNumber>5</LineNumber>
+         <productUnit>
+            <ProductPackageDescription>
+               <ProductIdentification>
+                  <GlobalProductIdentifier>Screw drivers</GlobalProductIdentifier>
+                  <PartnerProductIdentification>
+                     <GlobalPartnerClassificationCode>5363</GlobalPartnerClassificationCode>
+                     <ProprietaryProductIdentifier>CS-5363</ProprietaryProductIdentifier>
+                  </PartnerProductIdentification>
+               </ProductIdentification>
+            </ProductPackageDescription>
+         </productUnit>
+         <GlobalSpecialFulfillmentRequestCode>3245</GlobalSpecialFulfillmentRequestCode>
+         <countryOfOrigin>
+            <GlobalCountryCode>001</GlobalCountryCode>
+         </countryOfOrigin>
+         <requestedShipDate>
+            <DateStamp>15 NOVEMBER 2011</DateStamp>
+         </requestedShipDate>
+         <contractIdentifier>
+            <ProprietaryDocumentIdentifier/>
+         </contractIdentifier>
+         <GlobalProductUnitOfMeasureCode>N/A</GlobalProductUnitOfMeasureCode>
+         <SpecialHandlingInstruction>
+            <specialHandlingText>
+               <FreeFormText>sharp</FreeFormText>
+            </specialHandlingText>
+         </SpecialHandlingInstruction>
+         <requestedPrice>
+            <FinancialAmount>
+               <GlobalCurrencyCode>001</GlobalCurrencyCode>
+               <MonetaryAmount>4.5</MonetaryAmount>
+            </FinancialAmount>
+         </requestedPrice>
+      </ProductLineItem>
+	        <!-- Item 5 -->
+      <ProductLineItem>
+         <shipFrom>
+            <GlobalLocationIdentifier>Computer Warehouse 1</GlobalLocationIdentifier>
+         </shipFrom>
+         <ProductQuantity>45</ProductQuantity>
+         <LineNumber>5</LineNumber>
+         <productUnit>
+            <ProductPackageDescription>
+               <ProductIdentification>
+                  <GlobalProductIdentifier>Screw drivers</GlobalProductIdentifier>
+                  <PartnerProductIdentification>
+                     <GlobalPartnerClassificationCode>5363</GlobalPartnerClassificationCode>
+                     <ProprietaryProductIdentifier>CS-5363</ProprietaryProductIdentifier>
+                  </PartnerProductIdentification>
+               </ProductIdentification>
+            </ProductPackageDescription>
+         </productUnit>
+         <GlobalSpecialFulfillmentRequestCode>3245</GlobalSpecialFulfillmentRequestCode>
+         <countryOfOrigin>
+            <GlobalCountryCode>001</GlobalCountryCode>
+         </countryOfOrigin>
+         <requestedShipDate>
+            <DateStamp>15 NOVEMBER 2011</DateStamp>
+         </requestedShipDate>
+         <contractIdentifier>
+            <ProprietaryDocumentIdentifier/>
+         </contractIdentifier>
+         <GlobalProductUnitOfMeasureCode>N/A</GlobalProductUnitOfMeasureCode>
+         <SpecialHandlingInstruction>
+            <specialHandlingText>
+               <FreeFormText>sharp</FreeFormText>
+            </specialHandlingText>
+         </SpecialHandlingInstruction>
+         <requestedPrice>
+            <FinancialAmount>
+               <GlobalCurrencyCode>001</GlobalCurrencyCode>
+               <MonetaryAmount>4.5</MonetaryAmount>
+            </FinancialAmount>
+         </requestedPrice>
+      </ProductLineItem>
+	        <!-- Item 5 -->
+      <ProductLineItem>
+         <shipFrom>
+            <GlobalLocationIdentifier>Computer Warehouse 1</GlobalLocationIdentifier>
+         </shipFrom>
+         <ProductQuantity>45</ProductQuantity>
+         <LineNumber>5</LineNumber>
+         <productUnit>
+            <ProductPackageDescription>
+               <ProductIdentification>
+                  <GlobalProductIdentifier>Screw drivers</GlobalProductIdentifier>
+                  <PartnerProductIdentification>
+                     <GlobalPartnerClassificationCode>5363</GlobalPartnerClassificationCode>
+                     <ProprietaryProductIdentifier>CS-5363</ProprietaryProductIdentifier>
+                  </PartnerProductIdentification>
+               </ProductIdentification>
+            </ProductPackageDescription>
+         </productUnit>
+         <GlobalSpecialFulfillmentRequestCode>3245</GlobalSpecialFulfillmentRequestCode>
+         <countryOfOrigin>
+            <GlobalCountryCode>001</GlobalCountryCode>
+         </countryOfOrigin>
+         <requestedShipDate>
+            <DateStamp>15 NOVEMBER 2011</DateStamp>
+         </requestedShipDate>
+         <contractIdentifier>
+            <ProprietaryDocumentIdentifier/>
+         </contractIdentifier>
+         <GlobalProductUnitOfMeasureCode>N/A</GlobalProductUnitOfMeasureCode>
+         <SpecialHandlingInstruction>
+            <specialHandlingText>
+               <FreeFormText>sharp</FreeFormText>
+            </specialHandlingText>
+         </SpecialHandlingInstruction>
+         <requestedPrice>
+            <FinancialAmount>
+               <GlobalCurrencyCode>001</GlobalCurrencyCode>
+               <MonetaryAmount>4.5</MonetaryAmount>
+            </FinancialAmount>
+         </requestedPrice>
+      </ProductLineItem>
+	        <!-- Item 5 -->
+      <ProductLineItem>
+         <shipFrom>
+            <GlobalLocationIdentifier>Computer Warehouse 1</GlobalLocationIdentifier>
+         </shipFrom>
+         <ProductQuantity>45</ProductQuantity>
+         <LineNumber>5</LineNumber>
+         <productUnit>
+            <ProductPackageDescription>
+               <ProductIdentification>
+                  <GlobalProductIdentifier>Screw drivers</GlobalProductIdentifier>
+                  <PartnerProductIdentification>
+                     <GlobalPartnerClassificationCode>5363</GlobalPartnerClassificationCode>
+                     <ProprietaryProductIdentifier>CS-5363</ProprietaryProductIdentifier>
+                  </PartnerProductIdentification>
+               </ProductIdentification>
+            </ProductPackageDescription>
+         </productUnit>
+         <GlobalSpecialFulfillmentRequestCode>3245</GlobalSpecialFulfillmentRequestCode>
+         <countryOfOrigin>
+            <GlobalCountryCode>001</GlobalCountryCode>
+         </countryOfOrigin>
+         <requestedShipDate>
+            <DateStamp>15 NOVEMBER 2011</DateStamp>
+         </requestedShipDate>
+         <contractIdentifier>
+            <ProprietaryDocumentIdentifier/>
+         </contractIdentifier>
+         <GlobalProductUnitOfMeasureCode>N/A</GlobalProductUnitOfMeasureCode>
+         <SpecialHandlingInstruction>
+            <specialHandlingText>
+               <FreeFormText>sharp</FreeFormText>
+            </specialHandlingText>
+         </SpecialHandlingInstruction>
+         <requestedPrice>
+            <FinancialAmount>
+               <GlobalCurrencyCode>001</GlobalCurrencyCode>
+               <MonetaryAmount>4.5</MonetaryAmount>
+            </FinancialAmount>
+         </requestedPrice>
+      </ProductLineItem>
+	        <!-- Item 5 -->
+      <ProductLineItem>
+         <shipFrom>
+            <GlobalLocationIdentifier>Computer Warehouse 1</GlobalLocationIdentifier>
+         </shipFrom>
+         <ProductQuantity>45</ProductQuantity>
+         <LineNumber>5</LineNumber>
+         <productUnit>
+            <ProductPackageDescription>
+               <ProductIdentification>
+                  <GlobalProductIdentifier>Screw drivers</GlobalProductIdentifier>
+                  <PartnerProductIdentification>
+                     <GlobalPartnerClassificationCode>5363</GlobalPartnerClassificationCode>
+                     <ProprietaryProductIdentifier>CS-5363</ProprietaryProductIdentifier>
+                  </PartnerProductIdentification>
+               </ProductIdentification>
+            </ProductPackageDescription>
+         </productUnit>
+         <GlobalSpecialFulfillmentRequestCode>3245</GlobalSpecialFulfillmentRequestCode>
+         <countryOfOrigin>
+            <GlobalCountryCode>001</GlobalCountryCode>
+         </countryOfOrigin>
+         <requestedShipDate>
+            <DateStamp>15 NOVEMBER 2011</DateStamp>
+         </requestedShipDate>
+         <contractIdentifier>
+            <ProprietaryDocumentIdentifier/>
+         </contractIdentifier>
+         <GlobalProductUnitOfMeasureCode>N/A</GlobalProductUnitOfMeasureCode>
+         <SpecialHandlingInstruction>
+            <specialHandlingText>
+               <FreeFormText>sharp</FreeFormText>
+            </specialHandlingText>
+         </SpecialHandlingInstruction>
+         <requestedPrice>
+            <FinancialAmount>
+               <GlobalCurrencyCode>001</GlobalCurrencyCode>
+               <MonetaryAmount>4.5</MonetaryAmount>
+            </FinancialAmount>
+         </requestedPrice>
+      </ProductLineItem>
+	        <!-- Item 5 -->
+      <ProductLineItem>
+         <shipFrom>
+            <GlobalLocationIdentifier>Computer Warehouse 1</GlobalLocationIdentifier>
+         </shipFrom>
+         <ProductQuantity>45</ProductQuantity>
+         <LineNumber>5</LineNumber>
+         <productUnit>
+            <ProductPackageDescription>
+               <ProductIdentification>
+                  <GlobalProductIdentifier>Screw drivers</GlobalProductIdentifier>
+                  <PartnerProductIdentification>
+                     <GlobalPartnerClassificationCode>5363</GlobalPartnerClassificationCode>
+                     <ProprietaryProductIdentifier>CS-5363</ProprietaryProductIdentifier>
+                  </PartnerProductIdentification>
+               </ProductIdentification>
+            </ProductPackageDescription>
+         </productUnit>
+         <GlobalSpecialFulfillmentRequestCode>3245</GlobalSpecialFulfillmentRequestCode>
+         <countryOfOrigin>
+            <GlobalCountryCode>001</GlobalCountryCode>
+         </countryOfOrigin>
+         <requestedShipDate>
+            <DateStamp>15 NOVEMBER 2011</DateStamp>
+         </requestedShipDate>
+         <contractIdentifier>
+            <ProprietaryDocumentIdentifier/>
+         </contractIdentifier>
+         <GlobalProductUnitOfMeasureCode>N/A</GlobalProductUnitOfMeasureCode>
+         <SpecialHandlingInstruction>
+            <specialHandlingText>
+               <FreeFormText>sharp</FreeFormText>
+            </specialHandlingText>
+         </SpecialHandlingInstruction>
+         <requestedPrice>
+            <FinancialAmount>
+               <GlobalCurrencyCode>001</GlobalCurrencyCode>
+               <MonetaryAmount>4.5</MonetaryAmount>
+            </FinancialAmount>
+         </requestedPrice>
+      </ProductLineItem>
+	        <!-- Item 5 -->
+      <ProductLineItem>
+         <shipFrom>
+            <GlobalLocationIdentifier>Computer Warehouse 1</GlobalLocationIdentifier>
+         </shipFrom>
+         <ProductQuantity>45</ProductQuantity>
+         <LineNumber>5</LineNumber>
+         <productUnit>
+            <ProductPackageDescription>
+               <ProductIdentification>
+                  <GlobalProductIdentifier>Screw drivers</GlobalProductIdentifier>
+                  <PartnerProductIdentification>
+                     <GlobalPartnerClassificationCode>5363</GlobalPartnerClassificationCode>
+                     <ProprietaryProductIdentifier>CS-5363</ProprietaryProductIdentifier>
+                  </PartnerProductIdentification>
+               </ProductIdentification>
+            </ProductPackageDescription>
+         </productUnit>
+         <GlobalSpecialFulfillmentRequestCode>3245</GlobalSpecialFulfillmentRequestCode>
+         <countryOfOrigin>
+            <GlobalCountryCode>001</GlobalCountryCode>
+         </countryOfOrigin>
+         <requestedShipDate>
+            <DateStamp>15 NOVEMBER 2011</DateStamp>
+         </requestedShipDate>
+         <contractIdentifier>
+            <ProprietaryDocumentIdentifier/>
+         </contractIdentifier>
+         <GlobalProductUnitOfMeasureCode>N/A</GlobalProductUnitOfMeasureCode>
+         <SpecialHandlingInstruction>
+            <specialHandlingText>
+               <FreeFormText>sharp</FreeFormText>
+            </specialHandlingText>
+         </SpecialHandlingInstruction>
+         <requestedPrice>
+            <FinancialAmount>
+               <GlobalCurrencyCode>001</GlobalCurrencyCode>
+               <MonetaryAmount>4.5</MonetaryAmount>
+            </FinancialAmount>
+         </requestedPrice>
+      </ProductLineItem>
+	        <!-- Item 5 -->
+      <ProductLineItem>
+         <shipFrom>
+            <GlobalLocationIdentifier>Computer Warehouse 1</GlobalLocationIdentifier>
+         </shipFrom>
+         <ProductQuantity>45</ProductQuantity>
+         <LineNumber>5</LineNumber>
+         <productUnit>
+            <ProductPackageDescription>
+               <ProductIdentification>
+                  <GlobalProductIdentifier>Screw drivers</GlobalProductIdentifier>
+                  <PartnerProductIdentification>
+                     <GlobalPartnerClassificationCode>5363</GlobalPartnerClassificationCode>
+                     <ProprietaryProductIdentifier>CS-5363</ProprietaryProductIdentifier>
+                  </PartnerProductIdentification>
+               </ProductIdentification>
+            </ProductPackageDescription>
+         </productUnit>
+         <GlobalSpecialFulfillmentRequestCode>3245</GlobalSpecialFulfillmentRequestCode>
+         <countryOfOrigin>
+            <GlobalCountryCode>001</GlobalCountryCode>
+         </countryOfOrigin>
+         <requestedShipDate>
+            <DateStamp>15 NOVEMBER 2011</DateStamp>
+         </requestedShipDate>
+         <contractIdentifier>
+            <ProprietaryDocumentIdentifier/>
+         </contractIdentifier>
+         <GlobalProductUnitOfMeasureCode>N/A</GlobalProductUnitOfMeasureCode>
+         <SpecialHandlingInstruction>
+            <specialHandlingText>
+               <FreeFormText>sharp</FreeFormText>
+            </specialHandlingText>
+         </SpecialHandlingInstruction>
+         <requestedPrice>
+            <FinancialAmount>
+               <GlobalCurrencyCode>001</GlobalCurrencyCode>
+               <MonetaryAmount>4.5</MonetaryAmount>
+            </FinancialAmount>
+         </requestedPrice>
+      </ProductLineItem>
+	        <!-- Item 5 -->
+      <ProductLineItem>
+         <shipFrom>
+            <GlobalLocationIdentifier>Computer Warehouse 1</GlobalLocationIdentifier>
+         </shipFrom>
+         <ProductQuantity>45</ProductQuantity>
+         <LineNumber>5</LineNumber>
+         <productUnit>
+            <ProductPackageDescription>
+               <ProductIdentification>
+                  <GlobalProductIdentifier>Screw drivers</GlobalProductIdentifier>
+                  <PartnerProductIdentification>
+                     <GlobalPartnerClassificationCode>5363</GlobalPartnerClassificationCode>
+                     <ProprietaryProductIdentifier>CS-5363</ProprietaryProductIdentifier>
+                  </PartnerProductIdentification>
+               </ProductIdentification>
+            </ProductPackageDescription>
+         </productUnit>
+         <GlobalSpecialFulfillmentRequestCode>3245</GlobalSpecialFulfillmentRequestCode>
+         <countryOfOrigin>
+            <GlobalCountryCode>001</GlobalCountryCode>
+         </countryOfOrigin>
+         <requestedShipDate>
+            <DateStamp>15 NOVEMBER 2011</DateStamp>
+         </requestedShipDate>
+         <contractIdentifier>
+            <ProprietaryDocumentIdentifier/>
+         </contractIdentifier>
+         <GlobalProductUnitOfMeasureCode>N/A</GlobalProductUnitOfMeasureCode>
+         <SpecialHandlingInstruction>
+            <specialHandlingText>
+               <FreeFormText>sharp</FreeFormText>
+            </specialHandlingText>
+         </SpecialHandlingInstruction>
+         <requestedPrice>
+            <FinancialAmount>
+               <GlobalCurrencyCode>001</GlobalCurrencyCode>
+               <MonetaryAmount>4.5</MonetaryAmount>
+            </FinancialAmount>
+         </requestedPrice>
+      </ProductLineItem>
+	        <!-- Item 5 -->
+      <ProductLineItem>
+         <shipFrom>
+            <GlobalLocationIdentifier>Computer Warehouse 1</GlobalLocationIdentifier>
+         </shipFrom>
+         <ProductQuantity>45</ProductQuantity>
+         <LineNumber>5</LineNumber>
+         <productUnit>
+            <ProductPackageDescription>
+               <ProductIdentification>
+                  <GlobalProductIdentifier>Screw drivers</GlobalProductIdentifier>
+                  <PartnerProductIdentification>
+                     <GlobalPartnerClassificationCode>5363</GlobalPartnerClassificationCode>
+                     <ProprietaryProductIdentifier>CS-5363</ProprietaryProductIdentifier>
+                  </PartnerProductIdentification>
+               </ProductIdentification>
+            </ProductPackageDescription>
+         </productUnit>
+         <GlobalSpecialFulfillmentRequestCode>3245</GlobalSpecialFulfillmentRequestCode>
+         <countryOfOrigin>
+            <GlobalCountryCode>001</GlobalCountryCode>
+         </countryOfOrigin>
+         <requestedShipDate>
+            <DateStamp>15 NOVEMBER 2011</DateStamp>
+         </requestedShipDate>
+         <contractIdentifier>
+            <ProprietaryDocumentIdentifier/>
+         </contractIdentifier>
+         <GlobalProductUnitOfMeasureCode>N/A</GlobalProductUnitOfMeasureCode>
+         <SpecialHandlingInstruction>
+            <specialHandlingText>
+               <FreeFormText>sharp</FreeFormText>
+            </specialHandlingText>
+         </SpecialHandlingInstruction>
+         <requestedPrice>
+            <FinancialAmount>
+               <GlobalCurrencyCode>001</GlobalCurrencyCode>
+               <MonetaryAmount>4.5</MonetaryAmount>
+            </FinancialAmount>
+         </requestedPrice>
+      </ProductLineItem>
+	        <!-- Item 5 -->
+      <ProductLineItem>
+         <shipFrom>
+            <GlobalLocationIdentifier>Computer Warehouse 1</GlobalLocationIdentifier>
+         </shipFrom>
+         <ProductQuantity>45</ProductQuantity>
+         <LineNumber>5</LineNumber>
+         <productUnit>
+            <ProductPackageDescription>
+               <ProductIdentification>
+                  <GlobalProductIdentifier>Screw drivers</GlobalProductIdentifier>
+                  <PartnerProductIdentification>
+                     <GlobalPartnerClassificationCode>5363</GlobalPartnerClassificationCode>
+                     <ProprietaryProductIdentifier>CS-5363</ProprietaryProductIdentifier>
+                  </PartnerProductIdentification>
+               </ProductIdentification>
+            </ProductPackageDescription>
+         </productUnit>
+         <GlobalSpecialFulfillmentRequestCode>3245</GlobalSpecialFulfillmentRequestCode>
+         <countryOfOrigin>
+            <GlobalCountryCode>001</GlobalCountryCode>
+         </countryOfOrigin>
+         <requestedShipDate>
+            <DateStamp>15 NOVEMBER 2011</DateStamp>
+         </requestedShipDate>
+         <contractIdentifier>
+            <ProprietaryDocumentIdentifier/>
+         </contractIdentifier>
+         <GlobalProductUnitOfMeasureCode>N/A</GlobalProductUnitOfMeasureCode>
+         <SpecialHandlingInstruction>
+            <specialHandlingText>
+               <FreeFormText>sharp</FreeFormText>
+            </specialHandlingText>
+         </SpecialHandlingInstruction>
+         <requestedPrice>
+            <FinancialAmount>
+               <GlobalCurrencyCode>001</GlobalCurrencyCode>
+               <MonetaryAmount>4.5</MonetaryAmount>
+            </FinancialAmount>
+         </requestedPrice>
+      </ProductLineItem>
+      <GlobalShipmentTermsCode/>
+      <RevisionNumber/>
+      <prePaymentCheckNumber>
+         <CheckNumber/>
+      </prePaymentCheckNumber>
+      <QuoteIdentifier>
+         <ProprietaryDocumentIdentifier>1017439</ProprietaryDocumentIdentifier>
+      </QuoteIdentifier>
+      <WireTransferIdentifier/>
+      <AccountDescription>
+         <GlobalAccountClassificationCode/>
+         <billTo>
+            <PartnerRoleDescription>
+               <GlobalPartnerRoleClassificationCode/>
+            </PartnerRoleDescription>
+         </billTo>
+         <accountName>
+            <FreeFormText/>
+         </accountName>
+         <ProprietaryCIDIdentifier/>
+         <expiryDate>
+            <DateStamp>01 December 2011</DateStamp>
+         </expiryDate>
+         <AccountNumber/>
+      </AccountDescription>
+      <generalServicesAdministrationNumber>
+         <ProprietaryDocumentIdentifier/>
+      </generalServicesAdministrationNumber>
+      <secondaryBuyerPurchaseOrderIdentifier>
+         <ProprietaryDocumentIdentifier/>
+      </secondaryBuyerPurchaseOrderIdentifier>
+      <GlobalFinanceTermsCode/>
+      <PartnerDescription/>
+      <secondaryBuyer>
+         <PartnerRoleDescription>
+            <GlobalPartnerRoleClassificationCode/>
+         </PartnerRoleDescription>
+      </secondaryBuyer>
+      <GlobalPurchaseOrderTypeCode/>
+   </PurchaseOrder>
+   <fromRole>
+      <PartnerRoleDescription>
+         <GlobalPartnerRoleClassificationCode/>
+         <DUNS>99-999-9999</DUNS>
+      </PartnerRoleDescription>
+   </fromRole>
+   <toRole>
+      <PartnerRoleDescription>
+         <GlobalPartnerRoleClassificationCode/>
+         <DUNS>11-111-1111</DUNS>
+      </PartnerRoleDescription>
+   </toRole>
+   <thisDocumentGenerationDateTime>
+      <DateTimeStamp>09 November 2011 15:30</DateTimeStamp>
+   </thisDocumentGenerationDateTime>
+   <thisDocumentIdentifier>
+      <ProprietaryDocumentIdentifier>a</ProprietaryDocumentIdentifier>
+   </thisDocumentIdentifier>
+   <GlobalDocumentFunctionCode/>
+</PurchaseOrderRequest>

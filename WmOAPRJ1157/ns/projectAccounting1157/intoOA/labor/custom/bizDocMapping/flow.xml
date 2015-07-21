@@ -1,0 +1,520 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<FLOW VERSION="3.0" CLEANUP="true">
+  <COMMENT></COMMENT>
+
+  <!-- nodes -->
+
+<LOOP TIMEOUT="" IN-ARRAY="/LaborBizDoc/LABOR_BIZDOC" OUT-ARRAY="/LaborRecordSet/PA_TRANSACTION_INTERFACE_ALL">
+  <COMMENT></COMMENT>
+
+  <!-- nodes -->
+
+<MAP TIMEOUT="" MODE="STANDALONE">
+  <COMMENT>Map the laborBizDoc to setLaborTxnInputRec format</COMMENT>
+  <MAPTARGET>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="field_opt">false</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">$dbAlias</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">LaborBizDoc</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">false</value>
+        <value name="rec_closed">false</value>
+        <value name="rec_ref">projectAccounting1157.intoOA.labor.rec:LaborBizDoc</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">BATCH_NAME</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">LaborRecordSet</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">false</value>
+        <value name="rec_closed">false</value>
+        <value name="rec_ref">projectAccounting1157.intoOA.labor.rec:setLaborTxnInputRec</value>
+      </record>
+    </array>
+    <value name="rec_closed">false</value>
+  </record>
+</Values>
+</MAPTARGET>
+  <MAPSOURCE>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="field_opt">false</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">$dbAlias</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">LaborBizDoc</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">false</value>
+        <value name="rec_closed">false</value>
+        <value name="rec_ref">projectAccounting1157.intoOA.labor.rec:LaborBizDoc</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">BATCH_NAME</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">LaborRecordSet</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">false</value>
+        <value name="rec_closed">false</value>
+        <value name="rec_ref">projectAccounting1157.intoOA.labor.rec:setLaborTxnInputRec</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">$iteration</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">false</value>
+      </record>
+    </array>
+    <value name="rec_closed">false</value>
+  </record>
+</Values>
+</MAPSOURCE>
+
+  <!-- nodes -->
+
+<MAPINVOKE SERVICE="projectAccounting1157.intoOA.labor.utils:getSystemLinkage" VALIDATE-IN="$none" VALIDATE-OUT="$none" INVOKE-ORDER="0">
+
+  <!-- nodes -->
+
+<MAP MODE="INVOKEINPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/$dbAlias;1;0" TO="/$dbAlias;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/LaborBizDoc;4;0;projectAccounting1157.intoOA.labor.rec:LaborBizDoc/LABOR_BIZDOC;2;0/EXPENDITURE_CLASS;1;0" TO="/queryParams;2;0/EXPENDITURE_CLASS;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="INVOKEOUTPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/SYSTEM_LINKAGE;1;0" TO="/LaborRecordSet;4;0;projectAccounting1157.intoOA.labor.rec:setLaborTxnInputRec/PA_TRANSACTION_INTERFACE_ALL;2;0/SYSTEM_LINKAGE;1;0">
+</MAPCOPY>
+</MAP>
+</MAPINVOKE>
+
+<MAPINVOKE SERVICE="commonOA1157.utils:getCodeCombinationId" INVOKE-ORDER="0">
+
+  <!-- nodes -->
+
+<MAP MODE="INVOKEINPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/$dbAlias;1;0" TO="/$dbAlias;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/LaborBizDoc;4;0;projectAccounting1157.intoOA.labor.rec:LaborBizDoc/LABOR_BIZDOC;2;0/DR_CODE_COMBINATION;1;0" TO="/queryParams;2;0/CONCATENATED_SEGMENTS;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="INVOKEOUTPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/CODE_COMBINATION_ID;1;0" TO="/LaborRecordSet;4;0;projectAccounting1157.intoOA.labor.rec:setLaborTxnInputRec/PA_TRANSACTION_INTERFACE_ALL;2;0/DR_CODE_COMBINATION_ID;1;0">
+</MAPCOPY>
+</MAP>
+</MAPINVOKE>
+
+<MAPINVOKE SERVICE="commonOA1157.utils:getCodeCombinationId" INVOKE-ORDER="0">
+
+  <!-- nodes -->
+
+<MAP MODE="INVOKEINPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/$dbAlias;1;0" TO="/$dbAlias;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/LaborBizDoc;4;0;projectAccounting1157.intoOA.labor.rec:LaborBizDoc/LABOR_BIZDOC;2;0/CR_CODE_COMBINATION;1;0" TO="/queryParams;2;0/CONCATENATED_SEGMENTS;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="INVOKEOUTPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/CODE_COMBINATION_ID;1;0" TO="/LaborRecordSet;4;0;projectAccounting1157.intoOA.labor.rec:setLaborTxnInputRec/PA_TRANSACTION_INTERFACE_ALL;2;0/CR_CODE_COMBINATION_ID;1;0">
+</MAPCOPY>
+</MAP>
+</MAPINVOKE>
+
+<MAPINVOKE SERVICE="commonOA1157.utils:getOrgId" INVOKE-ORDER="0">
+
+  <!-- nodes -->
+
+<MAP MODE="INVOKEINPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/$dbAlias;1;0" TO="/$dbAlias;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/LaborBizDoc;4;0;projectAccounting1157.intoOA.labor.rec:LaborBizDoc/LABOR_BIZDOC;2;0/ORGANIZATION_NAME;1;0" TO="/queryParams;2;0/ORGANIZATION_NAME;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="INVOKEOUTPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/ORGANIZATION_ID;1;0" TO="/LaborRecordSet;4;0;projectAccounting1157.intoOA.labor.rec:setLaborTxnInputRec/PA_TRANSACTION_INTERFACE_ALL;2;0/ORG_ID;1;0">
+</MAPCOPY>
+</MAP>
+</MAPINVOKE>
+
+<MAPCOPY NAME="Link" FROM="/LaborBizDoc;4;0;projectAccounting1157.intoOA.labor.rec:LaborBizDoc/LABOR_BIZDOC;2;0/TRANSACTION_SOURCE;1;0" TO="/LaborRecordSet;4;0;projectAccounting1157.intoOA.labor.rec:setLaborTxnInputRec/PA_TRANSACTION_INTERFACE_ALL;2;0/TRANSACTION_SOURCE;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/LaborBizDoc;4;0;projectAccounting1157.intoOA.labor.rec:LaborBizDoc/LABOR_BIZDOC;2;0/EMPLOYEE_NUMBER;1;0" TO="/LaborRecordSet;4;0;projectAccounting1157.intoOA.labor.rec:setLaborTxnInputRec/PA_TRANSACTION_INTERFACE_ALL;2;0/EMPLOYEE_NUMBER;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/LaborBizDoc;4;0;projectAccounting1157.intoOA.labor.rec:LaborBizDoc/LABOR_BIZDOC;2;0/CHARGE_ORGANIZATION_NAME;1;0" TO="/LaborRecordSet;4;0;projectAccounting1157.intoOA.labor.rec:setLaborTxnInputRec/PA_TRANSACTION_INTERFACE_ALL;2;0/ORGANIZATION_NAME;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/BATCH_NAME;1;0" TO="/LaborRecordSet;4;0;projectAccounting1157.intoOA.labor.rec:setLaborTxnInputRec/PA_TRANSACTION_INTERFACE_ALL;2;0/BATCH_NAME;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/LaborBizDoc;4;0;projectAccounting1157.intoOA.labor.rec:LaborBizDoc/LABOR_BIZDOC;2;0/PROJECT_NUMBER;1;0" TO="/LaborRecordSet;4;0;projectAccounting1157.intoOA.labor.rec:setLaborTxnInputRec/PA_TRANSACTION_INTERFACE_ALL;2;0/PROJECT_NUMBER;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/LaborBizDoc;4;0;projectAccounting1157.intoOA.labor.rec:LaborBizDoc/LABOR_BIZDOC;2;0/TASK_NUMBER;1;0" TO="/LaborRecordSet;4;0;projectAccounting1157.intoOA.labor.rec:setLaborTxnInputRec/PA_TRANSACTION_INTERFACE_ALL;2;0/TASK_NUMBER;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/LaborBizDoc;4;0;projectAccounting1157.intoOA.labor.rec:LaborBizDoc/LABOR_BIZDOC;2;0/EXPENDITURE_TYPE;1;0" TO="/LaborRecordSet;4;0;projectAccounting1157.intoOA.labor.rec:setLaborTxnInputRec/PA_TRANSACTION_INTERFACE_ALL;2;0/EXPENDITURE_TYPE;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/LaborBizDoc;4;0;projectAccounting1157.intoOA.labor.rec:LaborBizDoc/LABOR_BIZDOC;2;0/NON_LABOR_RESOURCE;1;0" TO="/LaborRecordSet;4;0;projectAccounting1157.intoOA.labor.rec:setLaborTxnInputRec/PA_TRANSACTION_INTERFACE_ALL;2;0/NON_LABOR_RESOURCE;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/LaborBizDoc;4;0;projectAccounting1157.intoOA.labor.rec:LaborBizDoc/LABOR_BIZDOC;2;0/NON_LABOR_RESOURCE_ORG_NAME;1;0" TO="/LaborRecordSet;4;0;projectAccounting1157.intoOA.labor.rec:setLaborTxnInputRec/PA_TRANSACTION_INTERFACE_ALL;2;0/NON_LABOR_RESOURCE_ORG_NAME;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/LaborBizDoc;4;0;projectAccounting1157.intoOA.labor.rec:LaborBizDoc/LABOR_BIZDOC;2;0/QUANTITY;1;0" TO="/LaborRecordSet;4;0;projectAccounting1157.intoOA.labor.rec:setLaborTxnInputRec/PA_TRANSACTION_INTERFACE_ALL;2;0/QUANTITY;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/LaborBizDoc;4;0;projectAccounting1157.intoOA.labor.rec:LaborBizDoc/LABOR_BIZDOC;2;0/RAW_COST;1;0" TO="/LaborRecordSet;4;0;projectAccounting1157.intoOA.labor.rec:setLaborTxnInputRec/PA_TRANSACTION_INTERFACE_ALL;2;0/RAW_COST;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/LaborBizDoc;4;0;projectAccounting1157.intoOA.labor.rec:LaborBizDoc/LABOR_BIZDOC;2;0/EXPENDITURE_COMMENT;1;0" TO="/LaborRecordSet;4;0;projectAccounting1157.intoOA.labor.rec:setLaborTxnInputRec/PA_TRANSACTION_INTERFACE_ALL;2;0/EXPENDITURE_COMMENT;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/LaborBizDoc;4;0;projectAccounting1157.intoOA.labor.rec:LaborBizDoc/LABOR_BIZDOC;2;0/TRANSACTION_STATUS_CODE;1;0" TO="/LaborRecordSet;4;0;projectAccounting1157.intoOA.labor.rec:setLaborTxnInputRec/PA_TRANSACTION_INTERFACE_ALL;2;0/TRANSACTION_STATUS_CODE;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/LaborBizDoc;4;0;projectAccounting1157.intoOA.labor.rec:LaborBizDoc/LABOR_BIZDOC;2;0/ORIG_TRANSACTION_REFERENCE;1;0" TO="/LaborRecordSet;4;0;projectAccounting1157.intoOA.labor.rec:setLaborTxnInputRec/PA_TRANSACTION_INTERFACE_ALL;2;0/ORIG_TRANSACTION_REFERENCE;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/LaborBizDoc;4;0;projectAccounting1157.intoOA.labor.rec:LaborBizDoc/LABOR_BIZDOC;2;0/RAW_COST_RATE;1;0" TO="/LaborRecordSet;4;0;projectAccounting1157.intoOA.labor.rec:setLaborTxnInputRec/PA_TRANSACTION_INTERFACE_ALL;2;0/RAW_COST_RATE;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/LaborBizDoc;4;0;projectAccounting1157.intoOA.labor.rec:LaborBizDoc/LABOR_BIZDOC;2;0/UNMATCHED_NEGATIVE_TXN_FLAG;1;0" TO="/LaborRecordSet;4;0;projectAccounting1157.intoOA.labor.rec:setLaborTxnInputRec/PA_TRANSACTION_INTERFACE_ALL;2;0/UNMATCHED_NEGATIVE_TXN_FLAG;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/LaborBizDoc;4;0;projectAccounting1157.intoOA.labor.rec:LaborBizDoc/LABOR_BIZDOC;2;0/CDL_SYSTEM_REFERENCE1;1;0" TO="/LaborRecordSet;4;0;projectAccounting1157.intoOA.labor.rec:setLaborTxnInputRec/PA_TRANSACTION_INTERFACE_ALL;2;0/CDL_SYSTEM_REFERENCE1;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/LaborBizDoc;4;0;projectAccounting1157.intoOA.labor.rec:LaborBizDoc/LABOR_BIZDOC;2;0/CDL_SYSTEM_REFERENCE2;1;0" TO="/LaborRecordSet;4;0;projectAccounting1157.intoOA.labor.rec:setLaborTxnInputRec/PA_TRANSACTION_INTERFACE_ALL;2;0/CDL_SYSTEM_REFERENCE2;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/LaborBizDoc;4;0;projectAccounting1157.intoOA.labor.rec:LaborBizDoc/LABOR_BIZDOC;2;0/CDL_SYSTEM_REFERENCE3;1;0" TO="/LaborRecordSet;4;0;projectAccounting1157.intoOA.labor.rec:setLaborTxnInputRec/PA_TRANSACTION_INTERFACE_ALL;2;0/CDL_SYSTEM_REFERENCE3;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/LaborBizDoc;4;0;projectAccounting1157.intoOA.labor.rec:LaborBizDoc/LABOR_BIZDOC;2;0/BURDENED_COST_RATE;1;0" TO="/LaborRecordSet;4;0;projectAccounting1157.intoOA.labor.rec:setLaborTxnInputRec/PA_TRANSACTION_INTERFACE_ALL;2;0/BURDENED_COST_RATE;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/LaborBizDoc;4;0;projectAccounting1157.intoOA.labor.rec:LaborBizDoc/LABOR_BIZDOC;2;0/USER_TRANSACTION_SOURCE;1;0" TO="/LaborRecordSet;4;0;projectAccounting1157.intoOA.labor.rec:setLaborTxnInputRec/PA_TRANSACTION_INTERFACE_ALL;2;0/USER_TRANSACTION_SOURCE;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/LaborBizDoc;4;0;projectAccounting1157.intoOA.labor.rec:LaborBizDoc/LABOR_BIZDOC;2;0/RECEIPT_CURRENCY_AMOUNT;1;0" TO="/LaborRecordSet;4;0;projectAccounting1157.intoOA.labor.rec:setLaborTxnInputRec/PA_TRANSACTION_INTERFACE_ALL;2;0/RECEIPT_CURRENCY_AMOUNT;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/LaborBizDoc;4;0;projectAccounting1157.intoOA.labor.rec:LaborBizDoc/LABOR_BIZDOC;2;0/RECEIPT_CURRENCY_CODE;1;0" TO="/LaborRecordSet;4;0;projectAccounting1157.intoOA.labor.rec:setLaborTxnInputRec/PA_TRANSACTION_INTERFACE_ALL;2;0/RECEIPT_CURRENCY_CODE;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/LaborBizDoc;4;0;projectAccounting1157.intoOA.labor.rec:LaborBizDoc/LABOR_BIZDOC;2;0/RECEIPT_EXCHANGE_RATE;1;0" TO="/LaborRecordSet;4;0;projectAccounting1157.intoOA.labor.rec:setLaborTxnInputRec/PA_TRANSACTION_INTERFACE_ALL;2;0/RECEIPT_EXCHANGE_RATE;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/LaborBizDoc;4;0;projectAccounting1157.intoOA.labor.rec:LaborBizDoc/LABOR_BIZDOC;2;0/DENOM_CURRENCY_CODE;1;0" TO="/LaborRecordSet;4;0;projectAccounting1157.intoOA.labor.rec:setLaborTxnInputRec/PA_TRANSACTION_INTERFACE_ALL;2;0/DENOM_CURRENCY_CODE;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/LaborBizDoc;4;0;projectAccounting1157.intoOA.labor.rec:LaborBizDoc/LABOR_BIZDOC;2;0/DENOM_RAW_COST;1;0" TO="/LaborRecordSet;4;0;projectAccounting1157.intoOA.labor.rec:setLaborTxnInputRec/PA_TRANSACTION_INTERFACE_ALL;2;0/DENOM_RAW_COST;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/LaborBizDoc;4;0;projectAccounting1157.intoOA.labor.rec:LaborBizDoc/LABOR_BIZDOC;2;0/DENOM_BURDENED_COST;1;0" TO="/LaborRecordSet;4;0;projectAccounting1157.intoOA.labor.rec:setLaborTxnInputRec/PA_TRANSACTION_INTERFACE_ALL;2;0/DENOM_BURDENED_COST;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/LaborBizDoc;4;0;projectAccounting1157.intoOA.labor.rec:LaborBizDoc/LABOR_BIZDOC;2;0/ACCT_RATE_TYPE;1;0" TO="/LaborRecordSet;4;0;projectAccounting1157.intoOA.labor.rec:setLaborTxnInputRec/PA_TRANSACTION_INTERFACE_ALL;2;0/ACCT_RATE_TYPE;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/LaborBizDoc;4;0;projectAccounting1157.intoOA.labor.rec:LaborBizDoc/LABOR_BIZDOC;2;0/ACCT_EXCHANGE_RATE;1;0" TO="/LaborRecordSet;4;0;projectAccounting1157.intoOA.labor.rec:setLaborTxnInputRec/PA_TRANSACTION_INTERFACE_ALL;2;0/ACCT_EXCHANGE_RATE;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/LaborBizDoc;4;0;projectAccounting1157.intoOA.labor.rec:LaborBizDoc/LABOR_BIZDOC;2;0/ACCT_RAW_COST;1;0" TO="/LaborRecordSet;4;0;projectAccounting1157.intoOA.labor.rec:setLaborTxnInputRec/PA_TRANSACTION_INTERFACE_ALL;2;0/ACCT_RAW_COST;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/LaborBizDoc;4;0;projectAccounting1157.intoOA.labor.rec:LaborBizDoc/LABOR_BIZDOC;2;0/ACCT_BURDENED_COST;1;0" TO="/LaborRecordSet;4;0;projectAccounting1157.intoOA.labor.rec:setLaborTxnInputRec/PA_TRANSACTION_INTERFACE_ALL;2;0/ACCT_BURDENED_COST;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/LaborBizDoc;4;0;projectAccounting1157.intoOA.labor.rec:LaborBizDoc/LABOR_BIZDOC;2;0/ACCT_EXCHANGE_ROUNDING_LIMIT;1;0" TO="/LaborRecordSet;4;0;projectAccounting1157.intoOA.labor.rec:setLaborTxnInputRec/PA_TRANSACTION_INTERFACE_ALL;2;0/ACCT_EXCHANGE_ROUNDING_LIMIT;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/LaborBizDoc;4;0;projectAccounting1157.intoOA.labor.rec:LaborBizDoc/LABOR_BIZDOC;2;0/PROJECT_RATE_TYPE;1;0" TO="/LaborRecordSet;4;0;projectAccounting1157.intoOA.labor.rec:setLaborTxnInputRec/PA_TRANSACTION_INTERFACE_ALL;2;0/PROJECT_RATE_TYPE;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/LaborBizDoc;4;0;projectAccounting1157.intoOA.labor.rec:LaborBizDoc/LABOR_BIZDOC;2;0/PROJECT_EXCHANGE_RATE;1;0" TO="/LaborRecordSet;4;0;projectAccounting1157.intoOA.labor.rec:setLaborTxnInputRec/PA_TRANSACTION_INTERFACE_ALL;2;0/PROJECT_EXCHANGE_RATE;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/LaborBizDoc;4;0;projectAccounting1157.intoOA.labor.rec:LaborBizDoc/LABOR_BIZDOC;2;0/ORIG_EXP_TXN_REFERENCE1;1;0" TO="/LaborRecordSet;4;0;projectAccounting1157.intoOA.labor.rec:setLaborTxnInputRec/PA_TRANSACTION_INTERFACE_ALL;2;0/ORIG_EXP_TXN_REFERENCE1;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/LaborBizDoc;4;0;projectAccounting1157.intoOA.labor.rec:LaborBizDoc/LABOR_BIZDOC;2;0/ORIG_EXP_TXN_REFERENCE2;1;0" TO="/LaborRecordSet;4;0;projectAccounting1157.intoOA.labor.rec:setLaborTxnInputRec/PA_TRANSACTION_INTERFACE_ALL;2;0/ORIG_EXP_TXN_REFERENCE2;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/LaborBizDoc;4;0;projectAccounting1157.intoOA.labor.rec:LaborBizDoc/LABOR_BIZDOC;2;0/ORIG_EXP_TXN_REFERENCE3;1;0" TO="/LaborRecordSet;4;0;projectAccounting1157.intoOA.labor.rec:setLaborTxnInputRec/PA_TRANSACTION_INTERFACE_ALL;2;0/ORIG_EXP_TXN_REFERENCE3;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/LaborBizDoc;4;0;projectAccounting1157.intoOA.labor.rec:LaborBizDoc/LABOR_BIZDOC;2;0/ORIG_USER_EXP_TXN_REFERENCE;1;0" TO="/LaborRecordSet;4;0;projectAccounting1157.intoOA.labor.rec:setLaborTxnInputRec/PA_TRANSACTION_INTERFACE_ALL;2;0/ORIG_USER_EXP_TXN_REFERENCE;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/LaborBizDoc;4;0;projectAccounting1157.intoOA.labor.rec:LaborBizDoc/LABOR_BIZDOC;2;0/VENDOR_NUMBER;1;0" TO="/LaborRecordSet;4;0;projectAccounting1157.intoOA.labor.rec:setLaborTxnInputRec/PA_TRANSACTION_INTERFACE_ALL;2;0/VENDOR_NUMBER;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/LaborBizDoc;4;0;projectAccounting1157.intoOA.labor.rec:LaborBizDoc/LABOR_BIZDOC;2;0/OVERRIDE_TO_ORGANIZATION_NAME;1;0" TO="/LaborRecordSet;4;0;projectAccounting1157.intoOA.labor.rec:setLaborTxnInputRec/PA_TRANSACTION_INTERFACE_ALL;2;0/OVERRIDE_TO_ORGANIZATION_NAME;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/LaborBizDoc;4;0;projectAccounting1157.intoOA.labor.rec:LaborBizDoc/LABOR_BIZDOC;2;0/REVERSED_ORIG_TXN_REFERENCE;1;0" TO="/LaborRecordSet;4;0;projectAccounting1157.intoOA.labor.rec:setLaborTxnInputRec/PA_TRANSACTION_INTERFACE_ALL;2;0/REVERSED_ORIG_TXN_REFERENCE;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/LaborBizDoc;4;0;projectAccounting1157.intoOA.labor.rec:LaborBizDoc/LABOR_BIZDOC;2;0/BILLABLE_FLAG;1;0" TO="/LaborRecordSet;4;0;projectAccounting1157.intoOA.labor.rec:setLaborTxnInputRec/PA_TRANSACTION_INTERFACE_ALL;2;0/BILLABLE_FLAG;1;0">
+</MAPCOPY>
+
+<MAPINVOKE SERVICE="commonOA1157.custom:convertToDateObject" INVOKE-ORDER="0">
+
+  <!-- nodes -->
+
+<MAP MODE="INVOKEINPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/LaborBizDoc;4;0;projectAccounting1157.intoOA.labor.rec:LaborBizDoc/LABOR_BIZDOC;2;0/EXPENDITURE_ENDING_DATE;1;0" TO="/inDate;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="INVOKEOUTPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/outDate;3;0" TO="/LaborRecordSet;4;0;projectAccounting1157.intoOA.labor.rec:setLaborTxnInputRec/PA_TRANSACTION_INTERFACE_ALL;2;0/EXPENDITURE_ENDING_DATE;3;0">
+</MAPCOPY>
+</MAP>
+</MAPINVOKE>
+
+<MAPINVOKE SERVICE="commonOA1157.custom:convertToDateObject" INVOKE-ORDER="0">
+
+  <!-- nodes -->
+
+<MAP MODE="INVOKEINPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/LaborBizDoc;4;0;projectAccounting1157.intoOA.labor.rec:LaborBizDoc/LABOR_BIZDOC;2;0/EXPENDITURE_ITEM_DATE;1;0" TO="/inDate;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="INVOKEOUTPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/outDate;3;0" TO="/LaborRecordSet;4;0;projectAccounting1157.intoOA.labor.rec:setLaborTxnInputRec/PA_TRANSACTION_INTERFACE_ALL;2;0/EXPENDITURE_ITEM_DATE;3;0">
+</MAPCOPY>
+</MAP>
+</MAPINVOKE>
+
+<MAPINVOKE SERVICE="commonOA1157.custom:convertToDateObject" INVOKE-ORDER="0">
+
+  <!-- nodes -->
+
+<MAP MODE="INVOKEINPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/LaborBizDoc;4;0;projectAccounting1157.intoOA.labor.rec:LaborBizDoc/LABOR_BIZDOC;2;0/GL_DATE;1;0" TO="/inDate;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="INVOKEOUTPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/outDate;3;0" TO="/LaborRecordSet;4;0;projectAccounting1157.intoOA.labor.rec:setLaborTxnInputRec/PA_TRANSACTION_INTERFACE_ALL;2;0/GL_DATE;3;0">
+</MAPCOPY>
+</MAP>
+</MAPINVOKE>
+
+<MAPINVOKE SERVICE="commonOA1157.custom:convertToDateObject" INVOKE-ORDER="0">
+
+  <!-- nodes -->
+
+<MAP MODE="INVOKEINPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/LaborBizDoc;4;0;projectAccounting1157.intoOA.labor.rec:LaborBizDoc/LABOR_BIZDOC;2;0/ACCT_RATE_DATE;1;0" TO="/inDate;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="INVOKEOUTPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/outDate;3;0" TO="/LaborRecordSet;4;0;projectAccounting1157.intoOA.labor.rec:setLaborTxnInputRec/PA_TRANSACTION_INTERFACE_ALL;2;0/ACCT_RATE_DATE;3;0">
+</MAPCOPY>
+</MAP>
+</MAPINVOKE>
+
+<MAPINVOKE SERVICE="commonOA1157.custom:convertToDateObject" INVOKE-ORDER="0">
+
+  <!-- nodes -->
+
+<MAP MODE="INVOKEINPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/LaborBizDoc;4;0;projectAccounting1157.intoOA.labor.rec:LaborBizDoc/LABOR_BIZDOC;2;0/PROJECT_RATE_DATE;1;0" TO="/inDate;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="INVOKEOUTPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/outDate;3;0" TO="/LaborRecordSet;4;0;projectAccounting1157.intoOA.labor.rec:setLaborTxnInputRec/PA_TRANSACTION_INTERFACE_ALL;2;0/PROJECT_RATE_DATE;3;0">
+</MAPCOPY>
+</MAP>
+</MAPINVOKE>
+</MAP>
+</LOOP>
+
+<MAP TIMEOUT="" MODE="STANDALONE">
+  <COMMENT>Drop unused varibales </COMMENT>
+  <MAPTARGET>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="field_opt">false</value>
+    <list name="rec_fields">
+    </list>
+    <value name="rec_closed">false</value>
+  </record>
+</Values>
+</MAPTARGET>
+  <MAPSOURCE>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="field_opt">false</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">$dbAlias</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">LaborBizDoc</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">false</value>
+        <value name="rec_closed">false</value>
+        <value name="rec_ref">projectAccounting1157.intoOA.labor.rec:LaborBizDoc</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">BATCH_NAME</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">LaborRecordSet</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">false</value>
+        <value name="rec_closed">false</value>
+        <value name="rec_ref">projectAccounting1157.intoOA.labor.rec:setLaborTxnInputRec</value>
+      </record>
+    </array>
+    <value name="rec_closed">false</value>
+  </record>
+</Values>
+</MAPSOURCE>
+
+  <!-- nodes -->
+
+<MAPDELETE NAME="Dropper" FIELD="/$dbAlias;1;0">
+</MAPDELETE>
+
+<MAPDELETE NAME="Dropper" FIELD="/LaborBizDoc;4;0;projectAccounting1157.intoOA.labor.rec:LaborBizDoc">
+</MAPDELETE>
+
+<MAPDELETE NAME="Dropper" FIELD="/BATCH_NAME;1;0">
+</MAPDELETE>
+</MAP>
+</FLOW>

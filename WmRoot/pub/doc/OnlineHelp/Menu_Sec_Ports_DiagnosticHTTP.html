@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="keywords" content="ports,configuration,Diagnostic HTTP port,configuration settings,Diagnostic HTTP port,Diag nostic port,editing Diagnostic HTTP port configurat ion,security,ports,Diagnostic HTTP,Menu_Sec_Ports_DiagnosticHTTP" />
+    <title>Edit HTTP Diagnostic Port Configuration Screen</title>
+    <link rel="StyleSheet" href="css/_is_admin_help.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+  <body style="background-color: White; margin-bottom: 25px; margin-left: 25px; margin-right: 25px; margin-top: 0px; padding-top: 0px" onload="WWHUpdate();" onunload="WWHUnload();" onkeydown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onkeypress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onkeyup="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <table align="left" role="presentation">
+      <tr>
+        <td class="WebWorks_Company_Logo_Top">
+          <img src="sag_online.png" />
+        </td>
+      </tr>
+    </table>
+    <br clear="all" />
+    <hr align="left" />
+    <blockquote>
+      <div class="Heading_3"><a name="3_5_17_21_12_2">Edit HTTP Diagnostic Port Configuration Screen</a></div>
+      <div class="Body"><span class="emphasis"><a name="3_5_17_21_12_6_2_3">Screen Heading</a></span>: <span class="uicontrol">Security &gt; Ports &gt; Edit HTTP Port Configuration</span></div>
+      <div class="Body"><a name="3_5_17_21_12_6_2_5">Use the Edit HTTP Diagnostic Port Configuration screen to view or specify the settings for the </a><span class="term">diagnostic port</span>, a special port that uses threads from a dedicated thread pool to accept requests for services via HTTP.</div>
+      <div class="Body"><a name="3_5_17_21_12_6_2_7">To open the Edit HTTP Diagnostic Port Configuration screen, go to the </a><span class="heading-no-quotes"><a href="javascript:WWHClickedPopup('is_help', 'Menu_Sec_Ports_Add.html', '');" title="Add Port Screen">Add Port Screen</a></span> and select <span class="uicontrol">HTTP Diagnostic</span>. Click <span class="uicontrol">Submit</span>.</div>
+      <div class="List_1_outer" style="margin-left: 24px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_1_inner" style="width: 18pt; white-space: nowrap">
+                <img src="bullet1.png" alt="*" border="0" width="10" height="10" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_1_inner"><a name="3_5_17_21_12_6_2_9_2_4">Click </a><span class="uicontrol">Return to Ports</span> to return to the list of ports that are currently defined on the server.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Section_Title"><a name="3_5_17_21_12_6_4_3">Diagnostic HTTP Listener Configuration</a></div>
+      <div class="Definition_Term"><a name="3_5_17_21_12_6_4_5_2_2">Enable</a></div>
+      <div class="Definition_Description"><a name="3_5_17_21_12_6_4_5_2_4">Controls whether or not the port is enabled. When the port is enabled, it can receive requests.</a></div>
+      <table class="note2" summary="">
+        <tr>
+          <td class="Table_Cell" style="vertical-align: top; width: 14.285714285714284%">
+            <div class="Note">
+              <span style="font-family: Arial, Verdana, Helvetica, Sans-Serif; font-weight: bold">Note:    </span><a name="3_5_17_21_12_6_4_5_2_4_3_1_3_1_2_2">&nbsp;</a></div>
+          </td>
+          <td class="Table_Cell" style="vertical-align: top; width: 85.71428571428571%">
+            <div class="Table_Cell"><a name="3_5_17_21_12_6_4_5_2_4_3_1_3_1_3">A disabled port is not re-enabled by restarting the server. A disabled port does not accept requests until you explicitly enable it.</a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="Definition_Term"><a name="3_5_17_21_12_6_4_5_4_2">Port</a></div>
+      <div class="Definition_Description"><a name="3_5_17_21_12_6_4_5_4_4">Specifies the number of the port to which you want to assign a diagnostic listener. Type a port number that is not used by another port on your server.</a></div>
+      <div class="Definition_Term"><a name="3_5_17_21_12_6_4_5_6_2">Alias</a></div>
+      <div class="Definition_Description"><a name="3_5_17_21_12_6_4_5_6_4">An alias for the port. An alias must include one or more of the following: ASCII characters, numbers, underscore (_), period (.), and hyphen (-).</a></div>
+      <div class="Definition_Term"><a name="3_5_17_21_12_6_4_5_8_2">Description</a></div>
+      <div class="Definition_Description"><a name="3_5_17_21_12_6_4_5_8_4">A description of the port.</a></div>
+      <div class="Definition_Term"><a name="3_5_17_21_12_6_4_5_10_2">Package Name</a></div>
+      <div class="Definition_Description"><a name="3_5_17_21_12_6_4_5_10_4">Specifies the package that the server associates with this port. The server always associates the diagnostic port with the WmRoot package. You cannot change the package association of the diagnostic port.</a></div>
+      <div class="Definition_Term"><a name="3_5_17_21_12_6_4_5_12_2">Bind Address</a></div>
+      <div class="Definition_Description"><a name="3_5_17_21_12_6_4_5_12_4">Optional. IP address to which to bind this port. Specify a bind address if your machine has multiple IP addresses and you want the port to use this specific address. If you do not specify a bind address, the server picks one for you.</a></div>
+      <div class="Definition_Term"><a name="3_5_17_21_12_6_4_5_14_2">Backlog</a></div>
+      <div class="Definition_Description"><a name="3_5_17_21_12_6_4_5_14_4">The number of requests that can remain in the queue for an enabled port before </a><span class="ph">Integration Server</span> begins rejecting requests. The default is 200. The maximum value is 65535.</div>
+      <table class="note2" summary="">
+        <tr>
+          <td class="Table_Cell" style="vertical-align: top; width: 14.285714285714284%">
+            <div class="Note">
+              <span style="font-family: Arial, Verdana, Helvetica, Sans-Serif; font-weight: bold">Note:    </span><a name="3_5_17_21_12_6_4_5_14_4_5_1_3_1_2_2">&nbsp;</a></div>
+          </td>
+          <td class="Table_Cell" style="vertical-align: top; width: 85.71428571428571%">
+            <div class="Table_Cell"><a name="3_5_17_21_12_6_4_5_14_4_5_1_3_1_3">This parameter does not apply to disabled ports. </a><span class="ph">Integration Server</span> refuses requests sent to disabled ports.</div>
+          </td>
+        </tr>
+      </table>
+      <div class="Definition_Term"><a name="3_5_17_21_12_6_4_5_16_2">Keep Alive Timeout</a></div>
+      <div class="Definition_Description"><a name="3_5_17_21_12_6_4_5_16_4">When to close the connection if the server has not received a request from the client within this timeout value (in milliseconds); or when to close the connection if the client has explicitly placed a close request with the server.</a></div>
+      <div class="Section_Title"><a name="3_5_17_21_12_6_6_3">Private Threadpool Configuration</a></div>
+      <table class="norules1" summary="">
+        <tr>
+          <td class="Table_Cell" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: top; width: 116.49600000000001pt">
+            <div class="Table_Cell"><span class="uicontrol"><a name="3_5_17_21_12_6_6_5_2_6_2_2">Threadpool</a></span></div>
+          </td>
+          <td class="Table_Cell" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: top; width: 315.50399999999996pt">
+            <div class="Table_Cell"><a name="3_5_17_21_12_6_6_5_2_6_2_4_3">Whether the listener will use this pool exclusively for dispatching requests. The existing </a><span class="ph">Integration Server</span> threadpool is a global threadpool. If there is a very high load on this resource, the user may have to wait for the global threadpool to process his request. However, with the private threadpool option enabled, requests coming into this port will not have to compete with other server functions for threads.</div>
+            <div class="Table_Cell"><a name="3_5_17_21_12_6_6_5_2_6_2_4_5">Click </a><span class="uicontrol">Enable</span> if you wish to enable the private threadpool settings, or click <span class="uicontrol">Disable</span> to disable them. When these settings are enabled, you can change or accept their default values as follows:</div>
+          </td>
+        </tr>
+      </table>
+      <table class="norules1" summary="">
+        <tr>
+          <td class="norules-head" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: bottom; width: 125.28pt">
+            <div class="norules-head"><a name="3_5_17_21_12_6_6_7_2_6_2_2">Option</a></div>
+          </td>
+          <td class="norules-head" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: bottom; width: 306.71999999999997pt">
+            <div class="norules-head"><a name="3_5_17_21_12_6_6_7_2_6_2_4">Description</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td class="Table_Cell" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: top">
+            <div class="Table_Cell"><span class="uicontrol"><a name="3_5_17_21_12_6_6_7_2_8_2_2">Threadpool Min</a></span></div>
+          </td>
+          <td class="Table_Cell" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: top">
+            <div class="Table_Cell"><a name="3_5_17_21_12_6_6_7_2_8_2_4">The minimum number of threads for this private threadpool. The default is 1.</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td class="Table_Cell" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: top">
+            <div class="Table_Cell"><span class="uicontrol"><a name="3_5_17_21_12_6_6_7_2_8_4_2">Threadpool Max</a></span></div>
+          </td>
+          <td class="Table_Cell" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: top">
+            <div class="Table_Cell"><a name="3_5_17_21_12_6_6_7_2_8_4_4">The maximum number of threads for this private threadpool. The default is 5.</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td class="Table_Cell" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: top">
+            <div class="Table_Cell"><span class="uicontrol"><a name="3_5_17_21_12_6_6_7_2_8_6_2">Threadpool Priority</a></span></div>
+          </td>
+          <td class="Table_Cell" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: top">
+            <div class="Table_Cell"><a name="3_5_17_21_12_6_6_7_2_8_6_4_3">The Java thread priority.</a></div>
+            <table class="note1" summary="">
+              <tr>
+                <td class="Table_Cell" style="vertical-align: top; width: 14.285714285714284%">
+                  <div class="important">
+                    <span style="font-family: Arial, Verdana, Helvetica, Sans-Serif; font-weight: bold">Important!    </span><a name="3_5_17_21_12_6_6_7_2_8_6_4_5_1_3_1_1_2">&nbsp;</a></div>
+                </td>
+                <td class="Table_Cell" style="vertical-align: top; width: 85.71428571428571%">
+                  <div class="Table_Cell"><a name="3_5_17_21_12_6_6_7_2_8_6_4_5_1_3_1_2">Use this setting with extreme care because it will affect server performance and throughput.</a></div>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <div class="Body"><a name="3_5_17_21_12_6_6_9">When you view the port’s details, the server reports the total number of private threadpool threads currently in use for the port.</a></div>
+      <div class="Section_Title"><a name="3_5_17_21_12_6_8_3">Security Configuration</a></div>
+      <div class="Body"><a name="3_5_17_21_12_6_8_5">Use this section to specify security configuration information about this port.</a></div>
+      <div class="Definition_Term"><a name="3_5_17_21_12_6_8_7_2_2">Client Authentication</a></div>
+      <div class="Definition_Description"><a name="3_5_17_21_12_6_8_7_2_4">The type of client authentication you want </a><span class="ph">Integration Server</span> to perform for requests that arrive on this HTTP port. Select one of the following authentication options:</div>
+      <table class="NoRules1" summary="">
+        <tr>
+          <td class="norules-head" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: bottom; width: 90pt">
+            <div class="norules-head"><a name="3_5_17_21_12_6_8_7_2_4_5_2_6_2_2">Option</a></div>
+          </td>
+          <td class="norules-head" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: bottom; width: 342pt">
+            <div class="norules-head"><a name="3_5_17_21_12_6_8_7_2_4_5_2_6_2_4">Description</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td class="Table_Cell" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: top">
+            <div class="Table_Cell"><span class="uicontrol"><a name="3_5_17_21_12_6_8_7_2_4_5_2_8_2_2">Username/Password</a></span></div>
+          </td>
+          <td class="Table_Cell" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: top">
+            <div class="Table_Cell"><span class="ph"><a name="3_5_17_21_12_6_8_7_2_4_5_2_8_2_4">Integration Server</a></span> prompts the client for a user ID and password.</div>
+          </td>
+        </tr>
+        <tr>
+          <td class="Table_Cell" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: top">
+            <div class="Table_Cell"><span class="uicontrol"><a name="3_5_17_21_12_6_8_7_2_4_5_2_8_4_2">Digest</a></span></div>
+          </td>
+          <td class="Table_Cell" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: top">
+            <div class="Table_Cell"><span class="ph"><a name="3_5_17_21_12_6_8_7_2_4_5_2_8_4_4">Integration Server</a></span> uses password digest to authenticate all requests. If the client does not provide the authentication information, <span class="ph">Integration Server</span> returns an HTTP WWW-Authenticate header with digest scheme to the client requesting for authentication information. If the client provides the required authentication information, <span class="ph">Integration Server</span> verifies and validates the request.</div>
+            <table class="note1" summary="">
+              <tr>
+                <td class="Table_Cell" style="vertical-align: top; width: 14.285714285714284%">
+                  <div class="Note">
+                    <span style="font-family: Arial, Verdana, Helvetica, Sans-Serif; font-weight: bold">Note:    </span><a name="3_5_17_21_12_6_8_7_2_4_5_2_8_4_4_9_1_3_1_1_2">&nbsp;</a></div>
+                </td>
+                <td class="Table_Cell" style="vertical-align: top; width: 85.71428571428571%">
+                  <div class="Table_Cell"><a name="3_5_17_21_12_6_8_7_2_4_5_2_8_4_4_9_1_3_1_2">A port that is configured to use password digest for authentication of client requests will process a request from a user only if the user is configured to allow password digest for authentication.</a></div>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <div class="Definition_Term"><a name="3_5_17_21_12_6_8_7_4_2">Save Changes</a></div>
+      <div class="Definition_Description"><a name="3_5_17_21_12_6_8_7_4_4">Updates the server with the new or changed port settings. Your changes take effect immediately. When you view the port’s details, the server reports the total number of private threadpool threads currently in use for the port.</a></div>
+      <div class="Link_List_Title"><a name="3_5_17_21_12_8_1_2">Related Topics</a></div>
+      <div class="Related_Reference">
+        <img src="spacer_24.png" alt="*" border="0" width="24" height="6" /><span class="Link_Text"><a href="javascript:WWHClickedPopup('is_help', 'Menu_Sec_Ports_HTTP.html', '');" title="Edit HTTP Port Configuration Screen" name="3_5_17_21_12_8_1_4">Edit HTTP Port Configuration Screen</a></span></div>
+      <div class="Related_Reference">
+        <img src="spacer_24.png" alt="*" border="0" width="24" height="6" /><span class="Link_Text"><a href="javascript:WWHClickedPopup('is_help', 'Menu_Sec_Ports_HTTPS.html', '');" title="Edit HTTPS Port Configuration Screen" name="3_5_17_21_12_8_1_6">Edit HTTPS Port Configuration Screen</a></span></div>
+      <div class="Related_Reference">
+        <img src="spacer_24.png" alt="*" border="0" width="24" height="6" /><span class="Link_Text"><a href="javascript:WWHClickedPopup('is_help', 'Menu_Sec_Ports_FilePoll.html', '');" title="Edit File Polling Configuration Screen" name="3_5_17_21_12_8_1_8">Edit File Polling Configuration Screen</a></span></div>
+      <div class="Related_Reference">
+        <img src="spacer_24.png" alt="*" border="0" width="24" height="6" /><span class="Link_Text"><a href="javascript:WWHClickedPopup('is_help', 'Menu_Sec_Ports_FTPS.html', '');" title="Edit FTPS Port Configuration Screen" name="3_5_17_21_12_8_1_10">Edit FTPS Port Configuration Screen</a></span></div>
+      <div class="Related_Reference">
+        <img src="spacer_24.png" alt="*" border="0" width="24" height="6" /><span class="Link_Text"><a href="javascript:WWHClickedPopup('is_help', 'Menu_Sec_Ports_FTP.html', '');" title="Edit FTP Port Configuration Screen" name="3_5_17_21_12_8_1_12">Edit FTP Port Configuration Screen</a></span></div>
+      <div class="Related_Reference">
+        <img src="spacer_24.png" alt="*" border="0" width="24" height="6" /><span class="Link_Text"><a href="javascript:WWHClickedPopup('is_help', 'Menu_Sec_Ports_Email.html', '');" title="Edit Email Client Configuration Screen" name="3_5_17_21_12_8_1_14">Edit Email Client Configuration Screen</a></span></div>
+      <div class="Related_Reference">
+        <img src="spacer_24.png" alt="*" border="0" width="24" height="6" /><span class="Link_Text"><a href="javascript:WWHClickedPopup('is_help', 'Menu_Sec_Ports_DiagnosticHTTPS.html', '');" title="Edit HTTPS Diagnostic Port Configuration Screen" name="3_5_17_21_12_8_1_16">Edit HTTPS Diagnostic Port Configuration Screen</a></span></div>
+      <div class="Related_Reference">
+        <img src="spacer_24.png" alt="*" border="0" width="24" height="6" /><span class="Link_Text"><a href="javascript:WWHClickedPopup('is_help', 'Menu_Sec_Ports_EditEnterpriseGateway.html', '');" title="Edit Enterprise Gateway Server Configuration Screen" name="3_5_17_21_12_8_1_18">Edit Enterprise Gateway Server Configuration Screen</a></span></div>
+      <div class="Related_Reference">
+        <img src="spacer_24.png" alt="*" border="0" width="24" height="6" /><span class="Link_Text"><a href="javascript:WWHClickedPopup('is_help', 'Menu_Sec_Ports_InternalServer.html', '');" title="Edit Internal Server Configuration Screen" name="3_5_17_21_12_8_1_20">Edit Internal Server Configuration Screen</a></span></div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <div>
+      <hr />
+      <div style="font-family: Arial, Verdana, Helvetica, Sans-Serif; font-size: 12px;margin-top: 20px;margin-bottom: 20px;">
+        <span class="xref">
+          <a href="http://documentation.softwareag.com/legal/" target="external_window">Copyright © <span></span><span></span><span>2007</span><span>-2014</span> Software AG, Darmstadt, Germany</a>
+        </span>.</div>
+    </div>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+  </body>
+</html>

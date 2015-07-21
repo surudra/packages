@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <record name="transactions" javaclass="com.wm.util.Values">
+    <record name="getPOHeaderId" javaclass="com.wm.util.Values">
+      <value name="transactionName">getPOHeaderId</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="PO_HEADER" javaclass="com.wm.util.Values">
+        <value name="SQLOut">SELECT PO_HEADER_ID FROM PO_HEADERS_ALL WHERE SEGMENT1='&amp;PO_HEADER_NUMBER*'</value>
+        <value name="SQLAlias">PO_HEADER</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+    <record name="getPOLineId" javaclass="com.wm.util.Values">
+      <value name="transactionName">getPOLineId</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="PO_LINE" javaclass="com.wm.util.Values">
+        <value name="SQLOut">SELECT PO_LINE_ID FROM PO_LINES_ALL,PO_HEADERS_ALL WHERE  SEGMENT1='&amp;PO_HEADE_NUMBER*' AND PO_LINES_ALL.PO_HEADER_ID =PO_HEADERS_ALL.PO_HEADER_ID
+AND PO_LINES_ALL.LINE_NUM ='&amp;LINE_NUM*'</value>
+        <value name="SQLAlias">PO_LINE</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+    <record name="getWIPEntityType" javaclass="com.wm.util.Values">
+      <value name="transactionName">getWIPEntityType</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="ENTITY_TYPE" javaclass="com.wm.util.Values">
+        <value name="SQLOut">select a.entity_type from wip_entities a, org_organization_definitions b
+where a.wip_entity_name='&amp;WIP_ENTITY_NAME*'
+and b.organization_name='&amp;ORGANIZATION_NAME*'
+and a.organization_id=b.organization_id</value>
+        <value name="SQLAlias">ENTITY_TYPE</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+  </record>
+  <record name="FILE_INFO" javaclass="com.wm.util.Values">
+    <value name="OA_RELEASE">107SC</value>
+    <value name="DESCRIPTION"></value>
+    <value name="CREATE_HOST">webMethods</value>
+    <value name="CREATE_IM_VER">3.0</value>
+    <value name="CREATE_DATE">Nov 16, 2002 6:40:11 PM</value>
+  </record>
+</Values>

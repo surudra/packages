@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<IDataXMLCoder version="1.0">
+  <record javaclass="com.wm.data.ISMemDataImpl">
+    <record name="transactions" javaclass="com.wm.data.ISMemDataImpl">
+      <record name="checkDemandScheduleImportStatus" javaclass="com.wm.data.ISMemDataImpl">
+        <value name="transactionName">checkDemandScheduleImportStatus</value>
+        <value name="transactionType">OUT</value>
+        <null name="AcknowledgeSQL"/>
+        <record name="DS_INTERFACE_TABLE_STATUS" javaclass="com.wm.util.Values">
+          <value name="SQLOut">SELECT COUNT(*) as DS_COUNT FROM RLM_INTERFACE_HEADERS_ALL WHERE request_id= '&amp;REQUEST_ID*'</value>
+          <value name="SQLAlias">DS_INTERFACE_TABLE_STATUS</value>
+          <value name="SQLRelation"></value>
+        </record>
+      </record>
+      <record name="execDemandScheduleConcProg" javaclass="com.wm.data.ISMemDataImpl">
+        <value name="transactionName">execDemandScheduleConcProg</value>
+        <value name="transactionType">OUT</value>
+        <null name="AcknowledgeSQL"/>
+        <record name="WM_HANDLE_RLM_DEMAND" javaclass="com.wm.util.Values">
+          <value name="SQLOut">WM_RLM_DEMAND_IMP_HANDLER_PKG.WM_HANDLE_RLM_DEMAND</value>
+          <value name="SQLAlias">WM_HANDLE_RLM_DEMAND</value>
+          <value name="SQLRelation"></value>
+        </record>
+      </record>
+      <record name="getAddressId" javaclass="com.wm.data.ISMemDataImpl">
+        <value name="transactionName">getAddressId</value>
+        <value name="transactionType">OUT</value>
+        <null name="AcknowledgeSQL"/>
+        <record name="ADDRESS_ID" javaclass="com.wm.util.Values">
+          <value name="SQLOut">SELECT ADDRESS_ID FROM RA_ADDRESSES_ALL WHERE  UPPER(NVL(ADDRESS1,'XXXX')) LIKE UPPER( NVL('&amp;ADDRESS1*','XXXX')) AND  UPPER(NVL(ADDRESS2,'XXXX')) LIKE UPPER( NVL('&amp;ADDRESS2*','XXXX')) AND  UPPER(NVL(ADDRESS3,'XXXX')) LIKE UPPER( NVL('&amp;ADDRESS3*','XXXX')) AND  UPPER(NVL(ADDRESS4,'XXXX')) LIKE UPPER( NVL('&amp;ADDRESS4*','XXXX')) AND  UPPER(NVL(CITY,'XXXX')) LIKE UPPER( NVL('&amp;CITY*','XXXX')) AND  UPPER(NVL(POSTAL_CODE,'XXXX')) LIKE UPPER(NVL('&amp;POSTAL_CODE*','XXXX')) AND  UPPER(NVL(STATE,'XXXX')) LIKE UPPER(NVL('&amp;STATE*','XXXX')) AND  UPPER(NVL(PROVINCE,'XXXX')) LIKE UPPER(NVL('&amp;PROVINCE*','XXXX')) AND  UPPER(NVL(COUNTY,'XXXX')) LIKE UPPER(NVL('&amp;COUNTY*','XXXX')) AND  UPPER(NVL(COUNTRY,'XXXX')) LIKE UPPER(NVL('&amp;COUNTRY*','XXXX'))</value>
+          <value name="SQLAlias">ADDRESS_ID</value>
+          <value name="SQLRelation"></value>
+        </record>
+      </record>
+      <record name="getAgreementId" javaclass="com.wm.data.ISMemDataImpl">
+        <value name="transactionName">getAgreementId</value>
+        <value name="transactionType">OUT</value>
+        <null name="AcknowledgeSQL"/>
+        <record name="AGREEMENT_ID" javaclass="com.wm.util.Values">
+          <value name="SQLOut">SELECT AGREEMENT_ID  FROM OE_AGREEMENTS_B WHERE NAME = '&amp;AGREEMENT_NAME*'</value>
+          <value name="SQLAlias">AGREEMENT_ID</value>
+          <value name="SQLRelation"></value>
+        </record>
+      </record>
+      <record name="getCustItemIdFromAddrTmp" javaclass="com.wm.data.ISMemDataImpl">
+        <value name="transactionName">getCustItemIdFromAddrTmp</value>
+        <value name="transactionType">OUT</value>
+        <null name="AcknowledgeSQL"/>
+        <record name="CUST_ITEM_ID" javaclass="com.wm.util.Values">
+          <value name="SQLOut">SELECT CUSTOMER_ITEM_ID FROM   MTL_CUSTOMER_ITEMS_ALL_V M, RA_CUSTOMERS C WHERE   M.CUSTOMER_ITEM_NUMBER = '&amp;CUSTOMER_ITEM_NUMBER*' AND C.PARTY_ID = C.CUSTOMER_ID AND C.CUSTOMER_NAME = '&amp;CUSTOMER_NAME*' AND NVL(M.ADDRESS_ID,99999) = NVL('&amp;ADDRESS_ID*',99999)</value>
+          <value name="SQLAlias">CUST_ITEM_ID</value>
+          <value name="SQLRelation"></value>
+        </record>
+      </record>
+      <record name="getCustomerId" javaclass="com.wm.data.ISMemDataImpl">
+        <value name="transactionName">getCustomerId</value>
+        <value name="transactionType">OUT</value>
+        <null name="AcknowledgeSQL"/>
+        <record name="CUSTOMER_ID" javaclass="com.wm.util.Values">
+          <value name="SQLOut">SELECT CUSTOMER_ID FROM ra_customers WHERE party_id = customer_id AND customer_name = '&amp;CUSTOMER_NAME*'</value>
+          <value name="SQLAlias">CUSTOMER_ID</value>
+          <value name="SQLRelation"></value>
+        </record>
+      </record>
+      <record name="getDateTypeCode" javaclass="com.wm.data.ISMemDataImpl">
+        <value name="transactionName">getDateTypeCode</value>
+        <value name="transactionType">OUT</value>
+        <null name="AcknowledgeSQL"/>
+        <record name="DATE_TYPE" javaclass="com.wm.util.Values">
+          <value name="SQLOut">select LOOKUP_CODE AS DATE_TYPE_CODE from fnd_lookups where UPPER(lookup_TYPE) LIKE 'RLM_DATE_TYPE_CODE' AND MEANING = '&amp;DATE_TYPE*'</value>
+          <value name="SQLAlias">DATE_TYPE</value>
+          <value name="SQLRelation"></value>
+        </record>
+      </record>
+      <record name="getInvoiceOrgId" javaclass="com.wm.data.ISMemDataImpl">
+        <value name="transactionName">getInvoiceOrgId</value>
+        <value name="transactionType">OUT</value>
+        <null name="AcknowledgeSQL"/>
+        <record name="SITE_USE_ID" javaclass="com.wm.util.Values">
+          <value name="SQLOut">SELECT SITE_USE_ID AS INVOICE_TO_ORG_ID FROM RA_SITE_USES_ALL SITE,RA_ADDRESSES_ALL ADDR WHERE SITE.ADDRESS_ID = ADDR.ADDRESS_ID AND SITE_USE_CODE = 'BILL_TO' AND LOCATION = '&amp;INVOICE_TO_ORGANIZATION*' AND UPPER(NVL(ADDRESS1,'XXXX')) LIKE UPPER( NVL('&amp;BILL_TO_ADDRESS1*','XXXX')) AND  UPPER(NVL(ADDRESS2,'XXXX')) LIKE UPPER( NVL('&amp;BILL_TO_ADDRESS2*','XXXX')) AND  UPPER(NVL(ADDRESS3,'XXXX')) LIKE UPPER( NVL('&amp;BILL_TO_ADDRESS3*','XXXX')) AND  UPPER(NVL(ADDRESS4,'XXXX')) LIKE UPPER( NVL('&amp;BILL_TO_ADDRESS4*','XXXX')) AND  UPPER(NVL(CITY,'XXXX')) LIKE UPPER( NVL('&amp;BILL_TO_CITY*','XXXX')) AND  UPPER(NVL(POSTAL_CODE,'XXXX')) LIKE UPPER(NVL('&amp;BILL_TO_POSTAL_CODE*','XXXX')) AND  UPPER(NVL(STATE,'XXXX')) LIKE UPPER(NVL('&amp;BILL_TO_STATE*','XXXX')) AND  UPPER(NVL(PROVINCE,'XXXX')) LIKE UPPER(NVL('&amp;BILL_TO_PROVINCE*','XXXX')) AND  UPPER(NVL(COUNTY,'XXXX')) LIKE UPPER(NVL('&amp;BILL_TO_COUNTY*','XXXX')) AND  UPPER(NVL(COUNTRY,'XXXX')) LIKE UPPER(NVL('&amp;BILL_TO_COUNTRY*','XXXX'))</value>
+          <value name="SQLAlias">SITE_USE_ID</value>
+          <value name="SQLRelation"></value>
+        </record>
+      </record>
+      <record name="getOrderHeaderId" javaclass="com.wm.data.ISMemDataImpl">
+        <value name="transactionName">getOrderHeaderId</value>
+        <value name="transactionType">OUT</value>
+        <null name="AcknowledgeSQL"/>
+        <record name="HEADER_ID" javaclass="com.wm.util.Values">
+          <value name="SQLOut">SELECT O.HEADER_ID AS ORDER_HEADER_ID FROM OE_ORDER_HEADERS_ALL O, HR_ORGANIZATION_UNITS H WHERE H.NAME = '&amp;ORG_NAME*'  AND O.ORDER_NUMBER = '&amp;ORDER_NUMBER*'</value>
+          <value name="SQLAlias">HEADER_ID</value>
+          <value name="SQLRelation"></value>
+        </record>
+      </record>
+      <record name="getPriceListId" javaclass="com.wm.data.ISMemDataImpl">
+        <value name="transactionName">getPriceListId</value>
+        <value name="transactionType">OUT</value>
+        <null name="AcknowledgeSQL"/>
+        <record name="PRICE_LIST_ID" javaclass="com.wm.util.Values">
+          <value name="SQLOut">select LIST_HEADER_ID from qp_list_headerS_V WHERE NAME = '&amp;PRICE_LIST_NAME*'</value>
+          <value name="SQLAlias">PRICE_LIST_ID</value>
+          <value name="SQLRelation"></value>
+        </record>
+      </record>
+      <record name="getShipFromOrgId" javaclass="com.wm.data.ISMemDataImpl">
+        <value name="transactionName">getShipFromOrgId</value>
+        <value name="transactionType">OUT</value>
+        <null name="AcknowledgeSQL"/>
+        <record name="SHIP_FROM_ORGID" javaclass="com.wm.util.Values">
+          <value name="SQLOut">SELECT ORGANIZATION_ID FROM HR_LOCATIONS L,HR_ALL_ORGANIZATION_UNITS H WHERE H.LOCATION_ID = L.LOCATION_ID AND H.NAME = '&amp;ORG_NAME*' AND UPPER(NVL(ADDRESS_LINE_1,'XXXX')) LIKE UPPER( NVL('&amp;SHIP_FROM_ADDRESS1*','XXXX')) AND  UPPER(NVL(ADDRESS_LINE_2,'XXXX')) LIKE UPPER( NVL('&amp;SHIP_FROM_ADDRESS2*','XXXX')) AND  UPPER(NVL(ADDRESS_LINE_3,'XXXX')) LIKE UPPER( NVL('&amp;SHIP_FROM_ADDRESS3*','XXXX')) AND  UPPER(NVL(TOWN_OR_CITY,'XXXX')) LIKE UPPER( NVL('&amp;SHIP_FROM_CITY*','XXXX')) AND  UPPER(NVL(REGION_1,'XXXX')) LIKE UPPER(NVL('&amp;SHIP_FROM_COUNTY*','XXXX')) AND  UPPER(NVL(REGION_2,'XXXX')) LIKE UPPER(NVL('&amp;SHIP_FROM_STATE*','XXXX')) AND  UPPER(NVL(REGION_3,'XXXX')) LIKE UPPER(NVL('&amp;SHIP_FROM_PROVINCE*','XXXX')) AND  UPPER(NVL(POSTAL_CODE,'XXXX')) LIKE UPPER(NVL('&amp;SHIP_FROM_POSTAL_CODE*','XXXX')) AND  UPPER(NVL(COUNTRY,'XXXX')) LIKE UPPER(NVL('&amp;SHIP_FROM_COUNTRY*','XXXX'))</value>
+          <value name="SQLAlias">SHIP_FROM_ORGID</value>
+          <value name="SQLRelation"></value>
+        </record>
+      </record>
+      <record name="getShipToOrgId" javaclass="com.wm.data.ISMemDataImpl">
+        <value name="transactionName">getShipToOrgId</value>
+        <value name="transactionType">OUT</value>
+        <null name="AcknowledgeSQL"/>
+        <record name="SHIP_TO_ORG_ID" javaclass="com.wm.util.Values">
+          <value name="SQLOut">SELECT SITE_USE_ID AS SHIP_TO_ORG_ID FROM RA_SITE_USES_ALL SITE,RA_ADDRESSES_ALL ADDR WHERE SITE.ADDRESS_ID = ADDR.ADDRESS_ID AND SITE_USE_CODE = 'SHIP_TO' AND LOCATION = '&amp;SHIP_TO_ORGANIZATION*' AND UPPER(NVL(ADDRESS1,'XXXX')) LIKE UPPER( NVL('&amp;SHIP_TO_ADDRESS1*','XXXX')) AND  UPPER(NVL(ADDRESS2,'XXXX')) LIKE UPPER( NVL('&amp;SHIP_TO_ADDRESS2*','XXXX')) AND  UPPER(NVL(ADDRESS3,'XXXX')) LIKE UPPER( NVL('&amp;SHIP_TO_ADDRESS3*','XXXX')) AND  UPPER(NVL(ADDRESS4,'XXXX')) LIKE UPPER( NVL('&amp;SHIP_TO_ADDRESS4*','XXXX')) AND  UPPER(NVL(CITY,'XXXX')) LIKE UPPER( NVL('&amp;SHIP_TO_CITY*','XXXX')) AND  UPPER(NVL(POSTAL_CODE,'XXXX')) LIKE UPPER(NVL('&amp;SHIP_TO_POSTAL_CODE*','XXXX')) AND  UPPER(NVL(STATE,'XXXX')) LIKE UPPER(NVL('&amp;SHIP_TO_STATE*','XXXX')) AND  UPPER(NVL(PROVINCE,'XXXX')) LIKE UPPER(NVL('&amp;SHIP_TO_PROVINCE*','XXXX')) AND  UPPER(NVL(COUNTY,'XXXX')) LIKE UPPER(NVL('&amp;SHIP_TO_COUNTY*','XXXX')) AND  UPPER(NVL(COUNTRY,'XXXX')) LIKE UPPER(NVL('&amp;SHIP_TO_COUNTRY*','XXXX'))</value>
+          <value name="SQLAlias">SHIP_TO_ORG_ID</value>
+          <value name="SQLRelation"></value>
+        </record>
+      </record>
+    </record>
+    <record name="FILE_INFO" javaclass="com.wm.data.ISMemDataImpl">
+      <value name="OA_RELEASE">11510</value>
+      <value name="DESCRIPTION"></value>
+      <value name="CREATE_HOST">webmethods</value>
+      <value name="CREATE_IM_VER"></value>
+      <value name="CREATE_DATE">May 4, 2005 3:04:20 PM</value>
+    </record>
+  </record>
+</IDataXMLCoder>

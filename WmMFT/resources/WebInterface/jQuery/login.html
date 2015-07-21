@@ -1,0 +1,312 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <title>ActiveTransfer Web Client :: Login</title>
+	<link rel="stylesheet" type="text/css" href="/WebInterface/jQuery/css/login.css" />
+	<link rel="stylesheet" type="text/css" href="/WebInterface/custom_login.css" />
+	<script type="text/javascript" src="/WebInterface/jQuery/js/jquery-1.4.2.min.js"></script>
+	<script type="text/javascript" src="/WebInterface/jQuery/js/jquery-ui-1.8.2.custom.min.js"></script>
+	<script type="text/javascript" src="/WebInterface/jQuery/js/jquery.blockUI.js"></script>
+</head>
+<body style="overflow-x: hidden; overflow-y: auto;" class="login">
+	<div id="login">
+		<form id="loginForm" method="post" target="dummyIframe" action="/WebInterface/function/" onSubmit="doLogin();">
+			<div id="panelbody">
+				<div id="branding" class="clearfix">
+					<img id="loginWheel" src="/WebInterface/images/wheel.gif"/>
+					<img id="imgLogo" src="/WebInterface/images/logo.png" style="border-width:0px;float:left;" /></a>
+				</div>
+				<div id="panelLogin">
+					<div>
+						<label>Username</label>
+						<input autocomplete="on" type="text" class="textbox" name="username" id="username" value="" />
+					</div>
+					<div>
+						<label>Password</label>
+						<input type="password" class="textbox" name="password" id="password" value="" />
+					</div>
+					<div style="clear:both;"></div>
+					<div class="submit clearfix">
+						<input type="submit" value="login" style='display:none;' />
+						<input type="hidden" name="command" value="login" />
+						<input type="hidden" name="encoded" value="false" />
+						<input type="submit" value="login now" style="position:absolute;left:-1000px;top:-1000px;"/>
+						<a class="button" id="btnLogin" href="javascript:void(0);"><span>Login</span></a>
+					</div>
+				</div>
+			</div>
+			<div class="sag_copyright"
+			id="SAGCopyrightText">Copyright &copy; 2012 - 2013 Software
+		AG, Darmstadt, Germany and/or Software AG USA, Inc., Reston, VA,
+		United States of America, and/or their licensors. All rights reserved.
+		The name Software AG, webMethods and all Software AG product names are
+		either trademarks or registered trademarks of Software AG and/or
+		Software AG USA, Inc.
+		Other company and product names mentioned herein may be trademarks of
+		their respective owners. 
+			</div>
+		</form>
+		<form id="changePassForm" method="post" target="dummyIframe" action="/WebInterface/function/" onSubmit="doLogin();">
+			<div id="changepasswordPanel" style="display:none;margin-bottom:10px;">
+				<div class="clearfix" style="clear:both;">
+					<img id="imgLogo" src="/WebInterface/images/logo.png" style="border-width:0px;float:left;margin:3px 0px 10px 0px;" /></a>
+				</div>
+				<h2 class="popupHeader" style="clear:both;margin-top:15px;">
+					Change your password
+				</h2>
+				<div>
+					You must change your password to continue
+				</div>
+				<div class="buttonPanel">
+					<label for="current_password">Current Password: </label><input id="current_password" class="textbox" type="password" />
+					<br />
+					<br />
+					<label for="new_password1">New Password: </label><input id="new_password1" class="textbox" type="password" />
+					<br />
+					<br />
+					<label for="new_password2">Confirm Password: </label><input id="new_password2" class="textbox" type="password" />
+					<div style="text-align:right;margin-top:10px;">
+						<a  id="btnChangePasswordCancel" class="button" href="javascript:void(0);"><span>Cancel</span></a>
+						<a  id="btnChangePassword" class="button" href="javascript:void(0);"><span>Change Password</span></a>
+					</div>
+					<div style="clear:both"></div>
+					<br />
+					<hr />
+					<br />
+					<div>
+						<a id="btnGeneratePassword" class="button" href="javascript:void(0);" style="float:left"><span>Generate password</span></a>
+						<div id="passwordGeneratePanel" style="display:none;">
+							<br />
+							<br />
+							<input id="generated_password" type="text" class="textboxSmall" style="float:left;" />
+							<a id="usePassword" class="button" href="javascript:void(0);" style="float:left"><span>Use this</span></a>
+							<a id="cancelPassword" class="button" href="javascript:void(0);" style="float:left"><span>Cancel</span></a>
+						</div>
+						<div style="clear:both"></div>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+	<div id="olderBrowserNotice" style="display:none;top:100px;padding: 10px;" class="alertMessage">
+		Your browser is out of date, it was released almost a decade ago! As a result it is very slow, full of bugs, and this WebInterface may or may not even work with IE6.
+		<br />
+		<br />
+		<div style="text-align:right;">
+			<button id="proceedAnyway">Proceed Anyway Cautiously</button> or get a better browser:
+			<a href="http://www.apple.com/safari/">Safari</a> | <a href="http://www.getfirefox.com/">FireFox</a>
+		</div>
+	</div>
+	<iframe id="dummyIframe" name="dummyIframe" src="javascript:false;" style="display:none;"></iframe>
+	<script type="text/javascript">
+			var attempts = 1;
+			var _badLogin = "Your username, or password may be incorrect, or the account may have expired.";
+			var _serverError = "The server is unavailable or your IP has been banned.";
+			$(document).ready(function () {
+				olderBrowserNotification();
+				$("#loginWheel").hide();
+				$("input[name=username]").focus();
+				$("#btnLogin").click(function(evt){
+					$("#loginForm").submit();
+				});
+
+				$("#changepasswordPanel").find("#btnChangePasswordCancel").click(function(){
+					window.curUser = false;
+					window.curPass = false;
+					$("#changepasswordPanel").hide();
+					$("#panelbody").show();
+					$("#username").focus().select();
+					return false;
+				});
+
+				$("#changepasswordPanel").find("#btnGeneratePassword").unbind().click(function () {
+					$("#generated_password").val(generateRandomPassword(8));
+					$("#passwordGeneratePanel").slideDown();
+					return false;
+				});
+
+				$("#changepasswordPanel").find("#usePassword").unbind().click(function () {
+					$("#new_password1").val($("#generated_password").val());
+					return false;
+				});
+
+				$("#changepasswordPanel").find("#cancelPassword").unbind().click(function () {
+					$("#generated_password").val("");
+					$("#passwordGeneratePanel").slideUp();
+					return false;
+				});
+
+				$("#changepasswordPanel").find("#btnChangePassword").unbind().click(function () {
+					if ($("#new_password1")[0].value != $("#new_password2")[0].value) {
+						alert("New passwords don't match.");
+					}
+					else {
+						$.ajax({
+							type: "POST",
+							url: "/WebInterface/function/",
+							data: {
+								command: "changePassword",
+								current_password: $("#current_password")[0].value,
+								new_password1: $("#new_password1")[0].value,
+								new_password2: $("#new_password2")[0].value
+							},
+							success: function (response) {
+								var s = getActionResponseText(response);
+								if (s.toUpperCase().indexOf("PASSWORD CHANGED") >= 0) {
+									$("#changepasswordPanel").find("#btnChangePasswordCancel").trigger("click");
+									$.growlUI("Please login again", "Login with new password", 2000, "", false);
+								} else alert(s);
+							}
+						});
+					}
+					return false;
+				});
+			});
+			function generateRandomPassword(length) {
+				length = length || 8;
+				var randomId = "";
+				var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+				for (var i = 0; i < length; i++)
+				randomId += possible.charAt(Math.floor(Math.random() * possible.length));
+				return randomId;
+			}
+			function getActionResponseText(msg) {
+				var responseText = '';
+				try {
+					var msgs = msg.getElementsByTagName("commandResult");
+					for (var x = 0; x < msgs.length; x++) {
+						responseText += IE(msgs[x].getElementsByTagName("response")[0]).textContent;
+					}
+				} catch (ex) {}
+				return responseText;
+			}
+			function doLogin()
+			{
+				$("#loginWheel").show();
+				$("#loginButton").attr("disabled","true");
+				$.growlUI("Authenticating...", "", 5000, "", false);
+				setTimeout(doLogin2,500);
+			}
+			function doLogin2()
+			{
+				window.curUser = false;
+				window.curPass = false;
+				var username = $("#username").val();
+				if (!username) username = $("input[name=username]").val();
+				var password = $("#password").val();
+				if (!password) password = $("input[name=password]").val();
+				$.ajax({
+					type: "POST",
+					url: "/WebInterface/function/",
+					data: {
+						command: "login",
+						username: encodeURIComponent(username),
+						password: encodeURIComponent(password),
+						encoded: true,
+						random: Math.random()
+					},
+					error: function (XMLHttpRequest, textStatus, errorThrown) {
+						$("#loginButton").attr("disabled","");
+						if (!errorThrown) errorThrown = "Error";
+						$.growlUI(errorThrown, _serverError, 5000, "", false);
+						$("#loginWheel").hide();
+					},
+					success: function (msg) {
+						$("#dummyIframe").attr("src","javascript:void(0);");
+						$("#loginWheel").hide();
+						var response = IE(msg.getElementsByTagName("response")[0]).textContent;
+						if (response == "success")
+						{
+							var link = false;
+							if (location.href.indexOf("?link=") >= 0) link = location.href.substring(location.href.indexOf("link=")+"link=".length);
+							if(link && link.length>0)
+							{
+								location.href = link;
+							}
+							else
+							{
+								$.growlUI("Success", "Loading WebInterface...", 30000, "", false);
+								var redirectPath = "/";
+								if (location.href.indexOf("path=") >= 0) redirectPath = location.href.substring(location.href.indexOf("path=")+"path=".length);
+								if (location.href.indexOf("/Web"+"Interface/login.html") >= 0) location.href = location.href.substring(0,location.href.indexOf("/Web"+"Interface/login.html"))+"/#"+redirectPath;
+								//Web+Interface must be split up to work with reverse proxy
+								else location.href = location.href.replace("/#/",redirectPath);
+							}
+						}
+						else if (response == "password_expired")
+						{
+							window.curUser = username;
+							window.curPass = password;
+							_badLogin = IE(msg.getElementsByTagName("message")[0]).textContent || _badLogin;
+							$.growlUI("Change Password", _badLogin, 2000, "", false);
+							$("#panelbody").hide();
+							$("#changepasswordPanel").show().find("input").val("");
+						}
+						else
+						{
+							$("#loginButton").attr("disabled","");
+							$("#password").focus();
+							_badLogin = IE(msg.getElementsByTagName("message")[0]).textContent || _badLogin;
+							$.growlUI("Login Failed", _badLogin, 7000, "", false);
+							if (attempts++ >= 3) $.growlUI("Warning", "Too many failed attempts and your IP will be banned.\r\n\r\n"+_badLogin, 10000, "", false);
+							$("#loginWheel").hide();
+						}
+					}
+				});
+				return false;
+			}
+			function emailPassword()
+			{
+				var username = $("#username").val();
+				if (!username) username = $("input[name=username]").val();
+				$("#loginWheel").show();
+				$.ajax({
+					type: "POST",
+					url: "/WebInterface/function/",
+					data: {
+						command: "emailpassword",
+						username: encodeURIComponent(username),
+						encoded: true,
+						random: Math.random()
+					},
+					error: function (XMLHttpRequest, textStatus, errorThrown) {
+						if (!errorThrown) errorThrown = "Error";
+						$.growlUI(errorThrown, _serverError, 5000, "", false);
+						$("#loginWheel").hide();
+					},
+					success: function (msg) {
+						$("#loginWheel").hide();
+						var response = IE(msg.getElementsByTagName("response")[0]).textContent;
+						$.growlUI("", response, 10000, "", false);
+					}
+				});
+			}
+			function IE(obj) {
+				var obj2 = {};
+				try {
+					if (window.ActiveXObject) obj2.textContent = obj.text;
+					else obj2.textContent = obj.textContent;
+				}
+				catch (ex) {}
+				return obj2;
+			}
+			function olderBrowserNotification()
+			{
+				if ($.browser.msie && $.browser.version == "6.0")
+				{
+					$.blockUI({ message: $('#olderBrowserNotice'), css:{
+						width: '430px',
+						padding: '10px',
+						top:'250px',
+						border:'3px solid #F17E7E'
+					} });
+					$("#proceedAnyway").click(function(){
+						$.unblockUI();
+						$("#username").focus();
+					});
+				}
+			}
+		</script>
+	</body>
+</html>

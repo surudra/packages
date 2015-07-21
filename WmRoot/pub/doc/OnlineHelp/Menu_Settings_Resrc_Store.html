@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="keywords" content="document stores,viewing settings,settings,document stores,document history,viewing" />
+    <title>Store Settings Screen</title>
+    <link rel="StyleSheet" href="css/_is_admin_help.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+  <body style="background-color: White; margin-bottom: 25px; margin-left: 25px; margin-right: 25px; margin-top: 0px; padding-top: 0px" onload="WWHUpdate();" onunload="WWHUnload();" onkeydown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onkeypress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onkeyup="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <table align="left" role="presentation">
+      <tr>
+        <td class="WebWorks_Company_Logo_Top">
+          <img src="sag_online.png" />
+        </td>
+      </tr>
+    </table>
+    <br clear="all" />
+    <hr align="left" />
+    <blockquote>
+      <div class="Heading_3"><a name="3_5_19_31_6_2">Store Settings Screen</a></div>
+      <div class="Body"><span class="emphasis"><a name="3_5_19_31_6_6_2_3">Screen Heading</a></span>: <span class="uicontrol">Settings &gt; Resources &gt; Store Settings</span></div>
+      <div class="Body"><a name="3_5_19_31_6_6_2_5">The Store Settings screen identifies the location and initial size for the document stores and the XA recovery store used by the </a><span class="ph">Integration Server</span>. <span class="ph">Integration Server</span> maintains the following stores:</div>
+      <div class="List_1_outer" style="margin-left: 24px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_1_inner" style="width: 18pt; white-space: nowrap">
+                <img src="bullet1.png" alt="*" border="0" width="10" height="10" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_1_inner"><a name="3_5_19_31_6_6_2_7_2">The </a><span class="term">default document store</span> contains default documents delivered to the default <span class="ph">Broker</span> client for the <span class="ph">Integration Server</span>. When <span class="ph">Integration Server</span> retrieves documents delivered to its default <span class="ph">Broker</span> client, <span class="ph">Integration Server</span> places the documents in the default document store. Documents remain in the default document store until the dispatcher determines which <span class="ph">webMethods messaging trigger</span>s subscribe to the document. The dispatcher then moves the documents to the trigger queues for the subscribing triggers.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_1_outer" style="margin-left: 24px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_1_inner" style="width: 18pt; white-space: nowrap">
+                <img src="bullet1.png" alt="*" border="0" width="10" height="10" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_1_inner"><a name="3_5_19_31_6_6_2_7_4">The </a><span class="term">trigger document store</span> contains locally published guaranteed documents that are delivered to specific <span class="ph">webMethods messaging trigger</span>s. <span class="ph">Integration Server</span> creates a queue for each trigger in the trigger document store. A document remains in the trigger document store until the server successfully executes the service specified in the trigger or the server discards the document because it does not satisfy any of the trigger conditions.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_1_outer" style="margin-left: 24px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_1_inner" style="width: 18pt; white-space: nowrap">
+                <img src="bullet1.png" alt="*" border="0" width="10" height="10" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_1_inner"><a name="3_5_19_31_6_6_2_7_6">The </a><span class="term">outbound document store</span>, sometimes called the client-side queue, contains published documents waiting to be sent to the <span class="ph">Broker</span>. <span class="ph">Integration Server</span> places documents in the outbound document store when the configured <span class="ph">Broker</span> is disconnected. <span class="ph">Integration Server</span> sends documents from the outbound document store to the <span class="ph">Broker</span> when the connection to the <span class="ph">Broker</span> is restored.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_1_outer" style="margin-left: 24px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_1_inner" style="width: 18pt; white-space: nowrap">
+                <img src="bullet1.png" alt="*" border="0" width="10" height="10" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_1_inner"><a name="3_5_19_31_6_6_2_7_8">The </a><span class="term">XA recovery store</span> saves the XID and the global state of XA transactions. At the beginning of each subsequent action taken for the transaction, <span class="ph">Integration Server</span> stores the global state of the transaction and the state of each resource that is participating in the transaction in the XA recovery store. If <span class="ph">Integration Server</span> shuts down unexpectedly, <span class="ph">Integration Server</span> can retrieve the state information from the XA recovery store and try to resolve uncompleted transactions, if there are any.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Body"><a name="3_5_19_31_6_6_2_9">To open the Store Settings screen, click </a><span class="uicontrol">Resources</span> under the <span class="uicontrol">Settings</span> menu on the Navigation panel. On the <span class="heading-page"><a href="javascript:WWHClickedPopup('is_help', 'Menu_Settings_Resource.html', '');" title="Resources Screen">Resources
+Screen</a></span>, click <span class="uicontrol">Store Settings</span>.</div>
+      <div class="List_1_outer" style="margin-left: 24px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_1_inner" style="width: 18pt; white-space: nowrap">
+                <img src="bullet1.png" alt="*" border="0" width="10" height="10" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_1_inner"><a name="3_5_19_31_6_6_2_11_2">Click </a><span class="uicontrol">Edit Document Store Settings</span> to edit the settings for the default, trigger, or outbound document stores.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_1_outer" style="margin-left: 24px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_1_inner" style="width: 18pt; white-space: nowrap">
+                <img src="bullet1.png" alt="*" border="0" width="10" height="10" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_1_inner"><a name="3_5_19_31_6_6_2_11_4">Click </a><span class="uicontrol">Edit XA Recovery Store Settings</span> to configure the XA recovery store.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Section_Title"><a name="3_5_19_31_6_6_4_3">Default Document Store</a></div>
+      <div class="Definition_Term"><a name="3_5_19_31_6_6_4_5_2_2">Store Location</a></div>
+      <div class="Definition_Description"><a name="3_5_19_31_6_6_4_5_2_4_3">The location of the default document store. By default, the </a><span class="ph">Integration Server</span> saves document stores in the following directory:</div>
+      <div class="Preformatted_1"><a name="3_5_19_31_6_6_4_5_2_4_5"><br /></a><span class="ph"><br /></span><span class="emphasis">Integration&nbsp;Server_directory</span><span class="ph"><br /></span>\instances\<span class="varname">instance_name</span>\DocumentStore</div>
+      <div class="Definition_Term"><a name="3_5_19_31_6_6_4_5_4_2">Initial Store Size (MB)</a></div>
+      <div class="Definition_Description"><a name="3_5_19_31_6_6_4_5_4_4_3">The amount of disk space allocated to the default document store at start up. The default store automatically increases when it receives data that exceeds the initial size. The default size is 25 MB.</a></div>
+      <div class="Definition_Term"><a name="3_5_19_31_6_6_4_5_6_2">Capacity (documents)</a></div>
+      <div class="Definition_Description"><a name="3_5_19_31_6_6_4_5_6_4_3">The maximum number of documents in the default document store. The default is 10 documents.</a></div>
+      <table class="note2" summary="">
+        <tr>
+          <td class="Table_Cell" style="vertical-align: top; width: 14.285714285714284%">
+            <div class="Note">
+              <span style="font-family: Arial, Verdana, Helvetica, Sans-Serif; font-weight: bold">Note:    </span><a name="3_5_19_31_6_6_4_5_6_4_5_1_3_1_2_2">&nbsp;</a></div>
+          </td>
+          <td class="Table_Cell" style="vertical-align: top; width: 85.71428571428571%">
+            <div class="Table_Cell"><a name="3_5_19_31_6_6_4_5_6_4_5_1_3_1_3">The </a><span class="uicontrol">Capacity</span> field displays "Suspended" next to the field if the <span class="uicontrol">Capacity</span> was set to 0 (zero) on the Edit Document Store Settings screen. The <span class="uicontrol">Capacity</span> field displays "<span class="ph">Broker</span> Not Configured" if there is not a <span class="ph">Broker</span> configured for the server.</div>
+          </td>
+        </tr>
+      </table>
+      <div class="Definition_Term"><a name="3_5_19_31_6_6_4_5_8_2">Refill level (documents)</a></div>
+      <div class="Definition_Description"><a name="3_5_19_31_6_6_4_5_8_4_3">The number of unprocessed documents that remain in the default document store before </a><span class="ph">Integration Server</span> retrieves more documents for the store from the <span class="ph">Broker</span>.</div>
+      <table class="note2" summary="">
+        <tr>
+          <td class="Table_Cell" style="vertical-align: top; width: 14.285714285714284%">
+            <div class="Note">
+              <span style="font-family: Arial, Verdana, Helvetica, Sans-Serif; font-weight: bold">Note:    </span><a name="3_5_19_31_6_6_4_5_8_4_5_1_3_1_2_2">&nbsp;</a></div>
+          </td>
+          <td class="Table_Cell" style="vertical-align: top; width: 85.71428571428571%">
+            <div class="Table_Cell"><a name="3_5_19_31_6_6_4_5_8_4_5_1_3_1_3">The </a><span class="uicontrol">Refill level</span> field displays "<span class="ph">Broker</span> Not Configured" if there is not a <span class="ph">Broker</span> configured for the server.</div>
+          </td>
+        </tr>
+      </table>
+      <table class="note2" summary="">
+        <tr>
+          <td class="Table_Cell" style="vertical-align: top; width: 14.285714285714284%">
+            <div class="Note">
+              <span style="font-family: Arial, Verdana, Helvetica, Sans-Serif; font-weight: bold">Note:    </span><a name="3_5_19_31_6_6_4_5_8_4_7_1_3_1_2_2">&nbsp;</a></div>
+          </td>
+          <td class="Table_Cell" style="vertical-align: top; width: 85.71428571428571%">
+            <div class="Table_Cell"><a name="3_5_19_31_6_6_4_5_8_4_7_1_3_1_3">The difference between the </a><span class="uicontrol">Capacity</span> and the <span class="uicontrol">Refill level</span> determines how many documents <span class="ph">Integration Server</span> retrieves for the default document store from the <span class="ph">Broker</span>. For example, if you assign the trigger document store a <span class="uicontrol">Capacity</span> of 10 and a <span class="uicontrol">Refill level</span> of 4, <span class="ph">Integration Server</span> initially retrieves 10 documents for the default store. When only 4 documents remain to be processed in the default store, <span class="ph">Integration Server</span> retrieves 6 more documents. If 6 documents are not available, <span class="ph">Integration Server</span> retrieves as many as possible.</div>
+          </td>
+        </tr>
+      </table>
+      <div class="Section_Title"><a name="3_5_19_31_6_6_6_3">Trigger Document Store</a></div>
+      <div class="Definition_Term"><a name="3_5_19_31_6_6_6_5_2_2">Store Location</a></div>
+      <div class="Definition_Description"><a name="3_5_19_31_6_6_6_5_2_4_3">The location of the trigger document store. By default, </a><span class="ph">Integration Server</span> saves document stores in the following directory:</div>
+      <div class="Preformatted_1"><a name="3_5_19_31_6_6_6_5_2_4_5"><br /></a><span class="ph"><br /></span><span class="emphasis">Integration&nbsp;Server_directory</span><span class="ph"><br /></span>\instances\<span class="varname">instance_name</span>\DocumentStore</div>
+      <div class="Definition_Term"><a name="3_5_19_31_6_6_6_5_4_2">Initial Store Size (MB)</a></div>
+      <div class="Definition_Description"><a name="3_5_19_31_6_6_6_5_4_4_3">The amount of disk space allocated to the trigger document store at start up. The trigger document store automatically increases when it receives data that exceeds the initial size. The default size is 35 MB.</a></div>
+      <div class="Definition_Term"><a name="3_5_19_31_6_6_6_5_6_2">Inbound Document History (minutes)</a></div>
+      <div class="Definition_Description"><a name="3_5_19_31_6_6_6_5_6_4_3">The number of minutes the server maintains a history for a received document. During this time period, the server will perform duplicate detection for the document. If the server receives another document with the same document ID, the server considers the second document to be a duplicate and discards it. A value of 0 (zero) indicates that the server does not check for duplicate messages. The default is 10 minutes. This field displays "Not Available" if </a><span class="ph">Integration Server</span> connects to a <span class="ph">Broker</span> version 6.1 or later.</div>
+      <table class="note2" summary="">
+        <tr>
+          <td class="Table_Cell" style="vertical-align: top; width: 14.285714285714284%">
+            <div class="Note">
+              <span style="font-family: Arial, Verdana, Helvetica, Sans-Serif; font-weight: bold">Note:    </span><a name="3_5_19_31_6_6_6_5_6_4_5_1_3_1_2_2">&nbsp;</a></div>
+          </td>
+          <td class="Table_Cell" style="vertical-align: top; width: 85.71428571428571%">
+            <div class="Table_Cell"><a name="3_5_19_31_6_6_6_5_6_4_5_1_3_1_3">The </a><span class="uicontrol">Inbound Document History (minutes)</span> field can be set only if <span class="ph">Integration Server</span> connects to a <span class="ph">Broker</span> version 6.0.1. If <span class="ph">Integration Server</span> connects to a <span class="ph">Broker</span> version 6.1 or later, you can configure duplicate detection on a per trigger basis. For information about configuring duplicate detection for triggers using version 6.1 or later of <span class="ph">Integration Server</span>, see the <span class="ph"> </span><span class="Citation">Publish-Subscribe Developer’s Guide</span><span class="ph"> </span>.</div>
+          </td>
+        </tr>
+      </table>
+      <div class="Definition_Term"><a name="3_5_19_31_6_6_6_5_8_2">Inbound Client Side Queuing</a></div>
+      <div class="Definition_Description"><a name="3_5_19_31_6_6_6_5_8_4_3">Indicates whether client side queuing is </a><span class="uicontrol">On</span> or <span class="uicontrol">Off</span>.</div>
+      <div class="List_2_outer" style="margin-left: 48px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_2_inner" style="width: 18pt; white-space: nowrap">
+                <img src="bullet2.png" alt="*" border="0" width="12" height="12" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_2_inner"><a name="3_5_19_31_6_6_6_5_8_4_5_2">If you enable client-side queuing (</a><span class="uicontrol">On</span>), <span class="ph">Integration Server</span> maintains persistent trigger document stores on disk. If the server shuts down unexpectedly before processing the document, the server recovers the document from the document store upon restart.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_2_outer" style="margin-left: 48px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_2_inner" style="width: 18pt; white-space: nowrap">
+                <img src="bullet2.png" alt="*" border="0" width="12" height="12" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_2_inner"><a name="3_5_19_31_6_6_6_5_8_4_5_4">If you disable client-side queuing (</a><span class="uicontrol">Off</span>), <span class="ph">Integration Server</span> maintains the trigger document store in memory and the <span class="ph">Broker</span> maintains the persistent queue. If the server shuts down unexpectedly before processing the document, the server recovers the document from the <span class="ph">Broker</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_2_outer" style="margin-left: 48px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_2_inner" style="width: 18pt; white-space: nowrap">
+                <img src="bullet2.png" alt="*" border="0" width="12" height="12" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_2_inner"><a name="3_5_19_31_6_6_6_5_8_4_5_6_4">If </a><span class="ph">Integration Server</span> connects to a 6.1 or later version of the <span class="ph">Broker</span>, this field displays "Not Available".</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <table class="note3" summary="">
+        <tr>
+          <td class="Table_Cell" style="vertical-align: top; width: 14.285714285714284%">
+            <div class="Note">
+              <span style="font-family: Arial, Verdana, Helvetica, Sans-Serif; font-weight: bold">Note:    </span><a name="3_5_19_31_6_6_6_5_8_4_5_6_6_1_3_1_1_2">&nbsp;</a></div>
+          </td>
+          <td class="Table_Cell" style="vertical-align: top; width: 85.71428571428571%">
+            <div class="Table_Cell"><a name="3_5_19_31_6_6_6_5_8_4_5_6_6_1_3_1_2">Client-side queuing is only available if </a><span class="ph">Integration Server</span> connects to a 6.0.1 version of the <span class="ph">Broker</span>.</div>
+          </td>
+        </tr>
+      </table>
+      <div class="Definition_Term"><a name="3_5_19_31_6_6_6_5_10_2">Run Trigger Service As User</a></div>
+      <div class="Definition_Description"><a name="3_5_19_31_6_6_6_5_10_4_3">Specifies the user account whose credentials the server uses to execute a service specified in a trigger condition for a </a><span class="ph">webMethods messaging trigger</span> that receive documents from the <span class="ph">Broker</span>. This field can specify a predefined user account or a user account created by a server administrator. The default user is Administrator.</div>
+      <div class="List_2_outer" style="margin-left: 48px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_2_inner" style="width: 18pt; white-space: nowrap">
+                <img src="bullet2.png" alt="*" border="0" width="12" height="12" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_2_inner"><span class="uicontrol"><a name="3_5_19_31_6_6_6_5_10_4_5_2">Administrator</a></span>. Used to access the <span class="ph">Integration Server Administrator</span> to configure and manage the server.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_2_outer" style="margin-left: 48px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_2_inner" style="width: 18pt; white-space: nowrap">
+                <img src="bullet2.png" alt="*" border="0" width="12" height="12" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_2_inner"><span class="uicontrol"><a name="3_5_19_31_6_6_6_5_10_4_5_4">Default</a></span>. Used when the client does not supply a user name and password.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_2_outer" style="margin-left: 48px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_2_inner" style="width: 18pt; white-space: nowrap">
+                <img src="bullet2.png" alt="*" border="0" width="12" height="12" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_2_inner"><a name="3_5_19_31_6_6_6_5_10_4_5_6"> </a>  <span class="uicontrol">Developer</span>. Used to connect to the server from <span class="ph">Software&nbsp;AG Designer</span> to create, modify, and delete services that reside on the server.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_2_outer" style="margin-left: 48px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_2_inner" style="width: 18pt; white-space: nowrap">
+                <img src="bullet2.png" alt="*" border="0" width="12" height="12" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_2_inner"><span class="uicontrol"><a name="3_5_19_31_6_6_6_5_10_4_5_8_4">Replicator</a></span>. Used during package replication.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <table class="note3" summary="">
+        <tr>
+          <td class="Table_Cell" style="vertical-align: top; width: 14.285714285714284%">
+            <div class="Note">
+              <span style="font-family: Arial, Verdana, Helvetica, Sans-Serif; font-weight: bold">Note:    </span><a name="3_5_19_31_6_6_6_5_10_4_5_8_6_1_3_1_1_2">&nbsp;</a></div>
+          </td>
+          <td class="Table_Cell" style="vertical-align: top; width: 85.71428571428571%">
+            <div class="Table_Cell"><a name="3_5_19_31_6_6_6_5_10_4_5_8_6_1_3_1_2">This setting applies to </a><span class="ph">webMethods messaging trigger</span>s only.</div>
+          </td>
+        </tr>
+      </table>
+      <div class="Section_Title"><a name="3_5_19_31_6_6_8_3">Outbound Document Store</a></div>
+      <div class="Definition_Term"><a name="3_5_19_31_6_6_8_5_2_2">Maximum Documents to Send per Transaction</a></div>
+      <div class="Definition_Description"><a name="3_5_19_31_6_6_8_5_2_4_3">The number of documents the server should send from the outbound document store to the </a><span class="ph">Broker</span> for each transaction. The default is 25 documents.</div>
+      <table class="note2" summary="">
+        <tr>
+          <td class="Table_Cell" style="vertical-align: top; width: 14.285714285714284%">
+            <div class="Note">
+              <span style="font-family: Arial, Verdana, Helvetica, Sans-Serif; font-weight: bold">Note:    </span><a name="3_5_19_31_6_6_8_5_2_4_5_1_3_1_2_2">&nbsp;</a></div>
+          </td>
+          <td class="Table_Cell" style="vertical-align: top; width: 85.71428571428571%">
+            <div class="Table_Cell"><a name="3_5_19_31_6_6_8_5_2_4_5_1_3_1_3">The </a><span class="uicontrol">Maximum Documents to Send per Transaction</span> field displays "<span class="ph">Broker</span> Not Configured" if a <span class="ph">Broker</span> is not configured for the server.</div>
+          </td>
+        </tr>
+      </table>
+      <div class="Section_Title"><a name="3_5_19_31_6_6_10_3">XA Recovery Store</a></div>
+      <div class="Definition_Term"><a name="3_5_19_31_6_6_10_5_2_2">Store Location</a></div>
+      <div class="Definition_Description"><a name="3_5_19_31_6_6_10_5_2_4_3">The location of the XA recovery store. By default, the </a><span class="ph">Integration Server</span> saves the XA recovery store in the following directory:</div>
+      <div class="Definition_Description"><span class="ph"><a name="3_5_19_31_6_6_10_5_2_4_5"> </a></span><span class="emphasis">Integration&nbsp;Server_directory</span><span class="ph"> </span>\instances\<span class="varname">instance_name</span>\XAStore</div>
+      <div class="Definition_Term"><a name="3_5_19_31_6_6_10_5_4_2">Initial Store Size (MB)</a></div>
+      <div class="Definition_Description"><a name="3_5_19_31_6_6_10_5_4_4_3">The amount of disk space allocated to the XA recovery store at start up. The XA recovery store automatically increases when it receives data that exceeds the initial size. The default size is 10 MB.</a></div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <div>
+      <hr />
+      <div style="font-family: Arial, Verdana, Helvetica, Sans-Serif; font-size: 12px;margin-top: 20px;margin-bottom: 20px;">
+        <span class="xref">
+          <a href="http://documentation.softwareag.com/legal/" target="external_window">Copyright © <span></span><span></span><span>2007</span><span>-2014</span> Software AG, Darmstadt, Germany</a>
+        </span>.</div>
+    </div>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+  </body>
+</html>

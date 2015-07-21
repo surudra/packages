@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="keywords" content="settings,remote servers,remote servers,aliases,viewing,aliases,remote servers,servers,remote" />
+    <title>Remote Servers Screen</title>
+    <link rel="StyleSheet" href="css/_is_admin_help.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+  <body style="background-color: White; margin-bottom: 25px; margin-left: 25px; margin-right: 25px; margin-top: 0px; padding-top: 0px" onload="WWHUpdate();" onunload="WWHUnload();" onkeydown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onkeypress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onkeyup="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <table align="left" role="presentation">
+      <tr>
+        <td class="WebWorks_Company_Logo_Top">
+          <img src="sag_online.png" />
+        </td>
+      </tr>
+    </table>
+    <br clear="all" />
+    <hr align="left" />
+    <blockquote>
+      <div class="Heading_2"><a name="3_5_19_29_1">Remote Servers Screen</a></div>
+      <div class="Body"><span class="emphasis"><a name="3_5_19_29_3_2_3">Screen Heading</a></span>: <span class="uicontrol">Settings &gt; Remote Servers</span></div>
+      <div class="Body"><a name="3_5_19_29_3_2_5">Use the Remote Servers screen to view the list of aliases that your server defines for other </a><span class="ph">webMethods Integration Server</span>s. An alias is a named set of connection parameters that describe how to access another <span class="ph">webMethods Integration Server</span>. You use an alias when you invoke a service through the pub.remote:invoke and pub.remote.gd:* services, when you use multiple certificates, and when you use the publish/subscribe features to replicate packages between servers.</div>
+      <div class="Body"><a name="3_5_19_29_3_2_7">To open the Remote Servers screen, click </a><span class="uicontrol">Remote Servers</span> under the <span class="uicontrol">Settings</span> menu on the Navigation panel.</div>
+      <div class="List_1_outer" style="margin-left: 24px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_1_inner" style="width: 18pt; white-space: nowrap">
+                <img src="bullet1.png" alt="*" border="0" width="10" height="10" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_1_inner"><a name="3_5_19_29_3_2_9_2">Click </a><span class="uicontrol">Create Remote Server Alias</span> to create a new alias.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Definition_Term"><a name="3_5_19_29_3_2_11_2_2">Remote Servers List</a></div>
+      <div class="Definition_Description"><a name="3_5_19_29_3_2_11_2_4_3">Displays the aliases that are defined on your server.</a></div>
+      <div class="Definition_Term"><a name="3_5_19_29_3_2_11_4_2">Alias</a></div>
+      <div class="Definition_Description"><a name="3_5_19_29_3_2_11_4_4_3">Displays the alias name.</a></div>
+      <div class="Definition_Term"><a name="3_5_19_29_3_2_11_6_2">Host</a></div>
+      <div class="Definition_Description"><a name="3_5_19_29_3_2_11_6_4_3">Displays the host name or IP address of the remote server represented by this alias.</a></div>
+      <div class="Definition_Term"><a name="3_5_19_29_3_2_11_8_2">Port</a></div>
+      <div class="Definition_Description"><a name="3_5_19_29_3_2_11_8_4_3">Displays the port number that is used by the remote server specified by this alias.</a></div>
+      <div class="Definition_Term"><a name="3_5_19_29_3_2_11_10_2">User</a></div>
+      <div class="Definition_Description"><a name="3_5_19_29_3_2_11_10_4_3">Displays the user name that is used when a service on the remote server specified by this alias is invoked.</a></div>
+      <div class="Definition_Term"><a name="3_5_19_29_3_2_11_12_2">SSL</a></div>
+      <div class="Definition_Description"><a name="3_5_19_29_3_2_11_12_4_3">Whether you want your server to connect to the remote server using Secure Sockets Layer (SSL). If you want to use SSL, select </a><span class="uicontrol">yes</span>; otherwise, select <span class="uicontrol">no</span>. If you select <span class="uicontrol">yes</span>, the remote server must be configured to listen for incoming HTTPS requests.</div>
+      <div class="Definition_Term"><a name="3_5_19_29_3_2_11_14_2">Execute ACL</a></div>
+      <div class="Definition_Description"><a name="3_5_19_29_3_2_11_14_4_3">Displays the name of the ACL on your server that protects access to this alias. A client that attempts to invoke a service on the remote server must be authorized to use the alias in addition to the remote service. Choose the name of an ACL from the drop-down menu which provides the following choices: Administrator, Anonymous, Default, Developer, Internal, Replicator.</a></div>
+      <div class="Definition_Term"><a name="3_5_19_29_3_2_11_16_2">Keep Alive Conns</a></div>
+      <div class="Definition_Description"><a name="3_5_19_29_3_2_11_16_4_3">Sets the default number of client keep alive connections to retain for a given target endpoint. If not specified, five keep alive connections are retained. This field specifies the maximum number of client connections that should be retained for any given remote host. In other words, this is not a maximum number of connections that can be established, but a limit on the number of inactive client connections to retain for reuse.</a></div>
+      <div class="Definition_Term"><a name="3_5_19_29_3_2_11_18_2">Timeout</a></div>
+      <div class="Definition_Description"><a name="3_5_19_29_3_2_11_18_4_3">Displays the length of time (in minutes) that your server maintains an idle connection to a remote server. This value will cause the connection to be retained for possible reuse until it times out. If the specified keep alive timeout value expires, the connection will close and the HTTP Listener will attempt to create a new one.</a></div>
+      <div class="Definition_Term"><a name="3_5_19_29_3_2_11_20_2">Test</a></div>
+      <div class="Definition_Description"><a name="3_5_19_29_3_2_11_20_4_3">Tests the remote server alias connection as it is configured.</a></div>
+      <div class="Definition_Term"><a name="3_5_19_29_3_2_11_22_2">Delete</a></div>
+      <div class="Definition_Description"><a name="3_5_19_29_3_2_11_22_4_3">Deletes the remote server alias from </a><span class="ph">Integration Server</span>.</div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <div>
+      <hr />
+      <div style="font-family: Arial, Verdana, Helvetica, Sans-Serif; font-size: 12px;margin-top: 20px;margin-bottom: 20px;">
+        <span class="xref">
+          <a href="http://documentation.softwareag.com/legal/" target="external_window">Copyright © <span></span><span></span><span>2007</span><span>-2014</span> Software AG, Darmstadt, Germany</a>
+        </span>.</div>
+    </div>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+  </body>
+</html>

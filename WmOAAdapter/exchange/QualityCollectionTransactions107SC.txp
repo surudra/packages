@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <record name="transactions" javaclass="com.wm.util.Values">
+    <record name="checkQualityCollectionImportStatus" javaclass="com.wm.util.Values">
+      <value name="transactionName">checkQualityCollectionImportStatus</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="IMPORTSTATUS" javaclass="com.wm.util.Values">
+        <value name="SQLOut">SELECT COUNT(*) AS QA_ERRCOUNT FROM QA_RESULTS_INTERFACE WHERE PROCESS_STATUS =3</value>
+        <value name="SQLAlias">IMPORTSTATUS</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+    <record name="execQualityCollectionConcProg" javaclass="com.wm.util.Values">
+      <value name="transactionName">execQualityCollectionConcProg</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="WM_HANDLE_QA" javaclass="com.wm.util.Values">
+        <value name="SQLOut">WM_QA_IMP_HANDLER_PKG.WM_HANDLE_QA</value>
+        <value name="SQLAlias">WM_HANDLE_QA</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+  </record>
+  <record name="FILE_INFO" javaclass="com.wm.util.Values">
+    <value name="OA_RELEASE">107SC</value>
+    <value name="DESCRIPTION"></value>
+    <value name="CREATE_HOST">webMethods</value>
+    <value name="CREATE_IM_VER">3.0</value>
+    <value name="CREATE_DATE">Nov 21, 2002 7:33:37 PM</value>
+  </record>
+</Values>

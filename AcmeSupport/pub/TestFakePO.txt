@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<IDataXMLCoder version="1.0">
+  <record javaclass="com.wm.util.Values">
+    <record name="PurchaseOrderRequest" javaclass="com.wm.data.ISMemDataImpl">
+      <record name="PurchaseOrder" javaclass="com.wm.data.ISMemDataImpl">
+        <record name="deliverTo" javaclass="com.wm.data.ISMemDataImpl">
+          <record name="PhysicalAddress" javaclass="com.wm.data.ISMemDataImpl">
+            <record name="cityName" javaclass="com.wm.data.ISMemDataImpl">
+              <value name="FreeFormText">1</value>
+            </record>
+            <record name="addressLine1" javaclass="com.wm.data.ISMemDataImpl">
+              <value name="FreeFormText">2</value>
+            </record>
+            <record name="addressLine2" javaclass="com.wm.data.ISMemDataImpl">
+              <value name="FreeFormText">3</value>
+            </record>
+            <record name="addressLine3" javaclass="com.wm.data.ISMemDataImpl">
+              <value name="FreeFormText">4</value>
+            </record>
+            <value name="NationalPostalCode">5</value>
+            <record name="regionName" javaclass="com.wm.data.ISMemDataImpl">
+              <value name="FreeFormText">6</value>
+            </record>
+            <record name="postOfficeBoxIdentifier" javaclass="com.wm.data.ISMemDataImpl">
+              <value name="FreeFormText">7</value>
+            </record>
+            <value name="GlobalLocationIdentifier">8</value>
+            <value name="GlobalCountryCode">9</value>
+          </record>
+        </record>
+        <record name="comment" javaclass="com.wm.data.ISMemDataImpl">
+          <value name="FreeFormText">10</value>
+        </record>
+        <record name="packListRequirements" javaclass="com.wm.data.ISMemDataImpl">
+          <value name="FreeFormText">11</value>
+        </record>
+        <value name="totalCost">12</value>
+        <array name="ProductLineItem" type="record" depth="1">
+          <record javaclass="com.wm.data.ISMemDataImpl">
+            <record name="shipFrom" javaclass="com.wm.data.ISMemDataImpl">
+              <value name="GlobalLocationIdentifier">1</value>
+            </record>
+            <value name="ProductQuantity">2</value>
+            <value name="LineNumber">3</value>
+            <record name="productUnit" javaclass="com.wm.data.ISMemDataImpl">
+              <record name="ProductPackageDescription" javaclass="com.wm.data.ISMemDataImpl">
+                <record name="ProductIdentification" javaclass="com.wm.data.ISMemDataImpl">
+                  <value name="GlobalProductIdentifier">4</value>
+                  <record name="PartnerProductIdentification" javaclass="com.wm.data.ISMemDataImpl">
+                    <value name="GlobalPartnerClassificationCode">5</value>
+                    <value name="ProprietaryProductIdentifier">6</value>
+                  </record>
+                </record>
+              </record>
+            </record>
+            <value name="GlobalSpecialFulfillmentRequestCode">7</value>
+            <record name="countryOfOrigin" javaclass="com.wm.data.ISMemDataImpl">
+              <value name="GlobalCountryCode">8</value>
+            </record>
+            <record name="requestedShipDate" javaclass="com.wm.data.ISMemDataImpl">
+              <value name="DateStamp">01OCT2006</value>
+            </record>
+            <record name="contractIdentifier" javaclass="com.wm.data.ISMemDataImpl">
+              <value name="ProprietaryDocumentIdentifier">9</value>
+            </record>
+            <value name="GlobalProductUnitOfMeasureCode">10</value>
+            <record name="SpecialHandlingInstruction" javaclass="com.wm.data.ISMemDataImpl">
+              <record name="specialHandlingText" javaclass="com.wm.data.ISMemDataImpl">
+                <value name="FreeFormText">11</value>
+              </record>
+            </record>
+            <record name="requestedPrice" javaclass="com.wm.data.ISMemDataImpl">
+              <record name="FinancialAmount" javaclass="com.wm.data.ISMemDataImpl">
+                <value name="GlobalCurrencyCode">12</value>
+                <value name="MonetaryAmount">13</value>
+              </record>
+            </record>
+          </record>
+        </array>
+        <value name="GlobalShipmentTermsCode">13</value>
+        <value name="RevisionNumber">14</value>
+        <record name="prePaymentCheckNumber" javaclass="com.wm.data.ISMemDataImpl">
+          <value name="CheckNumber">15</value>
+        </record>
+        <record name="QuoteIdentifier" javaclass="com.wm.data.ISMemDataImpl">
+          <value name="ProprietaryDocumentIdentifier">16</value>
+        </record>
+        <value name="WireTransferIdentifier">17</value>
+        <record name="AccountDescription" javaclass="com.wm.data.ISMemDataImpl">
+          <value name="GlobalAccountClassificationCode">18</value>
+          <record name="billTo" javaclass="com.wm.data.ISMemDataImpl">
+            <record name="PartnerRoleDescription" javaclass="com.wm.data.ISMemDataImpl">
+              <value name="1">2</value>
+            </record>
+          </record>
+          <record name="accountName" javaclass="com.wm.data.ISMemDataImpl">
+            <value name="FreeFormText">19</value>
+          </record>
+          <value name="ProprietaryCIDIdentifier">20</value>
+          <record name="expiryDate" javaclass="com.wm.data.ISMemDataImpl">
+            <value name="DateStamp">02OCT2006</value>
+          </record>
+          <value name="AccountNumber">21</value>
+        </record>
+        <record name="generalServicesAdministrationNumber" javaclass="com.wm.data.ISMemDataImpl">
+          <value name="ProprietaryDocumentIdentifier">22</value>
+        </record>
+        <record name="secondaryBuyerPurchaseOrderIdentifier" javaclass="com.wm.data.ISMemDataImpl">
+          <value name="ProprietaryDocumentIdentifier">23</value>
+        </record>
+        <value name="GlobalFinanceTermsCode">24</value>
+        <value name="PartnerDescription">25</value>
+        <record name="secondaryBuyer" javaclass="com.wm.data.ISMemDataImpl">
+          <record name="PartnerRoleDescription" javaclass="com.wm.data.ISMemDataImpl">
+            <value name="1">2</value>
+          </record>
+        </record>
+        <value name="GlobalPurchaseOrderTypeCode">26</value>
+      </record>
+      <record name="fromRole" javaclass="com.wm.data.ISMemDataImpl">
+        <record name="PartnerRoleDescription" javaclass="com.wm.data.ISMemDataImpl">
+          <value name="GlobalPartnerRoleClassificationCode">27</value>
+          <value name="DUNS">123456789</value>
+          <record name="PartnerDescription" javaclass="com.wm.data.ISMemDataImpl">
+            <value name="GlobalPartnerClassificationCode">28</value>
+            <record name="BusinessDescription" javaclass="com.wm.data.ISMemDataImpl">
+              <value name="GlobalBusinessIdentifier">29</value>
+              <value name="GlobalSupplyChainCode">30</value>
+            </record>
+          </record>
+        </record>
+      </record>
+      <record name="toRole" javaclass="com.wm.data.ISMemDataImpl">
+        <record name="PartnerRoleDescription" javaclass="com.wm.data.ISMemDataImpl">
+          <value name="GlobalPartnerRoleClassificationCode">31</value>
+          <value name="DUNS">234567890</value>
+          <record name="PartnerDescription" javaclass="com.wm.data.ISMemDataImpl">
+            <value name="GlobalPartnerClassificationCode">32</value>
+            <record name="BusinessDescription" javaclass="com.wm.data.ISMemDataImpl">
+              <value name="GlobalBusinessIdentifier">33</value>
+              <value name="GlobalSupplyChainCode">34</value>
+            </record>
+          </record>
+        </record>
+      </record>
+      <record name="thisDocumentGenerationDateTime" javaclass="com.wm.data.ISMemDataImpl">
+        <value name="DateTimeStamp">01OCT2006 21.34.55</value>
+      </record>
+      <record name="thisDocumentIdentifier" javaclass="com.wm.data.ISMemDataImpl">
+        <value name="ProprietaryDocumentIdentifier">35</value>
+      </record>
+      <value name="GlobalDocumentFunctionCode">36</value>
+    </record>
+  </record>
+</IDataXMLCoder>

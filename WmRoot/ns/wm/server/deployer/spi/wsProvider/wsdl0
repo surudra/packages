@@ -1,0 +1,633 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="DeployerPlugin2" 
+	targetNamespace="http://www.webmethods.com/provider/DeployerPlugin2/" 
+	xmlns:tns="http://www.webmethods.com/provider/DeployerPlugin2/" 
+	xmlns:HDR1="http://www.webmethods.com/DeployerPlugin2/" 
+	xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" 
+	xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" 
+	xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" 
+	xmlns:soapjms="http://www.w3.org/2008/07/soap/bindings/JMS/" 
+	xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" 
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.webmethods.com/provider/DeployerPlugin2/" 
+    	xmlns:dx="http://www.webmethods.com/DeployerPlugin2/" 
+    	xmlns:tns="http://www.webmethods.com/provider/DeployerPlugin2/" 
+    	xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+          <xsd:import namespace="http://www.webmethods.com/DeployerPlugin2/"/>
+          <xsd:complexType name="GetConnectionInfoRequest">
+            <xsd:sequence>
+              <xsd:element minOccurs="0" name="serverIdentifier" nillable="true" type="xsd:string"/>
+              <xsd:element maxOccurs="unbounded" minOccurs="0" ref="dx:connectionProperties"/>
+              <xsd:element minOccurs="0" name="auth" nillable="true" type="tns:auth"/>
+              <xsd:element name="address" nillable="true" type="xsd:string"/>
+              <xsd:element name="namespace" nillable="true" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="auth">
+            <xsd:sequence>
+              <xsd:element minOccurs="0" name="type" nillable="true" type="xsd:string"/>
+              <xsd:element name="user" nillable="true" type="xsd:string"/>
+              <xsd:element minOccurs="0" name="pass" nillable="true" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="GetConnectionInfoResponse">
+            <xsd:sequence>
+              <xsd:element minOccurs="0" name="message" nillable="true" type="xsd:string"/>
+              <xsd:element minOccurs="0" name="status" nillable="true" type="xsd:int"/>
+              <xsd:element minOccurs="0" name="host" nillable="true" type="xsd:string"/>
+              <xsd:element minOccurs="0" name="port" nillable="true" type="xsd:string"/>
+              <xsd:element minOccurs="0" name="user" nillable="true" type="xsd:string"/>
+              <xsd:element minOccurs="0" name="password" nillable="true" type="xsd:string"/>
+              <xsd:element minOccurs="0" name="useSSL" nillable="true" type="xsd:boolean"/>
+              <xsd:element minOccurs="0" name="reuseConnectionInfo" nillable="true" type="xsd:boolean"/>
+              <xsd:element minOccurs="0" name="SOAP-FAULT" nillable="true" type="tns:SOAP-FAULT"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="SOAP-FAULT">
+            <xsd:sequence>
+              <xsd:element minOccurs="0" name="faultcode" nillable="true" type="xsd:string"/>
+              <xsd:element minOccurs="0" name="faultstring" nillable="true" type="xsd:string"/>
+              <xsd:element minOccurs="0" name="faultactor" nillable="true" type="xsd:string"/>
+              <xsd:element minOccurs="0" name="detail" nillable="true" type="tns:detail"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="detail">
+            <xsd:sequence>
+              <xsd:any processContents="lax"/>
+            </xsd:sequence>
+            <xsd:anyAttribute processContents="lax"/>
+          </xsd:complexType>
+          <xsd:complexType name="GetDependenciesRequest">
+            <xsd:sequence>
+              <xsd:element minOccurs="0" name="objectKey" nillable="true" type="dx:ObjectIdentifierType"/>
+              <xsd:element maxOccurs="unbounded" minOccurs="0" ref="dx:connectionProperties"/>
+              <xsd:element minOccurs="0" name="auth" nillable="true" type="tns:auth"/>
+              <xsd:element name="address" nillable="true" type="xsd:string"/>
+              <xsd:element name="namespace" nillable="true" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="GetDependenciesResponse">
+            <xsd:sequence>
+              <xsd:element minOccurs="0" name="message" nillable="true" type="xsd:string"/>
+              <xsd:element minOccurs="0" name="status" nillable="true" type="xsd:int"/>
+              <xsd:element maxOccurs="unbounded" minOccurs="0" ref="dx:dependencies"/>
+              <xsd:element minOccurs="0" name="SOAP-FAULT" nillable="true" type="tns:SOAP-FAULT"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="GetObjectVarSubRequest">
+            <xsd:sequence>
+              <xsd:element minOccurs="0" name="objectKey" nillable="true" type="dx:ObjectIdentifierType"/>
+              <xsd:element maxOccurs="unbounded" minOccurs="0" ref="dx:connectionProperties"/>
+              <xsd:element minOccurs="0" name="auth" nillable="true" type="tns:auth"/>
+              <xsd:element name="address" nillable="true" type="xsd:string"/>
+              <xsd:element name="namespace" nillable="true" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="GetObjectVarSubResponse">
+            <xsd:sequence>
+              <xsd:element minOccurs="0" name="message" nillable="true" type="xsd:string"/>
+              <xsd:element minOccurs="0" name="status" nillable="true" type="xsd:int"/>
+              <xsd:element maxOccurs="unbounded" minOccurs="0" ref="dx:varSubFields"/>
+              <xsd:element minOccurs="0" name="SOAP-FAULT" nillable="true" type="tns:SOAP-FAULT"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="DeployObjectsWithVarsubRequest">
+            <xsd:sequence>
+              <xsd:element minOccurs="0" name="simulate" nillable="true" type="xsd:boolean"/>
+              <xsd:element minOccurs="0" name="rollback" nillable="true" type="xsd:boolean"/>
+              <xsd:element maxOccurs="unbounded" minOccurs="0" ref="dx:pluginProjectProperties"/>
+              <xsd:element maxOccurs="unbounded" minOccurs="0" ref="dx:objects"/>
+              <xsd:element maxOccurs="unbounded" minOccurs="0" ref="dx:connectionProperties"/>
+              <xsd:element maxOccurs="unbounded" minOccurs="0" ref="dx:varsubItems"/>
+              <xsd:element minOccurs="0" name="auth" nillable="true" type="tns:auth"/>
+              <xsd:element name="address" nillable="true" type="xsd:string"/>
+              <xsd:element name="namespace" nillable="true" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="DeployObjectsResponse">
+            <xsd:sequence>
+              <xsd:element maxOccurs="unbounded" minOccurs="0" ref="dx:messages"/>
+              <xsd:element minOccurs="0" name="SOAP-FAULT" nillable="true" type="tns:SOAP-FAULT"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="DeployObjectsRequest">
+            <xsd:sequence>
+              <xsd:element minOccurs="0" name="simulate" nillable="true" type="xsd:boolean"/>
+              <xsd:element minOccurs="0" name="rollback" nillable="true" type="xsd:boolean"/>
+              <xsd:element maxOccurs="unbounded" minOccurs="0" ref="dx:pluginProjectProperties"/>
+              <xsd:element maxOccurs="unbounded" minOccurs="0" ref="dx:objects"/>
+              <xsd:element maxOccurs="unbounded" minOccurs="0" ref="dx:connectionProperties"/>
+              <xsd:element minOccurs="0" name="auth" nillable="true" type="tns:auth"/>
+              <xsd:element name="address" nillable="true" type="xsd:string"/>
+              <xsd:element name="namespace" nillable="true" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          
+          <xsd:complexType name="DeployObjectsWithACDLResponse">
+            <xsd:sequence>              
+              <xsd:element maxOccurs="unbounded" minOccurs="0" ref="dx:acdlMessages"/>
+              <xsd:element minOccurs="0" name="SOAP-FAULT" nillable="true" type="tns:SOAP-FAULT"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="DeployObjectsWithACDLRequest">
+            <xsd:sequence> 
+              <xsd:element minOccurs="0" name="simulate" nillable="true" type="xsd:boolean"/>
+              <xsd:element minOccurs="0" name="rollback" nillable="true" type="xsd:boolean"/>
+              <xsd:element maxOccurs="unbounded" minOccurs="0" ref="dx:pluginProjectProperties"/>
+              <xsd:element maxOccurs="unbounded" minOccurs="0" ref="dx:assetArtifacts"/>
+              <xsd:element maxOccurs="unbounded" minOccurs="0" ref="dx:connectionProperties"/>
+              <xsd:element minOccurs="0" name="auth" nillable="true" type="tns:auth"/>
+              <xsd:element name="address" nillable="true" type="xsd:string"/>
+              <xsd:element name="namespace" nillable="true" type="xsd:string"/> 
+            </xsd:sequence>
+          </xsd:complexType>
+          
+          <xsd:complexType name="PingRequest">
+            <xsd:sequence>
+              <xsd:element minOccurs="0" name="type" nillable="true" type="xsd:string"/>
+              <xsd:element maxOccurs="unbounded" minOccurs="0" ref="dx:connectionProperties"/>
+              <xsd:element minOccurs="0" name="auth" nillable="true" type="tns:auth"/>
+              <xsd:element name="address" nillable="true" type="xsd:string"/>
+              <xsd:element name="namespace" nillable="true" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="PingResponse">
+            <xsd:sequence>
+              <xsd:element minOccurs="0" name="version" nillable="true" type="xsd:string"/>
+              <xsd:element minOccurs="0" name="SOAP-FAULT" nillable="true" type="tns:SOAP-FAULT"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          
+          <xsd:complexType name="GetObjectsWithACDLRequest">
+            <xsd:sequence>
+              <xsd:element minOccurs="0" name="checkpoint" nillable="true" type="xsd:boolean"/>
+              <xsd:element maxOccurs="unbounded" minOccurs="0" ref="dx:pluginProjectProperties"/>
+              <xsd:element maxOccurs="unbounded" minOccurs="0" ref="dx:objectKeys"/>
+              <xsd:element maxOccurs="unbounded" minOccurs="0" ref="dx:connectionProperties"/>
+              <xsd:element minOccurs="0" name="auth" nillable="true" type="tns:auth"/>
+              <xsd:element name="address" nillable="true" type="xsd:string"/>
+              <xsd:element name="namespace" nillable="true" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="GetObjectsWithACDLResponse">
+            <xsd:sequence>
+              <xsd:element maxOccurs="unbounded" minOccurs="0" ref="dx:acdlMessages"/>
+              <xsd:element maxOccurs="unbounded" minOccurs="0" ref="dx:assetArtifacts"/>
+              <xsd:element minOccurs="0" name="SOAP-FAULT" nillable="true" type="tns:SOAP-FAULT"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          
+          <xsd:complexType name="VerifyObjectRequest">
+            <xsd:sequence>
+              <xsd:element minOccurs="0" name="objectKey" nillable="true" type="dx:ObjectIdentifierType"/>
+              <xsd:element maxOccurs="unbounded" minOccurs="0" ref="dx:connectionProperties"/>
+              <xsd:element minOccurs="0" name="auth" nillable="true" type="tns:auth"/>
+              <xsd:element name="address" nillable="true" type="xsd:string"/>
+              <xsd:element name="namespace" nillable="true" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="VerifyObjectResponse">
+            <xsd:sequence>
+              <xsd:element minOccurs="0" name="message" nillable="true" type="xsd:string"/>
+              <xsd:element minOccurs="0" name="status" nillable="true" type="xsd:int"/>
+              <xsd:element minOccurs="0" name="exists" nillable="true" type="xsd:boolean"/>
+              <xsd:element minOccurs="0" name="SOAP-FAULT" nillable="true" type="tns:SOAP-FAULT"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="ListObjectsRequest">
+            <xsd:sequence>
+              <xsd:element minOccurs="0" name="objectType" nillable="true" type="xsd:string"/>
+              <xsd:element maxOccurs="unbounded" minOccurs="0" ref="dx:connectionProperties"/>
+              <xsd:element minOccurs="0" name="auth" nillable="true" type="tns:auth"/>
+              <xsd:element name="address" nillable="true" type="xsd:string"/>
+              <xsd:element name="namespace" nillable="true" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="ListObjectsResponse">
+            <xsd:sequence>
+              <xsd:element minOccurs="0" name="message" nillable="true" type="xsd:string"/>
+              <xsd:element minOccurs="0" name="status" nillable="true" type="xsd:int"/>
+              <xsd:element maxOccurs="unbounded" minOccurs="0" ref="dx:objectKeys"/>
+              <xsd:element minOccurs="0" name="SOAP-FAULT" nillable="true" type="tns:SOAP-FAULT"/>
+            </xsd:sequence>
+          </xsd:complexType>
+  		    <xsd:element name="DeployObjectsRequest" type="tns:DeployObjectsRequest"/>
+			<xsd:element name="DeployObjectsResponse" type="tns:DeployObjectsResponse"/>
+			<xsd:element name="DeployObjectsWithACDLRequest" type="tns:DeployObjectsWithACDLRequest"/>
+			<xsd:element name="DeployObjectsWithACDLResponse" type="tns:DeployObjectsWithACDLResponse"/>
+			<xsd:element name="DeployObjectsWithVarsubRequest" type="tns:DeployObjectsWithVarsubRequest"/>
+			<xsd:element name="GetConnectionInfoRequest" type="tns:GetConnectionInfoRequest"/>
+			<xsd:element name="GetConnectionInfoResponse" type="tns:GetConnectionInfoResponse"/>
+			<xsd:element name="GetDependenciesRequest" type="tns:GetDependenciesRequest"/>
+			<xsd:element name="GetDependenciesResponse" type="tns:GetDependenciesResponse"/>
+			<xsd:element name="GetObjectsRequest" type="dx:GetObjectsRequest"/>
+			<xsd:element name="GetObjectsResponse" type="dx:GetObjectsResponse"/>
+			<xsd:element name="GetObjectsWithACDLRequest" type="tns:GetObjectsWithACDLRequest"/>
+			<xsd:element name="GetObjectsWithACDLResponse" type="tns:GetObjectsWithACDLResponse"/>
+			<xsd:element name="GetObjectVarSubRequest" type="tns:GetObjectVarSubRequest"/>
+			<xsd:element name="GetObjectVarSubResponse" type="tns:GetObjectVarSubResponse"/>
+			<xsd:element name="ListObjectsRequest" type="tns:ListObjectsRequest"/>
+			<xsd:element name="ListObjectsResponse" type="tns:ListObjectsResponse"/>
+			<xsd:element name="PingRequest" type="tns:PingRequest"/>
+			<xsd:element name="PingResponse" type="tns:PingResponse"/>
+			<xsd:element name="VerifyObjectRequest" type="tns:VerifyObjectRequest"/>
+			<xsd:element name="VerifyObjectResponse" type="tns:VerifyObjectResponse"/>
+	</xsd:schema>
+    <xsd:schema targetNamespace="http://www.webmethods.com/DeployerPlugin2/" 
+    	xmlns:dx="http://www.webmethods.com/DeployerPlugin2/" 
+    	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+      xmlns:tns="http://www.webmethods.com/provider/DeployerPlugin2/" >
+          <xsd:import namespace="http://www.webmethods.com/provider/DeployerPlugin2/" />
+    	
+          <xsd:element name="connectionProperties" type="dx:PropertyType"/>
+          <xsd:element name="dependencies" type="dx:ObjectDependencyType"/>
+          <xsd:element name="varSubFields" type="dx:PropertyType"/>
+          <xsd:element name="pluginProjectProperties" type="dx:PropertyType"/>
+          <xsd:element name="objects" type="dx:GetObjectType"/>
+          <xsd:element name="assetArtifacts" type="dx:AssetArtifactsType"/>
+          <xsd:element name="varsubs" type="dx:PropertyType"/>
+          <xsd:element name="varsubItems" type="dx:VarsubItemType"/>
+          <xsd:element name="messages" type="dx:ReportMessageType"/>
+	  <xsd:element name="acdlMessages" type="dx:ACDLReportMessageType"/>
+          <xsd:element name="objectKeys" type="dx:FullObjectType"/>
+          <xsd:complexType name="PropertyType">
+            <xsd:sequence>
+              <xsd:element name="key" type="xsd:string"/>
+              <xsd:element name="value" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="AssetArtifactsType">
+				<xsd:sequence>
+					<xsd:element name="assetBinaryFile" type="xsd:base64Binary"/>
+					<xsd:element name="acdlFile" type="xsd:base64Binary"/>
+				</xsd:sequence>
+			</xsd:complexType>
+          <xsd:complexType name="ObjectIdentifierType">
+            <xsd:sequence>
+              <xsd:element name="type" type="xsd:string"/>
+              <xsd:element name="id" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="ObjectDependencyType">
+            <xsd:sequence>
+              <xsd:element name="objectKey" type="dx:ObjectType"/>
+              <xsd:element minOccurs="0" name="serverIdentifier" nillable="true" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="ObjectType">
+            <xsd:sequence>
+              <xsd:element name="type" type="xsd:string"/>
+              <xsd:element name="id" type="xsd:string"/>
+              <xsd:element name="name" type="xsd:string"/>
+              <xsd:element maxOccurs="unbounded" minOccurs="0" name="path" nillable="true" type="xsd:string"/>
+              <xsd:element minOccurs="0" name="parentId" nillable="true" type="xsd:string"/>
+              <xsd:element name="fullName" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="DeployObjectType">
+            <xsd:sequence>
+              <xsd:element name="objectKey" type="dx:ObjectType"/>
+              <xsd:element name="sequence" type="xsd:int"/>
+              <xsd:element name="version" type="xsd:string"/>
+              <xsd:element name="objectData" type="xsd:base64Binary"/>
+              <xsd:element name="missing" type="xsd:boolean"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="VarsubItemType">
+            <xsd:sequence>
+              <xsd:element name="type" type="xsd:string"/>
+              <xsd:element name="name" type="xsd:string"/>
+              <xsd:element maxOccurs="unbounded" minOccurs="0" ref="dx:varsubs"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="ReportMessageType">
+            <xsd:sequence>
+              <xsd:element name="type" type="xsd:int"/>
+              <xsd:element name="text" type="xsd:string"/>
+              <xsd:element name="timestamp" type="xsd:dateTime"/>
+            </xsd:sequence>
+          </xsd:complexType>
+	   <xsd:complexType name="ACDLReportMessageType">
+            <xsd:sequence>
+              <xsd:element name="type" type="xsd:int"/>
+              <xsd:element name="text" type="xsd:string"/>
+              <xsd:element name="timestamp" type="xsd:dateTime"/>
+	      <xsd:element name="assetName" type="xsd:string" minOccurs="0"/>
+	      <xsd:element name="assetType" type="xsd:string" minOccurs="0"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="GetObjectType">
+            <xsd:sequence>
+              <xsd:element name="objectKey" type="dx:FullObjectType"/>
+              <xsd:element name="sequence" type="xsd:int"/>
+              <xsd:element name="version" type="xsd:string"/>
+              <xsd:element name="objectData" type="xsd:base64Binary"/>
+              <xsd:element name="missing" type="xsd:boolean"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="FullObjectType">
+            <xsd:sequence>
+              <xsd:element name="type" type="xsd:string"/>
+              <xsd:element name="id" type="xsd:string"/>
+              <xsd:element name="name" type="xsd:string" minOccurs="0" nillable="true"/>
+              <xsd:element maxOccurs="unbounded" minOccurs="0" name="path" nillable="true" type="xsd:string"/>
+              <xsd:element minOccurs="0" name="parentId" nillable="true" type="xsd:string"/>
+              <xsd:element name="fullName" type="xsd:string" minOccurs="0" nillable="true"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          
+          <xsd:complexType name="GetObjectsRequest">
+            <xsd:sequence>
+              <xsd:element minOccurs="0" name="checkpoint" nillable="true" type="xsd:boolean"/>
+              <xsd:element maxOccurs="unbounded" minOccurs="0" ref="dx:pluginProjectProperties"/>
+              <xsd:element name="objectKeys" form="qualified" maxOccurs="unbounded" minOccurs="0" type="dx:ObjectIdentifierType"/>
+              <xsd:element maxOccurs="unbounded" minOccurs="0" ref="dx:connectionProperties"/>
+              <xsd:element minOccurs="0" name="auth" nillable="true" type="tns:auth"/>
+              <xsd:element name="address" nillable="true" type="xsd:string"/>
+              <xsd:element name="namespace" nillable="true" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="GetObjectsResponse">
+            <xsd:sequence>
+              <xsd:element maxOccurs="unbounded" minOccurs="0" ref="dx:messages"/>
+              <xsd:element name="objects" form="qualified" maxOccurs="unbounded" minOccurs="0">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name="objectKey" type="dx:ObjectIdentifierType"/>
+                    <xsd:element name="sequence" type="xsd:int"/>
+                    <xsd:element name="version" type="xsd:string"/>
+                    <xsd:element name="objectData" type="xsd:base64Binary"/>
+                    <xsd:element name="missing" type="xsd:boolean"/>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="SOAP-FAULT" nillable="true" type="tns:SOAP-FAULT"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          
+     	</xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="DeployerPlugin2_DeployObjectsResponse">
+    <wsdl:part name="parameters" element="tns:DeployObjectsResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="DeployerPlugin2_DeployObjectsWithACDLResponse">
+    <wsdl:part name="parameters" element="tns:DeployObjectsWithACDLResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="DeployerPlugin2_GetObjectsRequest">
+    <wsdl:part name="parameters" element="tns:GetObjectsRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="DeployerPlugin2_GetObjectsWithACDLRequest">
+    <wsdl:part name="parameters" element="tns:GetObjectsWithACDLRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="DeployerPlugin2_ListObjectsResponse">
+    <wsdl:part name="parameters" element="tns:ListObjectsResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="DeployerPlugin2_DeployObjectsRequest">
+    <wsdl:part name="parameters" element="tns:DeployObjectsRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="DeployerPlugin2_DeployObjectsWithACDLRequest">
+    <wsdl:part name="parameters" element="tns:DeployObjectsWithACDLRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="DeployerPlugin2_GetObjectsResponse">
+    <wsdl:part name="parameters" element="tns:GetObjectsResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="DeployerPlugin2_GetObjectsWithACDLResponse">
+    <wsdl:part name="parameters" element="tns:GetObjectsWithACDLResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="DeployerPlugin2_GetDependenciesResponse">
+    <wsdl:part name="parameters" element="tns:GetDependenciesResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="DeployerPlugin2_VerifyObjectRequest">
+    <wsdl:part name="parameters" element="tns:VerifyObjectRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="DeployerPlugin2_PingResponse">
+    <wsdl:part name="parameters" element="tns:PingResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="DeployerPlugin2_PingRequest">
+    <wsdl:part name="parameters" element="tns:PingRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="DeployerPlugin2_GetDependenciesRequest">
+    <wsdl:part name="parameters" element="tns:GetDependenciesRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="DeployerPlugin2_GetObjectVarSubResponse">
+    <wsdl:part name="parameters" element="tns:GetObjectVarSubResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="DeployerPlugin2_ListObjectsRequest">
+    <wsdl:part name="parameters" element="tns:ListObjectsRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="DeployerPlugin2_GetConnectionInfoRequest">
+    <wsdl:part name="parameters" element="tns:GetConnectionInfoRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="DeployerPlugin2_DeployObjectsWithVarsubRequest">
+    <wsdl:part name="parameters" element="tns:DeployObjectsWithVarsubRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="DeployerPlugin2_GetObjectVarSubRequest">
+    <wsdl:part name="parameters" element="tns:GetObjectVarSubRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="DeployerPlugin2_VerifyObjectResponse">
+    <wsdl:part name="parameters" element="tns:VerifyObjectResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="DeployerPlugin2_GetConnectionInfoResponse">
+    <wsdl:part name="parameters" element="tns:GetConnectionInfoResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="DeployerPlugin2">
+    <wsdl:operation name="DeployObjects">
+      <wsdl:input message="tns:DeployerPlugin2_DeployObjectsRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:DeployerPlugin2_DeployObjectsResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    
+    <wsdl:operation name="DeployObjectsWithVarsub">
+      <wsdl:input message="tns:DeployerPlugin2_DeployObjectsWithVarsubRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:DeployerPlugin2_DeployObjectsResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConnectionInfo">
+      <wsdl:input message="tns:DeployerPlugin2_GetConnectionInfoRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:DeployerPlugin2_GetConnectionInfoResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDependencies">
+      <wsdl:input message="tns:DeployerPlugin2_GetDependenciesRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:DeployerPlugin2_GetDependenciesResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetObjects">
+      <wsdl:input message="tns:DeployerPlugin2_GetObjectsRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:DeployerPlugin2_GetObjectsResponse">
+    </wsdl:output>
+    </wsdl:operation>    
+    <wsdl:operation name="GetObjectVarSub">
+      <wsdl:input message="tns:DeployerPlugin2_GetObjectVarSubRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:DeployerPlugin2_GetObjectVarSubResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListObjects">
+      <wsdl:input message="tns:DeployerPlugin2_ListObjectsRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:DeployerPlugin2_ListObjectsResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Ping">
+      <wsdl:input message="tns:DeployerPlugin2_PingRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:DeployerPlugin2_PingResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerifyObject">
+      <wsdl:input message="tns:DeployerPlugin2_VerifyObjectRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:DeployerPlugin2_VerifyObjectResponse">
+    </wsdl:output>
+    </wsdl:operation>
+     <wsdl:operation name="DeployObjectsWithACDL">
+      <wsdl:input message="tns:DeployerPlugin2_DeployObjectsWithACDLRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:DeployerPlugin2_DeployObjectsWithACDLResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetObjectsWithACDL">
+      <wsdl:input message="tns:DeployerPlugin2_GetObjectsWithACDLRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:DeployerPlugin2_GetObjectsWithACDLResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="provider_DeployerPlugin2_Binder" type="tns:DeployerPlugin2">
+    <soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="DeployObjects">
+      <soap12:operation soapAction="provider_DeployerPlugin2_Binder_DeployObjects" style="document"/>
+      <wsdl:input>
+        <soap12:body parts="parameters" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body parts="parameters" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeployObjectsWithVarsub">
+      <soap12:operation soapAction="provider_DeployerPlugin2_Binder_DeployObjectsWithVarsub" style="document"/>
+      <wsdl:input>
+        <soap12:body parts="parameters" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body parts="parameters" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConnectionInfo">
+      <soap12:operation soapAction="provider_DeployerPlugin2_Binder_GetConnectionInfo" style="document"/>
+      <wsdl:input>
+        <soap12:body parts="parameters" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body parts="parameters" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDependencies">
+      <soap12:operation soapAction="provider_DeployerPlugin2_Binder_GetDependencies" style="document"/>
+      <wsdl:input>
+        <soap12:body parts="parameters" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body parts="parameters" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetObjects">
+      <soap12:operation soapAction="provider_DeployerPlugin2_Binder_GetObjects" style="document"/>
+      <wsdl:input>
+        <soap12:body parts="parameters" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body parts="parameters" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetObjectVarSub">
+      <soap12:operation soapAction="provider_DeployerPlugin2_Binder_GetObjectVarSub" style="document"/>
+      <wsdl:input>
+        <soap12:body parts="parameters" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body parts="parameters" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListObjects">
+      <soap12:operation soapAction="provider_DeployerPlugin2_Binder_ListObjects" style="document"/>
+      <wsdl:input>
+        <soap12:body parts="parameters" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body parts="parameters" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Ping">
+      <soap12:operation soapAction="provider_DeployerPlugin2_Binder_Ping" style="document"/>
+      <wsdl:input>
+        <soap12:body parts="parameters" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body parts="parameters" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerifyObject">
+      <soap12:operation soapAction="provider_DeployerPlugin2_Binder_VerifyObject" style="document"/>
+      <wsdl:input>
+        <soap12:body parts="parameters" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body parts="parameters" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  	<wsdl:operation name="DeployObjectsWithACDL">
+      <soap12:operation soapAction="provider_DeployerPlugin2_Binder_DeployObjectsWithACDL" style="document"/>
+      <wsdl:input>
+        <soap12:body parts="parameters" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body parts="parameters" use="literal"/>
+      </wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="GetObjectsWithACDL">
+      <soap12:operation soapAction="provider_DeployerPlugin2_Binder_GetObjectsWithACDL" style="document"/>
+      <wsdl:input>
+        <soap12:body parts="parameters" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body parts="parameters" use="literal"/>
+      </wsdl:output>
+  	</wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DeployerPlugin2">
+    <wsdl:port name="provider_DeployerPlugin2_Port" binding="tns:provider_DeployerPlugin2_Binder">
+      <soap12:address location="http://www.webmethods.com/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

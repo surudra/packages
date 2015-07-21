@@ -1,0 +1,935 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<FLOW VERSION="3.0" CLEANUP="true">
+  <COMMENT></COMMENT>
+
+  <!-- nodes -->
+
+<INVOKE TIMEOUT="" SERVICE="commonOA1213.utils:getOracleAppsUserId_tf" VALIDATE-IN="$none" VALIDATE-OUT="$none">
+  <COMMENT></COMMENT>
+
+  <!-- nodes -->
+
+<MAP MODE="INPUT">
+  <MAPTARGET>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="is_public">false</value>
+    <value name="field_name">in</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="nillable">true</value>
+    <value name="form_qualified">false</value>
+    <value name="is_global">false</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="is_public">false</value>
+        <value name="field_name">queryParams</value>
+        <value name="field_type">record</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+        <array name="rec_fields" type="record" depth="1">
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="is_public">false</value>
+            <value name="field_name">ORACLE_APPS_USER_NAME</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+            <value name="form_qualified">false</value>
+            <value name="is_global">false</value>
+          </record>
+        </array>
+        <value name="modifiable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="is_public">false</value>
+        <value name="field_name">$dbAlias</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+      </record>
+    </array>
+    <value name="modifiable">true</value>
+  </record>
+</Values>
+</MAPTARGET>
+  <MAPSOURCE>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="is_public">false</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="nillable">true</value>
+    <value name="form_qualified">false</value>
+    <value name="is_global">false</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="is_public">false</value>
+        <value name="field_name">CycleCountEntryBizDoc</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+        <value name="modifiable">true</value>
+        <value name="rec_ref">inventory12.intoOA.cycleCountEntry.rec:CycleCountEntryBizDoc</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="is_public">false</value>
+        <value name="field_name">OAUSERNAME</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="is_public">false</value>
+        <value name="field_name">$dbAlias</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+      </record>
+    </array>
+    <value name="modifiable">true</value>
+  </record>
+</Values>
+</MAPSOURCE>
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/OAUSERNAME;1;0" TO="/queryParams;2;0/ORACLE_APPS_USER_NAME;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="OUTPUT">
+  <MAPTARGET>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="is_public">false</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="nillable">true</value>
+    <value name="form_qualified">false</value>
+    <value name="is_global">false</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="is_public">false</value>
+        <value name="field_name">queryParams</value>
+        <value name="field_type">record</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+        <array name="rec_fields" type="record" depth="1">
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="is_public">false</value>
+            <value name="field_name">ORACLE_APPS_USER_NAME</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+            <value name="form_qualified">false</value>
+            <value name="is_global">false</value>
+          </record>
+        </array>
+        <value name="modifiable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="is_public">false</value>
+        <value name="field_name">CycleCountEntryBizDoc</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+        <value name="modifiable">true</value>
+        <value name="rec_ref">inventory12.intoOA.cycleCountEntry.rec:CycleCountEntryBizDoc</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="is_public">false</value>
+        <value name="field_name">OAUSERNAME</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="is_public">false</value>
+        <value name="field_name">$dbAlias</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="is_public">false</value>
+        <value name="field_name">USER_ID</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+      </record>
+    </array>
+    <value name="modifiable">true</value>
+  </record>
+</Values>
+</MAPTARGET>
+  <MAPSOURCE>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="is_public">false</value>
+    <value name="field_name">out</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="nillable">true</value>
+    <value name="form_qualified">false</value>
+    <value name="is_global">false</value>
+    <array name="rec_fields" type="record" depth="1">
+    </array>
+    <value name="modifiable">true</value>
+  </record>
+</Values>
+</MAPSOURCE>
+
+  <!-- nodes -->
+
+<MAPDELETE NAME="Dropper" FIELD="/queryParams;2;0">
+</MAPDELETE>
+
+<MAPDELETE NAME="Dropper" FIELD="/OAUSERNAME;1;0">
+</MAPDELETE>
+</MAP>
+</INVOKE>
+
+<INVOKE TIMEOUT="" SERVICE="commonOA1213.custom:getOASystemDateObject" VALIDATE-IN="$none" VALIDATE-OUT="$none">
+  <COMMENT></COMMENT>
+
+  <!-- nodes -->
+
+<MAP MODE="INPUT">
+</MAP>
+
+<MAP MODE="OUTPUT">
+</MAP>
+</INVOKE>
+
+<LOOP TIMEOUT="" IN-ARRAY="/CycleCountEntryBizDoc/MTL_CC_ENTRIES" OUT-ARRAY="/CycleCountEntryRecordSet/MTL_CC_ENTRIES_INTERFACE">
+  <COMMENT></COMMENT>
+
+  <!-- nodes -->
+
+<MAP MODE="STANDALONE">
+  <COMMENT>Map Business Doc to CycleCountEntryRecordSet</COMMENT>
+  <MAPTARGET>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="is_public">false</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="nillable">true</value>
+    <value name="form_qualified">false</value>
+    <value name="is_global">false</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="is_public">false</value>
+        <value name="field_name">CycleCountEntryBizDoc</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+        <value name="modifiable">true</value>
+        <value name="rec_ref">inventory1213.intoOA.cycleCountEntry.rec:CycleCountEntryBizDoc</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="is_public">false</value>
+        <value name="field_name">$dbAlias</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="is_public">false</value>
+        <value name="field_name">USER_ID</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="is_public">false</value>
+        <value name="field_name">SYSDATE</value>
+        <value name="field_type">object</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="is_public">false</value>
+        <value name="field_name">CycleCountEntryRecordSet</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+        <value name="modifiable">true</value>
+        <value name="rec_ref">inventory1213.intoOA.cycleCountEntry.rec:setCycleCountEntryTxnInputRec</value>
+      </record>
+    </array>
+    <value name="modifiable">true</value>
+  </record>
+</Values>
+</MAPTARGET>
+  <MAPSOURCE>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="is_public">false</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="nillable">true</value>
+    <value name="form_qualified">false</value>
+    <value name="is_global">false</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="is_public">false</value>
+        <value name="field_name">CycleCountEntryBizDoc</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+        <value name="modifiable">true</value>
+        <value name="rec_ref">inventory1213.intoOA.cycleCountEntry.rec:CycleCountEntryBizDoc</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="is_public">false</value>
+        <value name="field_name">$dbAlias</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="is_public">false</value>
+        <value name="field_name">USER_ID</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="is_public">false</value>
+        <value name="field_name">SYSDATE</value>
+        <value name="field_type">object</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="is_public">false</value>
+        <value name="field_name">CycleCountEntryRecordSet</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+        <value name="modifiable">true</value>
+        <value name="rec_ref">inventory1213.intoOA.cycleCountEntry.rec:setCycleCountEntryTxnInputRec</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="is_public">false</value>
+        <value name="field_name">$iteration</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+      </record>
+    </array>
+    <value name="modifiable">true</value>
+  </record>
+</Values>
+</MAPSOURCE>
+
+  <!-- nodes -->
+
+<MAPINVOKE SERVICE="commonOA1213.utils:getOrgId_tf" VALIDATE-IN="$none" VALIDATE-OUT="$none" INVOKE-ORDER="0">
+
+  <!-- nodes -->
+
+<MAP MODE="INVOKEINPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/CycleCountEntryBizDoc;4;0;inventory1213.intoOA.cycleCountEntry.rec:CycleCountEntryBizDoc/MTL_CC_ENTRIES;2;0/ORGANIZATION_NAME;1;0" TO="/queryParams;2;0/ORGANIZATION_NAME;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/$dbAlias;1;0" TO="/$dbAlias;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="INVOKEOUTPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/ORGANIZATION_ID;1;0" TO="/CycleCountEntryRecordSet;4;0;inventory1213.intoOA.cycleCountEntry.rec:setCycleCountEntryTxnInputRec/MTL_CC_ENTRIES_INTERFACE;2;0/ORGANIZATION_ID;1;0">
+</MAPCOPY>
+</MAP>
+</MAPINVOKE>
+
+<MAPCOPY NAME="Link" FROM="/CycleCountEntryBizDoc;4;0;inventory1213.intoOA.cycleCountEntry.rec:CycleCountEntryBizDoc/MTL_CC_ENTRIES;2;0/ACTION_CODE;1;0" TO="/CycleCountEntryRecordSet;4;0;inventory1213.intoOA.cycleCountEntry.rec:setCycleCountEntryTxnInputRec/MTL_CC_ENTRIES_INTERFACE;2;0/ACTION_CODE;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/CycleCountEntryBizDoc;4;0;inventory1213.intoOA.cycleCountEntry.rec:CycleCountEntryBizDoc/MTL_CC_ENTRIES;2;0/COUNT_LIST_SEQUENCE;1;0" TO="/CycleCountEntryRecordSet;4;0;inventory1213.intoOA.cycleCountEntry.rec:setCycleCountEntryTxnInputRec/MTL_CC_ENTRIES_INTERFACE;2;0/COUNT_LIST_SEQUENCE;1;0">
+</MAPCOPY>
+
+<MAPINVOKE SERVICE="commonOA1213.utils:getInventoryItemId_tf" VALIDATE-IN="$none" VALIDATE-OUT="$none" INVOKE-ORDER="0">
+
+  <!-- nodes -->
+
+<MAP MODE="INVOKEINPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/CycleCountEntryBizDoc;4;0;inventory1213.intoOA.cycleCountEntry.rec:CycleCountEntryBizDoc/MTL_CC_ENTRIES;2;0/ORGANIZATION_NAME;1;0" TO="/queryParams;2;0/ORGANIZATION_NAME;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/CycleCountEntryBizDoc;4;0;inventory1213.intoOA.cycleCountEntry.rec:CycleCountEntryBizDoc/MTL_CC_ENTRIES;2;0/INVENTORY_ITEM;1;0" TO="/queryParams;2;0/ITEM_CODE;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/$dbAlias;1;0" TO="/$dbAlias;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="INVOKEOUTPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/INVENTORY_ITEM_ID;1;0" TO="/CycleCountEntryRecordSet;4;0;inventory1213.intoOA.cycleCountEntry.rec:setCycleCountEntryTxnInputRec/MTL_CC_ENTRIES_INTERFACE;2;0/INVENTORY_ITEM_ID;1;0">
+</MAPCOPY>
+</MAP>
+</MAPINVOKE>
+
+<MAPCOPY NAME="Link" FROM="/CycleCountEntryBizDoc;4;0;inventory1213.intoOA.cycleCountEntry.rec:CycleCountEntryBizDoc/MTL_CC_ENTRIES;2;0/REVISION;1;0" TO="/CycleCountEntryRecordSet;4;0;inventory1213.intoOA.cycleCountEntry.rec:setCycleCountEntryTxnInputRec/MTL_CC_ENTRIES_INTERFACE;2;0/REVISION;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/CycleCountEntryBizDoc;4;0;inventory1213.intoOA.cycleCountEntry.rec:CycleCountEntryBizDoc/MTL_CC_ENTRIES;2;0/SUBINVENTORY;1;0" TO="/CycleCountEntryRecordSet;4;0;inventory1213.intoOA.cycleCountEntry.rec:setCycleCountEntryTxnInputRec/MTL_CC_ENTRIES_INTERFACE;2;0/SUBINVENTORY;1;0">
+</MAPCOPY>
+
+<MAPINVOKE SERVICE="commonOA1213.utils:getLocatorId_tf" VALIDATE-IN="$none" VALIDATE-OUT="$none" INVOKE-ORDER="0">
+
+  <!-- nodes -->
+
+<MAP MODE="INVOKEINPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/$dbAlias;1;0" TO="/$dbAlias;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/CycleCountEntryBizDoc;4;0;inventory1213.intoOA.cycleCountEntry.rec:CycleCountEntryBizDoc/MTL_CC_ENTRIES;2;0/LOCATOR;1;0" TO="/queryParams;2;0/LOCATOR;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/CycleCountEntryBizDoc;4;0;inventory1213.intoOA.cycleCountEntry.rec:CycleCountEntryBizDoc/MTL_CC_ENTRIES;2;0/ORGANIZATION_NAME;1;0" TO="/queryParams;2;0/ORGANIZATION_NAME;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="INVOKEOUTPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/INVENTORY_LOCATION_ID;1;0" TO="/CycleCountEntryRecordSet;4;0;inventory1213.intoOA.cycleCountEntry.rec:setCycleCountEntryTxnInputRec/MTL_CC_ENTRIES_INTERFACE;2;0/LOCATOR_ID;1;0">
+</MAPCOPY>
+</MAP>
+</MAPINVOKE>
+
+<MAPCOPY NAME="Link" FROM="/CycleCountEntryBizDoc;4;0;inventory1213.intoOA.cycleCountEntry.rec:CycleCountEntryBizDoc/MTL_CC_ENTRIES;2;0/LOT_NUMBER;1;0" TO="/CycleCountEntryRecordSet;4;0;inventory1213.intoOA.cycleCountEntry.rec:setCycleCountEntryTxnInputRec/MTL_CC_ENTRIES_INTERFACE;2;0/LOT_NUMBER;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/CycleCountEntryBizDoc;4;0;inventory1213.intoOA.cycleCountEntry.rec:CycleCountEntryBizDoc/MTL_CC_ENTRIES;2;0/SERIAL_NUMBER;1;0" TO="/CycleCountEntryRecordSet;4;0;inventory1213.intoOA.cycleCountEntry.rec:setCycleCountEntryTxnInputRec/MTL_CC_ENTRIES_INTERFACE;2;0/SERIAL_NUMBER;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/CycleCountEntryBizDoc;4;0;inventory1213.intoOA.cycleCountEntry.rec:CycleCountEntryBizDoc/MTL_CC_ENTRIES;2;0/PRIMARY_UOM_QUANTITY;1;0" TO="/CycleCountEntryRecordSet;4;0;inventory1213.intoOA.cycleCountEntry.rec:setCycleCountEntryTxnInputRec/MTL_CC_ENTRIES_INTERFACE;2;0/PRIMARY_UOM_QUANTITY;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/CycleCountEntryBizDoc;4;0;inventory1213.intoOA.cycleCountEntry.rec:CycleCountEntryBizDoc/MTL_CC_ENTRIES;2;0/COUNT_UOM;1;0" TO="/CycleCountEntryRecordSet;4;0;inventory1213.intoOA.cycleCountEntry.rec:setCycleCountEntryTxnInputRec/MTL_CC_ENTRIES_INTERFACE;2;0/COUNT_UOM;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/CycleCountEntryBizDoc;4;0;inventory1213.intoOA.cycleCountEntry.rec:CycleCountEntryBizDoc/MTL_CC_ENTRIES;2;0/COUNT_QUANTITY;1;0" TO="/CycleCountEntryRecordSet;4;0;inventory1213.intoOA.cycleCountEntry.rec:setCycleCountEntryTxnInputRec/MTL_CC_ENTRIES_INTERFACE;2;0/COUNT_QUANTITY;1;0">
+</MAPCOPY>
+
+<MAPINVOKE SERVICE="commonOA1213.utils:getCodeCombinationId_tf" VALIDATE-IN="$none" VALIDATE-OUT="$none" INVOKE-ORDER="0">
+
+  <!-- nodes -->
+
+<MAP MODE="INVOKEINPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/$dbAlias;1;0" TO="/$dbAlias;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/CycleCountEntryBizDoc;4;0;inventory1213.intoOA.cycleCountEntry.rec:CycleCountEntryBizDoc/MTL_CC_ENTRIES;2;0/ADJUSTMENT_ACCOUNT;1;0" TO="/queryParams;2;0/CONCATENATED_SEGMENTS;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/CycleCountEntryBizDoc;4;0;inventory1213.intoOA.cycleCountEntry.rec:CycleCountEntryBizDoc/MTL_CC_ENTRIES;2;0/SET_OF_BOOK_NAME;1;0" TO="/queryParams;2;0/SET_OF_BOOKS_NAME;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="INVOKEOUTPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/CODE_COMBINATION_ID;1;0" TO="/CycleCountEntryRecordSet;4;0;inventory1213.intoOA.cycleCountEntry.rec:setCycleCountEntryTxnInputRec/MTL_CC_ENTRIES_INTERFACE;2;0/ADJUSTMENT_ACCOUNT_ID;1;0">
+</MAPCOPY>
+</MAP>
+</MAPINVOKE>
+
+<MAPINVOKE SERVICE="commonOA1213.custom:convertToDateObject" VALIDATE-IN="$none" VALIDATE-OUT="$none" INVOKE-ORDER="0">
+
+  <!-- nodes -->
+
+<MAP MODE="INVOKEINPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/CycleCountEntryBizDoc;4;0;inventory1213.intoOA.cycleCountEntry.rec:CycleCountEntryBizDoc/MTL_CC_ENTRIES;2;0/COUNT_DATE;1;0" TO="/inDate;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="INVOKEOUTPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/outDate;3;0" TO="/CycleCountEntryRecordSet;4;0;inventory1213.intoOA.cycleCountEntry.rec:setCycleCountEntryTxnInputRec/MTL_CC_ENTRIES_INTERFACE;2;0/COUNT_DATE;3;0">
+</MAPCOPY>
+</MAP>
+</MAPINVOKE>
+
+<MAPCOPY NAME="Link" FROM="/CycleCountEntryBizDoc;4;0;inventory1213.intoOA.cycleCountEntry.rec:CycleCountEntryBizDoc/MTL_CC_ENTRIES;2;0/REFERENCE;1;0" TO="/CycleCountEntryRecordSet;4;0;inventory1213.intoOA.cycleCountEntry.rec:setCycleCountEntryTxnInputRec/MTL_CC_ENTRIES_INTERFACE;2;0/REFERENCE;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/CycleCountEntryBizDoc;4;0;inventory1213.intoOA.cycleCountEntry.rec:CycleCountEntryBizDoc/MTL_CC_ENTRIES;2;0/TRANSACTION_REASON;1;0" TO="/CycleCountEntryRecordSet;4;0;inventory1213.intoOA.cycleCountEntry.rec:setCycleCountEntryTxnInputRec/MTL_CC_ENTRIES_INTERFACE;2;0/TRANSACTION_REASON;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/SYSDATE;3;0" TO="/CycleCountEntryRecordSet;4;0;inventory1213.intoOA.cycleCountEntry.rec:setCycleCountEntryTxnInputRec/MTL_CC_ENTRIES_INTERFACE;2;0/LAST_UPDATE_DATE;3;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/SYSDATE;3;0" TO="/CycleCountEntryRecordSet;4;0;inventory1213.intoOA.cycleCountEntry.rec:setCycleCountEntryTxnInputRec/MTL_CC_ENTRIES_INTERFACE;2;0/CREATION_DATE;3;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/USER_ID;1;0" TO="/CycleCountEntryRecordSet;4;0;inventory1213.intoOA.cycleCountEntry.rec:setCycleCountEntryTxnInputRec/MTL_CC_ENTRIES_INTERFACE;2;0/CREATED_BY;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/USER_ID;1;0" TO="/CycleCountEntryRecordSet;4;0;inventory1213.intoOA.cycleCountEntry.rec:setCycleCountEntryTxnInputRec/MTL_CC_ENTRIES_INTERFACE;2;0/LAST_UPDATED_BY;1;0">
+</MAPCOPY>
+
+<MAPINVOKE SERVICE="inventory1213.intoOA.cycleCountEntry.utils:getCycleCountHeaderId_tf" VALIDATE-IN="$none" VALIDATE-OUT="$none" INVOKE-ORDER="0">
+
+  <!-- nodes -->
+
+<MAP MODE="INVOKEINPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/CycleCountEntryBizDoc;4;0;inventory1213.intoOA.cycleCountEntry.rec:CycleCountEntryBizDoc/MTL_CC_ENTRIES;2;0/CYCLE_COUNT_HEADER_NAME;1;0" TO="/queryParams;2;0/CYCLE_COUNT_HEADER_NAME;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/$dbAlias;1;0" TO="/$dbAlias;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/CycleCountEntryBizDoc;4;0;inventory1213.intoOA.cycleCountEntry.rec:CycleCountEntryBizDoc/MTL_CC_ENTRIES;2;0/ORGANIZATION_NAME;1;0" TO="/queryParams;2;0/ORGANIZATION_NAME;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="INVOKEOUTPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/CYCLE_COUNT_HEADER_ID;1;0" TO="/CycleCountEntryRecordSet;4;0;inventory1213.intoOA.cycleCountEntry.rec:setCycleCountEntryTxnInputRec/MTL_CC_ENTRIES_INTERFACE;2;0/CYCLE_COUNT_HEADER_ID;1;0">
+</MAPCOPY>
+</MAP>
+</MAPINVOKE>
+
+<MAPCOPY NAME="Link" FROM="/CycleCountEntryBizDoc;4;0;inventory1213.intoOA.cycleCountEntry.rec:CycleCountEntryBizDoc/MTL_CC_ENTRIES;2;0/EMPLOYEE_FULL_NAME;1;0" TO="/CycleCountEntryRecordSet;4;0;inventory1213.intoOA.cycleCountEntry.rec:setCycleCountEntryTxnInputRec/MTL_CC_ENTRIES_INTERFACE;2;0/EMPLOYEE_FULL_NAME;1;0">
+</MAPCOPY>
+
+<MAPINVOKE SERVICE="inventory1213.intoOA.cycleCountEntry.utils:getCostGroupId_tf" INVOKE-ORDER="0">
+
+  <!-- nodes -->
+
+<MAP MODE="INVOKEINPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/CycleCountEntryBizDoc;4;0;inventory1213.intoOA.cycleCountEntry.rec:CycleCountEntryBizDoc/MTL_CC_ENTRIES;2;0/ORGANIZATION_NAME;1;0" TO="/queryParams;2;0/ORGANIZATION_NAME;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/CycleCountEntryBizDoc;4;0;inventory1213.intoOA.cycleCountEntry.rec:CycleCountEntryBizDoc/MTL_CC_ENTRIES;2;0/INVENTORY_ITEM;1;0" TO="/queryParams;2;0/ITEM_NUMBER;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/$dbAlias;1;0" TO="/$dbAlias;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="INVOKEOUTPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/COST_GROUP_ID;1;0" TO="/CycleCountEntryRecordSet;4;0;inventory1213.intoOA.cycleCountEntry.rec:setCycleCountEntryTxnInputRec/MTL_CC_ENTRIES_INTERFACE;2;0/COST_GROUP_ID;1;0">
+</MAPCOPY>
+</MAP>
+</MAPINVOKE>
+
+<MAPINVOKE SERVICE="commonOA1213.utils:pickSequence" INVOKE-ORDER="0">
+
+  <!-- nodes -->
+
+<MAP MODE="INVOKEINPUT">
+
+  <!-- nodes -->
+
+<MAPSET NAME="Setter" OVERWRITE="true" VARIABLES="false" GLOBALVARIABLES="false" FIELD="/pickSequenceInput;2;0/P_SEQUENCE_NAME;1;0">
+  <DATA ENCODING="XMLValues" I18N="true">
+
+<Values version="2.0">
+  <value name="xml">WM_CC_ENTRIES_INTERFACE_S</value>
+  <record name="type" javaclass="com.wm.util.Values">
+    <value name="node_type">unknown</value>
+    <value name="is_public">false</value>
+    <value name="field_name">P_SEQUENCE_NAME</value>
+    <value name="field_type">string</value>
+    <value name="field_dim">0</value>
+    <value name="nillable">true</value>
+    <value name="form_qualified">false</value>
+    <value name="is_global">false</value>
+  </record>
+</Values>
+</DATA>
+</MAPSET>
+</MAP>
+
+<MAP MODE="INVOKEOUTPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/pickSequenceOutput;2;0/results;2;0/O_SEQUENCE_VALUE;1;0" TO="/CycleCountEntryRecordSet;4;0;inventory1213.intoOA.cycleCountEntry.rec:setCycleCountEntryTxnInputRec/MTL_CC_ENTRIES_INTERFACE;2;0/CC_ENTRY_INTERFACE_ID;1;0">
+</MAPCOPY>
+</MAP>
+</MAPINVOKE>
+
+<MAPSET NAME="Setter" OVERWRITE="true" VARIABLES="false" GLOBALVARIABLES="false" FIELD="/CycleCountEntryRecordSet;4;0;inventory1213.intoOA.cycleCountEntry.rec:setCycleCountEntryTxnInputRec/MTL_CC_ENTRIES_INTERFACE;2;0/DELETE_FLAG;1;0">
+  <DATA ENCODING="XMLValues" I18N="true">
+
+<Values version="2.0">
+  <value name="xml">2</value>
+  <record name="type" javaclass="com.wm.util.Values">
+    <value name="node_type">unknown</value>
+    <value name="is_public">false</value>
+    <value name="field_name">DELETE_FLAG</value>
+    <value name="field_type">string</value>
+    <value name="field_dim">0</value>
+    <value name="field_opt">true</value>
+    <value name="nillable">true</value>
+    <value name="form_qualified">false</value>
+    <value name="is_global">false</value>
+  </record>
+</Values>
+</DATA>
+</MAPSET>
+
+<MAPSET NAME="Setter" OVERWRITE="true" VARIABLES="false" GLOBALVARIABLES="false" FIELD="/CycleCountEntryRecordSet;4;0;inventory1213.intoOA.cycleCountEntry.rec:setCycleCountEntryTxnInputRec/MTL_CC_ENTRIES_INTERFACE;2;0/LOCK_FLAG;1;0">
+  <DATA ENCODING="XMLValues" I18N="true">
+
+<Values version="2.0">
+  <value name="xml">2</value>
+  <record name="type" javaclass="com.wm.util.Values">
+    <value name="node_type">unknown</value>
+    <value name="is_public">false</value>
+    <value name="field_name">LOCK_FLAG</value>
+    <value name="field_type">string</value>
+    <value name="field_dim">0</value>
+    <value name="field_opt">true</value>
+    <value name="nillable">true</value>
+    <value name="form_qualified">false</value>
+    <value name="is_global">false</value>
+  </record>
+</Values>
+</DATA>
+</MAPSET>
+
+<MAPSET NAME="Setter" OVERWRITE="true" VARIABLES="false" GLOBALVARIABLES="false" FIELD="/CycleCountEntryRecordSet;4;0;inventory1213.intoOA.cycleCountEntry.rec:setCycleCountEntryTxnInputRec/MTL_CC_ENTRIES_INTERFACE;2;0/PROCESS_FLAG;1;0">
+  <DATA ENCODING="XMLValues" I18N="true">
+
+<Values version="2.0">
+  <value name="xml">1</value>
+  <record name="type" javaclass="com.wm.util.Values">
+    <value name="node_type">unknown</value>
+    <value name="is_public">false</value>
+    <value name="field_name">PROCESS_FLAG</value>
+    <value name="field_type">string</value>
+    <value name="field_dim">0</value>
+    <value name="field_opt">true</value>
+    <value name="nillable">true</value>
+    <value name="form_qualified">false</value>
+    <value name="is_global">false</value>
+  </record>
+</Values>
+</DATA>
+</MAPSET>
+
+<MAPSET NAME="Setter" OVERWRITE="true" VARIABLES="false" GLOBALVARIABLES="false" FIELD="/CycleCountEntryRecordSet;4;0;inventory1213.intoOA.cycleCountEntry.rec:setCycleCountEntryTxnInputRec/MTL_CC_ENTRIES_INTERFACE;2;0/PROCESS_MODE;1;0">
+  <DATA ENCODING="XMLValues" I18N="true">
+
+<Values version="2.0">
+  <value name="xml">3</value>
+  <record name="type" javaclass="com.wm.util.Values">
+    <value name="node_type">unknown</value>
+    <value name="is_public">false</value>
+    <value name="field_name">PROCESS_MODE</value>
+    <value name="field_type">string</value>
+    <value name="field_dim">0</value>
+    <value name="field_opt">true</value>
+    <value name="nillable">true</value>
+    <value name="form_qualified">false</value>
+    <value name="is_global">false</value>
+  </record>
+</Values>
+</DATA>
+</MAPSET>
+
+<MAPSET NAME="Setter" OVERWRITE="true" VARIABLES="false" GLOBALVARIABLES="false" FIELD="/CycleCountEntryRecordSet;4;0;inventory1213.intoOA.cycleCountEntry.rec:setCycleCountEntryTxnInputRec/MTL_CC_ENTRIES_INTERFACE;2;0/VALID_FLAG;1;0">
+  <DATA ENCODING="XMLValues" I18N="true">
+
+<Values version="2.0">
+  <value name="xml">1</value>
+  <record name="type" javaclass="com.wm.util.Values">
+    <value name="node_type">unknown</value>
+    <value name="is_public">false</value>
+    <value name="field_name">VALID_FLAG</value>
+    <value name="field_type">string</value>
+    <value name="field_dim">0</value>
+    <value name="field_opt">true</value>
+    <value name="nillable">true</value>
+    <value name="form_qualified">false</value>
+    <value name="is_global">false</value>
+  </record>
+</Values>
+</DATA>
+</MAPSET>
+
+<MAPSET NAME="Setter" OVERWRITE="true" VARIABLES="false" GLOBALVARIABLES="false" FIELD="/CycleCountEntryRecordSet;4;0;inventory1213.intoOA.cycleCountEntry.rec:setCycleCountEntryTxnInputRec/MTL_CC_ENTRIES_INTERFACE;2;0/STATUS_FLAG;1;0">
+  <DATA ENCODING="XMLValues" I18N="true">
+
+<Values version="2.0">
+  <value name="xml">4</value>
+  <record name="type" javaclass="com.wm.util.Values">
+    <value name="node_type">unknown</value>
+    <value name="is_public">false</value>
+    <value name="field_name">STATUS_FLAG</value>
+    <value name="field_type">string</value>
+    <value name="field_dim">0</value>
+    <value name="field_opt">true</value>
+    <value name="nillable">true</value>
+    <value name="form_qualified">false</value>
+    <value name="is_global">false</value>
+  </record>
+</Values>
+</DATA>
+</MAPSET>
+</MAP>
+</LOOP>
+
+<MAP MODE="STANDALONE">
+  <COMMENT>Drop unused variables</COMMENT>
+  <MAPTARGET>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="is_public">false</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="nillable">true</value>
+    <value name="form_qualified">false</value>
+    <value name="is_global">false</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="is_public">false</value>
+        <value name="field_name">CycleCountEntryBizDoc</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+        <value name="modifiable">true</value>
+        <value name="rec_ref">inventory1213.intoOA.cycleCountEntry.rec:CycleCountEntryBizDoc</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="is_public">false</value>
+        <value name="field_name">CycleCountEntryRecordSet</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+        <value name="modifiable">true</value>
+        <value name="rec_ref">inventory1213.intoOA.cycleCountEntry.rec:setCycleCountEntryTxnInputRec</value>
+      </record>
+    </array>
+    <value name="modifiable">true</value>
+  </record>
+</Values>
+</MAPTARGET>
+  <MAPSOURCE>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="is_public">false</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="nillable">true</value>
+    <value name="form_qualified">false</value>
+    <value name="is_global">false</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="is_public">false</value>
+        <value name="field_name">CycleCountEntriesBizDoc</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+        <value name="modifiable">true</value>
+        <value name="rec_ref">inventory1213.intoOA.cycleCountEntry.rec:CycleCountEntryBizDoc</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="is_public">false</value>
+        <value name="field_name">CycleCountEntryBizDoc</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+        <value name="modifiable">true</value>
+        <value name="rec_ref">inventory1213.intoOA.cycleCountEntry.rec:CycleCountEntryBizDoc</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="is_public">false</value>
+        <value name="field_name">$dbAlias</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="is_public">false</value>
+        <value name="field_name">USER_ID</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="is_public">false</value>
+        <value name="field_name">SYSDATE</value>
+        <value name="field_type">object</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="is_public">false</value>
+        <value name="field_name">CycleCountEntryRecordSet</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+        <value name="modifiable">true</value>
+        <value name="rec_ref">inventory1213.intoOA.cycleCountEntry.rec:setCycleCountEntryTxnInputRec</value>
+      </record>
+    </array>
+    <value name="modifiable">true</value>
+  </record>
+</Values>
+</MAPSOURCE>
+
+  <!-- nodes -->
+
+<MAPDELETE NAME="Dropper" FIELD="/$dbAlias;1;0">
+</MAPDELETE>
+
+<MAPDELETE NAME="Dropper" FIELD="/USER_ID;1;0">
+</MAPDELETE>
+
+<MAPDELETE NAME="Dropper" FIELD="/SYSDATE;3;0">
+</MAPDELETE>
+
+<MAPDELETE NAME="Dropper" FIELD="/CycleCountEntryBizDoc;4;0;inventory1213.intoOA.cycleCountEntry.rec:CycleCountEntryBizDoc">
+</MAPDELETE>
+</MAP>
+</FLOW>

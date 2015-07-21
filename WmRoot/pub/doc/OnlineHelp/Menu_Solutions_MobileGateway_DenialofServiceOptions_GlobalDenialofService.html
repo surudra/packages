@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Global Denial of Service Screen</title>
+    <link rel="StyleSheet" href="css/is_admin_help.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+  <body style="background-color: White; margin-bottom: 25px; margin-left: 25px; margin-right: 25px" onload="WWHUpdate();" onunload="WWHUnload();" onkeydown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onkeypress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onkeyup="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <table align="left" role="presentation">
+      <tr>
+        <td class="WebWorks_Company_Logo_Top">
+          <img src="logo.gif" />
+        </td>
+      </tr>
+    </table>
+    <br clear="all" />
+    <hr align="left" />
+    <blockquote>
+      <div class="Heading_3"><a name="3_4_12_6_10_2">Global Denial of Service Screen</a></div>
+      <div class="Body"><span class="emphasis"><a name="3_4_12_6_10_6_1_2">Screen Heading</a></span>: <span class="uicontrol">Mobile Gateway &gt; Denial of Service Options &gt; Global Denial of Service</span></div>
+      <div class="Body"><a name="3_4_12_6_10_6_1_3">Use the Global Denial of Service screen to restrict the number of requests your </a><span class="ph">Integration Server</span> will accept or process concurrently. This restriction applies to all requests, regardless of the IP address from which a request was sent. For example, you might choose to block requests if <span class="ph">Integration Server</span> receives more than 20 requests in 25 seconds from any number of IP addresses.</div>
+      <div class="Body"><a name="3_4_12_6_10_6_1_4">To open the Global Denial of Service Options screen, click </a><span class="uicontrol">Mobile Gateway</span> under the <span class="uicontrol">Solutions</span> menu on the Navigation panel, click <span class="uicontrol">Denial of Service Options</span>, then click <span class="uicontrol">Global Denial of Service</span>.</div>
+      <div class="List_1_outer" style="margin-left: 24px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="List_1_inner" style="width: 18pt; white-space: nowrap;">
+                <img src="bullet1.png" alt="*" border="0" width="10" height="10" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_1_inner"><a name="3_4_12_6_10_6_1_5_1">Click </a><span class="uicontrol">Return to Denial of Service Options</span> to return to the Denial of Service Options screen.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Definition_Term"><a name="3_4_12_6_10_6_1_6_1_1">Enabled</a></div>
+      <div class="Definition_Description"><a name="3_4_12_6_10_6_1_6_1_3">Whether </a><span class="ph">Integration Server</span> is enforcing limits on the total number of requests it will accept and the number it will process concurrently, regardless of originating IP address.</div>
+      <div class="Definition_Term"><a name="3_4_12_6_10_6_1_6_3_1">Maximum Requests</a></div>
+      <div class="Definition_Description"><a name="3_4_12_6_10_6_1_6_3_3">Maximum number of requests </a><span class="ph">Integration Server</span> will accept in the specified time interval (in seconds), regardless of the IP address from which the request was sent.</div>
+      <div class="Definition_Term"><a name="3_4_12_6_10_6_1_6_5_1">Maximum Requests in Progress</a></div>
+      <div class="Definition_Description"><a name="3_4_12_6_10_6_1_6_5_3">Maximum number of requests </a><span class="ph">Integration Server</span> will run concurrently. <span class="ph">Integration Server</span> considers all requests, regardless of the IP address from which the request was sent.</div>
+      <div class="Definition_Term"><a name="3_4_12_6_10_6_1_6_7_1">Block Interval</a></div>
+      <div class="Definition_Description"><a name="3_4_12_6_10_6_1_6_7_3">Length of time (in minutes) that </a><span class="ph">Integration Server</span> is to block requests when the number of requests exceeds the value specified in the <span class="uicontrol">Maximum Requests</span> or <span class="uicontrol">Maximum Requests in Progress</span> field. <span class="ph">Integration Server</span> blocks all requests at every Gateway External port on the Reverse HTTP Gateway Server.</div>
+      <div class="title"><a name="3_4_12_6_10_8_2_1">Related Topics</a></div>
+      <div class="Related_Reference">
+        <img src="spacer_24.png" alt="*" border="0" width="24" height="6" /><span class="Link_Text"><a href="javascript:WWHClickedPopup('is_help', 'Menu_Solutions_MobileGateway_DenialofServiceOptions.html#3_4_12_6_2', '');" title="Denial of Service Options Screen" name="3_4_12_6_10_8_2_3">Denial of Service Options Screen</a></span></div>
+      <div class="Related_Reference">
+        <img src="spacer_24.png" alt="*" border="0" width="24" height="6" /><span class="Link_Text"><a href="javascript:WWHClickedPopup('is_help', 'Menu_Solutions_MobileGateway_DenialofServiceOptions_DenialofServiceByIPAddress.html#3_4_12_6_12_2', '');" title="Denial of Service by IP Address Screen" name="3_4_12_6_10_8_2_5">Denial of Service by IP Address Screen</a></span></div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <div style="font-family: Arial, Verdana, Helvetica, Sans-Serif; font-size: 12px;margin-top: 20px;margin-bottom: 20px;">
+      <span class="xref">
+        <a href="http://documentation.softwareag.com/legal/" target="external_window">Copyright © 2013 Software AG, Darmstadt, Germany</a>
+      </span>
+    </div>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+  </body>
+</html>

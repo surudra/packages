@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <record name="transactions" javaclass="com.wm.util.Values">
+    <record name="checkQualityCollectionImportStatus" javaclass="com.wm.util.Values">
+      <value name="transactionName">checkQualityCollectionImportStatus</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="IMPORTSTATUS" javaclass="com.wm.util.Values">
+        <value name="SQLOut">SELECT COUNT(*) AS ROWCOUNT FROM QA_RESULTS_INTERFACE WHERE PROCESS_STATUS =3 AND REQUEST_ID ='&amp;REQUEST_ID*'</value>
+        <value name="SQLAlias">IMPORTSTATUS</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+    <record name="execQualityCollectionConcProg" javaclass="com.wm.util.Values">
+      <value name="transactionName">execQualityCollectionConcProg</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="WM_HANDLE_QA" javaclass="com.wm.util.Values">
+        <value name="SQLOut">WM_QA_IMP_HANDLER_PKG.WM_HANDLE_QA</value>
+        <value name="SQLAlias">WM_HANDLE_QA</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+    <record name="getPOAgentId" javaclass="com.wm.util.Values">
+      <value name="transactionName">getPOAgentId</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="AGENTID" javaclass="com.wm.util.Values">
+        <value name="SQLOut">SELECT DISTINCT PERSON_ID  FROM PER_ALL_PEOPLE_F WHERE FULL_NAME ='&amp;FULL_NAME*'</value>
+        <value name="SQLAlias">AGENTID</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+  </record>
+  <record name="FILE_INFO" javaclass="com.wm.util.Values">
+    <value name="OA_RELEASE">11i</value>
+    <value name="DESCRIPTION"></value>
+    <value name="CREATE_HOST">webMethods</value>
+    <value name="CREATE_IM_VER">3.0</value>
+    <value name="CREATE_DATE">Oct 16, 2002 1:14:42 PM</value>
+  </record>
+</Values>

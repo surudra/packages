@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<IDataXMLCoder version="1.0">
+  <record javaclass="com.wm.data.ISMemDataImpl">
+    <record name="transactions" javaclass="com.wm.data.ISMemDataImpl">
+      <record name="checkPOConcProgStatus" javaclass="com.wm.data.ISMemDataImpl">
+        <value name="transactionName">checkPOConcProgStatus</value>
+        <value name="transactionType">OUT</value>
+        <null name="AcknowledgeSQL"/>
+        <record name="CHECK_STATUS" javaclass="com.wm.util.Values">
+          <value name="SQLOut">WM_CONC_REQUEST_PKG.CHECK_CONC_PROG_STATUS</value>
+          <value name="SQLAlias">CHECK_STATUS</value>
+          <value name="SQLRelation"></value>
+        </record>
+      </record>
+      <record name="checkPOImportStatus" javaclass="com.wm.data.ISMemDataImpl">
+        <value name="transactionName">checkPOImportStatus</value>
+        <value name="transactionType">OUT</value>
+        <null name="AcknowledgeSQL"/>
+        <record name="CHECKINTERFACE" javaclass="com.wm.util.Values">
+          <value name="SQLOut">SELECT COUNT(*) as ROWCOUNT FROM PO_INTERFACE_ERRORS WHERE request_id= '&amp;REQUEST_ID*'</value>
+          <value name="SQLAlias">CHECKINTERFACE</value>
+          <value name="SQLRelation"></value>
+        </record>
+      </record>
+      <record name="execPOConcProg" javaclass="com.wm.data.ISMemDataImpl">
+        <value name="transactionName">execPOConcProg</value>
+        <value name="transactionType">OUT</value>
+        <null name="AcknowledgeSQL"/>
+        <record name="EXEC_CONC_PROG" javaclass="com.wm.util.Values">
+          <value name="SQLOut">WM_OPENPO_IMP_HANDLER_PKG.WM_HANDLE_OPENPO</value>
+          <value name="SQLAlias">EXEC_CONC_PROG</value>
+          <value name="SQLRelation"></value>
+        </record>
+      </record>
+      <record name="getDistinctDocType" javaclass="com.wm.data.ISMemDataImpl">
+        <value name="transactionName">getDistinctDocType</value>
+        <value name="transactionType">OUT</value>
+        <null name="AcknowledgeSQL"/>
+        <record name="getDistinctDocType" javaclass="com.wm.util.Values">
+          <value name="SQLOut">SELECT DISTINCT DOCUMENT_TYPE_CODE FROM PO_HEADERS_INTERFACE 
+WHERE DOCUMENT_TYPE_CODE IS NOT NULL AND
+BATCH_ID = '&amp;BATCH_ID*'</value>
+          <value name="SQLAlias">getDistinctDocType</value>
+          <value name="SQLRelation"></value>
+        </record>
+      </record>
+      <record name="getFromHeaderId" javaclass="com.wm.data.ISMemDataImpl">
+        <value name="transactionName">getFromHeaderId</value>
+        <value name="transactionType">OUT</value>
+        <null name="AcknowledgeSQL"/>
+        <record name="HEADER_ID" javaclass="com.wm.util.Values">
+          <value name="SQLOut">SELECT POH.PO_HEADER_ID
+FROM
+PO_HEADERS_ALL POH
+WHERE
+POH.SEGMENT1 = '&amp;FROM_PO_NUM*'</value>
+          <value name="SQLAlias">HEADER_ID</value>
+          <value name="SQLRelation"></value>
+        </record>
+      </record>
+      <record name="getFromLineId" javaclass="com.wm.data.ISMemDataImpl">
+        <value name="transactionName">getFromLineId</value>
+        <value name="transactionType">OUT</value>
+        <null name="AcknowledgeSQL"/>
+        <record name="LINE_ID" javaclass="com.wm.util.Values">
+          <value name="SQLOut">SELECT POLL.PO_LINE_ID
+FROM PO_LINES_ALL POLL, PO_HEADERS_ALL  POH
+WHERE POLL.LINE_NUM = '&amp;LINE_NUM*'
+AND POH.SEGMENT1 = '&amp;FROM_HEADER_NUM*' 
+AND POLL.PO_HEADER_ID =POH.PO_HEADER_ID</value>
+          <value name="SQLAlias">LINE_ID</value>
+          <value name="SQLRelation"></value>
+        </record>
+      </record>
+      <record name="getPcardId" javaclass="com.wm.data.ISMemDataImpl">
+        <value name="transactionName">getPcardId</value>
+        <value name="transactionType">OUT</value>
+        <null name="AcknowledgeSQL"/>
+        <record name="PCARD_ID" javaclass="com.wm.util.Values">
+          <value name="SQLOut">select apc.card_id
+from
+AP_CARDS_ALL APC
+where
+apc.card_number = '&amp;CARD_NUMBER*'</value>
+          <value name="SQLAlias">PCARD_ID</value>
+          <value name="SQLRelation"></value>
+        </record>
+      </record>
+    </record>
+    <record name="FILE_INFO" javaclass="com.wm.data.ISMemDataImpl">
+      <value name="OA_RELEASE">11510</value>
+      <value name="DESCRIPTION"></value>
+      <value name="CREATE_HOST">WebMethods</value>
+      <value name="CREATE_IM_VER"></value>
+      <value name="CREATE_DATE">May 6, 2005 12:45:52 PM</value>
+    </record>
+  </record>
+</IDataXMLCoder>

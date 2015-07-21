@@ -1,0 +1,370 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML><HEAD>
+<TITLE>webMethods Oracle Applications Adapter 11.5.9 Predefined Transaction Services 6.0 Release Notes</TITLE>
+<META http-equiv=ContentType content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2800.1400" name=GENERATOR>
+<META http-equiv=ContentType content="text/html; charset=UTF-8"></HEAD>
+<BODY style="FONT-FAMILY: Arial" vLink=#666666 link=#003399
+bgColor=#ffffff>
+<CENTER><H2><FONT color=#3366cc>webMethods Oracle Applications Adapter<br>
+11.5.9 Predefined Transaction Services 6.0</FONT></H2></CENTER>
+<CENTER><H3><FONT color=#3366cc>Release Notes</FONT></H3></CENTER>
+
+<HR>
+
+<p>The webMethods Oracle Applications Adapter 11.5.9 Predefined Transaction Services 6.0 is an add-on product for use with the webMethods Oracle Applications Adapter 6.0 that enables you to easily integrate with a wide range of Oracle Applications modules and interfaces. These predefined transaction services are complete, ready-to-use integration flows. Not only do these flows provide services that operate on Oracle Applications, they also expose required service inputs and outputs and perform required webMethods-to-Oracle Applications/Oracle Applications-to-webMethods document mapping. In many cases, all you need to do to use a predefined transaction service is specify your Oracle Applications system connection information.</p>
+
+
+<H3>Predefined Oracle Applications Transaction Services</H3>
+
+<p>The webMethods Oracle Applications Adapter provides inbound (webMethods-to-Oracle Applications) and outbound (Oracle Applications-to-webMethods) predefined transaction services.</p>
+
+<P>Predefined inbound transactions provide the following:</P>
+
+  <UL>
+    <LI>Required inputs and outputs</li>
+    <LI>Mapping and transformation between the business document and Oracle Applications</li>
+    <LI>Services that insert data, execute concurrent processes, and perform error handling from webMethods to Oracle Applications</li>
+  </UL>
+
+<P>Predefined outbound transactions provide the following:</P>
+  <UL>
+    <LI>A combination of database triggers and polling services for Oracle Applications-to-webMethods notifications</li>
+    <LI>Required inputs and outputs</li>
+    <LI>Services that lock and unlock the webMethods process table, and perform data selection and acknowledgement from Oracle Applications to webMethods</LI>
+  </UL>
+
+
+<H3>Support for Many Oracle Applications Modules and Interfaces</H3>
+
+<p>The webMethods Oracle Applications Adapter provides over 50 predefined transaction services for Oracle Applications 11.5.9, representing 19 separate Oracle Applications modules. The following table lists and describes the Oracle Applications 11.5.9 predefined transactions:</p>
+
+<table cellspacing="0" cellpadding="2" border="1">
+
+ <tr>
+  <td><b><FONT color=#3366cc>OA Module</font></b></td>
+  <td><b><FONT color=#3366cc>OA Interface</font></b></td>
+  <td><b><FONT color=#3366cc>Description</font></b></td>
+ </tr>
+
+ <tr>
+  <td rowspan="2">Assets</td>
+  <td>Mass Additions</td>
+  <td>Creates assets automatically from other systems.</td>
+ </tr>
+
+ <tr>
+  <td>Open Budget</td>
+  <td>Executes flow services to map the incoming document to the interface table and inserts data into the interface table.</td>
+ </tr>
+
+ <tr>
+  <td>Cash Management</td>
+  <td>Bank Reconciliation</td>
+  <td>Loads bank statements into the Cash Management module of Oracle Applications and reconciles the bank statements automatically.</td>
+ </tr>
+
+ <tr>
+  <td rowspan="4">General Ledger</td>
+  <td>Budget Upload Interface</td>
+  <td>Loads budgets to the Oracle Applications General Ledger budget interface tables.</td>
+ </tr>
+
+ <tr>
+  <td>GL Balances (Outbound)</td>
+  <td>Retrieves General Ledger (GL) Budget, Encumbrance, Actual, and Funds Available account balances.</td>
+ </tr>
+
+ <tr>
+  <td>Journal (Outbound)</td>
+  <td>Retrieves Journal information (general, recurring, mass allocation, and reversing journal entries).</td>
+ </tr>
+
+ <tr>
+  <td>Journal Import Interface</td>
+  <td>Inserts Journals into the General Ledger production tables. You can import Journals such as Accounting, Encumbrance, and Multi-currency.</td>
+ </tr>
+
+ <tr>
+  <td rowspan="4">Payables</td>
+  <td>Open Payables Interface</td>
+  <td>Maps the incoming invoice document to the interface table data structure and inserts data into the invoice interface table.</td>
+ </tr>
+
+ <tr>
+  <td>Invoices (Outbound)</td>
+  <td>Retrieves new or changed invoice records. </td>
+ </tr>
+
+ <tr>
+  <td>Payments/Checks (Outbound)</td>
+  <td> Retrieves AP payments that are set up in Oracle Applications Payables to record payment-related information.</td>
+ </tr>
+
+ <tr>
+  <td>Vendors (Outbound)</td>
+  <td>Retrieves the list of new or changed vendors.</td>
+ </tr>
+
+ <tr>
+  <td rowspan="4">Receivables</td>
+  <td>AR Transactions (Outbound)</td>
+  <td>Retrieves the list of new or changed AR Transactions.</td>
+ </tr>
+
+ <tr>
+  <td>Auto Invoice</td>
+  <td>Imports and validates transaction data from other financial systems and creates invoices, debit memos, credit memos, and on-account credits in Oracle Receivables.</td>
+ </tr>
+
+ <tr>
+  <td>Customers (Outbound)</td>
+  <td>Retrieves the list of new or changed Customers.</td>
+ </tr>
+
+ <tr>
+  <td>Customer Interface</td>
+  <td>Maps the incoming document to the interface table and inserts data into the interface table.</td>
+ </tr>
+
+ <tr>
+  <td>Human Resource</td>
+  <td>Employees</td>
+  <td>Imports new and modified employee data into the Oracle Applications production tables.</td>
+ </tr>
+
+ <tr>
+  <td rowspan="4">BOM</td>
+  <td>Bills and Route</td>
+  <td>Updates and deletes manufacturing and engineering bills of material and product families.</td>
+ </tr>
+
+ <tr>
+  <td>BOM Revisions (Outbound)</td>
+  <td>Retrieves bills of material revisions from Oracle Manufacturing.</td>
+ </tr>
+
+ <tr>
+  <td>BOM Routings (Outbound)</td>
+  <td>Retrieves information on the routing of parent, component, substitute items, and routing revisions.</td>
+ </tr>
+
+ <tr>
+  <td>Manufacturing BOM (Outbound)</td>
+  <td>Retrieves information on parent, component, and substitute manufacturing bills of material items, as well as revisions.</td>
+ </tr>
+
+ <tr>
+  <td>Cost Management</td>
+  <td>Periodic
+  Cost Open Interface</td>
+  <td>Imports periodic costs for the first open period.</td>
+ </tr>
+
+ <tr>
+  <td>Engineering</td>
+  <td>Engineering BOM (Outbound)</td>
+  <td>Retrieves information on the parent, component, and substitute engineering bills of material items, as well as revisions.</td>
+ </tr>
+
+ <tr>
+  <td rowspan="9">Inventory</td>
+  <td>Customer Item Cross Reference</td>
+  <td>Imports Customer Item Cross-References into Oracle Inventory.</td>
+ </tr>
+
+ <tr>
+  <td>Customer Item Interface</td>
+  <td>Imports Customer Items into Oracle Inventory.</td>
+ </tr>
+
+ <tr>
+  <td>Cycle Count Entries Interface</td>
+  <td>Imports new and modified cycle count entries into the Oracle Applications production tables.</td>
+ </tr>
+
+ <tr>
+  <td>Item Category (Outbound)</td>
+  <td>Retrieves item category information.</td>
+ </tr>
+
+ <tr>
+  <td>Items (Outbound)</td>
+  <td>Retrieves item information.</td>
+ </tr>
+
+ <tr>
+  <td>On-hand quantity (Outbound)</td>
+  <td>Retrieves the on-hand quantities for a particular item.</td>
+ </tr>
+
+ <tr>
+  <td>Open Item Interface</td>
+  <td>Imports items into Oracle Applications.</td>
+ </tr>
+
+ <tr>
+  <td>Open Replenishment Interface</td>
+  <td>Imports replenishment requests from external systems, such as barcode applications.</td>
+ </tr>
+
+ <tr>
+  <td>Open Transaction Interface</td>
+  <td>Imports transactions into Oracle Inventory.</td>
+ </tr>
+
+ <tr>
+  <td rowspan="2">Master Scheduling</td>
+  <td>Open Forecast Interface</td>
+  <td>Imports forecast entries for existing forecasts and forecasting sets into the Oracle Master Scheduling/MRP Application.</td>
+ </tr>
+
+ <tr>
+  <td>Open Master Schedule Interface</td>
+  <td>Imports master schedules.</td>
+ </tr>
+
+ <tr>
+  <td>Quality Collection</td>
+  <td>Import Interface</td>
+  <td>Adds new quality results to, or updates existing quality results in, the Oracle Applications Quality Data Repository.</td>
+ </tr>
+
+ <tr>
+  <td>Release Management</td>
+  <td>Demand Schedule Interface</td>
+  <td>Imports demand schedules. You can use Oracle Release Management to automate the management and reconciliation of customer inbound schedules, and to enable a rapid response for changing demand requirements.</td>
+ </tr>
+
+ <tr>
+  <td rowspan="3">Work in Progress</td>
+  <td>Open Move Interface</td>
+  <td>Imports moved items.</td>
+ </tr>
+
+ <tr>
+  <td>Open Resource Interface</td>
+  <td>Imports work-in-process (WIP) resource transactions.</td>
+ </tr>
+
+ <tr>
+  <td>Work Order Interface</td>
+  <td>Imports planned orders, planned order update recommendations, and suggested repetitive schedules.</td>
+ </tr>
+
+ <tr>
+  <td>Advanced Pricing</td>
+  <td>Price Request (Outbound)</td>
+  <td>Retrieves price information for orders.</td>
+ </tr>
+
+ <tr>
+  <td rowspan="3">Order Management</td>
+  <td>Import Interface</td>
+  <td>Imports data into the Order Management table.</td>
+ </tr>
+
+ <tr>
+  <td>Pick Confirm</td>
+  <td>Imports pick confirmations on Move Order Line Detail records.</td>
+ </tr>
+
+ <tr>
+  <td>Sales Order (Outbound)</td>
+  <td>Retrieves sales order changes.</td>
+ </tr>
+
+ <tr>
+  <td rowspan="2">Shipping</td>
+  <td>Pick Details (Outbound)</td>
+  <td>Retrieves information about the inventory transfer when the item is moved from one location to another.</td>
+ </tr>
+
+ <tr>
+  <td>Advance Shipping Notice (Outbound)</td>
+  <td>Retrieves advanced shipping notices.</td>
+ </tr>
+
+ <tr>
+  <td rowspan="8">Purchasing</td>
+  <td>Open Purchasing Interface</td>
+  <td>Imports three types of Purchasing documents into the Oracle Applications Production tables: Standard Purchase Orders, Blanket Agreements, and Catalog Quotations. Handles multiple PO records in a single business document.</td>
+ </tr>
+
+ <tr>
+  <td>Open Receiving Interface</td>
+  <td>Imports receiving data. You can use the Open Receiving Interface for processing and validating receipt data from sources other than the Receipts window in Purchasing.</td>
+ </tr>
+
+ <tr>
+  <td>Open Requisition Interface</td>
+  <td>Imports requisitions.
+You can load multiple types of requisition documents, such as Internal or Purchase, into Oracle Applications Production tables.</td>
+ </tr>
+
+ <tr>
+  <td>Purchase Orders (Outbound)</td>
+  <td>Retrieves all approved PO data, and presents it in a logical structure (a business document) that can be sent to a trading partner.</td>
+ </tr>
+
+ <tr>
+  <td>Product Content - Catalog (Outbound)</td>
+  <td>Retrieves the Supplier Product/Item Catalog information to locate items and their source information for the purpose of creating purchase order and requisition lines.</td>
+ </tr>
+
+ <tr>
+  <td>Order Status (Outbound)</td>
+  <td>Retrieves the purchase order status.</td>
+ </tr>
+
+ <tr>
+  <td>Request For Quote (Outbound)</td>
+  <td>Retrieves all new and changed active RFQ data. </td>
+ </tr>
+
+ <tr>
+  <td>Suppliers (Outbound)</td>
+  <td>Retrieves new or changed active supplier data.</td>
+ </tr>
+
+ <tr>
+  <td>Project Accounting</td>
+  <td>Labor</td>
+  <td>Imports expenditures from external cost collection systems.</td>
+ </tr>
+
+</table>
+
+<P>For details about these transactions, see the <i>webMethods Oracle Applications Adapter 11.5.9 Predefined Transaction Services User's Guide 6.0</I>, which is provided as a PDF file in the <I>IntegrationServerDirectory</I>\packages\WmOACommon1159\doc directory.</p>
+
+
+<h3>Support for Modification of Predefined Transaction Services</h3>
+
+<p>If the webMethods Oracle Applications Adapter 11.5.9 Predefined Transaction Services do not provide the predefined transaction service you need, or if you do not want to use a predefined transaction service as designed, you can use the webMethods Oracle Applications Adapter to build new services or update existing services. See the <i>webMethods Oracle Applications Adapter User's Guide 6.0</i> for more information about creating and modifying services.</p>
+
+
+<H3>Platform Support</H3>
+
+<p>The webMethods Oracle Applications Adapter 11.5.9 Predefined Transaction Services 6.0 supports Oracle Applications version 11.5.9 only.</p>
+
+
+<p>For a complete list of the required software and hardware, see the <i>webMethods Oracle Applications Adapter 11.5.9 Predefined Transaction Services Installation Guide</i> 6.0.</p>
+
+<HR>
+
+<p>webMethods Administrator, webMethods Broker, webMethods Dashboard, 
+webMethods Developer, webMethods Fabric, webMethods Glue,  
+webMethods Installer, webMethods Integration Server, webMethods Mainframe, 
+webMethods Manager, webMethods Mobile, webMethods Modeler, 
+webMethods Monitor, webMethods Optimize, webMethods Portal,
+webMethods Trading Networks, webMethods Workflow, and the webMethods 
+logo are trademarks of webMethods, Inc. &quot;webMethods&quot; is a registered 
+trademark of webMethods, Inc.</p>
+
+<p>All other marks are the property of their respective owners. 
+Copyright &copy; 2004 by webMethods, Inc. All rights reserved, 
+including the right of reproduction in whole or in part in any 
+form.</p>
+
+</BODY></HTML>

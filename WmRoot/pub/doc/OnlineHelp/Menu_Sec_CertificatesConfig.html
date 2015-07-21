@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Configure Client Certificates Screen</title>
+    <link rel="StyleSheet" href="" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+  <body class="" style="margin-left: 25px; margin-right: 25px;" onload="WWHUpdate();" onunload="WWHUnload();" onkeydown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onkeypress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onkeyup="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <table align="left" summary="">
+      <tr>
+        <td class="WebWorks_Company_Logo_Top">
+          <img src="logo.gif" alt="" />
+        </td>
+      </tr>
+    </table>
+    <br clear="all" />
+    <hr align="left" />
+    <blockquote>
+      <div class="OH_Heading2NewPage"><a name="1191691">Configure Client Certificates Screen</a></div>
+      <div class="OH_RelatedTopics">
+        <span style="color: #000000; font-family: Arial, Verdana, Helvetica, Sans-Serif; font-size: 11.0pt; font-style: normal; font-variant: normal; font-weight: normal; margin-right: 4px; text-transform: none; vertical-align: baseline;">
+          <img src="arrow_down.gif" alt="*" border="0" width="14" height="13" />
+        </span><a href="javascript:WWHClickedPopup('is_help', 'Menu_Sec_CertificatesConfig.html#1191757', '');" title="Configure Client Certificates Screen" name="1191712">Related Topics   </a></div>
+      <div class="Paragraph1"><span class="Italics"><a name="1191714">Screen Heading</a></span>: <span class="ScreenElement">Security &gt; Certificates &gt; Configure Client Certificates</span></div>
+      <div class="Paragraph1"><a name="1157685">Use the Configure Client Certificates screen to view the list of clients whose certificates </a>are accepted by your server. You also use this screen to add (import) and delete certificates from this list. </div>
+      <div class="Note1">
+        <span class="Bold">Note: </span><a name="1157686">If your SSL port is configured to “require” client certificates, the port will accept </a>requests from only those clients whose certificates are in this list.</div>
+      <div class="Note1">
+        <span class="Bold">Note: </span><a name="1157687">When a client connects to the server using a certificate instead of a user name and </a>password, that client is logged on to the server under the user name that is mapped to that particular certificate. You map a user name to a certificate when you import it into this list.</div>
+      <div class="Paragraph1"><a name="1157691">To open this screen, go to the </a><a href="javascript:WWHClickedPopup('is_help', 'Menu_Sec_Certificates.html#1193596', '');" title="Certificates Screen">Certificates Screen</a> and click <span class="ScreenElement">Configure Client Certificates</span>. </div>
+      <div class="Bullet1_outer" style="margin-left: 0px;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="Bullet1_inner" style="width: 24px; white-space: nowrap;">
+                <span style="color: #7f7f7f; font-family: Arial, Verdana, Helvetica, Sans-Serif; font-size: 11.0pt; font-style: normal; font-variant: normal; font-weight: normal; margin-right: 13px; text-transform: none; vertical-align: baseline;">
+                  <img src="bullet.gif" alt="*" border="0" width="10" height="10" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="Bullet1_inner"><a name="1157693">Click </a><span class="ScreenElement"><a href="javascript:WWHClickedPopup('is_help', 'Menu_Sec_Certificates.html#1193596', '');" title="Certificates Screen">Return to Certificates</a></span> to return to the list of current certificate settings.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Procedure_Heading"><a name="1157694">Import Certificate</a></div>
+      <div class="Paragraph1"><a name="1157695">Use this section to import a client certificate and map it to a user name. </a></div>
+      <div class="DefList_Term"><a name="1157696">Certificate Path</a></div>
+      <div class="DefList_Definition"><a name="1157697">Specifies the name of the file containing the certificate that you want to import. You may </a>specify the file name using an absolute path or using a path that is relative to <span class="Italics">IntegrationServer_directory</span>. The file must contain an X.509 certificate in DER file format.</div>
+      <div class="DefList_Term"><a name="1157831">User </a></div>
+      <div class="DefList_Definition"><a name="1157864">Specifies a pre-defined user name or provides the ability to choose a user by clicking on </a>the magnifying glass icon next to this field. The <span class="ScreenElement">User Name</span> window appears. From this,</div>
+      <div class="Bullet2_outer" style="margin-left: 24px;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="Bullet2_inner" style="width: 24px; white-space: nowrap;">
+                <span style="color: #7f7f7f; font-family: Arial, Verdana, Helvetica, Sans-Serif; font-size: 9.0pt; font-style: normal; font-variant: normal; font-weight: normal; margin-right: 13px; text-transform: none; vertical-align: baseline;">
+                  <img src="bullet_small.gif" alt="*" border="0" width="9" height="9" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="Bullet2_inner"><a name="1157865">Choose </a><span class="ScreenElement">Local</span> (CDS) or <span class="ScreenElement">LDAP</span> as a <span class="ScreenElement">Provider</span> from the drop-down list. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Bullet2_outer" style="margin-left: 24px;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="Bullet2_inner" style="width: 24px; white-space: nowrap;">
+                <span style="color: #7f7f7f; font-family: Arial, Verdana, Helvetica, Sans-Serif; font-size: 9.0pt; font-style: normal; font-variant: normal; font-weight: normal; margin-right: 13px; text-transform: none; vertical-align: baseline;">
+                  <img src="bullet_small.gif" alt="*" border="0" width="9" height="9" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="Bullet2_inner"><a name="1157866">Next, choose a User from the default list given or </a><span class="ScreenElement">Search</span> by name and click <span class="ScreenElement">Go</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="DefList_Term"><a name="1157833">Usage </a></div>
+      <div class="DefList_Definition"><a name="1157834">Specifies the purpose for which you want to import this certificate. The options are SSL </a>Authentication, Verify, Encrypt, Verify and Encrypt, and Message Authentication.</div>
+      <div class="DefList_Term"><a name="1157698">Import Certificate</a></div>
+      <div class="DefList_Definition"><a name="1157915">Imports the certificate specified.</a></div>
+      <div class="Paragraph1"><a name="1170534">If you import a certificate, a link to the Client Certificates Detail Screen appears. </a></div>
+      <div class="Paragraph1" style="color: #ff0000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline;"><a name="1192027">&nbsp;</a></div>
+      <div class="Paragraph1" style="color: #ff0000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline;"><span class="Comment"><a name="1192105">???VQ: added this Current Certificates section so I could add the info required for </a></span><span class="Comment"><br /></span><span class="Comment">1-1QXL78 - the subject CN stuff???</span></div>
+      <div class="Procedure_Heading"><a name="1191047">Current Certificates</a></div>
+      <div class="Paragraph1"><a name="1190683">Displays a list of certficates that are mapped to users on Integration Server. </a></div>
+      <div class="DefList_Term"><a name="1191099">Subject CN</a></div>
+      <div class="DefList_Definition"><a name="1191109">Specifies the common name of the organization to which the certificate was sent. If the </a>certificate does not contain a subject field, this field displays (none). Click the value in this field to view details about this certificate. <span class="Comment">???VQ: previous two sentences added for 1-</span><span class="Comment">1-1QXL78???</span></div>
+      <div class="DefList_Term"><a name="1191116">Issuer CN</a></div>
+      <div class="DefList_Definition"><a name="1191123">Specifies the common name of the organization that issued the certificate.</a></div>
+      <div class="DefList_Term"><a name="1191139">Serial Number</a></div>
+      <div class="DefList_Definition"><a name="1191146">Specifies a number that uniquely identifies this certificate.</a></div>
+      <div class="DefList_Term"><a name="1191130">User</a></div>
+      <div class="DefList_Definition"><a name="1191156">Specifies the name of the Integration Server user to which this certificate is mapped.</a></div>
+      <div class="DefList_Term"><a name="1191166">Usage</a></div>
+      <div class="DefList_Definition"><a name="1191182">Specifies the purpose for which the certificate was imported.</a></div>
+      <div class="DefList_Term"><a name="1191195">Remove</a></div>
+      <div class="DefList_Definition"><a name="1191753">Removes the mapping for this certificate. </a></div>
+      <div class="DefList_Term" style="color: #ff0000; font-style: normal; font-variant: normal; font-weight: bold; text-transform: none; vertical-align: baseline;"><span class="Comment"><a name="1192082">???VQ: End new Current Certificates section???</a></span></div>
+      <div class="Paragraph1" style="color: #ff0000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline;"><span class="Comment"><a name="1192037">???VQ: Added Related topics table, as part of housekeeping while updating for </a></span><span class="Comment"><br /></span><span class="Comment">1-1QXL78???</span></div>
+      <div class="OH_AnchorListReset" style="color: #000000; font-size: 4.0pt; font-style: normal; font-variant: normal; font-weight: bold; margin-bottom: 0.0pt; margin-right: 90pt; margin-top: 0.0pt; text-transform: none; vertical-align: baseline;"><a name="1191790">&nbsp;</a></div>
+      <table class="NoRules1" style="text-align: left; width: 432pt;" cellspacing="0" summary="">
+        <caption></caption>
+        <tr>
+          <td style="padding-bottom: 0px; padding-left: 0pt; padding-right: 12px; padding-top: 0px; vertical-align: top; width: 234pt;">
+            <div class="Paragraph1"><span class="Bold"><a name="1191757">Related Topics</a></span></div>
+          </td>
+          <td style="padding-bottom: 0px; padding-left: 0pt; padding-right: 12px; padding-top: 0px; vertical-align: top; width: 15.8544pt;">
+            <div class="Paragraph1"><a name="1191759">&nbsp;</a></div>
+          </td>
+          <td style="padding-bottom: 0px; padding-left: 0pt; padding-right: 12px; padding-top: 0px; vertical-align: top; width: 182.1456pt;">
+            <div class="Paragraph1"><span class="Bold"><a name="1191762">Go to top</a></span></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding-bottom: 0px; padding-left: 0pt; padding-right: 12px; padding-top: 0px; vertical-align: top;">
+            <div class="OH_JumpList">
+              <span style="color: #000000; font-family: Arial, Verdana, Helvetica, Sans-Serif; font-size: 11.0pt; font-style: normal; font-variant: normal; font-weight: normal; margin-right: 4px; text-transform: none; vertical-align: baseline;">
+                <img src="arrow_right.gif" alt="*" border="0" width="10" height="13" />
+              </span><a href="javascript:WWHClickedPopup('is_help', 'Menu_Sec_Certificates.html#1193596', '');" title="Certificates Screen" name="1191767">Certificates Screen</a></div>
+          </td>
+          <td style="padding-bottom: 0px; padding-left: 0pt; padding-right: 12px; padding-top: 0px; vertical-align: top;">
+            <div class="Paragraph1"><a name="1191769">&nbsp;</a></div>
+          </td>
+          <td style="padding-bottom: 0px; padding-left: 0pt; padding-right: 12px; padding-top: 0px; vertical-align: top;">
+            <div class="Paragraph1"><a name="1191771">&nbsp;</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding-bottom: 0px; padding-left: 0pt; padding-right: 12px; padding-top: 0px; vertical-align: top;">
+            <div class="OH_JumpList">
+              <span style="color: #000000; font-family: Arial, Verdana, Helvetica, Sans-Serif; font-size: 11.0pt; font-style: normal; font-variant: normal; font-weight: normal; margin-right: 4px; text-transform: none; vertical-align: baseline;">
+                <img src="arrow_right.gif" alt="*" border="0" width="10" height="13" />
+              </span><a href="javascript:WWHClickedPopup('is_help', 'Menu_Sec_CertificatesConfig.html#1190953', '');" title="Configure Client Certificates Screen" name="1191776">Client Certificates Details Screen</a></div>
+          </td>
+          <td style="padding-bottom: 0px; padding-left: 0pt; padding-right: 12px; padding-top: 0px; vertical-align: top;">
+            <div class="Paragraph1"><a name="1191778">&nbsp;</a></div>
+          </td>
+          <td style="padding-bottom: 0px; padding-left: 0pt; padding-right: 12px; padding-top: 0px; vertical-align: top;">
+            <div class="Paragraph1"><a name="1191780">&nbsp;</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding-bottom: 0px; padding-left: 0pt; padding-right: 12px; padding-top: 0px; vertical-align: top;">
+            <div class="OH_JumpList">
+              <span style="color: #000000; font-family: Arial, Verdana, Helvetica, Sans-Serif; font-size: 11.0pt; font-style: normal; font-variant: normal; font-weight: normal; margin-right: 4px; text-transform: none; vertical-align: baseline;">
+                <img src="arrow_right.gif" alt="*" border="0" width="10" height="13" />
+              </span><a href="javascript:WWHClickedPopup('is_help', 'Menu_Security.9.31.html#1190766', '');" title="Client Certificates Update User Mapping" name="1191784">Client Certificates Update User Mapping</a></div>
+          </td>
+          <td style="padding-bottom: 0px; padding-left: 0pt; padding-right: 12px; padding-top: 0px; vertical-align: top;">
+            <div class="Paragraph1"><a name="1191787">&nbsp;</a></div>
+          </td>
+          <td style="padding-bottom: 0px; padding-left: 0pt; padding-right: 12px; padding-top: 0px; vertical-align: top;">
+            <div class="Paragraph1"><a name="1191789">&nbsp;</a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="Heading2"><a name="1190953">Client Certificates Details Screen   </a></div>
+      <div class="OH_RelatedTopics">
+        <span style="color: #000000; font-family: Arial, Verdana, Helvetica, Sans-Serif; font-size: 11.0pt; font-style: normal; font-variant: normal; font-weight: normal; margin-right: 4px; text-transform: none; vertical-align: baseline;">
+          <img src="arrow_down.gif" alt="*" border="0" width="14" height="13" />
+        </span><a href="javascript:WWHClickedPopup('is_help', 'Menu_Sec_CertificatesConfig.html#1192174', '');" title="Configure Client Certificates Screen" name="1191734">Related Topics   </a></div>
+      <div class="Paragraph1"><span class="Italics"><a name="1180542">Screen Heading</a></span>: <span class="ScreenElement">Security &gt; Certificates &gt; Client Certificates &gt; Details</span></div>
+      <div class="Paragraph1"><a name="1169059">The Client Certificates Details screen displays mapping information of a user and </a>detailed certificate information. </div>
+      <div class="Paragraph1"><a name="1169063">To open this screen, go to the </a><a href="javascript:WWHClickedPopup('is_help', 'Menu_Sec_Certificates.html#1193596', '');" title="Certificates Screen">Certificates Screen</a> and click <span class="ScreenElement">Configure Client Certificates</span>. From the <span class="ScreenElement">Current Certificates</span> area of the screen, click the link provided under <span class="ScreenElement">Subject CN</span>. </div>
+      <div class="Bullet1_outer" style="margin-left: 0px;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="Bullet1_inner" style="width: 24px; white-space: nowrap;">
+                <span style="color: #7f7f7f; font-family: Arial, Verdana, Helvetica, Sans-Serif; font-size: 11.0pt; font-style: normal; font-variant: normal; font-weight: normal; margin-right: 13px; text-transform: none; vertical-align: baseline;">
+                  <img src="bullet.gif" alt="*" border="0" width="10" height="10" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="Bullet1_inner"><a name="1169065">Click </a><span class="ScreenElement"><a href="javascript:WWHClickedPopup('is_help', 'Menu_Sec_Certificates.html#1193596', '');" title="Certificates Screen">Return to Certificates</a></span> to return to the list of current certificate settings.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Bullet1_outer" style="margin-left: 0px;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="Bullet1_inner" style="width: 24px; white-space: nowrap;">
+                <span style="color: #7f7f7f; font-family: Arial, Verdana, Helvetica, Sans-Serif; font-size: 11.0pt; font-style: normal; font-variant: normal; font-weight: normal; margin-right: 13px; text-transform: none; vertical-align: baseline;">
+                  <img src="bullet.gif" alt="*" border="0" width="10" height="10" />
+                </span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="Bullet1_inner"><a name="1169066">Click </a><span class="ScreenElement">Change Mapping</span> to edit how the certificate is mapped to a user.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Procedure_Heading"><a name="1169067">Mapping Information</a></div>
+      <div class="DefList_Term"><a name="1169068">User </a></div>
+      <div class="DefList_Definition"><a name="1169069">Specifies the pre-defined user name you selected in the Configure Certificates screen.</a></div>
+      <div class="DefList_Term"><a name="1169070">Usage </a></div>
+      <div class="DefList_Definition"><a name="1169071">Specifies the purpose for which you had imported this certificate. You will see one of the </a>following options listed SSL Authentication, Verify, Encrypt, Verify and Encrypt, and Message Authentication</div>
+      <div class="Procedure_Heading"><a name="1169072">Detailed Certificate Information</a></div>
+      <div class="Paragraph1"><a name="1192169">Provides details of the certificate you imported. </a></div>
+      <div class="Paragraph1" style="color: #ff0000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline;"><span class="Comment"><a name="1192211">???VQ: Added Related topics table as part of housekeeping while updating for </a></span><span class="Comment"><br /></span><span class="Comment">1-1QXL78???</span></div>
+      <div class="OH_AnchorListReset" style="color: #000000; font-size: 4.0pt; font-style: normal; font-variant: normal; font-weight: bold; margin-bottom: 0.0pt; margin-right: 90pt; margin-top: 0.0pt; text-transform: none; vertical-align: baseline;"><a name="1192198">&nbsp;</a></div>
+      <table class="NoRules1" style="text-align: left; width: 432pt;" cellspacing="0" summary="">
+        <caption></caption>
+        <tr>
+          <td style="padding-bottom: 0px; padding-left: 0pt; padding-right: 12px; padding-top: 0px; vertical-align: top; width: 234pt;">
+            <div class="Paragraph1"><span class="Bold"><a name="1192174">Related Topics</a></span></div>
+          </td>
+          <td style="padding-bottom: 0px; padding-left: 0pt; padding-right: 12px; padding-top: 0px; vertical-align: top; width: 15.8544pt;">
+            <div class="Paragraph1"><a name="1192176">&nbsp;</a></div>
+          </td>
+          <td style="padding-bottom: 0px; padding-left: 0pt; padding-right: 12px; padding-top: 0px; vertical-align: top; width: 182.1456pt;">
+            <div class="Paragraph1"><span class="Bold"><a name="1192179">Go to top</a></span></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding-bottom: 0px; padding-left: 0pt; padding-right: 12px; padding-top: 0px; vertical-align: top;">
+            <div class="OH_JumpList">
+              <span style="color: #000000; font-family: Arial, Verdana, Helvetica, Sans-Serif; font-size: 11.0pt; font-style: normal; font-variant: normal; font-weight: normal; margin-right: 4px; text-transform: none; vertical-align: baseline;">
+                <img src="arrow_right.gif" alt="*" border="0" width="10" height="13" />
+              </span><a href="javascript:WWHClickedPopup('is_help', 'Menu_Sec_Certificates.html#1193596', '');" title="Certificates Screen" name="1192184">Certificates Screen</a></div>
+          </td>
+          <td style="padding-bottom: 0px; padding-left: 0pt; padding-right: 12px; padding-top: 0px; vertical-align: top;">
+            <div class="Paragraph1"><a name="1192186">&nbsp;</a></div>
+          </td>
+          <td style="padding-bottom: 0px; padding-left: 0pt; padding-right: 12px; padding-top: 0px; vertical-align: top;">
+            <div class="Paragraph1"><a name="1192188">&nbsp;</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding-bottom: 0px; padding-left: 0pt; padding-right: 12px; padding-top: 0px; vertical-align: top;">
+            <div class="OH_JumpList">
+              <span style="color: #000000; font-family: Arial, Verdana, Helvetica, Sans-Serif; font-size: 11.0pt; font-style: normal; font-variant: normal; font-weight: normal; margin-right: 4px; text-transform: none; vertical-align: baseline;">
+                <img src="arrow_right.gif" alt="*" border="0" width="10" height="13" />
+              </span><a href="javascript:WWHClickedPopup('is_help', 'Menu_Security.9.31.html#1190766', '');" title="Client Certificates Update User Mapping" name="1192192">Client Certificates Update User Mapping</a></div>
+          </td>
+          <td style="padding-bottom: 0px; padding-left: 0pt; padding-right: 12px; padding-top: 0px; vertical-align: top;">
+            <div class="Paragraph1"><a name="1192195">&nbsp;</a></div>
+          </td>
+          <td style="padding-bottom: 0px; padding-left: 0pt; padding-right: 12px; padding-top: 0px; vertical-align: top;">
+            <div class="Paragraph1"><a name="1192197">&nbsp;</a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="Procedure_Heading"><span class="Comment"><a name="1192095">???VQ: Noticed this section was missing while updating for 1-1QXL78, so I wrote it and stuck it in </a></span><span class="Comment">here???</span></div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+  </body>
+</html>

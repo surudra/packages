@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+ 
+	<xs:element name="keywords">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="keyword" minOccurs="0" maxOccurs="unbounded"></xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+ 
+  <xs:element name="keyword" type="keyword"/>
+ 
+  <xs:complexType name="keyword">
+    <xs:sequence>
+         <xs:element name="keywordType" type="keywordType" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="name" type="xs:string" use="required"/>
+	<xs:attribute name="supportedversion" type="xs:string" use="required"/>
+  </xs:complexType>
+ 
+  <xs:complexType name="keywordType">
+   	 <xs:attribute name="jdbcType" type="xs:string" use="required"/>
+  </xs:complexType>
+</xs:schema>

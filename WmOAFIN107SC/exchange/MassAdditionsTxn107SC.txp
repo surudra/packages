@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <record name="transactions" javaclass="com.wm.util.Values">
+    <record name="getAdditionalAssetId" javaclass="com.wm.util.Values">
+      <value name="transactionName">getAdditionalAssetId</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="ASSET_ID" javaclass="com.wm.util.Values">
+        <value name="SQLOut">SELECT ASSET_ID FROM FA_ADDITIONS WHERE ASSET_NUMBER = '&amp;PARENT_ASSET_NUMBER*'</value>
+        <value name="SQLAlias">ASSET_ID</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+    <record name="getAssetCategoryId" javaclass="com.wm.util.Values">
+      <value name="transactionName">getAssetCategoryId</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="CATEGORY_ID" javaclass="com.wm.util.Values">
+        <value name="SQLOut">SELECT CATEGORY_ID FROM FA_CATEGORIES_KFV WHERE UPPER(DESCRIPTION) = UPPER('&amp;ASSET_CATEGORY_DESCRIPTION*')</value>
+        <value name="SQLAlias">CATEGORY_ID</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+    <record name="getAssetKeyCCId" javaclass="com.wm.util.Values">
+      <value name="transactionName">getAssetKeyCCId</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="CODE_COMBINATION_ID" javaclass="com.wm.util.Values">
+        <value name="SQLOut">SELECT CODE_COMBINATION_ID FROM FA_ASSET_KEYWORDS_KFV WHERE UPPER(CONCATENATED_SEGMENTS) = UPPER('&amp;ASSET_KEY_ACCOUNT_CODE*')</value>
+        <value name="SQLAlias">CODE_COMBINATION_ID</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+  </record>
+  <record name="FILE_INFO" javaclass="com.wm.util.Values">
+    <value name="OA_RELEASE">107SC</value>
+    <value name="DESCRIPTION"></value>
+    <value name="CREATE_HOST">webMethods</value>
+    <value name="CREATE_IM_VER">3.0</value>
+    <value name="CREATE_DATE">Nov 26, 2002 4:58:15 PM</value>
+  </record>
+</Values>

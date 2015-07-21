@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<IDataXMLCoder version="1.0">
+  <record javaclass="com.wm.data.ISMemDataImpl">
+    <record name="transactions" javaclass="com.wm.data.ISMemDataImpl">
+      <record name="setGLBudgetTxn" javaclass="com.wm.data.ISMemDataImpl">
+        <value name="transactionName">setGLBudgetTxn</value>
+        <value name="transactionType">IN</value>
+        <value name="errSQL">SELECT *
+FROM GL_BUDGET_INTERFACE 
+WHERE BUDGET_NAME='&amp;BUDGET_NAME*' 
+AND BUDGET_ENTITY_NAME ='&amp;BUDGET_ENTITY_NAME*'</value>
+        <record name="table0" javaclass="com.wm.data.ISMemDataImpl">
+          <value name="tableName">GL_BUDGET_INTERFACE</value>
+          <value name="required">true</value>
+        </record>
+      </record>
+    </record>
+    <record name="FILE_INFO" javaclass="com.wm.data.ISMemDataImpl">
+      <value name="OA_RELEASE">1206</value>
+      <value name="DESCRIPTION"></value>
+      <value name="CREATE_HOST">webMethods</value>
+      <value name="CREATE_IM_VER"></value>
+      <value name="CREATE_DATE">May 2, 2005 5:03:31 PM</value>
+    </record>
+  </record>
+</IDataXMLCoder>

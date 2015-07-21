@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <title>Add Scope Screen</title>
+    <link rel="StyleSheet" href="css/_is_admin_help.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+  <body style="background-color: White; margin-bottom: 25px; margin-left: 25px; margin-right: 25px; margin-top: 0px; padding-top: 0px" onload="WWHUpdate();" onunload="WWHUnload();" onkeydown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onkeypress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onkeyup="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <table align="left" role="presentation">
+      <tr>
+        <td class="WebWorks_Company_Logo_Top">
+          <img src="sag_online.png" />
+        </td>
+      </tr>
+    </table>
+    <br clear="all" />
+    <hr align="left" />
+    <blockquote>
+      <div class="Heading_3"><a name="3_5_17_17_10_2">Add Scope Screen</a></div>
+      <div class="Body"><span class="emphasis"><a name="3_5_17_17_10_6_2_3">Screen Heading</a></span>: <span class="uicontrol">Security &gt; OAuth &gt; Scope Management &gt; Add Scope</span></div>
+      <div class="Body"><a name="3_5_17_17_10_6_2_5">Use the Add Scope screen to view and delete scopes.</a></div>
+      <div class="Body"><a name="3_5_17_17_10_6_2_7">To open the Add Scope screen, go to the </a><span class="heading-no-quotes"><a href="javascript:WWHClickedPopup('is_help', 'Menu_Sec_OAuth.html', '');" title="OAuth Screen">OAuth Screen</a></span> and click <span class="uicontrol">Scope Management</span>. Then click <span class="uicontrol">Add Scope</span>.</div>
+      <div class="List_1_outer" style="margin-left: 24px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_1_inner" style="width: 18pt; white-space: nowrap">
+                <img src="bullet1.png" alt="*" border="0" width="10" height="10" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_1_inner"><a name="3_5_17_17_10_6_2_9_2">Click </a><span class="uicontrol">Return to Scope Management</span> to return to the <span class="heading-no-quotes"><a href="javascript:WWHClickedPopup('is_help', 'Menu_Sec_OAuth_ScopeManagement.html', '');" title="Scope Management Screen">Scope Management Screen</a></span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Section_Title"><a name="3_5_17_17_10_6_4_3">Scope Configuration</a></div>
+      <div class="Definition_Term"><a name="3_5_17_17_10_6_4_5_2_2">Name</a></div>
+      <div class="Definition_Description"><a name="3_5_17_17_10_6_4_5_2_4">Specifies a unique name for the scope. The name cannot contain a space or any of the following characters:</a></div>
+      <div class="Definition_Description"><a name="3_5_17_17_10_6_4_5_2_4_3">&amp; ( ) \ ; , / " : ' &lt; &gt;</a></div>
+      <div class="Definition_Term"><a name="3_5_17_17_10_6_4_5_4_2">Folders and services</a></div>
+      <div class="Definition_Description"><a name="3_5_17_17_10_6_4_5_4_4">Specifies the list of folders and individual services that the client can access on behalf of the resource owner. You can add more than one folder or service at a time by specifying multiple lines, one folder or service to a line. Press ENTER to separate lines.</a></div>
+      <table class="note2" summary="">
+        <tr>
+          <td class="Table_Cell" style="vertical-align: top; width: 14.285714285714284%">
+            <div class="Note">
+              <span style="font-family: Arial, Verdana, Helvetica, Sans-Serif; font-weight: bold">Note:    </span><a name="3_5_17_17_10_6_4_5_4_4_3_1_3_1_2_2">&nbsp;</a></div>
+          </td>
+          <td class="Table_Cell" style="vertical-align: top; width: 85.71428571428571%">
+            <div class="Table_Cell"><span class="ph"><a name="3_5_17_17_10_6_4_5_4_4_3_1_3_1_3">Integration Server</a></span> validates the entries. If you enter a folder or service that does not exist, <span class="ph">Integration Server</span> does not add the scope.</div>
+          </td>
+        </tr>
+      </table>
+      <div class="Definition_Term"><a name="3_5_17_17_10_6_4_5_6_2">Save Changes</a></div>
+      <div class="Definition_Description"><a name="3_5_17_17_10_6_4_5_6_4">Updates </a><span class="ph">Integration Server</span> with the new scope settings. Your changes take effect immediately.</div>
+      <div class="Link_List_Title"><a name="3_5_17_17_10_8_1_2">Related Topics</a></div>
+      <div class="Related_Topic">
+        <img src="spacer_24.png" alt="*" border="0" width="24" height="6" /><span class="Link_Text"><a href="javascript:WWHClickedPopup('is_help', 'Menu_Sec_OAuth_ScopeManagement.html', '');" title="Scope Management Screen" name="3_5_17_17_10_8_1_4">Scope Management Screen</a></span></div>
+      <div class="Related_Topic">
+        <img src="spacer_24.png" alt="*" border="0" width="24" height="6" /><span class="Link_Text"><a href="javascript:WWHClickedPopup('is_help', 'Menu_Sec_OAuth_EditScope.html', '');" title="Edit Scope Screen" name="3_5_17_17_10_8_1_6">Edit Scope Screen</a></span></div>
+      <div class="Related_Topic">
+        <img src="spacer_24.png" alt="*" border="0" width="24" height="6" /><span class="Link_Text"><a href="javascript:WWHClickedPopup('is_help', 'Menu_Sec_OAuth_AssociateScopesToClients.html', '');" title="Associate Scopes to Clients Screen" name="3_5_17_17_10_8_1_8">Associate Scopes to Clients Screen</a></span></div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <div>
+      <hr />
+      <div style="font-family: Arial, Verdana, Helvetica, Sans-Serif; font-size: 12px;margin-top: 20px;margin-bottom: 20px;">
+        <span class="xref">
+          <a href="http://documentation.softwareag.com/legal/" target="external_window">Copyright © <span></span><span></span><span>2007</span><span>-2014</span> Software AG, Darmstadt, Germany</a>
+        </span>.</div>
+    </div>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+  </body>
+</html>

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="keywords" content="servers,logs,Guaranteed Delivery Log-Outbound,logs,GuaranteedDelivery Log-Outbound,viewing,Guaranteed Delivery Log-Outbound,services,viewing transaction logs,transaction logs,viewing outbound" />
+    <title>Guaranteed Delivery - Outbound Log Screen</title>
+    <link rel="StyleSheet" href="css/_is_admin_help.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+  <body style="background-color: White; margin-bottom: 25px; margin-left: 25px; margin-right: 25px; margin-top: 0px; padding-top: 0px" onload="WWHUpdate();" onunload="WWHUnload();" onkeydown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onkeypress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onkeyup="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <table align="left" role="presentation">
+      <tr>
+        <td class="WebWorks_Company_Logo_Top">
+          <img src="sag_online.png" />
+        </td>
+      </tr>
+    </table>
+    <br clear="all" />
+    <hr align="left" />
+    <blockquote>
+      <div class="Heading_2"><a name="3_5_9_7_2">Guaranteed Delivery - Outbound Log Screen</a></div>
+      <div class="Body"><span class="emphasis"><a name="3_5_9_7_6_2_3">Screen Heading</a></span>: <span class="uicontrol">Logs &gt; Guaranteed Delivery &gt; Outbound</span></div>
+      <div class="Body"><a name="3_5_9_7_6_2_5">Use the Guaranteed Delivery Outbound Log screen to view the outbound transaction log. The outbound transaction log (WMTXOUT_</a><span class="varname">yyyymmdd_hhmmss</span>.log) records information about guaranteed-delivery requests that the server makes to other <span class="ph">webMethods Integration Server</span>s. The log contains a record of all critical operations that the server performs for each guaranteed delivery transaction.</div>
+      <div class="Body"><a name="3_5_9_7_6_2_7">You can use these logs with the appropriate job store to identify specific information about a transaction. For example, if a transaction fails, you can use the log to determine how far the transaction got before failing so you can take appropriate measures to recover it.</a></div>
+      <div class="Body"><a name="3_5_9_7_6_2_9">For information about changing the display of this log, see </a><span class="ph"> </span><span class="Citation">webMethods Audit Logging Guide</span><span class="ph"> </span>.</div>
+      <div class="Body"><a name="3_5_9_7_6_2_11">To open the Guaranteed Delivery Outbound Log screen, click </a><span class="uicontrol">Guaranteed Delivery</span> under the <span class="uicontrol">Logs</span> menu on the Navigation panel. From the <span class="heading-page"><a href="javascript:WWHClickedPopup('is_help', 'Menu_Logs_GuarDelivInbound.html', '');" title="Guaranteed Delivery - Inbound Log Screen">Guaranteed Delivery - Inbound Log
+Screen</a></span>, click <span class="uicontrol">View Guaranteed Delivery Outbound Log</span>.</div>
+      <div class="List_1_outer" style="margin-left: 24px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_1_inner" style="width: 18pt; white-space: nowrap">
+                <img src="bullet1.png" alt="*" border="0" width="10" height="10" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_1_inner"><a name="3_5_9_7_6_2_13_2">Click </a><span class="uicontrol">View Guaranteed Delivery Inbound Log</span> from the Outbound Guaranteed Delivery log to see the inbound log. The inbound transaction log (WMTXIN_<span class="varname">yyyymmdd_hhmmss</span>.log) records information about guaranteed-delivery requests that the server processes.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Section_Title"><a name="3_5_9_7_6_4_3">Log display controls</a></div>
+      <div class="Definition_Term"><a name="3_5_9_7_6_4_5_2_2">Display Log Entries oldest to the newest starting from the beginning</a></div>
+      <div class="Definition_Description"><a name="3_5_9_7_6_4_5_2_4">View entries in the log from the oldest to the most current.</a></div>
+      <div class="Definition_Term"><a name="3_5_9_7_6_4_5_4_2">Display Log Entries newest to the oldest starting from the end</a></div>
+      <div class="Definition_Description"><a name="3_5_9_7_6_4_5_4_4">View entries in the log from the most current to the oldest.</a></div>
+      <div class="Definition_Term"><a name="3_5_9_7_6_4_5_6_2">Number of entries to display</a></div>
+      <div class="Definition_Description"><a name="3_5_9_7_6_4_5_6_4">By default, the </a><span class="ph">Integration Server Administrator</span> displays the 35 most recent entries in the log. You can change the number of entries displayed.</div>
+      <table class="note2" summary="">
+        <tr>
+          <td class="Table_Cell" style="vertical-align: top; width: 14.285714285714284%">
+            <div class="tip">
+              <span style="font-family: Arial, Verdana, Helvetica, Sans-Serif; font-weight: bold">Tip!    </span><a name="3_5_9_7_6_4_5_6_4_5_1_3_1_2_2">&nbsp;</a></div>
+          </td>
+          <td class="Table_Cell" style="vertical-align: top; width: 85.71428571428571%">
+            <div class="Table_Cell"><a name="3_5_9_7_6_4_5_6_4_5_1_3_1_3">If you have Administrator privileges, you can permanently change the default value of this field. Go to the </a><span class="uicontrol">Settings &gt; Extended</span> page and modify the watt.server.log.maxEntries parameter.</div>
+          </td>
+        </tr>
+      </table>
+      <div class="Definition_Term"><a name="3_5_9_7_6_4_5_8_2">From/To</a></div>
+      <div class="Definition_Description"><a name="3_5_9_7_6_4_5_8_4">Specify, in </a><span class="codeph">YYYY-MM-DD HH:MM:SS</span> date format, the range of dates and times for which you want log entries to be displayed.</div>
+      <table class="note2" summary="">
+        <tr>
+          <td class="Table_Cell" style="vertical-align: top; width: 14.285714285714284%">
+            <div class="Note">
+              <span style="font-family: Arial, Verdana, Helvetica, Sans-Serif; font-weight: bold">Note:    </span><a name="3_5_9_7_6_4_5_8_4_5_1_3_1_2_2">&nbsp;</a></div>
+          </td>
+          <td class="Table_Cell" style="vertical-align: top; width: 85.71428571428571%">
+            <div class="Table_Cell"><a name="3_5_9_7_6_4_5_8_4_5_1_3_1_3">The </a><span class="uicontrol">From/To</span> fields are displayed only if the logger associated with this log is configured to write to a database. For more information, see the <span class="ph"> </span><span class="Citation">webMethods Audit Logging Guide</span><span class="ph"> </span>.</div>
+          </td>
+        </tr>
+      </table>
+      <div class="Definition_Term"><a name="3_5_9_7_6_4_5_10_2">Refresh</a></div>
+      <div class="Definition_Description"><a name="3_5_9_7_6_4_5_10_4">Click this button to update the display after changing the log display controls.</a></div>
+      <table class="note2" summary="">
+        <tr>
+          <td class="Table_Cell" style="vertical-align: top; width: 14.285714285714284%">
+            <div class="tip">
+              <span style="font-family: Arial, Verdana, Helvetica, Sans-Serif; font-weight: bold">Tip!    </span><a name="3_5_9_7_6_4_5_10_4_3_1_3_1_2_2">&nbsp;</a></div>
+          </td>
+          <td class="Table_Cell" style="vertical-align: top; width: 85.71428571428571%">
+            <div class="Table_Cell"><a name="3_5_9_7_6_4_5_10_4_3_1_3_1_3">If you have Administrator privileges, you can change the default refresh interval for log entries (the default is 90 seconds). Go to the </a><span class="uicontrol">Settings &gt; Extended</span> page and modify the watt.server.log.refreshInterval.</div>
+          </td>
+        </tr>
+      </table>
+      <div class="Section_Title"><a name="3_5_9_7_6_6_3">Guaranteed Delivery Log Entries as of </a><span class="varname">mm-dd hh:mm:ss</span></div>
+      <div class="Definition_Term"><a name="3_5_9_7_6_6_5_2_2">Time Stamp</a></div>
+      <div class="Definition_Description"><a name="3_5_9_7_6_6_5_2_4">Date and time the entry was written to the log.</a></div>
+      <div class="Definition_Term"><a name="3_5_9_7_6_6_5_4_2">Status</a></div>
+      <div class="Definition_Description"><a name="3_5_9_7_6_6_5_4_4">Status of service execution. The status can be either STARTED, ENDED, or FAILED.</a></div>
+      <div class="Definition_Term"><a name="3_5_9_7_6_6_5_6_2">Message</a></div>
+      <div class="Definition_Description"><a name="3_5_9_7_6_6_5_6_4">The name of the process that is running.</a></div>
+      <div class="Definition_Term"><a name="3_5_9_7_6_6_5_8_2">Error Message</a></div>
+      <div class="Definition_Description"><a name="3_5_9_7_6_6_5_8_4">Optional error message, describing the type of error.</a></div>
+      <div class="Definition_Term"><a name="3_5_9_7_6_6_5_10_2">Root Context, Parent Context, Current Context</a></div>
+      <div class="Definition_Description"><a name="3_5_9_7_6_6_5_10_4">Context information that provides a consistent, interpretable audit trail of activity that the </a><span class="ph">webMethods Monitor</span> can use to relate entries within the log.</div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <div>
+      <hr />
+      <div style="font-family: Arial, Verdana, Helvetica, Sans-Serif; font-size: 12px;margin-top: 20px;margin-bottom: 20px;">
+        <span class="xref">
+          <a href="http://documentation.softwareag.com/legal/" target="external_window">Copyright © <span></span><span></span><span>2007</span><span>-2014</span> Software AG, Darmstadt, Germany</a>
+        </span>.</div>
+    </div>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+  </body>
+</html>

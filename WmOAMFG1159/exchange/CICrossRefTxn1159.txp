@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <record name="transactions" javaclass="com.wm.util.Values">
+    <record name="checkCICrossRefImportStatus" javaclass="com.wm.util.Values">
+      <value name="transactionName">checkCICrossRefImportStatus</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="COUNT_MTL_CI_REF" javaclass="com.wm.util.Values">
+        <value name="SQLOut">SELECT count(*) AS ROWCOUNT FROM MTL_CI_XREFS_INTERFACE	WHERE PROCESS_MODE = 2</value>
+        <value name="SQLAlias">COUNT_MTL_CI_REF</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+    <record name="execCICrossRefConcProg" javaclass="com.wm.util.Values">
+      <value name="transactionName">execCICrossRefConcProg</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="EXECCICROSSREF" javaclass="com.wm.util.Values">
+        <value name="SQLOut">WM_INV_CICRREF_IMP_HANDLER_PKG.WM_HANDLE_CICRREF</value>
+        <value name="SQLAlias">EXECCICROSSREF</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+  </record>
+  <record name="FILE_INFO" javaclass="com.wm.util.Values">
+    <value name="OA_RELEASE">1159</value>
+    <value name="DESCRIPTION"></value>
+    <value name="CREATE_HOST">webMethods</value>
+    <value name="CREATE_IM_VER">3.1</value>
+    <value name="CREATE_DATE">May 4, 2004 3:00:35 PM</value>
+  </record>
+</Values>

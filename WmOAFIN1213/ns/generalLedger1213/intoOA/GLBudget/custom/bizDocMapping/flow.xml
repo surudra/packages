@@ -1,0 +1,618 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<FLOW VERSION="3.0" CLEANUP="true">
+  <COMMENT></COMMENT>
+
+  <!-- nodes -->
+
+<LOOP TIMEOUT="" IN-ARRAY="/GLBudgetBizDoc/GL_BUDGET" OUT-ARRAY="/GLBudgetRecordSet/GL_BUDGET_INTERFACE">
+  <COMMENT></COMMENT>
+
+  <!-- nodes -->
+
+<MAP MODE="STANDALONE">
+  <COMMENT>Map GLBudgetBizDoc to GLBudgetRecordSet</COMMENT>
+  <MAPTARGET>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="is_public">false</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="nillable">true</value>
+    <value name="form_qualified">false</value>
+    <value name="is_global">false</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="is_public">false</value>
+        <value name="field_name">GLBudgetBizDoc</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+        <value name="modifiable">true</value>
+        <value name="rec_ref">generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="is_public">false</value>
+        <value name="field_name">$dbAlias</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="is_public">false</value>
+        <value name="field_name">GLBudgetRecordSet</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+        <value name="modifiable">true</value>
+        <value name="rec_ref">generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec</value>
+      </record>
+    </array>
+    <value name="modifiable">true</value>
+  </record>
+</Values>
+</MAPTARGET>
+  <MAPSOURCE>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="is_public">false</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="nillable">true</value>
+    <value name="form_qualified">false</value>
+    <value name="is_global">false</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="is_public">false</value>
+        <value name="field_name">GLBudgetBizDoc</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+        <value name="modifiable">true</value>
+        <value name="rec_ref">generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="is_public">false</value>
+        <value name="field_name">$dbAlias</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="is_public">false</value>
+        <value name="field_name">GLBudgetRecordSet</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+        <value name="modifiable">true</value>
+        <value name="rec_ref">generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="is_public">false</value>
+        <value name="field_name">$iteration</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+      </record>
+    </array>
+    <value name="modifiable">true</value>
+  </record>
+</Values>
+</MAPSOURCE>
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/CURRENCY_CODE;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/CURRENCY_CODE;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/FISCAL_YEAR;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/FISCAL_YEAR;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/UPDATE_LOGIC_TYPE;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/UPDATE_LOGIC_TYPE;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/CODE_COMBINATION_ID;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/CODE_COMBINATION_ID;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/PERIOD_TYPE;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/PERIOD_TYPE;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/DR_FLAG;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/DR_FLAG;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/STATUS;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/STATUS;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/ACCOUNT_TYPE;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/ACCOUNT_TYPE;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/PERIOD1_AMOUNT;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/PERIOD1_AMOUNT;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/PERIOD2_AMOUNT;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/PERIOD2_AMOUNT;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/PERIOD3_AMOUNT;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/PERIOD3_AMOUNT;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/PERIOD4_AMOUNT;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/PERIOD4_AMOUNT;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/PERIOD5_AMOUNT;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/PERIOD5_AMOUNT;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/PERIOD6_AMOUNT;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/PERIOD6_AMOUNT;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/PERIOD7_AMOUNT;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/PERIOD7_AMOUNT;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/PERIOD8_AMOUNT;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/PERIOD8_AMOUNT;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/PERIOD9_AMOUNT;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/PERIOD9_AMOUNT;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/PERIOD10_AMOUNT;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/PERIOD10_AMOUNT;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/PERIOD11_AMOUNT;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/PERIOD11_AMOUNT;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/PERIOD12_AMOUNT;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/PERIOD12_AMOUNT;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/PERIOD13_AMOUNT;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/PERIOD13_AMOUNT;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/PERIOD14_AMOUNT;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/PERIOD14_AMOUNT;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/PERIOD15_AMOUNT;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/PERIOD15_AMOUNT;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/PERIOD16_AMOUNT;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/PERIOD16_AMOUNT;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/PERIOD17_AMOUNT;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/PERIOD17_AMOUNT;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/PERIOD18_AMOUNT;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/PERIOD18_AMOUNT;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/PERIOD19_AMOUNT;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/PERIOD19_AMOUNT;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/PERIOD20_AMOUNT;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/PERIOD20_AMOUNT;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/PERIOD21_AMOUNT;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/PERIOD21_AMOUNT;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/PERIOD22_AMOUNT;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/PERIOD22_AMOUNT;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/PERIOD23_AMOUNT;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/PERIOD23_AMOUNT;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/PERIOD24_AMOUNT;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/PERIOD24_AMOUNT;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/PERIOD25_AMOUNT;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/PERIOD25_AMOUNT;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/PERIOD26_AMOUNT;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/PERIOD26_AMOUNT;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/PERIOD27_AMOUNT;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/PERIOD27_AMOUNT;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/PERIOD28_AMOUNT;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/PERIOD28_AMOUNT;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/PERIOD29_AMOUNT;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/PERIOD29_AMOUNT;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/PERIOD30_AMOUNT;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/PERIOD30_AMOUNT;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/PERIOD31_AMOUNT;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/PERIOD31_AMOUNT;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/PERIOD32_AMOUNT;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/PERIOD32_AMOUNT;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/PERIOD33_AMOUNT;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/PERIOD33_AMOUNT;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/PERIOD34_AMOUNT;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/PERIOD34_AMOUNT;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/PERIOD35_AMOUNT;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/PERIOD35_AMOUNT;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/PERIOD36_AMOUNT;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/PERIOD36_AMOUNT;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/PERIOD37_AMOUNT;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/PERIOD37_AMOUNT;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/PERIOD38_AMOUNT;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/PERIOD38_AMOUNT;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/PERIOD39_AMOUNT;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/PERIOD39_AMOUNT;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/PERIOD40_AMOUNT;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/PERIOD40_AMOUNT;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/PERIOD41_AMOUNT;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/PERIOD41_AMOUNT;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/PERIOD42_AMOUNT;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/PERIOD42_AMOUNT;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/PERIOD43_AMOUNT;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/PERIOD43_AMOUNT;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/PERIOD44_AMOUNT;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/PERIOD44_AMOUNT;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/PERIOD45_AMOUNT;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/PERIOD45_AMOUNT;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/PERIOD46_AMOUNT;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/PERIOD46_AMOUNT;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/PERIOD47_AMOUNT;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/PERIOD47_AMOUNT;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/PERIOD48_AMOUNT;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/PERIOD48_AMOUNT;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/PERIOD49_AMOUNT;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/PERIOD49_AMOUNT;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/PERIOD50_AMOUNT;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/PERIOD50_AMOUNT;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/PERIOD51_AMOUNT;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/PERIOD51_AMOUNT;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/PERIOD52_AMOUNT;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/PERIOD52_AMOUNT;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/PERIOD53_AMOUNT;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/PERIOD53_AMOUNT;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/PERIOD54_AMOUNT;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/PERIOD54_AMOUNT;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/PERIOD55_AMOUNT;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/PERIOD55_AMOUNT;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/PERIOD56_AMOUNT;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/PERIOD56_AMOUNT;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/PERIOD57_AMOUNT;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/PERIOD57_AMOUNT;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/PERIOD58_AMOUNT;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/PERIOD58_AMOUNT;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/PERIOD59_AMOUNT;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/PERIOD59_AMOUNT;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/PERIOD60_AMOUNT;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/PERIOD60_AMOUNT;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/SEGMENT1;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/SEGMENT1;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/SEGMENT2;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/SEGMENT2;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/SEGMENT3;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/SEGMENT3;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/SEGMENT4;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/SEGMENT4;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/SEGMENT5;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/SEGMENT5;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/SEGMENT6;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/SEGMENT6;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/SEGMENT7;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/SEGMENT7;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/SEGMENT8;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/SEGMENT8;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/SEGMENT9;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/SEGMENT9;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/SEGMENT10;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/SEGMENT10;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/SEGMENT12;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/SEGMENT12;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/SEGMENT11;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/SEGMENT11;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/SEGMENT13;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/SEGMENT13;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/SEGMENT14;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/SEGMENT14;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/SEGMENT15;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/SEGMENT15;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/SEGMENT16;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/SEGMENT16;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/SEGMENT17;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/SEGMENT17;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/SEGMENT18;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/SEGMENT18;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/SEGMENT19;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/SEGMENT19;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/SEGMENT20;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/SEGMENT20;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/SEGMENT21;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/SEGMENT21;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/SEGMENT22;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/SEGMENT22;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/SEGMENT23;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/SEGMENT23;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/SEGMENT24;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/SEGMENT24;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/SEGMENT25;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/SEGMENT25;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/SEGMENT26;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/SEGMENT26;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/SEGMENT27;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/SEGMENT27;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/SEGMENT28;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/SEGMENT28;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/SEGMENT29;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/SEGMENT29;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/SEGMENT30;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/SEGMENT30;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/BUDGET_NAME;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/BUDGET_NAME;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/BUDGET_ENTITY_NAME;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/BUDGET_ENTITY_NAME;1;0">
+</MAPCOPY>
+
+<MAPINVOKE SERVICE="generalLedger1213.intoOA.GLBudget.utils:getSOBVersionEntityId_tf" VALIDATE-IN="$none" VALIDATE-OUT="$none" INVOKE-ORDER="0">
+
+  <!-- nodes -->
+
+<MAP MODE="INVOKEINPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/BUDGET_NAME;1;0" TO="/queryParams;2;0/P_BUDGET_NAME;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc/GL_BUDGET;2;0/BUDGET_ENTITY_NAME;1;0" TO="/queryParams;2;0/P_BUDGET_ORGANIZATION;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/$dbAlias;1;0" TO="/$dbAlias;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="INVOKEOUTPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/SET_OF_BOOKS_ID;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/SET_OF_BOOKS_ID;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/BUDGET_ENTITY_ID;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/BUDGET_ENTITY_ID;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/BUDGET_VERSION_ID;1;0" TO="/GLBudgetRecordSet;4;0;generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec/GL_BUDGET_INTERFACE;2;0/BUDGET_VERSION_ID;1;0">
+</MAPCOPY>
+</MAP>
+</MAPINVOKE>
+</MAP>
+</LOOP>
+
+<MAP MODE="STANDALONE">
+  <COMMENT></COMMENT>
+  <MAPTARGET>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="is_public">false</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="nillable">true</value>
+    <value name="form_qualified">false</value>
+    <value name="is_global">false</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="is_public">false</value>
+        <value name="field_name">GLBudgetBizDoc</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+        <value name="modifiable">true</value>
+        <value name="rec_ref">generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="is_public">false</value>
+        <value name="field_name">$dbAlias</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="is_public">false</value>
+        <value name="field_name">GLBudgetRecordSet</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+        <value name="modifiable">true</value>
+        <value name="rec_ref">generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec</value>
+      </record>
+    </array>
+    <value name="modifiable">true</value>
+  </record>
+</Values>
+</MAPTARGET>
+  <MAPSOURCE>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="is_public">false</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="nillable">true</value>
+    <value name="form_qualified">false</value>
+    <value name="is_global">false</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="is_public">false</value>
+        <value name="field_name">GLBudgetBizDoc</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+        <value name="modifiable">true</value>
+        <value name="rec_ref">generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="is_public">false</value>
+        <value name="field_name">$dbAlias</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="is_public">false</value>
+        <value name="field_name">GLBudgetRecordSet</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+        <value name="modifiable">true</value>
+        <value name="rec_ref">generalLedger1213.intoOA.GLBudget.rec:setGLBudgetTxnInputRec</value>
+      </record>
+    </array>
+    <value name="modifiable">true</value>
+  </record>
+</Values>
+</MAPSOURCE>
+
+  <!-- nodes -->
+
+<MAPDELETE NAME="Dropper" FIELD="/GLBudgetBizDoc;4;0;generalLedger1213.intoOA.GLBudget.rec:GLBudgetBizDoc">
+</MAPDELETE>
+
+<MAPDELETE NAME="Dropper" FIELD="/$dbAlias;1;0">
+</MAPDELETE>
+</MAP>
+</FLOW>

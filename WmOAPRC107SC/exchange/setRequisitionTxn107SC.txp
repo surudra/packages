@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <record name="transactions" javaclass="com.wm.util.Values">
+    <record name="setRequisitionTxn" javaclass="com.wm.util.Values">
+      <value name="transactionName">setRequisitionTxn</value>
+      <value name="transactionType">IN</value>
+      <value name="errSQL">SELECT PO_INTERFACE_ERRORS.INTERFACE_TYPE, PO_INTERFACE_ERRORS.INTERFACE_TRANSACTION_ID, 
+PO_INTERFACE_ERRORS.COLUMN_NAME, PO_INTERFACE_ERRORS.ERROR_MESSAGE,
+PO_REQUISITIONS_INTERFACE_ALL.SOURCE_TYPE_CODE, PO_REQUISITIONS_INTERFACE_ALL.QUANTITY
+FROM PO_INTERFACE_ERRORS,PO_REQUISITIONS_INTERFACE_ALL  
+WHERE  PO_REQUISITIONS_INTERFACE_ALL.REQUEST_ID = PO_INTERFACE_ERRORS.REQUEST_ID
+AND PO_REQUISITIONS_INTERFACE_ALL.TRANSACTION_ID = PO_INTERFACE_ERRORS.INTERFACE_TRANSACTION_ID 
+AND PO_INTERFACE_ERRORS.REQUEST_ID = '&amp;REQUEST_ID*'</value>
+      <record name="table0" javaclass="com.wm.util.Values">
+        <value name="tableName">PO_REQUISITIONS_INTERFACE_ALL</value>
+        <value name="required">true</value>
+      </record>
+    </record>
+  </record>
+  <record name="FILE_INFO" javaclass="com.wm.util.Values">
+    <value name="OA_RELEASE">107SC</value>
+    <value name="DESCRIPTION">Requisition Inbound Transaction Definition</value>
+    <value name="CREATE_HOST">webMethods</value>
+    <value name="CREATE_IM_VER">3.0</value>
+    <value name="CREATE_DATE">Nov 26, 2002 5:33:00 PM</value>
+  </record>
+</Values>

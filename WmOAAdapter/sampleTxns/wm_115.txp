@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <record name="transactions" javaclass="com.wm.util.Values">
+    <record name="APInvoices" javaclass="com.wm.util.Values">
+      <value name="transactionName">APInvoices</value>
+      <value name="transactionType">IN</value>
+      <value name="errSQL">SELECT i.invoice_num, i.invoice_id, 
+       Decode(r.parent_table,'AP_INVOICE_LINES_INTERFACE', l.line_number,'AP_INVOICES_INTERFACE',0) Line_Number,
+       c.description, c.displayed_field, i.po_number, i.vendor_id, i.vendor_num, i.vendor_name, i.vendor_site_id, 
+       i.vendor_site_code
+FROM ap_interface_rejections r, ap_invoices_interface i, ap_lookup_codes c, ap_invoice_lines_interface l  
+WHERE i.status = 'REJECTED' and 
+      Decode(r.parent_table,'AP_INVOICE_LINES_INTERFACE',l.invoice_line_id,'AP_INVOICES_INTERFACE',i.invoice_id) =  
+         r.parent_id and
+      c.lookup_type = 'REJECT CODE'  and     
+      r.reject_lookup_code = c.lookup_code  and 
+      i.invoice_id = l.invoice_id (+)  and
+      NVL(i.ORG_ID, TO_NUMBER(NVL(DECODE(SUBSTR(USERENV('CLIENT_INFO'),1,1),' ',NULL,
+                                         SUBSTR(USERENV('CLIENT_INFO'),1,10)), '-99'))) = 
+      TO_NUMBER(NVL(DECODE(SUBSTR(USERENV('CLIENT_INFO'),1,1),' ',NULL,
+                           SUBSTR(USERENV('CLIENT_INFO'),1,10)) ,'-99'))  and
+      NVL(l.ORG_ID,  TO_NUMBER(NVL(DECODE(SUBSTR(USERENV('CLIENT_INFO'),1,1), ' ',NULL,
+                                          SUBSTR(USERENV('CLIENT_INFO'),1,10)), '-99'))) = 
+      TO_NUMBER(NVL(DECODE(SUBSTR(USERENV('CLIENT_INFO'),1,1),' ',NULL,
+                           SUBSTR(USERENV('CLIENT_INFO'),1,10)) ,'-99')) and
+      i.source LIKE '&amp;SOURCE*' AND
+      NVL('&amp;SOURCE*', NULL) IS NOT NULL
+GROUP BY i.po_number,i.vendor_id, i.vendor_num, i.vendor_name, i.vendor_site_id, i.vendor_site_code, 
+         i.invoice_num, i.invoice_id, Decode(r.parent_table,'AP_INVOICE_LINES_INTERFACE', 
+                                             l.line_number,'AP_INVOICES_INTERFACE',0),  
+         c.description, c.displayed_field  
+UNION
+SELECT i.invoice_num, i.invoice_id, 
+       Decode(r.parent_table,'AP_INVOICE_LINES_INTERFACE', l.line_number,'AP_INVOICES_INTERFACE',0) Line_Number,
+       c.description, c.displayed_field, i.po_number, i.vendor_id, i.vendor_num, i.vendor_name, i.vendor_site_id, 
+       i.vendor_site_code
+FROM ap_interface_rejections r, ap_invoices_interface i, ap_lookup_codes c, ap_invoice_lines_interface l  
+WHERE i.status = 'REJECTED' and 
+      Decode(r.parent_table,'AP_INVOICE_LINES_INTERFACE',l.invoice_line_id,'AP_INVOICES_INTERFACE',i.invoice_id) =  
+         r.parent_id and
+      c.lookup_type = 'REJECT CODE'  and     
+      r.reject_lookup_code = c.lookup_code  and 
+      i.invoice_id = l.invoice_id (+)  and
+      NVL(i.ORG_ID, TO_NUMBER(NVL(DECODE(SUBSTR(USERENV('CLIENT_INFO'),1,1),' ',NULL,
+                                         SUBSTR(USERENV('CLIENT_INFO'),1,10)), '-99'))) = 
+      TO_NUMBER(NVL(DECODE(SUBSTR(USERENV('CLIENT_INFO'),1,1),' ',NULL,
+                           SUBSTR(USERENV('CLIENT_INFO'),1,10)) ,'-99'))  and
+      NVL(l.ORG_ID,  TO_NUMBER(NVL(DECODE(SUBSTR(USERENV('CLIENT_INFO'),1,1), ' ',NULL,
+                                          SUBSTR(USERENV('CLIENT_INFO'),1,10)), '-99'))) = 
+      TO_NUMBER(NVL(DECODE(SUBSTR(USERENV('CLIENT_INFO'),1,1),' ',NULL,
+                           SUBSTR(USERENV('CLIENT_INFO'),1,10)) ,'-99')) and
+      i.source IS NULL AND
+      NVL('&amp;SOURCE*', NULL) IS NULL
+GROUP BY i.po_number,i.vendor_id, i.vendor_num, i.vendor_name, i.vendor_site_id, i.vendor_site_code, 
+         i.invoice_num, i.invoice_id, Decode(r.parent_table,'AP_INVOICE_LINES_INTERFACE', 
+                                             l.line_number,'AP_INVOICES_INTERFACE',0),  
+         c.description, c.displayed_field  
+ORDER BY 1, 3</value>
+      <record name="table0" javaclass="com.wm.util.Values">
+        <value name="tableName">AP_INVOICES_INTERFACE</value>
+        <value name="required">false</value>
+      </record>
+      <record name="table1" javaclass="com.wm.util.Values">
+        <value name="tableName">AP_INVOICE_LINES_INTERFACE</value>
+        <value name="required">false</value>
+      </record>
+    </record>
+    <record name="ARAutoInvoice" javaclass="com.wm.util.Values">
+      <value name="transactionName">ARAutoInvoice</value>
+      <value name="transactionType">IN</value>
+      <value name="errSQL">select RA_INTERFACE_ERRORS_ALL.INTERFACE_LINE_ID, RA_INTERFACE_ERRORS_ALL.INTERFACE_SALESCREDIT_ID,
+RA_INTERFACE_ERRORS_ALL.INTERFACE_DISTRIBUTION_ID,
+RA_INTERFACE_ERRORS_ALL.MESSAGE_TEXT,
+RA_INTERFACE_ERRORS_ALL.INVALID_VALUE,
+RA_INTERFACE_ERRORS_ALL.LINK_TO_LINE_ID,
+RA_INTERFACE_ERRORS_ALL.ORG_ID
+from RA_INTERFACE_ERRORS_ALL, RA_INTERFACE_LINES_ALL, FND_USER_VIEW
+where RA_INTERFACE_LINES_ALL.INTERFACE_LINE_ID =  RA_INTERFACE_ERRORS_ALL.INTERFACE_LINE_ID AND
+RA_INTERFACE_LINES_ALL.CREATED_BY = FND_USER_VIEW.USER_ID AND FND_USER_VIEW.USER_NAME LIKE '&amp;WM_USER*' AND
+NVL('&amp;WM_USER*', NULL) IS NOT NULL
+UNION
+select RA_INTERFACE_ERRORS_ALL.INTERFACE_LINE_ID, RA_INTERFACE_ERRORS_ALL.INTERFACE_SALESCREDIT_ID,
+RA_INTERFACE_ERRORS_ALL.INTERFACE_DISTRIBUTION_ID,
+RA_INTERFACE_ERRORS_ALL.MESSAGE_TEXT,
+RA_INTERFACE_ERRORS_ALL.INVALID_VALUE,
+RA_INTERFACE_ERRORS_ALL.LINK_TO_LINE_ID,
+RA_INTERFACE_ERRORS_ALL.ORG_ID
+from RA_INTERFACE_ERRORS_ALL, RA_INTERFACE_LINES_ALL
+where RA_INTERFACE_LINES_ALL.CREATED_BY IS NULL AND
+RA_INTERFACE_LINES_ALL.INTERFACE_LINE_ID =  RA_INTERFACE_ERRORS_ALL.INTERFACE_LINE_ID AND 
+NVL('&amp;WM_USER*', NULL) IS NULL
+</value>
+      <record name="table0" javaclass="com.wm.util.Values">
+        <value name="tableName">RA_INTERFACE_SALESCREDITS_ALL</value>
+        <value name="required">false</value>
+      </record>
+      <record name="table1" javaclass="com.wm.util.Values">
+        <value name="tableName">RA_INTERFACE_DISTRIBUTIONS_ALL</value>
+        <value name="required">false</value>
+      </record>
+      <record name="table2" javaclass="com.wm.util.Values">
+        <value name="tableName">RA_INTERFACE_LINES_ALL</value>
+        <value name="required">true</value>
+      </record>
+    </record>
+    <record name="ARCustomers" javaclass="com.wm.util.Values">
+      <value name="transactionName">ARCustomers</value>
+      <value name="transactionType">IN</value>
+      <value name="errSQL">APPS.WM_ERR_SQL_TRANSACTIONS.WM_IS_ARCUSTOMERS_ERROR</value>
+      <record name="table0" javaclass="com.wm.util.Values">
+        <value name="tableName">RA_CONTACT_PHONES_INT_ALL</value>
+        <value name="required">false</value>
+      </record>
+      <record name="table1" javaclass="com.wm.util.Values">
+        <value name="tableName">RA_CUST_PAY_METHOD_INT_ALL</value>
+        <value name="required">false</value>
+      </record>
+      <record name="table2" javaclass="com.wm.util.Values">
+        <value name="tableName">RA_CUSTOMER_BANKS_INT_ALL</value>
+        <value name="required">false</value>
+      </record>
+      <record name="table3" javaclass="com.wm.util.Values">
+        <value name="tableName">RA_CUSTOMER_PROFILES_INT_ALL</value>
+        <value name="required">false</value>
+      </record>
+      <record name="table4" javaclass="com.wm.util.Values">
+        <value name="tableName">RA_CUSTOMERS_INTERFACE_ALL</value>
+        <value name="required">false</value>
+      </record>
+    </record>
+    <record name="INVCustomerItemCrossRef" javaclass="com.wm.util.Values">
+      <value name="transactionName">INVCustomerItemCrossRef</value>
+      <value name="transactionType">IN</value>
+      <value name="errSQL">SELECT MTL_CI_XREFS_INTERFACE.CUSTOMER_ITEM_NUMBER, MTL_CI_XREFS_INTERFACE.INVENTORY_ITEM_ID, MTL_CI_XREFS_INTERFACE.TRANSACTION_TYPE, MTL_CI_XREFS_INTERFACE.PROCESS_MODE, MTL_CI_XREFS_INTERFACE.CUSTOMER_NAME, MTL_CI_XREFS_INTERFACE.ERROR_EXPLANATION 
+FROM MTL_CI_XREFS_INTERFACE, FND_USER_VIEW 
+WHERE MTL_CI_XREFS_INTERFACE.CREATED_BY = FND_USER_VIEW.USER_ID AND FND_USER_VIEW.USER_NAME LIKE '&amp;WM_USER*'</value>
+      <record name="table0" javaclass="com.wm.util.Values">
+        <value name="tableName">MTL_CI_XREFS_INTERFACE</value>
+        <value name="required">true</value>
+      </record>
+    </record>
+    <record name="INVCustomerItems" javaclass="com.wm.util.Values">
+      <value name="transactionName">INVCustomerItems</value>
+      <value name="transactionType">IN</value>
+      <value name="errSQL">SELECT MTL_CI_INTERFACE.CUSTOMER_ITEM_NUMBER, MTL_CI_INTERFACE.CUSTOMER_ITEM_DESC, MTL_CI_INTERFACE.TRANSACTION_TYPE, MTL_CI_INTERFACE.PROCESS_MODE, MTL_CI_INTERFACE.CUSTOMER_NAME, MTL_CI_INTERFACE.ERROR_EXPLANATION 
+FROM MTL_CI_INTERFACE, FND_USER_VIEW 
+WHERE MTL_CI_INTERFACE.CREATED_BY = FND_USER_VIEW.USER_ID AND FND_USER_VIEW.USER_NAME LIKE '&amp;WM_USER*' AND MTL_CI_INTERFACE.ERROR_EXPLANATION IS NOT NULL</value>
+      <record name="table0" javaclass="com.wm.util.Values">
+        <value name="tableName">MTL_CI_INTERFACE</value>
+        <value name="required">true</value>
+      </record>
+    </record>
+    <record name="INVItems" javaclass="com.wm.util.Values">
+      <value name="transactionName">INVItems</value>
+      <value name="transactionType">IN</value>
+      <value name="errSQL">SELECT MTL_SYSTEM_ITEMS_INTERFACE.ITEM_NUMBER, MTL_SYSTEM_ITEMS_INTERFACE.DESCRIPTION, MTL_SYSTEM_ITEMS_INTERFACE.TRANSACTION_TYPE, MTL_SYSTEM_ITEMS_INTERFACE.PROCESS_FLAG, MTL_INTERFACE_ERRORS.ERROR_MESSAGE FROM MTL_SYSTEM_ITEMS_INTERFACE , MTL_INTERFACE_ERRORS , FND_USER_VIEW WHERE 
+FND_USER_VIEW.USER_NAME LIKE '&amp;WM_USER*' AND 
+MTL_SYSTEM_ITEMS_INTERFACE.CREATED_BY = FND_USER_VIEW.USER_ID AND MTL_SYSTEM_ITEMS_INTERFACE.TRANSACTION_ID =MTL_INTERFACE_ERRORS.TRANSACTION_ID AND NVL('&amp;WM_USER*',NULL) IS NOT NULL 
+UNION
+SELECT MTL_SYSTEM_ITEMS_INTERFACE.ITEM_NUMBER, MTL_SYSTEM_ITEMS_INTERFACE.DESCRIPTION, MTL_SYSTEM_ITEMS_INTERFACE.TRANSACTION_TYPE, MTL_SYSTEM_ITEMS_INTERFACE.PROCESS_FLAG, MTL_INTERFACE_ERRORS.ERROR_MESSAGE FROM MTL_SYSTEM_ITEMS_INTERFACE , MTL_INTERFACE_ERRORS , FND_USER_VIEW WHERE MTL_SYSTEM_ITEMS_INTERFACE.CREATED_BY IS NULL AND MTL_SYSTEM_ITEMS_INTERFACE.TRANSACTION_ID =MTL_INTERFACE_ERRORS.TRANSACTION_ID AND NVL('&amp;WM_USER*',NULL) IS NULL
+
+</value>
+      <record name="table0" javaclass="com.wm.util.Values">
+        <value name="tableName">MTL_SYSTEM_ITEMS_INTERFACE</value>
+        <value name="required">true</value>
+      </record>
+      <record name="table1" javaclass="com.wm.util.Values">
+        <value name="tableName">MTL_ITEM_REVISIONS_INTERFACE</value>
+        <value name="required">false</value>
+      </record>
+    </record>
+    <record name="OEOrderImport" javaclass="com.wm.util.Values">
+      <value name="transactionName">OEOrderImport</value>
+      <value name="transactionType">IN</value>
+      <value name="errSQL">select OE_HEADERS_IFACE_ALL.ORIG_SYS_DOCUMENT_REF,
+OE_PROCESSING_MSGS_TL.MESSAGE_TEXT , OE_HEADERS_IFACE_ALL.CUSTOMER_PO_NUMBER, OE_HEADERS_IFACE_ALL.CUSTOMER_NAME
+from OE_HEADERS_IFACE_ALL , FND_USER_VIEW, OE_PROCESSING_MSGS, OE_PROCESSING_MSGS_TL
+  
+where 
+OE_HEADERS_IFACE_ALL.CREATED_BY = FND_USER_VIEW.USER_ID and  FND_USER_VIEW.USER_NAME like '&amp;WM_USER*' and OE_HEADERS_IFACE_ALL.ERROR_FLAG = 'Y' and OE_HEADERS_IFACE_ALL.ORIG_SYS_DOCUMENT_REF like '&amp;ORIG_SYS_DOCUMENT_REF*' and OE_HEADERS_IFACE_ALL.REQUEST_ID = OE_PROCESSING_MSGS.REQUEST_ID and OE_HEADERS_IFACE_ALL.ORIG_SYS_DOCUMENT_REF = OE_PROCESSING_MSGS.ORIGINAL_SYS_DOCUMENT_REF and OE_PROCESSING_MSGS.TRANSACTION_ID = OE_PROCESSING_MSGS_TL.TRANSACTION_ID ORDER BY OE_HEADERS_IFACE_ALL.ORIG_SYS_DOCUMENT_REF,OE_HEADERS_IFACE_ALL.CUSTOMER_PO_NUMBER,OE_HEADERS_IFACE_ALL.CUSTOMER_NUMBER</value>
+      <record name="table0" javaclass="com.wm.util.Values">
+        <value name="tableName">OE_HEADERS_IFACE_ALL</value>
+        <value name="required">true</value>
+      </record>
+      <record name="table1" javaclass="com.wm.util.Values">
+        <value name="tableName">OE_LINES_IFACE_ALL</value>
+        <value name="required">true</value>
+      </record>
+      <record name="table2" javaclass="com.wm.util.Values">
+        <value name="tableName">OE_LOTSERIALS_IFACE_ALL</value>
+        <value name="required">false</value>
+      </record>
+      <record name="table3" javaclass="com.wm.util.Values">
+        <value name="tableName">OE_CREDITS_IFACE_ALL</value>
+        <value name="required">false</value>
+      </record>
+      <record name="table4" javaclass="com.wm.util.Values">
+        <value name="tableName">OE_PRICE_ADJS_IFACE_ALL</value>
+        <value name="required">false</value>
+      </record>
+    </record>
+    <record name="PODocuments" javaclass="com.wm.util.Values">
+      <value name="transactionName">PODocuments</value>
+      <value name="transactionType">IN</value>
+      <value name="errSQL">SELECT PO_INTERFACE_ERRORS.INTERFACE_TYPE, PO_INTERFACE_ERRORS.INTERFACE_TRANSACTION_ID, PO_INTERFACE_ERRORS.COLUMN_NAME,
+PO_INTERFACE_ERRORS.ERROR_MESSAGE,
+PO_INTERFACE_ERRORS.PROCESSING_DATE,
+PO_INTERFACE_ERRORS.INTERFACE_HEADER_ID, PO_INTERFACE_ERRORS.INTERFACE_LINE_ID 
+from 
+   PO_INTERFACE_ERRORS, PO_HEADERS_INTERFACE, FND_USER_VIEW
+where
+  FND_USER_VIEW.USER_NAME LIKE '&amp;WM_USER*' AND
+  PO_HEADERS_INTERFACE.CREATED_BY = FND_USER_VIEW.USER_ID AND
+  PO_HEADERS_INTERFACE.INTERFACE_HEADER_ID = PO_INTERFACE_ERRORS.INTERFACE_HEADER_ID AND
+  NVL('&amp;WM_USER*', NULL) IS NOT NULL
+UNION
+SELECT PO_INTERFACE_ERRORS.INTERFACE_TYPE, PO_INTERFACE_ERRORS.INTERFACE_TRANSACTION_ID, PO_INTERFACE_ERRORS.COLUMN_NAME,
+PO_INTERFACE_ERRORS.ERROR_MESSAGE,
+PO_INTERFACE_ERRORS.PROCESSING_DATE,
+PO_INTERFACE_ERRORS.INTERFACE_HEADER_ID, PO_INTERFACE_ERRORS.INTERFACE_LINE_ID
+from PO_INTERFACE_ERRORS, PO_HEADERS_INTERFACE
+where 
+  PO_HEADERS_INTERFACE.CREATED_BY IS NULL AND
+  PO_HEADERS_INTERFACE.INTERFACE_HEADER_ID = PO_INTERFACE_ERRORS.INTERFACE_HEADER_ID AND
+  NVL('&amp;WM_USER*', NULL) IS NULL
+</value>
+      <record name="table0" javaclass="com.wm.util.Values">
+        <value name="tableName">PO_HEADERS_INTERFACE</value>
+        <value name="required">true</value>
+      </record>
+      <record name="table1" javaclass="com.wm.util.Values">
+        <value name="tableName">PO_LINES_INTERFACE</value>
+        <value name="required">true</value>
+      </record>
+    </record>
+    <record name="POReceiving" javaclass="com.wm.util.Values">
+      <value name="transactionName">POReceiving</value>
+      <value name="transactionType">IN</value>
+      <value name="errSQL">SELECT PO_INTERFACE_ERRORS.INTERFACE_TYPE, PO_INTERFACE_ERRORS.INTERFACE_TRANSACTION_ID, PO_INTERFACE_ERRORS.COLUMN_NAME, PO_INTERFACE_ERRORS.ERROR_MESSAGE from PO_INTERFACE_ERRORS,RCV_HEADERS_INTERFACE , FND_USER_VIEW WHERE RCV_HEADERS_INTERFACE.CREATED_BY = FND_USER_VIEW.USER_ID and FND_USER_VIEW.USER_NAME LIKE NVL('&amp;WM_USER*','%')  AND RCV_HEADERS_INTERFACE.PROCESSING_REQUEST_ID= PO_INTERFACE_ERRORS.REQUEST_ID
+UNION
+SELECT PO_INTERFACE_ERRORS.INTERFACE_TYPE, PO_INTERFACE_ERRORS.INTERFACE_TRANSACTION_ID, PO_INTERFACE_ERRORS.COLUMN_NAME, PO_INTERFACE_ERRORS.ERROR_MESSAGE FROM PO_INTERFACE_ERRORS,RCV_TRANSACTIONS_INTERFACE, FND_USER_VIEW WHERE RCV_TRANSACTIONS_INTERFACE.CREATED_BY = FND_USER_VIEW.USER_ID AND    FND_USER_VIEW.USER_NAME like NVL('&amp;WM_USER*','%')  AND RCV_TRANSACTIONS_INTERFACE.PROCESSING_REQUEST_ID=PO_INTERFACE_ERRORS.REQUEST_ID
+
+</value>
+      <record name="table0" javaclass="com.wm.util.Values">
+        <value name="tableName">RCV_HEADERS_INTERFACE</value>
+        <value name="required">true</value>
+      </record>
+      <record name="table1" javaclass="com.wm.util.Values">
+        <value name="tableName">RCV_TRANSACTIONS_INTERFACE</value>
+        <value name="required">true</value>
+      </record>
+    </record>
+    <record name="PORequisitions" javaclass="com.wm.util.Values">
+      <value name="transactionName">PORequisitions</value>
+      <value name="transactionType">IN</value>
+      <value name="errSQL">SELECT PO_INTERFACE_ERRORS.INTERFACE_TYPE, PO_INTERFACE_ERRORS.INTERFACE_TRANSACTION_ID, PO_INTERFACE_ERRORS.COLUMN_NAME, PO_INTERFACE_ERRORS.ERROR_MESSAGE, PO_REQUISITIONS_INTERFACE_ALL.SOURCE_TYPE_CODE, PO_REQUISITIONS_INTERFACE_ALL.QUANTITY
+FROM PO_INTERFACE_ERRORS,PO_REQUISITIONS_INTERFACE_ALL, FND_USER_VIEW  WHERE PO_REQUISITIONS_INTERFACE_ALL.CREATED_BY = FND_USER_VIEW.USER_ID AND PO_REQUISITIONS_INTERFACE_ALL.TRANSACTION_ID = PO_INTERFACE_ERRORS.INTERFACE_TRANSACTION_ID AND 
+FND_USER_VIEW.USER_NAME LIKE '&amp;WM_USER*' AND
+NVL('&amp;WM_USER*', NULL) IS NOT NULL
+UNION
+SELECT PO_INTERFACE_ERRORS.INTERFACE_TYPE, PO_INTERFACE_ERRORS.INTERFACE_TRANSACTION_ID, PO_INTERFACE_ERRORS.COLUMN_NAME, PO_INTERFACE_ERRORS.ERROR_MESSAGE, PO_REQUISITIONS_INTERFACE_ALL.SOURCE_TYPE_CODE, PO_REQUISITIONS_INTERFACE_ALL.QUANTITY
+FROM PO_INTERFACE_ERRORS,PO_REQUISITIONS_INTERFACE_ALL, FND_USER_VIEW  WHERE PO_REQUISITIONS_INTERFACE_ALL.CREATED_BY IS NULL AND PO_REQUISITIONS_INTERFACE_ALL.TRANSACTION_ID = PO_INTERFACE_ERRORS.INTERFACE_TRANSACTION_ID AND 
+NVL('&amp;WM_USER*', NULL) IS NULL
+</value>
+      <record name="table0" javaclass="com.wm.util.Values">
+        <value name="tableName">PO_REQUISITIONS_INTERFACE_ALL</value>
+        <value name="required">true</value>
+      </record>
+      <record name="table1" javaclass="com.wm.util.Values">
+        <value name="tableName">PO_REQ_DIST_INTERFACE_ALL</value>
+        <value name="required">false</value>
+      </record>
+    </record>
+    <record name="PORescheduleRequisitions" javaclass="com.wm.util.Values">
+      <value name="transactionName">PORescheduleRequisitions</value>
+      <value name="transactionType">IN</value>
+      <value name="errSQL"></value>
+      <record name="table0" javaclass="com.wm.util.Values">
+        <value name="tableName">PO_RESCHEDULE_INTERFACE</value>
+        <value name="required">true</value>
+      </record>
+    </record>
+  </record>
+  <record name="FILE_INFO" javaclass="com.wm.util.Values">
+    <value name="OA_RELEASE">11i</value>
+    <value name="DESCRIPTION">Oracle Applications 11.5 transactions</value>
+    <value name="CREATE_HOST">webMethods</value>
+    <value name="CREATE_IM_VER">3.0</value>
+    <value name="CREATE_DATE">Oct 15, 2001 5:40:52 PM</value>
+  </record>
+</Values>

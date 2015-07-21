@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<IDataXMLCoder version="1.0">
+  <record javaclass="com.wm.data.ISMemDataImpl">
+    <record name="transactions" javaclass="com.wm.data.ISMemDataImpl">
+      <record name="checkJournalImportStatus" javaclass="com.wm.data.ISMemDataImpl">
+        <value name="transactionName">checkJournalImportStatus</value>
+        <value name="transactionType">OUT</value>
+        <null name="AcknowledgeSQL"/>
+        <record name="checkJournalImportStatus" javaclass="com.wm.util.Values">
+          <value name="SQLOut">SELECT COUNT(*) as ROWCOUNT FROM gl_interface WHERE request_id= '&amp;REQUEST_ID*'  AND status &lt;&gt; 'NEW'</value>
+          <value name="SQLAlias">checkJournalImportStatus</value>
+          <value name="SQLRelation"></value>
+        </record>
+      </record>
+      <record name="execJournalConcProg" javaclass="com.wm.data.ISMemDataImpl">
+        <value name="transactionName">execJournalConcProg</value>
+        <value name="transactionType">OUT</value>
+        <null name="AcknowledgeSQL"/>
+        <record name="EXEC_CONC_PROG" javaclass="com.wm.util.Values">
+          <value name="SQLOut">WM_JOURNAL_IMP_HANDLER_PKG.WM_HANDLE_JOURNAL</value>
+          <value name="SQLAlias">EXEC_CONC_PROG</value>
+          <value name="SQLRelation"></value>
+        </record>
+      </record>
+      <record name="getBudgetVersionId" javaclass="com.wm.data.ISMemDataImpl">
+        <value name="transactionName">getBudgetVersionId</value>
+        <value name="transactionType">OUT</value>
+        <null name="AcknowledgeSQL"/>
+        <record name="getBudgetVersionId" javaclass="com.wm.util.Values">
+          <value name="SQLOut">SELECT budget_version_id FROM  gl_budget_versions WHERE budget_name='&amp;BUDGET_NAME*'</value>
+          <value name="SQLAlias">getBudgetVersionId</value>
+          <value name="SQLRelation"></value>
+        </record>
+      </record>
+      <record name="getEncumTypeId" javaclass="com.wm.data.ISMemDataImpl">
+        <value name="transactionName">getEncumTypeId</value>
+        <value name="transactionType">OUT</value>
+        <null name="AcknowledgeSQL"/>
+        <record name="getEncumTypeId" javaclass="com.wm.util.Values">
+          <value name="SQLOut">SELECT encumbrance_type_id FROM  gl_encumbrance_types WHERE encumbrance_type='&amp;ENCUMBRANCE_TYPE*'</value>
+          <value name="SQLAlias">getEncumTypeId</value>
+          <value name="SQLRelation"></value>
+        </record>
+      </record>
+      <record name="getSOBId" javaclass="com.wm.data.ISMemDataImpl">
+        <value name="transactionName">getSOBId</value>
+        <value name="transactionType">OUT</value>
+        <null name="AcknowledgeSQL"/>
+        <record name="getSOBId" javaclass="com.wm.util.Values">
+          <value name="SQLOut">SELECT set_of_books_id FROM GL_SETS_OF_BOOKS WHERE SHORT_NAME='&amp;SHORT_NAME*'</value>
+          <value name="SQLAlias">getSOBId</value>
+          <value name="SQLRelation"></value>
+        </record>
+      </record>
+    </record>
+    <record name="FILE_INFO" javaclass="com.wm.data.ISMemDataImpl">
+      <value name="OA_RELEASE">1213</value>
+      <value name="DESCRIPTION"></value>
+      <value name="CREATE_HOST">webMethods</value>
+      <value name="CREATE_IM_VER"></value>
+      <value name="CREATE_DATE">May 2, 2005 4:38:33 PM</value>
+    </record>
+  </record>
+</IDataXMLCoder>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <record name="transactions" javaclass="com.wm.util.Values">
+    <record name="checkCustomerItemImportStatus" javaclass="com.wm.util.Values">
+      <value name="transactionName">checkCustomerItemImportStatus</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="COUNT_MTL_CI" javaclass="com.wm.util.Values">
+        <value name="SQLOut">SELECT count(*) AS ROWCOUNT FROM MTL_CI_INTERFACE WHERE PROCESS_MODE = 2</value>
+        <value name="SQLAlias">COUNT_MTL_CI</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+    <record name="execCustomerItemConcProg" javaclass="com.wm.util.Values">
+      <value name="transactionName">execCustomerItemConcProg</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="EXECCUSTITEM" javaclass="com.wm.util.Values">
+        <value name="SQLOut"> WM_INV_CTITEM_IMP_HANDLER_PKG.WM_HANDLE_CUSTITEM</value>
+        <value name="SQLAlias">EXECCUSTITEM</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+  </record>
+  <record name="FILE_INFO" javaclass="com.wm.util.Values">
+    <value name="OA_RELEASE">1159</value>
+    <value name="DESCRIPTION"></value>
+    <value name="CREATE_HOST">webMethods</value>
+    <value name="CREATE_IM_VER">3.1</value>
+    <value name="CREATE_DATE">May 5, 2004 12:55:20 PM</value>
+  </record>
+</Values>

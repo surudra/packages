@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <record name="transactions" javaclass="com.wm.util.Values">
+    <record name="checkAPInvoiceImportStatus" javaclass="com.wm.util.Values">
+      <value name="transactionName">checkAPInvoiceImportStatus</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="checkAPInvocieImportStatus" javaclass="com.wm.util.Values">
+        <value name="SQLOut">SELECT COUNT(*) AS ROWCOUNT FROM AP_EXPENSE_REPORT_HEADERS_ALL WHERE REJECT_CODE IS NOT NULL AND SOURCE = '&amp;SOURCE*'</value>
+        <value name="SQLAlias">checkAPInvocieImportStatus</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+    <record name="execAPInvoiceConcProg" javaclass="com.wm.util.Values">
+      <value name="transactionName">execAPInvoiceConcProg</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="WM_HANDLE_OPENAP" javaclass="com.wm.util.Values">
+        <value name="SQLOut">WM_AP_INV_IMP_HANDLER_PKG.WM_HANDLE_OPENAP</value>
+        <value name="SQLAlias">WM_HANDLE_OPENAP</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+    <record name="getAWTGroupId" javaclass="com.wm.util.Values">
+      <value name="transactionName">getAWTGroupId</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="AWT_GROUP_ID" javaclass="com.wm.util.Values">
+        <value name="SQLOut">SELECT GROUP_ID FROM AP_AWT_GROUPS WHERE NAME='&amp;AWT_GROUP_NAME*'</value>
+        <value name="SQLAlias">AWT_GROUP_ID</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+    <record name="getHROrgId" javaclass="com.wm.util.Values">
+      <value name="transactionName">getHROrgId</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="ORG_ID" javaclass="com.wm.util.Values">
+        <value name="SQLOut">SELECT ORGANIZATION_ID FROM HR_ALL_ORGANIZATION_UNITS WHERE name='&amp;ORG_NAME*'</value>
+        <value name="SQLAlias">ORG_ID</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+    <record name="getSOBId" javaclass="com.wm.util.Values">
+      <value name="transactionName">getSOBId</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="SOB" javaclass="com.wm.util.Values">
+        <value name="SQLOut">SELECT set_of_books_id FROM GL_SETS_OF_BOOKS WHERE NAME='&amp;NAME*'</value>
+        <value name="SQLAlias">SOB</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+    <record name="getVendorId" javaclass="com.wm.util.Values">
+      <value name="transactionName">getVendorId</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="VENDOR_ID" javaclass="com.wm.util.Values">
+        <value name="SQLOut">SELECT VENDOR_ID FROM PO_VENDORS WHERE VENDOR_NAME='&amp;VENDOR_NAME*'</value>
+        <value name="SQLAlias">VENDOR_ID</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+  </record>
+  <record name="FILE_INFO" javaclass="com.wm.util.Values">
+    <value name="OA_RELEASE">107SC</value>
+    <value name="DESCRIPTION">AP Invoice Utils Transaction Definition</value>
+    <value name="CREATE_HOST">webMethods</value>
+    <value name="CREATE_IM_VER">3.0</value>
+    <value name="CREATE_DATE">Nov 29, 2002 4:10:45 PM</value>
+  </record>
+</Values>

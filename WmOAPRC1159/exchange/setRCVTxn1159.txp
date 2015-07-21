@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <record name="transactions" javaclass="com.wm.util.Values">
+    <record name="setRCVTxn" javaclass="com.wm.util.Values">
+      <value name="transactionName">setRCVTxn</value>
+      <value name="transactionType">IN</value>
+      <value name="errSQL">SELECT  FNDU.USER_NAME, POE.INTERFACE_TYPE,  POE.INTERFACE_TRANSACTION_ID,  POE.COLUMN_NAME,  POE.ERROR_MESSAGE  FROM  PO_INTERFACE_ERRORS POE, RCV_HEADERS_INTERFACE POI,  RCV_TRANSACTIONS_INTERFACE PTI,  FND_USER_VIEW FNDU WHERE  POI.CREATED_BY = FNDU.USER_ID    AND POI.HEADER_INTERFACE_ID = PTI.HEADER_INTERFACE_ID AND (POI.HEADER_INTERFACE_ID = POE.INTERFACE_HEADER_ID OR  PTI.INTERFACE_TRANSACTION_ID = POE.INTERFACE_TRANSACTION_ID) AND POE.REQUEST_ID ='&amp;P_REQUEST_ID*'</value>
+      <record name="table0" javaclass="com.wm.util.Values">
+        <value name="tableName">RCV_HEADERS_INTERFACE</value>
+        <value name="required">true</value>
+      </record>
+      <record name="table1" javaclass="com.wm.util.Values">
+        <value name="tableName">RCV_TRANSACTIONS_INTERFACE</value>
+        <value name="required">true</value>
+      </record>
+    </record>
+  </record>
+  <record name="FILE_INFO" javaclass="com.wm.util.Values">
+    <value name="OA_RELEASE">1159</value>
+    <value name="DESCRIPTION"></value>
+    <value name="CREATE_HOST">ReleaseOA.webmethods.com</value>
+    <value name="CREATE_IM_VER">3.0</value>
+    <value name="CREATE_DATE">Aug 25, 2004 3:38:42 PM</value>
+  </record>
+</Values>

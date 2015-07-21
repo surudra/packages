@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<IDataXMLCoder version="1.0">
+  <record javaclass="com.wm.data.ISMemDataImpl">
+    <record name="transactions" javaclass="com.wm.data.ISMemDataImpl">
+      <record name="setCycleCountEntryTxn" javaclass="com.wm.data.ISMemDataImpl">
+        <value name="transactionName">setCycleCountEntryTxn</value>
+        <value name="transactionType">IN</value>
+        <value name="errSQL">SELECT ERR.REQUEST_ID,ERR.PROGRAM_APPLICATION_ID,  ERR.PROGRAM_ID,INTERFACE_ERROR_ID,MCCH.CYCLE_COUNT_HEADER_NAME,  ERR.CC_ENTRY_INTERFACE_ID,  ERROR_MESSAGE,ERROR_COLUMN_NAME, ERROR_TABLE_NAME,MESSAGE_NAME  FROM  MTL_CC_INTERFACE_ERRORS ERR, MTL_CC_ENTRIES_INTERFACE INTF, MTL_CYCLE_COUNT_HEADERS MCCH  WHERE  ERR.CC_ENTRY_INTERFACE_ID = INTF.CC_ENTRY_INTERFACE_ID  AND MCCH.CYCLE_COUNT_HEADER_ID = INTF.CYCLE_COUNT_HEADER_ID  AND MCCH.CYCLE_COUNT_HEADER_NAME = '&amp;CYCLE_COUNT_HEADER_NAME*' </value>
+        <record name="table0" javaclass="com.wm.data.ISMemDataImpl">
+          <value name="tableName">MTL_CC_ENTRIES_INTERFACE</value>
+          <value name="required">true</value>
+        </record>
+      </record>
+    </record>
+    <record name="FILE_INFO" javaclass="com.wm.data.ISMemDataImpl">
+      <value name="OA_RELEASE">1213</value>
+      <value name="DESCRIPTION"></value>
+      <value name="CREATE_HOST">webmethods</value>
+      <value name="CREATE_IM_VER"></value>
+      <value name="CREATE_DATE">May 5, 2005 7:33:23 PM</value>
+    </record>
+  </record>
+</IDataXMLCoder>

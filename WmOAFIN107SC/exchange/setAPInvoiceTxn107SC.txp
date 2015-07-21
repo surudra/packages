@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <record name="transactions" javaclass="com.wm.util.Values">
+    <record name="setAPInvoiceTxn" javaclass="com.wm.util.Values">
+      <value name="transactionName">setAPInvoiceTxn</value>
+      <value name="transactionType">IN</value>
+      <value name="errSQL">SELECT REJECT_CODE,
+REPORT_HEADER_ID,
+INVOICE_NUM, 
+SOURCE, 
+ACCOUNTING_DATE, 
+VOUCHER_NUM,
+VENDOR_NAME,
+ADDRESS_LINE1,
+ADDRESS_LINE2,
+ADDRESS_LINE3,
+CITY,
+STATE,
+ZIP,
+COUNTRY
+FROM AP_EXPENSE_REPORT_HEADERS_ALL H,PO_VENDORS V,PO_VENDOR_SITES_ALL S
+WHERE SOURCE='&amp;SOURCE*'
+AND V.VENDOR_ID=H.VENDOR_ID
+AND S.VENDOR_SITE_ID=H.VENDOR_SITE_ID
+AND REJECT_CODE IS NOT NULL</value>
+      <record name="table0" javaclass="com.wm.util.Values">
+        <value name="tableName">AP_EXPENSE_REPORT_HEADERS_ALL</value>
+        <value name="required">true</value>
+      </record>
+      <record name="table1" javaclass="com.wm.util.Values">
+        <value name="tableName">AP_EXPENSE_REPORT_LINES_ALL</value>
+        <value name="required">false</value>
+      </record>
+    </record>
+  </record>
+  <record name="FILE_INFO" javaclass="com.wm.util.Values">
+    <value name="OA_RELEASE">107SC</value>
+    <value name="DESCRIPTION">AP Invoice Transaction Definition</value>
+    <value name="CREATE_HOST">webMethods</value>
+    <value name="CREATE_IM_VER">3.0</value>
+    <value name="CREATE_DATE">Nov 29, 2002 4:09:16 PM</value>
+  </record>
+</Values>

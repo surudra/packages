@@ -1,0 +1,74 @@
+        function removeListener(form, key, pkg, name) {
+            var msg = "OK to remove listener "+name+"?";
+            if ( confirm(msg)) {
+                form.listenerKey.value = key;
+                form.pkg.value = pkg;
+                form.operation.value = "delete";
+                return true;
+            } else
+                return false;
+        }
+
+        function editListener(form, listener, portname, pkg, factory, enabled) {
+                form.listenerKey.value = listener;
+                form.portName.value = portname;
+                form.pkg.value = pkg;
+                form.factoryKey.value = factory;
+                form.operation.value = "edit";
+                form.mode.value="view";
+                form.listening.value = enabled;
+                form.submit();
+                return false;
+        }
+
+        function enableListener(form, op, listener, pkg, name) {
+        		if(op == 'enable') {
+            	var msg = "OK to enable listener "+name;
+            } else {
+            	var msg = "OK to disable listener "+name;
+            }
+            if ( confirm(msg) ) {
+                form.listenerKey.value = listener;
+                form.pkg.value = pkg;
+                form.operation.value = op;
+                // form.submit();
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+    function disableListeners(serverType,listenerType,msg)
+    {
+            if ( confirm(msg))
+      {
+        document.disablelisteners.serverType.value=serverType;
+        document.disablelisteners.listenerType.value=listenerType;
+                document.disablelisteners.submit();
+                return true;
+            } else
+                return false;
+    }
+
+    function removeConnection(id,endPoint,alias,form)
+    {
+      var msg = "OK to remove connection to "+endPoint+" ?";
+
+      if ( confirm(msg))
+      {
+        if(form == 'aliasconnections')
+        {
+          document.aliasconnections.id.value=id;
+          document.aliasconnections.alias.value=alias;
+          document.aliasconnections.submit();
+        }
+        else if(form == 'remoteconnections')
+        {
+          document.remoteconnections.id.value=id;
+          document.remoteconnections.alias.value=alias;
+          document.remoteconnections.submit();
+        }
+        return true;
+      } else
+      return false;
+    }

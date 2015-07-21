@@ -1,0 +1,662 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<FLOW VERSION="3.0" CLEANUP="true">
+  <COMMENT></COMMENT>
+
+  <!-- nodes -->
+
+<INVOKE TIMEOUT="" SERVICE="commonOA107SC.custom:getOASystemDateObject" VALIDATE-IN="$none" VALIDATE-OUT="$none">
+  <COMMENT></COMMENT>
+
+  <!-- nodes -->
+
+<MAP MODE="INPUT">
+</MAP>
+
+<MAP MODE="OUTPUT">
+</MAP>
+</INVOKE>
+
+<INVOKE TIMEOUT="" SERVICE="commonOA107SC.utils:getOracleAppsUserId" VALIDATE-IN="$none" VALIDATE-OUT="$none">
+  <COMMENT></COMMENT>
+
+  <!-- nodes -->
+
+<MAP MODE="INPUT">
+  <MAPTARGET>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_name">in</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="field_opt">false</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">queryParams</value>
+        <value name="field_type">record</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">false</value>
+        <array name="rec_fields" type="record" depth="1">
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">ORACLE_APPS_USER_NAME</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="field_opt">false</value>
+          </record>
+        </array>
+        <value name="rec_closed">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">$dbAlias</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">false</value>
+      </record>
+    </array>
+    <value name="rec_closed">false</value>
+  </record>
+</Values>
+</MAPTARGET>
+  <MAPSOURCE>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="field_opt">false</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">$dbAlias</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">OracleAppsUserName</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">custItemBizDoc</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">false</value>
+        <value name="rec_closed">false</value>
+        <value name="rec_ref">inventory107SC.intoOA.customerItem.rec:customerItemBizDoc</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">SYSDATE</value>
+        <value name="field_type">object</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">false</value>
+      </record>
+    </array>
+    <value name="rec_closed">false</value>
+  </record>
+</Values>
+</MAPSOURCE>
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/OracleAppsUserName;1;0" TO="/queryParams;2;0/ORACLE_APPS_USER_NAME;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="OUTPUT">
+  <MAPTARGET>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="field_opt">false</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">queryParams</value>
+        <value name="field_type">record</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">false</value>
+        <array name="rec_fields" type="record" depth="1">
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">ORACLE_APPS_USER_NAME</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="field_opt">false</value>
+          </record>
+        </array>
+        <value name="rec_closed">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">$dbAlias</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">OracleAppsUserName</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">custItemBizDoc</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">false</value>
+        <value name="rec_closed">false</value>
+        <value name="rec_ref">inventory107SC.intoOA.customerItem.rec:customerItemBizDoc</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">SYSDATE</value>
+        <value name="field_type">object</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">USER_ID</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">false</value>
+      </record>
+    </array>
+    <value name="rec_closed">false</value>
+  </record>
+</Values>
+</MAPTARGET>
+  <MAPSOURCE>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_name">out</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="field_opt">false</value>
+    <list name="rec_fields">
+    </list>
+    <value name="rec_closed">false</value>
+  </record>
+</Values>
+</MAPSOURCE>
+
+  <!-- nodes -->
+
+<MAPDELETE NAME="Dropper" FIELD="/OracleAppsUserName;1;0">
+</MAPDELETE>
+
+<MAPDELETE NAME="Dropper" FIELD="/queryParams;2;0">
+</MAPDELETE>
+</MAP>
+</INVOKE>
+
+<LOOP TIMEOUT="" IN-ARRAY="/custItemBizDoc/CUST_ITEM" OUT-ARRAY="/custItemRecordSet/MTL_CI_INTERFACE">
+  <COMMENT></COMMENT>
+
+  <!-- nodes -->
+
+<MAP TIMEOUT="" MODE="STANDALONE">
+  <COMMENT>Map Bizdoc to Interface table</COMMENT>
+  <MAPTARGET>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="field_opt">false</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">$dbAlias</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">custItemBizDoc</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">false</value>
+        <value name="rec_closed">false</value>
+        <value name="rec_ref">inventory107SC.intoOA.customerItem.rec:customerItemBizDoc</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">SYSDATE</value>
+        <value name="field_type">object</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">USER_ID</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">custItemRecordSet</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">false</value>
+        <value name="rec_closed">false</value>
+        <value name="rec_ref">inventory107SC.intoOA.customerItem.rec:setCustomerItemTxnInputRec</value>
+      </record>
+    </array>
+    <value name="rec_closed">false</value>
+  </record>
+</Values>
+</MAPTARGET>
+  <MAPSOURCE>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="field_opt">false</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">$dbAlias</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">custItemBizDoc</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">false</value>
+        <value name="rec_closed">false</value>
+        <value name="rec_ref">inventory107SC.intoOA.customerItem.rec:customerItemBizDoc</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">SYSDATE</value>
+        <value name="field_type">object</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">USER_ID</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">custItemRecordSet</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">false</value>
+        <value name="rec_closed">false</value>
+        <value name="rec_ref">inventory107SC.intoOA.customerItem.rec:setCustomerItemTxnInputRec</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">$iteration</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">false</value>
+      </record>
+    </array>
+    <value name="rec_closed">false</value>
+  </record>
+</Values>
+</MAPSOURCE>
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/custItemBizDoc;4;0;inventory107SC.intoOA.customerItem.rec:customerItemBizDoc/CUST_ITEM;2;0/CUSTOMER_NAME;1;0" TO="/custItemRecordSet;4;0;inventory107SC.intoOA.customerItem.rec:setCustomerItemTxnInputRec/MTL_CI_INTERFACE;2;0/CUSTOMER_NAME;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/custItemBizDoc;4;0;inventory107SC.intoOA.customerItem.rec:customerItemBizDoc/CUST_ITEM;2;0/CUSTOMER_CATEGORY_CODE;1;0" TO="/custItemRecordSet;4;0;inventory107SC.intoOA.customerItem.rec:setCustomerItemTxnInputRec/MTL_CI_INTERFACE;2;0/CUSTOMER_CATEGORY_CODE;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/custItemBizDoc;4;0;inventory107SC.intoOA.customerItem.rec:customerItemBizDoc/CUST_ITEM;2;0/ADDRESS1;1;0" TO="/custItemRecordSet;4;0;inventory107SC.intoOA.customerItem.rec:setCustomerItemTxnInputRec/MTL_CI_INTERFACE;2;0/ADDRESS1;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/custItemBizDoc;4;0;inventory107SC.intoOA.customerItem.rec:customerItemBizDoc/CUST_ITEM;2;0/ADDRESS2;1;0" TO="/custItemRecordSet;4;0;inventory107SC.intoOA.customerItem.rec:setCustomerItemTxnInputRec/MTL_CI_INTERFACE;2;0/ADDRESS2;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/custItemBizDoc;4;0;inventory107SC.intoOA.customerItem.rec:customerItemBizDoc/CUST_ITEM;2;0/ADDRESS3;1;0" TO="/custItemRecordSet;4;0;inventory107SC.intoOA.customerItem.rec:setCustomerItemTxnInputRec/MTL_CI_INTERFACE;2;0/ADDRESS3;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/custItemBizDoc;4;0;inventory107SC.intoOA.customerItem.rec:customerItemBizDoc/CUST_ITEM;2;0/ADDRESS4;1;0" TO="/custItemRecordSet;4;0;inventory107SC.intoOA.customerItem.rec:setCustomerItemTxnInputRec/MTL_CI_INTERFACE;2;0/ADDRESS4;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/custItemBizDoc;4;0;inventory107SC.intoOA.customerItem.rec:customerItemBizDoc/CUST_ITEM;2;0/CITY;1;0" TO="/custItemRecordSet;4;0;inventory107SC.intoOA.customerItem.rec:setCustomerItemTxnInputRec/MTL_CI_INTERFACE;2;0/CITY;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/custItemBizDoc;4;0;inventory107SC.intoOA.customerItem.rec:customerItemBizDoc/CUST_ITEM;2;0/STATE;1;0" TO="/custItemRecordSet;4;0;inventory107SC.intoOA.customerItem.rec:setCustomerItemTxnInputRec/MTL_CI_INTERFACE;2;0/STATE;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/custItemBizDoc;4;0;inventory107SC.intoOA.customerItem.rec:customerItemBizDoc/CUST_ITEM;2;0/COUNTY;1;0" TO="/custItemRecordSet;4;0;inventory107SC.intoOA.customerItem.rec:setCustomerItemTxnInputRec/MTL_CI_INTERFACE;2;0/COUNTY;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/custItemBizDoc;4;0;inventory107SC.intoOA.customerItem.rec:customerItemBizDoc/CUST_ITEM;2;0/COUNTRY;1;0" TO="/custItemRecordSet;4;0;inventory107SC.intoOA.customerItem.rec:setCustomerItemTxnInputRec/MTL_CI_INTERFACE;2;0/COUNTRY;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/custItemBizDoc;4;0;inventory107SC.intoOA.customerItem.rec:customerItemBizDoc/CUST_ITEM;2;0/POSTAL_CODE;1;0" TO="/custItemRecordSet;4;0;inventory107SC.intoOA.customerItem.rec:setCustomerItemTxnInputRec/MTL_CI_INTERFACE;2;0/POSTAL_CODE;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/custItemBizDoc;4;0;inventory107SC.intoOA.customerItem.rec:customerItemBizDoc/CUST_ITEM;2;0/CUSTOMER_ITEM_NUMBER;1;0" TO="/custItemRecordSet;4;0;inventory107SC.intoOA.customerItem.rec:setCustomerItemTxnInputRec/MTL_CI_INTERFACE;2;0/CUSTOMER_ITEM_NUMBER;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/custItemBizDoc;4;0;inventory107SC.intoOA.customerItem.rec:customerItemBizDoc/CUST_ITEM;2;0/ITEM_DEFINITION_LEVEL;1;0" TO="/custItemRecordSet;4;0;inventory107SC.intoOA.customerItem.rec:setCustomerItemTxnInputRec/MTL_CI_INTERFACE;2;0/ITEM_DEFINITION_LEVEL;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/custItemBizDoc;4;0;inventory107SC.intoOA.customerItem.rec:customerItemBizDoc/CUST_ITEM;2;0/CUSTOMER_ITEM_DESC;1;0" TO="/custItemRecordSet;4;0;inventory107SC.intoOA.customerItem.rec:setCustomerItemTxnInputRec/MTL_CI_INTERFACE;2;0/CUSTOMER_ITEM_DESC;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/custItemBizDoc;4;0;inventory107SC.intoOA.customerItem.rec:customerItemBizDoc/CUST_ITEM;2;0/MODEL_CUSTOMER_ITEM_NUMBER;1;0" TO="/custItemRecordSet;4;0;inventory107SC.intoOA.customerItem.rec:setCustomerItemTxnInputRec/MTL_CI_INTERFACE;2;0/MODEL_CUSTOMER_ITEM_NUMBER;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/custItemBizDoc;4;0;inventory107SC.intoOA.customerItem.rec:customerItemBizDoc/CUST_ITEM;2;0/COMMODITY_CODE;1;0" TO="/custItemRecordSet;4;0;inventory107SC.intoOA.customerItem.rec:setCustomerItemTxnInputRec/MTL_CI_INTERFACE;2;0/COMMODITY_CODE;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/custItemBizDoc;4;0;inventory107SC.intoOA.customerItem.rec:customerItemBizDoc/CUST_ITEM;2;0/MASTER_CONTAINER;1;0" TO="/custItemRecordSet;4;0;inventory107SC.intoOA.customerItem.rec:setCustomerItemTxnInputRec/MTL_CI_INTERFACE;2;0/MASTER_CONTAINER;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/custItemBizDoc;4;0;inventory107SC.intoOA.customerItem.rec:customerItemBizDoc/CUST_ITEM;2;0/CONTAINER_ITEM_ORG_NAME;1;0" TO="/custItemRecordSet;4;0;inventory107SC.intoOA.customerItem.rec:setCustomerItemTxnInputRec/MTL_CI_INTERFACE;2;0/CONTAINER_ITEM_ORG_NAME;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/custItemBizDoc;4;0;inventory107SC.intoOA.customerItem.rec:customerItemBizDoc/CUST_ITEM;2;0/DETAIL_CONTAINER;1;0" TO="/custItemRecordSet;4;0;inventory107SC.intoOA.customerItem.rec:setCustomerItemTxnInputRec/MTL_CI_INTERFACE;2;0/DETAIL_CONTAINER;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/custItemBizDoc;4;0;inventory107SC.intoOA.customerItem.rec:customerItemBizDoc/CUST_ITEM;2;0/MIN_FILL_PERCENTAGE;1;0" TO="/custItemRecordSet;4;0;inventory107SC.intoOA.customerItem.rec:setCustomerItemTxnInputRec/MTL_CI_INTERFACE;2;0/MIN_FILL_PERCENTAGE;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/custItemBizDoc;4;0;inventory107SC.intoOA.customerItem.rec:customerItemBizDoc/CUST_ITEM;2;0/DEP_PLAN_REQUIRED_FLAG;1;0" TO="/custItemRecordSet;4;0;inventory107SC.intoOA.customerItem.rec:setCustomerItemTxnInputRec/MTL_CI_INTERFACE;2;0/DEP_PLAN_REQUIRED_FLAG;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/custItemBizDoc;4;0;inventory107SC.intoOA.customerItem.rec:customerItemBizDoc/CUST_ITEM;2;0/DEP_PLAN_PRIOR_BLD_FLAG;1;0" TO="/custItemRecordSet;4;0;inventory107SC.intoOA.customerItem.rec:setCustomerItemTxnInputRec/MTL_CI_INTERFACE;2;0/DEP_PLAN_PRIOR_BLD_FLAG;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/custItemBizDoc;4;0;inventory107SC.intoOA.customerItem.rec:customerItemBizDoc/CUST_ITEM;2;0/INACTIVE_FLAG;1;0" TO="/custItemRecordSet;4;0;inventory107SC.intoOA.customerItem.rec:setCustomerItemTxnInputRec/MTL_CI_INTERFACE;2;0/INACTIVE_FLAG;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/custItemBizDoc;4;0;inventory107SC.intoOA.customerItem.rec:customerItemBizDoc/CUST_ITEM;2;0/DEMAND_TOLERANCE_POSITIVE;1;0" TO="/custItemRecordSet;4;0;inventory107SC.intoOA.customerItem.rec:setCustomerItemTxnInputRec/MTL_CI_INTERFACE;2;0/DEMAND_TOLERANCE_POSITIVE;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/custItemBizDoc;4;0;inventory107SC.intoOA.customerItem.rec:customerItemBizDoc/CUST_ITEM;2;0/DEMAND_TOLERANCE_NEGATIVE;1;0" TO="/custItemRecordSet;4;0;inventory107SC.intoOA.customerItem.rec:setCustomerItemTxnInputRec/MTL_CI_INTERFACE;2;0/DEMAND_TOLERANCE_NEGATIVE;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/SYSDATE;3;0" TO="/custItemRecordSet;4;0;inventory107SC.intoOA.customerItem.rec:setCustomerItemTxnInputRec/MTL_CI_INTERFACE;2;0/LAST_UPDATE_DATE;3;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/SYSDATE;3;0" TO="/custItemRecordSet;4;0;inventory107SC.intoOA.customerItem.rec:setCustomerItemTxnInputRec/MTL_CI_INTERFACE;2;0/CREATION_DATE;3;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/USER_ID;1;0" TO="/custItemRecordSet;4;0;inventory107SC.intoOA.customerItem.rec:setCustomerItemTxnInputRec/MTL_CI_INTERFACE;2;0/LAST_UPDATED_BY;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/USER_ID;1;0" TO="/custItemRecordSet;4;0;inventory107SC.intoOA.customerItem.rec:setCustomerItemTxnInputRec/MTL_CI_INTERFACE;2;0/CREATED_BY;1;0">
+</MAPCOPY>
+
+<MAPINVOKE SERVICE="commonOA107SC.utils:getProgramAndAppId" INVOKE-ORDER="0">
+
+  <!-- nodes -->
+
+<MAP MODE="INVOKEINPUT">
+
+  <!-- nodes -->
+
+<MAPSET NAME="Setter" OVERWRITE="true" VARIABLES="false" FIELD="/queryParams;2;0/CONCURRENT_PROGRAM_NAME;1;0">
+  <DATA ENCODING="XMLValues" I18N="true">
+
+<Values version="2.0">
+  <value name="xml">INVCIINT</value>
+  <record name="type" javaclass="com.wm.util.Values">
+    <value name="node_type">unknown</value>
+    <value name="field_name">CONCURRENT_PROGRAM_NAME</value>
+    <value name="field_type">string</value>
+    <value name="field_dim">0</value>
+    <value name="field_opt">false</value>
+  </record>
+</Values>
+</DATA>
+</MAPSET>
+
+<MAPCOPY NAME="Link" FROM="/$dbAlias;1;0" TO="/$dbAlias;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="INVOKEOUTPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/CONCURRENT_PROGRAM_ID;1;0" TO="/custItemRecordSet;4;0;inventory107SC.intoOA.customerItem.rec:setCustomerItemTxnInputRec/MTL_CI_INTERFACE;2;0/PROGRAM_ID;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/APPLICATION_ID;1;0" TO="/custItemRecordSet;4;0;inventory107SC.intoOA.customerItem.rec:setCustomerItemTxnInputRec/MTL_CI_INTERFACE;2;0/PROGRAM_APPLICATION_ID;1;0">
+</MAPCOPY>
+</MAP>
+</MAPINVOKE>
+
+<MAPCOPY NAME="Link" FROM="/SYSDATE;3;0" TO="/custItemRecordSet;4;0;inventory107SC.intoOA.customerItem.rec:setCustomerItemTxnInputRec/MTL_CI_INTERFACE;2;0/PROGRAM_UPDATE_DATE;3;0">
+</MAPCOPY>
+
+<MAPSET NAME="Setter" OVERWRITE="true" VARIABLES="false" FIELD="/custItemRecordSet;4;0;inventory107SC.intoOA.customerItem.rec:setCustomerItemTxnInputRec/MTL_CI_INTERFACE;2;0/LAST_UPDATE_LOGIN;1;0">
+  <DATA ENCODING="XMLValues" I18N="true">
+
+<Values version="2.0">
+  <value name="xml">-1</value>
+  <record name="type" javaclass="com.wm.util.Values">
+    <value name="node_type">unknown</value>
+    <value name="field_name">LAST_UPDATE_LOGIN</value>
+    <value name="field_type">string</value>
+    <value name="field_dim">0</value>
+    <value name="field_opt">true</value>
+  </record>
+</Values>
+</DATA>
+</MAPSET>
+
+<MAPSET NAME="Setter" OVERWRITE="true" VARIABLES="false" FIELD="/custItemRecordSet;4;0;inventory107SC.intoOA.customerItem.rec:setCustomerItemTxnInputRec/MTL_CI_INTERFACE;2;0/TRANSACTION_TYPE;1;0">
+  <DATA ENCODING="XMLValues" I18N="true">
+
+<Values version="2.0">
+  <value name="xml">CREATE</value>
+  <record name="type" javaclass="com.wm.util.Values">
+    <value name="node_type">unknown</value>
+    <value name="field_name">TRANSACTION_TYPE</value>
+    <value name="field_type">string</value>
+    <value name="field_dim">0</value>
+    <value name="field_opt">false</value>
+  </record>
+</Values>
+</DATA>
+</MAPSET>
+
+<MAPSET NAME="Setter" OVERWRITE="true" VARIABLES="false" FIELD="/custItemRecordSet;4;0;inventory107SC.intoOA.customerItem.rec:setCustomerItemTxnInputRec/MTL_CI_INTERFACE;2;0/LOCK_FLAG;1;0">
+  <DATA ENCODING="XMLValues" I18N="true">
+
+<Values version="2.0">
+  <value name="xml">N</value>
+  <record name="type" javaclass="com.wm.util.Values">
+    <value name="node_type">unknown</value>
+    <value name="field_name">LOCK_FLAG</value>
+    <value name="field_type">string</value>
+    <value name="field_dim">0</value>
+    <value name="field_opt">false</value>
+  </record>
+</Values>
+</DATA>
+</MAPSET>
+
+<MAPSET NAME="Setter" OVERWRITE="true" VARIABLES="false" FIELD="/custItemRecordSet;4;0;inventory107SC.intoOA.customerItem.rec:setCustomerItemTxnInputRec/MTL_CI_INTERFACE;2;0/PROCESS_MODE;1;0">
+  <DATA ENCODING="XMLValues" I18N="true">
+
+<Values version="2.0">
+  <value name="xml">1</value>
+  <record name="type" javaclass="com.wm.util.Values">
+    <value name="node_type">unknown</value>
+    <value name="field_name">PROCESS_MODE</value>
+    <value name="field_type">string</value>
+    <value name="field_dim">0</value>
+    <value name="field_opt">false</value>
+  </record>
+</Values>
+</DATA>
+</MAPSET>
+
+<MAPSET NAME="Setter" OVERWRITE="true" VARIABLES="false" FIELD="/custItemRecordSet;4;0;inventory107SC.intoOA.customerItem.rec:setCustomerItemTxnInputRec/MTL_CI_INTERFACE;2;0/PROCESS_FLAG;1;0">
+  <DATA ENCODING="XMLValues" I18N="true">
+
+<Values version="2.0">
+  <value name="xml">1</value>
+  <record name="type" javaclass="com.wm.util.Values">
+    <value name="node_type">unknown</value>
+    <value name="field_name">PROCESS_FLAG</value>
+    <value name="field_type">string</value>
+    <value name="field_dim">0</value>
+    <value name="field_opt">false</value>
+  </record>
+</Values>
+</DATA>
+</MAPSET>
+
+<MAPSET NAME="Setter" OVERWRITE="true" VARIABLES="false" FIELD="/custItemRecordSet;4;0;inventory107SC.intoOA.customerItem.rec:setCustomerItemTxnInputRec/MTL_CI_INTERFACE;2;0/REQUEST_ID;1;0">
+  <DATA ENCODING="XMLValues" I18N="true">
+
+<Values version="2.0">
+  <value name="xml">0</value>
+  <record name="type" javaclass="com.wm.util.Values">
+    <value name="node_type">unknown</value>
+    <value name="field_name">REQUEST_ID</value>
+    <value name="field_type">string</value>
+    <value name="field_dim">0</value>
+    <value name="field_opt">true</value>
+  </record>
+</Values>
+</DATA>
+</MAPSET>
+</MAP>
+</LOOP>
+
+<MAP TIMEOUT="" MODE="STANDALONE">
+  <COMMENT>Map to Remove Unwanted Variables</COMMENT>
+  <MAPTARGET>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="field_opt">false</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">$dbAlias</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">custItemRecordSet</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">false</value>
+        <value name="rec_closed">false</value>
+        <value name="rec_ref">inventory107SC.intoOA.customerItem.rec:setCustomerItemTxnInputRec</value>
+      </record>
+    </array>
+    <value name="rec_closed">false</value>
+  </record>
+</Values>
+</MAPTARGET>
+  <MAPSOURCE>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="field_opt">false</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">$dbAlias</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">custItemBizDoc</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">false</value>
+        <value name="rec_closed">false</value>
+        <value name="rec_ref">inventory107SC.intoOA.customerItem.rec:customerItemBizDoc</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">SYSDATE</value>
+        <value name="field_type">object</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">USER_ID</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">custItemRecordSet</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">false</value>
+        <value name="rec_closed">false</value>
+        <value name="rec_ref">inventory107SC.intoOA.customerItem.rec:setCustomerItemTxnInputRec</value>
+      </record>
+    </array>
+    <value name="rec_closed">false</value>
+  </record>
+</Values>
+</MAPSOURCE>
+
+  <!-- nodes -->
+
+<MAPDELETE NAME="Dropper" FIELD="/SYSDATE;3;0">
+</MAPDELETE>
+
+<MAPDELETE NAME="Dropper" FIELD="/USER_ID;1;0">
+</MAPDELETE>
+
+<MAPDELETE NAME="Dropper" FIELD="/custItemBizDoc;4;0;inventory107SC.intoOA.customerItem.rec:customerItemBizDoc">
+</MAPDELETE>
+
+<MAPDELETE NAME="Dropper" FIELD="/$dbAlias;1;0">
+</MAPDELETE>
+</MAP>
+</FLOW>

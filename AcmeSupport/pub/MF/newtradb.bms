@@ -1,0 +1,229 @@
+         TITLE 'NEWTRAD MAP FOR OPERATOR INSTRUCTIONS - COBOL'
+NEWTRAD DFHMSD TYPE=&SYSPARM,MODE=INOUT,LANG=COBOL,STORAGE=AUTO,       X
+               DSATTS=(COLOR,HILIGHT),MAPATTS=(COLOR,HILIGHT),         X
+               TIOAPFX=YES,COLOR=GREEN,HILIGHT=OFF
+T001    DFHMDI SIZE=(24,80),LINE=1,COLUMN=1
+        DFHMDF POS=(1,25),LENGTH=29,ATTRB=(PROT,NORM),HILIGHT=REVERSE, X
+               COLOR=YELLOW,INITIAL=' Share Trading Demonstration '
+        DFHMDF POS=(1,55),LENGTH=1,JUSTIFY=(LEFT,ZERO),                X
+               ATTRB=(PROT,NORM),COLOR=GREEN
+        DFHMDF POS=(1,68),LENGTH=11,ATTRB=(PROT,NORM),COLOR=BLUE,      X
+               INITIAL='TRADER.T001'
+        DFHMDF POS=(3,26),LENGTH=28,JUSTIFY=(LEFT,ZERO),               X
+               ATTRB=(PROT,NORM),COLOR=YELLOW,                         X
+               INITIAL='Share Trading Manager: Logon'
+        DFHMDF POS=(9,18),LENGTH=21,JUSTIFY=(LEFT,ZERO),               X
+               ATTRB=(PROT,NORM),COLOR=YELLOW,                         X
+               INITIAL='Enter your User Name:'
+USER1   DFHMDF POS=(9,41),LENGTH=30,ATTRB=(UNPROT,NORM,IC),            X
+               COLOR=GREEN
+        DFHMDF POS=(10,72),LENGTH=1,JUSTIFY=(LEFT,ZERO),               X
+               ATTRB=(PROT,NORM)
+        DFHMDF POS=(13,18),LENGTH=21,JUSTIFY=(LEFT,ZERO),              X
+               ATTRB=(PROT,NORM),COLOR=YELLOW,                         X
+               INITIAL='Enter your Password:'
+PASS1   DFHMDF POS=(13,41),LENGTH=10,ATTRB=(UNPROT,DRK)
+        DFHMDF POS=(13,52),LENGTH=1,JUSTIFY=(LEFT,ZERO),               X
+               ATTRB=(PROT,NORM)
+MESS1   DFHMDF POS=(22,1),LENGTH=79,ATTRB=(PROT,NORM),COLOR=RED
+        DFHMDF POS=(23,1),LENGTH=79,ATTRB=(PROT,NORM),COLOR=YELLOW,    X
+               INITIAL='-----------------------------------------------X
+               -------------------------------'
+        DFHMDF POS=(24,1),LENGTH=8,JUSTIFY=(LEFT,ZERO),                X
+               ATTRB=(PROT,NORM),COLOR=YELLOW,INITIAL='PF3=Exit'
+        DFHMDF POS=(24,71),LENGTH=9,JUSTIFY=(LEFT,ZERO),               X
+               ATTRB=(PROT,NORM),COLOR=YELLOW,INITIAL='PF12=Exit'
+T002    DFHMDI SIZE=(24,80),LINE=1,COLUMN=1
+        DFHMDF POS=(1,25),LENGTH=29,ATTRB=(PROT,NORM),HILIGHT=REVERSE, X
+               COLOR=YELLOW,INITIAL=' Share Trading Demonstration '
+        DFHMDF POS=(1,55),LENGTH=1,JUSTIFY=(LEFT,ZERO),                X
+               ATTRB=(PROT,NORM),COLOR=GREEN
+        DFHMDF POS=(1,68),LENGTH=11,ATTRB=(PROT,NORM),COLOR=BLUE,      X
+               INITIAL='TRADER.T002'
+        DFHMDF POS=(3,20),LENGTH=40,JUSTIFY=(LEFT,ZERO),               X
+               ATTRB=(PROT,NORM),COLOR=YELLOW,                         X
+               INITIAL='Share Trading Manager: Company Selection'
+        DFHMDF POS=(6,26),LENGTH=2,ATTRB=(PROT,NORM),INITIAL='1.'
+COMP1   DFHMDF POS=(6,29),LENGTH=20,ATTRB=(PROT,NORM),COLOR=GREEN
+        DFHMDF POS=(8,26),LENGTH=2,ATTRB=(PROT,NORM),INITIAL='2.'
+COMP2   DFHMDF POS=(8,29),LENGTH=20,ATTRB=(PROT,NORM),COLOR=GREEN
+        DFHMDF POS=(10,26),LENGTH=2,ATTRB=(PROT,NORM),INITIAL='3.'
+COMP3   DFHMDF POS=(10,29),LENGTH=20,ATTRB=(PROT,NORM),COLOR=GREEN
+        DFHMDF POS=(12,26),LENGTH=2,ATTRB=(PROT,NORM),INITIAL='4.'
+COMP4   DFHMDF POS=(12,29),LENGTH=20,ATTRB=(PROT,NORM),COLOR=GREEN
+        DFHMDF POS=(17,19),LENGTH=39,ATTRB=(PROT,BRT),COLOR=GREEN,     X
+               INITIAL='Please select a company (1,2,3 or 4) :'
+OPTION  DFHMDF POS=(17,59),LENGTH=1,JUSTIFY=(LEFT,ZERO),               X
+               ATTRB=(UNPROT,NUM,NORM,IC)
+        DFHMDF POS=(17,61),LENGTH=1,JUSTIFY=(LEFT,ZERO),               X
+               ATTRB=(ASKIP,NORM),COLOR=GREEN
+MESS2   DFHMDF POS=(22,1),LENGTH=79,ATTRB=(PROT,NORM),COLOR=RED
+        DFHMDF POS=(23,1),LENGTH=79,ATTRB=(PROT,NORM),COLOR=YELLOW,    X
+               INITIAL='-----------------------------------------------X
+               -------------------------------'
+        DFHMDF POS=(24,1),LENGTH=10,JUSTIFY=(LEFT,ZERO),               X
+               ATTRB=(PROT,NORM),COLOR=YELLOW,INITIAL='PF3=Return'
+        DFHMDF POS=(24,71),LENGTH=9,JUSTIFY=(LEFT,ZERO),               X
+               ATTRB=(PROT,NORM),COLOR=YELLOW,INITIAL='PF12=Exit'
+T003    DFHMDI SIZE=(24,80),LINE=1,COLUMN=1
+        DFHMDF POS=(1,25),LENGTH=29,ATTRB=(PROT,NORM),HILIGHT=REVERSE, X
+               COLOR=YELLOW,INITIAL=' Share Trading Demonstration '
+        DFHMDF POS=(1,55),LENGTH=1,JUSTIFY=(LEFT,ZERO),                X
+               ATTRB=(PROT,NORM),COLOR=GREEN
+        DFHMDF POS=(1,68),LENGTH=11,ATTRB=(PROT,NORM),COLOR=BLUE,      X
+               INITIAL='TRADER.T003'
+        DFHMDF POS=(3,25),LENGTH=30,JUSTIFY=(LEFT,ZERO),               X
+               ATTRB=(PROT,NORM),COLOR=YELLOW,                         X
+               INITIAL='Share Trading Manager: Options'
+        DFHMDF POS=(6,26),LENGTH=2,ATTRB=(PROT,NORM),INITIAL='1.'
+        DFHMDF POS=(6,29),LENGTH=20,ATTRB=(PROT,NORM),COLOR=GREEN,     X
+               INITIAL='New Real-Time Quote'
+        DFHMDF POS=(8,26),LENGTH=2,ATTRB=(PROT,NORM),INITIAL='2.'
+        DFHMDF POS=(8,29),LENGTH=20,ATTRB=(PROT,NORM),COLOR=GREEN,     X
+               INITIAL='Buy Shares'
+        DFHMDF POS=(10,26),LENGTH=2,ATTRB=(PROT,NORM),INITIAL='3.'
+        DFHMDF POS=(10,29),LENGTH=20,ATTRB=(PROT,NORM),COLOR=GREEN,    X
+               INITIAL='Sell Shares'
+        DFHMDF POS=(17,19),LENGTH=36,ATTRB=(PROT,BRT),COLOR=GREEN,     X
+               INITIAL='Please select an option (1,2 or 3):'
+OPT2    DFHMDF POS=(17,56),LENGTH=1,JUSTIFY=(LEFT,ZERO),               X
+               ATTRB=(UNPROT,NUM,NORM,IC)
+MESS3   DFHMDF POS=(22,1),LENGTH=79,ATTRB=(PROT,NORM),COLOR=RED
+        DFHMDF POS=(23,1),LENGTH=79,ATTRB=(PROT,NORM),COLOR=YELLOW,    X
+               INITIAL='-----------------------------------------------X
+               -------------------------------'
+        DFHMDF POS=(24,1),LENGTH=10,JUSTIFY=(LEFT,ZERO),               X
+               ATTRB=(PROT,NORM),COLOR=YELLOW,INITIAL='PF3=Return'
+        DFHMDF POS=(24,71),LENGTH=9,JUSTIFY=(LEFT,ZERO),               X
+               ATTRB=(PROT,NORM),COLOR=YELLOW,INITIAL='PF12=Exit'
+T004    DFHMDI SIZE=(24,80),LINE=1,COLUMN=1
+        DFHMDF POS=(1,25),LENGTH=29,ATTRB=(PROT,NORM),HILIGHT=REVERSE, X
+               COLOR=YELLOW,INITIAL=' Share Trading Demonstration '
+        DFHMDF POS=(1,55),LENGTH=1,JUSTIFY=(LEFT,ZERO),                X
+               ATTRB=(PROT,NORM),COLOR=GREEN
+        DFHMDF POS=(1,68),LENGTH=11,ATTRB=(PROT,NORM),COLOR=BLUE,      X
+               INITIAL='TRADER.T004'
+        DFHMDF POS=(3,21),LENGTH=38,JUSTIFY=(LEFT,ZERO),               X
+               ATTRB=(PROT,NORM),COLOR=YELLOW,                         X
+               INITIAL='Share Trading Manager: Real-Time Quote'
+        DFHMDF POS=(5,7),LENGTH=13,JUSTIFY=(LEFT,ZERO),                X
+               INITIAL='User Name:'
+USER41  DFHMDF POS=(5,22),LENGTH=20,JUSTIFY=(LEFT,ZERO),               X
+               ATTRB=(PROT,NORM),COLOR=GREEN
+        DFHMDF POS=(7,7),LENGTH=13,JUSTIFY=(LEFT,ZERO),                X
+               INITIAL='Company Name:'
+COMP41  DFHMDF POS=(7,22),LENGTH=20,JUSTIFY=(LEFT,ZERO),               X
+               ATTRB=(PROT,NORM),COLOR=GREEN
+        DFHMDF POS=(9,7),LENGTH=14,JUSTIFY=(LEFT,ZERO),                X
+               INITIAL='Share Values:'
+        DFHMDF POS=(9,39),LENGTH=20,JUSTIFY=(LEFT,ZERO),               X
+               INITIAL='Commission Cost:'
+        DFHMDF POS=(10,10),LENGTH=4,JUSTIFY=(LEFT,ZERO),               X
+               ATTRB=(PROT,NORM),COLOR=GREEN,INITIAL='NOW:'
+SHRNOW  DFHMDF POS=(10,22),LENGTH=8,JUSTIFY=(LEFT,ZERO),               X
+               ATTRB=(PROT,NORM),COLOR=GREEN
+        DFHMDF POS=(10,42),LENGTH=12,JUSTIFY=(LEFT,ZERO),              X
+               INITIAL='for Selling:'
+SELL    DFHMDF POS=(10,62),LENGTH=12,JUSTIFY=(LEFT,ZERO),COLOR=GREEN
+        DFHMDF POS=(11,10),LENGTH=11,JUSTIFY=(LEFT,ZERO),              X
+               INITIAL='1 week ago:'
+SHARE7  DFHMDF POS=(11,22),LENGTH=8,JUSTIFY=(LEFT,ZERO),               X
+               ATTRB=(PROT,NORM),COLOR=GREEN
+        DFHMDF POS=(12,10),LENGTH=11,JUSTIFY=(LEFT,ZERO),              X
+               INITIAL='6 days ago:'
+SHARE6  DFHMDF POS=(12,22),LENGTH=8,JUSTIFY=(LEFT,ZERO),               X
+               ATTRB=(PROT,NORM),COLOR=GREEN
+        DFHMDF POS=(11,42),LENGTH=11,JUSTIFY=(LEFT,ZERO),              X
+               INITIAL='for Buying:'
+BUY     DFHMDF POS=(11,62),LENGTH=12,JUSTIFY=(LEFT,ZERO),COLOR=GREEN
+        DFHMDF POS=(13,10),LENGTH=11,JUSTIFY=(LEFT,ZERO),              X
+               INITIAL='5 days ago:'
+SHARE5  DFHMDF POS=(13,22),LENGTH=8,JUSTIFY=(LEFT,ZERO),COLOR=GREEN
+        DFHMDF POS=(14,10),LENGTH=11,JUSTIFY=(LEFT,ZERO),              X
+               INITIAL='4 days ago:'
+SHARE4  DFHMDF POS=(14,22),LENGTH=8,JUSTIFY=(LEFT,ZERO),COLOR=GREEN
+        DFHMDF POS=(15,10),LENGTH=11,JUSTIFY=(LEFT,ZERO),              X
+               INITIAL='3 days ago:'
+SHARE3  DFHMDF POS=(15,22),LENGTH=8,JUSTIFY=(LEFT,ZERO),COLOR=GREEN
+        DFHMDF POS=(16,10),LENGTH=11,JUSTIFY=(LEFT,ZERO),              X
+               INITIAL='2 days ago:'
+SHARE2  DFHMDF POS=(16,22),LENGTH=8,JUSTIFY=(LEFT,ZERO),COLOR=GREEN
+        DFHMDF POS=(16,39),LENGTH=22,JUSTIFY=(LEFT,ZERO),              X
+               INITIAL='Number of Shares Held:'
+HELD    DFHMDF POS=(16,62),LENGTH=12,JUSTIFY=(LEFT,ZERO),COLOR=GREEN
+        DFHMDF POS=(17,10),LENGTH=10,JUSTIFY=(LEFT,ZERO),              X
+               INITIAL='1 day ago:'
+SHARE1  DFHMDF POS=(17,22),LENGTH=8,JUSTIFY=(LEFT,ZERO),COLOR=GREEN
+        DFHMDF POS=(17,39),LENGTH=22,JUSTIFY=(LEFT,ZERO),              X
+               INITIAL='Value of Shares Held:'
+VALUE   DFHMDF POS=(17,62),LENGTH=12,JUSTIFY=(RIGHT,ZERO),COLOR=GREEN
+MESS4   DFHMDF POS=(22,1),LENGTH=79,ATTRB=(PROT,NORM),COLOR=RED
+        DFHMDF POS=(23,1),LENGTH=79,ATTRB=(PROT,NORM),COLOR=YELLOW,    X
+               INITIAL='-----------------------------------------------X
+               -------------------------------'
+        DFHMDF POS=(24,1),LENGTH=10,JUSTIFY=(LEFT,ZERO),               X
+               ATTRB=(PROT,NORM),COLOR=YELLOW,INITIAL='PF3=Return'
+        DFHMDF POS=(24,71),LENGTH=9,JUSTIFY=(LEFT,ZERO),               X
+               ATTRB=(PROT,NORM),COLOR=YELLOW,INITIAL='PF12=Exit'
+T005    DFHMDI SIZE=(24,80),LINE=1,COLUMN=1
+        DFHMDF POS=(1,25),LENGTH=29,ATTRB=(PROT,NORM),HILIGHT=REVERSE, X
+               COLOR=YELLOW,INITIAL=' Share Trading Demonstration '
+        DFHMDF POS=(1,55),LENGTH=1,JUSTIFY=(LEFT,ZERO),                X
+               ATTRB=(PROT,NORM),COLOR=GREEN
+        DFHMDF POS=(1,68),LENGTH=11,ATTRB=(PROT,NORM),COLOR=BLUE,      X
+               INITIAL='TRADER.T005'
+        DFHMDF POS=(3,22),LENGTH=36,JUSTIFY=(LEFT,ZERO),               X
+               ATTRB=(PROT,NORM),COLOR=YELLOW,                         X
+               INITIAL='Share Trading Manager: Shares - Buy'
+        DFHMDF POS=(7,17),LENGTH=13,JUSTIFY=(LEFT,ZERO),               X
+               INITIAL='User Name:'
+USER51  DFHMDF POS=(7,32),LENGTH=20,JUSTIFY=(LEFT,ZERO),COLOR=GREEN
+        DFHMDF POS=(9,17),LENGTH=13,JUSTIFY=(LEFT,ZERO),               X
+               INITIAL='Company Name:'
+COMP51  DFHMDF POS=(9,32),LENGTH=20,JUSTIFY=(LEFT,ZERO),COLOR=GREEN
+        DFHMDF POS=(13,17),LENGTH=25,JUSTIFY=(LEFT,ZERO),              X
+               INITIAL='Number of Shares to Buy:'
+SHRBUY  DFHMDF POS=(13,43),LENGTH=4,JUSTIFY=(RIGHT,ZERO),              X
+               ATTRB=(UNPROT,NUM,NORM,IC)
+        DFHMDF POS=(13,48),LENGTH=1,JUSTIFY=(LEFT,ZERO),               X
+               ATTRB=(ASKIP,NORM),COLOR=GREEN
+MESS5   DFHMDF POS=(22,1),LENGTH=79,ATTRB=(PROT,NORM),COLOR=RED
+        DFHMDF POS=(23,1),LENGTH=79,ATTRB=(PROT,NORM),COLOR=YELLOW,    X
+               INITIAL='-----------------------------------------------X
+               -------------------------------'
+        DFHMDF POS=(24,1),LENGTH=10,JUSTIFY=(LEFT,ZERO),               X
+               ATTRB=(PROT,NORM),COLOR=YELLOW,INITIAL='PF3=Return'
+        DFHMDF POS=(24,71),LENGTH=9,JUSTIFY=(LEFT,ZERO),               X
+               ATTRB=(PROT,NORM),COLOR=YELLOW,INITIAL='PF12=Exit'
+T006    DFHMDI SIZE=(24,80),LINE=1,COLUMN=1
+        DFHMDF POS=(1,25),LENGTH=29,ATTRB=(PROT,NORM),HILIGHT=REVERSE, X
+               COLOR=YELLOW,INITIAL=' Share Trading Demonstration '
+        DFHMDF POS=(1,55),LENGTH=1,JUSTIFY=(LEFT,ZERO),                X
+               ATTRB=(PROT,NORM),COLOR=GREEN
+        DFHMDF POS=(1,68),LENGTH=11,ATTRB=(PROT,NORM),COLOR=BLUE,      X
+               INITIAL='TRADER.T005'
+        DFHMDF POS=(3,22),LENGTH=37,JUSTIFY=(LEFT,ZERO),               X
+               ATTRB=(PROT,NORM),COLOR=YELLOW,                         X
+               INITIAL='Share Trading Manager: Shares - Sell'
+        DFHMDF POS=(7,17),LENGTH=13,JUSTIFY=(LEFT,ZERO),               X
+               INITIAL='User Name:'
+USER61  DFHMDF POS=(7,32),LENGTH=20,JUSTIFY=(LEFT,ZERO),COLOR=GREEN
+        DFHMDF POS=(9,17),LENGTH=13,JUSTIFY=(LEFT,ZERO),               X
+               INITIAL='Company Name:'
+COMP61  DFHMDF POS=(9,32),LENGTH=20,JUSTIFY=(LEFT,ZERO),COLOR=GREEN
+        DFHMDF POS=(13,17),LENGTH=25,JUSTIFY=(LEFT,ZERO),              X
+               INITIAL='Number of Shares to Sell:'
+SHRSELL DFHMDF POS=(13,43),LENGTH=4,JUSTIFY=(RIGHT,ZERO),              X
+               ATTRB=(UNPROT,NUM,NORM,IC)
+        DFHMDF POS=(13,48),LENGTH=1,JUSTIFY=(LEFT,ZERO),               X
+               ATTRB=(ASKIP,NORM),COLOR=GREEN
+MESS6   DFHMDF POS=(22,1),LENGTH=79,ATTRB=(PROT,NORM),COLOR=RED
+        DFHMDF POS=(23,1),LENGTH=79,ATTRB=(PROT,NORM),COLOR=YELLOW,    X
+               INITIAL='-----------------------------------------------X
+               -------------------------------'
+        DFHMDF POS=(24,1),LENGTH=10,JUSTIFY=(LEFT,ZERO),               X
+               ATTRB=(PROT,NORM),COLOR=YELLOW,INITIAL='PF3=Return'
+        DFHMDF POS=(24,71),LENGTH=9,JUSTIFY=(LEFT,ZERO),               X
+               ATTRB=(PROT,NORM),COLOR=YELLOW,INITIAL='PF12=Exit'
+NEWTRAD DFHMSD TYPE=FINAL
+        END

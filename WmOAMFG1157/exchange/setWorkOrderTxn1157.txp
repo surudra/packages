@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <record name="transactions" javaclass="com.wm.util.Values">
+    <record name="setWorkOrderTxn" javaclass="com.wm.util.Values">
+      <value name="transactionName">setWorkOrderTxn</value>
+      <value name="transactionType">IN</value>
+      <value name="errSQL">SELECT WIP.PRIMARY_ITEM_ID,WIP.HEADER_ID,ERR.ERROR
+FROM WIP_JOB_SCHEDULE_INTERFACE WIP, WIP_INTERFACE_ERRORS ERR 
+WHERE WIP.GROUP_ID = '&amp;GROUP_ID*' 
+AND WIP.INTERFACE_ID = ERR.INTERFACE_ID</value>
+      <record name="table0" javaclass="com.wm.util.Values">
+        <value name="tableName">WIP_JOB_SCHEDULE_INTERFACE</value>
+        <value name="required">true</value>
+      </record>
+      <record name="table1" javaclass="com.wm.util.Values">
+        <value name="tableName">WIP_JOB_DTLS_INTERFACE</value>
+        <value name="required">false</value>
+      </record>
+    </record>
+  </record>
+  <record name="FILE_INFO" javaclass="com.wm.util.Values">
+    <value name="OA_RELEASE">11i</value>
+    <value name="DESCRIPTION"></value>
+    <value name="CREATE_HOST">webMethods</value>
+    <value name="CREATE_IM_VER">3.0</value>
+    <value name="CREATE_DATE">Oct 24, 2002 5:57:32 PM</value>
+  </record>
+</Values>

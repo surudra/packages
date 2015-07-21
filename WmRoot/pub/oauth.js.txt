@@ -1,0 +1,268 @@
+var clients=new Array();
+var selectedClient = "";
+var scopes=new Array();
+var previousScope;
+var addingUser = false;
+var Dirty = 0;
+
+
+
+function quickSave(oTo, newValue)
+{
+
+	if (oTo == memberscopesList)
+	clients[clientList.options[clientList.selectedIndex].value][newValue] = newValue;
+
+	
+	if (oTo == availablescopesList)
+	clients[clientList.options[clientList.selectedIndex].value][newValue] = "";
+	
+
+	if (oTo == memberclientsList)
+	clients[newValue][scopeList.options[scopeList.selectedIndex].value] = scopeList.options[scopeList.selectedIndex].value;
+
+	if (oTo == availableclientsList)
+	clients[newValue][scopeList.options[scopeList.selectedIndex].value] = "";
+
+	if (newValue == scopeList.options[scopeList.selectedIndex].value)
+	loadScope(scopeList.options[scopeList.selectedIndex].value);
+	
+	if (newValue == clientList.options[clientList.selectedIndex].value)
+	loadClient(clientList.options[clientList.selectedIndex].value);
+
+	
+}
+
+
+function addClient(client, scopes)
+{
+	
+	//Arrays must be "prepped" to be containainers of arrays.
+	clients[client] = ["placeholder"]
+	clients[client].length = 0
+	
+	scopes.sort();
+	
+	for (scope in scopes)
+	{
+		
+		clients[client][scopes[scope]] = scopes[scope];
+	}
+	
+
+}
+
+function addScope(scope,iclients)
+{
+	
+	scopes[scope] = ["placeholder"]
+	scopes[scope].length = 0
+	
+	iclients.sort();
+	
+	for (client in iclients)
+	{
+		
+		scopes[scope][iclients[client]] = iclients[client];
+	}
+	
+
+}
+
+function populateAvailableClientsList()
+{
+
+	clearList(availableclientsList);
+
+	for (client in clients)
+	{
+		insertOptionABC(client,client, availableclientsList, false);
+	}
+}
+
+function populateClientList()
+{
+
+	clearList(clientList);
+
+	for (client in clients)
+	{
+		insertOptionABC(client,client, clientList, false);
+	}
+}
+
+
+function populateAvailableScopesList()
+{
+
+	clearList(availablescopesList);
+	
+	for(scope in scopes){
+	
+		insertOption(scope,scope, availablescopesList, false)
+	}
+	
+
+}
+
+
+function populateScopeList(start, end)
+{
+	clearList(scopeList);
+
+	for (scope in scopes)
+	{
+		insertOptionABC(scope,scope, scopeList, false);
+	}
+
+}
+
+function loadScope(scope)	
+{
+	
+	previousScope = scope;
+
+
+	clearList(availableclientsList);
+	clearList(memberclientsList);
+	populateAvailableClientsList();
+
+
+	for (client in clients)
+	{
+		
+		if (clients[client][scope] ==scope)
+		{
+			insertOptionABC(client,client, memberclientsList, false);
+			removeOption(client, availableclientsList);
+		}
+
+	}
+	
+	addNone(availableclientsList);
+	addNone(memberclientsList);
+
+}
+
+function loadClient(client)	
+{
+	
+	selectedClient = client;
+	for (var j = availablescopesList.options.length; j > 0; j--) {
+		if ( availablescopesList.options[j-1].value == "---none--" )
+		{
+			var nonevalue = availablescopesList.options[j-1].value;
+			removeOption(nonevalue,availablescopesList );
+		}
+	}
+
+	conditionalmoveOptions(memberscopesList, availablescopesList, null ,clients[client]);		
+	conditionalmoveOptions(availablescopesList, memberscopesList, clients[client], null);
+	addNone(availablescopesList);
+	addNone(memberscopesList);
+	
+}
+
+
+
+function setupPage()
+{
+	
+	populateScopeList();
+	populateAvailableClientsList();
+	
+	scopeList.selectedIndex = 0;
+	if(scopeList.options.length!=0){
+		loadScope(scopeList.options[scopeList.selectedIndex].value);
+	}
+
+	populateClientList();
+	populateAvailableScopesList();
+	
+	clientList.selectedIndex = 0;
+	if(clientList.options.length!=0){
+		loadClient(clientList.options[clientList.selectedIndex].value);
+	}
+		
+}
+
+function changeSelectedClient(client)
+{
+	selectOption(clientList, client);
+	loadClient(client);
+
+}
+
+function changeSelectedScope(scope)
+{
+	selectOption(scopeList, scope);
+	loadScope(scope);
+
+}
+
+function changeScope(scope)
+{
+	loadScope(scope);
+}
+
+function changeClient(client)
+{
+	loadClient(client);
+	
+}
+
+function moveitem (oFrom, oTo)  
+{
+	
+		Dirty = 1;
+
+		if (oTo != null && oFrom != null)
+		{
+			moveItemsDeny(oFrom,oTo, true);
+		}
+	
+}
+
+function saveChanges()
+{
+	
+	var varForm = document.forms["form"];
+	var saveData = "";
+
+	for (var i=0; i < clientList.length; i++)
+	{
+		client = clientList.options[i].value;
+		if(client!='---none---'){
+			saveData += "" + client + ";";
+		}
+
+		var scopeData = "";
+
+		for (scope in scopes)
+		{
+			if (clients[client][scope] == scope)
+				scopeData += "" + scope + ",";
+		}
+		saveData += scopeData + ":";
+	}
+	
+	hiddenSave.value = saveData;
+	varForm.action.value="update";
+	
+	Dirty = 0;
+}
+
+function submitForm()
+{
+	Dirty = 0;
+	return true;
+}
+
+
+function checkDirty() {
+	if (Dirty > 0)
+	{
+		event.returnValue = '--- Scope and Client changes have not been saved. ---';
+	}
+}
+

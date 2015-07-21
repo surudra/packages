@@ -1,0 +1,55 @@
+#
+# webMethods Deployer plugin configuration file
+# 
+
+#
+# Unique identifier for the plugin
+#
+type=IS
+
+#
+# Deployment Support Type for your plugin server
+# RUNTIME/OFFLINE/BOTH
+#
+deploymentSupportType=BOTH
+
+#
+# The display name for your plugin server
+#
+label=Integration Server
+
+#
+# Whether or not the Plugin Instance A will be referring to dependencies
+# on Plugin or Server Instance B
+# 
+referencesOtherServers=FALSE
+
+#
+# Just put false here
+#
+isLocal=FALSE
+
+#
+#Following hostSuffix is used for IS end point. This is not a configurable property. Hence this should not be changed.
+#
+isDocumentLiteralEnabled=true
+
+hostSuffix_SPI_0=ws/wm.server.deployer.spi:wsProvider
+hostSuffix_SPI_1=ws/wm.server.deployer.spi:wsProvider
+hostSuffix_SPI_2=ws/wm.server.deployer.spi:wsProviderV2
+
+#
+# Fields that will be displayed on the plugin connection configuration
+# page for each plugin instance that needs to be accessed by the
+# Deployer.  Leaving a blank value for any of these fields will prevent
+# the Deployer from displaying it
+#
+hostLabel=Host
+portLabel=Port
+userLabel=User
+passwordLabel=Password
+SSLLabel=Use SSL
+connectionProperties=
+versionLabel=Version
+validVersions=9.7@SPI_2,9.6@SPI_2,9.5@SPI_2,9.0@SPI_2,8.2@SPI_1,8.0@SPI_0,7.1@SPI_0
+

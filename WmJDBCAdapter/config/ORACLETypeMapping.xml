@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseConfiguration dbVendor="oracle">
+	<typeMapping>
+		<jdbcType name="CLOB" typeClassName="com.wm.adapter.wmjdbc.config.impl.OracleClobType">
+			<javaType name="CLOB"/>
+			<javaType name="STRING"/>
+			<javaType name="Reader"/>
+			<javaType name="OBJECT"/>
+		</jdbcType> 
+		<jdbcType name="BLOB" typeClassName="com.wm.adapter.wmjdbc.config.impl.OracleBlobType">
+			<javaType name="BLOB"/>
+			<javaType name="BYTESEQ"/>
+			<javaType name="InputStream"/>
+			<javaType name="OBJECT"/>
+		</jdbcType>
+		<jdbcType name="SQLXML" typeClassName="com.wm.adapter.wmjdbc.config.impl.OracleSQLXMLType">
+			<javaType name="STRING"/>
+		</jdbcType>
+		<jdbcType name="ARRAY" typeClassName="com.wm.adapter.wmjdbc.config.impl.OracleArrayType">
+			<javaType name="OBJECT" />
+		</jdbcType>
+	</typeMapping>
+	<extTypeMapping>
+		<jdbcType name="BINARY_FLOAT" code="100" >
+			<javaType name="FLOAT" />
+			<javaType name="BYTESEQ" />
+			<javaType name="OBJECT" />
+		</jdbcType>
+		<jdbcType name="BINARY_DOUBLE" code="101" >
+			<javaType name="DOUBLE" />
+			<javaType name="BYTESEQ" />
+			<javaType name="OBJECT" />
+		</jdbcType>
+		<jdbcType name="ORACLECURSOR" code="-10" typeClassName="com.wm.adapter.wmjdbc.config.impl.OracleCursorType">
+			<javaType name="OBJECT" />
+		</jdbcType>
+	
+		
+		<jdbcType name="ORACLEFIXED_CHAR" code="999" typeClassName="com.wm.adapter.wmjdbc.config.impl.OracleFixedCharType">
+			<javaType name="STRING" />
+		</jdbcType>
+	</extTypeMapping>
+	<columnTypeMapping>
+		<columnType nativeSqlType="BIGINT" jdbcTypeName="BIGINT" includePrecision="true"/>
+		<columnType nativeSqlType="BIT" jdbcTypeName="BIT" />
+		<columnType nativeSqlType="TINYINT" jdbcTypeName="TINYINT" includePrecision="true"/>
+		<columnType nativeSqlType="SMALLINT" jdbcTypeName="SMALLINT" includePrecision="true"/>
+		<columnType nativeSqlType="INT" jdbcTypeName="INT" includePrecision="true"/>
+		<columnType nativeSqlType="FLOAT" jdbcTypeName="FLOAT" includeColumnSize="false"/>
+		<columnType nativeSqlType="REAL" jdbcTypeName="REAL" />
+		<columnType nativeSqlType="DOUBLE" jdbcTypeName="DOUBLE" />
+		<columnType nativeSqlType="NUMERIC" jdbcTypeName="NUMERIC"  includePrecision="true"/>
+		<!--<columnType nativeSqlType="NUMBER" jdbcTypeName="NUMBER" includePrecision="true"/>-->
+		<columnType nativeSqlType="CHAR" jdbcTypeName="ORACLEFIXED_CHAR"/>
+		<columnType nativeSqlType="NCHAR" jdbcTypeName="NCHAR" resizeFactor="0.5"/>
+		<columnType nativeSqlType="VARCHAR2" jdbcTypeName="VARCHAR"/>
+		<columnType nativeSqlType="TEXT" jdbcTypeName="LONGVARCHAR" />
+		<columnType nativeSqlType="NTEXT" jdbcTypeName="LONGNVARCHAR" />
+		<columnType nativeSqlType="DATE" jdbcTypeName="DATE" includeColumnSize="false"/>
+		<columnType nativeSqlType="TIME" jdbcTypeName="TIME" includeColumnSize="false"/>
+		<columnType nativeSqlType="TIMESTAMP" jdbcTypeName="TIMESTAMP" includeColumnSize="false"/>
+		<columnType nativeSqlType="BINARY" jdbcTypeName="BINARY" />
+		<columnType nativeSqlType="VARBINARY" jdbcTypeName="VARBINARY" />
+		<columnType nativeSqlType="IMAGE" jdbcTypeName="VARBINARY" />
+		<columnType nativeSqlType="NULL" jdbcTypeName="NULL" />
+		<columnType nativeSqlType="NVARCHAR2" jdbcTypeName="NVARCHAR" resizeFactor="0.5"/>
+		<columnType nativeSqlType="CLOB" jdbcTypeName="CLOB" includeColumnSize="false"/>
+		<columnType nativeSqlType="NCLOB" jdbcTypeName="OTHER" includeColumnSize="false"/>
+		<columnType nativeSqlType="BLOB" jdbcTypeName="BLOB" includeColumnSize="false"/>
+		<columnType nativeSqlType="ARRAY" jdbcTypeName="ARRAY" />
+		<columnType nativeSqlType="STRUCT" jdbcTypeName="STRUCT" />
+		<columnType nativeSqlType="BOOLEAN" jdbcTypeName="BOOLEAN" />
+		<columnType nativeSqlType="ROWID" jdbcTypeName="OTHER" includeColumnSize="false"/>
+		
+		<columnType nativeSqlType="INTERVAL DAY(2) TO SECOND(6)" jdbcTypeName="OTHER" includeColumnSize="false"/>
+		<columnType nativeSqlType="INTERVAL YEAR(2) TO MONTH" jdbcTypeName="OTHER" includeColumnSize="false"/>
+		<columnType nativeSqlType="TIMESTAMP(6) WITH LOCAL TIME ZONE" jdbcTypeName="OTHER" includeColumnSize="false"/>
+		<columnType nativeSqlType="TIMESTAMP(6) WITH TIME ZONE" jdbcTypeName="OTHER" includeColumnSize="false"/>
+		
+		<columnType nativeSqlType="INTERVALDS" jdbcTypeName="OTHER" includeColumnSize="false"/>
+		<columnType nativeSqlType="INTERVALYM" jdbcTypeName="OTHER" includeColumnSize="false"/>
+		<columnType nativeSqlType="TIMESTAMP WITH LOCAL TIME ZONE" jdbcTypeName="OTHER" includeColumnSize="false"/>
+		<columnType nativeSqlType="TIMESTAMP WITH TIME ZONE" jdbcTypeName="OTHER" includeColumnSize="false"/> 
+		<columnType nativeSqlType="BFILE" jdbcTypeName="OTHER" includeColumnSize="false"/>
+		
+		<columnType nativeSqlType="BINARY_DOUBLE" jdbcTypeName="BINARY_DOUBLE" includeColumnSize="false"/>
+		<columnType nativeSqlType="REF CURSOR" jdbcTypeName="ORACLECURSOR" />
+		<columnType nativeSqlType="FIXED_CHAR" jdbcTypeName="ORACLEFIXED_CHAR" />
+		<columnType nativeSqlType="BINARY_FLOAT" jdbcTypeName="BINARY_FLOAT" includeColumnSize="false"/>
+		<columnType nativeSqlType="XMLTYPE" jdbcTypeName="SQLXML" includeColumnSize="false"/>
+	</columnTypeMapping>
+	
+</databaseConfiguration>

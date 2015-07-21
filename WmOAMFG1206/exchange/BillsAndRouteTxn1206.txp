@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<IDataXMLCoder version="1.0">
+  <record javaclass="com.wm.data.ISMemDataImpl">
+    <record name="transactions" javaclass="com.wm.data.ISMemDataImpl">
+      <record name="checkBillsAndRouteImportStatus" javaclass="com.wm.data.ISMemDataImpl">
+        <value name="transactionName">checkBillsAndRouteImportStatus</value>
+        <value name="transactionType">OUT</value>
+        <null name="AcknowledgeSQL"/>
+        <record name="IMPORT_STATUS" javaclass="com.wm.util.Values">
+          <value name="SQLOut">SELECT COUNT(*) AS ROWCOUNT FROM mtl_interface_errors WHERE REQUEST_ID = '&amp;REQUEST_ID*'</value>
+          <value name="SQLAlias">IMPORT_STATUS</value>
+          <value name="SQLRelation"></value>
+        </record>
+      </record>
+      <record name="execBillsAndRouteConcProg" javaclass="com.wm.data.ISMemDataImpl">
+        <value name="transactionName">execBillsAndRouteConcProg</value>
+        <value name="transactionType">OUT</value>
+        <null name="AcknowledgeSQL"/>
+        <record name="WM_HANDLE_BOM" javaclass="com.wm.util.Values">
+          <value name="SQLOut">WM_BOM_IMP_HANDLER_PKG.WM_HANDLE_BOM</value>
+          <value name="SQLAlias">WM_HANDLE_BOM</value>
+          <value name="SQLRelation"></value>
+        </record>
+      </record>
+      <record name="getCommonRtgSeqId" javaclass="com.wm.data.ISMemDataImpl">
+        <value name="transactionName">getCommonRtgSeqId</value>
+        <value name="transactionType">OUT</value>
+        <null name="AcknowledgeSQL"/>
+        <record name="COMMON_RTG_SEQ_ID" javaclass="com.wm.util.Values">
+          <value name="SQLOut">SELECT a.routing_sequence_id
+FROM bom_operational_routings a,MTL_SYSTEM_ITEMS_B_KFV c,HR_ALL_ORGANIZATION_UNITS e
+WHERE a.organization_id = c.organization_id
+AND a.assembly_item_id = c.inventory_item_id
+AND c.concatenated_segments = '&amp;COMMON_ITEM_NUMBER*'
+AND a.organization_id = e.organization_id
+AND e.name = '&amp;COMMON_ORG_NAME*' 
+AND NVL(a.alternate_routing_designator,'??') = NVL('&amp;ALT_RTG_DSG*','??')
+</value>
+          <value name="SQLAlias">COMMON_RTG_SEQ_ID</value>
+          <value name="SQLRelation"></value>
+        </record>
+      </record>
+      <record name="getComponentSeqId" javaclass="com.wm.data.ISMemDataImpl">
+        <value name="transactionName">getComponentSeqId</value>
+        <value name="transactionType">OUT</value>
+        <null name="AcknowledgeSQL"/>
+        <record name="COMP_SEQ_ID" javaclass="com.wm.util.Values">
+          <value name="SQLOut">SELECT i.component_sequence_id
+FROM bom_inventory_components i,
+bom_bill_of_materials b, 
+MTL_SYSTEM_ITEMS_B_KFV c,
+MTL_SYSTEM_ITEMS_B_KFV d, HR_ALL_ORGANIZATION_UNITS e
+WHERE
+c.concatenated_segments = '&amp;ASSEMBLY_ITEM_NUMBER*'
+AND NVL(b.alternate_bom_designator,'??') = 
+NVL('&amp;ALT_BOM_DSG*','??')
+AND i.component_item_id = d.inventory_item_id 
+AND b.organization_id = d.organization_id
+AND d.concatenated_segments= '&amp;ITEM_COMPONENT_NUMBER*' 
+AND 
+i.operation_seq_num = '&amp;OPERATION_SEQ_NUM*' 
+AND 
+i.effectivity_date = 
+TO_DATE('&amp;EFFECTIVITY_DATE*')
+AND 
+c.organization_id = b.organization_id 
+AND c.inventory_item_id = b.assembly_item_id
+AND i.bill_sequence_id = b.bill_sequence_id
+AND b.organization_id = e.organization_id
+AND e.name = '&amp;ORG_NAME*'</value>
+          <value name="SQLAlias">COMP_SEQ_ID</value>
+          <value name="SQLRelation"></value>
+        </record>
+      </record>
+      <record name="getRevisedItemSeqId" javaclass="com.wm.data.ISMemDataImpl">
+        <value name="transactionName">getRevisedItemSeqId</value>
+        <value name="transactionType">OUT</value>
+        <null name="AcknowledgeSQL"/>
+        <record name="REVISED_ITEM_SEQ_ID" javaclass="com.wm.util.Values">
+          <value name="SQLOut">SELECT a.revised_item_sequence_id
+FROM mtl_item_revisions a, MTL_SYSTEM_ITEMS_B_KFV c,HR_ALL_ORGANIZATION_UNITS e
+WHERE a.organization_id = e.organization_id
+AND e.name =  '&amp;ORG_NAME*' 
+AND a.inventory_item_id = c.inventory_item_id
+AND a.organization_id = c.organization_id
+AND c.concatenated_segments = '&amp;REVISED_ITEM_NUM*'
+AND a.revision = '&amp;REVISION*' </value>
+          <value name="SQLAlias">REVISED_ITEM_SEQ_ID</value>
+          <value name="SQLRelation"></value>
+        </record>
+      </record>
+    </record>
+    <record name="FILE_INFO" javaclass="com.wm.data.ISMemDataImpl">
+      <value name="OA_RELEASE">1206</value>
+      <value name="DESCRIPTION"></value>
+      <value name="CREATE_HOST">WebMethods</value>
+      <value name="CREATE_IM_VER"></value>
+      <value name="CREATE_DATE">May 6, 2005 4:16:08 PM</value>
+    </record>
+  </record>
+</IDataXMLCoder>

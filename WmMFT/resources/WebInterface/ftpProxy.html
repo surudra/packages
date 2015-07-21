@@ -1,0 +1,58 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>ActiveTransfer Web Client</title>
+		<script type="text/javascript" src="/WebInterface/crushftp_functions.js"></script>
+		<!-- PROXY_INFO -->
+		<script defer="true">
+			setTimeout("checkAdhocProxy()",200);
+			setTimeout("setupWhitelistProxy()",200);
+		</script>
+	</head>
+	<body bgcolor="cccccc">
+		<form method="post" name="diagnosticForm" action="http://www.softwareag.com/diagnostics.jsp" target="_blank">
+			<input type="hidden" name="action" value="TEST"/>
+			<input type="hidden" name="details" value="ON"/>
+			<input type="hidden" name="protocol" value="FTP"/>
+			<input type="hidden" name="ip" value=""/>
+			<input type="hidden" name="user" value=""/>
+			<input type="hidden" name="pass" value=""/>
+			<input type="hidden" name="path" value=""/>
+			<input type="hidden" name="port" value="21"/>
+		</form>		
+		<form method="post" name="loginForm" enctype="multipart/form-data" onsubmit="doProxyFormSubmit();">
+			<input type="hidden" name="the_action" value="FTPPROXY"/>
+			<center>
+				<table>
+					<tr>
+						<td>
+							<table>
+								<tr name="whitelist">
+									<td>Preset:</td><td><select name="whitelist" id="whitelist" onChange="whitelistUpdateProxy();"><option value=""></option></td>
+								</tr><tr id="adhoc1" style="visibility:hidden;position:absolute;">
+									<td>Protocol:</td><td><select name="protocol" onChange="updateProxyPort();"><option value="FTP">FTP</option><option value="FTPS">FTPS</option><option value="FTPS">FTPS Implicit</option><option value="SFTP">SFTP</option></td>
+								<tr id="adhoc2" style="visibility:hidden;position:absolute;">
+									<td>Hostname:</td><td><input type="text" name="ip" style="width:150;" value=""/></td>
+								</tr><tr name="adhoc" style="visibility:hidden;position:absolute;">
+									<td>Port:</td><td><input type="text" name="port" style="width:150;" value="21"/></td>
+								</tr><tr>
+									<td>User:</td><td><input type="text" name="user" style="width:150;" value=""/></td>
+								</tr><tr>
+									<td>Pass:</td><td><input type="password" name="pass" style="width:150;" value=""/></td>
+								</tr><tr>
+									<td>Path:</td><td><input type="text" name="path" style="width:150;" value="/"/></td>
+								</tr>
+							</table>
+						</td>
+						<td valign="center" id="buttondiv" align="center">
+							<input type="button" value=" Connect! " onclick="doProxyFormSubmit();"/><br/>
+							<br/>
+							<font size="-2"><a href="javascript:if(document.loginForm.ip.value==''){alert('You must specify a host!');} else {document.diagnosticForm.ip.value=document.loginForm.ip.value;document.diagnosticForm.user.value=document.loginForm.user.value;document.diagnosticForm.pass.value=document.loginForm.pass.value;document.diagnosticForm.path.value=document.loginForm.path.value;document.diagnosticForm.submit();}">Run Diagnostics...</a></font>
+						</td>
+					</tr>
+				</table>
+				<a href="/WebInterface/login.html">Logout</a>
+			</center>
+		</form>
+	</body>
+</html>

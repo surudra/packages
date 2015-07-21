@@ -1,0 +1,526 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="GENERATOR" content="Quadralay WebWorks Publisher Professional Edition 7.0" />
+  <meta name="TEMPLATEBASE" content="wM_WWH20030908" />
+  <meta name="LASTUPDATED" content="12/04/06 19:31:53" />
+  <title>StoredProcedureNotificationWithSignature Template Screens </title>
+  <link rel="StyleSheet" href="document.css" type="text/css" />
+  <link rel="StyleSheet" href="catalog.css" type="text/css" />
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+ </head>
+
+ <body onLoad="WWHUpdate();">
+
+
+<a name="wp1097662"> </a><h2 class="pNewHTMLPage">
+StoredProcedureNotificationWithSignature Template Screens 
+</h2><a name="wp1120252"> </a><p class="pBody">
+A StoredProcedureNotificationWithSignature publishes notification data by calling a stored procedure inside of a database. Unlike a StoredProcedureNotification, the StoredProcedureNotificationWithSignature enables you to automatically obtain a stored procedure’s parameters by introspecting and listing the signature of the stored procedure at the time you configure this notification. This means that you do not need to look up and retype these parameters manually. This adapter notification template includes the following tabs:
+</p>
+<a name="wp1120278"> </a><p class="pChapterTOC">
+<img src="images/bullet.gif" height="13" width="10" border="0" />
+<a  href="ScreenLevelHelp26.html#wp1120296">Call Tab</a>
+</p>
+<a name="wp1120282"> </a><p class="pChapterTOC">
+<img src="images/bullet.gif" height="13" width="10" border="0" />
+<a  href="ScreenLevelHelp26.html#wp1120005">ResultSet Tab</a>
+</p>
+<a name="wp1120296"> </a><h4 class="pHeading3">
+Call Tab
+</h4>
+<a name="wp1120309"> </a><p class="pBody">
+Select the <b class="cBold">Call</b> tab to specify the stored procedure to call. Provide values for the following call parameters:
+</p>
+<a name="wp1127123"> </a><p class="pAnchor">
+</p><div align="left">
+<table border="0">
+  <caption></caption>
+  <tr align="left" valign="bottom">    <th><a name="wp1121363"> </a><div style="text-align: left" class="pCellHeading">
+Field
+<hr />
+</div>
+</th>
+    <th><a name="wp1121365"> </a><div style="text-align: left" class="pCellHeading">
+Description/Action
+<hr />
+</div>
+</th>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1120044"> </a><p class="pBody">
+<b class="cBold">Catalog Name</b>
+</p>
+</td>
+    <td><a name="wp1120046"> </a><p class="pBody">
+The name of the catalog. The default for the catalog name is <code class="cCode">current catalog</code>.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1120048"> </a><p class="pBody">
+<b class="cBold">Schema Name</b>
+</p>
+</td>
+    <td><a name="wp1120050"> </a><p class="pBody">
+The name of the schema. The default for the schema name is <code class="cCode">current schema</code>.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1120052"> </a><p class="pBody">
+<b class="cBold">Procedure Name Pattern</b>
+</p>
+</td>
+    <td><a name="wp1120054"> </a><p class="pBody">
+To save time, you can type all or part of the procedure name in this field to narrow your search. This is helpful when dealing with a large database that has a long list of procedures.
+</p>
+<a name="wp1120055"> </a><p class="pBody">
+Use&#160;% as a multi-character wildcard and _&#160; (underscore) as a single character wildcard. 
+</p>
+<a name="wp1120056"> </a><p class="pNote">
+<b>Note:</b> With DB2 databases, functions do not appear in the list of procedure names. Only procedures appear in the list.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1120058"> </a><p class="pBody">
+<b class="cBold">Procedure Name</b>
+</p>
+</td>
+    <td><a name="wp1120060"> </a><p class="pBody">
+Type or select the stored procedure name, depending on how you set the <b class="cBold">Procedure Name Pattern</b> field.
+</p>
+<a name="wp1120061"> </a><p class="pBody">
+If you select <b class="cBold">&lt;All Procedures&gt;</b>, this field lists all of the procedures in the selected catalog and schema.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1120063"> </a><p class="pBody">
+<b class="cBold">Publish Locally</b>
+</p>
+</td>
+    <td><a name="wp1120065"> </a><p class="pBody">
+Specifies whether to publish the notification’s publishable document to the local Integration Server.
+</p>
+<a name="wp1120069"> </a><p class="pBody">
+By default, this option is not selected, that is, if the webMethods Broker is configured to the Integration Server, the publishable document is published to the Broker; otherwise the publishable document is published to the local Integration Server.
+</p>
+<a name="wp1120073"> </a><p class="pBody">
+Selecting the <b class="cBold">Publish Locally</b> option reduces performance problems, if the Integration Server is connecting to a remotely located Broker that is in turn triggering a service on the local Integration Server.
+</p>
+</td>
+</tr>
+</table>
+</div>
+<p class="pAnchor">
+</p>
+<a name="wp1120075"> </a><p class="pBody">
+Based on the signature for the stored procedure you specified, the following fields and values will appear in the top table on the <b class="cBold">Call</b> tab:
+</p>
+<a name="wp1127187"> </a><p class="pAnchor">
+</p><div align="left">
+<table border="0">
+  <caption></caption>
+  <tr align="left" valign="bottom">    <th><a name="wp1121367"> </a><div style="text-align: left" class="pCellHeading">
+Field
+<hr />
+</div>
+</th>
+    <th><a name="wp1121369"> </a><div style="text-align: left" class="pCellHeading">
+Description/Action
+<hr />
+</div>
+</th>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1120100"> </a><p class="pBody">
+<b class="cBold">Parameter Name</b>
+</p>
+</td>
+    <td><a name="wp1120102"> </a><p class="pBody">
+The stored procedure parameter name.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1120104"> </a><p class="pBody">
+<b class="cBold">SQL Type</b>
+</p>
+</td>
+    <td><a name="wp1120106"> </a><p class="pBody">
+The SQL data type of the database column. 
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1120108"> </a><p class="pBody">
+<b class="cBold">JDBC Type</b>
+</p>
+</td>
+    <td><a name="wp1120113"> </a><p class="pBody">
+The JDBC data type of the stored procedure parameter.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1120115"> </a><p class="pBody">
+<b class="cBold">Parameter Type</b>
+</p>
+</td>
+    <td><a name="wp1122060"> </a><p class="pBody">
+Defines the parameter type as IN, INOUT, or OUT. If you select IN or INOUT, you may also set the input expression in the <b class="cBold">Expression</b> field.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1120119"> </a><p class="pBody">
+<b class="cBold">Expression*</b>
+</p>
+</td>
+    <td><a name="wp1120121"> </a><p class="pBody">
+Sets the input for the IN or INOUT parameter types only. The RETURN or OUT parameters will appear automatically on the <b class="cBold">Call</b> tab’s bottom table. 
+</p>
+<a name="wp1120128"> </a><p class="pBody">
+For a list of the allowable expression settings by parameter type, and how each parameter will map to the input or output fields, see the following table.
+</p>
+</td>
+</tr>
+</table>
+</div>
+<p class="pAnchor">
+</p>
+<a name="wp1120130"> </a><p class="pBodyRelative">
+<b class="cBold">Valid Expressions by Parameter Type</b>
+</p>
+<a name="wp1120171"> </a><p class="pAnchor">
+</p><div align="left">
+<table border="0">
+  <caption></caption>
+  <tr align="left" valign="bottom">    <th><a name="wp1121371"> </a><div style="text-align: left" class="pCellHeading">
+Parameter Type
+<hr />
+</div>
+</th>
+    <th><a name="wp1121373"> </a><div style="text-align: left" class="pCellHeading">
+Expression
+<hr />
+</div>
+</th>
+    <th><a name="wp1121375"> </a><div style="text-align: left" class="pCellHeading">
+Input or Output Mapping?
+<hr />
+</div>
+</th>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1120139"> </a><p class="pBody">
+RETURN
+</p>
+</td>
+    <td><a name="wp1120141"> </a><p class="pBody">
+Empty (default)
+</p>
+</td>
+    <td><a name="wp1120143"> </a><p class="pBody">
+Output field
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1120145"> </a><p class="pBody">
+OUT
+</p>
+</td>
+    <td><a name="wp1120147"> </a><p class="pBody">
+Empty (default)
+</p>
+</td>
+    <td><a name="wp1120149"> </a><p class="pBody">
+Output field
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1120151"> </a><p class="pBody">
+IN
+</p>
+</td>
+    <td><a name="wp1120153"> </a><p class="pBody">
+Default is empty, but it needs to be updated with a fixed value.
+</p>
+</td>
+    <td><a name="wp1120155"> </a><p class="pBody">
+No mapping
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1120157"> </a><p class="pBody">
+INOUT
+</p>
+</td>
+    <td><a name="wp1120159"> </a><p class="pBody">
+Empty (default)
+</p>
+</td>
+    <td><a name="wp1120161"> </a><p class="pBody">
+Output field
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1120163"> </a><p class="pBody">
+ORACLE CURSOR<br />(INOUT)
+</p>
+</td>
+    <td><a name="wp1120165"> </a><p class="pBody">
+Empty (default)
+</p>
+</td>
+    <td><a name="wp1120167"> </a><p class="pBody">
+Output field.
+</p>
+</td>
+</tr>
+</table>
+</div>
+<p class="pAnchor">
+</p>
+<a name="wp1120173"> </a><p class="pBody">
+The bottom table on the <b class="cBold">Call</b> tab lists the following output parameters and values for the stored procedure that will map to the output of the notification’s publishable document and returns the value of OUT or INOUT parameters:
+</p>
+<a name="wp1127230"> </a><p class="pAnchor">
+</p><div align="left">
+<table border="0">
+  <caption></caption>
+  <tr align="left" valign="bottom">    <th><a name="wp1121381"> </a><div style="text-align: left" class="pCellHeading">
+Field
+<hr />
+</div>
+</th>
+    <th><a name="wp1121383"> </a><div style="text-align: left" class="pCellHeading">
+Description/Action
+<hr />
+</div>
+</th>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1120180"> </a><p class="pBody">
+<b class="cBold">Output Parameter Name</b>
+</p>
+</td>
+    <td><a name="wp1120182"> </a><p class="pBody">
+The stored procedure output parameter name.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1120184"> </a><p class="pBody">
+<b class="cBold">SQL Type</b>
+</p>
+</td>
+    <td><a name="wp1120186"> </a><p class="pBody">
+The SQL data type of the database column. 
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1120188"> </a><p class="pBody">
+<b class="cBold">JDBC Type</b>
+</p>
+</td>
+    <td><a name="wp1120190"> </a><p class="pBody">
+The JDBC data type of the output parameter.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1120192"> </a><p class="pBody">
+<b class="cBold">Output Field</b>
+</p>
+</td>
+    <td><a name="wp1120194"> </a><p class="pBody">
+The name of the output parameter.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1120196"> </a><p class="pBody">
+<b class="cBold">Output Field Type</b>
+</p>
+</td>
+    <td><a name="wp1120198"> </a><p class="pBody">
+The output parameter Java data type. 
+</p>
+<a name="wp1120204"> </a><p class="pBody">
+For a list of JDBC to Java data type mappings, see the <em class="cEmphasis">webMethods JDBC Adapter User’s Guide</em>.
+</p>
+</td>
+</tr>
+</table>
+</div>
+<p class="pAnchor">
+</p>
+<a name="wp1120010"> </a><p class="pBody">
+Specify the query time out value of the <b class="cBold">StoredProcedureNotificationWithSignature</b> notification you are configuring in the following field:
+</p>
+<a name="wp1127243"> </a><p class="pAnchor">
+</p><div align="left">
+<table border="0">
+  <caption></caption>
+  <tr align="left" valign="bottom">    <th><a name="wp1121385"> </a><div style="text-align: left" class="pCellHeading">
+Field
+<hr />
+</div>
+</th>
+    <th><a name="wp1121387"> </a><div style="text-align: left" class="pCellHeading">
+Description/Action
+<hr />
+</div>
+</th>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1120214"> </a><p class="pBody">
+<b class="cBold">Query Time Out</b>
+</p>
+</td>
+    <td><a name="wp1123153"> </a><p class="pBody">
+The query time out value in seconds. This value is the amount of time the JDBC Adapter waits for the notification to execute before stopping the SQL operation.
+</p>
+<a name="wp1123157"> </a><p class="pBody">
+The default value is -1. Use the default value to have the notification use the value indicated on the <code class="cCode">watt.adapter.JDBC.QueryTimeout</code> property as the time out. 
+</p>
+<a name="wp1123158"> </a><p class="pBody">
+If you specify a value equal to 0, or if the <code class="cCode">watt.adapter.JDBC.QueryTimeout</code> property is not set, the notification executes without a time out.
+</p>
+<a name="wp1123159"> </a><p class="pBody">
+If you specify a value greater than 0, the notification executes with the specified value as the time out.
+</p>
+<a name="wp1123160"> </a><p class="pNote">
+<b>Note:</b> -1 is the only permissible negative value for this field.
+</p>
+<a name="wp1123161"> </a><p class="pBody">
+For more information about the <code class="cCode">watt.adapter.JDBC.QueryTimeout</code> property, see the <em class="cEmphasis">webMethods JDBC Adapter User’s Guide.</em>
+</p>
+</td>
+</tr>
+</table>
+</div>
+<p class="pAnchor">
+</p>
+<a name="wp1120005"> </a><h4 class="pHeading3">
+ResultSet Tab
+</h4>
+<a name="wp1120409"> </a><p class="pBody">
+If the procedure returns a result set, select the <b class="cBold">ResultSet</b> tab to specify result set parameters using the fields in the following table. 
+</p>
+<a name="wp1120413"> </a><p class="pBody">
+This type of notification can support multiple results sets. 
+</p>
+<a name="wp1120482"> </a><p class="pBody">
+Use the <b class="cBold">Insert Row</b> icon <img src="images/ScreenLevelHelp65.gif" height="16" width="16" border="0" hspace="0" vspace="0"/> to create additional result sets as needed. 
+</p>
+<a name="wp1120419"> </a><p class="pAnchor">
+</p><div align="left">
+<table border="0">
+  <caption></caption>
+  <tr align="left" valign="top">    <td><a name="wp1120416"> </a><p class="px_Note">
+&#160;
+<img src="images/note_icon.gif" height="25" width="25" border="1" alt="Note" />
+</p>
+</td>
+    <td><a name="wp1120418"> </a><p class="pNote">
+<b>Note:</b>  While all the tables in the <b class="cBold">Call</b> tab are updated automatically if the selected stored procedure changes, the <b class="cBold">ResultSet</b> tab information is not updated automatically. To update this information, you must manually update the fields in the <b class="cBold">ResultSet</b> tab. 
+</p>
+</td>
+</tr>
+</table>
+</div>
+<p class="pAnchor">
+</p>
+<a name="wp1120420"> </a><p class="pBody">
+Provide values for the following parameters:
+</p>
+<a name="wp1127292"> </a><p class="pAnchor">
+</p><div align="left">
+<table border="0">
+  <caption></caption>
+  <tr align="left" valign="bottom">    <th><a name="wp1121389"> </a><div style="text-align: left" class="pCellHeading">
+Field
+<hr />
+</div>
+</th>
+    <th><a name="wp1121391"> </a><div style="text-align: left" class="pCellHeading">
+Description/Action
+<hr />
+</div>
+</th>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1120427"> </a><p class="pBody">
+<b class="cBold">Result Set Index</b>
+</p>
+</td>
+    <td><a name="wp1120429"> </a><p class="pBody">
+An index is automatically assigned to each result set. The first row default value is 1. 
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1120431"> </a><p class="pBody">
+<b class="cBold">Result Set Name</b>
+</p>
+</td>
+    <td><a name="wp1120433"> </a><p class="pBody">
+The name of the result set you want to create. 
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1120435"> </a><p class="pBody">
+<b class="cBold">Result Set Name (from second row)</b>
+</p>
+</td>
+    <td><a name="wp1120437"> </a><p class="pBody">
+Select result set name. 
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1120439"> </a><p class="pBody">
+<b class="cBold">Column Name</b>
+</p>
+</td>
+    <td><a name="wp1120441"> </a><p class="pBody">
+The name of the column of the result set.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1120446"> </a><p class="pBody">
+<b class="cBold">JDBC Type</b>
+</p>
+</td>
+    <td><a name="wp1120451"> </a><p class="pBody">
+The JDBC data type of the result column.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1120453"> </a><p class="pBody">
+<b class="cBold">Output Type</b>
+</p>
+</td>
+    <td><a name="wp1120455"> </a><p class="pBody">
+The Java data type of the result column.
+</p>
+<a name="wp1120461"> </a><p class="pBody">
+For a list of JDBC to Java data type mappings, see the <em class="cEmphasis">webMethods JDBC Adapter User’s Guide</em>.
+</p>
+</td>
+</tr>
+</table>
+</div>
+<p class="pAnchor">
+</p>
+
+ <hr />
+
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag());
+   // -->
+  </script>
+
+ </body>
+</html>

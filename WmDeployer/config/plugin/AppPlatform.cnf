@@ -1,0 +1,90 @@
+#
+# webMethods Deployer plugin Configuration File
+# 
+
+
+
+#
+# Unique identifier for the plugin
+#
+type=AppPlatform
+
+#
+# Deployment Support Type for your plugin server
+# RUNTIME/OFFLINE/BOTH
+#
+deploymentSupportType=BOTH
+
+#
+# The display name for your plugin server
+label=Application Platform
+
+#
+# Whether or not the Plugin Instance A will be referring to dependencies
+# on Plugin or Server Instance B
+# 
+referencesOtherServers=TRUE
+
+
+#
+# if the product doesn't have a web services stack to host the web services and the service implementations have to be bundled as a jar file.
+#
+isLocal=FALSE
+
+# Set to true the product plugin web services are doc lit enabled. If rpc-encoded then set this property to false
+isDocumentLiteralEnabled=true
+
+
+# This property is specfically for runtime to runtime deployment support. The path to the web services endpoint where the webservices are hosted.
+# The path will be constructed by appending this path to the server:port string. For e.g http://localhost:5555/ws/newSPIPlugin:newSPIImpl
+# This will be dummy for new products. Deployer will not support Runtime to Runtime deployment for new products.
+# Not required
+# hostSuffix_9.0=
+
+
+# This proerty is specfically for repository based deployment support. The path to the web services endpoint whelre the webservices are hosted.
+# The path will be constructed by appending this path to the server:port string. For e.g http://localhost:5555/ws/newSPI20Plugin:DummyProductPlugin
+# All new products should have this property defined.
+hostSuffix_SPI_2=wsstack/services/AppPlatformDeployer
+
+
+# The next five properties will be rendered on the UI to take input from the user as to where the product is running i.e. the host, port, user, password, version and if SSL should be used
+# or not while attempting a connection.
+hostLabel=Host
+portLabel=Port
+userLabel=User
+passwordLabel=Password
+SSLLabel=Use SSL
+versionLabel=Version
+
+# Optional connection properties that might be necessary to be passed for the intended product.
+# connectionProperties=rootFolders,includeSecurity
+
+# The configuration of the optional properties. The configuration of the
+# connection.rootFolders.label : the label of the field on the UI
+# connection.rootFolders.type : The type of the field.
+# connection.rootFolders.default : The default value of the field.
+# connection.rootFolders.required : Whether the field is a required or not.
+# connection.rootFolders.label=Root Folder Aliases
+# connection.rootFolders.type=STRING
+# connection.rootFolders.default=folder.public
+# connection.rootFolders.required=TRUE
+
+
+# Valid versions of the product and what version of the SPI it supports.
+# For all new products this should be version@SPI_2
+validVersions=9.7@SPI_2
+
+# List of object types that can be deployed
+# objectTypes=
+
+# Optional list of properties to display (at the project level).
+# Data would be gathered from the user for each one of these objects
+# and that data would be passed to the plugin during each invocation.
+projectProperties=
+
+# The configurations of the individual project properties.
+# projectProperty.autoalias.label : Label to be shown on the Deployer User Interface
+# projectProperty.autoalias.type : Type of the field
+# projectProperty.autoalias.default : default value of the field. 
+

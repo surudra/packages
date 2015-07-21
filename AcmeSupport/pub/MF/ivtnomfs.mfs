@@ -1,0 +1,93 @@
+DFSIVF1  TITLE 'IMS INSTALLATION VERIFICATION PROCEDURE'                00010000
+         PRINT ON,NOGEN                                                 00020000
+**************************** INSTALL/IVP ****************************** 00030000
+*                                                                     * 00040000
+*                   M O D U L E    P R O L O G U E                    * 00050000
+*                                                                     * 00060000
+*********************************************************************** 00070000
+*                                                                     * 00080000
+*          NAME:  DFSIVF1                                             * 00090000
+*                                                                     * 00100000
+*   DESCRIPTION:  MFS FOR TRAN IVTNO - NON-CONVERSATIONAL HIDAM/OSAM  * 00110000
+*                                                                     * 00120000
+**************************************************************@SCPYRT** 00130000
+*                                                                     * 00131000
+*         Licensed Materials - Property of IBM                        * 00132000
+*                                                                     * 00133000
+*         "Restricted Materials of IBM"                               * 00134000
+*                                                                     * 00135000
+*         5655-158 (C) Copyright IBM Corp. 1974,1991                  * 00136000
+*                                                                     * 00137000
+**************************************************************@ECPYRT** 00260000
+*                                                                     * 00280000
+*        STATUS:  IMS 3.1                                             * 00290000
+*                                                                     * 00300000
+*   MODULE TYPE:  MFS                                                 * 00310000
+*                                                                     * 00320000
+*       CHANGES:  PROLOGUE ADDED AND MINOR CHANGES FOR 3.1            * 00330000
+*                                                                     * 00340000
+*---+----1----+----2----+----3----+----4----+----5----+----6----+----7* 00350000
+* DEFAULT TRAN:   IVTNO                                                 00360000
+*         PSB :   DFSIVP1                                               00370000
+* DEVICE:         3277 MOD 2                                            00380000
+* DATABASE:       DFSIVD1                                               00390000
+* SYSTEM:         NON_CONVERSATIONAL                                    00400000
+*                 SINGLE SEGMENT/SINGLE TRANSMISSION INPUT              00410000
+*                 SINGLE SEGMENT OUTPUT                                 00420000
+* * * * * * * * * *                                                     00430000
+IVTNO    MSG   TYPE=OUTPUT,SOR=(IVTNOF,IGNORE),NXT=IVTNOMI1             00440000
+         SEG                                                            00450000
+         MFLD  MSG,LTH=40                                               00460000
+         MFLD  CMD,LTH=8                                                00470000
+         MFLD  NAME1,LTH=10                                             00480000
+         MFLD  NAME2,LTH=10                                             00490000
+         MFLD  EXT#,LTH=10                                              00500000
+         MFLD  ZIP,LTH=7                                                00510000
+         MFLD  SEGNO,LTH=4                                              00520000
+         MFLD  (SDATE,DATE2)                                            00530000
+         MSGEND                                                         00540000
+IVTNOMI1 MSG   TYPE=INPUT,SOR=(IVTNOF,IGNORE),NXT=IVTNO                 00550000
+         SEG                                                            00560000
+         MFLD  'IVTNO     ',LTH=10                                      00570000
+         MFLD  CMD,LTH=8                                                00580000
+         MFLD  NAME1,LTH=10                                             00590000
+         MFLD  NAME2,LTH=10                                             00600000
+         MFLD  EXT#,LTH=10                                              00610000
+         MFLD  ZIP,LTH=7                                                00620000
+         MSGEND                                                         00630000
+IVTNOF   FMT                                                            00640000
+         DEV   TYPE=3270-A02,FEAT=IGNORE,SYSMSG=SYSMSGA,DSCA=X'00E0'    00650000
+         DIV   TYPE=INOUT                                               00660000
+         DPAGE CURSOR=((10,34))                                         00670000
+         DFLD  '**************************************************',   X00680000
+               ATTR=PROT,POS=(2,14),LTH=50                              00690000
+         DFLD  '*     IMS INSTALLATION VERIFICATION PROCEDURE    *',   X00700000
+               ATTR=PROT,POS=(3,14),LTH=50                              00710000
+         DFLD  '**************************************************',   X00720000
+               ATTR=PROT,POS=(4,14),LTH=50                              00730000
+         DFLD  'TRANSACTION TYPE : NON-CONV (OSAM DB)',                X00740000
+               ATTR=PROT,POS=(7,40),LTH=37                              00750000
+         DFLD  'DATE             :',ATTR=PROT,POS=(8,40),LTH=18         00760000
+SDATE    DFLD  POS=(8,59),LTH=8,ATTR=PROT                               00770000
+         DFLD  'PROCESS  CODE  (*1) :',ATTR=PROT,POS=(10,10),LTH=21     00780000
+CMD      DFLD  POS=(10,34),LTH=8,ATTR=(HI,MOD)                          00790000
+         DFLD  '(*1) PROCESS CODE ',ATTR=PROT,POS=(11,60),LTH=18        00800000
+         DFLD  'LAST  NAME          :',ATTR=PROT,POS=(12,10),LTH=21     00810000
+NAME1    DFLD  POS=(12,34),LTH=10,ATTR=(HI,MOD)                         00820000
+         DFLD  '       ADD        ',ATTR=PROT,POS=(12,60),LTH=18        00830000
+         DFLD  '       DELETE     ',ATTR=PROT,POS=(13,60),LTH=18        00840000
+         DFLD  'FIRST  NAME         :',ATTR=PROT,POS=(14,10),LTH=21     00850000
+NAME2    DFLD  POS=(14,34),LTH=10,ATTR=(HI,MOD)                         00860000
+         DFLD  '       UPDATE     ',ATTR=PROT,POS=(14,60),LTH=18        00870000
+         DFLD  '       DISPLAY    ',ATTR=PROT,POS=(15,60),LTH=18        00880000
+         DFLD  'EXTENSION  NUMBER   :',ATTR=PROT,POS=(16,10),LTH=21     00890000
+EXT#     DFLD  POS=(16,34),LTH=10,ATTR=(HI,MOD)                         00900000
+         DFLD  '       TADD       ',ATTR=PROT,POS=(16,60),LTH=18        00910000
+         DFLD  'INTERNAL  ZIP CODE  :',ATTR=PROT,POS=(18,10),LTH=21     00920000
+ZIP      DFLD  POS=(18,34),LTH=7,ATTR=(HI,MOD)                          00930000
+MSG      DFLD  POS=(21,10),LTH=40,ATTR=PROT                             00940000
+         DFLD  'SEGMENT# :',ATTR=PROT,POS=(21,60),LTH=10                00950000
+SEGNO    DFLD  POS=(21,72),LTH=4,ATTR=PROT                              00960000
+SYSMSGA  DFLD  POS=(23,1),LTH=79,ATTR=HI                                00970000
+         FMTEND                                                         00980000
+         END                                                            00990000

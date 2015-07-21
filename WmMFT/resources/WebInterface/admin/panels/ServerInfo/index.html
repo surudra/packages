@@ -1,0 +1,161 @@
+<!-- Panel HTML -->
+<div id="pnlServerInfo" class="adminPanel">
+	<ul id="serverItemContextMenu" class="contextMenu">
+		<li class="start">
+			<a href="#startServer">Start Server</a>
+		</li>
+		<li class="stop separator">
+			<a href="#stopServer">Stop Server</a>
+		</li>
+		<li class="restart separator">
+			<a href="#restartServer">Restart Server</a>
+		</li>
+		<!--li class="stopAllServers separator">
+			<a href="#stopAllServers">Stop All Servers</a>
+		</li-->
+		<li class="startAllServers separator">
+			<a href="#startAllServers">Start All Servers</a>
+		</li>
+	</ul>
+	<ul id="serverResetStatsContextMenu" class="contextMenu">
+		<li class="allStats">
+			<a href="#allStats" msg="Reset All Stats">Reset All Below Listed Stats</a>
+		</li>
+		<li class="loginStats separator">
+			<a href="#loginStats">Reset Login Counts (total, successful, failed)</a>
+		</li>
+		<li class="transferStats separator">
+			<a href="#transferStats">Reset Server Bytes (in, out)</a>
+		</li>
+		<li class="uploadDownloadStats separator">
+			<a href="#uploadDownloadStats">Reset Upload/Download Counter</a>
+		</li>
+		<!--
+		<li class="serverStats separator">
+			<a href="#serverStats">Reset Stats</a>
+		</li>
+		!-->
+	</ul>
+	<div>
+		<span class="ui-priority-primary">Servers : </span>
+		<div class="ui-corner-all ui-widget-content nobg sideScroll clear" style="width: auto;">
+			<ol id="lstServers" class="nobg selectable single logItemList">
+			</ol>
+		</div>
+	</div>
+	<div style="margin-top:10px;">
+		<div id="serverInfoTabs" class="smalltabs tabs" style="padding:0px;">
+		   <ul>
+			  <li><a href="#serverInfoTab" class="tablink"><span style="display: inline-block;margin: -1px 3px 0px -10px; float: left;" class="pointer ui-icon ui-icon-notice">
+</span>Info</a></li>
+			  <li><a href="#serverLogTab" class="tablink"><span style="display: inline-block;margin: -1px 3px 0px -10px; float: left;" class="pointer ui-icon ui-icon-document">
+</span>Log</a></li>
+			  <li id="graphsPanelTabLink"><a href="#serverGraphsTab" class="tablink"><span style="display: inline-block;margin: -1px 3px 0px -10px; float: left;" class="pointer ui-icon ui-icon-image">
+</span>Graphs</a></li>
+		   </ul>
+		   <div id="serverInfoTab">
+				<fieldset class="ui-widget-content nobg allignedForm dashboardPanel smallLabels" style="">
+					<legend>Login Information</legend>
+					<p>
+						<label class="ui-priority-primary">Last login  : </label>
+						<span class="liveData" id="last_login_user"></span>
+						&nbsp;
+						<span class="liveData" id="last_login_ip"></span>
+						&nbsp;
+						<span class="liveData" id="last_login_date_time"></span>
+					</p>
+					<p>
+						<label class="ui-priority-primary">Total logins : </label>
+						<span class="liveData" id="total_logins"></span>
+					</p>
+					<p>
+						<label class="ui-priority-primary">Successful : </label>
+						<span class="liveData" id="successful_logins"></span>
+					</p>
+					<p>
+						<label class="ui-priority-primary">Failed : </label>
+						<span class="liveData" id="failed_logins"></span>
+					</p>
+				</fieldset>
+				<fieldset class="ui-widget-content nobg allignedForm dashboardPanel">
+					<legend>Data transferred</legend>
+					<p>
+						<label class="ui-priority-primary">Total Bytes in/out  : </label>
+						<span class="liveData formatData hideZero" id="total_server_bytes_transfered"></span>
+					</p>
+					<p>
+						<label class="ui-priority-primary">Download count : </label>
+						<span class="liveData hideZero" id="downloaded_files"></span>
+					</p>
+					<p>
+						<label class="ui-priority-primary">Upload count : </label>
+						<span class="liveData hideZero" id="uploaded_files"></span>
+					</p>
+					<p>
+						<label class="ui-priority-primary">Sent : </label>
+						<span class="liveData formatData hideZero" id="total_server_bytes_sent"></span>
+					</p>
+					<p>
+						<label class="ui-priority-primary">Received : </label>
+						<span class="liveData formatData hideZero" id="total_server_bytes_received"></span>
+					</p>
+				</fieldset>
+				<fieldset class="ui-widget-content nobg allignedForm dashboardPanel">
+					<legend>Speed Information</legend>
+					<p>
+						<label class="ui-priority-primary">Outgoing speed : </label>
+						<span class="liveData formatData inKBs speedInSecond hideZero" id="current_download_speed"></span>
+					</p>
+					<p>
+						<label class="ui-priority-primary">Incoming speed : </label>
+						<span class="liveData formatData inKBs speedInSecond hideZero" id="current_upload_speed"></span>
+					</p>
+				</fieldset>
+				<fieldset class="ui-widget-content nobg allignedForm dashboardPanel">
+					<legend>Session Information</legend>
+					<p>
+						<label class="ui-priority-primary">Concurrent users  : </label>
+						<span class="liveData" id="concurrent_users"></span>
+					</p>
+					<p>
+						<label class="ui-priority-primary">Connected sessions : </label>
+						<span class="liveData" id="logged_in_users"></span>
+					</p>
+					<p>
+						<label class="ui-priority-primary">Free threads : </label>
+						<span class="liveData" id="thread_pool_available"></span>
+					</p>
+					<p>
+						<label class="ui-priority-primary">Busy threads : </label>
+						<span class="liveData" id="thread_pool_busy"></span>
+					</p>
+				</fieldset>
+				<div class="clear"></div>
+		   </div>
+		   <div id="serverLogTab" style="padding: 0px;">
+		   		<iframe id="serverLoggingFrame" onload="" width="100%" height="560" src="log.html?embed=true" style="margin:0px;padding:0px;"  marginWidth="0" marginHeight="0" frameBorder="0" scrolling="no" />
+				<!--div class="customForm">
+					<a id="server_log_refresh" href="#" class="button" style="">
+						<span style='display: inline-block;
+						margin: 0px 3px 0px -17px; float: left;' class='pointer ui-icon ui-icon-refresh'></span>
+						<span class="">Refresh Log</span>
+					</a>
+					<span class="spacer"></span>
+					<input type="checkbox" id="server_log_live_update" />
+					<label for="server_log_live_update">
+						Live Update</label>
+					<span class="spacer"></span>
+					<input type="checkbox" id="server_log_scroll_with_activity" />
+					<label for="server_log_scroll_with_activity">
+						Scroll with activity</label>
+					<span style="float:right;">
+						<span class="ui-priority-secondary">Log last updated : <span id="lastServerLogUpdatedTimestamp"></span></span>
+					</span>
+					<pre id="server_log" class="logArea ui-widget-content ui-state-default"></pre>
+				</div-->
+		   </div>
+		   <div id="serverGraphsTab">
+		   </div>
+		</div>
+	</div>
+</div>

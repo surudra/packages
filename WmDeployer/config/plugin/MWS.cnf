@@ -1,0 +1,237 @@
+
+#
+# webMethods Deployer plugin Configuration File
+# 
+
+#
+# Unique identifier for the plugin
+#
+type=MWS
+
+
+#
+# Deployment Support Type for your plugin server
+# RUNTIME/OFFLINE/BOTH
+#
+deploymentSupportType=BOTH
+
+
+#
+# The display name for your plugin server
+label=MWS
+
+#
+# Whether or not the Plugin Instance A will be referring to dependencies
+# on Plugin or Server Instance B
+# 
+referencesOtherServers=FALSE
+
+#
+# Just put false here
+#
+isLocal=FALSE
+
+
+#
+# Path to the web service logic in your plugin web service container
+# (only needed if isLocal is FALSE)
+#
+listObjectsPath=
+pingPath=
+getObjectsPath=
+deployObjectsPath=
+verifyObjectPath=
+getDependenciesPath=
+getConnectionInfoPath=
+getObjectVarSubPath=
+hostSuffix_SPI_0=wm_caf_deployer_services/services/DeployerPluginSOAP
+hostSuffix_SPI_1=wm_caf_deployer_services/services/DeployerPluginSOAP
+
+#
+# Path to local plugin jar
+# (only needed if isLocal is TRUE)
+#
+#jar=Sample.jar
+#className=com.wm.sample.deployer.plugin.SamplePlugin
+
+#
+# Fields that will be displayed on the plugin connection configuration
+# page for each plugin instance that needs to be accessed by the
+# Deployer.  Leaving a blank value for any of these fields will prevent
+# the Deployer from displaying it
+#
+hostLabel=Host
+portLabel=Port
+userLabel=User
+passwordLabel=Password
+SSLLabel=Use SSL
+versionLabel=Version
+validVersions=9.7@SPI_1,9.6@SPI_1,9.5@SPI_1,9.0@SPI_1,8.2@SPI_1,8.0@SPI_0,7.1@SPI_0
+
+# testing connection props
+connectionProperties=rootFolders,includeSecurity,maxFolderChildren,maxFolderDepth,debugLogging,excludeTaskEngine,cacheTimeout
+
+connection.rootFolders.label=Root Folder Aliases
+connection.rootFolders.type=STRING
+connection.rootFolders.default=folder.public
+connection.rootFolders.required=TRUE
+
+connection.includeSecurity.label=Include security dependencies
+connection.includeSecurity.type=BOOLEAN
+connection.includeSecurity.default=TRUE
+connection.includeSecurity.required=TRUE
+
+connection.maxFolderChildren.label=Maximum Folder Object Count
+connection.maxFolderChildren.type=STRING
+connection.maxFolderChildren.default=10000
+connection.maxFolderChildren.required=TRUE
+
+connection.maxFolderDepth.label=Maximum Folder Depth
+connection.maxFolderDepth.type=STRING
+connection.maxFolderDepth.default=25
+connection.maxFolderDepth.required=TRUE
+
+
+connection.debugLogging.label=Enable Additional MWS Logging
+connection.debugLogging.type=BOOLEAN
+connection.debugLogging.default=FALSE
+connection.debugLogging.required=FALSE
+
+connection.excludeTaskEngine.label=Exclude Core Task Engine Dependencies
+connection.excludeTaskEngine.type=BOOLEAN
+connection.excludeTaskEngine.default=TRUE
+connection.excludeTaskEngine.required=TRUE
+
+connection.cacheTimeout.label=Cache Timeout
+connection.cacheTimeout.type=STRING
+connection.cacheTimeout.default=900
+connection.cacheTimeout.required=TRUE
+
+#
+# List of object types that can be deployed 
+# 
+objectTypes=Page,Portlet,CafApp,TaskApp,Task,DBO,Shell,Skin,Renderer,Rule,PortalUser,PortalGroup,PortalRole,DirectoryService,DataSource,SecurityRealm,BusinessCalendar
+#
+# For each object type listed above, Deployer needs to to know how to 
+# label a folder of them, what icon to use, and whether or not an entire
+# folder of them can be deployed as a unique object (usually not)
+#
+ 
+objectType.TaskApp.folderName=Task Applications
+objectType.TaskApp.iconName=icon_task.gif
+objectType.TaskApp.foldersAreDeployable=FALSE
+
+objectType.CafApp.folderName=CAF/Web Applications
+objectType.CafApp.iconName=icon_app.gif
+objectType.CafApp.foldersAreDeployable=FALSE
+
+objectType.Task.folderName=Tasks
+objectType.Task.iconName=icon_task.gif
+objectType.Task.foldersAreDeployable=FALSE
+
+objectType.Page.folderName=Pages
+objectType.Page.iconName=icon_page.gif
+objectType.Page.foldersAreDeployable=true
+objectType.Page.varSubFields=folder
+objectType.Page.varSubFields.folder.type=STRING
+objectType.Page.varSubFields.folder.label=Folder
+ 
+objectType.Portlet.folderName=Portlets
+objectType.Portlet.iconName=icon_portlet.gif
+objectType.Portlet.foldersAreDeployable=FALSE
+ 
+objectType.DBO.folderName=DBOs
+objectType.DBO.iconName=icon_dbo.gif
+objectType.DBO.foldersAreDeployable=FALSE
+ 
+objectType.Shell.folderName=Shells
+objectType.Shell.iconName=icon_shell.gif
+objectType.Shell.foldersAreDeployable=FALSE
+
+objectType.Skin.folderName=Skins
+objectType.Skin.iconName=icon_skin.gif
+objectType.Skin.foldersAreDeployable=FALSE
+
+objectType.Renderer.folderName=Renderers
+objectType.Renderer.iconName=icon_renderer.gif
+objectType.Renderer.foldersAreDeployable=FALSE
+
+objectType.Rule.folderName=Rules
+objectType.Rule.iconName=icon_rule.gif
+objectType.Rule.foldersAreDeployable=TRUE
+
+objectType.PortalUser.folderName=Users
+objectType.PortalUser.iconName=icon_user.gif
+objectType.PortalUser.foldersAreDeployable=FALSE
+ 
+objectType.PortalGroup.folderName=Groups
+objectType.PortalGroup.iconName=icon_group.gif
+objectType.PortalGroup.foldersAreDeployable=FALSE
+ 
+objectType.PortalRole.folderName=Roles
+objectType.PortalRole.iconName=icon_role.gif
+objectType.PortalRole.foldersAreDeployable=FALSE
+ 
+objectType.DirectoryService.folderName=Directory Services
+objectType.DirectoryService.iconName=icon_directory_service.gif
+objectType.DirectoryService.foldersAreDeployable=FALSE
+ 
+objectType.DataSource.folderName=Data Sources
+objectType.DataSource.iconName=icon_data_source.gif
+objectType.DataSource.foldersAreDeployable=FALSE
+
+objectType.SecurityRealm.folderName=Security Realms
+objectType.SecurityRealm.iconName=icon_realm.gif
+objectType.SecurityRealm.foldersAreDeployable=FALSE
+
+objectType.BusinessCalendar.folderName=Business Calendars
+objectType.BusinessCalendar.iconName=icon_calendar.gif
+objectType.BusinessCalendar.foldersAreDeployable=FALSE
+
+#
+# Optional list of properties to display (at the project level).
+# Data would be gathered from the user for each one of these objects
+# and that data would be passed to the plugin during each invocation
+# of getObjects (during the Build phase) and deployObjects (during 
+# the deploy phase)
+# 
+projectProperties=autoalias,aliasprefix,content,contentrefs,versions,access,subscriptions,principalattribs
+
+
+
+# Project level Options
+# 
+projectProperty.autoalias.label=Auto Generate Aliases
+projectProperty.autoalias.type=BOOLEAN
+projectProperty.autoalias.default=TRUE
+
+projectProperty.aliasprefix.label=Alias Prefix
+projectProperty.aliasprefix.type=STRING
+projectProperty.aliasprefix.default=deployer.
+
+projectProperty.content.label=Export Content (Documents)
+projectProperty.content.type=BOOLEAN
+projectProperty.content.default=FALSE
+
+projectProperty.contentrefs.label=Export Content As Reference
+projectProperty.contentrefs.type=BOOLEAN
+projectProperty.contentrefs.default=FALSE
+
+projectProperty.versions.label=Export Version History
+projectProperty.versions.type=BOOLEAN
+projectProperty.versions.default=FALSE
+
+projectProperty.access.label=Export Access Control Lists
+projectProperty.access.type=BOOLEAN
+projectProperty.access.default=FALSE
+
+projectProperty.subscriptions.label=Export Subscriptions
+projectProperty.subscriptions.type=BOOLEAN
+projectProperty.subscriptions.default=FALSE
+
+projectProperty.principalattribs.label=Export Principal Attributes
+projectProperty.principalattribs.type=BOOLEAN
+projectProperty.principalattribs.default=TRUE
+
+
+

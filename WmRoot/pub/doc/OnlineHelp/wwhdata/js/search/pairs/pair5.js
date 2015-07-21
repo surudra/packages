@@ -1,0 +1,27 @@
+function FileData_Pairs(x)
+{
+x.t("-2014","software");
+x.t("2007","-2014");
+x.t("scheduler","screen");
+x.t("mode","screen");
+x.t("quiesce","mode");
+x.t("shut","down");
+x.t("down","restart");
+x.t("darmstadt","germany");
+x.t("menu","scheduler");
+x.t("menu","server");
+x.t("restart","screen");
+x.t("software","darmstadt");
+x.t("usage","screen");
+x.t("screen","2007");
+x.t("screen","shut");
+x.t("screen","service");
+x.t("screen","statistics");
+x.t("screen","enter/exit");
+x.t("screen","log");
+x.t("service","usage");
+x.t("statistics","screen");
+x.t("enter/exit","quiesce");
+x.t("log","screen");
+x.t("server","menu");
+}

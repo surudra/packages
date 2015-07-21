@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="enabled">yes</value>
+  <value name="system_package">yes</value>
+  <value name="version">9.7.0.0.361</value>
+  <value name="build">361</value>
+  <value name="jvm_version">1.7</value>
+  <value name="publisher">Software AG</value>
+  <value name="description">Administration support services</value>
+  <value name="listACL">Administrators</value>
+  <record name="startup_services" javaclass="com.wm.util.Values">
+    <null name="wm.server.event:startEventAgentPort"/>
+    <null name="wm.server.net.email:init"/>
+    <null name="wm.server.net.ftp:init"/>
+    <null name="wm.server.net.ftps:init"/>
+    <null name="wm.server.net.http:init"/>
+    <null name="wm.server.ns:syncToNamespace"/>
+    <null name="wm.server.remote:init"/>
+    <null name="wm.server.proxy:init"/>
+    <null name="wm.server.schedule:init"/>
+    <null name="wm.server.dispatcher:init"/>
+    <null name="wm.server.tx:init"/>
+    <null name="wm.server.soap:init"/>
+    <null name="wm.server.tspace:init"/>
+    <null name="wm.server.ws:init"/>
+    <null name="wm.server.oauth:init"/>
+    <null name="wm.server.security.keystore:createDefaultKeyStoreTrustStoreAliases"/>
+    <null name="wm.server.ntlmclient:init"/>
+  </record>
+  <record name="shutdown_services" javaclass="com.wm.util.Values">
+    <null name="wm.server.net.http:shutdown"/>
+    <null name="wm.server.net.ftp:shutdown"/>
+    <null name="wm.server.net.email:shutdown"/>
+    <null name="wm.server.tx:shutdown"/>
+    <null name="wm.server.schedule:shutdown"/>
+    <null name="wm.server.remote:shutdown"/>
+  </record>
+  <null name="replication_services"/>
+  <null name="requires"/>
+</Values>

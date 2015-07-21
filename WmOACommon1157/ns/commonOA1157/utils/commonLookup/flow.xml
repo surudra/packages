@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<FLOW VERSION="3.0" CLEANUP="true">
+  <COMMENT></COMMENT>
+
+  <!-- nodes -->
+
+<INVOKE TIMEOUT="" SERVICE="pub.string:lookupTable" VALIDATE-IN="$none" VALIDATE-OUT="$none">
+  <COMMENT></COMMENT>
+
+  <!-- nodes -->
+
+<MAP MODE="INPUT">
+  <MAPTARGET>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_name">lookupTableInput</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="field_opt">false</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">lookupTable</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">2</value>
+        <value name="field_opt">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">keyColumnIndex</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">valueColumnIndex</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">key</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">ignoreCase</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">true</value>
+        <array name="field_options" type="value" depth="1">
+          <value>false</value>
+          <value>true</value>
+        </array>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">useRegex</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">true</value>
+        <array name="field_options" type="value" depth="1">
+          <value>false</value>
+          <value>true</value>
+        </array>
+      </record>
+    </array>
+    <value name="rec_closed">false</value>
+  </record>
+</Values>
+</MAPTARGET>
+  <MAPSOURCE>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="field_opt">false</value>
+    <list name="rec_fields">
+    </list>
+    <value name="rec_closed">false</value>
+  </record>
+</Values>
+</MAPSOURCE>
+
+  <!-- nodes -->
+
+<MAPSET NAME="Setter" OVERWRITE="true" VARIABLES="false" FIELD="/lookupTable;1;2">
+  <DATA ENCODING="XMLValues" I18N="true">
+
+<Values version="2.0">
+  <array name="xml" type="value" depth="2">
+    <array type="value" depth="1">
+      <value>Manufacturing</value>
+      <value>1</value>
+    </array>
+    <array type="value" depth="1">
+      <value>Engineering</value>
+      <value>2</value>
+    </array>
+    <array type="value" depth="1">
+      <value>Yes</value>
+      <value>1</value>
+    </array>
+    <array type="value" depth="1">
+      <value>No</value>
+      <value>2</value>
+    </array>
+    <array type="value" depth="1">
+      <value>Add</value>
+      <value>1</value>
+    </array>
+    <array type="value" depth="1">
+      <value>Change</value>
+      <value>2</value>
+    </array>
+    <array type="value" depth="1">
+      <value>Disable</value>
+      <value>3</value>
+    </array>
+    <array type="value" depth="1">
+      <value>Option Class</value>
+      <value>1</value>
+    </array>
+    <array type="value" depth="1">
+      <value>None</value>
+      <value>2</value>
+    </array>
+    <array type="value" depth="1">
+      <value>Push</value>
+      <value>1</value>
+    </array>
+    <array type="value" depth="1">
+      <value>Assembly Pull</value>
+      <value>2</value>
+    </array>
+    <array type="value" depth="1">
+      <value>Operation Pull</value>
+      <value>3</value>
+    </array>
+    <array type="value" depth="1">
+      <value>Bulk</value>
+      <value>4</value>
+    </array>
+    <array type="value" depth="1">
+      <value>Supplier</value>
+      <value>5</value>
+    </array>
+    <array type="value" depth="1">
+      <value>Phantom</value>
+      <value>6</value>
+    </array>
+    <array type="value" depth="1">
+      <value>Based on Bill</value>
+      <value>7</value>
+    </array>
+    <array type="value" depth="1">
+      <value>CREATE</value>
+      <value>1</value>
+    </array>
+    <array type="value" depth="1">
+      <value>UPDATE</value>
+      <value>2</value>
+    </array>
+    <array type="value" depth="1">
+      <value>Yes - autocharge</value>
+      <value>1</value>
+    </array>
+    <array type="value" depth="1">
+      <value>No - autocharge</value>
+      <value>2</value>
+    </array>
+    <array type="value" depth="1">
+      <value>No - directchagre</value>
+      <value>3</value>
+    </array>
+    <array type="value" depth="1">
+      <value>Item</value>
+      <value>1</value>
+    </array>
+    <array type="value" depth="1">
+      <value>Lot</value>
+      <value>2</value>
+    </array>
+    <array type="value" depth="1">
+      <value>Resource Units</value>
+      <value>3</value>
+    </array>
+    <array type="value" depth="1">
+      <value>Resource Value</value>
+      <value>4</value>
+    </array>
+    <array type="value" depth="1">
+      <value>Total Value</value>
+      <value>5</value>
+    </array>
+    <array type="value" depth="1">
+      <value>Activity</value>
+      <value>6</value>
+    </array>
+    <array type="value" depth="1">
+      <value>Prior</value>
+      <value>3</value>
+    </array>
+    <array type="value" depth="1">
+      <value>Next</value>
+      <value>4</value>
+    </array>
+    <array type="value" depth="1">
+      <value>WIP Move</value>
+      <value>1</value>
+    </array>
+    <array type="value" depth="1">
+      <value>Manual</value>
+      <value>2</value>
+    </array>
+    <array type="value" depth="1">
+      <value>PO receipt</value>
+      <value>3</value>
+    </array>
+    <array type="value" depth="1">
+      <value>PO Move</value>
+      <value>4</value>
+    </array>
+  </array>
+  <record name="type" javaclass="com.wm.util.Values">
+    <value name="node_type">unknown</value>
+    <value name="field_name">lookupTable</value>
+    <value name="field_type">string</value>
+    <value name="field_dim">2</value>
+    <value name="field_opt">false</value>
+  </record>
+</Values>
+</DATA>
+</MAPSET>
+
+<MAPSET NAME="Setter" OVERWRITE="true" VARIABLES="false" FIELD="/ignoreCase;1;0">
+  <DATA ENCODING="XMLValues" I18N="true">
+
+<Values version="2.0">
+  <value name="xml">true</value>
+  <record name="type" javaclass="com.wm.util.Values">
+    <value name="node_type">unknown</value>
+    <value name="field_name">ignoreCase</value>
+    <value name="field_type">string</value>
+    <value name="field_dim">0</value>
+    <value name="field_opt">true</value>
+    <array name="field_options" type="value" depth="1">
+      <value>false</value>
+      <value>true</value>
+    </array>
+  </record>
+</Values>
+</DATA>
+</MAPSET>
+</MAP>
+
+<MAP MODE="OUTPUT">
+  <MAPTARGET>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="field_opt">false</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">lookupTable</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">2</value>
+        <value name="field_opt">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">key</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">ignoreCase</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">value</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">false</value>
+      </record>
+    </array>
+    <value name="rec_closed">false</value>
+  </record>
+</Values>
+</MAPTARGET>
+  <MAPSOURCE>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_name">lookupTableOutput</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="field_opt">false</value>
+    <list name="rec_fields">
+    </list>
+    <value name="rec_closed">false</value>
+  </record>
+</Values>
+</MAPSOURCE>
+
+  <!-- nodes -->
+
+<MAPDELETE NAME="Dropper" FIELD="/key;1;0">
+</MAPDELETE>
+
+<MAPDELETE NAME="Dropper" FIELD="/lookupTable;1;2">
+</MAPDELETE>
+
+<MAPDELETE NAME="Dropper" FIELD="/ignoreCase;1;0">
+</MAPDELETE>
+</MAP>
+</INVOKE>
+</FLOW>

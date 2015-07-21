@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="GENERATOR" content="Quadralay WebWorks Publisher Professional Edition 7.0" />
+  <meta name="TEMPLATEBASE" content="wM_WWH20030908" />
+  <meta name="LASTUPDATED" content="12/04/06 19:31:53" />
+  <title> CustomSQL Service Template Screens    </title>
+  <link rel="StyleSheet" href="document.css" type="text/css" />
+  <link rel="StyleSheet" href="catalog.css" type="text/css" />
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+ </head>
+
+ <body onLoad="WWHUpdate();">
+
+
+<a name="wp1073185"> </a><h2 class="pNewHTMLPage">
+ CustomSQL Service Template Screens    
+</h2><a name="wp1093397"> </a><p class="pBody">
+The CustomSQL adapter service enables you to define and execute custom SQL to perform database operations. You can execute almost any SQL statement required by integrations, such as data management statements.
+</p>
+<a name="wp1093501"> </a><p class="pBody">
+This service template includes the following <a  href="ScreenLevelHelp10.html#wp1080883">SQL Tab</a>:
+</p>
+<a name="wp1080883"> </a><h4 class="pHeading3">
+SQL Tab
+</h4>
+<a name="wp1097149"> </a><p class="pBody">
+Use the <b class="cBold">SQL</b> tab to specify an SQL statement and the associated input and output parameters. Use the <b class="cBold">Insert Row</b> icon <img src="images/table_insertrow.gif" border="0" hspace="0" vspace="0"/> and set the SQL parameters as described in the following table.
+</p>
+<a name="wp1117247"> </a><p class="pAnchor">
+</p><div align="left">
+<table border="0">
+  <caption></caption>
+  <tr align="left" valign="top">    <td><a name="wp1117253"> </a><p class="px_Note">
+&#160;
+<img src="images/note_icon.gif" height="25" width="25" border="1" alt="Note" />
+</p>
+</td>
+    <td><a name="wp1117264"> </a><p class="pNote">
+<b>Note:</b> When using the CustomSQL service for a Select SQL, it is not mandatory to configure the output fields <b class="cBold">Output JDBC Type</b>, <b class="cBold">Output Field Type</b>, and <b class="cBold">Output Field</b>. The JDBC Adapter uses the fields provided in the Select SQL statement as the output parameter fields.
+</p>
+</td>
+</tr>
+</table>
+</div>
+<p class="pAnchor">
+</p>
+<a name="wp1099704"> </a><p class="pAnchor">
+</p><div align="left">
+<table border="0">
+  <caption></caption>
+  <tr align="left" valign="bottom">    <th><a name="wp1099708"> </a><div style="text-align: left" class="pCellHeading">
+Field
+<hr />
+</div>
+</th>
+    <th><a name="wp1099710"> </a><div style="text-align: left" class="pCellHeading">
+Description/Action
+<hr />
+</div>
+</th>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1099712"> </a><p class="pBody">
+<b class="cBold">SQL*</b>
+</p>
+</td>
+    <td><a name="wp1099714"> </a><p class="pBody">
+A SQL statement.
+</p>
+<a name="wp1099715"> </a><p class="pBody">
+If you need more space to type your statement, use the launch icon to the right to open a text editor window.
+</p>
+<a name="wp1099813"> </a><p class="pBody">
+Do not end your SQL statement with a semi-colon (<code class="cCode">;</code>) or an exception will be generated at run time.
+</p>
+<a name="wp1099716"> </a><p class="pBody">
+You can type the statement directly in this field, for example:
+</p>
+<a name="wp1099717"> </a><p class="pBody">
+<code class="cCode">select short_col, int_col, float_col, double_col, date_col, date_time_col, varchar_col from <br />ADAPTER-TEST</code>
+</p>
+<a name="wp1099718"> </a><p class="pBody">
+For variable names, use the ? variable placeholder for each variable. For example:
+</p>
+<a name="wp1099719"> </a><p class="pBody">
+<code class="cCode">select employee_name where StaffID = ? and Dept = ?</code>
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1099721"> </a><p class="pBody">
+<b class="cBold">Input JDBC Type</b>
+</p>
+</td>
+    <td><a name="wp1099723"> </a><p class="pBody">
+The JDBC type of the corresponding <b class="cBold">Input Field</b>.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1099725"> </a><p class="pBody">
+<b class="cBold">Input Field Type</b>
+</p>
+</td>
+    <td><a name="wp1099727"> </a><p class="pBody">
+The Java type that corresponds to the input JDBC type.
+</p>
+<a name="wp1099730"> </a><p class="pBody">
+For a list of JDBC-Type to Java-Type mappings, see the <em class="cEmphasis">webMethods JDBC Adapter User’s Guide</em>.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1099733"> </a><p class="pBody">
+<b class="cBold">Input Field*</b>
+</p>
+</td>
+    <td><a name="wp1099735"> </a><p class="pBody">
+Type the name of the input field. 
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1099737"> </a><p class="pBody">
+<b class="cBold">Output JDBC Type</b>
+</p>
+</td>
+    <td><a name="wp1099739"> </a><p class="pBody">
+The JDBC type of the corresponding <b class="cBold">Output Field</b>.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1099741"> </a><p class="pBody">
+<b class="cBold">Output Field Type</b>
+</p>
+</td>
+    <td><a name="wp1099743"> </a><p class="pBody">
+The Java type that corresponds to the output JDBC type.
+</p>
+<a name="wp1099746"> </a><p class="pBody">
+For a list of JDBC-Type to Java-Type mappings, see the <em class="cEmphasis">webMethods JDBC Adapter User’s Guide</em>.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1099749"> </a><p class="pBody">
+<b class="cBold">Output Field</b>
+</p>
+</td>
+    <td><a name="wp1099751"> </a><p class="pBody">
+The output field name.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1099753"> </a><p class="pBody">
+<b class="cBold">Maximum Row</b>
+</p>
+</td>
+    <td><a name="wp1099755"> </a><p class="pBody">
+The maximum number of records to retrieve from the database. The default value of <code class="cCode">0</code>(no limit) retrieves all records.
+</p>
+<a name="wp1099756"> </a><p class="pBody">
+Use this field only with SQL statements that return a result set. 
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1117480"> </a><p class="pBody">
+<b class="cBold">Query Time Out</b>
+</p>
+</td>
+    <td><a name="wp1122105"> </a><p class="pBody">
+Specify the query time out value in seconds. This value is the amount of time the JDBC Adapter waits for the service to execute before stopping the SQL operation.
+</p>
+<a name="wp1122109"> </a><p class="pBody">
+The default value is -1. Use the default value to have the service use the value indicated on the <code class="cCode">watt.adapter.JDBC.QueryTimeout</code> property as the time out. 
+</p>
+<a name="wp1122110"> </a><p class="pBody">
+If you specify a value equal to 0, or if the <code class="cCode">watt.adapter.JDBC.QueryTimeout</code> property is not set, the service executes without a time out.
+</p>
+<a name="wp1122111"> </a><p class="pBody">
+If you specify a value greater than 0, the service executes with the specified value as the time out.
+</p>
+<a name="wp1122112"> </a><p class="pNote">
+<b>Note:</b> -1 is the only permissible negative value for this field.
+</p>
+<a name="wp1117579"> </a><p class="pBody">
+For more information about the <code class="cCode">watt.adapter.JDBC.QueryTimeout</code> property, see the <em style="font-style: italic" class="cEmphasis">webMethods JDBC Adapter User’s Guide</em><span style="font-style: normal">.</span>
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1099758"> </a><p class="pBody">
+<b class="cBold">Result Field</b>
+</p>
+</td>
+    <td><a name="wp1099760"> </a><p class="pBody">
+Name of the output field that contains the total number of rows affected by the SQL statement. 
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1099762"> </a><p class="pBody">
+<b class="cBold">Result Field Type</b>
+</p>
+</td>
+    <td><a name="wp1099764"> </a><p class="pBody">
+The data type of the <b class="cBold">Result Field</b>.
+</p>
+</td>
+</tr>
+</table>
+</div>
+<p class="pAnchor">
+</p>
+<a name="wp1097346"> </a><p class="pAnchor">
+
+</p>
+<a name="wp1081111"> </a><p class="pAnchor">
+</p><div align="left">
+<table border="0">
+  <caption></caption>
+  <tr align="left" valign="top">    <td><a name="wp1099794"> </a><p class="px_Note">
+&#160;
+<img src="images/note_icon.gif" height="25" width="25" border="1" alt="Note" />
+</p>
+</td>
+    <td><a name="wp1099796"> </a><p class="pNote">
+<b>Note:</b> <b class="cBold">*</b>If you use the <code class="cCode">?</code> variable placeholder(s) in your SQL statement, be sure to enter the corresponding <b class="cBold">Input Field</b> and field type information in the same order as they appear in your SQL statement. For example, using the SQL statement:<br /><code class="cCode"><br />select employee_name where StaffID = ? and Dept = ?<br /></code><br /><code class="cCode">StaffID</code> would be the first entry in the <b class="cBold">Input Field</b> and <code class="cCode">Dept</code> would be the second entry.
+</p>
+</td>
+</tr>
+</table>
+</div>
+<p class="pAnchor">
+</p>
+
+ <hr />
+
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag());
+   // -->
+  </script>
+
+ </body>
+</html>

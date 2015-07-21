@@ -1,0 +1,72 @@
+#
+# webMethods Deployer plugin Configuration File
+# 
+
+
+
+#
+# Unique identifier for the plugin
+#
+type=EventServer
+
+#
+# Deployment Support Type for your plugin server
+# RUNTIME/OFFLINE/BOTH
+#
+###deploymentSupportType=OFFLINE
+deploymentSupportType=OFFLINE
+
+#
+# The display name for your plugin server
+label=Event Server
+
+isDocumentLiteralEnabled=true
+
+#
+# Whether or not the Plugin Instance A will be referring to dependencies
+# on Plugin or Server Instance B
+# 
+referencesOtherServers=FALSE
+
+#
+# Just put false here
+#
+isLocal=FALSE
+
+deploymentOrder=EventServer
+#
+# Path to the web service logic in your plugin web service container
+# (only needed if isLocal is FALSE)
+#
+#pingPath=services/EventServer/deployer
+#DeployObjectsWithACDLPath=services/EventServer/deployer
+hostSuffix_SPI_0=ws/wm.cep.deployer.deployerWSD
+hostSuffix_SPI_1=ws/wm.cep.deployer.deployerWSD
+hostSuffix_SPI_2=ws/wm.cep.deployerV20.deployerV20
+#
+# Path to local plugin jar
+# (only needed if isLocal is TRUE)
+#
+#jar=Sample.jar
+#className=com.wm.sample.deployer.plugin.SamplePlugin
+
+#
+# Fields that will be displayed on the plugin connection configuration
+# page for each plugin instance that needs to be accessed by the
+# Deployer. Leaving a blank value for any of these fields will prevent
+# the Deployer from displaying it
+#
+hostLabel=Host
+portLabel=Port
+userLabel=User
+passwordLabel=Password
+versionLabel=Version
+
+####################################################################
+## !!! IMPORTANT !!! EventServer HAS BEEN DISCONTINUES STARTING 9.6
+####################################################################
+validVersions=9.5@SPI_2,9.0@SPI_2,8.2@SPI_1
+
+
+# Add this attribute in when Optimize supports SSL for this web service
+SSLLabel=Use SSL

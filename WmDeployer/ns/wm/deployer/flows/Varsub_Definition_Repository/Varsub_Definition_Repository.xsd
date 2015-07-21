@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  <xsd:element name="Root">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="DeploementSet" type="DeploymentSetType" minOccurs="0" maxOccurs="unbounded"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  
+  <xsd:complexType name="DeploymentSetType">
+    <xsd:sequence>
+      <xsd:element name="Property" type="PropertyType" minOccurs="0" maxOccurs="unbounded"/>
+      <xsd:element name="Component" type="ComponentType" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+    <xsd:attribute name="assetCompositeName" type="xsd:string" use="required"/>
+    <xsd:attribute name="deploymentSetName" type="xsd:string" use="required"/>
+    <xsd:attribute name="serverAliasName" type="xsd:string" use="required"/>
+    <xsd:attribute name="targetServerName" type="xsd:string" use="required"/>
+    <xsd:attribute name="targetServerType" type="xsd:string" use="required"/>
+  </xsd:complexType>  
+
+  <xsd:complexType name="ComponentType">
+    <xsd:sequence>
+      <xsd:element name="Property" type="PropertyType" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+    <xsd:attribute name="name" type="xsd:string" use="required"/>
+    <xsd:attribute name="type" type="xsd:string" use="required"/>
+  </xsd:complexType>  
+
+  <xsd:complexType name="PropertyType">
+    <xsd:attribute name="propertyName" type="xsd:string" use="required"/>
+    <xsd:attribute name="propertyValue" type="xsd:string" use="required"/>
+  </xsd:complexType>
+  
+</xsd:schema>
+

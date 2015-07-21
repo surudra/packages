@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<IDataXMLCoder version="1.0">
+  <record javaclass="com.wm.data.ISMemDataImpl">
+    <record name="transactions" javaclass="com.wm.data.ISMemDataImpl">
+      <record name="queryPriceRequestTxn" javaclass="com.wm.data.ISMemDataImpl">
+        <value name="transactionName">queryPriceRequestTxn</value>
+        <value name="transactionType">OUT</value>
+        <null name="AcknowledgeSQL"/>
+        <record name="REQUEST_LINES" javaclass="com.wm.util.Values">
+          <value name="SQLOut">SELECT REQUEST_TYPE_CODE,  HEADER_ID,  LINE_INDEX,  LINE_ID,  LINE_TYPE_CODE,  PRICING_EFFECTIVE_DATE,  ACTIVE_DATE_FIRST,  ACTIVE_DATE_FIRST_TYPE,  ACTIVE_DATE_SECOND,  ACTIVE_DATE_SECOND_TYPE,  LINE_QUANTITY,  LINE_UOM_CODE,  UOM_QUANTITY,  PRICED_QUANTITY,  PRICED_UOM_CODE,  CURRENCY_CODE,  UNIT_PRICE,  PERCENT_PRICE,  ADJUSTED_UNIT_PRICE,  PARENT_PRICE,  PARENT_QUANTITY,  ROUNDING_FACTOR,  PARENT_UOM_CODE,  PRICING_PHASE_ID,  PRICE_FLAG,  PROCESSED_CODE,  STATUS_CODE,  STATUS_TEXT  FROM WM_LINE_TBL WHERE LINE_INDEX = '&amp;LINE_INDEX*'</value>
+          <value name="SQLAlias">REQUEST_LINES</value>
+          <value name="SQLRelation"></value>
+          <record name="LINE_PRICING_ATTRIBUTES" javaclass="com.wm.util.Values">
+            <value name="SQLOut">SELECT LINE_INDEX, PRICING_CONTEXT, PRICING_ATTRIBUTE, PRICING_ATTR_VALUE_FROM, PRICING_ATTR_VALUE_TO, VALIDATED_FLAG, STATUS_CODE, STATUS_TEXT FROM WM_LINE_ATTR_TBL</value>
+            <value name="SQLAlias">LINE_PRICING_ATTRIBUTES</value>
+            <value name="SQLRelation">LINE_INDEX = REQUEST_LINES.LINE_INDEX</value>
+          </record>
+          <record name="LINE_QUALIFIERS" javaclass="com.wm.util.Values">
+            <value name="SQLOut">SELECT  LINE_INDEX, QUALIFIER_CONTEXT, QUALIFIER_ATTRIBUTE, QUALIFIER_ATTR_VALUE_FROM, QUALIFIER_ATTR_VALUE_TO, COMPARISON_OPERATOR_CODE, VALIDATED_FLAG, STATUS_CODE, STATUS_TEXT FROM WM_QUAL_TBL</value>
+            <value name="SQLAlias">LINE_QUALIFIERS</value>
+            <value name="SQLRelation">LINE_INDEX = REQUEST_LINES.LINE_INDEX</value>
+          </record>
+          <record name="LINE_DETAILS" javaclass="com.wm.util.Values">
+            <value name="SQLOut">SELECT  LINE_DETAIL_INDEX, LINE_DETAIL_ID, LINE_DETAIL_TYPE_CODE, LINE_INDEX, LIST_HEADER_ID, LIST_LINE_ID, LIST_LINE_TYPE_CODE, SUBSTITUTION_TYPE_CODE, SUBSTITUTION_FROM, SUBSTITUTION_TO, AUTOMATIC_FLAG, OPERAND_CALCULATION_CODE, OPERAND_VALUE, PRICING_GROUP_SEQUENCE, PRICE_BREAK_TYPE_CODE, CREATED_FROM_LIST_TYPE_CODE, PRICING_PHASE_ID, LIST_PRICE, LINE_QUANTITY, ADJUSTMENT_AMOUNT, APPLIED_FLAG, MODIFIER_LEVEL_CODE, STATUS_CODE, STATUS_TEXT, SUBSTITUTION_ATTRIBUTE, ACCRUAL_FLAG, LIST_LINE_NO, ESTIM_GL_VALUE, ACCRUAL_CONVERSION_RATE, OVERRIDE_FLAG, PRINT_ON_INVOICE_FLAG, INVENTORY_ITEM_ID, ORGANIZATION_ID, RELATED_ITEM_ID, RELATIONSHIP_TYPE_ID, ESTIM_ACCRUAL_RATE, EXPIRATION_DATE, BENEFIT_PRICE_LIST_LINE_ID, RECURRING_FLAG, BENEFIT_LIMIT, CHARGE_TYPE_CODE, CHARGE_SUBTYPE_CODE, INCLUDE_ON_RETURNS_FLAG, BENEFIT_QTY, BENEFIT_UOM_CODE, PRORATION_TYPE_CODE, SOURCE_SYSTEM_CODE, REBATE_TRANSACTION_TYPE_CODE, SECONDARY_PRICELIST_IND FROM WM_LINE_DETAIL_TBL</value>
+            <value name="SQLAlias">LINE_DETAILS</value>
+            <value name="SQLRelation">LINE_INDEX = REQUEST_LINES.LINE_INDEX</value>
+            <record name="DETAIL_QUALIFIERS" javaclass="com.wm.util.Values">
+              <value name="SQLOut">SELECT LINE_DETAIL_INDEX, QUALIFIER_CONTEXT, QUALIFIER_ATTRIBUTE, QUALIFIER_ATTR_VALUE_FROM, QUALIFIER_ATTR_VALUE_TO, COMPARISON_OPERATOR_CODE, VALIDATED_FLAG, STATUS_CODE, STATUS_TEXT FROM WM_LINE_DETAIL_QUAL_TBL</value>
+              <value name="SQLAlias">DETAIL_QUALIFIERS</value>
+              <value name="SQLRelation">LINE_DETAIL_INDEX = LINE_DETAILS.LINE_DETAIL_INDEX</value>
+            </record>
+            <record name="DETAIL_PRICING_ATTRIBUTES" javaclass="com.wm.util.Values">
+              <value name="SQLOut">SELECT LINE_DETAIL_INDEX, PRICING_CONTEXT, PRICING_ATTRIBUTE, PRICING_ATTR_VALUE_FROM, PRICING_ATTR_VALUE_TO, VALIDATED_FLAG, STATUS_CODE, STATUS_TEXT FROM WM_LINE_DETAIL_ATTR_TBL</value>
+              <value name="SQLAlias">DETAIL_PRICING_ATTRIBUTES</value>
+              <value name="SQLRelation">LINE_DETAIL_INDEX = LINE_DETAILS.LINE_DETAIL_INDEX</value>
+            </record>
+          </record>
+          <record name="LINE_RELATIONS" javaclass="com.wm.util.Values">
+            <value name="SQLOut">SELECT LINE_INDEX, RELATIONSHIP_TYPE_CODE, RELATED_LINE_INDEX, STATUS_CODE, STATUS_TEXT FROM WM_RELATED_LINES_TBL</value>
+            <value name="SQLAlias">LINE_RELATIONS</value>
+            <value name="SQLRelation">RELATED_LINE_INDEX = REQUEST_LINES.LINE_INDEX</value>
+          </record>
+        </record>
+      </record>
+    </record>
+    <record name="FILE_INFO" javaclass="com.wm.data.ISMemDataImpl">
+      <value name="OA_RELEASE">11510</value>
+      <value name="DESCRIPTION"></value>
+      <value name="CREATE_HOST">WebMethods</value>
+      <value name="CREATE_IM_VER"></value>
+      <value name="CREATE_DATE">May 3, 2005 11:11:15 AM</value>
+    </record>
+  </record>
+</IDataXMLCoder>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <record name="transactions" javaclass="com.wm.util.Values">
+    <record name="getLineId" javaclass="com.wm.util.Values">
+      <value name="transactionName">getLineId</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="LINE_ID" javaclass="com.wm.util.Values">
+        <value name="SQLOut">SELECT LINE_ID FROM WIP_LINES,ORG_ORGANIZATION_DEFINITIONS WHERE ORGANIZATION_NAME = '&amp;ORGANIZATION_NAME*' AND WIP_LINES.ORGANIZATION_ID=ORG_ORGANIZATION_DEFINITIONS.ORGANIZATION_ID AND LINE_CODE ='&amp;LINE_CODE*'</value>
+        <value name="SQLAlias">LINE_ID</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+  </record>
+  <record name="FILE_INFO" javaclass="com.wm.util.Values">
+    <value name="OA_RELEASE">1159</value>
+    <value name="DESCRIPTION">Master Schedule Utils Transaction Configuration</value>
+    <value name="CREATE_HOST">webMethods</value>
+    <value name="CREATE_IM_VER">3.1</value>
+    <value name="CREATE_DATE">May 7, 2004 10:37:12 AM</value>
+  </record>
+</Values>

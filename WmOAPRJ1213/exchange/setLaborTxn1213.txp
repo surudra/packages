@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<IDataXMLCoder version="1.0">
+  <record javaclass="com.wm.data.ISMemDataImpl">
+    <record name="transactions" javaclass="com.wm.data.ISMemDataImpl">
+      <record name="setLaborTxn" javaclass="com.wm.data.ISMemDataImpl">
+        <value name="transactionName">setLaborTxn</value>
+        <value name="transactionType">IN</value>
+        <value name="errSQL">SELECT pat.batch_name,         pat.employee_number,        pat.organization_name, 	   pat.expenditure_type, 	   pat.project_number, 	   pat.task_number, 	   pat.expenditure_item_date, 	   pat.expenditure_ending_date, 	   pat.transaction_rejection_code, 	   pal.meaning FROM   pa_transaction_interface_all pat, 	   pa_lookups pal WHERE  pal.lookup_code = pat.transaction_rejection_code AND    pal.lookup_type='TRANSACTION REJECTION REASON' AND    pat.transaction_status_code = 'R' AND    pat.batch_name = '&amp;BATCH_NAME*'</value>
+        <record name="table0" javaclass="com.wm.data.ISMemDataImpl">
+          <value name="tableName">PA_TRANSACTION_INTERFACE_ALL</value>
+          <value name="required">true</value>
+        </record>
+      </record>
+    </record>
+    <record name="FILE_INFO" javaclass="com.wm.data.ISMemDataImpl">
+      <value name="OA_RELEASE">1213</value>
+      <value name="DESCRIPTION">Labor Transaction Definition</value>
+      <value name="CREATE_HOST">webMethods</value>
+      <value name="CREATE_IM_VER"></value>
+      <value name="CREATE_DATE">May 2, 2005 3:37:07 PM</value>
+    </record>
+  </record>
+</IDataXMLCoder>

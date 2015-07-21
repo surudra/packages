@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jnlp spec="1.0+" codebase="%base_url%">
+	<information>
+		<title>ActiveTunnel</title>
+		<vendor>Software AG</vendor>
+		<offline-allowed/>
+		<shortcut online="true">
+			<desktop/>
+		</shortcut>
+	</information>
+	<security><all-permissions/></security>
+	<resources>
+		<j2se version="1.2+" /><jar href="/WebInterface/ActiveTunnel.jar"/>
+		<property name="crushtunnel.remote.protocol" value="%user_protocol%"/>
+		<property name="crushtunnel.remote.ip" value="%user_listen_ip%"/>
+		<property name="crushtunnel.remote.port" value="%user_port%"/>
+	</resources>
+	<application-desc main-class="com.crushtunnel.gui.GUIFrame"/>
+</jnlp>
+

@@ -1,0 +1,44 @@
+<!DOCTYPE HTML PUBLIC >
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" VALUE="text/html;charset=UTF-8">
+<TITLE>Access Approval</TITLE>
+</HEAD>
+
+<SCRIPT>
+    function approve() {
+        document.forms["form1"]["approved"].value = "true";
+    }
+
+    function deny() {
+        document.forms["form1"]["approved"].value = "false";
+    }
+</SCRIPT>
+
+<BODY>
+<FORM NAME="form1" action="/invoke/wm.server.oauth/approve" method="get">
+    <input type="hidden" name="client_id" value=%value client_id%>
+    <input type="hidden" name="redirect_uri" value=%value redirect_uri%>
+    <input type="hidden" name="scope" value=%value scope%>
+    <input type="hidden" name="state" value=%value state%>
+    <input type="hidden" name="approved" value="false">
+    <input type="hidden" name="response_type" value=%value response_type%>
+    <br>
+    <h3>Warning</h3>
+    The application <em>%value client_name%</em> is attempting to access <em>%value scope%</em>.
+    <br><br>
+    To allow this access, click Approve.<br>
+    To prevent this access, click Deny.
+    <br><br>
+    <INPUT type="submit" value="Approve" onClick="return approve();">
+    <INPUT type="submit" value="Deny" onClick="return deny();">
+</FORM>
+
+<br><hr>
+<b>Debugging Output:</b><br><br>
+%loop -struct%
+  %value $key% = %value% <br>
+%endloop%
+
+</BODY>
+</HTML>

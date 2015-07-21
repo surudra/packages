@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<IDataXMLCoder version="1.0">
+  <record javaclass="com.wm.data.ISMemDataImpl">
+    <record name="transactions" javaclass="com.wm.data.ISMemDataImpl">
+      <record name="checkReplenishmentImportStatus" javaclass="com.wm.data.ISMemDataImpl">
+        <value name="transactionName">checkReplenishmentImportStatus</value>
+        <value name="transactionType">OUT</value>
+        <null name="AcknowledgeSQL"/>
+        <record name="IMPORT_STAT" javaclass="com.wm.util.Values">
+          <value name="SQLOut">SELECT COUNT(*) AS REPLEN_ERRCOUNT FROM  MTL_REPLENISH_HEADERS_INT WHERE REPLENISHMENT_COUNT_NAME='&amp;REPLENISHMENT_COUNT_NAME*' AND ERROR_FLAG IS NOT NULL</value>
+          <value name="SQLAlias">IMPORT_STAT</value>
+          <value name="SQLRelation"></value>
+        </record>
+      </record>
+      <record name="execReplenishmentConcProg" javaclass="com.wm.data.ISMemDataImpl">
+        <value name="transactionName">execReplenishmentConcProg</value>
+        <value name="transactionType">OUT</value>
+        <null name="AcknowledgeSQL"/>
+        <record name="WM_HANDLE_OPEN_REPLENISH" javaclass="com.wm.util.Values">
+          <value name="SQLOut">WM_OPEN_REPLENISH_HANDLER_PKG.WM_HANDLE_OPEN_REPLENISH</value>
+          <value name="SQLAlias">WM_HANDLE_OPEN_REPLENISH</value>
+          <value name="SQLRelation"></value>
+        </record>
+      </record>
+      <record name="getUOMCode" javaclass="com.wm.data.ISMemDataImpl">
+        <value name="transactionName">getUOMCode</value>
+        <value name="transactionType">OUT</value>
+        <null name="AcknowledgeSQL"/>
+        <record name="UOM_CODE" javaclass="com.wm.util.Values">
+          <value name="SQLOut">select UOM_CODE from MTL_UNITS_OF_MEASURE_TL  where UNIT_OF_MEASURE='&amp;UNIT_OF_MEASURE*' and LANGUAGE=userenv('LANG')</value>
+          <value name="SQLAlias">UOM_CODE</value>
+          <value name="SQLRelation"></value>
+        </record>
+      </record>
+    </record>
+    <record name="FILE_INFO" javaclass="com.wm.data.ISMemDataImpl">
+      <value name="OA_RELEASE">11510</value>
+      <value name="DESCRIPTION"></value>
+      <value name="CREATE_HOST">webmethods</value>
+      <value name="CREATE_IM_VER"></value>
+      <value name="CREATE_DATE">May 6, 2005 2:38:58 PM</value>
+    </record>
+  </record>
+</IDataXMLCoder>

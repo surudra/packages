@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><!--WmTomcat uses a single WebContainer instance--><WebContainer>
+<!--Only define a single ISConnector. 
+If a second one gets configured, it will be ignored-->
+<ISConnector enableLookups="false" redirectPort="443">
+<!--A single ISConnector can serve multiple ISPorts.
+We can define a proxied ISPort for each of the IS HTTP/HTTPS ports.
+The scheme of an ISPort can be HTTPS, if this is what the proxy uses,
+even if the corresponding IS port uses HTTP-->
+<ISPort port="5555" proxyName="localhost" proxyPort="5555" scheme="http"/>
+</ISConnector>
+</WebContainer>

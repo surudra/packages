@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="GENERATOR" content="Quadralay WebWorks Publisher Professional Edition 7.0" />
+  <meta name="TEMPLATEBASE" content="wM_WWH20030908" />
+  <meta name="LASTUPDATED" content="12/04/06 19:31:53" />
+  <title>BasicNotification Template Screens </title>
+  <link rel="StyleSheet" href="document.css" type="text/css" />
+  <link rel="StyleSheet" href="catalog.css" type="text/css" />
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+ </head>
+
+ <body onLoad="WWHUpdate();">
+
+
+<a name="wp1072383"> </a><h2 class="pNewHTMLPage">
+BasicNotification Template Screens 
+</h2><a name="wp1093457"> </a><p class="pBody">
+The BasicNotification adapter notification polls a database table for data using a SELECT operation.
+</p>
+<a name="wp1093647"> </a><p class="pBody">
+This adapter notification template includes the following tabs:
+</p>
+<a name="wp1085363"> </a><p class="pChapterTOC">
+<img src="images/bullet.gif" height="13" width="10" border="0" />
+<a  href="ScreenLevelHelp21.html#wp1072384">Tables Tab</a>
+</p>
+<a name="wp1085367"> </a><p class="pChapterTOC">
+<img src="images/bullet.gif" height="13" width="10" border="0" />
+<a  href="ScreenLevelHelp21.html#wp1091643">Joins Tab</a>
+</p>
+<a name="wp1085371"> </a><p class="pChapterTOC">
+<img src="images/bullet.gif" height="13" width="10" border="0" />
+<a  href="ScreenLevelHelp21.html#wp1072386">SELECT Tab</a>
+</p>
+<a name="wp1119641"> </a><p class="pChapterTOC">
+<img src="images/bullet.gif" height="13" width="10" border="0" />
+<a  href="ScreenLevelHelp21.html#wp1119756">WHERE Tab</a>
+</p>
+<a name="wp1072384"> </a><h4 class="pHeading3">
+Tables Tab 
+</h4>
+<a name="wp1087314"> </a><p class="pBody">
+Use the <b class="cBold">Tables</b> tab to define the table, as follows: </p><div align="left">
+<table border="0">
+  <caption></caption>
+  <tr align="left" valign="bottom">    <th><a name="wp1087299"> </a><div style="text-align: left" class="pCellHeading">
+Field
+<hr />
+</div>
+</th>
+    <th><a name="wp1087301"> </a><div style="text-align: left" class="pCellHeading">
+Description
+<hr />
+</div>
+</th>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1087303"> </a><p class="pBody">
+<b class="cBold">Table Alias</b>
+</p>
+</td>
+    <td><a name="wp1087305"> </a><p class="pBody">
+The table alias is automatically assigned when you select more than one table in the <b class="cBold">Table Name</b> field. The default is <code class="cCode">t1</code>. 
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1087307"> </a><p class="pBody">
+<b class="cBold">Table Name</b>
+</p>
+</td>
+    <td><a name="wp1087309"> </a><p class="pBody">
+Select a table name. The default for the associated catalog name is <code class="cCode">current catalog</code>. The default for the associated schema name is <code class="cCode">current schema</code>. 
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1087311"> </a><p class="pBody">
+<b class="cBold">Type</b>
+</p>
+</td>
+    <td><a name="wp1087313"> </a><p class="pBody">
+The table type automatically displays based on the table you select.
+</p>
+</td>
+</tr>
+</table>
+</div>
+<p class="pBody"> 
+</p>
+<a name="wp1091643"> </a><h4 class="pHeading3">
+Joins Tab 
+</h4>
+<a name="wp1091644"> </a><p class="pBody">
+Use the <b class="cBold">Joins</b> tab to specify the columns for joining the tables you configured on the <b class="cBold">Tables</b> tab, as follows:
+</p>
+<div class="pSmartList1" style="margin-top: 5pt"><ol type="1" class="pSmartList1" style="margin-top: 5pt">
+<a name="wp1091487"> </a><div style="margin-top: 5pt" class="pSmartList1"><li>Select the <b class="cBold">Insert Row</b> icon <img src="images/table_insertrow.gif" border="0" hspace="0" vspace="0"/> (or the <b class="cBold">Fill in all rows to the table</b> icon <img src="images/append_all_rows.gif" border="0" hspace="0" vspace="0"/>) to create new left and right columns.</li></div>
+<a name="wp1091541"> </a><div style="margin-top: 7pt" class="pSmartList1"><li>Select <b class="cBold">Left Column</b> and select the first table’s joining column.</li></div>
+<a name="wp1091552"> </a><div style="margin-top: 7pt" class="pSmartList1"><li>Select the appropriate <b class="cBold">Operator</b>.</li></div>
+<a name="wp1091563"> </a><div style="margin-top: 7pt" class="pSmartList1"><li>Select <b class="cBold">Right Column</b> and select the next table’s joining column.</li></div>
+<a name="wp1091574"> </a><div style="margin-top: 7pt" class="pSmartList1"><li>Repeat until you have defined all the joins.</li></div>
+</ol></div>
+<a name="wp1072386"> </a><h4 class="pHeading3">
+SELECT Tab 
+</h4>
+<a name="wp1091763"> </a><p class="pBody">
+Use the <b class="cBold">SELECT</b> tab to define the columns and fields to be selected. </p><div align="left">
+<table border="0">
+  <caption></caption>
+  <tr align="left" valign="top">    <td><a name="wp1091757"> </a><p class="px_Note">
+&#160;
+<img src="images/note_icon.gif" height="25" width="25" border="1" alt="Note" />
+</p>
+</td>
+    <td><a name="wp1091759"> </a><p class="pNote">
+<b>Note:</b> If you plan on using the exactly once notification feature, be sure that you include the <b class="cBold">Record ID Column </b>(described below) as one of the columns to be selected.
+</p>
+</td>
+</tr>
+</table>
+</div>
+<p class="pBody">
+</p>
+<div class="pSmartList1" style="margin-top: 5pt"><ol type="1" class="pSmartList1" style="margin-top: 5pt">
+<a name="wp1091764"> </a><div style="margin-top: 5pt" class="pSmartList1"><li>In the <b class="cBold">ALL/DISTINCT</b> field, select <b class="cBold">ALL</b> to include duplicate rows or <b class="cBold">DISTINCT</b> to suppress duplicate rows. Otherwise leave this field blank.</li></div>
+<a name="wp1091881"> </a><div style="margin-top: 7pt" class="pSmartList1"><li>Select the <b class="cBold">Insert Row</b> icon <img src="images/table_insertrow.gif" border="0" hspace="0" vspace="0"/> (or the <b class="cBold">Fill in all rows to the table</b> icon <img src="images/append_all_rows.gif" border="0" hspace="0" vspace="0"/>) to create new fields as needed. </li></div>
+<a name="wp1091884"> </a><div style="margin-top: 7pt" class="pSmartList1"><li>In the <b class="cBold">Expression</b> field, select a column or type any valid SQL expression. The corresponding <b class="cBold">Column Type</b>, <b class="cBold">JDBC Type</b>, <b class="cBold">Output Field Type</b>, and <b class="cBold">Output Field </b>display for each column you select in the <b class="cBold">Expression</b> field. Use the following fields:</li></div>
+<a name="wp1091803"> </a><p class="pAnchor">
+<div align="left">
+<table border="0">
+  <caption></caption>
+  <tr align="left" valign="bottom">    <th><a name="wp1091776"> </a><div style="text-align: left" class="pCellHeading">
+Field
+<hr />
+</div>
+</th>
+    <th><a name="wp1091778"> </a><div style="text-align: left" class="pCellHeading">
+Description
+<hr />
+</div>
+</th>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1096376"> </a><p class="pBody">
+<b class="cBold">Expression</b>
+</p>
+</td>
+    <td><a name="wp1096378"> </a><p class="pBody">
+The column name or SQL expression.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1096380"> </a><p class="pBody">
+<b class="cBold">Column Type</b>
+</p>
+</td>
+    <td><a name="wp1096382"> </a><p class="pBody">
+The column data type defined in the database table.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1096384"> </a><p class="pBody">
+<b class="cBold">JDBC Type</b>
+</p>
+</td>
+    <td><a name="wp1096386"> </a><p class="pBody">
+The JDBC type of the corresponding <b class="cBold">Output Field</b>.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1096388"> </a><p class="pBody">
+<b class="cBold">Output Field Type</b>
+</p>
+</td>
+    <td><a name="wp1096393"> </a><p class="pBody">
+The data type of the output field. The JDBC Adapter automatically converts database-specific types to Java data types. 
+</p>
+<a name="wp1096396"> </a><p class="pBody">
+For a list of JDBC-Type to Java-Type mappings, see the <em class="cEmphasis">webMethods JDBC Adapter User’s Guide</em>. 
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1096399"> </a><p class="pBody">
+<b class="cBold">Output Field</b>
+</p>
+</td>
+    <td><a name="wp1096401"> </a><p class="pBody">
+The name of the field containing the output from the SELECT operation. An output field name displays when you select an expression.
+</p>
+<a name="wp1096402"> </a><p class="pBody">
+You can also modify the output field names as required.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1124647"> </a><p class="pBody">
+<b class="cBold">Sort Order</b>
+</p>
+</td>
+    <td><a name="wp1124649"> </a><p class="pBody">
+Specifies ordering of publishable documents per each polling. Use this field to ensure that the notification’s publishable documents, for each polling, are in the correct ascending or descending order based on one or more table columns.
+</p>
+<a name="wp1124650"> </a><p class="pBody">
+Select either <b class="cBold">Ascend</b> or <b class="cBold">Descend</b>. Leave the field blank if there is no sort order.
+</p>
+</td>
+</tr>
+</table>
+</div>
+
+</p>
+<a name="wp1119555"> </a><div style="margin-top: 7pt" class="pSmartList1"><li>If you want the notification’s publishable document to be published to the local Integration Server, select the <b class="cBold">Publish Locally</b> option.</li></div>
+<a name="wp1119556"> </a><p class="pBodyRelative">
+By default, this option is not selected, that is, if the webMethods Broker is configured to the Integration Server, the publishable document is published to the Broker; otherwise the publishable document is published to the local Integration Server.
+</p>
+<a name="wp1119557"> </a><p class="pBodyRelative">
+Selecting the <b class="cBold">Publish Locally</b> option reduces performance problems, if the Integration Server is connecting to a remotely located Broker that is in turn triggering a service on the local Integration Server.
+</p>
+<a name="wp1119553"> </a><div style="margin-top: 7pt" class="pSmartList1"><li>If you want to use the Exactly Once notification feature, you must enable the <b class="cBold">Exactly Once Notification</b> option. For more information, see the <em class="cEmphasis">webMethods JDBC Adapter User’s Guide</em>. </li></div>
+<a name="wp1096421"> </a><div style="margin-top: 7pt" class="pSmartList1"><li>Set the<b class="cBold"> Delete selected records </b>flag to automatically delete the selected records from the buffer table (based on their <b class="cBold">Record ID Column</b> value as entered in <a  href="ScreenLevelHelp21.html#wp1096439">step&#160;7</a>) after the notification. Use this option to prevent publishing the same documents to the Integration Server each time polling occurs.</li></div>
+<a name="wp1096462"> </a><p class="pBodyRelative">
+Running a BasicNotification may generate a duplicate message error; the Integration Server will ignore the duplicate notification document. In this case, you should check the <b class="cBold">Delete selected records</b> option and choose a column with sequentially unique values as the <b class="cBold">Record ID Column</b> value in the step below.
+</p>
+<a name="wp1096439"> </a><div style="margin-top: 7pt" class="pSmartList1"><li>You must use the<b class="cBold"> Record ID Column </b>field to use the Exactly Once notification feature. Select the column from the buffer table that you want to use as the unique ID for the publishable document for this notification. For more information, see the <em class="cEmphasis">webMethods JDBC Adapter User’s Guide</em>.</li></div>
+<a name="wp1096443"> </a><p class="pBodyRelative">
+To ensure that all values will be unique, choose a table column in the <b class="cBold">Record ID Column</b> field whose values are sequential numbers.
+</p>
+<a name="wp1119574"> </a><div style="margin-top: 7pt" class="pSmartList1"><li>Use the <b class="cBold">Mark ID Column</b> field to mark the records as processed. Select the column that you created in the database table to hold the status of the record. Use this option when you do not want to set the <b class="cBold">Delete selected records </b>flag, and also want to avoid the publishing of duplicate records. For information about creating the column that holds the status of the records and marking the records as published, see the <em class="cEmphasis">webMethods JDBC Adapter User’s Guide</em>.</li></div>
+<a name="wp1119572"> </a><div style="margin-top: 7pt" class="pSmartList1"><li>Use the <b class="cBold">Maximum Row</b> field to specify the maximum number of records to retrieve from the database. This field is useful when you are working with a large number of records and you want to limit the number of documents sent each time the notification polls. The default value of <code class="cCode">0</code>(no limit) retrieves all records.</li></div>
+<a name="wp1122837"> </a><div style="margin-top: 7pt" class="pSmartList1"><li>Use the <b class="cBold">Query Time Out</b> field to specify the query time out value of the <b class="cBold">BasicNotification</b> you are configuring. This value is the amount of time the JDBC Adapter waits for the notification to execute before stopping the SQL operation.</li></div>
+<a name="wp1122841"> </a><p class="pBodyRelative">
+The default value is -1. Use the default value to have the notification use the value indicated on the <code class="cCode">watt.adapter.JDBC.QueryTimeout</code> property as the time out. 
+</p>
+<a name="wp1122783"> </a><p class="pBodyRelative">
+If you specify a value equal to 0, or if the <code class="cCode">watt.adapter.JDBC.QueryTimeout</code> property is not set, the notification executes without a time out.
+</p>
+<a name="wp1122784"> </a><p class="pBodyRelative">
+If you specify a value greater than 0, the notification executes with the specified value as the time out.<div align="left">
+<table border="0">
+  <caption></caption>
+  <tr align="left" valign="top">    <td><a name="wp1122884"> </a><p class="px_Note">
+&#160;
+<img src="images/note_icon.gif" height="25" width="25" border="1" alt="Note" />
+</p>
+</td>
+    <td><a name="wp1122886"> </a><p class="pNote">
+<b>Note:</b> -1 is the only permissible negative value for this field.
+</p>
+</td>
+</tr>
+</table>
+</div>
+
+</p>
+<a name="wp1122786"> </a><p class="pBodyRelative">
+For more information about the <code class="cCode">watt.adapter.JDBC.QueryTimeout</code> property, see the <em class="cEmphasis">webMethods JDBC Adapter User’s Guide.</em>
+</p>
+</ol></div>
+<a name="wp1119756"> </a><h4 class="pHeading3">
+WHERE Tab
+</h4>
+<a name="wp1119647"> </a><p class="pBody">
+Use the <b class="cBold">WHERE</b> tab to specify the WHERE conditions on the SQL query statement for selecting information:
+</p>
+<div class="pSmartList1" style="margin-top: 5pt"><ol type="1" class="pSmartList1" style="margin-top: 5pt">
+<a name="wp1119651"> </a><div style="margin-top: 5pt" class="pSmartList1"><li>Select the <b class="cBold">Insert Row</b> icon <img src="images/table_insertrow.gif" border="0" hspace="0" vspace="0"/> to define new WHERE clause fields.</li></div>
+<a name="wp1119652"> </a><div style="margin-top: 7pt" class="pSmartList1"><li>Select a logical operator from the <b class="cBold">AND/OR</b> field, an <b class="cBold">Operator</b>, and separators (the left and right parentheses) as needed, and use the following fields:</li></div>
+<a name="wp1119708"> </a><p class="pAnchor">
+<div align="left">
+<table border="0">
+  <caption></caption>
+  <tr align="left" valign="bottom">    <th><a name="wp1121359"> </a><div style="text-align: left" class="pCellHeading">
+Field
+<hr />
+</div>
+</th>
+    <th><a name="wp1121361"> </a><div style="text-align: left" class="pCellHeading">
+Description/Action
+<hr />
+</div>
+</th>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1119659"> </a><p class="pBody">
+<b class="cBold">AND/OR</b>
+</p>
+</td>
+    <td><a name="wp1119661"> </a><p class="pBody">
+The logical operator.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1119663"> </a><p class="pBody">
+<b class="cBold">Column</b>
+</p>
+</td>
+    <td><a name="wp1119665"> </a><p class="pBody">
+The name of the column you want to use in the WHERE clause.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1119667"> </a><p class="pBody">
+<b class="cBold">Operator</b>
+</p>
+</td>
+    <td><a name="wp1119669"> </a><p class="pBody">
+The operator used with the <b class="cBold">Column</b> and <b class="cBold">Input Field</b>.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1119671"> </a><p class="pBody">
+<b class="cBold">Input Field*</b>
+</p>
+</td>
+    <td><a name="wp1124684"> </a><p class="pBody">
+Type a fixed value in this field. Be sure that it is a valid value, or an exception will be generated at run time.
+</p>
+</td>
+</tr>
+</table>
+</div>
+
+</p>
+<a name="wp1119717"> </a><p class="pAnchor">
+<div align="left">
+<table border="0">
+  <caption></caption>
+  <tr align="left" valign="top">    <td><a name="wp1119711"> </a><p class="px_Note">
+&#160;
+<img src="images/note_icon.gif" height="25" width="25" border="1" alt="Note" />
+</p>
+</td>
+    <td><a name="wp1119713"> </a><p class="pNote">
+<b>Note:</b> * For Oracle users, if you use a CHAR(n) data type and enter a value in the <b class="cBold">Input Field</b>, the JDBC Adapter automatically sets the ORACLEFIXED_CHAR data type as the JDBC data type.
+</p>
+</td>
+</tr>
+</table>
+</div>
+
+</p>
+<a name="wp1119725"> </a><div style="margin-top: 7pt" class="pSmartList1"><li>If necessary, use the <b class="cBold">Shift Up</b> <img src="images/btn_shift_up.gif" border="0" hspace="0" vspace="0"/> or <b class="cBold">Shift Down</b> <img src="images/btn_shift_down.gif" border="0" hspace="0" vspace="0"/> icons to change the order of the WHERE clause to ensure the parameters are parsed in the correct order.</li></div>
+<a name="wp1119726"> </a><div style="margin-top: 7pt" class="pSmartList1"><li>Repeat this procedure until you have specified all the WHERE parameters.</li></div>
+</ol></div>
+
+ <hr />
+
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag());
+   // -->
+  </script>
+
+ </body>
+</html>

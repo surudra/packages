@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="keywords" content="ports,configuration,file polling,configuration settings,file polling,file polling,editing configuration,security,ports,file polling,Menu_Sec_Ports_FilePoll" />
+    <title>Edit File Polling Configuration Screen</title>
+    <link rel="StyleSheet" href="css/_is_admin_help.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+  <body style="background-color: White; margin-bottom: 25px; margin-left: 25px; margin-right: 25px; margin-top: 0px; padding-top: 0px" onload="WWHUpdate();" onunload="WWHUnload();" onkeydown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onkeypress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onkeyup="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <table align="left" role="presentation">
+      <tr>
+        <td class="WebWorks_Company_Logo_Top">
+          <img src="sag_online.png" />
+        </td>
+      </tr>
+    </table>
+    <br clear="all" />
+    <hr align="left" />
+    <blockquote>
+      <div class="Heading_3"><a name="3_5_17_21_8_2">Edit File Polling Configuration Screen</a></div>
+      <div class="Body"><span class="emphasis"><a name="3_5_17_21_8_6_2_3">Screen Heading</a></span>: <span class="uicontrol">Security &gt; Ports &gt; Edit File Polling Configuration</span></div>
+      <div class="Body"><a name="3_5_17_21_8_6_2_5">Use the Edit File Polling Configuration screen to view or specify the settings for a </a><span class="term">file polling port</span>. A file polling port periodically polls a monitoring directory for the arrival of files and then performs special processing on them. When it detects a new file, the server copies the file to a working directory, then runs a special file processing service against the file. The service might parse, convert, and validate the file then write it to the file system. This service, which you write, is the only service that can be invoked through this port. You can limit the files the server accepts by filtering for specific file names.</div>
+      <div class="Body"><a name="3_5_17_21_8_6_2_7">When you configure the file polling port, you specify how often to poll for files, the name and location of the processing service to use, file names to filter for, as well as other options.</a></div>
+      <div class="Body"><a name="3_5_17_21_8_6_2_9">For file polling to work, you must do the following:</a></div>
+      <div class="Numbered_1_outer" style="margin-left: 24px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="Numbered_1_inner" style="width: 18pt; white-space: nowrap">1. </div>
+            </td>
+            <td width="100%">
+              <div class="Numbered_1_inner"><a name="3_5_17_21_8_6_2_11_2">Set up the Monitoring Directory on the </a><span class="ph">Integration Server</span>. Other directories used for file polling are automatically created by the <span class="ph">Integration Server</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Numbered_1_outer" style="margin-left: 24px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="Numbered_1_inner" style="width: 18pt; white-space: nowrap">2. </div>
+            </td>
+            <td width="100%">
+              <div class="Numbered_1_inner"><a name="3_5_17_21_8_6_2_11_4">Write a file processing service and make it available to the </a><span class="ph">Integration Server</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Numbered_1_outer" style="margin-left: 24px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="Numbered_1_inner" style="width: 18pt; white-space: nowrap">3. </div>
+            </td>
+            <td width="100%">
+              <div class="Numbered_1_inner"><a name="3_5_17_21_8_6_2_11_6">Set up the file polling port on the </a><span class="ph">Integration Server</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Body"><a name="3_5_17_21_8_6_2_13">To open the Edit File Polling Configuration screen, go to the </a><span class="heading-no-quotes"><a href="javascript:WWHClickedPopup('is_help', 'Menu_Sec_Ports_Add.html', '');" title="Add Port Screen">Add Port Screen</a></span> and select <span class="uicontrol">webMethods</span> <span class="uicontrol">/File Polling</span>. Click <span class="uicontrol">Submit</span>.</div>
+      <div class="List_1_outer" style="margin-left: 24px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_1_inner" style="width: 18pt; white-space: nowrap">
+                <img src="bullet1.png" alt="*" border="0" width="10" height="10" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_1_inner"><a name="3_5_17_21_8_6_2_15_2_4">Click </a><span class="uicontrol">Return to Ports</span> to return to the list of ports that are currently defined on the server.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Section_Title"><a name="3_5_17_21_8_6_4_3">File Polling Listener Configuration</a></div>
+      <div class="Definition_Term"><a name="3_5_17_21_8_6_4_5_2_2">Package Name</a></div>
+      <div class="Definition_Description"><a name="3_5_17_21_8_6_4_5_2_4">Package associated with this port. When you enable the package, the server enables the port. When you disable the package, the server disables the port. If you are performing special file handling, specify the package that contains the services that perform that processing. If you want to process flat files from this port, select </a><span class="uicontrol">WmFlatFile</span>, which contains built-in services you can use to process flat files.</div>
+      <table class="note2" summary="">
+        <tr>
+          <td class="Table_Cell" style="vertical-align: top; width: 14.285714285714284%">
+            <div class="Note">
+              <span style="font-family: Arial, Verdana, Helvetica, Sans-Serif; font-weight: bold">Note:    </span><a name="3_5_17_21_8_6_4_5_2_4_5_1_3_1_2_2">&nbsp;</a></div>
+          </td>
+          <td class="Table_Cell" style="vertical-align: top; width: 85.71428571428571%">
+            <div class="Table_Cell"><a name="3_5_17_21_8_6_4_5_2_4_5_1_3_1_3">If you replicate this package, either to a server on the same machine or a server on a separate machine, a file polling port with the same settings is created on the target server. If a file polling port already exists on the target server, its settings remain intact. If the original and target servers reside on the same machine, they will share the same monitoring directory. If the target server resides on another machine, by default, another monitoring directory will be created on the target server's machine.</a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="Definition_Term"><a name="3_5_17_21_8_6_4_5_4_2">Alias</a></div>
+      <div class="Definition_Description"><a name="3_5_17_21_8_6_4_5_4_4">An alias for the port. An alias must include one or more of the following: ASCII characters, numbers, underscore (_), period (.), and hyphen (-).</a></div>
+      <div class="Definition_Term"><a name="3_5_17_21_8_6_4_5_6_2">Description</a></div>
+      <div class="Definition_Description"><a name="3_5_17_21_8_6_4_5_6_4">A description of the port.</a></div>
+      <div class="Definition_Term"><span class="uicontrol"><a name="3_5_17_21_8_6_4_5_8_2">Run services as user</a></span></div>
+      <div class="Definition_Description"><a name="3_5_17_21_8_6_4_5_8_4">User name you want to use to run the services assigned to the file polling directory. Click on the magnifying glass icon next to this field to lookup and select a user. The user can be an internal or external user.</a></div>
+      <div class="Definition_Term"><a name="3_5_17_21_8_6_4_5_10_2">Monitoring Directory</a></div>
+      <div class="Definition_Description"><a name="3_5_17_21_8_6_4_5_10_4">Directory on </a><span class="ph">Integration Server</span> that you want to monitor for files.</div>
+      <div class="Definition_Term"><span class="uicontrol"><a name="3_5_17_21_8_6_4_5_12_2">Working Directory </a></span>(optional)</div>
+      <div class="Definition_Description"><a name="3_5_17_21_8_6_4_5_12_4">Directory on the </a><span class="ph">Integration Server</span> to which the server should move files for processing after they have been identified in the <span class="uicontrol">Monitoring Directory</span>. Files must meet age and file name requirements before being moved to the <span class="uicontrol">Working Directory</span>. The default sub-directory, <span class="varname">MonitoringDirectory</span> <span class="codeph">\..\Work</span>, is automatically created if no directory is specified.</div>
+      <div class="Definition_Term"><a name="3_5_17_21_8_6_4_5_14_2">Completion Directory (optional)</a></div>
+      <div class="Definition_Description"><a name="3_5_17_21_8_6_4_5_14_4">Directory on </a><span class="ph">Integration Server</span> to which you want files moved when processing is completed in the <span class="uicontrol">Monitoring Directory</span> or <span class="uicontrol">Working Directory</span>. The default sub-directory, <span class="varname">MonitoringDirectory\..\</span> <span class="codeph">Done</span>, is automatically created if no directory is specified.</div>
+      <div class="Definition_Term"><a name="3_5_17_21_8_6_4_7_2_2">Error Directory (optional)</a></div>
+      <div class="Definition_Description"><a name="3_5_17_21_8_6_4_7_2_4">Directory on </a><span class="ph">Integration Server</span> to which you want files moved when processing fails. The default sub-directory, <span class="varname">MonitoringDirectory</span> <span class="codeph">\..\Error</span>, is automatically created if no directory is specified</div>
+      <div class="Definition_Term"><a name="3_5_17_21_8_6_4_7_4_2">File Name Filter (optional)</a></div>
+      <div class="Definition_Description"><a name="3_5_17_21_8_6_4_7_4_4">The file name filter for files in the </a><span class="uicontrol">Monitoring Directory</span>. The server only processes files that meet the filter requirements. If you do not specify this field, all files will be polled. You can specify pattern matching in this field.</div>
+      <div class="Definition_Term"><a name="3_5_17_21_8_6_4_7_6_2">File Age (optional)</a></div>
+      <div class="Definition_Description"><a name="3_5_17_21_8_6_4_7_6_4">The minimum age (in seconds) at which a file in the </a><span class="uicontrol">Monitoring Directory</span> can be processed. The server determines file age based on when the file was last modified on the monitoring directory. You can adjust this age as needed to make sure the server does not process a file before the entire file has been copied to the Monitoring Directory. The default is 0.</div>
+      <div class="Definition_Term"><a name="3_5_17_21_8_6_4_7_8_2">Content Type</a></div>
+      <div class="Definition_Description"><a name="3_5_17_21_8_6_4_7_8_4">Content type to use for the file. The server uses the content handler associated with the content type specified in this field. If no value is specified, the server performs MIME mapping based on the file extension.</a></div>
+      <div class="Definition_Term"><a name="3_5_17_21_8_6_4_7_10_2">Allow Recursive Polling</a></div>
+      <div class="Definition_Description"><a name="3_5_17_21_8_6_4_7_10_4">Whether the </a><span class="ph">Integration Server</span> is to poll all sub-directories in the <span class="uicontrol">Monitoring Directory.</span> Select <span class="uicontrol">Yes</span> or <span class="uicontrol">No</span>.</div>
+      <div class="Definition_Term"><a name="3_5_17_21_8_6_4_7_12_2">Enable Clustering</a></div>
+      <div class="Definition_Description"><a name="3_5_17_21_8_6_4_7_12_4">Whether the </a><span class="ph">Integration Server</span> should allow clustering in the Monitoring Directory. Select <span class="uicontrol">Yes</span> or <span class="uicontrol">No</span>.</div>
+      <div class="Definition_Term"><a name="3_5_17_21_8_6_4_7_14_2">Lock File Extension</a></div>
+      <div class="Definition_Description"><a name="3_5_17_21_8_6_4_7_14_4">Defines the polling for a particular extension.</a></div>
+      <div class="Definition_Term"><a name="3_5_17_21_8_6_4_7_16_2">Number of files to process per interval</a></div>
+      <div class="Definition_Description"><a name="3_5_17_21_8_6_4_7_16_4">Specifies the maximum number of files that the file polling listener can process per interval. When you specify a positive integer, the file polling listener processes only that number of files from the monitoring directory. Any files that remain in the monitoring directory will be processed during subsequent intervals. If no value is specified, the listener processes all of the files in the monitoring directory.</a></div>
+      <div class="Definition_Term"><a name="3_5_17_21_8_6_4_7_18_2">Enable</a></div>
+      <div class="Definition_Description"><a name="3_5_17_21_8_6_4_7_18_4">Controls whether or not the port is enabled. When the port is enabled, it can receive requests.</a></div>
+      <table class="note2" summary="">
+        <tr>
+          <td class="Table_Cell" style="vertical-align: top; width: 14.285714285714284%">
+            <div class="Note">
+              <span style="font-family: Arial, Verdana, Helvetica, Sans-Serif; font-weight: bold">Note:    </span><a name="3_5_17_21_8_6_4_7_18_4_3_1_3_1_2_2">&nbsp;</a></div>
+          </td>
+          <td class="Table_Cell" style="vertical-align: top; width: 85.71428571428571%">
+            <div class="Table_Cell"><a name="3_5_17_21_8_6_4_7_18_4_3_1_3_1_3">A disabled port is not re-enabled by restarting the server. A disabled port does not accept requests until you explicitly enable it.</a></div>
+          </td>
+        </tr>
+      </table>
+      <table class="note2" summary="">
+        <tr>
+          <td class="Table_Cell" style="vertical-align: top; width: 14.285714285714284%">
+            <div class="important">
+              <span style="font-family: Arial, Verdana, Helvetica, Sans-Serif; font-weight: bold">Important!    </span><a name="3_5_17_21_8_6_4_7_18_4_5_1_3_1_2_2">&nbsp;</a></div>
+          </td>
+          <td class="Table_Cell" style="vertical-align: top; width: 85.71428571428571%">
+            <div class="Table_Cell"><a name="3_5_17_21_8_6_4_7_18_4_5_1_3_1_3">If you change the processing service for a file polling port, you must also change the list of services available from this port to contain just the new service. See below for more information.</a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="Definition_Description"><span class="uicontrol"><a name="3_5_17_21_8_6_4_7_18_6">Processing Service</a></span></div>
+      <table class="note2" summary="">
+        <tr>
+          <td class="Table_Cell" style="vertical-align: top; width: 14.285714285714284%">
+            <div class="important">
+              <span style="font-family: Arial, Verdana, Helvetica, Sans-Serif; font-weight: bold">Important!    </span><a name="3_5_17_21_8_6_4_7_18_6_5_1_3_1_2_2">&nbsp;</a></div>
+          </td>
+          <td class="Table_Cell" style="vertical-align: top; width: 85.71428571428571%">
+            <div class="Table_Cell"><a name="3_5_17_21_8_6_4_7_18_6_5_1_3_1_3">If you change the processing service for a file polling port, you must also change the list of services available from this port to contain just the new service. See below for more information.</a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="Definition_Description"><a name="3_5_17_21_8_6_4_7_18_8">Name of the service you want the </a><span class="ph">Integration Server</span> to execute for polled files. The server executes this service when the file has been copied to the Working directory. This service should be the only service available from this port.</div>
+      <table class="note2" summary="">
+        <tr>
+          <td class="Table_Cell" style="vertical-align: top; width: 14.285714285714284%">
+            <div class="important">
+              <span style="font-family: Arial, Verdana, Helvetica, Sans-Serif; font-weight: bold">Important!    </span><a name="3_5_17_21_8_6_4_7_18_8_5_1_3_1_2_2">&nbsp;</a></div>
+          </td>
+          <td class="Table_Cell" style="vertical-align: top; width: 85.71428571428571%">
+            <div class="Table_Cell"><a name="3_5_17_21_8_6_4_7_18_8_5_1_3_1_3">If you change the processing service for a file polling port, you must also change the list of services available from this port to contain just the new service. See below for more information.</a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="Definition_Term"><a name="3_5_17_21_8_6_4_7_20_2">File Polling Interval</a></div>
+      <div class="Definition_Description"><a name="3_5_17_21_8_6_4_7_20_4">How often (in seconds) you want </a><span class="ph">Integration Server</span> to poll the <span class="uicontrol">Monitoring Directory</span> for files.</div>
+      <div class="Definition_Term"><a name="3_5_17_21_8_6_4_7_22_2">Log Only When Directory Availability Changes</a></div>
+      <div class="List_2_outer" style="margin-left: 48px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_2_inner" style="width: 18pt; white-space: nowrap">
+                <img src="bullet2.png" alt="*" border="0" width="12" height="12" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_2_inner"><a name="3_5_17_21_8_6_4_7_22_4_3_2">If you select </a><span class="uicontrol">No</span> (the default), the listener will log a message every time the monitoring directory is unavailable.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_2_outer" style="margin-left: 48px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_2_inner" style="width: 18pt; white-space: nowrap">
+                <img src="bullet2.png" alt="*" border="0" width="12" height="12" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_2_inner"><a name="3_5_17_21_8_6_4_7_22_4_3_4">If you select </a><span class="uicontrol">Yes</span>, the listener will log a message in either of the following cases:</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_3_outer" style="margin-left: 72px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_3_inner" style="width: 18pt; white-space: nowrap">
+                <img src="bullet3.png" alt="*" border="0" width="10" height="10" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_3_inner"><a name="3_5_17_21_8_6_4_7_22_4_3_4_6_2">The directory </a><span class="emphasis">was</span> available during the last polling attempt but <span class="emphasis">not</span> available during the current attempt.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_3_outer" style="margin-left: 72px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_3_inner" style="width: 18pt; white-space: nowrap">
+                <img src="bullet3.png" alt="*" border="0" width="10" height="10" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_3_inner"><a name="3_5_17_21_8_6_4_7_22_4_3_4_6_4">The directory was </a><span class="emphasis">not</span> available during the last polling attempt but <span class="emphasis">is</span> available during the current attempt. For use on a UNIX system where the monitoring directory, working directory, completion directory, and/or error directory are network drives mounted on the local file system.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Definition_Term"><span class="uicontrol"><a name="3_5_17_21_8_6_4_7_24_2">Directories are NFS Mounted File System</a></span></div>
+      <div class="Definition_Description"><a name="3_5_17_21_8_6_4_7_24_4_3">For use on a UNIX system where the monitoring directory, working directory, completion directory, and/or error directory are network drives mounted on the local file system.</a></div>
+      <div class="Definition_Description"><a name="3_5_17_21_8_6_4_7_24_4_5">If you select </a><span class="uicontrol">No</span> (the default), the listener will call the Java File.renameTo() method to move the files from the monitoring directory to the working directory, and from the working directory to the completion and/or error directory.</div>
+      <div class="Definition_Description"><a name="3_5_17_21_8_6_4_7_24_4_7">If you select </a><span class="uicontrol">Yes</span>, the listener will first call the Java File.renameTo() method to move the files from the monitoring directory. If this method fails, the listener will then copy the files from the monitoring directory to the working directory and delete the files from the monitoring directory. This operation will fail if either the copy action or the delete action fails. The same behavior applies when moving files from the working directory to the completion and/or error directory.</div>
+      <div class="Definition_Term"><a name="3_5_17_21_8_6_4_7_26_2">Cleanup Service (Optional)</a></div>
+      <div class="Definition_Description"><a name="3_5_17_21_8_6_4_7_26_4">The name of the service that you want to use to clean up the directories specified under </a><span class="uicontrol">Polling Information</span>.</div>
+      <div class="Definition_Term"><span class="uicontrol"><a name="3_5_17_21_8_6_4_7_28_2">Cleanup At Startup</a></span></div>
+      <div class="Definition_Description"><a name="3_5_17_21_8_6_4_7_28_4">Whether to clean up files that are located in the </a><span class="uicontrol">Completion Directory</span> and <span class="uicontrol">Error Directory</span> when the file polling port is started.</div>
+      <div class="Definition_Term"><a name="3_5_17_21_8_6_4_7_30_2">Cleanup File Age (Optional)</a></div>
+      <div class="Definition_Description"><a name="3_5_17_21_8_6_4_7_30_4">The number of days to wait before deleting processed files from your directories. The default is 7 days.</a></div>
+      <div class="Definition_Term"><a name="3_5_17_21_8_6_4_7_32_2">Cleanup Interval (Optional)</a></div>
+      <div class="Definition_Description"><a name="3_5_17_21_8_6_4_7_32_4">How often (in hours) you want </a><span class="ph">Integration Server</span> to check the processed files for cleanup. The default is 24 hours</div>
+      <div class="Definition_Term"><span class="uicontrol"><a name="3_5_17_21_8_6_4_7_34_2">Maximum Number of Invocation Threads</a></span></div>
+      <div class="Definition_Description"><a name="3_5_17_21_8_6_4_7_34_4">The number of threads you want the </a><span class="ph">Integration Server</span> to use for this port. Type a number from 1-10. The default is 10.</div>
+      <div class="Definition_Term"><a name="3_5_17_21_8_6_4_7_36_2">Save Changes</a></div>
+      <div class="Definition_Description"><a name="3_5_17_21_8_6_4_7_36_4">Updates the server with the new or changed port settings. Your changes take effect immediately.</a></div>
+      <div class="Link_List_Title"><a name="3_5_17_21_8_8_1_2">Related Topics</a></div>
+      <div class="Related_Reference">
+        <img src="spacer_24.png" alt="*" border="0" width="24" height="6" /><span class="Link_Text"><a href="javascript:WWHClickedPopup('is_help', 'Menu_Sec_Ports_HTTP.html', '');" title="Edit HTTP Port Configuration Screen" name="3_5_17_21_8_8_1_4">Edit HTTP Port Configuration Screen</a></span></div>
+      <div class="Related_Reference">
+        <img src="spacer_24.png" alt="*" border="0" width="24" height="6" /><span class="Link_Text"><a href="javascript:WWHClickedPopup('is_help', 'Menu_Sec_Ports_HTTPS.html', '');" title="Edit HTTPS Port Configuration Screen" name="3_5_17_21_8_8_1_6">Edit HTTPS Port Configuration Screen</a></span></div>
+      <div class="Related_Reference">
+        <img src="spacer_24.png" alt="*" border="0" width="24" height="6" /><span class="Link_Text"><a href="javascript:WWHClickedPopup('is_help', 'Menu_Sec_Ports_FTPS.html', '');" title="Edit FTPS Port Configuration Screen" name="3_5_17_21_8_8_1_8">Edit FTPS Port Configuration Screen</a></span></div>
+      <div class="Related_Reference">
+        <img src="spacer_24.png" alt="*" border="0" width="24" height="6" /><span class="Link_Text"><a href="javascript:WWHClickedPopup('is_help', 'Menu_Sec_Ports_FTP.html', '');" title="Edit FTP Port Configuration Screen" name="3_5_17_21_8_8_1_10">Edit FTP Port Configuration Screen</a></span></div>
+      <div class="Related_Reference">
+        <img src="spacer_24.png" alt="*" border="0" width="24" height="6" /><span class="Link_Text"><a href="javascript:WWHClickedPopup('is_help', 'Menu_Sec_Ports_Email.html', '');" title="Edit Email Client Configuration Screen" name="3_5_17_21_8_8_1_12">Edit Email Client Configuration Screen</a></span></div>
+      <div class="Related_Reference">
+        <img src="spacer_24.png" alt="*" border="0" width="24" height="6" /><span class="Link_Text"><a href="javascript:WWHClickedPopup('is_help', 'Menu_Sec_Ports_DiagnosticHTTP.html', '');" title="Edit HTTP Diagnostic Port Configuration Screen" name="3_5_17_21_8_8_1_14">Edit HTTP Diagnostic Port Configuration Screen</a></span></div>
+      <div class="Related_Reference">
+        <img src="spacer_24.png" alt="*" border="0" width="24" height="6" /><span class="Link_Text"><a href="javascript:WWHClickedPopup('is_help', 'Menu_Sec_Ports_DiagnosticHTTPS.html', '');" title="Edit HTTPS Diagnostic Port Configuration Screen" name="3_5_17_21_8_8_1_16">Edit HTTPS Diagnostic Port Configuration Screen</a></span></div>
+      <div class="Related_Reference">
+        <img src="spacer_24.png" alt="*" border="0" width="24" height="6" /><span class="Link_Text"><a href="javascript:WWHClickedPopup('is_help', 'Menu_Sec_Ports_EditEnterpriseGateway.html', '');" title="Edit Enterprise Gateway Server Configuration Screen" name="3_5_17_21_8_8_1_18">Edit Enterprise Gateway Server Configuration Screen</a></span></div>
+      <div class="Related_Reference">
+        <img src="spacer_24.png" alt="*" border="0" width="24" height="6" /><span class="Link_Text"><a href="javascript:WWHClickedPopup('is_help', 'Menu_Sec_Ports_InternalServer.html', '');" title="Edit Internal Server Configuration Screen" name="3_5_17_21_8_8_1_20">Edit Internal Server Configuration Screen</a></span></div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <div>
+      <hr />
+      <div style="font-family: Arial, Verdana, Helvetica, Sans-Serif; font-size: 12px;margin-top: 20px;margin-bottom: 20px;">
+        <span class="xref">
+          <a href="http://documentation.softwareag.com/legal/" target="external_window">Copyright © <span></span><span></span><span>2007</span><span>-2014</span> Software AG, Darmstadt, Germany</a>
+        </span>.</div>
+    </div>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+  </body>
+</html>

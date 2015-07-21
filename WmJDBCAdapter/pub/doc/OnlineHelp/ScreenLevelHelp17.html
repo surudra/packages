@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="GENERATOR" content="Quadralay WebWorks Publisher Professional Edition 7.0" />
+  <meta name="TEMPLATEBASE" content="wM_WWH20030908" />
+  <meta name="LASTUPDATED" content="12/04/06 19:31:53" />
+  <title>SelectSQL Service Template Screens    </title>
+  <link rel="StyleSheet" href="document.css" type="text/css" />
+  <link rel="StyleSheet" href="catalog.css" type="text/css" />
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+ </head>
+
+ <body onLoad="WWHUpdate();">
+
+
+<a name="wp1116409"> </a><h2 class="pNewHTMLPage">
+SelectSQL Service Template Screens    
+</h2><a name="wp1116410"> </a><p class="pBody">
+The SelectSQL adapter service retrieves specified information from a database table.
+</p>
+<a name="wp1093618"> </a><p class="pBody">
+This service template includes the following tabs:
+</p>
+<a name="wp1085260"> </a><p class="pChapterTOC">
+<img src="images/bullet.gif" height="13" width="10" border="0" />
+<a  href="ScreenLevelHelp17.html#wp1067436">Tables Tab</a>
+</p>
+<a name="wp1085264"> </a><p class="pChapterTOC">
+<img src="images/bullet.gif" height="13" width="10" border="0" />
+<a  href="ScreenLevelHelp17.html#wp1067854">Joins Tab</a>
+</p>
+<a name="wp1085268"> </a><p class="pChapterTOC">
+<img src="images/bullet.gif" height="13" width="10" border="0" />
+<a  href="ScreenLevelHelp17.html#wp1068059">SELECT Tab</a>
+</p>
+<a name="wp1085272"> </a><p class="pChapterTOC">
+<img src="images/bullet.gif" height="13" width="10" border="0" />
+<a  href="ScreenLevelHelp17.html#wp1068061">WHERE Tab</a>
+</p>
+<a name="wp1067436"> </a><h4 class="pHeading3">
+Tables Tab 
+</h4>
+<a name="wp1085867"> </a><p class="pBody">
+Use the <b class="cBold">Tables</b> tab to configure the database table (or tables) the operation accesses, using the following fields:</p><div align="left">
+<table border="0">
+  <caption></caption>
+  <tr align="left" valign="bottom">    <th><a name="wp1085870"> </a><div style="text-align: left" class="pCellHeading">
+Field
+<hr />
+</div>
+</th>
+    <th><a name="wp1085872"> </a><div style="text-align: left" class="pCellHeading">
+Description
+<hr />
+</div>
+</th>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1085874"> </a><p class="pBody">
+<b class="cBold">Table Alias</b>
+</p>
+</td>
+    <td><a name="wp1085876"> </a><p class="pBody">
+The system automatically assigns the table alias when you select more than one table in the <b class="cBold">Table Name</b> field. The default is <code class="cCode">t1</code>. 
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1085878"> </a><p class="pBody">
+<b class="cBold">Table Name</b>
+</p>
+</td>
+    <td><a name="wp1085880"> </a><p class="pBody">
+Select a table name. The default for the associated catalog name is <code class="cCode">current catalog</code>. The default for the associated schema name is <code class="cCode">current schema</code>. 
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1085882"> </a><p class="pBody">
+<b class="cBold">Type</b>
+</p>
+</td>
+    <td><a name="wp1085884"> </a><p class="pBody">
+The system automatically displays the type based on the table you select.
+</p>
+</td>
+</tr>
+</table>
+</div>
+<p class="pBody">
+</p>
+<a name="wp1067854"> </a><h4 class="pHeading3">
+Joins Tab 
+</h4>
+<a name="wp1089611"> </a><p class="pBody">
+If you want to join tables, use the <b class="cBold">Joins</b> tab to specify the columns for joining the tables you just configured. If you are not joining tables, skip this tab.
+</p>
+<div class="pSmartList1" style="margin-top: 5pt"><ol type="1" class="pSmartList1" style="margin-top: 5pt">
+<a name="wp1089618"> </a><div style="margin-top: 5pt" class="pSmartList1"><li>Select the <b class="cBold">Insert Row</b> icon <img src="images/table_insertrow.gif" border="0" hspace="0" vspace="0"/> (or the <b class="cBold">Fill in all rows to the table</b> icon <img src="images/append_all_rows.gif" border="0" hspace="0" vspace="0"/>) to create new left and right columns.</li></div>
+<a name="wp1090230"> </a><div style="margin-top: 7pt" class="pSmartList1"><li>Select <b class="cBold">Left Column</b> and select the first table’s joining column.</li></div>
+<a name="wp1090239"> </a><div style="margin-top: 7pt" class="pSmartList1"><li>Select the appropriate <b class="cBold">Operator</b>.</li></div>
+<a name="wp1090242"> </a><div style="margin-top: 7pt" class="pSmartList1"><li>Select <b class="cBold">Right Column</b> and select the next table’s joining column.</li></div>
+<a name="wp1090245"> </a><div style="margin-top: 7pt" class="pSmartList1"><li>Repeat this procedure until you have defined all the joins.</li></div>
+</ol></div>
+<a name="wp1068059"> </a><h4 class="pHeading3">
+SELECT Tab 
+</h4>
+<a name="wp1089910"> </a><p class="pBody">
+Use the <b class="cBold">SELECT</b> tab to define the columns and fields to be selected.
+</p>
+<div class="pSmartList1" style="margin-top: 5pt"><ol type="1" class="pSmartList1" style="margin-top: 5pt">
+<a name="wp1089911"> </a><div style="margin-top: 5pt" class="pSmartList1"><li>In the <b class="cBold">ALL/DISTINCT</b> field, select <b class="cBold">ALL</b> to include duplicate rows or <b class="cBold">DISTINCT</b> to suppress duplicate rows. Otherwise leave this field blank, which is the default value.</li></div>
+<a name="wp1090260"> </a><div style="margin-top: 7pt" class="pSmartList1"><li>Use the <b class="cBold">Insert Row</b> icon <img src="images/table_insertrow.gif" border="0" hspace="0" vspace="0"/> (or the <b class="cBold">Fill in all rows to the table</b> icon <img src="images/append_all_rows.gif" border="0" hspace="0" vspace="0"/>) to create new rows as needed.As you insert additional rows, the corresponding <b class="cBold">Column Type</b>, <b class="cBold">JDBC Type</b>, <b class="cBold">Output Field Type, </b>and<b class="cBold"> Output Field </b>display for each column you select in the <b class="cBold">Expression</b> field. Use the following fields:</li></div>
+<a name="wp1089937"> </a><p class="pAnchor">
+<div align="left">
+<table border="0">
+  <caption></caption>
+  <tr align="left" valign="bottom">    <th><a name="wp1089921"> </a><div style="text-align: left" class="pCellHeading">
+Field
+<hr />
+</div>
+</th>
+    <th><a name="wp1089923"> </a><div style="text-align: left" class="pCellHeading">
+Description
+<hr />
+</div>
+</th>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1095801"> </a><p class="pBody">
+<b class="cBold">Expression</b>
+</p>
+</td>
+    <td><a name="wp1095803"> </a><p class="pBody">
+The column name in the database table.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1095805"> </a><p class="pBody">
+<b class="cBold">Column Type</b>
+</p>
+</td>
+    <td><a name="wp1095807"> </a><p class="pBody">
+The column data type defined in the database table.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1095809"> </a><p class="pBody">
+<b class="cBold">JDBC Type</b>
+</p>
+</td>
+    <td><a name="wp1095811"> </a><p class="pBody">
+The JDBC type of the corresponding <b class="cBold">Output Field</b>.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1095813"> </a><p class="pBody">
+<b class="cBold">Output Field Type</b>
+</p>
+</td>
+    <td><a name="wp1095818"> </a><p class="pBody">
+The data type of the output field. The JDBC Adapter automatically converts database-specific types to Java data types. 
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1095820"> </a><p class="pBody">
+<b class="cBold">Output Field</b>
+</p>
+</td>
+    <td><a name="wp1095822"> </a><p class="pBody">
+The name of the field containing the output from the SELECT operation. An output field name displays when you select an expression.
+</p>
+<a name="wp1095823"> </a><p class="pBody">
+You can also modify the output field names as required.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1095825"> </a><p class="pBody">
+<b class="cBold">Sort Order</b>
+</p>
+</td>
+    <td><a name="wp1095827"> </a><p class="pBody">
+Specifies how rows are returned as follows:
+</p>
+<a name="wp1095828"> </a><p class="pBody">
+Select either <b class="cBold">Ascend</b> or <b class="cBold">Descend</b>. Leave the field blank if there is no sort order.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1095830"> </a><p class="pBody">
+<b class="cBold">Maximum Row</b>
+</p>
+</td>
+    <td><a name="wp1095832"> </a><p class="pBody">
+Use this field only to specify the maximum number of records to retrieve from the database. The default value of <code class="cCode">0</code> (no limit) retrieves all records. 
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1116341"> </a><p class="pBody">
+<b class="cBold">Query Time Out</b>
+</p>
+</td>
+    <td><a name="wp1122620"> </a><p class="pBody">
+Specify the query time out value in seconds. This value is the amount of time the JDBC Adapter waits for the service to execute before stopping the SQL operation.
+</p>
+<a name="wp1122624"> </a><p class="pBody">
+The default value is -1. Use the default value to have the service use the value indicated on the <code class="cCode">watt.adapter.JDBC.QueryTimeout</code> property as the time out. 
+</p>
+<a name="wp1122625"> </a><p class="pBody">
+If you specify a value equal to 0, or if the <code class="cCode">watt.adapter.JDBC.QueryTimeout</code> property is not set, the service executes without a time out.
+</p>
+<a name="wp1122626"> </a><p class="pBody">
+If you specify a value greater than 0, the service executes with the specified value as the time out.
+</p>
+<a name="wp1122627"> </a><p class="pNote">
+<b>Note:</b> -1 is the only permissible negative value for this field.
+</p>
+<a name="wp1122628"> </a><p class="pBody">
+For more information about the watt.adapter.JDBC.QueryTimeout property, see the <em class="cEmphasis">webMethods JDBC Adapter User’s Guide.</em>
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1116337"> </a><p class="pBody">
+<b class="cBold">Result Field</b>
+</p>
+</td>
+    <td><a name="wp1116396"> </a><p class="pBody">
+Specify a name for the output field that must contain the total number of rows affected by the SQL statement.
+</p>
+<a name="wp1116397"> </a><p class="pBody">
+Do not use <code class="cCode">results</code> as the value of the <b class="cBold">Result Field</b>.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1116333"> </a><p class="pBody">
+<b class="cBold">Result Field Type</b>
+</p>
+</td>
+    <td><a name="wp1116403"> </a><p class="pBody">
+The data type of the <b class="cBold">Result Field</b>.
+</p>
+</td>
+</tr>
+</table>
+</div>
+
+</p>
+</ol></div>
+<a name="wp1068061"> </a><h4 class="pHeading3">
+WHERE Tab 
+</h4>
+<a name="wp1089723"> </a><p class="pBody">
+Use the <b class="cBold">WHERE</b> tab to specify the conditions for selecting information.
+</p>
+<div class="pSmartList1" style="margin-top: 5pt"><ol type="1" class="pSmartList1" style="margin-top: 5pt">
+<a name="wp1089727"> </a><div style="margin-top: 5pt" class="pSmartList1"><li>Select the <b class="cBold">Insert Row</b> icon <img src="images/table_insertrow.gif" border="0" hspace="0" vspace="0"/> to define new WHERE clause fields. </li></div>
+<a name="wp1090296"> </a><div style="margin-top: 7pt" class="pSmartList1"><li>Select an AND/OR/NOT logical operator from the <b class="cBold">AND/OR</b> field, an <b class="cBold">Operator</b>, and separators (the left and right parentheses) as needed, and use the following fields.<div align="left">
+<table border="0">
+  <caption></caption>
+  <tr align="left" valign="bottom">    <th><a name="wp1089731"> </a><div style="text-align: left" class="pCellHeading">
+Field
+<hr />
+</div>
+</th>
+    <th><a name="wp1089733"> </a><div style="text-align: left" class="pCellHeading">
+Description
+<hr />
+</div>
+</th>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1095868"> </a><p class="pBody">
+<b class="cBold">AND/OR</b>
+</p>
+</td>
+    <td><a name="wp1095870"> </a><p class="pBody">
+The logical operator.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1095872"> </a><p class="pBody">
+<b class="cBold">Column</b>
+</p>
+</td>
+    <td><a name="wp1095874"> </a><p class="pBody">
+The name of the column you want to use in the WHERE clause.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1095876"> </a><p class="pBody">
+<b class="cBold">Operator</b>
+</p>
+</td>
+    <td><a name="wp1095878"> </a><p class="pBody">
+The operator used with the <b class="cBold">Column</b> and <b class="cBold">Input Field</b>.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1095880"> </a><p class="pBody">
+<b class="cBold">Input Field*</b>
+</p>
+</td>
+    <td><a name="wp1095882"> </a><p class="pBody">
+The default value is <code class="cCode">?</code>, which acts as a placeholder for the variable so that you can set the input variable for that column at run time, or get input external to this adapter service. 
+</p>
+<a name="wp1095883"> </a><p class="pBody">
+You can also type a fixed value in this field now or at run time. If you type a fixed value, be sure that it is valid, or an exception will be generated at run time.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1095885"> </a><p class="pBody">
+<b class="cBold">JDBC Type</b>
+</p>
+</td>
+    <td><a name="wp1095887"> </a><p class="pBody">
+The JDBC type of the corresponding <b class="cBold">Input Field</b>.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1095889"> </a><p class="pBody">
+<b class="cBold">Input Field Type</b>
+</p>
+</td>
+    <td><a name="wp1095891"> </a><p class="pBody">
+The corresponding input field’s Java type.
+</p>
+<a name="wp1095892"> </a><p class="pBody">
+ For a list of JDBC-Type to Java-Type mappings, see the <em class="cEmphasis">webMethods JDBC Adapter User’s Guide</em>.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1095897"> </a><p class="pBody">
+<b class="cBold">Input Field<br />(second occurrence of this field)</b>
+</p>
+</td>
+    <td><a name="wp1095899"> </a><p class="pBody">
+Type the name of the input field. 
+</p>
+<a name="wp1095900"> </a><p class="pBody">
+If you use the default <code class="cCode">?</code> variable placeholder as the <b class="cBold">Input Field</b> value in the WHERE clause, be sure to enter the corresponding <b class="cBold">Input Field</b> and its <b class="cBold">JDBC Field Type</b> in the same order as they appear on the top portion of the WHERE tab. 
+</p>
+</td>
+</tr>
+</table>
+</div>
+<div align="left">
+<table border="0">
+  <caption></caption>
+  <tr align="left" valign="top">    <td><a name="wp1125019"> </a><p class="px_Note">
+&#160;
+<img src="images/note_icon.gif" height="25" width="25" border="1" alt="Note" />
+</p>
+</td>
+    <td><a name="wp1125021"> </a><p class="pNote">
+<b>Note:</b> *For Oracle users, if you use a CHAR(n) data type and enter a value in the <b class="cBold">Input Field</b>, the JDBC Adapter automatically sets the ORACLEFIXED_CHAR data type as the JDBC data type.
+</p>
+</td>
+</tr>
+</table>
+</div>
+<div align="left">
+<table border="0">
+  <caption></caption>
+  <tr align="left" valign="top">    <td><a name="wp1125045"> </a><p class="px_Note">
+&#160;
+<img src="images/note_icon.gif" height="25" width="25" border="1" alt="Note" />
+</p>
+</td>
+    <td><a name="wp1125047"> </a><p class="pNote">
+<b>Note:</b> The WHERE clause does not support the java.sql.array data type.
+</p>
+</td>
+</tr>
+</table>
+</div>
+</li></div>
+<a name="wp1125034"> </a><div style="margin-top: 7pt" class="pSmartList1"><li>If necessary, use the Shift Up <img src="images/btn_shift_up.gif" border="0" hspace="0" vspace="0"/> or Shift Down <img src="images/btn_shift_down.gif" border="0" hspace="0" vspace="0"/> icons to change the order of the WHERE clause to ensure the parameters are parsed in the correct order.</li></div>
+<a name="wp1090326"> </a><div style="margin-top: 7pt" class="pSmartList1"><li>Repeat this procedure until you have specified all WHERE parameters.</li></div>
+</ol></div>
+
+ <hr />
+
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag());
+   // -->
+  </script>
+
+ </body>
+</html>

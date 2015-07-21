@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <title>WmXSLT Package Transformer Factory Settings Screen</title>
+    <link rel="StyleSheet" href="css/_is_admin_help.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+  <body style="background-color: White; margin-bottom: 25px; margin-left: 25px; margin-right: 25px; margin-top: 0px; padding-top: 0px" onload="WWHUpdate();" onunload="WWHUnload();" onkeydown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onkeypress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onkeyup="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <table align="left" role="presentation">
+      <tr>
+        <td class="WebWorks_Company_Logo_Top">
+          <img src="sag_online.png" />
+        </td>
+      </tr>
+    </table>
+    <br clear="all" />
+    <hr align="left" />
+    <blockquote>
+      <div class="Heading_3"><a name="3_5_11_5_32_2">WmXSLT Package Transformer Factory Settings Screen</a></div>
+      <div class="Body"><span class="emphasis"><a name="3_5_11_5_32_6_2_3">Screen Heading</a></span>: <span class="uicontrol">WmXSLT &gt; Transformer Factory Settings &gt; Edit</span></div>
+      <div class="Body"><a name="3_5_11_5_32_6_2_5">Use the WmXSLT screen to configure the transformer factory settings to point to the appropriate XSLT processors.</a></div>
+      <div class="Body"><a name="3_5_11_5_32_6_2_7">When executed, an XSLT service calls an external XSLT engine to convert the XML data. By default, the </a><span class="ph">Integration Server</span> includes the Xerces parser and the Xalan XSLT stylesheet processor from the Apache Software Foundation. Also included is the open source Saxon-B XSLT processor from Saxonica, which supports both XSLT 1.0/2.0 and XPath 1.0/2.0.</div>
+      <div class="Body"><a name="3_5_11_5_32_6_2_9">To use a more current version of the Xalan, Xerces, Saxon, or other 3rd-party XSLT processor, you must place all the related jar files in the </a><span class="ph"> </span><span class="emphasis">Integration&nbsp;Server_directory</span><span class="ph"> </span>\instances\<span class="varname">instance_name</span>\packages\WmXSLT\code\jars directory and configure the transformer factory settings to point to the appropriate XSLT transformer class.</div>
+      <div class="Body"><a name="3_5_11_5_32_6_2_11">For more information about transformer factory settings and XSLT services, see the </a><span class="ph"> </span><span class="Citation">webMethods Service Development Help</span><span class="ph"> </span>.</div>
+      <div class="Body"><a name="3_5_11_5_32_6_2_13">To open the WmXSLT screen, select </a><span class="uicontrol">Management</span> on the <span class="uicontrol">Packages</span> menu. The <span class="heading-no-quotes"><a href="javascript:WWHClickedPopup('is_help', 'Menu_Packgs_Mgmt.html', '');" title="Packages Management Screen">Packages Management Screen</a></span> will be displayed. Click the <span class="uicontrol">Home</span> icon next to the WmXSLT package name.</div>
+      <div class="List_1_outer" style="margin-left: 24px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_1_inner" style="width: 18pt; white-space: nowrap">
+                <img src="bullet1.png" alt="*" border="0" width="10" height="10" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_1_inner"><a name="3_5_11_5_32_6_2_15_2_4">Click </a><span class="uicontrol">Edit Transformer Factory Settings</span> to change the fields below.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Section_Title"><a name="3_5_11_5_32_6_4_3">Transformer Factory Settings</a></div>
+      <div class="Definition_Term"><a name="3_5_11_5_32_6_4_5_2_2">Transformer Factory</a></div>
+      <div class="Definition_Description"><a name="3_5_11_5_32_6_4_5_2_4">Specify a transformer factory provided with </a><span class="ph">Integration Server</span>, or select <span class="uicontrol">Other</span> and type in the name of the factory you want to use.</div>
+      <div class="Definition_Term"><a name="3_5_11_5_32_6_4_5_4_2">Transformer Factory Attributes</a></div>
+      <div class="Definition_Description"><a name="3_5_11_5_32_6_4_5_4_4">Specify any factory attributes that you want to use. The attributes must take the form </a><span class="varname">attribute</span>=<span class="varname">value</span>. You can only specify attributes that accept strings or Boolean values. For more information about possible attributes, refer to the documentation from your XSLT processor vendor.</div>
+      <div class="Link_List_Title"><a name="3_5_11_5_32_8_1_2">Related Topics</a></div>
+      <div class="Related_Reference">
+        <img src="spacer_24.png" alt="*" border="0" width="24" height="6" /><span class="Link_Text"><a href="javascript:WWHClickedPopup('is_help', 'Menu_Packgs_Mgmt.html', '');" title="Packages Management Screen" name="3_5_11_5_32_8_1_4">Packages Management Screen</a></span></div>
+      <div class="Related_Reference">
+        <img src="spacer_24.png" alt="*" border="0" width="24" height="6" /><span class="Link_Text"><a href="javascript:WWHClickedPopup('is_help', 'Menu_Packgs_Mgmt_SvcDetail.html', '');" title="Service Details Screen" name="3_5_11_5_32_8_1_6">Service Details Screen</a></span></div>
+      <div class="Related_Reference">
+        <img src="spacer_24.png" alt="*" border="0" width="24" height="6" /><span class="Link_Text"><a href="javascript:WWHClickedPopup('is_help', 'Menu_Packgs_Mgmt_BrowseSvcs.html', '');" title="Browse Services Screen" name="3_5_11_5_32_8_1_8">Browse Services Screen</a></span></div>
+      <div class="Related_Reference">
+        <img src="spacer_24.png" alt="*" border="0" width="24" height="6" /><span class="Link_Text"><a href="javascript:WWHClickedPopup('is_help', 'Menu_Packgs_Pubs.html', '');" title="Publishing Packages Screen" name="3_5_11_5_32_8_1_10">Publishing Packages Screen</a></span></div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <div>
+      <hr />
+      <div style="font-family: Arial, Verdana, Helvetica, Sans-Serif; font-size: 12px;margin-top: 20px;margin-bottom: 20px;">
+        <span class="xref">
+          <a href="http://documentation.softwareag.com/legal/" target="external_window">Copyright © <span></span><span></span><span>2007</span><span>-2014</span> Software AG, Darmstadt, Germany</a>
+        </span>.</div>
+    </div>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+  </body>
+</html>

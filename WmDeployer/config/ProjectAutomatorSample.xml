@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DeployerSpec exitOnError="false">
+	<DeployerServer>
+		<host>localhost:5555</host>
+		<user>Administrator</user>
+		<pwd>manage</pwd>
+	</DeployerServer>
+	<Environment>
+		<IS>
+			<isalias name="ISSource">
+				<host>localhost</host>
+				<port>5555</port>
+				<user>Administrator</user>
+				<pwd>manage</pwd>
+				<useSSL>false</useSSL>
+				<installDeployerResource>true</installDeployerResource>
+				<Test>true</Test>
+			</isalias>
+			<isalias name="ISTarget">
+				<host>localhost</host>
+				<port>6666</port>
+				<user>Administrator</user>
+				<pwd>manage</pwd>
+				<useSSL>false</useSSL>
+				<installDeployerResource>true</installDeployerResource>
+				<Test>true</Test>
+			</isalias>
+			<isalias name="ISClusterTarget1">
+				<host>localhost</host>
+				<port>7777</port>
+				<user>Administrator</user>
+				<pwd>manage</pwd>
+				<useSSL>false</useSSL>
+				<installDeployerResource>true</installDeployerResource>
+				<Test>true</Test>
+			</isalias>
+			<isalias name="ISClusterTarget2">
+				<host>localhost</host>
+				<port>8888</port>
+				<user>Administrator</user>
+				<pwd>manage</pwd>
+				<useSSL>false</useSSL>
+				<installDeployerResource>true</installDeployerResource>
+				<Test>true</Test>
+			</isalias>
+		</IS>
+		<MWS>
+			<mwsalias name="MWSSource">
+				<host>localhost</host>
+				<port>8787</port>
+				<user>Administrator</user>
+				<pwd>manage</pwd>
+				<useSSL>false</useSSL>
+				<excludeCoreTaskEngineDependencies>true</excludeCoreTaskEngineDependencies>
+				<cacheTimeOut>0</cacheTimeOut>
+				<includeSecurityDependencies>true</includeSecurityDependencies>
+				<rootFolderAliases>folder.public</rootFolderAliases>
+				<maximumFolderObjectCount>8000</maximumFolderObjectCount>
+				<enableAddtionalLogging>true</enableAddtionalLogging>
+				<maxFolderDepth>25</maxFolderDepth>
+				<Test>true</Test>
+			</mwsalias>
+			<mwsalias name="MWSTarget">
+				<host>localhost</host>
+				<port>9898</port>
+				<user>Administrator</user>
+				<pwd>manage</pwd>
+				<useSSL>false</useSSL>
+				<excludeCoreTaskEngineDependencies>true</excludeCoreTaskEngineDependencies>
+				<cacheTimeOut>0</cacheTimeOut>
+				<includeSecurityDependencies>true</includeSecurityDependencies>
+				<rootFolderAliases>folder.public</rootFolderAliases>
+				<maximumFolderObjectCount>8000</maximumFolderObjectCount>
+				<enableAddtionalLogging>true</enableAddtionalLogging>
+				<maxFolderDepth>25</maxFolderDepth>
+				<Test>true</Test>
+			</mwsalias>
+		</MWS>
+		<Optimize>
+			<optimizealias name="OptimizeSource">
+				<host>localhost</host>
+				<port>12503</port>
+				<user>Administrator</user>
+				<pwd>manage</pwd>
+				<useSSL>false</useSSL>
+				<Test>true</Test>
+			</optimizealias>
+			<optimizealias name="OptimizeTarget">
+				<host>localhost</host>
+				<port>12603</port>
+				<user>Administrator</user>
+				<pwd>manage</pwd>
+				<useSSL>false</useSSL>
+				<Test>true</Test>
+			</optimizealias>
+		</Optimize>
+		<Broker>
+			<brokeralias name="BrokerSource">
+				<brokerName>Broker #1</brokerName>
+				<clientGroup>admin</clientGroup>
+				<host>localhost</host>
+				<port>6849</port>
+				<useSSL>false</useSSL>
+				<keyStorePath/>
+				<trustStorePath/>
+				<keyStorepassword/>
+				<keyStoreType/>
+				<trustStoreType/>
+				<Test>true</Test>
+			</brokeralias>
+			<brokeralias name="BrokerTarget">
+				<brokerName>Broker #2</brokerName>
+				<clientGroup>admin</clientGroup>
+				<host>localhost</host>
+				<port>6849</port>
+				<useSSL>false</useSSL>
+				<keyStorePath/>
+				<trustStorePath/>
+				<keyStorepassword/>
+				<keyStoreType/>
+				<trustStoreType/>
+				<Test>true</Test>
+			</brokeralias>
+		</Broker>
+		<ProcessModel>
+			<pmalias name="PMSource">
+				<host>localhost</host>
+				<port>5555</port>
+				<user>Administrator</user>
+				<pwd>manage</pwd>
+				<useSSL>false</useSSL>
+				<Test>true</Test>
+			</pmalias>
+			<pmalias name="PMTarget">
+				<host>localhost</host>
+				<port>6666</port>
+				<user>Administrator</user>
+				<pwd>manage</pwd>
+				<useSSL>false</useSSL>
+				<Test>true</Test>
+			</pmalias>
+			<pmalias name="PMClusterTarget1">
+				<host>localhost</host>
+				<port>7777</port>
+				<user>Administrator</user>
+				<pwd>manage</pwd>
+				<useSSL>false</useSSL>
+				<Test>true</Test>
+			</pmalias>
+			<pmalias name="PMClusterTarget2">
+				<host>localhost</host>
+				<port>8888</port>
+				<user>Administrator</user>
+				<pwd>manage</pwd>
+				<useSSL>false</useSSL>
+				<Test>true</Test>
+			</pmalias>
+		</ProcessModel>
+		<Repository>
+			<repalias name="RepoSource">
+				<type>FlatFile</type>
+				<urlOrDirectory>C:/temp</urlOrDirectory>
+				<user>Administrator</user>
+				<pwd>drpepper</pwd>
+				<Test>true</Test>
+			</repalias>
+		</Repository>
+		<TargetGroup name="ISTargetGroup" type="IS" description="is target group" isLogicalCluster="false">
+			<alias>ISTarget</alias>			
+			<cluster name="ISCluster80">ISClusterTarget1,ISClusterTarget2</cluster>			
+		</TargetGroup>
+		<TargetGroup name="PMTargetGroup" type="ProcessModel" description="process model target group" isLogicalCluster="false">
+			<alias>PMTarget</alias>			
+			<cluster name="PMCluster80">PMClusterTarget1,PMClusterTarget2</cluster>			
+		</TargetGroup>
+	</Environment>
+	<Projects projectPrefix="Auto_">
+		<Project name="SampleProject" description="Sample Project" overwrite="true">
+			<DeploymentSet name="isDepSet" description="is deployment set" packageRegExp="" otherRegExp="" type="IS" mode="Deploy" srcAlias="ISSource" defaultDependencyAction="add">
+				<Port name="FTPListener@8101" srcAlias="ISSource" protocol="FTP"/>
+				<Port name="HTTPListener@5555" srcAlias="ISSource" protocol="HTTP"/>
+				<FlowService name="ISAssets:Flow2" package="DeployerTestSuite" srcAlias="ISSource"/>
+				<JavaService name="ISAssets:javaService" package="DeployerTestSuite" srcAlias="ISSource"/>
+				<FlatFileSchema name="ISAssets:flatFileSchema" package="DeployerTestSuite" srcAlias="ISSource"/>
+				<User name="deployerTestSuiteUser1" srcAlias="ISSource"/>
+				<Group name="group1" type="Group" srcAlias="ISSource"/>
+				<ExtendedSetting name="watt.server.compile" srcAlias="ISSource"/>
+				<Package name="CLITest" srcAlias="ISSource"/>
+				<File name="readme.txt" topDir="IntegrationServer" srcAlias="ISSource"/>
+				<ScheduledService name="429b1b40-fe6b-11dd-b6f5-b4726300c1b3" service="ISAssets:javaService" runAsUser="Administrator" srcAlias="ISSource" filterBy="oid"/>
+				<ACL name="deployerTestSuiteACL" type="ACL" srcAlias="ISSource"/>
+			</DeploymentSet>
+			<DeploymentSet name="tnDepSet" description="tn deployment set" packageRegExp="" otherRegExp="" type="IS" mode="Deploy" srcAlias="ISSource" defaultDependencyAction="add">
+				<TNDocumentType name="TestDOc" srcAlias="ISSource"/>
+				<TNDocumentAttribute name="DocAttribute" srcAlias="ISSource"/>
+				<TNFieldDefinition name="FldDefn" srcAlias="ISSource"/>
+				<TNExtendedField name="MyCustomId" srcAlias="ISSource"/>				
+				<TNProfile name="TestProf1" srcAlias="ISSource"/>
+				<TNTPA name="MyEntProf:TestProf1:TestID" srcAlias="ISSource"/>
+				<TNProcessingRule name="Profile Validation Standard Fields" srcAlias="ISSource"/>				
+				<TNFieldGroup name="FldGrp" srcAlias="ISSource"/>				
+				<TNIDType name="idType" srcAlias="ISSource"/>				
+				<TNContactType name="contactType" srcAlias="ISSource"/>				
+				<TNBinaryType name="binaryType" srcAlias="ISSource"/>				
+				<TNSecurityData name="secData" srcAlias="ISSource"/>				
+				<TNProfileGroup name="profGrp" srcAlias="ISSource"/>				
+				<TNQueue name="queue" srcAlias="ISSource"/>
+				<TNDls name="dls" srcAlias="ISSource"/>
+				<TNFp name="fp" srcAlias="ISSource"/>
+				<TNArchivalSvcs name="archSvc" srcAlias="ISSource"/>				
+			</DeploymentSet>
+			<DeploymentSet name="brokerDepSet" description="broker deployment set" packageRegExp="" otherRegExp="" type="Broker" mode="Deploy" srcAlias="BrokerSource">
+				<ClientGroup name="qqq" folder="" srcAlias="BrokerSource"/>
+				<DocumentType name="ClientSubscriptionChange" folder="Broker/Activity" srcAlias="BrokerSource"/>
+				<DocumentType name="doc1" folder="wm/is/PubSub" srcAlias="BrokerSource"/>
+				<DocumentType name="auto_gen_dimension" folder="JMS/Queues" srcAlias="BrokerSource"/>
+			</DeploymentSet>
+			<DeploymentSet name="mwsDepSet" description="mws deployment set" packageRegExp="" otherRegExp="" type="MWS" mode="Deploy" srcAlias="MWSSource" defaultDependencyAction="add">
+				<Portlet name="ClientDetails" folder="Messaging" srcAlias="MWSSource"/>
+				<BusinessCalendar name="Cal1" folder="" srcAlias="MWSSource"/>				
+				<PortalRole name="Automation" folder="" srcAlias="MWSSource"/>				
+				<CafApp name="AutomationCafApp" folder="" srcAlias="MWSSource"/>				
+				<TaskApp name="AutomationTaskApp" folder="" srcAlias="MWSSource"/>
+				<Task name="AutomationTask" folder="" srcAlias="MWSSource"/>
+				<Renderer name="AutomationRenderer" folder="" srcAlias="MWSSource"/>
+				<PortalRole name="User1" folder="" srcAlias="MWSSource"/>
+				<Rule name="Rule1" folder="Shell Rules" srcAlias="MWSSource"/>
+				<Page name="Page1" folder="Public Folders/Samples" srcAlias="MWSSource"/>
+				<PortalGroup name="Group1" folder="" srcAlias="MWSSource"/>
+				<DirectoryService name="directoryService" folder="" srcAlias="MWSSource"/>
+				<SecurityRealm name="Administrative Commands" folder="Portal Resources" srcAlias="MWSSource"/>
+				<Shell name="AutomationShell" folder="" srcAlias="MWSSource"/>
+				<DBO name="Attachments Folder" folder="folder" srcAlias="MWSSource"/>
+			</DeploymentSet>
+			<DeploymentSet name="processModelDepSet" description="process model deployment set" packageRegExp="" otherRegExp="" type="ProcessModel" mode="Deploy" srcAlias="PMSource" defaultDependencyAction="add">
+				<PM name="ProcessModel2" folder="ProcModel" srcAlias="PMSource" version="1"/>
+			</DeploymentSet>
+			<DeploymentSet name="optimizeDepSet" description="optimize deployment set" packageRegExp="" otherRegExp="" type="Optimize" mode="Deploy" srcAlias="OptimizeSource" defaultDependencyAction="add">
+				<OptimizeProcessConfig name="NewProcess" folder="TestProject" srcAlias="OptimizeSource"/>
+				<OptimizeEventMap name="eventMap" folder="TestProject" srcAlias="OptimizeSource"/>
+				<OptimizeDimension name="dim1" folder="TestProject" srcAlias="OptimizeSource"/>
+				<OptimizeHierarchy name="hie1" folder="TestProject" srcAlias="OptimizeSource"/>
+			</DeploymentSet>
+			<ExtractionSet name="extractionSet1" description="extractionSet1" packageRegExp="" otherRegExp="" tnTreeNodeCount="1000" type="IS" srcAlias="RepoSource" defaultDependencyAction="add" mode="Deploy">
+				<TNDocumentType name="TestDOc" srcAlias="ISSource"/>
+				<TNDocumentAttribute name="DocAttribute" srcAlias="ISSource"/>
+				<TNFieldDefinition name="FldDefn" srcAlias="ISSource"/>
+				<TNExtendedField name="MyCustomId" srcAlias="ISSource"/>				
+				<TNProfile name="TestProf1" srcAlias="ISSource"/>
+				<TNTPA name="MyEntProf:TestProf1:TestID" srcAlias="ISSource"/>
+				<TNProcessingRule name="Profile Validation Standard Fields" srcAlias="ISSource"/>				
+				<TNFieldGroup name="FldGrp" srcAlias="ISSource"/>				
+				<TNIDType name="idType" srcAlias="ISSource"/>				
+				<TNContactType name="contactType" srcAlias="ISSource"/>				
+				<TNBinaryType name="binaryType" srcAlias="ISSource"/>				
+				<TNSecurityData name="secData" srcAlias="ISSource"/>				
+				<TNProfileGroup name="profGrp" srcAlias="ISSource"/>				
+				<TNQueue name="queue" srcAlias="ISSource"/>
+				<TNDls name="dls" srcAlias="ISSource"/>
+				<TNFp name="fp" srcAlias="ISSource"/>
+				<TNArchivalSvcs name="archSvc" srcAlias="ISSource"/>
+			</ExtractionSet>
+			<DeploymentBuild name="depBuild1" description="depBuild1"/>			
+			<DeploymentMap name="depMap1" description="depMap1"/>
+			<MapSetMapping mapName="depMap1" setName="isDepSet">
+				<group>ISTargetGroup</group>				
+				<alias>ISTarget</alias>				
+			</MapSetMapping>
+			<MapSetMapping mapName="depMap1" setName="tnDepSet">
+				<group>ISTargetGroup</group>				
+			</MapSetMapping>
+			<MapSetMapping mapName="depMap1" setName="brokerDepSet">
+				<alias>BrokerTarget</alias>
+			</MapSetMapping>
+			<MapSetMapping mapName="depMap1" setName="mwsDepSet">
+				<alias>MWSTarget</alias>
+			</MapSetMapping>
+			<MapSetMapping mapName="depMap1" setName="processModelDepSet">
+				<group>PMTargetGroup</group>				
+			</MapSetMapping>
+			<MapSetMapping mapName="depMap1" setName="optimizeDepSet">
+				<alias>OptimizeTarget</alias>
+			</MapSetMapping>
+			<DeploymentCandidate name="depCandidate1" description="depCandidate1" buildName="depBuild1" mapName="depMap1"/>
+		</Project>		
+	</Projects>
+</DeployerSpec>

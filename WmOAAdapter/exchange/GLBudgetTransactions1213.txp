@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<IDataXMLCoder version="1.0">
+  <record javaclass="com.wm.data.ISMemDataImpl">
+    <record name="transactions" javaclass="com.wm.data.ISMemDataImpl">
+      <record name="getSOBVersionEntityId" javaclass="com.wm.data.ISMemDataImpl">
+        <value name="transactionName">getSOBVersionEntityId</value>
+        <value name="transactionType">OUT</value>
+        <null name="AcknowledgeSQL"/>
+        <record name="SOB_VERSION_ENTITY" javaclass="com.wm.util.Values">
+          <value name="SQLOut">SELECT gb.ledger_id set_of_books_id, gbe.budget_entity_id budget_entity_id, gbv.budget_version_id budget_version_id FROM   gl_budgets gb, gl_budget_versions gbv, gl_budget_entities gbe WHERE gbe.ledger_id= gb.ledger_id AND gb.budget_name = gbv.budget_name AND gb.budget_name = '&amp;P_BUDGET_NAME*' AND gbe.name = '&amp;P_BUDGET_ORGANIZATION*'</value>
+          <value name="SQLAlias">SOB_VERSION_ENTITY</value>
+          <value name="SQLRelation"></value>
+        </record>
+      </record>
+    </record>
+    <record name="FILE_INFO" javaclass="com.wm.data.ISMemDataImpl">
+      <value name="OA_RELEASE">1213</value>
+      <value name="DESCRIPTION"></value>
+      <value name="CREATE_HOST">webMethods</value>
+      <value name="CREATE_IM_VER"></value>
+      <value name="CREATE_DATE">May 2, 2005 4:35:17 PM</value>
+    </record>
+  </record>
+</IDataXMLCoder>

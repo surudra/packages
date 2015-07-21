@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="keywords" content="ports,allowing ho sts access,ports,den ying hosts access,security,ports,allowing or denying IP access,IP access,allowing or denying for a port,access,IP" />
+    <title>Add Hosts to Allow/Deny List Screen</title>
+    <link rel="StyleSheet" href="css/_is_admin_help.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+  <body style="background-color: White; margin-bottom: 25px; margin-left: 25px; margin-right: 25px; margin-top: 0px; padding-top: 0px" onload="WWHUpdate();" onunload="WWHUnload();" onkeydown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onkeypress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onkeyup="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <table align="left" role="presentation">
+      <tr>
+        <td class="WebWorks_Company_Logo_Top">
+          <img src="sag_online.png" />
+        </td>
+      </tr>
+    </table>
+    <br clear="all" />
+    <hr align="left" />
+    <blockquote>
+      <div class="Heading_3"><a name="3_5_17_21_18_2">Add Hosts to Allow/Deny List Screen</a></div>
+      <div class="Body"><span class="emphasis"><a name="3_5_17_21_18_6_2_3">Screen Heading</a></span>: <span class="uicontrol">Security &gt; Ports &gt; IP Access &gt; Add/Deny Hosts &gt; Global</span></div>
+      <div class="Body"><a name="3_5_17_21_18_6_2_5">Use the Add Hosts screen to specify which IP addresses are explicitly permitted to access a port or explicitly denied access.</a></div>
+      <div class="Body"><a name="3_5_17_21_18_6_2_7">To open the Add Hosts screen, go to the </a><span class="heading-no-quotes"><a href="javascript:WWHClickedPopup('is_help', 'Menu_Sec_Ports.html', '');" title="Ports Screen">Ports Screen</a></span> and click <span class="uicontrol">Change Global IP Access Restrictions</span>. Either <span class="uicontrol">Add Hosts to Deny List</span> or <span class="uicontrol">Add Hosts to Allow List</span> will be displayed, depending on whether the IP access is <span class="uicontrol">Allow by Default</span> or <span class="uicontrol">Deny by Default</span>.</div>
+      <div class="Definition_Term"><a name="3_5_17_21_18_6_2_9_2_2">Hosts</a></div>
+      <div class="Definition_Description"><a name="3_5_17_21_18_6_2_9_2_4">Specifies the host names (for example, </a><span class="codeph">workstation5.webmethods.com</span>) or IP addresses (for example, <span class="codeph">132.906.19.22</span>) of hosts from which the server is to accept inbound requests. Separate your entries with commas, for example: <span class="codeph">*.allowme.com, *.allowme2.com</span>.</div>
+      <table class="note2" summary="">
+        <tr>
+          <td class="Table_Cell" style="vertical-align: top; width: 14.285714285714284%">
+            <div class="Note">
+              <span style="font-family: Arial, Verdana, Helvetica, Sans-Serif; font-weight: bold">Note:    </span><a name="3_5_17_21_18_6_2_9_2_4_9_1_3_1_2_2">&nbsp;</a></div>
+          </td>
+          <td class="Table_Cell" style="vertical-align: top; width: 85.71428571428571%">
+            <div class="Table_Cell"><a name="3_5_17_21_18_6_2_9_2_4_9_1_3_1_3">IP addresses are harder to spoof, and therefore more secure.</a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="Definition_Description"><a name="3_5_17_21_18_6_2_9_2_6">The host names or IP addresses can include upper and lower case alphabetic characters, digits (0-9), hyphens (-), and periods (.) and cannot include spaces.</a></div>
+      <table class="note2" summary="">
+        <tr>
+          <td class="Table_Cell" style="vertical-align: top; width: 14.285714285714284%">
+            <div class="Note">
+              <span style="font-family: Arial, Verdana, Helvetica, Sans-Serif; font-weight: bold">Note:    </span><a name="3_5_17_21_18_6_2_9_2_6_3_1_3_1_2_2">&nbsp;</a></div>
+          </td>
+          <td class="Table_Cell" style="vertical-align: top; width: 85.71428571428571%">
+            <div class="Table_Cell"><a name="3_5_17_21_18_6_2_9_2_6_3_1_3_1_3">IP addresses are harder to spoof, and therefore more secure.</a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="Body"><a name="3_5_17_21_18_6_2_11">You can use the following pattern-matching characters to identify several clients with similar host names or IP addresses.</a></div>
+      <table class="norules1" summary="">
+        <tr>
+          <td class="norules-head" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: bottom; width: 99.72pt">
+            <div class="norules-head"><a name="3_5_17_21_18_6_2_13_2_8_2_2">Char</a></div>
+          </td>
+          <td class="norules-head" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: bottom; width: 99.72pt">
+            <div class="norules-head"><a name="3_5_17_21_18_6_2_13_2_8_2_4">Description</a></div>
+          </td>
+          <td class="norules-head" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: bottom; width: 232.488pt">
+            <div class="norules-head"><a name="3_5_17_21_18_6_2_13_2_8_2_6">Example</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td class="Table_Cell" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: top">
+            <div class="Table_Cell"><span class="uicontrol"><a name="3_5_17_21_18_6_2_13_2_10_2_2">*</a></span></div>
+          </td>
+          <td class="Table_Cell" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: top">
+            <div class="Table_Cell"><a name="3_5_17_21_18_6_2_13_2_10_2_4">Matches any number of characters</a></div>
+          </td>
+          <td class="Table_Cell" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: top">
+            <div class="Table_Cell"><a name="3_5_17_21_18_6_2_13_2_10_2_6">r*.</a><span class="ph">webMethods</span>.com</div>
+          </td>
+        </tr>
+        <tr>
+          <td class="Table_Cell" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: top">
+            <div class="Table_Cell"><span class="uicontrol"><a name="3_5_17_21_18_6_2_13_2_10_4_2">?</a></span></div>
+          </td>
+          <td class="Table_Cell" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: top">
+            <div class="Table_Cell"><a name="3_5_17_21_18_6_2_13_2_10_4_4">Matches any single character</a></div>
+          </td>
+          <td class="Table_Cell" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: top">
+            <div class="Table_Cell"><a name="3_5_17_21_18_6_2_13_2_10_4_6">workstation?.</a><span class="ph">webMethods</span>.com</div>
+          </td>
+        </tr>
+      </table>
+      <div class="Link_List_Title"><a name="3_5_17_21_18_8_1_2">Related Topics</a></div>
+      <div class="Related_Reference">
+        <img src="spacer_24.png" alt="*" border="0" width="24" height="6" /><span class="Link_Text"><a href="javascript:WWHClickedPopup('is_help', 'Menu_Sec_Ports_ChgPrimary.html', '');" title="Change Primary Port Screen" name="3_5_17_21_18_8_1_4">Change Primary Port Screen</a></span></div>
+      <div class="Related_Reference">
+        <img src="spacer_24.png" alt="*" border="0" width="24" height="6" /><span class="Link_Text"><a href="javascript:WWHClickedPopup('is_help', 'Menu_Sec_Ports_IPAccess.html', '');" title="Edit IP Access Screen" name="3_5_17_21_18_8_1_6">Edit IP Access Screen</a></span></div>
+      <div class="Related_Reference">
+        <img src="spacer_24.png" alt="*" border="0" width="24" height="6" /><span class="Link_Text"><a href="javascript:WWHClickedPopup('is_help', 'Menu_Sec_Ports_AccessMode.html', '');" title="Edit Access Mode Screen" name="3_5_17_21_18_8_1_8">Edit Access Mode Screen</a></span></div>
+      <div class="Related_Reference">
+        <img src="spacer_24.png" alt="*" border="0" width="24" height="6" /><span class="Link_Text"><a href="javascript:WWHClickedPopup('is_help', 'Menu_Sec_Ports_EditEnterpriseGateway.html', '');" title="Edit Enterprise Gateway Server Configuration Screen" name="3_5_17_21_18_8_1_10">Edit Enterprise Gateway Server Configuration Screen</a></span></div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <div>
+      <hr />
+      <div style="font-family: Arial, Verdana, Helvetica, Sans-Serif; font-size: 12px;margin-top: 20px;margin-bottom: 20px;">
+        <span class="xref">
+          <a href="http://documentation.softwareag.com/legal/" target="external_window">Copyright © <span></span><span></span><span>2007</span><span>-2014</span> Software AG, Darmstadt, Germany</a>
+        </span>.</div>
+    </div>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+  </body>
+</html>

@@ -1,0 +1,1096 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<FLOW VERSION="3.0" CLEANUP="true">
+  <COMMENT></COMMENT>
+
+  <!-- nodes -->
+
+<INVOKE TIMEOUT="" SERVICE="commonOA1206.custom:getOASystemDateObject" VALIDATE-IN="$none" VALIDATE-OUT="$none">
+  <COMMENT>Get OA sysdate required for the mapping</COMMENT>
+
+  <!-- nodes -->
+
+<MAP MODE="INPUT">
+</MAP>
+
+<MAP MODE="OUTPUT">
+</MAP>
+</INVOKE>
+
+<INVOKE TIMEOUT="" SERVICE="commonOA1206.utils:getOracleAppsUserId_tf" VALIDATE-IN="$none" VALIDATE-OUT="$none">
+  <COMMENT>Get OA user Id required for the mapping</COMMENT>
+
+  <!-- nodes -->
+
+<MAP MODE="INPUT">
+  <MAPTARGET>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_name">in</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="nillable">true</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">queryParams</value>
+        <value name="field_type">record</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <array name="rec_fields" type="record" depth="1">
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">ORACLE_APPS_USER_NAME</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+        </array>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">$dbAlias</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+    </array>
+  </record>
+</Values>
+</MAPTARGET>
+  <MAPSOURCE>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="nillable">true</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">$dbAlias</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">QualityCollectionBizDoc</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="rec_ref">quality12.intoOA.qualityCollection.rec:QualityCollectionBizDoc</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">OracleAppsUserName</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">SYSDATE</value>
+        <value name="field_type">object</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+    </array>
+  </record>
+</Values>
+</MAPSOURCE>
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/OracleAppsUserName;1;0" TO="/queryParams;2;0/ORACLE_APPS_USER_NAME;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="OUTPUT">
+  <MAPTARGET>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="nillable">true</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">queryParams</value>
+        <value name="field_type">record</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <array name="rec_fields" type="record" depth="1">
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">ORACLE_APPS_USER_NAME</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+        </array>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">$dbAlias</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">QualityCollectionBizDoc</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="rec_ref">quality12.intoOA.qualityCollection.rec:QualityCollectionBizDoc</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">OracleAppsUserName</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">SYSDATE</value>
+        <value name="field_type">object</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">USER_ID</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+    </array>
+  </record>
+</Values>
+</MAPTARGET>
+  <MAPSOURCE>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_name">out</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="nillable">true</value>
+    <array name="rec_fields" type="record" depth="1">
+    </array>
+  </record>
+</Values>
+</MAPSOURCE>
+
+  <!-- nodes -->
+
+<MAPDELETE NAME="Dropper" FIELD="/OracleAppsUserName;1;0">
+</MAPDELETE>
+
+<MAPDELETE NAME="Dropper" FIELD="/queryParams;2;0">
+</MAPDELETE>
+</MAP>
+</INVOKE>
+
+<LOOP TIMEOUT="" IN-ARRAY="/QualityCollectionBizDoc/QA_COLLECTION" OUT-ARRAY="/QualityCollectionRecordSet/QA_RESULTS_INTERFACE">
+  <COMMENT></COMMENT>
+
+  <!-- nodes -->
+
+<MAP MODE="STANDALONE">
+  <COMMENT>Map Business Document to QualityCollectionRecordSet</COMMENT>
+  <MAPTARGET>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="nillable">true</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">$dbAlias</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">QualityCollectionBizDoc</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="rec_ref">quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">SYSDATE</value>
+        <value name="field_type">object</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">USER_ID</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">QualityCollectionRecordSet</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="rec_ref">quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">IS_INSERT</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">IS_UPDATE</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+    </array>
+  </record>
+</Values>
+</MAPTARGET>
+  <MAPSOURCE>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="nillable">true</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">$dbAlias</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">QualityCollectionBizDoc</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="rec_ref">quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">SYSDATE</value>
+        <value name="field_type">object</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">USER_ID</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">QualityCollectionRecordSet</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="rec_ref">quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">IS_INSERT</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">IS_UPDATE</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">$iteration</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+    </array>
+  </record>
+</Values>
+</MAPSOURCE>
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/SOURCE_CODE;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/SOURCE_CODE;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/SOURCE_LINE_ID;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/SOURCE_LINE_ID;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/PLAN_NAME;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/PLAN_NAME;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/SPEC_NAME;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/SPEC_NAME;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/DEPARTMENT;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/DEPARTMENT;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/RESOURCE_CODE;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/RESOURCE_CODE;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/QUANTITY;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/QUANTITY;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/ITEM;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/ITEM;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/UOM;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/UOM;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/REVISION;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/REVISION;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/SUBINVENTORY;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/SUBINVENTORY;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/LOCATOR;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/LOCATOR;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/LOT_NUMBER;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/LOT_NUMBER;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/SERIAL_NUMBER;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/SERIAL_NUMBER;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/COMP_ITEM;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/COMP_ITEM;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/COMP_UOM;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/COMP_UOM;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/COMP_REVISION;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/COMP_REVISION;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/COMP_SUBINVENTORY;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/COMP_SUBINVENTORY;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/COMP_LOCATOR;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/COMP_LOCATOR;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/COMP_LOT_NUMBER;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/COMP_LOT_NUMBER;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/COMP_SERIAL_NUMBER;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/COMP_SERIAL_NUMBER;1;0">
+</MAPCOPY>
+
+<MAPINVOKE SERVICE="commonOA1206.utils:getWIPEntityId_tf" VALIDATE-IN="$none" VALIDATE-OUT="$none" INVOKE-ORDER="0">
+
+  <!-- nodes -->
+
+<MAP MODE="INVOKEINPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/WIP_ENTITY_NAME;1;0" TO="/queryParams;2;0/WIP_ENTITY_NAME;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/$dbAlias;1;0" TO="/$dbAlias;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/ORGANIZATION_NAME;1;0" TO="/queryParams;2;0/ORGANIZATION_NAME;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="INVOKEOUTPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/WIP_ENTITY_ID;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/WIP_ENTITY_ID;1;0">
+</MAPCOPY>
+</MAP>
+</MAPINVOKE>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/JOB_NAME;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/JOB_NAME;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/PRODUCTION_LINE;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/PRODUCTION_LINE;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/TO_OP_SEQ_NUM;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/TO_OP_SEQ_NUM;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/FROM_OP_SEQ_NUM;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/FROM_OP_SEQ_NUM;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/VENDOR_NAME;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/VENDOR_NAME;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/RECEIPT_NUM;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/RECEIPT_NUM;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/PO_NUMBER;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/PO_NUMBER;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/PO_LINE_NUM;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/PO_LINE_NUM;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/PO_SHIPMENT_NUM;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/PO_SHIPMENT_NUM;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/CUSTOMER_NAME;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/CUSTOMER_NAME;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/SALES_ORDER;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/SALES_ORDER;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/RMA_NUMBER;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/RMA_NUMBER;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/CHARACTER1;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/CHARACTER1;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/CHARACTER2;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/CHARACTER2;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/CHARACTER3;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/CHARACTER3;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/CHARACTER4;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/CHARACTER4;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/CHARACTER5;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/CHARACTER5;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/CHARACTER6;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/CHARACTER6;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/CHARACTER7;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/CHARACTER7;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/CHARACTER8;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/CHARACTER8;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/CHARACTER9;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/CHARACTER9;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/CHARACTER10;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/CHARACTER10;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/CHARACTER11;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/CHARACTER11;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/CHARACTER12;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/CHARACTER12;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/CHARACTER13;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/CHARACTER13;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/CHARACTER14;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/CHARACTER14;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/CHARACTER15;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/CHARACTER15;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/CHARACTER16;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/CHARACTER16;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/CHARACTER17;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/CHARACTER17;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/CHARACTER18;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/CHARACTER18;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/CHARACTER19;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/CHARACTER19;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/CHARACTER20;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/CHARACTER20;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/CHARACTER21;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/CHARACTER21;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/CHARACTER22;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/CHARACTER22;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/CHARACTER23;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/CHARACTER23;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/CHARACTER24;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/CHARACTER24;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/CHARACTER25;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/CHARACTER25;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/CHARACTER26;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/CHARACTER26;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/CHARACTER27;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/CHARACTER27;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/CHARACTER28;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/CHARACTER28;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/CHARACTER29;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/CHARACTER29;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/CHARACTER30;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/CHARACTER30;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/CHARACTER31;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/CHARACTER31;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/CHARACTER32;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/CHARACTER32;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/CHARACTER33;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/CHARACTER33;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/CHARACTER34;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/CHARACTER34;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/CHARACTER35;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/CHARACTER35;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/CHARACTER36;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/CHARACTER36;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/CHARACTER37;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/CHARACTER37;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/CHARACTER38;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/CHARACTER38;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/CHARACTER39;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/CHARACTER39;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/CHARACTER40;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/CHARACTER40;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/TO_DEPARTMENT;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/TO_DEPARTMENT;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/PO_RELEASE_NUM;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/PO_RELEASE_NUM;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/CHARACTER41;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/CHARACTER41;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/CHARACTER42;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/CHARACTER42;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/CHARACTER43;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/CHARACTER43;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/CHARACTER44;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/CHARACTER44;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/CHARACTER45;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/CHARACTER45;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/CHARACTER46;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/CHARACTER46;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/CHARACTER47;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/CHARACTER47;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/CHARACTER48;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/CHARACTER48;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/CHARACTER49;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/CHARACTER49;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/CHARACTER50;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/CHARACTER50;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/CHARACTER51;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/CHARACTER51;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/CHARACTER52;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/CHARACTER52;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/CHARACTER53;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/CHARACTER53;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/CHARACTER54;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/CHARACTER54;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/CHARACTER55;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/CHARACTER55;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/CHARACTER56;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/CHARACTER56;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/CHARACTER57;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/CHARACTER57;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/CHARACTER58;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/CHARACTER58;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/CHARACTER59;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/CHARACTER59;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/CHARACTER60;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/CHARACTER60;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/CHARACTER61;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/CHARACTER61;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/CHARACTER62;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/CHARACTER62;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/CHARACTER63;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/CHARACTER63;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/CHARACTER64;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/CHARACTER64;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/CHARACTER65;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/CHARACTER65;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/CHARACTER66;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/CHARACTER66;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/CHARACTER67;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/CHARACTER67;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/CHARACTER68;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/CHARACTER68;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/CHARACTER69;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/CHARACTER69;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/CHARACTER70;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/CHARACTER70;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/CHARACTER71;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/CHARACTER71;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/CHARACTER72;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/CHARACTER72;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/CHARACTER73;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/CHARACTER73;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/CHARACTER74;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/CHARACTER74;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/CHARACTER75;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/CHARACTER75;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/CHARACTER76;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/CHARACTER76;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/CHARACTER77;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/CHARACTER77;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/CHARACTER78;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/CHARACTER78;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/CHARACTER79;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/CHARACTER79;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/CHARACTER80;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/CHARACTER80;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/CHARACTER81;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/CHARACTER81;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/CHARACTER82;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/CHARACTER82;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/CHARACTER83;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/CHARACTER83;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/CHARACTER84;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/CHARACTER84;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/CHARACTER85;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/CHARACTER85;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/CHARACTER86;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/CHARACTER86;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/CHARACTER87;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/CHARACTER87;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/CHARACTER88;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/CHARACTER88;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/CHARACTER89;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/CHARACTER89;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/CHARACTER90;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/CHARACTER90;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/CHARACTER91;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/CHARACTER91;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/CHARACTER92;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/CHARACTER92;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/CHARACTER93;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/CHARACTER93;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/CHARACTER94;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/CHARACTER94;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/CHARACTER95;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/CHARACTER95;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/CHARACTER96;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/CHARACTER96;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/CHARACTER97;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/CHARACTER97;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/CHARACTER98;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/CHARACTER98;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/CHARACTER99;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/CHARACTER99;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/CHARACTER100;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/CHARACTER100;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/PROJECT_NUMBER;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/PROJECT_NUMBER;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/MATCHING_ELEMENTS;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/MATCHING_ELEMENTS;1;0">
+</MAPCOPY>
+
+<MAPINVOKE SERVICE="quality1206.intoOA.qualityCollection.utils:insertTypeLookUp" INVOKE-ORDER="0">
+
+  <!-- nodes -->
+
+<MAP MODE="INVOKEINPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/INSERT_TYPE;1;0" TO="/INSERT_TYPE_STRING;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="INVOKEOUTPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/INSERT_TYPE_VALUE;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/INSERT_TYPE;1;0">
+</MAPCOPY>
+</MAP>
+</MAPINVOKE>
+
+<MAPINVOKE SERVICE="quality1206.intoOA.qualityCollection.utils:getPOAgentId_tf" INVOKE-ORDER="0">
+
+  <!-- nodes -->
+
+<MAP MODE="INVOKEINPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/$dbAlias;1;0" TO="/$dbAlias;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/PO_AGENT_FULL_NAME;1;0" TO="/queryParams;2;0/FULL_NAME;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="INVOKEOUTPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/PERSON_ID;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/PO_AGENT_ID;1;0">
+</MAPCOPY>
+</MAP>
+</MAPINVOKE>
+
+<MAPINVOKE SERVICE="commonOA1206.utils:getOrgIdAndCode_tf" VALIDATE-IN="$none" VALIDATE-OUT="$none" INVOKE-ORDER="0">
+
+  <!-- nodes -->
+
+<MAP MODE="INVOKEINPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/$dbAlias;1;0" TO="/$dbAlias;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/ORGANIZATION_NAME;1;0" TO="/queryParams;2;0/ORGANIZATION_NAME;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="INVOKEOUTPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/ORGANIZATION_CODE;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/ORGANIZATION_CODE;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/ORGANIZATION_ID;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/ORGANIZATION_ID;1;0">
+</MAPCOPY>
+</MAP>
+</MAPINVOKE>
+
+<MAPINVOKE SERVICE="quality1206.intoOA.qualityCollection.utils:checkInsertType" INVOKE-ORDER="0">
+
+  <!-- nodes -->
+
+<MAP MODE="INVOKEINPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc/QA_COLLECTION;2;0/INSERT_TYPE;1;0" TO="/INSERT_TYPE_STRING;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="INVOKEOUTPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/IS_INSERT;1;0" TO="/IS_INSERT;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/IS_UPDATE;1;0" TO="/IS_UPDATE;1;0">
+</MAPCOPY>
+</MAP>
+</MAPINVOKE>
+
+<MAPCOPY NAME="Link" FROM="/SYSDATE;3;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;1/LAST_UPDATE_DATE;3;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/SYSDATE;3;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;1/CREATION_DATE;3;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/USER_ID;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;1/LAST_UPDATED_BY;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/USER_ID;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;1/QA_LAST_UPDATED_BY;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/USER_ID;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;1/CREATED_BY;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/USER_ID;1;0" TO="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;1/QA_CREATED_BY;1;0">
+</MAPCOPY>
+
+<MAPSET NAME="Setter" OVERWRITE="true" VARIABLES="false" FIELD="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/VALIDATE_FLAG;1;0">
+  <DATA ENCODING="XMLValues" I18N="true">
+
+<Values version="2.0">
+  <value name="xml">1</value>
+  <record name="type" javaclass="com.wm.util.Values">
+    <value name="node_type">unknown</value>
+    <value name="field_name">VALIDATE_FLAG</value>
+    <value name="field_type">string</value>
+    <value name="field_dim">0</value>
+    <value name="field_opt">true</value>
+    <value name="nillable">true</value>
+  </record>
+</Values>
+</DATA>
+</MAPSET>
+
+<MAPSET NAME="Setter" OVERWRITE="true" VARIABLES="false" FIELD="/QualityCollectionRecordSet;4;0;quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec/QA_RESULTS_INTERFACE;2;0/PROCESS_STATUS;1;0">
+  <DATA ENCODING="XMLValues" I18N="true">
+
+<Values version="2.0">
+  <value name="xml">1</value>
+  <record name="type" javaclass="com.wm.util.Values">
+    <value name="node_type">unknown</value>
+    <value name="field_name">PROCESS_STATUS</value>
+    <value name="field_type">string</value>
+    <value name="field_dim">0</value>
+    <value name="nillable">true</value>
+  </record>
+</Values>
+</DATA>
+</MAPSET>
+</MAP>
+</LOOP>
+
+<MAP MODE="STANDALONE">
+  <COMMENT>to clear Unwanted variables</COMMENT>
+  <MAPTARGET>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="nillable">true</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">$dbAlias</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">QualityCollectionBizDoc</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="rec_ref">quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">QualityCollectionRecordSet</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="rec_ref">quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">IS_INSERT</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">IS_UPDATE</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+    </array>
+  </record>
+</Values>
+</MAPTARGET>
+  <MAPSOURCE>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="nillable">true</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">$dbAlias</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">queryParams</value>
+        <value name="field_type">record</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <array name="rec_fields" type="record" depth="1">
+        </array>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">QUALITY_COLLECTION_BIZ_DOC</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="rec_ref">quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">QualityCollectionBizDoc</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="rec_ref">quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">SYSDATE</value>
+        <value name="field_type">object</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">USER_ID</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">OracleAppsUserName</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">QualityCollectionRecordSet</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="rec_ref">quality1206.intoOA.qualityCollection.rec:setQualityCollectionTxnInputRec</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">IS_INSERT</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">IS_UPDATE</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+    </array>
+  </record>
+</Values>
+</MAPSOURCE>
+
+  <!-- nodes -->
+
+<MAPDELETE NAME="Dropper" FIELD="/queryParams;2;0">
+</MAPDELETE>
+
+<MAPDELETE NAME="Dropper" FIELD="/OracleAppsUserName;1;0">
+</MAPDELETE>
+
+<MAPDELETE NAME="Dropper" FIELD="/SYSDATE;3;0">
+</MAPDELETE>
+
+<MAPDELETE NAME="Dropper" FIELD="/USER_ID;1;0">
+</MAPDELETE>
+
+<MAPDELETE NAME="Dropper" FIELD="/QualityCollectionBizDoc;4;0;quality1206.intoOA.qualityCollection.rec:QualityCollectionBizDoc">
+</MAPDELETE>
+
+<MAPDELETE NAME="Dropper" FIELD="/$dbAlias;1;0">
+</MAPDELETE>
+</MAP>
+</FLOW>

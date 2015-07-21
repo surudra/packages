@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <record name="transactions" javaclass="com.wm.util.Values">
+    <record name="checkRequisitionImportStatus" javaclass="com.wm.util.Values">
+      <value name="transactionName">checkRequisitionImportStatus</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="ERROR_CHECK" javaclass="com.wm.util.Values">
+        <value name="SQLOut">SELECT COUNT(*) as ROWCOUNT FROM PO_INTERFACE_ERRORS WHERE request_id= '&amp;REQUEST_ID*'</value>
+        <value name="SQLAlias">ERROR_CHECK</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+    <record name="execRequisitionConcProg" javaclass="com.wm.util.Values">
+      <value name="transactionName">execRequisitionConcProg</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="HANDLE_REQ" javaclass="com.wm.util.Values">
+        <value name="SQLOut">WM_REQ_IMP_HANDLER_PKG.WM_HANDLE_REQ</value>
+        <value name="SQLAlias">HANDLE_REQ</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+    <record name="getCategoryId" javaclass="com.wm.util.Values">
+      <value name="transactionName">getCategoryId</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="CATEGORY_ID" javaclass="com.wm.util.Values">
+        <value name="SQLOut">SELECT category_id FROM mtl_categories_b_kfv m 
+WHERE concatenated_segments = '&amp;CATEGORY*'</value>
+        <value name="SQLAlias">CATEGORY_ID</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+    <record name="getItemNumber" javaclass="com.wm.util.Values">
+      <value name="transactionName">getItemNumber</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="ITEM_NUMBER" javaclass="com.wm.util.Values">
+        <value name="SQLOut">SELECT DISTINCT segment1 FROM mtl_system_items_b m, org_organization_definitions o
+WHERE m.description = '&amp;ITEM*' 
+AND o.organization_id= m.organization_id
+AND o.organization_name='&amp;ORGANIZATION_NAME*'</value>
+        <value name="SQLAlias">ITEM_NUMBER</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+    <record name="getTaxCodeId" javaclass="com.wm.util.Values">
+      <value name="transactionName">getTaxCodeId</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="TAX_CODE_ID" javaclass="com.wm.util.Values">
+        <value name="SQLOut">SELECT tax_id FROM ap_tax_codes_all a , org_organization_definitions o 
+WHERE name = '&amp;NAME*' 
+AND o.organization_name='&amp;ORGANIZATION_NAME*'
+AND o.organization_id = a.org_id</value>
+        <value name="SQLAlias">TAX_CODE_ID</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+    <record name="getWIPLineId" javaclass="com.wm.util.Values">
+      <value name="transactionName">getWIPLineId</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="LINE_ID" javaclass="com.wm.util.Values">
+        <value name="SQLOut">SELECT line_id FROM wip_lines w , org_organization_definitions o
+WHERE line_code = '&amp;LINE_CODE*' 
+AND o.organization_name = '&amp;ORGANIZATION_NAME*'
+AND o.organization_id = w.organization_id</value>
+        <value name="SQLAlias">LINE_ID</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+  </record>
+  <record name="FILE_INFO" javaclass="com.wm.util.Values">
+    <value name="OA_RELEASE">11i</value>
+    <value name="DESCRIPTION">Requisition Inbound Utils Transaction Definition</value>
+    <value name="CREATE_HOST">webMethods</value>
+    <value name="CREATE_IM_VER">3.0</value>
+    <value name="CREATE_DATE">Oct 23, 2002 3:01:39 PM</value>
+  </record>
+</Values>

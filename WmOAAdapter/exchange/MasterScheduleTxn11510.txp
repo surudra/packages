@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<IDataXMLCoder version="1.0">
+  <record javaclass="com.wm.data.ISMemDataImpl">
+    <record name="transactions" javaclass="com.wm.data.ISMemDataImpl">
+      <record name="getLineId" javaclass="com.wm.data.ISMemDataImpl">
+        <value name="transactionName">getLineId</value>
+        <value name="transactionType">OUT</value>
+        <null name="AcknowledgeSQL"/>
+        <record name="LINE_ID" javaclass="com.wm.util.Values">
+          <value name="SQLOut">SELECT LINE_ID FROM WIP_LINES,ORG_ORGANIZATION_DEFINITIONS WHERE ORGANIZATION_NAME = '&amp;ORGANIZATION_NAME*' AND WIP_LINES.ORGANIZATION_ID=ORG_ORGANIZATION_DEFINITIONS.ORGANIZATION_ID AND LINE_CODE ='&amp;LINE_CODE*'</value>
+          <value name="SQLAlias">LINE_ID</value>
+          <value name="SQLRelation"></value>
+        </record>
+      </record>
+    </record>
+    <record name="FILE_INFO" javaclass="com.wm.data.ISMemDataImpl">
+      <value name="OA_RELEASE">11510</value>
+      <value name="DESCRIPTION"></value>
+      <value name="CREATE_HOST">webmethods</value>
+      <value name="CREATE_IM_VER"></value>
+      <value name="CREATE_DATE">May 4, 2005 12:14:44 PM</value>
+    </record>
+  </record>
+</IDataXMLCoder>

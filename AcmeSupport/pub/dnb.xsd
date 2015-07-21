@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+<xsd:simpleType name="DUNSNumber">
+  <xsd:restriction base="xsd:string">
+    <xsd:pattern value="[0-9]{2}-[0-9]{3}-[0-9]{4}"/>
+  </xsd:restriction>
+</xsd:simpleType>
+
+
+<xsd:element name="DUNS" type="DUNSNumber">
+
+</xsd:element>
+
+</xsd:schema>

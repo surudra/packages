@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <record name="transactions" javaclass="com.wm.util.Values">
+    <record name="queryItemCategoryTxn" javaclass="com.wm.util.Values">
+      <value name="transactionName">queryItemCategoryTxn</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="ITEM_CATEGORY" javaclass="com.wm.util.Values">
+        <value name="SQLOut">SELECT WEB_TRANSACTION_ID,DOCUMENT_TYPE, DOCUMENT_STATUS, CATEGORY, STRUCTURE, 
+INACTIVE_ON_DATE, SUMMARY_FLAG, ENABLED_FLAG, CATEGORY_DESCRIPTION
+FROM WM_INV_ITEM_CATEGORY_QRY_VW
+WHERE NVL(CATEGORY,'XXX') LIKE NVL('&amp;CATEGORY_NAME*',NVL(CATEGORY,'XXX')) 
+AND NVL(STRUCTURE,'XXX') LIKE NVL('&amp;STRUCTURE_NAME*',NVL(STRUCTURE,'XXX'))
+AND NVL(INACTIVE_ON_DATE,trunc(SYSDATE)) BETWEEN 
+NVL('&amp;INACTIVE_DATE_FROM*',NVL(INACTIVE_ON_DATE,trunc(SYSDATE))) 
+AND NVL('&amp;INACTIVE_DATE_TO*',NVL(INACTIVE_ON_DATE,trunc(SYSDATE)))</value>
+        <value name="SQLAlias">ITEM_CATEGORY</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+  </record>
+  <record name="FILE_INFO" javaclass="com.wm.util.Values">
+    <value name="OA_RELEASE">107SC</value>
+    <value name="DESCRIPTION"></value>
+    <value name="CREATE_HOST">webMethods</value>
+    <value name="CREATE_IM_VER">3.0</value>
+    <value name="CREATE_DATE">Nov 22, 2002 4:24:08 PM</value>
+  </record>
+</Values>

@@ -1,0 +1,20 @@
+#This is built using the server build!
+standards=X12,EDIFACT
+
+standard.X12.EnvelopeStart=ISA
+standard.X12.EnvelopeEnd=IEA
+standard.X12.AllowUndefinedData=false
+standard.X12.DocumentStart=ST
+standard.X12.DocumentEnd=SE
+standard.X12.EnvelopeDefinition='{'[ISA,M]'{'[GS,M]'{'{0}'}'^[GE,M]'}'[IEA,M]'}'
+standard.X12.SEFFile=packages/WmFlatFile/config/ICS4X12.sef
+
+standard.EDIFACT.EnvelopeStart=UNB
+standard.EDIFACT.EnvelopeEnd=UNZ
+standard.EDIFACT.AllowUndefinedData=false
+standard.EDIFACT.DocumentStart=UNH
+standard.EDIFACT.DocumentEnd=UNT
+standard.EDIFACT.EnvelopeDefinition='{'[UNB,M]'{'[UNG]'{'{0}'}'^[UNE]'}'?*'{'{0}'}'[UNZ,M]'}'
+standard.EDIFACT.SEFFile=packages/WmFlatFile/config/UNICSO.SEF
+
+other=NONE

@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="keywords" content="servers,statistics,performance,statistics,session activity,statistics,performance statistics,monitoring server activity,servers,monitoring performance statistics" />
+    <title>Statistics Screen</title>
+    <link rel="StyleSheet" href="css/_is_admin_help.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+  <body style="background-color: White; margin-bottom: 25px; margin-left: 25px; margin-right: 25px; margin-top: 0px; padding-top: 0px" onload="WWHUpdate();" onunload="WWHUnload();" onkeydown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onkeypress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onkeyup="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <table align="left" role="presentation">
+      <tr>
+        <td class="WebWorks_Company_Logo_Top">
+          <img src="sag_online.png" />
+        </td>
+      </tr>
+    </table>
+    <br clear="all" />
+    <hr align="left" />
+    <blockquote>
+      <div class="Heading_2"><a name="3_5_7_7_2">Statistics Screen</a></div>
+      <div class="Body"><span class="emphasis"><a name="3_5_7_7_6_2_3">Screen Heading</a></span>: <span class="uicontrol">Server &gt; Statistics</span></div>
+      <div class="Body"><a name="3_5_7_7_6_2_5">Use the Server Statistics screen to monitor activity on the server.</a></div>
+      <div class="Body"><a name="3_5_7_7_6_2_7">The Server Statistics screen is the default view when you open the </a><span class="ph">Integration Server Administrator</span>, or click <span class="uicontrol">Statistics</span> under the <span class="uicontrol">Server</span> menu on the Navigation panel.</div>
+      <div class="Section_Title"><a name="3_5_7_7_6_4_3">Usage</a></div>
+      <div class="Body"><a name="3_5_7_7_6_4_5">The fields in this section display information about session and thread activity.</a></div>
+      <div class="Definition_Term"><a name="3_5_7_7_6_4_7_2_2">Total Sessions</a></div>
+      <div class="Definition_Description"><a name="3_5_7_7_6_4_7_2_4"> </a> Displays statistics for session activity.</div>
+      <table class="norules1" summary="">
+        <tr>
+          <td class="norules-head" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: bottom; width: 107.64000000000001pt">
+            <div class="norules-head"><a name="3_5_7_7_6_4_7_2_4_9_2_6_2_2">This field...</a></div>
+          </td>
+          <td class="norules-head" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: bottom; width: 324.36pt">
+            <div class="norules-head"><a name="3_5_7_7_6_4_7_2_4_9_2_6_2_4">Displays...</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td class="Table_Cell" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: top">
+            <div class="Table_Cell"><span class="uicontrol"><a name="3_5_7_7_6_4_7_2_4_9_2_8_2_2">Current</a></span></div>
+          </td>
+          <td class="Table_Cell" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: top">
+            <div class="Table_Cell"><a name="3_5_7_7_6_4_7_2_4_9_2_8_2_4">Displays the number of sessions currently active. Click this number to display the </a><span class="heading-no-quotes"><a href="javascript:WWHClickedPopup('is_help', 'Menu_Server_StatisticsSessions.html', '');" title="Current Sessions Screen">Current Sessions Screen</a></span>, containing detailed information about the active sessions.</div>
+          </td>
+        </tr>
+        <tr>
+          <td class="Table_Cell" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: top">
+            <div class="Table_Cell"><span class="uicontrol"><a name="3_5_7_7_6_4_7_2_4_9_2_8_4_2">Peak</a></span></div>
+          </td>
+          <td class="Table_Cell" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: top">
+            <div class="Table_Cell"><a name="3_5_7_7_6_4_7_2_4_9_2_8_4_4">Displays the highest number of sessions that have ever run concurrently on the server.</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td class="Table_Cell" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: top">
+            <div class="Table_Cell"><span class="uicontrol"><a name="3_5_7_7_6_4_7_2_4_9_2_8_6_2">Limit</a></span></div>
+          </td>
+          <td class="Table_Cell" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: top">
+            <div class="Table_Cell"><a name="3_5_7_7_6_4_7_2_4_9_2_8_6_4">Not applicable to this measurement.</a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="Definition_Term"><a name="3_5_7_7_6_4_7_4_2">Licensed Sessions</a></div>
+      <div class="Definition_Description"><a name="3_5_7_7_6_4_7_4_4"> </a>  Displays statistics for licensed session activity (excludes sessions used by the Administrator).</div>
+      <table class="norules1" summary="">
+        <tr>
+          <td class="norules-head" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: bottom; width: 107.64000000000001pt">
+            <div class="norules-head"><a name="3_5_7_7_6_4_7_4_4_11_2_6_2_2">This field...</a></div>
+          </td>
+          <td class="norules-head" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: bottom; width: 324.36pt">
+            <div class="norules-head"><a name="3_5_7_7_6_4_7_4_4_11_2_6_2_4">Displays...</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td class="Table_Cell" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: top">
+            <div class="Table_Cell"><span class="uicontrol"><a name="3_5_7_7_6_4_7_4_4_11_2_8_2_2">Current</a></span></div>
+          </td>
+          <td class="Table_Cell" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: top">
+            <div class="Table_Cell"><a name="3_5_7_7_6_4_7_4_4_11_2_8_2_4">Displays the number of licensed sessions currently active.</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td class="Table_Cell" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: top">
+            <div class="Table_Cell"><span class="uicontrol"><a name="3_5_7_7_6_4_7_4_4_11_2_8_4_2">Peak</a></span></div>
+          </td>
+          <td class="Table_Cell" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: top">
+            <div class="Table_Cell"><a name="3_5_7_7_6_4_7_4_4_11_2_8_4_4">Displays the highest number of licensed sessions that have ever run concurrently on the server.</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td class="Table_Cell" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: top">
+            <div class="Table_Cell"><span class="uicontrol"><a name="3_5_7_7_6_4_7_4_4_11_2_8_6_2">Limit</a></span></div>
+          </td>
+          <td class="Table_Cell" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: top">
+            <div class="Table_Cell"><a name="3_5_7_7_6_4_7_4_4_11_2_8_6_4">Displays the maximum number of sessions for which the server is licensed.</a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="Definition_Term"><a name="3_5_7_7_6_4_7_6_2">Stateful Sessions</a></div>
+      <div class="Definition_Description"><a name="3_5_7_7_6_4_7_6_4"> </a>  Displays statistics about stateful sessions on the server.</div>
+      <table class="norules1" summary="">
+        <tr>
+          <td class="norules-head" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: bottom; width: 107.64000000000001pt">
+            <div class="norules-head"><a name="3_5_7_7_6_4_7_6_4_11_2_6_2_2">This field...</a></div>
+          </td>
+          <td class="norules-head" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: bottom; width: 324.36pt">
+            <div class="norules-head"><a name="3_5_7_7_6_4_7_6_4_11_2_6_2_4">Displays...</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td class="Table_Cell" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: top">
+            <div class="Table_Cell"><span class="uicontrol"><a name="3_5_7_7_6_4_7_6_4_11_2_8_2_2">Current</a></span></div>
+          </td>
+          <td class="Table_Cell" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: top">
+            <div class="Table_Cell"><a name="3_5_7_7_6_4_7_6_4_11_2_8_2_4">Displays the number of stateless sessions currently active. Click this number to display the </a><span class="heading-no-quotes"><a href="javascript:WWHClickedPopup('is_help', 'Menu_Server_StatisticsSessions.html', '');" title="Current Sessions Screen">Current Sessions Screen</a></span>, containing detailed information about the stateful sessions that are currently active.</div>
+          </td>
+        </tr>
+        <tr>
+          <td class="Table_Cell" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: top">
+            <div class="Table_Cell"><span class="uicontrol"><a name="3_5_7_7_6_4_7_6_4_11_2_8_4_2">Peak</a></span></div>
+          </td>
+          <td class="Table_Cell" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: top">
+            <div class="Table_Cell"><a name="3_5_7_7_6_4_7_6_4_11_2_8_4_4">Displays the highest number of stateful sessions that have ever run concurrently on the server.</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td class="Table_Cell" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: top">
+            <div class="Table_Cell"><span class="uicontrol"><a name="3_5_7_7_6_4_7_6_4_11_2_8_6_2">Limit</a></span></div>
+          </td>
+          <td class="Table_Cell" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: top">
+            <div class="Table_Cell"><a name="3_5_7_7_6_4_7_6_4_11_2_8_6_4">Displays the maximum number of concurrent stateful sessions on the server.</a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="Definition_Term"><a name="3_5_7_7_6_4_7_8_2">Service Instances</a></div>
+      <div class="Definition_Description"><a name="3_5_7_7_6_4_7_8_4"> </a>  Displays statistics about running services.</div>
+      <table class="norules1" summary="">
+        <tr>
+          <td class="norules-head" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: bottom; width: 107.64000000000001pt">
+            <div class="norules-head"><a name="3_5_7_7_6_4_7_8_4_11_2_6_2_2">This field...</a></div>
+          </td>
+          <td class="norules-head" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: bottom; width: 324.36pt">
+            <div class="norules-head"><a name="3_5_7_7_6_4_7_8_4_11_2_6_2_4">Displays...</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td class="Table_Cell" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: top">
+            <div class="Table_Cell"><span class="uicontrol"><a name="3_5_7_7_6_4_7_8_4_11_2_8_2_2">Current</a></span></div>
+          </td>
+          <td class="Table_Cell" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: top">
+            <div class="Table_Cell"><a name="3_5_7_7_6_4_7_8_4_11_2_8_2_4">Displays the number of running services currently active.</a></div>
+            <table class="note1" summary="">
+              <tr>
+                <td class="Table_Cell" style="vertical-align: top; width: 14.285714285714284%">
+                  <div class="Note">
+                    <span style="font-family: Arial, Verdana, Helvetica, Sans-Serif; font-weight: bold">Note:    </span><a name="3_5_7_7_6_4_7_8_4_11_2_8_2_4_3_1_3_1_1_2">&nbsp;</a></div>
+                </td>
+                <td class="Table_Cell" style="vertical-align: top; width: 85.71428571428571%">
+                  <div class="Table_Cell"><a name="3_5_7_7_6_4_7_8_4_11_2_8_2_4_3_1_3_1_2">This count reflects both top-level services and any child services they may call. This count does not include internal server services that are running from the wm.server. folder of the WmRoot package.</a></div>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td class="Table_Cell" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: top">
+            <div class="Table_Cell"><span class="uicontrol"><a name="3_5_7_7_6_4_7_8_4_11_2_8_4_2">Peak</a></span></div>
+          </td>
+          <td class="Table_Cell" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: top">
+            <div class="Table_Cell"><a name="3_5_7_7_6_4_7_8_4_11_2_8_4_4">Displays the highest number of running services that have ever been active concurrently on the server.</a></div>
+            <table class="note1" summary="">
+              <tr>
+                <td class="Table_Cell" style="vertical-align: top; width: 14.285714285714284%">
+                  <div class="Note">
+                    <span style="font-family: Arial, Verdana, Helvetica, Sans-Serif; font-weight: bold">Note:    </span><a name="3_5_7_7_6_4_7_8_4_11_2_8_4_4_3_1_3_1_1_2">&nbsp;</a></div>
+                </td>
+                <td class="Table_Cell" style="vertical-align: top; width: 85.71428571428571%">
+                  <div class="Table_Cell"><a name="3_5_7_7_6_4_7_8_4_11_2_8_4_4_3_1_3_1_2">This count reflects both top-level services and any child services they may call. This count does not include internal server services that are running from the wm.server. folder of the WmRoot package.</a></div>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td class="Table_Cell" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: top">
+            <div class="Table_Cell"><span class="uicontrol"><a name="3_5_7_7_6_4_7_8_4_11_2_8_6_2">Limit</a></span></div>
+          </td>
+          <td class="Table_Cell" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: top">
+            <div class="Table_Cell"><a name="3_5_7_7_6_4_7_8_4_11_2_8_6_4">Not applicable to this measurement.</a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="Definition_Term"><a name="3_5_7_7_6_4_7_10_2">Service Threads</a></div>
+      <div class="Definition_Description"><a name="3_5_7_7_6_4_7_10_4"> </a>  Displays statistics about the threads spawned by the server’s running services.</div>
+      <table class="norules1" summary="">
+        <tr>
+          <td class="norules-head" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: bottom; width: 107.64000000000001pt">
+            <div class="norules-head"><a name="3_5_7_7_6_4_7_10_4_11_2_6_2_2">This field...</a></div>
+          </td>
+          <td class="norules-head" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: bottom; width: 324.36pt">
+            <div class="norules-head"><a name="3_5_7_7_6_4_7_10_4_11_2_6_2_4">Displays...</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td class="Table_Cell" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: top">
+            <div class="Table_Cell"><span class="uicontrol"><a name="3_5_7_7_6_4_7_10_4_11_2_8_2_2">Current</a></span></div>
+          </td>
+          <td class="Table_Cell" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: top">
+            <div class="Table_Cell"><a name="3_5_7_7_6_4_7_10_4_11_2_8_2_4">Displays the number of service threads currently active.</a></div>
+            <table class="note1" summary="">
+              <tr>
+                <td class="Table_Cell" style="vertical-align: top; width: 14.285714285714284%">
+                  <div class="Note">
+                    <span style="font-family: Arial, Verdana, Helvetica, Sans-Serif; font-weight: bold">Note:    </span><a name="3_5_7_7_6_4_7_10_4_11_2_8_2_4_3_1_3_1_1_2">&nbsp;</a></div>
+                </td>
+                <td class="Table_Cell" style="vertical-align: top; width: 85.71428571428571%">
+                  <div class="Table_Cell"><a name="3_5_7_7_6_4_7_10_4_11_2_8_2_4_3_1_3_1_2">This count reflects top-level services only. Child services use the same thread that their top-level service uses. This count does not include services that are running from the wm.server. folder of the WmRoot package.</a></div>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td class="Table_Cell" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: top">
+            <div class="Table_Cell"><span class="uicontrol"><a name="3_5_7_7_6_4_7_10_4_11_2_8_4_2">Peak</a></span></div>
+          </td>
+          <td class="Table_Cell" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: top">
+            <div class="Table_Cell"><a name="3_5_7_7_6_4_7_10_4_11_2_8_4_4">Displays the highest number of service threads that have ever been active concurrently on the server.</a></div>
+            <table class="note1" summary="">
+              <tr>
+                <td class="Table_Cell" style="vertical-align: top; width: 14.285714285714284%">
+                  <div class="Note">
+                    <span style="font-family: Arial, Verdana, Helvetica, Sans-Serif; font-weight: bold">Note:    </span><a name="3_5_7_7_6_4_7_10_4_11_2_8_4_4_3_1_3_1_1_2">&nbsp;</a></div>
+                </td>
+                <td class="Table_Cell" style="vertical-align: top; width: 85.71428571428571%">
+                  <div class="Table_Cell"><a name="3_5_7_7_6_4_7_10_4_11_2_8_4_4_3_1_3_1_2">This count reflects top-level services only. Child services use the same thread that their top-level service uses. This count does not include services that are running from the wm.server. folder of the WmRoot package.</a></div>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td class="Table_Cell" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: top">
+            <div class="Table_Cell"><span class="uicontrol"><a name="3_5_7_7_6_4_7_10_4_11_2_8_6_2">Limit</a></span></div>
+          </td>
+          <td class="Table_Cell" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: top">
+            <div class="Table_Cell"><a name="3_5_7_7_6_4_7_10_4_11_2_8_6_4">Not applicable to this measurement.</a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="Definition_Term"><a name="3_5_7_7_6_4_7_12_2">System Threads</a></div>
+      <div class="Definition_Description"><a name="3_5_7_7_6_4_7_12_4"> </a>   Displays statistics about threads spawned by the server’s internal processes (e.g., the Cache Manager, the Job Manager, the Event Handler).</div>
+      <table class="norules1" summary="">
+        <tr>
+          <td class="norules-head" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: bottom; width: 107.64000000000001pt">
+            <div class="norules-head"><a name="3_5_7_7_6_4_7_12_4_13_2_6_2_2">This field...</a></div>
+          </td>
+          <td class="norules-head" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: bottom; width: 324.36pt">
+            <div class="norules-head"><a name="3_5_7_7_6_4_7_12_4_13_2_6_2_4">Displays...</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td class="Table_Cell" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: top">
+            <div class="Table_Cell"><span class="uicontrol"><a name="3_5_7_7_6_4_7_12_4_13_2_8_2_2">Current</a></span></div>
+          </td>
+          <td class="Table_Cell" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: top">
+            <div class="Table_Cell"><a name="3_5_7_7_6_4_7_12_4_13_2_8_2_4">Displays the number of system threads currently active. Click this number to display the </a><span class="heading-no-quotes"><a href="javascript:WWHClickedPopup('is_help', 'Menu_Server_SystemThreads.html', '');" title="System Threads Screen">System Threads Screen</a></span>, containing detailed information about the threads that are currently active.</div>
+          </td>
+        </tr>
+        <tr>
+          <td class="Table_Cell" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: top">
+            <div class="Table_Cell"><span class="uicontrol"><a name="3_5_7_7_6_4_7_12_4_13_2_8_4_2">Peak</a></span></div>
+          </td>
+          <td class="Table_Cell" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: top">
+            <div class="Table_Cell"><a name="3_5_7_7_6_4_7_12_4_13_2_8_4_4">Displays the highest number of system threads that have ever been active concurrently on the server.</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td class="Table_Cell" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: top">
+            <div class="Table_Cell"><span class="uicontrol"><a name="3_5_7_7_6_4_7_12_4_13_2_8_6_2">Limit</a></span></div>
+          </td>
+          <td class="Table_Cell" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: top">
+            <div class="Table_Cell"><a name="3_5_7_7_6_4_7_12_4_13_2_8_6_4">Not applicable to this measurement.</a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="Definition_Term"><a name="3_5_7_7_6_4_7_14_2">Uptime</a></div>
+      <div class="Definition_Description"><a name="3_5_7_7_6_4_7_14_4"> </a> Displays the length of time (<span class="varname">hh:mm:ss</span>) that the server has been running since it was last started.</div>
+      <div class="Section_Title"><a name="3_5_7_7_6_6_3">Requests</a></div>
+      <div class="Body"><a name="3_5_7_7_6_6_5"> </a>The fields in this section display statistics about requests that this server is processing. (A request represents a service request from an external client.)</div>
+      <div class="Definition_Term"><a name="3_5_7_7_6_6_7_2_2">Completed Req's</a></div>
+      <div class="Definition_Description"><a name="3_5_7_7_6_6_7_2_4"> </a> Displays statistics about the number of requests that have been completed by the server.</div>
+      <table class="norules1" summary="">
+        <tr>
+          <td class="norules-head" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: bottom; width: 107.64000000000001pt">
+            <div class="norules-head"><a name="3_5_7_7_6_6_7_2_4_9_2_6_2_2">This field...</a></div>
+          </td>
+          <td class="norules-head" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: bottom; width: 324.36pt">
+            <div class="norules-head"><a name="3_5_7_7_6_6_7_2_4_9_2_6_2_4">Displays...</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td class="Table_Cell" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: top">
+            <div class="Table_Cell"><span class="uicontrol"><a name="3_5_7_7_6_6_7_2_4_9_2_8_2_2">Current</a></span></div>
+          </td>
+          <td class="Table_Cell" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: top">
+            <div class="Table_Cell"><a name="3_5_7_7_6_6_7_2_4_9_2_8_2_4">Displays the total number of requests that were completed during the polling interval (the last 10 minutes on most servers).</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td class="Table_Cell" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: top">
+            <div class="Table_Cell"><span class="uicontrol"><a name="3_5_7_7_6_6_7_2_4_9_2_8_4_2">Lifetime</a></span></div>
+          </td>
+          <td class="Table_Cell" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: top">
+            <div class="Table_Cell"><a name="3_5_7_7_6_6_7_2_4_9_2_8_4_4">Not applicable to this measurement.</a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="Definition_Term"><a name="3_5_7_7_6_6_7_4_2">Average Time</a></div>
+      <div class="Definition_Description"><a name="3_5_7_7_6_6_7_4_4">Displays the average time to complete a request.</a></div>
+      <table class="norules1" summary="">
+        <tr>
+          <td class="norules-head" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: bottom; width: 107.64000000000001pt">
+            <div class="norules-head"><a name="3_5_7_7_6_6_7_4_4_3_2_6_2_2">This field...</a></div>
+          </td>
+          <td class="norules-head" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: bottom; width: 324.36pt">
+            <div class="norules-head"><a name="3_5_7_7_6_6_7_4_4_3_2_6_2_4">Displays...</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td class="Table_Cell" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: top">
+            <div class="Table_Cell"><span class="uicontrol"><a name="3_5_7_7_6_6_7_4_4_3_2_8_2_2">Current</a></span></div>
+          </td>
+          <td class="Table_Cell" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: top">
+            <div class="Table_Cell"><a name="3_5_7_7_6_6_7_4_4_3_2_8_2_4">Displays the average for the poll interval (the last 10 minutes on most servers).</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td class="Table_Cell" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: top">
+            <div class="Table_Cell"><span class="uicontrol"><a name="3_5_7_7_6_6_7_4_4_3_2_8_4_2">Lifetime</a></span></div>
+          </td>
+          <td class="Table_Cell" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: top">
+            <div class="Table_Cell"><a name="3_5_7_7_6_6_7_4_4_3_2_8_4_4">Displays the average for the time period since the server was started.</a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="Definition_Term"><a name="3_5_7_7_6_6_7_6_2">Service Errors</a></div>
+      <div class="Definition_Description"><a name="3_5_7_7_6_6_7_6_4"> </a> Displays statistics about requests that ended unsuccessfully (i.e., ended with an error in the pipeline).</div>
+      <table class="norules1" summary="">
+        <tr>
+          <td class="norules-head" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: bottom; width: 117.648pt">
+            <div class="norules-head"><a name="3_5_7_7_6_6_7_6_4_9_2_6_2_2">This field...</a></div>
+          </td>
+          <td class="norules-head" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: bottom; width: 314.352pt">
+            <div class="norules-head"><a name="3_5_7_7_6_6_7_6_4_9_2_6_2_4">Displays...</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td class="Table_Cell" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: top">
+            <div class="Table_Cell"><span class="uicontrol"><a name="3_5_7_7_6_6_7_6_4_9_2_8_2_2">Current</a></span></div>
+          </td>
+          <td class="Table_Cell" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: top">
+            <div class="Table_Cell"><a name="3_5_7_7_6_6_7_6_4_9_2_8_2_4">Displays the total number of requests that have ended unsuccessfully during the current log interval (since the log file was rotated, which is every 24 hours on most servers). Click this number to display the Error Log.</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td class="Table_Cell" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: top">
+            <div class="Table_Cell"><span class="uicontrol"><a name="3_5_7_7_6_6_7_6_4_9_2_8_4_2">Lifetime</a></span></div>
+          </td>
+          <td class="Table_Cell" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: top">
+            <div class="Table_Cell"><a name="3_5_7_7_6_6_7_6_4_9_2_8_4_4">Not applicable to this measurement.</a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="Definition_Term"><a name="3_5_7_7_6_6_7_8_2">Req per minute</a></div>
+      <div class="Definition_Description"><a name="3_5_7_7_6_6_7_8_4"> </a> Displays the average number of requests per minute.</div>
+      <table class="norules1" summary="">
+        <tr>
+          <td class="norules-head" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: bottom; width: 107.28pt">
+            <div class="norules-head"><a name="3_5_7_7_6_6_7_8_4_9_2_6_2_2">This field...</a></div>
+          </td>
+          <td class="norules-head" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: bottom; width: 324.71999999999997pt">
+            <div class="norules-head"><a name="3_5_7_7_6_6_7_8_4_9_2_6_2_4">Displays...</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td class="Table_Cell" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: top">
+            <div class="Table_Cell"><span class="uicontrol"><a name="3_5_7_7_6_6_7_8_4_9_2_8_2_2">Started</a></span></div>
+          </td>
+          <td class="Table_Cell" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: top">
+            <div class="Table_Cell"><a name="3_5_7_7_6_6_7_8_4_9_2_8_2_4">Displays the average number of requests that started each minute during the current polling interval (the last 10 minutes on most servers).</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td class="Table_Cell" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: top">
+            <div class="Table_Cell"><span class="uicontrol"><a name="3_5_7_7_6_6_7_8_4_9_2_8_4_2">Ended</a></span></div>
+          </td>
+          <td class="Table_Cell" style="padding-bottom: 0px; padding-right: 8px; padding-top: 0px; vertical-align: top">
+            <div class="Table_Cell"><a name="3_5_7_7_6_6_7_8_4_9_2_8_4_4">Displays the average number of requests that ended each minute during the current polling interval.</a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="Section_Title"><a name="3_5_7_7_6_8_3">Memory</a></div>
+      <div class="Body"><a name="3_5_7_7_6_8_5"> </a> The fields in this section describe the availability of memory on the server. The graph shows the memory usage over the last 24 hours. The bars represent the average usage by hour as a percentage of total memory.</div>
+      <div class="Definition_Term"><a name="3_5_7_7_6_8_7_2_2">Maximum</a></div>
+      <div class="Definition_Description"><a name="3_5_7_7_6_8_7_2_4">Displays the maximum amount of memory the Java virtual machine is allowed to acquire, as specified by the -Xmx parameter at </a><span class="ph">Integration Server</span> startup.</div>
+      <div class="Definition_Term"><a name="3_5_7_7_6_8_7_4_2">Committed</a></div>
+      <div class="Definition_Description"><a name="3_5_7_7_6_8_7_4_4">Displays the amount of memory guaranteed to be available for use by the Java virtual machine.</a></div>
+      <div class="Definition_Term"><a name="3_5_7_7_6_8_7_6_2">Used</a></div>
+      <div class="Definition_Description"><a name="3_5_7_7_6_8_7_6_4">Displays the amount of memory currently used by the Java virtual machine.</a></div>
+      <div class="Definition_Term"><a name="3_5_7_7_6_8_7_8_2">Free</a></div>
+      <div class="Definition_Description"><a name="3_5_7_7_6_8_7_8_4">Displays the amount of unused memory that is currently available to the Java virtual machine.</a></div>
+      <div class="Link_List_Title"><a name="3_5_7_7_8_1_2">Related Topics</a></div>
+      <div class="Related_Reference">
+        <img src="spacer_24.png" alt="*" border="0" width="24" height="6" /><span class="Link_Text"><a href="javascript:WWHClickedPopup('is_help', 'Menu_Server_StatisticsSessions.html', '');" title="Current Sessions Screen" name="3_5_7_7_8_1_4">Current Sessions Screen</a></span></div>
+      <div class="Related_Reference">
+        <img src="spacer_24.png" alt="*" border="0" width="24" height="6" /><span class="Link_Text"><a href="javascript:WWHClickedPopup('is_help', 'Menu_Server_SystemThreads.html', '');" title="System Threads Screen" name="3_5_7_7_8_1_6">System Threads Screen</a></span></div>
+      <div class="Related_Reference">
+        <img src="spacer_24.png" alt="*" border="0" width="24" height="6" /><span class="Link_Text"><a href="javascript:WWHClickedPopup('is_help', 'Menu_Server_SvcUsage.html', '');" title="Service Usage Screen" name="3_5_7_7_8_1_8">Service Usage Screen</a></span></div>
+      <div class="Related_Reference">
+        <img src="spacer_24.png" alt="*" border="0" width="24" height="6" /><span class="Link_Text"><a href="javascript:WWHClickedPopup('is_help', 'Menu_Server_Scheduler.html', '');" title="Scheduler Screen" name="3_5_7_7_8_1_10">Scheduler Screen</a></span></div>
+      <div class="Related_Reference">
+        <img src="spacer_24.png" alt="*" border="0" width="24" height="6" /><span class="Link_Text"><a href="javascript:WWHClickedPopup('is_help', 'Menu_Server_ShutdownRestart.html', '');" title="Shut Down and Restart Screen" name="3_5_7_7_8_1_12">Shut Down and Restart Screen</a></span></div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <div>
+      <hr />
+      <div style="font-family: Arial, Verdana, Helvetica, Sans-Serif; font-size: 12px;margin-top: 20px;margin-bottom: 20px;">
+        <span class="xref">
+          <a href="http://documentation.softwareag.com/legal/" target="external_window">Copyright © <span></span><span></span><span>2007</span><span>-2014</span> Software AG, Darmstadt, Germany</a>
+        </span>.</div>
+    </div>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+  </body>
+</html>

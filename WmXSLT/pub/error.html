@@ -1,0 +1,68 @@
+<table width="100%">
+  <tr>
+    <td class="menusection-Adapters" colspan="2">Error</td>
+  </tr>
+  <tr>
+    <td colspan="2">
+      <ul>
+	<li><a href="javascript:history.back()">Return</a></li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td class="padding">&nbsp;</td>
+    <td>
+      <table class="tableView">
+	<!-- %ifvar $error% -->
+	<tr>
+	  <td class="heading" colspan="2">%value $error%</td>
+	</tr>
+	<tr>
+	  <td class="evenrow">Type</td>
+	  <td class="evenrowdata-l">%value $errorType%</td>
+	</tr>
+	<!-- %endif% -->
+	<!-- %ifvar error% -->
+	<tr>
+	  <td class="heading" colspan="2">%value error%</td>
+	</tr>
+	<tr>
+	  <td class="oddrow">Message</td>
+	  <td class="oddrowdata-l">%value errorMessage%</td>
+	</tr>
+	<tr>
+	  <td class="evenrow">Service</td>
+	  <td class="evenrowdata-l">%value errorService%</td>
+	</tr>
+	<!-- %endif% -->
+	<!-- %ifvar errorInputs/key% -->
+	<tr>
+	  <td class="oddrow">Key</td>
+	  <td class="oddrowdata-l">%value errorInputs/key%</td>
+	</tr>
+	<!-- %endif% -->
+	<!-- %ifvar key% -->
+	<tr>
+	  <td class="oddrow">Key</td>
+	  <td class="oddrowdata-l">%value key%</td>
+	</tr>
+	<!-- %endif% -->
+	<!-- %ifvar message% -->
+	<tr>
+	  <td class="evenrow">Message</td>
+	  <td class="evenrowdata-l">%value message%</td>
+	</tr>
+	<!-- %endif% -->
+      </table>
+    </td>
+  </tr>
+</table>
+
+%comment%
+<!-- Un-Comment to debug Pipeline -->
+<p>
+    %loop -struct%
+      %value $key% =  %value%<br />
+    %endloop%
+</p>
+%endcomment%

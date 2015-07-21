@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+
+<IDataXMLCoder version="1.0">
+
+  <record javaclass="com.wm.data.ISMemDataImpl">
+
+    <record name="transactions" javaclass="com.wm.data.ISMemDataImpl">
+
+      <record name="checkAPInvoiceImportStatus" javaclass="com.wm.data.ISMemDataImpl">
+
+        <value name="transactionName">checkAPInvoiceImportStatus</value>
+
+        <value name="transactionType">OUT</value>
+
+        <null name="AcknowledgeSQL"/>
+
+        <record name="checkAPInvocieImportStatus" javaclass="com.wm.util.Values">
+
+          <value name="SQLOut">SELECT COUNT(*) AS ROWCOUNT FROM AP_INVOICES_INTERFACE WHERE STATUS ='REJECTED' AND REQUEST_ID = '&amp;REQUEST_ID*'</value>
+
+          <value name="SQLAlias">checkAPInvocieImportStatus</value>
+
+          <value name="SQLRelation"></value>
+
+        </record>
+
+      </record>
+
+      <record name="execAPInvoiceConcProg" javaclass="com.wm.data.ISMemDataImpl">
+
+        <value name="transactionName">execAPInvoiceConcProg</value>
+
+        <value name="transactionType">OUT</value>
+
+        <null name="AcknowledgeSQL"/>
+
+        <record name="WM_HANDLE_OPENAP" javaclass="com.wm.util.Values">
+
+          <value name="SQLOut">WM_AP_INV_IMP_HANDLER_PKG.WM_HANDLE_OPENAP</value>
+
+          <value name="SQLAlias">WM_HANDLE_OPENAP</value>
+
+          <value name="SQLRelation"></value>
+
+        </record>
+
+      </record>
+
+      <record name="getARInvoiceId" javaclass="com.wm.data.ISMemDataImpl">
+
+        <value name="transactionName">getARInvoiceId</value>
+
+        <value name="transactionType">OUT</value>
+
+        <null name="AcknowledgeSQL"/>
+
+        <record name="ARINVOICEID" javaclass="com.wm.util.Values">
+
+          <value name="SQLOut">SELECT CUSTOMER_TRX_ID FROM RA_CUSTOMER_TRX_ALL WHERE TRX_NUMBER ='&amp;TRX_NUMBER*' AND ORG_ID='&amp;ORG_ID*'</value>
+
+          <value name="SQLAlias">ARINVOICEID</value>
+
+          <value name="SQLRelation"></value>
+
+        </record>
+
+      </record>
+
+      <record name="getLineTypeLookUpCode" javaclass="com.wm.data.ISMemDataImpl">
+
+        <value name="transactionName">getLineTypeLookUpCode</value>
+
+        <value name="transactionType">OUT</value>
+
+        <null name="AcknowledgeSQL"/>
+
+        <record name="LINETYPELOOKUP" javaclass="com.wm.util.Values">
+
+          <value name="SQLOut">SELECT LOOKUP_CODE FROM AP_LOOKUP_CODES WHERE DISPLAYED_FIELD ='&amp;LINE_TYPE*' AND LOOKUP_TYPE ='INVOICE DISTRIBUTION TYPE'
+
+</value>
+
+          <value name="SQLAlias">LINETYPELOOKUP</value>
+
+          <value name="SQLRelation"></value>
+
+        </record>
+
+      </record>
+
+      <record name="getShipToLocationCode" javaclass="com.wm.data.ISMemDataImpl">
+
+        <value name="transactionName">getShipToLocationCode</value>
+
+        <value name="transactionType">OUT</value>
+
+        <null name="AcknowledgeSQL"/>
+
+        <record name="SHIPTOLOCATIONCODE" javaclass="com.wm.util.Values">
+
+          <value name="SQLOut">SELECT LOCATION_CODE 
+
+FROM HR_LOCATIONS WHERE 
+
+NVL(ADDRESS_LINE_1,-99) = NVL('&amp;ADDRESS_LINE1*',-99) AND 
+
+NVL(ADDRESS_LINE_2,-99) = NVL('&amp;ADDRESS_LINE2*',-99) AND
+
+NVL(ADDRESS_LINE_3,-99) = NVL('&amp;ADDRESS_LINE3*',-99) AND 
+
+NVL(TOWN_OR_CITY,-99) = NVL('&amp;CITY*',-99) AND
+
+NVL(REGION_2,-99) = NVL('&amp;STATE*',-99) AND
+
+NVL(POSTAL_CODE,-99) = NVL('&amp;ZIP*',-99) AND
+
+NVL(COUNTRY,-99) = NVL('&amp;COUNTRY*',-99) AND 
+
+ROWNUM = 1</value>
+
+          <value name="SQLAlias">SHIPTOLOCATIONCODE</value>
+
+          <value name="SQLRelation"></value>
+
+        </record>
+
+      </record>
+
+    </record>
+
+    <record name="FILE_INFO" javaclass="com.wm.data.ISMemDataImpl">
+
+      <value name="OA_RELEASE">1206</value>
+
+      <value name="DESCRIPTION"></value>
+
+      <value name="CREATE_HOST">ReleaseOA.webmethods.com</value>
+
+      <value name="CREATE_IM_VER"></value>
+
+      <value name="CREATE_DATE">May 2, 2005 4:10:46 PM</value>
+
+    </record>
+
+  </record>
+
+</IDataXMLCoder>
+

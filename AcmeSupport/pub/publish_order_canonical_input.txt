@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<IDataXMLCoder version="1.0">
+  <record javaclass="com.wm.util.Values">
+    <record name="Header" javaclass="com.wm.data.ISMemDataImpl">
+      <value name="OrderID">123</value>
+      <value name="TransactionID">123</value>
+      <value name="OrderDate">01/31/06</value>
+      <value name="TotalCost">15</value>
+      <value name="IsValid">Y</value>
+      <record name="Sender" javaclass="com.wm.data.ISMemDataImpl">
+        <value name="ID">88-888-8888</value>
+      </record>
+      <record name="Receiver" javaclass="com.wm.data.ISMemDataImpl">
+        <value name="ID">11-111-1111</value>
+      </record>
+    </record>
+    <array name="Items" type="record" depth="1">
+      <record javaclass="com.wm.data.ISMemDataImpl">
+        <value name="SKU">item1</value>
+        <value name="Quantity">3</value>
+      </record>
+      <record javaclass="com.wm.data.ISMemDataImpl">
+        <value name="SKU">item2</value>
+        <value name="Quantity">4</value>
+      </record>
+    </array>
+  </record>
+</IDataXMLCoder>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <record name="transactions" javaclass="com.wm.util.Values">
+    <record name="checkBankStatementImportStatus" javaclass="com.wm.util.Values">
+      <value name="transactionName">checkBankStatementImportStatus</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="CHECKBANKSTATEMENTSTATUS" javaclass="com.wm.util.Values">
+        <value name="SQLOut">SELECT COUNT(*) AS ROWCOUNT FROM CE_STATEMENT_HEADERS_INT_ALL 
+WHERE BANK_ACCOUNT_NUM = '&amp;BANK_ACCOUNT_NUM*' 
+AND RECORD_STATUS_FLAG = 'E'</value>
+        <value name="SQLAlias">CHECKBANKSTATEMENTSTATUS</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+    <record name="execBankStatementConcProg" javaclass="com.wm.util.Values">
+      <value name="transactionName">execBankStatementConcProg</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="WM_HANDLE_CEBANK" javaclass="com.wm.util.Values">
+        <value name="SQLOut">WM_CE_BANK_IMP_HANDLER_PKG.WM_HANDLE_CEBANK</value>
+        <value name="SQLAlias">WM_HANDLE_CEBANK</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+  </record>
+  <record name="FILE_INFO" javaclass="com.wm.util.Values">
+    <value name="OA_RELEASE">107SC</value>
+    <value name="DESCRIPTION"></value>
+    <value name="CREATE_HOST">webMethods</value>
+    <value name="CREATE_IM_VER">3.0</value>
+    <value name="CREATE_DATE">Dec 5, 2002 2:02:42 PM</value>
+  </record>
+</Values>

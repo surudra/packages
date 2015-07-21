@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <record name="transactions" javaclass="com.wm.util.Values">
+    <record name="checkPeriodicCostImportStatus" javaclass="com.wm.util.Values">
+      <value name="transactionName">checkPeriodicCostImportStatus</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="HEADERIMPORTSTATUS" javaclass="com.wm.util.Values">
+        <value name="SQLOut">SELECT COUNT (*) AS ROWCOUNT FROM CST_PC_ITEM_COST_INTERFACE WHERE  PROCESS_FLAG =3 AND REQUEST_ID ='&amp;REQUEST_ID*'</value>
+        <value name="SQLAlias">HEADERIMPORTSTATUS</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+    <record name="execPeriodicCostConcProg" javaclass="com.wm.util.Values">
+      <value name="transactionName">execPeriodicCostConcProg</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="WM_HANDLE_PERIODIC_COST" javaclass="com.wm.util.Values">
+        <value name="SQLOut">WM_PC_IMP_HANDLER_PKG.WM_HANDLE_PERIODIC_COST</value>
+        <value name="SQLAlias">WM_HANDLE_PERIODIC_COST</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+  </record>
+  <record name="FILE_INFO" javaclass="com.wm.util.Values">
+    <value name="OA_RELEASE">11i</value>
+    <value name="DESCRIPTION"></value>
+    <value name="CREATE_HOST">webMethods</value>
+    <value name="CREATE_IM_VER">3.0</value>
+    <value name="CREATE_DATE">Oct 16, 2002 7:34:56 PM</value>
+  </record>
+</Values>

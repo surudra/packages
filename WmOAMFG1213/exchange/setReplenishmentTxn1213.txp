@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<IDataXMLCoder version="1.0">
+  <record javaclass="com.wm.data.ISMemDataImpl">
+    <record name="transactions" javaclass="com.wm.data.ISMemDataImpl">
+      <record name="setReplenishmentTxn" javaclass="com.wm.data.ISMemDataImpl">
+        <value name="transactionName">setReplenishmentTxn</value>
+        <value name="transactionType">IN</value>
+        <value name="errSQL">SELECT REPLENISHMENT_COUNT_NAME,LO.MEANING AS HEADER_ERROR_EXPLANATION, DECODE(L.ERROR_FLAG, '1','No corresponding header id', '2','', '3','Invalid user name', '4','Invalid organization identifier', '5','Invalid subinventory', '8','Invalid item identifier or item is not trasactable', '9','Invalid unit of measure or no conversion to primary unit of measure exists', '11','No items specified in either identifier OR segments', '12','Invalid count type', '13','On-hand count type used for tracked subinventory', '14','Invalid count quantity', '15','Lines organization header does not match header organization identifier', '17','Item is not specified in the subinventory or is not min-max planned in the subinventory' ) AS LINES_ERROR_EXPLANATION, M.CONCATENATED_SEGMENTS AS ITEM_CODE  FROM  MTL_REPLENISH_HEADERS_INT H , MTL_REPLENISH_LINES_INT L ,MTL_SYSTEM_ITEMS_B_KFV M ,MFG_LOOKUPS LO WHERE LO.LOOKUP_CODE=H.ERROR_FLAG AND LO.LOOKUP_TYPE ='MTL_REPLENISHMENT_ERROR' AND L.REPLENISHMENT_HEADER_ID = H.REPLENISHMENT_HEADER_ID AND M.ORGANIZATION_ID = L.ORGANIZATION_ID AND M.INVENTORY_ITEM_ID=L.INVENTORY_ITEM_ID AND H.REPLENISHMENT_COUNT_NAME='&amp;REPLENISHMENT_COUNT_NAME*'</value>
+        <record name="table0" javaclass="com.wm.data.ISMemDataImpl">
+          <value name="tableName">MTL_REPLENISH_HEADERS_INT</value>
+          <value name="required">true</value>
+        </record>
+        <record name="table1" javaclass="com.wm.data.ISMemDataImpl">
+          <value name="tableName">MTL_REPLENISH_LINES_INT</value>
+          <value name="required">true</value>
+        </record>
+      </record>
+    </record>
+    <record name="FILE_INFO" javaclass="com.wm.data.ISMemDataImpl">
+      <value name="OA_RELEASE">1213</value>
+      <value name="DESCRIPTION"></value>
+      <value name="CREATE_HOST">webmethods</value>
+      <value name="CREATE_IM_VER"></value>
+      <value name="CREATE_DATE">May 6, 2005 2:37:36 PM</value>
+    </record>
+  </record>
+</IDataXMLCoder>

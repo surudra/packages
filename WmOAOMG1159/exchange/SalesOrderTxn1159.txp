@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <record name="transactions" javaclass="com.wm.util.Values">
+    <record name="checkSalesOrderImportStatus" javaclass="com.wm.util.Values">
+      <value name="transactionName">checkSalesOrderImportStatus</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="ERRCOUNT" javaclass="com.wm.util.Values">
+        <value name="SQLOut">SELECT COUNT(*) AS SALESORDER_ERRCOUNT FROM OE_HEADERS_IFACE_ALL IFACE, FND_CONC_REQ_SUMMARY_V CONC
+WHERE CONC.PARENT_REQUEST_ID = '&amp;PARENT_REQUEST_ID*'
+AND CONC.REQUEST_ID = IFACE.REQUEST_ID
+AND IFACE.ERROR_FLAG = 'Y'
+</value>
+        <value name="SQLAlias">ERRCOUNT</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+    <record name="execSalesOrderConcProg" javaclass="com.wm.util.Values">
+      <value name="transactionName">execSalesOrderConcProg</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="ORDER_CONC" javaclass="com.wm.util.Values">
+        <value name="SQLOut">WM_ORDER_IMP_HANDLER_PKG.WM_HANDLE_ORDER_IMPORT</value>
+        <value name="SQLAlias">ORDER_CONC</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+    <record name="getATOLineId" javaclass="com.wm.util.Values">
+      <value name="transactionName">getATOLineId</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="ATO_LINE" javaclass="com.wm.util.Values">
+        <value name="SQLOut">select ATO_LINE_ID from OE_ORDER_LINES_ALL 
+where ORIG_SYS_LINE_REF = '&amp;ATO_LINE_REF*'</value>
+        <value name="SQLAlias">ATO_LINE</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+    <record name="getBillToSiteUseId" javaclass="com.wm.util.Values">
+      <value name="transactionName">getBillToSiteUseId</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="SITE_USE_ID" javaclass="com.wm.util.Values">
+        <value name="SQLOut">SELECT A.SITE_USE_ID FROM RA_SITE_USES_ALL A, RA_ADDRESSES_ALL B
+WHERE UPPER(NVL(A.LOCATION,'XXXXX')) LIKE UPPER(NVL ('&amp;LOCATION*' ,'XXXXX'))
+AND A.SITE_USE_CODE  = 'BILL_TO'
+AND A.ADDRESS_ID = B.ADDRESS_ID 
+AND UPPER(NVL(B.ADDRESS1,'XXXXX')) LIKE UPPER(NVL ('&amp;ADDRESS1*' ,'XXXXX'))
+AND UPPER(NVL(B.ADDRESS2,'XXXXX')) LIKE UPPER(NVL ('&amp;ADDRESS2*' ,'XXXXX'))
+AND UPPER(NVL(B.ADDRESS3,'XXXXX')) LIKE UPPER(NVL ('&amp;ADDRESS3*' ,'XXXXX'))
+AND UPPER(NVL(B.ADDRESS4,'XXXXX')) LIKE UPPER(NVL ('&amp;ADDRESS4*' ,'XXXXX'))
+AND UPPER(NVL(B.CITY,'XXXXX')) LIKE UPPER(NVL ('&amp;CITY*' ,'XXXXX'))
+AND UPPER(NVL(B.COUNTY,'XXXXX')) LIKE UPPER(NVL ('&amp;COUNTY*' ,'XXXXX'))
+AND UPPER(NVL(B.STATE,'XXXXX')) LIKE UPPER(NVL ('&amp;STATE*' ,'XXXXX'))
+AND UPPER(NVL(B.COUNTRY,'XXXXX')) LIKE UPPER(NVL ('&amp;COUNTRY*' ,'XXXXX'))
+AND UPPER(NVL(B.PROVINCE,'XXXXX')) LIKE UPPER(NVL ('&amp;PROVINCE*' ,'XXXXX'))
+AND UPPER(NVL(B.POSTAL_CODE,'XXXXX')) LIKE UPPER(NVL('&amp;POSTAL_CODE*' ,'XXXXX'))</value>
+        <value name="SQLAlias">SITE_USE_ID</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+    <record name="getCustomerTrxLineId" javaclass="com.wm.util.Values">
+      <value name="transactionName">getCustomerTrxLineId</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="CUSTOMER_TRX_LINE_ID" javaclass="com.wm.util.Values">
+        <value name="SQLOut">select RCTL.CUSTOMER_TRX_LINE_ID 
+from RA_CUSTOMER_TRX_LINES_ALL RCTL,RA_CUSTOMER_TRX_ALL RCT,ORG_ORGANIZATION_DEFINITIONS ORG
+where RCTL.ORG_ID = ORG.ORGANIZATION_ID
+and RCT.CUSTOMER_TRX_ID = RCTL.CUSTOMER_TRX_ID
+and RCT.TRX_NUMBER = '&amp;CREDIT_INVOICE_NUMBER*'
+and ORG.ORGANIZATION_NAME = '&amp;ORGANIZATION_NAME*'</value>
+        <value name="SQLAlias">CUSTOMER_TRX_LINE_ID</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+    <record name="getDeliveryId" javaclass="com.wm.util.Values">
+      <value name="transactionName">getDeliveryId</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="DELIVERY_ID" javaclass="com.wm.util.Values">
+        <value name="SQLOut">select delivery_id from WSH_NEW_DELIVERIES
+where name = '&amp;DELIVERY_NAME*'</value>
+        <value name="SQLAlias">DELIVERY_ID</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+    <record name="getDiscountId" javaclass="com.wm.util.Values">
+      <value name="transactionName">getDiscountId</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="DISCOUNT_ID" javaclass="com.wm.util.Values">
+        <value name="SQLOut">select DISCOUNT_ID from SO_DISCOUNTS
+where NAME = '&amp;DISCOUNT_NAME*'</value>
+        <value name="SQLAlias">DISCOUNT_ID</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+    <record name="getFreightCostId" javaclass="com.wm.util.Values">
+      <value name="transactionName">getFreightCostId</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="FREIGHT_COST_ID" javaclass="com.wm.util.Values">
+        <value name="SQLOut">SELECT FREIGHT_COST_ID 
+from WSH_FREIGHT_COSTS C , WSH_FREIGHT_COST_TYPES T
+WHERE C.FREIGHT_COST_TYPE_ID = T.FREIGHT_COST_TYPE_ID 
+AND T.FREIGHT_COST_TYPE_CODE = '&amp;COST_TYPE*'
+AND C.UNIT_AMOUNT = '&amp;COST_UNIT_AMOUNT*'
+AND C.QUANTITY = '&amp;COST_QUANTITY*'
+AND C.TOTAL_AMOUNT = '&amp;COST_AMOUNT*'
+AND C.CURRENCY_CODE = '&amp;CURRENCY_CODE*'
+AND C.FREIGHT_CODE = '&amp;FREIGHT_CODE*'</value>
+        <value name="SQLAlias">FREIGHT_COST_ID</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+    <record name="getHoldId" javaclass="com.wm.util.Values">
+      <value name="transactionName">getHoldId</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="HOLD_ID" javaclass="com.wm.util.Values">
+        <value name="SQLOut">SELECT HOLD_ID FROM OE_HOLD_DEFINITIONS WHERE NAME = '&amp;HOLD_NAME*'</value>
+        <value name="SQLAlias">HOLD_ID</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+    <record name="getLineTypeId" javaclass="com.wm.util.Values">
+      <value name="transactionName">getLineTypeId</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="LINE_TYPE_ID" javaclass="com.wm.util.Values">
+        <value name="SQLOut">select TRANSACTION_TYPE_ID  as LINE_TYPE_ID 
+from OE_TRANSACTION_TYPES_TL 
+where NAME = '&amp;LINE_TYPE*'
+and language = userenv('LANG')</value>
+        <value name="SQLAlias">LINE_TYPE_ID</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+    <record name="getListHeaderAndLineId" javaclass="com.wm.util.Values">
+      <value name="transactionName">getListHeaderAndLineId</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="LIST_HEADER_LINE_ID" javaclass="com.wm.util.Values">
+        <value name="SQLOut">select qlhb.list_header_id, qll.list_line_id
+ 					from qp_list_headers_b qlhb, qp_list_lines qll
+					where qll.list_header_id = qlhb.list_header_id
+   					and qll.list_line_no = '&amp;LIST_LINE_NUMBER*'</value>
+        <value name="SQLAlias">LIST_HEADER_LINE_ID</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+    <record name="getOrderSourceId" javaclass="com.wm.util.Values">
+      <value name="transactionName">getOrderSourceId</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="ORDER_SOURCE_ID" javaclass="com.wm.util.Values">
+        <value name="SQLOut">SELECT 
+ORDER_SOURCE_ID
+FROM OE_ORDER_SOURCES
+WHERE NAME = '&amp;ORDER_SOURCE*'</value>
+        <value name="SQLAlias">ORDER_SOURCE_ID</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+    <record name="getOrderTypeId" javaclass="com.wm.util.Values">
+      <value name="transactionName">getOrderTypeId</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="TRANSACTION_TYPE_ID" javaclass="com.wm.util.Values">
+        <value name="SQLOut">select TRANSACTION_TYPE_ID 
+from OE_TRANSACTION_TYPES_TL 
+where OE_TRANSACTION_TYPES_TL.NAME = '&amp;TRANSACTION_TYPE_NAME*' 
+and language = userenv('LANG')</value>
+        <value name="SQLAlias">TRANSACTION_TYPE_ID</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+    <record name="getParentAdjustmentId" javaclass="com.wm.util.Values">
+      <value name="transactionName">getParentAdjustmentId</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="PARENT_ADJUSTMENT_ID" javaclass="com.wm.util.Values">
+        <value name="SQLOut">SELECT A.PARENT_ADJUSTMENT_ID
+FROM OE_PRICE_ADJUSTMENTS_V A, OE_ORDER_HEADERS_ALL H,OE_ORDER_LINES_ALL L 
+WHERE L.LINE_ID = A.LINE_ID
+AND H.HEADER_ID = A.HEADER_ID
+AND L.ORIG_SYS_DOCUMENT_REF = '&amp;ORIG_SYS_DOCUMNET_REF*'
+AND L.ORIG_SYS_LINE_REF = '&amp;ORIG_SYS_LINE_REF*'
+AND H.ORIG_SYS_DOCUMENT_REF = '&amp;ORIG_SYS_DOCUMNET_REF*'
+AND A.ADJUSTMENT_NAME = '&amp;ADJUSTMENT_NAME*'</value>
+        <value name="SQLAlias">PARENT_ADJUSTMENT_ID</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+    <record name="getPricingPhaseId" javaclass="com.wm.util.Values">
+      <value name="transactionName">getPricingPhaseId</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="PRICING_PHASE_ID" javaclass="com.wm.util.Values">
+        <value name="SQLOut">SELECT PRICING_PHASE_ID FROM QP_PRICING_PHASES
+WHERE NAME = '&amp;NAME*'</value>
+        <value name="SQLAlias">PRICING_PHASE_ID</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+    <record name="getSalesRepID" javaclass="com.wm.util.Values">
+      <value name="transactionName">getSalesRepID</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="SALESREP_ID" javaclass="com.wm.util.Values">
+        <value name="SQLOut">select SALESREP_ID 
+from RA_SALESREPS_ALL 
+where NAME = '&amp;SALESREP_NAME*'</value>
+        <value name="SQLAlias">SALESREP_ID</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+    <record name="getShipToSiteUseId" javaclass="com.wm.util.Values">
+      <value name="transactionName">getShipToSiteUseId</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="SITE_USE_ID" javaclass="com.wm.util.Values">
+        <value name="SQLOut">SELECT A.SITE_USE_ID FROM RA_SITE_USES_ALL A, RA_ADDRESSES_ALL B
+WHERE UPPER(NVL(A.LOCATION,'XXXXX')) LIKE UPPER(NVL('&amp;LOCATION*' ,'XXXXX'))
+AND A.SITE_USE_CODE  = 'SHIP_TO'
+AND A.ADDRESS_ID = B.ADDRESS_ID
+AND UPPER(NVL(B.ADDRESS1,'XXXXX')) LIKE UPPER(NVL ('&amp;ADDRESS1*' ,'XXXXX'))
+AND UPPER(NVL(B.ADDRESS2,'XXXXX')) LIKE UPPER(NVL ('&amp;ADDRESS2*' ,'XXXXX'))
+AND UPPER(NVL(B.ADDRESS3,'XXXXX')) LIKE UPPER(NVL ('&amp;ADDRESS3*' ,'XXXXX'))
+AND UPPER(NVL(B.ADDRESS4,'XXXXX')) LIKE UPPER(NVL ('&amp;ADDRESS4*' ,'XXXXX'))
+AND UPPER(NVL(B.CITY,'XXXXX')) LIKE UPPER(NVL ('&amp;CITY*' ,'XXXXX'))
+AND UPPER(NVL(B.COUNTY,'XXXXX')) LIKE UPPER(NVL ('&amp;COUNTY*' ,'XXXXX'))
+AND UPPER(NVL(B.STATE,'XXXXX')) LIKE UPPER(NVL ('&amp;STATE*' ,'XXXXX'))
+AND UPPER(NVL(B.COUNTRY,'XXXXX')) LIKE UPPER(NVL ('&amp;COUNTRY*' ,'XXXXX'))
+AND UPPER(NVL(B.PROVINCE,'XXXXX')) LIKE UPPER(NVL ('&amp;PROVINCE*' ,'XXXXX'))
+AND UPPER(NVL(B.POSTAL_CODE,'XXXXX')) LIKE UPPER(NVL('&amp;POSTAL_CODE*' ,'XXXXX'))</value>
+        <value name="SQLAlias">SITE_USE_ID</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+    <record name="getSplitFromLineId" javaclass="com.wm.util.Values">
+      <value name="transactionName">getSplitFromLineId</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="SPLIT_FROM_LINE_ID" javaclass="com.wm.util.Values">
+        <value name="SQLOut">select SPLIT_FROM_LINE_ID  from OE_ORDER_LINES_ALL 
+where ORIG_SYS_LINE_REF = '&amp;SPLIT_LINE_LINE_REF*'</value>
+        <value name="SQLAlias">SPLIT_FROM_LINE_ID</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+  </record>
+  <record name="FILE_INFO" javaclass="com.wm.util.Values">
+    <value name="OA_RELEASE">1159</value>
+    <value name="DESCRIPTION"></value>
+    <value name="CREATE_HOST">webMethods</value>
+    <value name="CREATE_IM_VER">3.1</value>
+    <value name="CREATE_DATE">May 13, 2004 4:18:24 PM</value>
+  </record>
+</Values>

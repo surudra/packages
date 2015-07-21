@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	>
+
+	<xs:complexType name="DelimExtractorType">
+		<xs:choice>
+			<xs:element name="HardCodedDelimiter" type="xs:string"/>
+			<xs:element name="NthCharacter" type="xs:nonNegativeInteger"/> 
+		</xs:choice>
+	</xs:complexType>
+
+
+	<xs:element name="FormatInfo">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="FormatDelimInfo" minOccurs="1" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="name" type="xs:string"/>
+							<xs:element name="DelimExtractor" type="DelimExtractorType"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:complexType name="DictionaryReference">
+		<xs:sequence>
+			<xs:element name="DictionaryName" type="xs:string"/>
+			<xs:element name="EntryName" type="xs:string"/>
+			<xs:element ref="LocalDescription" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:element name="LocalDescription">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="DescriptionText" minOccurs="0" type="xs:string"/>
+				<xs:element name="ChildDescriptions" minOccurs="0" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="reference" type="xs:string"/>
+							<xs:element ref="LocalDescription"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+
+	<xs:complexType name="ConditionalValidator">
+		<xs:sequence>
+			<xs:element name="ConditionString" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:element name="CodeListValidator">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="CodeList" type="xs:string"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="LengthValidator">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="MinLength" type="xs:integer"/>
+				<xs:element name="MaxLength" type="xs:integer"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="ByteLengthValidator">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="MinLength" type="xs:integer"/>
+				<xs:element name="MaxLength" type="xs:integer"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="FieldDefinition">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:choice>
+					<xs:element ref="CodeListValidator"/>
+					<xs:element ref="LengthValidator"/>
+					<xs:element ref="ByteLengthValidator"/>
+				</xs:choice>
+				<xs:element name="FormatService" type="xs:string" minOccurs="0"/>
+				<xs:element name="AlternateName" type="xs:string" minOccurs="0"/>
+				<xs:element name="Description" type="xs:string" minOccurs="0"/>
+				<xs:element name="IDCode" type="xs:string" minOccurs="0"/>
+				<xs:element name="DataType" type="xs:string" minOccurs="0"/>
+
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="Field">
+		<xs:complexType>
+			<xs:choice>
+				<xs:element name="FieldReference" type="DictionaryReference"/>
+				<xs:element ref="FieldDefinition"/>
+				<xs:element name="Ordinal" type="xs:nonNegativeInteger" minOccurs="0"/>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="FieldUsage">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="FieldName" type="xs:string"/>
+				<xs:element name="Mandatory" type="xs:boolean"/>
+				<xs:element ref="Field"/>
+				<xs:choice>
+					<xs:element ref="NthFieldExtractor"/>
+					<xs:element ref="FixedPositionExtractor"/>
+					<xs:element ref="IDFieldExtractor"/>
+				</xs:choice>
+				<xs:element name="DefaultValue" type="xs:string" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="CompositeElements">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="FieldUsage" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="CompositeDefinition">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="CompositeValidator" minOccurs="0" type="ConditionalValidator"/>
+				<xs:element ref="CompositeElements" minOccurs="0" />
+				<xs:element name="CheckFields" type="xs:boolean"/>
+				<xs:element name="AlternateName" type="xs:string" minOccurs="0"/>
+				<xs:element name="Description" type="xs:string" minOccurs="0"/>
+				<xs:element name="IDCode" type="xs:string" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="Composite">
+		<xs:complexType>
+			<xs:choice>
+				<xs:element name="CompositeReference" type="DictionaryReference"/>
+				<xs:element ref="CompositeDefinition"/>
+				<xs:element name="Ordinal" type="xs:nonNegativeInteger"/>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="IDFieldExtractor">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="FieldPosition" type="xs:nonNegativeInteger"/> 
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="NthFieldExtractor">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="FieldPosition" type="xs:nonNegativeInteger"/> 
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="FixedPositionExtractor">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="StartPos" type="xs:nonNegativeInteger"/>
+				<xs:element name="EndPos"> 
+					<xs:simpleType>
+						<xs:union>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:enumeration value="-1"/>
+								</xs:restriction>
+							</xs:simpleType>
+							<xs:simpleType>
+								<xs:restriction base="xs:nonNegativeInteger"/>
+							</xs:simpleType>
+						</xs:union>			
+					</xs:simpleType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="CompositeUsage">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="CompositeName" type="xs:string"/>
+				<xs:element name="Mandatory" type="xs:boolean"/>
+				<xs:element ref="Composite"/>
+				<xs:element name="CompositeExtractor" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="FieldPosition" type="xs:nonNegativeInteger"/> 
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="RecordDefinition">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="RecordValidator" minOccurs="0" type="ConditionalValidator"/>
+				<xs:element name="CheckFields" type="xs:boolean"/>
+				<xs:element name="RecordElement" minOccurs="0" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:choice>
+							<xs:element ref="FieldUsage"/>
+							<xs:element ref="CompositeUsage"/>
+						</xs:choice>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="AlternateName" type="xs:string" minOccurs="0"/>
+				<xs:element name="Description" type="xs:string" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="Record">
+		<xs:complexType>
+			<xs:choice>
+				<xs:element name="RecordReference" type="DictionaryReference"/>
+				<xs:element ref="RecordDefinition"/>
+				<xs:element name="Ordinal" type="xs:nonNegativeInteger"/>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:group name="RecordConstraints">
+		<xs:sequence>
+			<xs:element name="Mandatory" type="xs:boolean"/>
+
+			<xs:element name="MaxOccur">
+				<xs:simpleType>
+					<xs:union>
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:enumeration value="Unlimited"/>
+							</xs:restriction>
+						</xs:simpleType>
+						<xs:simpleType>
+							<xs:restriction base="xs:nonNegativeInteger"/>
+						</xs:simpleType>
+					</xs:union>
+				</xs:simpleType>
+			</xs:element> 
+
+			<xs:element name="AllowUndefinedData" type="xs:boolean"/>
+
+			<xs:element name="Position" minOccurs="0"> 
+				<xs:simpleType>
+					<xs:union>
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:enumeration value="NoPosition"/>
+							</xs:restriction>
+						</xs:simpleType>
+						<xs:simpleType>
+							<xs:restriction base="xs:nonNegativeInteger"/>
+						</xs:simpleType>
+					</xs:union>
+				</xs:simpleType>
+			</xs:element> 
+
+			<xs:element name="AreaId" minOccurs="0" >
+				<xs:simpleType>
+					<xs:union>
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:enumeration value="NoArea"/>
+							</xs:restriction>
+						</xs:simpleType>
+						<xs:simpleType>
+							<xs:restriction base="xs:nonNegativeInteger"/>
+						</xs:simpleType>
+					</xs:union>
+				</xs:simpleType>
+			</xs:element> 
+		</xs:sequence>
+	</xs:group>
+
+
+	<xs:element name="RecordUsage">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="RecordId" type="xs:string"/>
+				<xs:group ref="RecordConstraints"/>
+				<xs:element ref="Record"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:simpleType name="OrderedType" >
+		<xs:restriction base="xs:boolean"/>
+	</xs:simpleType>
+
+	<xs:element name="RecordStructure">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Ordered" type="OrderedType"/>
+				<xs:element ref="RecordUsage"/>
+				<xs:element ref="RecordStructure"  minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="DocumentStructure">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Ordered" type="OrderedType"/>
+				<xs:element ref="RecordStructure" minOccurs="1" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="FixedLengthParser">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="RecordLength" type="xs:positiveInteger"/> 
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:complexType name="EmptyType"/>
+
+	<xs:element name="RecordParser">
+		<xs:complexType>
+			<xs:choice>
+				<xs:element ref="FixedLengthParser"/>
+				<xs:element name="DelimitedParser" type="EmptyType"/> 
+				<xs:element name="VariableLengthParser" type="EmptyType"/>
+				<xs:element name="EDIParser" type="EmptyType"/> 
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="RecordIdentifier">
+		<xs:complexType>
+			<xs:choice>
+				<xs:element name="NthFieldIdentifier">  
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="FieldPosition" type="xs:nonNegativeInteger"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="FixedPositionIdentifier">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="StartPos" type="xs:nonNegativeInteger"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="Delimiters">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="RecordDelimInfo" type="DelimExtractorType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="FieldDelimInfo" type="DelimExtractorType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="CompositeDelimInfo" type="DelimExtractorType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="QuotedEscapeDelimInfo" type="DelimExtractorType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="EscapeDelimInfo" type="DelimExtractorType" minOccurs="0" maxOccurs="1"/>
+				<xs:element ref="FormatInfo" minOccurs="0" maxOccurs="1"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+
+	<xs:element name="FFDictionary">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="RecordDictionaryEntry" minOccurs="0" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="EntryName" type="xs:string"/>
+							<xs:element ref="RecordDefinition"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="CompositeDictionaryEntry" minOccurs="0" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="EntryName" type="xs:string"/>
+							<xs:element ref="CompositeDefinition"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="FieldDictionaryEntry" minOccurs="0" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="EntryName" type="xs:string"/>
+							<xs:element ref="FieldDefinition"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="FFSchema">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Delimiters"/>
+				<xs:element ref="DocumentStructure" minOccurs="0" maxOccurs="1" />
+				<xs:element ref="RecordParser" />
+				<xs:element name="DefaultRecordReference" type="DictionaryReference" minOccurs="0"/>
+				<xs:element ref="RecordIdentifier"/>
+				<xs:element name="UndefinedDataAllowed" type="xs:boolean" minOccurs="0"/>
+				<xs:element name="DocumentAreas" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="FloatingRecord" type="xs:string" minOccurs="0"/>
+				<xs:element name="Description" type="xs:string" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+</xs:schema>
+

@@ -1,0 +1,20 @@
+function FileData_Pairs(x)
+{
+x.t("-2014","software");
+x.t("2007","-2014");
+x.t("user","accounts");
+x.t("darmstadt","germany");
+x.t("file","types");
+x.t("requirements","predefined");
+x.t("software","darmstadt");
+x.t("types","password");
+x.t("reference","information");
+x.t("groups","2007");
+x.t("information","reference");
+x.t("information","log");
+x.t("predefined","user");
+x.t("predefined","groups");
+x.t("password","requirements");
+x.t("accounts","predefined");
+x.t("log","file");
+}

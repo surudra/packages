@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2000/10/XMLSchema" elementFormDefault="qualified">
+   <xsd:element name="BusinessDescription" type="BusinessDescription"/>
+   <xsd:complexType name="BusinessDescription">
+      <xsd:sequence>
+         <xsd:element ref="GlobalBusinessIdentifier"/>
+         <xsd:element ref="GlobalSupplyChainCode"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:element name="DateStamp" type="xsd:string"/>
+   <xsd:element name="DateTimeStamp" type="xsd:string"/>
+   <xsd:element name="FinancialAmount" type="FinancialAmount"/>
+   <xsd:complexType name="FinancialAmount">
+      <xsd:sequence>
+         <xsd:element ref="GlobalCurrencyCode"/>
+         <xsd:element ref="MonetaryAmount"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:element name="FreeFormText" type="xsd:string"/>
+   <xsd:element name="GlobalBusinessIdentifier" type="xsd:string"/>
+   <xsd:element name="GlobalCurrencyCode" type="xsd:string"/>
+   <xsd:element name="GlobalDocumentFunctionCode" type="xsd:string"/>
+   <xsd:element name="GlobalPartnerClassificationCode" type="xsd:string"/>
+   <xsd:element name="DUNS" type="xsd:string"/>
+   <xsd:element name="GlobalPartnerRoleClassificationCode" type="xsd:string"/>
+   <xsd:element name="GlobalPurchaseOrderAcknowledgementReasonCode" type="xsd:string"/>
+   <xsd:element name="GlobalPurchaseOrderStatusCode" type="xsd:string"/>
+   <xsd:element name="GlobalShipmentTermsCode" type="xsd:string"/>
+   <xsd:element name="GlobalShippingServiceLevelCode" type="xsd:string"/>
+   <xsd:element name="GlobalSupplyChainCode" type="xsd:string"/>
+   <xsd:element name="LineNumber" type="xsd:string"/>
+   <xsd:element name="MonetaryAmount" type="xsd:string"/>
+   <xsd:element name="NationalPostalCode" type="xsd:string"/>
+   <xsd:element name="PartnerDescription" type="PartnerDescription"/>
+   <xsd:complexType name="PartnerDescription">
+      <xsd:sequence>
+         <xsd:element ref="GlobalPartnerClassificationCode"/>
+         <xsd:element ref="BusinessDescription"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:element name="PartnerRoleDescription" type="PartnerRoleDescription"/>
+   <xsd:complexType name="PartnerRoleDescription">
+      <xsd:sequence>
+         <xsd:element ref="GlobalPartnerRoleClassificationCode"/>
+         <xsd:element ref="DUNS" minOccurs="0"/>
+         <xsd:element ref="PartnerDescription" minOccurs="0"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:element name="PhysicalAddress" type="PhysicalAddress"/>
+   <xsd:complexType name="PhysicalAddress">
+      <xsd:sequence>
+         <xsd:element ref="cityName"/>
+         <xsd:element ref="addressLine1"/>
+         <xsd:element ref="addressLine2"/>
+         <xsd:element ref="addressLine3"/>
+         <xsd:element ref="NationalPostalCode"/>
+         <xsd:element ref="regionName"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:element name="ProductIdentification" type="xsd:string"/>
+   <xsd:element name="totalCost" type="xsd:string"/>
+   <xsd:element name="ProductLineItem" type="ProductLineItem"/>
+   <xsd:complexType name="ProductLineItem">
+      <xsd:sequence>
+         <xsd:element ref="ProductQuantity"/>
+         <xsd:element ref="scheduledShipQuantity"/>
+         <xsd:element ref="productUnit"/>
+         <xsd:element ref="GlobalShippingServiceLevelCode"/>
+         <xsd:element ref="scheduledShipDate"/>
+         <xsd:element ref="GlobalPurchaseOrderStatusCode"/>
+         <xsd:element ref="GlobalPurchaseOrderAcknowledgementReasonCode"/>
+         <xsd:element ref="LineNumber"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:element name="ProductPackageDescription" type="ProductPackageDescription"/>
+   <xsd:complexType name="ProductPackageDescription">
+      <xsd:sequence>
+         <xsd:element ref="unitPrice"/>
+         <xsd:element ref="ProductIdentification"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:element name="ProductQuantity" type="xsd:string"/>
+   <xsd:element name="ProprietaryDocumentIdentifier" type="xsd:string"/>
+   <xsd:element name="PurchaseOrder" type="PurchaseOrder"/>
+   <xsd:complexType name="PurchaseOrder">
+      <xsd:sequence>
+         <xsd:element ref="deliverTo"/>
+         <xsd:element ref="GlobalPurchaseOrderStatusCode"/>
+         <xsd:element ref="GlobalShipmentTermsCode"/>
+         <xsd:element ref="RevisionNumber"/>
+         <xsd:element ref="GlobalPurchaseOrderAcknowledgementReasonCode"/>
+         <xsd:element ref="purchaseOrderDate"/>
+         <xsd:element ref="totalCost"/>
+         <xsd:element ref="ProductLineItem" maxOccurs="unbounded"/>
+         <xsd:element ref="salesOrderIdentifier"/>
+         <xsd:element ref="purchaseOrderNumber"/>
+         <xsd:element ref="comment"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:element name="PurchaseOrderAcceptance" type="PurchaseOrderAcceptance"/>
+   <xsd:complexType name="PurchaseOrderAcceptance">
+      <xsd:sequence>
+         <xsd:element ref="PurchaseOrder"/>
+         <xsd:element ref="fromRole"/>
+         <xsd:element ref="toRole"/>
+         <xsd:element ref="thisDocumentGenerationDateTime"/>
+         <xsd:element ref="thisDocumentIdentifier"/>
+         <xsd:element ref="requestingDocumentIdentifier"/>
+         <xsd:element ref="GlobalDocumentFunctionCode"/>
+         <xsd:element ref="requestingDocumentDateTime"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:element name="RevisionNumber" type="xsd:string"/>
+   <xsd:element name="addressLine1" type="addressLine1"/>
+   <xsd:complexType name="addressLine1">
+      <xsd:sequence>
+         <xsd:element ref="FreeFormText"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:element name="addressLine2" type="addressLine2"/>
+   <xsd:complexType name="addressLine2">
+      <xsd:sequence>
+         <xsd:element ref="FreeFormText"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:element name="addressLine3" type="addressLine3"/>
+   <xsd:complexType name="addressLine3">
+      <xsd:sequence>
+         <xsd:element ref="FreeFormText"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:element name="cityName" type="cityName"/>
+   <xsd:complexType name="cityName">
+      <xsd:sequence>
+         <xsd:element ref="FreeFormText"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:element name="comment" type="comment"/>
+   <xsd:complexType name="comment">
+      <xsd:sequence>
+         <xsd:element ref="FreeFormText"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:element name="deliverTo" type="deliverTo"/>
+   <xsd:complexType name="deliverTo">
+      <xsd:sequence>
+         <xsd:element ref="PhysicalAddress"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:element name="fromRole" type="fromRole"/>
+   <xsd:complexType name="fromRole">
+      <xsd:sequence>
+         <xsd:element ref="PartnerRoleDescription"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:element name="productUnit" type="productUnit"/>
+   <xsd:complexType name="productUnit">
+      <xsd:sequence>
+         <xsd:element ref="ProductPackageDescription"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:element name="purchaseOrderDate" type="purchaseOrderDate"/>
+   <xsd:complexType name="purchaseOrderDate">
+      <xsd:sequence>
+         <xsd:element ref="DateStamp"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:element name="purchaseOrderNumber" type="purchaseOrderNumber"/>
+   <xsd:complexType name="purchaseOrderNumber">
+      <xsd:sequence>
+         <xsd:element ref="ProprietaryDocumentIdentifier"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:element name="regionName" type="regionName"/>
+   <xsd:complexType name="regionName">
+      <xsd:sequence>
+         <xsd:element ref="FreeFormText"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:element name="requestingDocumentDateTime" type="requestDocumentDateTime"/>
+   <xsd:complexType name="requestDocumentDateTime">
+      <xsd:sequence>
+         <xsd:element ref="DateTimeStamp"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:element name="requestingDocumentIdentifier" type="requestingDocumentIdentifier"/>
+   <xsd:complexType name="requestingDocumentIdentifier">
+      <xsd:sequence>
+         <xsd:element ref="ProprietaryDocumentIdentifier"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:element name="salesOrderIdentifier" type="salesOrderIdentifier"/>
+   <xsd:complexType name="salesOrderIdentifier">
+      <xsd:sequence>
+         <xsd:element ref="ProprietaryDocumentIdentifier"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:element name="scheduledShipDate" type="scheduledShipDate"/>
+   <xsd:complexType name="scheduledShipDate">
+      <xsd:sequence>
+         <xsd:element ref="DateStamp"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:element name="scheduledShipQuantity" type="scheduledShipQuantity"/>
+   <xsd:complexType name="scheduledShipQuantity">
+      <xsd:sequence>
+         <xsd:element ref="ProductQuantity"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:element name="thisDocumentGenerationDateTime" type="thisDocumentGenerationDateTime"/>
+   <xsd:complexType name="thisDocumentGenerationDateTime">
+      <xsd:sequence>
+         <xsd:element ref="DateTimeStamp"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:element name="thisDocumentIdentifier" type="thisDocumentIdentifier"/>
+   <xsd:complexType name="thisDocumentIdentifier">
+      <xsd:sequence>
+         <xsd:element ref="ProprietaryDocumentIdentifier"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:element name="toRole" type="toRole"/>
+   <xsd:complexType name="toRole">
+      <xsd:sequence>
+         <xsd:element ref="PartnerRoleDescription"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:element name="unitPrice" type="unitPrice"/>
+   <xsd:complexType name="unitPrice">
+      <xsd:sequence>
+         <xsd:element ref="FinancialAmount"/>
+      </xsd:sequence>
+   </xsd:complexType>
+</xsd:schema>

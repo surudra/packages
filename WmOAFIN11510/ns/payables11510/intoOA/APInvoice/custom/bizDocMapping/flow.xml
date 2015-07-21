@@ -1,0 +1,2875 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<FLOW VERSION="3.0" CLEANUP="true">
+  <COMMENT>OVER AP_INVOICE</COMMENT>
+
+  <!-- nodes -->
+
+<LOOP TIMEOUT="" IN-ARRAY="/APInvoiceBizDoc/AP_INVOICE" OUT-ARRAY="/outArrayHeader">
+  <COMMENT>OVER AP_INVOICE</COMMENT>
+
+  <!-- nodes -->
+
+<MAP TIMEOUT="" MODE="STANDALONE">
+  <COMMENT>Map APInvoiceBizDoc to outArrayHeader</COMMENT>
+  <MAPTARGET>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="nillable">true</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="field_name">APInvoiceBizDoc</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="rec_ref">payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">$dbAlias</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">GROUP_ID</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">outArrayHeader</value>
+        <value name="field_type">record</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <array name="rec_fields" type="record" depth="1">
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">INVOICE_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">INVOICE_NUM</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">INVOICE_TYPE_LOOKUP_CODE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">INVOICE_DATE</value>
+            <value name="field_type">object</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">PO_NUMBER</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">VENDOR_NUM</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">VENDOR_NAME</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">VENDOR_SITE_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">INVOICE_AMOUNT</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">INVOICE_CURRENCY_CODE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">EXCHANGE_RATE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">EXCHANGE_RATE_TYPE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">EXCHANGE_DATE</value>
+            <value name="field_type">object</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">TERMS_NAME</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">DESCRIPTION</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">AWT_GROUP_NAME</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">SOURCE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">GROUP_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">PAYMENT_CROSS_RATE_TYPE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">PAYMENT_CROSS_RATE_DATE</value>
+            <value name="field_type">object</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">PAYMENT_CROSS_RATE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">PAYMENT_CURRENCY_CODE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">WORKFLOW_FLAG</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">DOC_CATEGORY_CODE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">VOUCHER_NUM</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">PAYMENT_METHOD_LOOKUP_CODE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">PAY_GROUP_LOOKUP_CODE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">GOODS_RECEIVED_DATE</value>
+            <value name="field_type">object</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">INVOICE_RECEIVED_DATE</value>
+            <value name="field_type">object</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">GL_DATE</value>
+            <value name="field_type">object</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">ACCTS_PAY_CODE_COMBINATION_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">USSGL_TRANSACTION_CODE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">EXCLUSIVE_PAYMENT_FLAG</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">ORG_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">AMOUNT_APPLICABLE_TO_DISCOUNT</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">PREPAY_NUM</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">PREPAY_APPLY_AMOUNT</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">PREPAY_GL_DATE</value>
+            <value name="field_type">object</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+        </array>
+      </record>
+    </array>
+  </record>
+</Values>
+</MAPTARGET>
+  <MAPSOURCE>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="nillable">true</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="field_name">APInvoiceBizDoc</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="rec_ref">payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">$dbAlias</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">GROUP_ID</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">$iteration</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+    </array>
+  </record>
+</Values>
+</MAPSOURCE>
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc(0);4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;1/INVOICE_TYPE_LOOKUP_CODE;1;0" TO="/outArrayHeader;2;0/INVOICE_TYPE_LOOKUP_CODE;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/GROUP_ID;1;0" TO="/outArrayHeader;2;0/GROUP_ID;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/INVOICE_DATE;1;0" TO="/outArrayHeader;2;0/INVOICE_DATE(1);3;0">
+</MAPCOPY>
+
+<MAPINVOKE SERVICE="commonOA11510.custom:convertToDateObject" VALIDATE-IN="$none" VALIDATE-OUT="$none" INVOKE-ORDER="0">
+
+  <!-- nodes -->
+
+<MAP MODE="INVOKEINPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/GL_DATE;1;0" TO="/inDate;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="INVOKEOUTPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/outDate;3;0" TO="/outArrayHeader;2;0/GL_DATE;3;0">
+</MAPCOPY>
+</MAP>
+</MAPINVOKE>
+
+<MAPINVOKE SERVICE="payables11510.intoOA.APInvoice.utils:convertWorkFlow" VALIDATE-IN="$none" VALIDATE-OUT="$none" INVOKE-ORDER="0">
+
+  <!-- nodes -->
+
+<MAP MODE="INVOKEINPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/WORKFLOW;1;0" TO="/workFlowText;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="INVOKEOUTPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/ConvertedString;1;0" TO="/outArrayHeader;2;0/WORKFLOW_FLAG;1;0">
+</MAPCOPY>
+</MAP>
+</MAPINVOKE>
+
+<MAPINVOKE SERVICE="commonOA11510.utils:getOrgId_tf" VALIDATE-IN="$none" VALIDATE-OUT="$none" INVOKE-ORDER="0">
+
+  <!-- nodes -->
+
+<MAP MODE="INVOKEINPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/ORGANIZATION_NAME;1;0" TO="/queryParams;2;0/ORGANIZATION_NAME;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/$dbAlias;1;0" TO="/$dbAlias;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="INVOKEOUTPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/ORGANIZATION_ID;1;0" TO="/outArrayHeader;2;0/ORG_ID;1;0">
+</MAPCOPY>
+</MAP>
+</MAPINVOKE>
+
+<MAPINVOKE SERVICE="commonOA11510.utils:getCodeCombinationId_tf" VALIDATE-IN="$none" VALIDATE-OUT="$none" INVOKE-ORDER="0">
+
+  <!-- nodes -->
+
+<MAP MODE="INVOKEINPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/LIABILITY_ACCOUNT;1;0" TO="/queryParams;2;0/CONCATENATED_SEGMENTS;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/$dbAlias;1;0" TO="/$dbAlias;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="INVOKEOUTPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/CODE_COMBINATION_ID;1;0" TO="/outArrayHeader;2;0/ACCTS_PAY_CODE_COMBINATION_ID;1;0">
+</MAPCOPY>
+</MAP>
+</MAPINVOKE>
+
+<MAPINVOKE SERVICE="commonOA11510.utils:getVendorSiteId_tf" VALIDATE-IN="$none" VALIDATE-OUT="$none" INVOKE-ORDER="0">
+
+  <!-- nodes -->
+
+<MAP MODE="INVOKEINPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/ADDRESS_LINE1;1;0" TO="/queryParams;2;0/ADDRESS_LINE1;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/ADDRESS_LINE2;1;0" TO="/queryParams;2;0/ADDRESS_LINE2;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/ADDRESS_LINE3;1;0" TO="/queryParams;2;0/ADDRESS_LINE3;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/CITY;1;0" TO="/queryParams;2;0/CITY;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/STATE;1;0" TO="/queryParams;2;0/STATE;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/ZIP;1;0" TO="/queryParams;2;0/ZIP;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/COUNTRY;1;0" TO="/queryParams;2;0/COUNTRY;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/$dbAlias;1;0" TO="/$dbAlias;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/VENDOR_NAME;1;0" TO="/queryParams;2;0/VENDOR_NAME;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/ORGANIZATION_NAME;1;0" TO="/queryParams;2;0/ORGANIZATION_NAME;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="INVOKEOUTPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/VENDOR_SITE_ID;1;0" TO="/outArrayHeader;2;0/VENDOR_SITE_ID;1;0">
+</MAPCOPY>
+</MAP>
+</MAPINVOKE>
+
+<MAPINVOKE SERVICE="commonOA11510.custom:convertToDateObject" VALIDATE-IN="$none" VALIDATE-OUT="$none" INVOKE-ORDER="0">
+
+  <!-- nodes -->
+
+<MAP MODE="INVOKEINPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/INVOICE_DATE;1;0" TO="/inDate;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="INVOKEOUTPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/outDate;3;0" TO="/outArrayHeader;2;0/INVOICE_DATE;3;0">
+</MAPCOPY>
+</MAP>
+</MAPINVOKE>
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/SOURCE;1;0" TO="/outArrayHeader;2;0/SOURCE;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/INVOICE_AMOUNT;1;0" TO="/outArrayHeader;2;0/INVOICE_AMOUNT;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/INVOICE_CURRENCY_CODE;1;0" TO="/outArrayHeader;2;0/INVOICE_CURRENCY_CODE;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/EXCHANGE_RATE;1;0" TO="/outArrayHeader;2;0/EXCHANGE_RATE;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/EXCHANGE_RATE_TYPE;1;0" TO="/outArrayHeader;2;0/EXCHANGE_RATE_TYPE;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/TERMS_NAME;1;0" TO="/outArrayHeader;2;0/TERMS_NAME;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/DESCRIPTION;1;0" TO="/outArrayHeader;2;0/DESCRIPTION;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/AWT_GROUP_NAME;1;0" TO="/outArrayHeader;2;0/AWT_GROUP_NAME;1;0">
+</MAPCOPY>
+
+<MAPINVOKE SERVICE="commonOA11510.custom:convertToDateObject" VALIDATE-IN="$none" VALIDATE-OUT="$none" INVOKE-ORDER="0">
+
+  <!-- nodes -->
+
+<MAP MODE="INVOKEINPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/EXCHANGE_DATE;1;0" TO="/inDate;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="INVOKEOUTPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/outDate;3;0" TO="/outArrayHeader;2;0/EXCHANGE_DATE;3;0">
+</MAPCOPY>
+</MAP>
+</MAPINVOKE>
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/PAYMENT_CROSS_RATE_TYPE;1;0" TO="/outArrayHeader;2;0/PAYMENT_CROSS_RATE_TYPE;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/PAYMENT_CROSS_RATE;1;0" TO="/outArrayHeader;2;0/PAYMENT_CROSS_RATE;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/PAYMENT_CURRENCY_CODE;1;0" TO="/outArrayHeader;2;0/PAYMENT_CURRENCY_CODE;1;0">
+</MAPCOPY>
+
+<MAPINVOKE SERVICE="commonOA11510.custom:convertToDateObject" VALIDATE-IN="$none" VALIDATE-OUT="$none" INVOKE-ORDER="0">
+
+  <!-- nodes -->
+
+<MAP MODE="INVOKEINPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/PAYMENT_CROSS_RATE_DATE;1;0" TO="/inDate;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="INVOKEOUTPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/outDate;3;0" TO="/outArrayHeader;2;0/PAYMENT_CROSS_RATE_DATE;3;0">
+</MAPCOPY>
+</MAP>
+</MAPINVOKE>
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/DOC_CATEGORY_CODE;1;0" TO="/outArrayHeader;2;0/DOC_CATEGORY_CODE;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/VOUCHER_NUM;1;0" TO="/outArrayHeader;2;0/VOUCHER_NUM;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/PAYMENT_METHOD_LOOKUP_CODE;1;0" TO="/outArrayHeader;2;0/PAYMENT_METHOD_LOOKUP_CODE;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/PAY_GROUP_LOOKUP_CODE;1;0" TO="/outArrayHeader;2;0/PAY_GROUP_LOOKUP_CODE;1;0">
+</MAPCOPY>
+
+<MAPINVOKE SERVICE="commonOA11510.custom:convertToDateObject" VALIDATE-IN="$none" VALIDATE-OUT="$none" INVOKE-ORDER="0">
+
+  <!-- nodes -->
+
+<MAP MODE="INVOKEINPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/GOODS_RECEIVED_DATE;1;0" TO="/inDate;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="INVOKEOUTPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/outDate;3;0" TO="/outArrayHeader;2;0/GOODS_RECEIVED_DATE;3;0">
+</MAPCOPY>
+</MAP>
+</MAPINVOKE>
+
+<MAPINVOKE SERVICE="commonOA11510.custom:convertToDateObject" VALIDATE-IN="$none" VALIDATE-OUT="$none" INVOKE-ORDER="0">
+
+  <!-- nodes -->
+
+<MAP MODE="INVOKEINPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/INVOICE_RECEIVED_DATE;1;0" TO="/inDate;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="INVOKEOUTPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/outDate;3;0" TO="/outArrayHeader;2;0/INVOICE_RECEIVED_DATE;3;0">
+</MAPCOPY>
+</MAP>
+</MAPINVOKE>
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/USSGL_TRANSACTION_CODE;1;0" TO="/outArrayHeader;2;0/USSGL_TRANSACTION_CODE;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/EXCLUSIVE_PAYMENT_FLAG;1;0" TO="/outArrayHeader;2;0/EXCLUSIVE_PAYMENT_FLAG;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/AMOUNT_APPLICABLE_TO_DISCOUNT;1;0" TO="/outArrayHeader;2;0/AMOUNT_APPLICABLE_TO_DISCOUNT;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/PREPAY_INVOICE_NUM;1;0" TO="/outArrayHeader;2;0/PREPAY_NUM;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/PREPAY_APPLY_AMOUNT;1;0" TO="/outArrayHeader;2;0/PREPAY_APPLY_AMOUNT;1;0">
+</MAPCOPY>
+
+<MAPINVOKE SERVICE="commonOA11510.custom:convertToDateObject" VALIDATE-IN="$none" VALIDATE-OUT="$none" INVOKE-ORDER="0">
+
+  <!-- nodes -->
+
+<MAP MODE="INVOKEINPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/PREPAY_GL_DATE;1;0" TO="/inDate;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="INVOKEOUTPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/outDate;3;0" TO="/outArrayHeader;2;0/PREPAY_GL_DATE;3;0">
+</MAPCOPY>
+</MAP>
+</MAPINVOKE>
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/VENDOR_NAME;1;0" TO="/outArrayHeader;2;0/VENDOR_NAME;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/VENDOR_NUMBER;1;0" TO="/outArrayHeader;2;0/VENDOR_NUM;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/PO_NUMBER;1;0" TO="/outArrayHeader;2;0/PO_NUMBER;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/INVOICE_NUM;1;0" TO="/outArrayHeader;2;0/INVOICE_NUM;1;0">
+</MAPCOPY>
+
+<MAPINVOKE SERVICE="commonOA11510.utils:pickSequence" VALIDATE-IN="$none" VALIDATE-OUT="$none" INVOKE-ORDER="0">
+
+  <!-- nodes -->
+
+<MAP MODE="INVOKEINPUT">
+
+  <!-- nodes -->
+
+<MAPSET NAME="Setter" OVERWRITE="true" VARIABLES="false" FIELD="/pickSequenceInput;2;0">
+  <DATA ENCODING="XMLValues" I18N="true">
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="P_SEQUENCE_NAME">AP_INVOICES_INTERFACE_S</value>
+  </record>
+  <record name="type" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_name">pickSequenceInput</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="nillable">true</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">P_SEQUENCE_NAME</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+    </array>
+  </record>
+</Values>
+</DATA>
+</MAPSET>
+</MAP>
+
+<MAP MODE="INVOKEOUTPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/pickSequenceOutput;2;0/results;2;0/O_SEQUENCE_VALUE;1;0" TO="/outArrayHeader;2;0/INVOICE_ID;1;0">
+</MAPCOPY>
+</MAP>
+</MAPINVOKE>
+</MAP>
+
+<LOOP TIMEOUT="" IN-ARRAY="/APInvoiceBizDoc/AP_INVOICE/AP_INVOICE_LINES" OUT-ARRAY="/outArrayLines">
+  <COMMENT>OVER AP_INVOICE_LINES</COMMENT>
+
+  <!-- nodes -->
+
+<MAP TIMEOUT="" MODE="STANDALONE">
+  <COMMENT>Map APInvoiceBizDoc to outArrayLines</COMMENT>
+  <MAPTARGET>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="nillable">true</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="field_name">APInvoiceBizDoc</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="rec_ref">payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">$dbAlias</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">GROUP_ID</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">outArrayHeader</value>
+        <value name="field_type">record</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <array name="rec_fields" type="record" depth="1">
+        </array>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">outArrayLines</value>
+        <value name="field_type">record</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <array name="rec_fields" type="record" depth="1">
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">INVOICE_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">INVOICE_LINE_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">LINE_NUMBER</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">LINE_TYPE_LOOKUP_CODE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">LINE_GROUP_NUMBER</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">AMOUNT</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">ACCOUNTING_DATE</value>
+            <value name="field_type">object</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">DESCRIPTION</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">AMOUNT_INCLUDES_TAX_FLAG</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">PRORATE_ACROSS_FLAG</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">TAX_CODE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">FINAL_MATCH_FLAG</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">PO_NUMBER</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">PO_LINE_NUMBER</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">PO_SHIPMENT_NUM</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">PO_DISTRIBUTION_NUM</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">ITEM_DESCRIPTION</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">QUANTITY_INVOICED</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">SHIP_TO_LOCATION_CODE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">UNIT_PRICE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">DISTRIBUTION_SET_NAME</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">DIST_CODE_CONCATENATED</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">AWT_GROUP_NAME</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">RELEASE_NUM</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">ACCOUNT_SEGMENT</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">BALANCING_SEGMENT</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">COST_CENTER_SEGMENT</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">PROJECT_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">TASK_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">EXPENDITURE_TYPE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">EXPENDITURE_ITEM_DATE</value>
+            <value name="field_type">object</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">EXPENDITURE_ORGANIZATION_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">PROJECT_ACCOUNTING_CONTEXT</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">PA_ADDITION_FLAG</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">PA_QUANTITY</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">USSGL_TRANSACTION_CODE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">STAT_AMOUNT</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">TYPE_1099</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">INCOME_TAX_REGION</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">ORG_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">RECEIPT_NUMBER</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">RECEIPT_LINE_NUMBER</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">MATCH_OPTION</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">PACKING_SLIP</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">PA_CC_AR_INVOICE_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">PA_CC_AR_INVOICE_LINE_NUM</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">REFERENCE_1</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">REFERENCE_2</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">TAX_RECOVERY_RATE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">TAX_RECOVERY_OVERRIDE_FLAG</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">TAX_RECOVERABLE_FLAG</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">TAX_CODE_OVERRIDE_FLAG</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">CREDIT_CARD_TRX_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">AWARD_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">PRICE_CORRECT_INV_NUM</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+        </array>
+      </record>
+    </array>
+  </record>
+</Values>
+</MAPTARGET>
+  <MAPSOURCE>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="nillable">true</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="field_name">APInvoiceBizDoc</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="rec_ref">payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">$dbAlias</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">GROUP_ID</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">outArrayHeader</value>
+        <value name="field_type">record</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <array name="rec_fields" type="record" depth="1">
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">INVOICE_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">INVOICE_NUM</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">INVOICE_TYPE_LOOKUP_CODE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">INVOICE_DATE</value>
+            <value name="field_type">object</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">PO_NUMBER</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">VENDOR_NUM</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">VENDOR_NAME</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">VENDOR_SITE_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">INVOICE_AMOUNT</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">INVOICE_CURRENCY_CODE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">EXCHANGE_RATE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">EXCHANGE_RATE_TYPE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">EXCHANGE_DATE</value>
+            <value name="field_type">object</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">TERMS_NAME</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">DESCRIPTION</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">AWT_GROUP_NAME</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">SOURCE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">GROUP_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">PAYMENT_CROSS_RATE_TYPE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">PAYMENT_CROSS_RATE_DATE</value>
+            <value name="field_type">object</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">PAYMENT_CROSS_RATE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">PAYMENT_CURRENCY_CODE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">WORKFLOW_FLAG</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">DOC_CATEGORY_CODE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">VOUCHER_NUM</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">PAYMENT_METHOD_LOOKUP_CODE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">PAY_GROUP_LOOKUP_CODE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">GOODS_RECEIVED_DATE</value>
+            <value name="field_type">object</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">INVOICE_RECEIVED_DATE</value>
+            <value name="field_type">object</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">GL_DATE</value>
+            <value name="field_type">object</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">ACCTS_PAY_CODE_COMBINATION_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">USSGL_TRANSACTION_CODE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">EXCLUSIVE_PAYMENT_FLAG</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">ORG_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">AMOUNT_APPLICABLE_TO_DISCOUNT</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">PREPAY_NUM</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">PREPAY_APPLY_AMOUNT</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">PREPAY_GL_DATE</value>
+            <value name="field_type">object</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+        </array>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">$iteration</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+    </array>
+  </record>
+</Values>
+</MAPSOURCE>
+
+  <!-- nodes -->
+
+<MAPINVOKE SERVICE="commonOA11510.utils:getProjectAndTaskId_tf" VALIDATE-IN="$none" VALIDATE-OUT="$none" INVOKE-ORDER="0">
+
+  <!-- nodes -->
+
+<MAP MODE="INVOKEINPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/$dbAlias;1;0" TO="/$dbAlias;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/AP_INVOICE_LINES;2;0/TASK;1;0" TO="/queryParams;2;0/TASK_NAME;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/AP_INVOICE_LINES;2;0/PROJECT_NAME;1;0" TO="/queryParams;2;0/PROJECT_NAME;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="INVOKEOUTPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/TASK_ID;1;0" TO="/outArrayLines;2;0/TASK_ID;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/PROJECT_ID;1;0" TO="/outArrayLines;2;0/PROJECT_ID;1;0">
+</MAPCOPY>
+</MAP>
+</MAPINVOKE>
+
+<MAPCOPY NAME="Link" FROM="/outArrayHeader;2;0/INVOICE_ID;1;0" TO="/outArrayLines;2;0/INVOICE_ID;1;0">
+</MAPCOPY>
+
+<MAPINVOKE SERVICE="commonOA11510.custom:convertToDateObject" VALIDATE-IN="$none" VALIDATE-OUT="$none" INVOKE-ORDER="0">
+
+  <!-- nodes -->
+
+<MAP MODE="INVOKEINPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/AP_INVOICE_LINES;2;0/EXPENDITURE_ITEM_DATE;1;0" TO="/inDate;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="INVOKEOUTPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/outDate;3;0" TO="/outArrayLines;2;0/EXPENDITURE_ITEM_DATE;3;0">
+</MAPCOPY>
+</MAP>
+</MAPINVOKE>
+
+<MAPINVOKE SERVICE="commonOA11510.custom:convertToDateObject" VALIDATE-IN="$none" VALIDATE-OUT="$none" INVOKE-ORDER="0">
+
+  <!-- nodes -->
+
+<MAP MODE="INVOKEINPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/AP_INVOICE_LINES;2;0/ACCOUNTING_DATE;1;0" TO="/inDate;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="INVOKEOUTPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/outDate;3;0" TO="/outArrayLines;2;0/ACCOUNTING_DATE;3;0">
+</MAPCOPY>
+</MAP>
+</MAPINVOKE>
+
+<MAPINVOKE SERVICE="payables11510.intoOA.APInvoice.utils:getLineTypeLookUpCode_tf" VALIDATE-IN="$none" VALIDATE-OUT="$none" INVOKE-ORDER="0">
+
+  <!-- nodes -->
+
+<MAP MODE="INVOKEINPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/AP_INVOICE_LINES;2;0/LINE_TYPE;1;0" TO="/queryParams;2;0/LINE_TYPE;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/$dbAlias;1;0" TO="/$dbAlias;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="INVOKEOUTPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/LOOKUP_CODE;1;0" TO="/outArrayLines;2;0/LINE_TYPE_LOOKUP_CODE;1;0">
+</MAPCOPY>
+</MAP>
+</MAPINVOKE>
+
+<MAPINVOKE SERVICE="commonOA11510.utils:getOrgId_tf" VALIDATE-IN="$none" VALIDATE-OUT="$none" INVOKE-ORDER="0">
+
+  <!-- nodes -->
+
+<MAP MODE="INVOKEINPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/AP_INVOICE_LINES;2;0/ORGANIZATION_NAME;1;0" TO="/queryParams;2;0/ORGANIZATION_NAME;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/$dbAlias;1;0" TO="/$dbAlias;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="INVOKEOUTPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/ORGANIZATION_ID;1;0" TO="/outArrayLines;2;0/ORG_ID;1;0">
+</MAPCOPY>
+</MAP>
+</MAPINVOKE>
+
+<MAPINVOKE SERVICE="payables11510.intoOA.APInvoice.utils:getPACCInvoiceId" VALIDATE-IN="$none" VALIDATE-OUT="$none" INVOKE-ORDER="0">
+
+  <!-- nodes -->
+
+<MAP MODE="INVOKEINPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/AP_INVOICE_LINES;2;0/ORGANIZATION_NAME;1;0" TO="/ORG_NAME;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/AP_INVOICE_LINES;2;0/PA_CC_AR_INVOICE_NUMBER;1;0" TO="/TRX_NUMBER;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/$dbAlias;1;0" TO="/$dbAlias;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="INVOKEOUTPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/PA_CC_INVOICE_ID;1;0" TO="/outArrayLines;2;0/PA_CC_AR_INVOICE_ID;1;0">
+</MAPCOPY>
+</MAP>
+</MAPINVOKE>
+
+<MAPINVOKE SERVICE="commonOA11510.utils:getOrgId_tf" VALIDATE-IN="$none" VALIDATE-OUT="$none" INVOKE-ORDER="0">
+
+  <!-- nodes -->
+
+<MAP MODE="INVOKEINPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/AP_INVOICE_LINES;2;0/EXPENDITURE_ORGANIZATION_NAME;1;0" TO="/queryParams;2;0/ORGANIZATION_NAME;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/$dbAlias;1;0" TO="/$dbAlias;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="INVOKEOUTPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/ORGANIZATION_ID;1;0" TO="/outArrayLines;2;0/EXPENDITURE_ORGANIZATION_ID;1;0">
+</MAPCOPY>
+</MAP>
+</MAPINVOKE>
+
+<MAPINVOKE SERVICE="commonOA11510.utils:getAwardId_tf" VALIDATE-IN="$none" VALIDATE-OUT="$none" INVOKE-ORDER="0">
+
+  <!-- nodes -->
+
+<MAP MODE="INVOKEINPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/AP_INVOICE_LINES;2;0/AWARD_FULL_NAME;1;0" TO="/queryParams;2;0/AWARD_FULL_NAME;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/$dbAlias;1;0" TO="/$dbAlias;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="INVOKEOUTPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/AWARD_ID;1;0" TO="/outArrayLines;2;0/AWARD_ID;1;0">
+</MAPCOPY>
+</MAP>
+</MAPINVOKE>
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/AP_INVOICE_LINES;2;0/DISTRIBUTION_LINE_NUMBER;1;0" TO="/outArrayLines;2;0/LINE_NUMBER;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/AP_INVOICE_LINES;2;0/LINE_GROUP_NUMBER;1;0" TO="/outArrayLines;2;0/LINE_GROUP_NUMBER;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/AP_INVOICE_LINES;2;0/AMOUNT;1;0" TO="/outArrayLines;2;0/AMOUNT;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/AP_INVOICE_LINES;2;0/DESCRIPTION;1;0" TO="/outArrayLines;2;0/DESCRIPTION;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/AP_INVOICE_LINES;2;0/AMOUNT_INCLUDES_TAX;1;0" TO="/outArrayLines;2;0/AMOUNT_INCLUDES_TAX_FLAG;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/AP_INVOICE_LINES;2;0/PRORATE_ACCROSS_FLAG;1;0" TO="/outArrayLines;2;0/PRORATE_ACROSS_FLAG;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/AP_INVOICE_LINES;2;0/TAX_CODE;1;0" TO="/outArrayLines;2;0/TAX_CODE;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/AP_INVOICE_LINES;2;0/FINAL_MATCH;1;0" TO="/outArrayLines;2;0/FINAL_MATCH_FLAG;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/AP_INVOICE_LINES;2;0/PO_NUMBER;1;0" TO="/outArrayLines;2;0/PO_NUMBER;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/AP_INVOICE_LINES;2;0/PO_LINE_NUMBER;1;0" TO="/outArrayLines;2;0/PO_LINE_NUMBER;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/AP_INVOICE_LINES;2;0/SHIPMENT_NUM;1;0" TO="/outArrayLines;2;0/PO_SHIPMENT_NUM;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/AP_INVOICE_LINES;2;0/DISTRIBUTION_NUM;1;0" TO="/outArrayLines;2;0/PO_DISTRIBUTION_NUM;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/AP_INVOICE_LINES;2;0/ITEM_DESCRIPTION;1;0" TO="/outArrayLines;2;0/ITEM_DESCRIPTION;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/AP_INVOICE_LINES;2;0/QUANTITY_INVOICED;1;0" TO="/outArrayLines;2;0/QUANTITY_INVOICED;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/AP_INVOICE_LINES;2;0/UNIT_PRICE;1;0" TO="/outArrayLines;2;0/UNIT_PRICE;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/AP_INVOICE_LINES;2;0/DISTRIBUTION_SET_NAME;1;0" TO="/outArrayLines;2;0/DISTRIBUTION_SET_NAME;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/AP_INVOICE_LINES;2;0/DIST_CODE_CONCATENATED;1;0" TO="/outArrayLines;2;0/DIST_CODE_CONCATENATED;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/AP_INVOICE_LINES;2;0/AWT_GROUP_NAME;1;0" TO="/outArrayLines;2;0/AWT_GROUP_NAME;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/AP_INVOICE_LINES;2;0/RELEASE_NUM;1;0" TO="/outArrayLines;2;0/RELEASE_NUM;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/AP_INVOICE_LINES;2;0/ACCOUNT_SEGMENT;1;0" TO="/outArrayLines;2;0/ACCOUNT_SEGMENT;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/AP_INVOICE_LINES;2;0/BALANCING_SEGMENT;1;0" TO="/outArrayLines;2;0/BALANCING_SEGMENT;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/AP_INVOICE_LINES;2;0/COST_CENTER_SEGMENT;1;0" TO="/outArrayLines;2;0/COST_CENTER_SEGMENT;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/AP_INVOICE_LINES;2;0/EXPENDITURE_TYPE;1;0" TO="/outArrayLines;2;0/EXPENDITURE_TYPE;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/AP_INVOICE_LINES;2;0/PROJECT_ACCOUNTING_CONTEXT;1;0" TO="/outArrayLines;2;0/PROJECT_ACCOUNTING_CONTEXT;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/AP_INVOICE_LINES;2;0/PA_ADDITION_FLAG;1;0" TO="/outArrayLines;2;0/PA_ADDITION_FLAG;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/AP_INVOICE_LINES;2;0/PA_QUANTITY;1;0" TO="/outArrayLines;2;0/PA_QUANTITY;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/AP_INVOICE_LINES;2;0/USSGL_TRANSACTION_CODE;1;0" TO="/outArrayLines;2;0/USSGL_TRANSACTION_CODE;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/AP_INVOICE_LINES;2;0/STAT_AMOUNT;1;0" TO="/outArrayLines;2;0/STAT_AMOUNT;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/AP_INVOICE_LINES;2;0/TYPE_1099;1;0" TO="/outArrayLines;2;0/TYPE_1099;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/AP_INVOICE_LINES;2;0/INCOME_TAX_REGION_NAME;1;0" TO="/outArrayLines;2;0/INCOME_TAX_REGION;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/AP_INVOICE_LINES;2;0/RECEIPT_NUMBER;1;0" TO="/outArrayLines;2;0/RECEIPT_NUMBER;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/AP_INVOICE_LINES;2;0/RECEIPT_LINE_NUMBER;1;0" TO="/outArrayLines;2;0/RECEIPT_LINE_NUMBER;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/AP_INVOICE_LINES;2;0/MATCH_OPTION;1;0" TO="/outArrayLines;2;0/MATCH_OPTION;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/AP_INVOICE_LINES;2;0/PACKING_SLIP;1;0" TO="/outArrayLines;2;0/PACKING_SLIP;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/AP_INVOICE_LINES;2;0/PA_CC_AR_INVOICE_LINE_NUMBER;1;0" TO="/outArrayLines;2;0/PA_CC_AR_INVOICE_LINE_NUM;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/AP_INVOICE_LINES;2;0/PA_REFERENCE1;1;0" TO="/outArrayLines;2;0/REFERENCE_1;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/AP_INVOICE_LINES;2;0/PA_REFERENCE2;1;0" TO="/outArrayLines;2;0/REFERENCE_2;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/AP_INVOICE_LINES;2;0/TAX_RECOVERY_RATE;1;0" TO="/outArrayLines;2;0/TAX_RECOVERY_RATE;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/AP_INVOICE_LINES;2;0/TAX_RECOVERY_OVERRIDE_FLAG;1;0" TO="/outArrayLines;2;0/TAX_RECOVERY_OVERRIDE_FLAG;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/AP_INVOICE_LINES;2;0/TAX_RECOVERABLE_FLAG;1;0" TO="/outArrayLines;2;0/TAX_RECOVERABLE_FLAG;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/AP_INVOICE_LINES;2;0/TAX_OVERRIDE_FLAG;1;0" TO="/outArrayLines;2;0/TAX_CODE_OVERRIDE_FLAG;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/AP_INVOICE_LINES;2;0/CREDIT_CARD_TRX_ID;1;0" TO="/outArrayLines;2;0/CREDIT_CARD_TRX_ID;1;0">
+</MAPCOPY>
+
+<MAPINVOKE SERVICE="payables11510.intoOA.APInvoice.utils:getShipToLocationCode_tf" VALIDATE-IN="$none" VALIDATE-OUT="$none" INVOKE-ORDER="0">
+
+  <!-- nodes -->
+
+<MAP MODE="INVOKEINPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/$dbAlias;1;0" TO="/$dbAlias;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/AP_INVOICE_LINES;2;0/ADDRESS_LINE_1;1;0" TO="/queryParams;2;0/ADDRESS_LINE1;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/AP_INVOICE_LINES;2;0/ADDRESS_LINE_2;1;0" TO="/queryParams;2;0/ADDRESS_LINE2;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/AP_INVOICE_LINES;2;0/ADDRESS_LINE_3;1;0" TO="/queryParams;2;0/ADDRESS_LINE3;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/AP_INVOICE_LINES;2;0/CITY;1;0" TO="/queryParams;2;0/CITY;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/AP_INVOICE_LINES;2;0/STATE;1;0" TO="/queryParams;2;0/STATE;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/AP_INVOICE_LINES;2;0/POSTAL_CODE;1;0" TO="/queryParams;2;0/ZIP;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/AP_INVOICE_LINES;2;0/COUNTRY;1;0" TO="/queryParams;2;0/COUNTRY;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="INVOKEOUTPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/LOCATION_CODE;1;0" TO="/outArrayLines;2;0/SHIP_TO_LOCATION_CODE;1;0">
+</MAPCOPY>
+</MAP>
+</MAPINVOKE>
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc/AP_INVOICE;2;0/AP_INVOICE_LINES;2;0/PRICE_CORRECT_INV_NUM;1;0" TO="/outArrayLines;2;0/PRICE_CORRECT_INV_NUM;1;0">
+</MAPCOPY>
+
+<MAPINVOKE SERVICE="commonOA11510.utils:pickSequence" VALIDATE-IN="$none" VALIDATE-OUT="$none" INVOKE-ORDER="0">
+
+  <!-- nodes -->
+
+<MAP MODE="INVOKEINPUT">
+
+  <!-- nodes -->
+
+<MAPSET NAME="Setter" OVERWRITE="true" VARIABLES="false" FIELD="/pickSequenceInput;2;0">
+  <DATA ENCODING="XMLValues" I18N="true">
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="P_SEQUENCE_NAME">AP_INVOICE_LINES_INTERFACE_S</value>
+  </record>
+  <record name="type" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_name">pickSequenceInput</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="nillable">true</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">P_SEQUENCE_NAME</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+    </array>
+  </record>
+</Values>
+</DATA>
+</MAPSET>
+</MAP>
+
+<MAP MODE="INVOKEOUTPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/pickSequenceOutput;2;0/results;2;0/O_SEQUENCE_VALUE;1;0" TO="/outArrayLines;2;0/INVOICE_LINE_ID;1;0">
+</MAPCOPY>
+</MAP>
+</MAPINVOKE>
+</MAP>
+</LOOP>
+
+<MAP TIMEOUT="" MODE="STANDALONE">
+  <COMMENT>Append outArrayLines to APInvoiceRecordSet</COMMENT>
+  <MAPTARGET>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="nillable">true</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="field_name">APInvoiceBizDoc</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="rec_ref">payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">$dbAlias</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">GROUP_ID</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">outArrayHeader</value>
+        <value name="field_type">record</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <array name="rec_fields" type="record" depth="1">
+        </array>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">APInvoiceRecordSet</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="rec_ref">payables11510.intoOA.APInvoice.rec:setAPInvoiceTxnInputRec</value>
+      </record>
+    </array>
+  </record>
+</Values>
+</MAPTARGET>
+  <MAPSOURCE>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="nillable">true</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="field_name">APInvoiceBizDoc</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="rec_ref">payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">$dbAlias</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">GROUP_ID</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">outArrayHeader</value>
+        <value name="field_type">record</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <array name="rec_fields" type="record" depth="1">
+        </array>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">APInvoiceRecordSet</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="rec_ref">payables11510.intoOA.APInvoice.rec:setAPInvoiceTxnInputRec</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">outArrayLines</value>
+        <value name="field_type">record</value>
+        <value name="field_dim">1</value>
+        <value name="nillable">true</value>
+        <array name="rec_fields" type="record" depth="1">
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">INVOICE_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">INVOICE_LINE_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">LINE_NUMBER</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">LINE_TYPE_LOOKUP_CODE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">LINE_GROUP_NUMBER</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">AMOUNT</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">ACCOUNTING_DATE</value>
+            <value name="field_type">object</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">DESCRIPTION</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">AMOUNT_INCLUDES_TAX_FLAG</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">PRORATE_ACROSS_FLAG</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">TAX_CODE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">FINAL_MATCH_FLAG</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">PO_NUMBER</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">PO_LINE_NUMBER</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">PO_SHIPMENT_NUM</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">PO_DISTRIBUTION_NUM</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">ITEM_DESCRIPTION</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">QUANTITY_INVOICED</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">SHIP_TO_LOCATION_CODE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">UNIT_PRICE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">DISTRIBUTION_SET_NAME</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">DIST_CODE_CONCATENATED</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">AWT_GROUP_NAME</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">RELEASE_NUM</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">ACCOUNT_SEGMENT</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">BALANCING_SEGMENT</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">COST_CENTER_SEGMENT</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">PROJECT_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">TASK_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">EXPENDITURE_TYPE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">EXPENDITURE_ITEM_DATE</value>
+            <value name="field_type">object</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">EXPENDITURE_ORGANIZATION_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">PROJECT_ACCOUNTING_CONTEXT</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">PA_ADDITION_FLAG</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">PA_QUANTITY</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">USSGL_TRANSACTION_CODE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">STAT_AMOUNT</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">TYPE_1099</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">INCOME_TAX_REGION</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">ORG_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">RECEIPT_NUMBER</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">RECEIPT_LINE_NUMBER</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">MATCH_OPTION</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">PACKING_SLIP</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">PA_CC_AR_INVOICE_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">PA_CC_AR_INVOICE_LINE_NUM</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">REFERENCE_1</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">REFERENCE_2</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">TAX_RECOVERY_RATE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">TAX_RECOVERY_OVERRIDE_FLAG</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">TAX_RECOVERABLE_FLAG</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">TAX_CODE_OVERRIDE_FLAG</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">CREDIT_CARD_TRX_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">AWARD_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">PRICE_CORRECT_INV_NUM</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+        </array>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">$iteration</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+    </array>
+  </record>
+</Values>
+</MAPSOURCE>
+
+  <!-- nodes -->
+
+<MAPINVOKE SERVICE="pub.list:appendToRecordList" VALIDATE-IN="$none" VALIDATE-OUT="$none" INVOKE-ORDER="0">
+
+  <!-- nodes -->
+
+<MAP MODE="INVOKEINPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/outArrayLines;2;1" TO="/fromList;2;1">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/APInvoiceRecordSet;4;0;payables11510.intoOA.APInvoice.rec:setAPInvoiceTxnInputRec/AP_INVOICE_LINES_INTERFACE;2;1" TO="/toList;2;1">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="INVOKEOUTPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/toList;2;1" TO="/APInvoiceRecordSet;4;0;payables11510.intoOA.APInvoice.rec:setAPInvoiceTxnInputRec/AP_INVOICE_LINES_INTERFACE;2;1">
+</MAPCOPY>
+</MAP>
+</MAPINVOKE>
+
+<MAPDELETE NAME="Dropper" FIELD="/outArrayLines;2;1">
+</MAPDELETE>
+</MAP>
+</LOOP>
+
+<MAP TIMEOUT="" MODE="STANDALONE">
+  <COMMENT>Map outArrayHeader to APInvoiceRecordSet</COMMENT>
+  <MAPTARGET>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="nillable">true</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">APInvoiceRecordSet</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="rec_ref">payables11510.intoOA.APInvoice.rec:setAPInvoiceTxnInputRec</value>
+      </record>
+    </array>
+  </record>
+</Values>
+</MAPTARGET>
+  <MAPSOURCE>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="nillable">true</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="field_name">APInvoiceBizDoc</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="rec_ref">payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">$dbAlias</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">GROUP_ID</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">outArrayHeader</value>
+        <value name="field_type">record</value>
+        <value name="field_dim">1</value>
+        <value name="nillable">true</value>
+        <array name="rec_fields" type="record" depth="1">
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">INVOICE_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">INVOICE_NUM</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">INVOICE_TYPE_LOOKUP_CODE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">INVOICE_DATE</value>
+            <value name="field_type">object</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">PO_NUMBER</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">VENDOR_NUM</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">VENDOR_NAME</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">VENDOR_SITE_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">INVOICE_AMOUNT</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">INVOICE_CURRENCY_CODE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">EXCHANGE_RATE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">EXCHANGE_RATE_TYPE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">EXCHANGE_DATE</value>
+            <value name="field_type">object</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">TERMS_NAME</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">DESCRIPTION</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">AWT_GROUP_NAME</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">SOURCE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">GROUP_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">PAYMENT_CROSS_RATE_TYPE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">PAYMENT_CROSS_RATE_DATE</value>
+            <value name="field_type">object</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">PAYMENT_CROSS_RATE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">PAYMENT_CURRENCY_CODE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">WORKFLOW_FLAG</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">DOC_CATEGORY_CODE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">VOUCHER_NUM</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">PAYMENT_METHOD_LOOKUP_CODE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">PAY_GROUP_LOOKUP_CODE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">GOODS_RECEIVED_DATE</value>
+            <value name="field_type">object</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">INVOICE_RECEIVED_DATE</value>
+            <value name="field_type">object</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">GL_DATE</value>
+            <value name="field_type">object</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">ACCTS_PAY_CODE_COMBINATION_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">USSGL_TRANSACTION_CODE</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">EXCLUSIVE_PAYMENT_FLAG</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">ORG_ID</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">AMOUNT_APPLICABLE_TO_DISCOUNT</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">PREPAY_NUM</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">PREPAY_APPLY_AMOUNT</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">PREPAY_GL_DATE</value>
+            <value name="field_type">object</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+          </record>
+        </array>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">APInvoiceRecordSet</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="rec_ref">payables11510.intoOA.APInvoice.rec:setAPInvoiceTxnInputRec</value>
+      </record>
+    </array>
+  </record>
+</Values>
+</MAPSOURCE>
+
+  <!-- nodes -->
+
+<MAPDELETE NAME="Dropper" FIELD="/outArrayHeader;2;1">
+</MAPDELETE>
+
+<MAPDELETE NAME="Dropper" FIELD="/GROUP_ID;1;0">
+</MAPDELETE>
+
+<MAPDELETE NAME="Dropper" FIELD="/$dbAlias;1;0">
+</MAPDELETE>
+
+<MAPDELETE NAME="Dropper" FIELD="/APInvoiceBizDoc;4;0;payables11510.intoOA.APInvoice.rec:APInvoiceBizDoc">
+</MAPDELETE>
+
+<MAPCOPY NAME="Link" FROM="/outArrayHeader;2;1" TO="/APInvoiceRecordSet;4;0;payables11510.intoOA.APInvoice.rec:setAPInvoiceTxnInputRec/AP_INVOICES_INTERFACE;2;1">
+</MAPCOPY>
+</MAP>
+</FLOW>

@@ -1,0 +1,39 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v82="http://sagbase/V82TrainingSOA.IS.DerivedTypes:processInternationalPOwsdp" xmlns:ipo="http://www.altova.com/IPO">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v82:receiveInternationalPO>
+         <InternationalPO>
+            <!--Optional:-->
+            <ipo:purchaseOrder orderDate="Feb152011">
+               <shipTo export-code="1" xsi:type="ipo:EU-Address" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+             	<ipo:name>Helen Zoe</ipo:name>
+		<ipo:street>47 Eden Street</ipo:street>
+		<ipo:city>Cambridge</ipo:city>
+		<ipo:postcode>126</ipo:postcode>
+               </shipTo>
+               <billTo xsi:type="ipo:US-Address" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	 	<ipo:name>Robert Smith</ipo:name>
+		<ipo:street>8 Oak Avenue</ipo:street>
+		<ipo:city>Old Town</ipo:city>
+		<ipo:state>AK</ipo:state>
+		<ipo:zip>95819</ipo:zip>
+               </billTo>
+               <!--Optional:-->
+               <ipo:comment>This is a very important order</ipo:comment>
+               <Items>
+                  <!--Zero or more repetitions:-->
+                  <item partNum="833-AA">
+                     <productName>Lapis necklace</productName>
+                     <quantity>2</quantity>
+                     <price>99.95</price>
+                     <!--Optional:-->
+                     <ipo:comment>Need this for the holidays!</ipo:comment>
+                     <!--Optional:-->
+                     <shipDate>1999-12-05</shipDate>
+                  </item>
+               </Items>
+            </ipo:purchaseOrder>
+         </InternationalPO>
+      </v82:receiveInternationalPO>
+   </soapenv:Body>
+</soapenv:Envelope>

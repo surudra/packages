@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="keywords" content="truststore,edit properties,properties,truststore, edit" />
+    <title>Edit Truststore Alias Screen</title>
+    <link rel="StyleSheet" href="css/_is_admin_help.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+  <body style="background-color: White; margin-bottom: 25px; margin-left: 25px; margin-right: 25px; margin-top: 0px; padding-top: 0px" onload="WWHUpdate();" onunload="WWHUnload();" onkeydown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onkeypress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onkeyup="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <table align="left" role="presentation">
+      <tr>
+        <td class="WebWorks_Company_Logo_Top">
+          <img src="sag_online.png" />
+        </td>
+      </tr>
+    </table>
+    <br clear="all" />
+    <hr align="left" />
+    <blockquote>
+      <div class="Heading_3"><a name="3_5_17_15_11_2">Edit Truststore Alias Screen</a></div>
+      <div class="Body"><span class="emphasis"><a name="3_5_17_15_11_6_2_3">Screen Heading</a></span>: <span class="uicontrol">Security &gt; Keystore &gt; Edit Truststore Alias</span></div>
+      <div class="Body"><a name="3_5_17_15_11_6_2_5"> </a>Use the Edit Truststore Alias screen to edit the properties of a specific truststore alias. A <span class="term">truststore</span> contains the trusted root of the certificate or signing authority (CA). The <span class="term">truststore alias</span> is a user-assigned identifier for the truststore, that can be easily referenced from within <span class="ph">Integration Server</span>.</div>
+      <div class="Body"><a name="3_5_17_15_11_6_2_7">To open the Edit Truststore Alias screen, click </a><span class="uicontrol">Keystore</span> under the <span class="uicontrol">Security</span> menu on the Navigation panel. Select the name of a truststore alias to view its properties. Click <span class="uicontrol">Edit Truststore Alias</span> to change the properties of the alias.</div>
+      <div class="List_1_outer" style="margin-left: 24px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_1_inner" style="width: 18pt; white-space: nowrap">
+                <img src="bullet1.png" alt="*" border="0" width="10" height="10" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_1_inner"><a name="3_5_17_15_11_6_2_9_2_4">Click </a><span class="uicontrol">Return to Keystore</span> to return to the list of truststore aliases that are currently defined on the server.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Section_Title"><a name="3_5_17_15_11_6_4_3">Truststore Properties</a></div>
+      <div class="Definition_Term"><a name="3_5_17_15_11_6_4_5_2_2">Alias</a></div>
+      <div class="Definition_Description"><a name="3_5_17_15_11_6_4_5_2_4">Displays the user-specified identifier for the truststore. Clicking on the truststore alias displays its properties.</a></div>
+      <div class="Definition_Term"><a name="3_5_17_15_11_6_4_5_4_2">Description (optional)</a></div>
+      <div class="Definition_Description"><a name="3_5_17_15_11_6_4_5_4_4">Specifies a user-specified description of the alias.</a></div>
+      <div class="Definition_Term"><a name="3_5_17_15_11_6_4_5_6_2">Type</a></div>
+      <div class="Definition_Description"><a name="3_5_17_15_11_6_4_5_6_4">Specifies the file format of the truststore file. The default is </a><span class="codeph">JKS</span>. Other truststore types can be made available by loading additional security providers, or by setting the watt.security.TrustStoreTypes server configuration property.  </div>
+      <div class="Definition_Term"><a name="3_5_17_15_11_6_4_5_8_2">Provider</a></div>
+      <div class="Definition_Description"><a name="3_5_17_15_11_6_4_5_8_4">Specifies the provider that is used for the truststore type. The default is the provider shipped with the JVM (Oracle, IBM, or others). If your Hardware Security Module (HSM) device is not supported by the default provider, you can configure a different provider to support truststore file types.</a></div>
+      <table class="note2" summary="">
+        <tr>
+          <td class="Table_Cell" style="vertical-align: top; width: 14.285714285714284%">
+            <div class="Note">
+              <span style="font-family: Arial, Verdana, Helvetica, Sans-Serif; font-weight: bold">Note:    </span><a name="3_5_17_15_11_6_4_5_8_4_3_1_3_1_2_2">&nbsp;</a></div>
+          </td>
+          <td class="Table_Cell" style="vertical-align: top; width: 85.71428571428571%">
+            <div class="Table_Cell"><span class="ph"><a name="3_5_17_15_11_6_4_5_8_4_3_1_3_1_3">Integration Server</a></span> only supports the JKS file format for truststores.</div>
+          </td>
+        </tr>
+      </table>
+      <div class="Definition_Term"><a name="3_5_17_15_11_6_4_5_10_2">Location</a></div>
+      <div class="Definition_Description"><a name="3_5_17_15_11_6_4_5_10_4">Specifies the location of the truststore file on the server. This can be the full pathname, or a relative path in relation to the </a><span class="ph">Integration Server</span>.</div>
+      <div class="Definition_Term"><a name="3_5_17_15_11_6_4_5_12_2">Password/Re-type Password</a></div>
+      <div class="Definition_Description"><a name="3_5_17_15_11_6_4_5_12_4">Specifies the password for the saved keystore file associated with this alias. This password must have been defined at the time the truststore was created, using your keystore utility. Be sure that you have this password available when managing truststore aliases, as you cannot access it through the </a><span class="ph">Integration Server</span>.</div>
+      <div class="Link_List_Title"><a name="3_5_17_15_11_8_1_2">Related Topics</a></div>
+      <div class="Related_Reference">
+        <img src="spacer_24.png" alt="*" border="0" width="24" height="6" /><span class="Link_Text"><a href="javascript:WWHClickedPopup('is_help', 'Menu_Sec_CreateKeystoreAlias.html', '');" title="Create a Keystore Alias" name="3_5_17_15_11_8_1_4">Create a Keystore Alias</a></span></div>
+      <div class="Related_Reference">
+        <img src="spacer_24.png" alt="*" border="0" width="24" height="6" /><span class="Link_Text"><a href="javascript:WWHClickedPopup('is_help', 'Menu_Sec_CreateTruststoreAlias.html', '');" title="Create a Truststore Alias" name="3_5_17_15_11_8_1_6">Create a Truststore Alias</a></span></div>
+      <div class="Related_Reference">
+        <img src="spacer_24.png" alt="*" border="0" width="24" height="6" /><span class="Link_Text"><a href="javascript:WWHClickedPopup('is_help', 'Menu_Sec_AddSecurityProvider.html', '');" title="Add a Security Provider" name="3_5_17_15_11_8_1_8">Add a Security Provider</a></span></div>
+      <div class="Related_Reference">
+        <img src="spacer_24.png" alt="*" border="0" width="24" height="6" /><span class="Link_Text"><a href="javascript:WWHClickedPopup('is_help', 'Menu_Sec_KeystoreView.html', '');" title="View Keystore Alias Screen" name="3_5_17_15_11_8_1_10">View Keystore Alias Screen</a></span></div>
+      <div class="Related_Reference">
+        <img src="spacer_24.png" alt="*" border="0" width="24" height="6" /><span class="Link_Text"><a href="javascript:WWHClickedPopup('is_help', 'Menu_Sec_KeystoreEdit.html', '');" title="Edit Keystore Alias Screen" name="3_5_17_15_11_8_1_12">Edit Keystore Alias Screen</a></span></div>
+      <div class="Related_Reference">
+        <img src="spacer_24.png" alt="*" border="0" width="24" height="6" /><span class="Link_Text"><a href="javascript:WWHClickedPopup('is_help', 'Menu_Sec_TruststoreView.html', '');" title="View Truststore Alias Screen" name="3_5_17_15_11_8_1_14">View Truststore Alias Screen</a></span></div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <div>
+      <hr />
+      <div style="font-family: Arial, Verdana, Helvetica, Sans-Serif; font-size: 12px;margin-top: 20px;margin-bottom: 20px;">
+        <span class="xref">
+          <a href="http://documentation.softwareag.com/legal/" target="external_window">Copyright © <span></span><span></span><span>2007</span><span>-2014</span> Software AG, Darmstadt, Germany</a>
+        </span>.</div>
+    </div>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+  </body>
+</html>

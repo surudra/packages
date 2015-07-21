@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <record name="transactions" javaclass="com.wm.util.Values">
+    <record name="setQualityCollectionTxn" javaclass="com.wm.util.Values">
+      <value name="transactionName">setQualityCollectionTxn</value>
+      <value name="transactionType">IN</value>
+      <value name="errSQL">SELECT ERROR_MESSAGE,
+ERROR_COLUMN,
+SOURCE_CODE,
+PLAN_NAME,
+SPEC_NAME,
+DEPARTMENT,
+RESOURCE_CODE,
+ITEM,
+UOM,
+REVISION,
+SUBINVENTORY,
+LOCATOR,
+COMP_ITEM,
+COMP_UOM,
+VENDOR_NAME,
+RECEIPT_NUM,
+PO_NUMBER,
+PO_SHIPMENT_NUM,
+CHARACTER1,
+CHARACTER2,
+CHARACTER3,
+CHARACTER4,
+CHARACTER5,
+CHARACTER6,
+CHARACTER7,
+CHARACTER8,
+CHARACTER9,
+CHARACTER10
+FROM QA_INTERFACE_ERRORS E,
+QA_RESULTS_INTERFACE I
+WHERE E.TRANSACTION_INTERFACE_ID =I.TRANSACTION_INTERFACE_ID 
+AND I.PROCESS_STATUS =3</value>
+      <record name="table0" javaclass="com.wm.util.Values">
+        <value name="tableName">QA_RESULTS_INTERFACE</value>
+        <value name="required">true</value>
+      </record>
+    </record>
+  </record>
+  <record name="FILE_INFO" javaclass="com.wm.util.Values">
+    <value name="OA_RELEASE">107SC</value>
+    <value name="DESCRIPTION"></value>
+    <value name="CREATE_HOST">webMethods</value>
+    <value name="CREATE_IM_VER">3.0</value>
+    <value name="CREATE_DATE">Nov 21, 2002 4:03:47 PM</value>
+  </record>
+</Values>

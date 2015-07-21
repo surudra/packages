@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="keywords" content="security,certificates,import/delete,certificates,client,impor t/delete,cl ient certifi cates,import/delete,importing ce rtifi ca tes,ports,client certificates, viewing or changing ho w handled,client configuration,cert ificates" />
+    <title>Configure Client Certificates Screen</title>
+    <link rel="StyleSheet" href="css/_is_admin_help.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+  <body style="background-color: White; margin-bottom: 25px; margin-left: 25px; margin-right: 25px; margin-top: 0px; padding-top: 0px" onload="WWHUpdate();" onunload="WWHUnload();" onkeydown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onkeypress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onkeyup="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <table align="left" role="presentation">
+      <tr>
+        <td class="WebWorks_Company_Logo_Top">
+          <img src="sag_online.png" />
+        </td>
+      </tr>
+    </table>
+    <br clear="all" />
+    <hr align="left" />
+    <blockquote>
+      <div class="Heading_3"><a name="3_5_17_9_5_2">Configure Client Certificates Screen</a></div>
+      <div class="Body"><span class="emphasis"><a name="3_5_17_9_5_6_2_3">Screen Heading</a></span>: <span class="uicontrol">Security &gt; Certificates &gt; Configure Client Certificates</span></div>
+      <div class="Body"><a name="3_5_17_9_5_6_2_5">Use the Configure Client Certificates screen to view the list of clients whose certificates are accepted by your server. You also use this screen to add (import) and delete certificates from this list.</a></div>
+      <table class="note1" summary="">
+        <tr>
+          <td class="Table_Cell" style="vertical-align: top; width: 14.285714285714284%">
+            <div class="Note">
+              <span style="font-family: Arial, Verdana, Helvetica, Sans-Serif; font-weight: bold">Note:    </span><a name="3_5_17_9_5_6_2_7_1_3_1_1_2">&nbsp;</a></div>
+          </td>
+          <td class="Table_Cell" style="vertical-align: top; width: 85.71428571428571%">
+            <div class="Table_Cell"><a name="3_5_17_9_5_6_2_7_1_3_1_2">If your SSL port is configured to "require" client certificates, the port will accept requests from only those clients whose certificates are in this list.</a></div>
+          </td>
+        </tr>
+      </table>
+      <table class="note1" summary="">
+        <tr>
+          <td class="Table_Cell" style="vertical-align: top; width: 14.285714285714284%">
+            <div class="Note">
+              <span style="font-family: Arial, Verdana, Helvetica, Sans-Serif; font-weight: bold">Note:    </span><a name="3_5_17_9_5_6_2_9_1_3_1_1_2">&nbsp;</a></div>
+          </td>
+          <td class="Table_Cell" style="vertical-align: top; width: 85.71428571428571%">
+            <div class="Table_Cell"><a name="3_5_17_9_5_6_2_9_1_3_1_2">When a client connects to the server using a certificate instead of a user name and password, that client is logged on to the server under the user name that is mapped to that particular certificate. You map a user name to a certificate when you import it into this list.</a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="Body"><a name="3_5_17_9_5_6_2_11">To open this screen, go to the </a><span class="heading-no-quotes"><a href="javascript:WWHClickedPopup('is_help', 'Menu_Sec_Certificates.html', '');" title="Certificates Screen">Certificates Screen</a></span> and click <span class="uicontrol">Configure Client Certificates</span>.</div>
+      <div class="List_1_outer" style="margin-left: 24px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_1_inner" style="width: 18pt; white-space: nowrap">
+                <img src="bullet1.png" alt="*" border="0" width="10" height="10" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_1_inner"><a name="3_5_17_9_5_6_2_13_2_4">Click </a><span class="uicontrol">Return to Certificates</span> to return to the list of current certificate settings.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Section_Title"><a name="3_5_17_9_5_6_4_3">Import Certificate</a></div>
+      <div class="Body"><a name="3_5_17_9_5_6_4_5">Use this section to import a client certificate and map it to a user name.</a></div>
+      <div class="Definition_Term"><a name="3_5_17_9_5_6_4_7_2_2">Certificate Path</a></div>
+      <div class="Definition_Description"><a name="3_5_17_9_5_6_4_7_2_4">Specifies the name of the file containing the certificate that you want to import. You may specify the file name using an absolute path or using a path that is relative to </a><span class="ph"> </span><span class="emphasis">Integration&nbsp;Server_directory</span><span class="ph"> </span>. The file must contain an X.509 certificate in DER file format.</div>
+      <div class="Definition_Term"><a name="3_5_17_9_5_6_4_9_2_2">User</a></div>
+      <div class="Definition_Description"><a name="3_5_17_9_5_6_4_9_2_4">Specifies a pre-defined user name or provides the ability to choose a user by clicking on the magnifying glass icon next to this field. From this,</a></div>
+      <div class="List_2_outer" style="margin-left: 48px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_2_inner" style="width: 18pt; white-space: nowrap">
+                <img src="bullet2.png" alt="*" border="0" width="12" height="12" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_2_inner"><a name="3_5_17_9_5_6_4_9_2_4_3_2">Choose </a><span class="uicontrol">Local</span> (CDS) or <span class="uicontrol">LDAP</span> as a <span class="uicontrol">Provider</span> from the drop-down list.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_2_outer" style="margin-left: 48px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_2_inner" style="width: 18pt; white-space: nowrap">
+                <img src="bullet2.png" alt="*" border="0" width="12" height="12" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_2_inner"><a name="3_5_17_9_5_6_4_9_2_4_3_4">Next, choose a User from the default list given or </a><span class="uicontrol">Search</span> by name and click <span class="uicontrol">Go</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Definition_Term"><a name="3_5_17_9_5_6_4_11_2_2">Usage</a></div>
+      <div class="Definition_Description"><a name="3_5_17_9_5_6_4_11_2_4">Specifies the purpose for which you want to import this certificate. The options are SSL Authentication, Verify, Encrypt, Verify and Encrypt, and Message Authentication.</a></div>
+      <div class="Definition_Term"><a name="3_5_17_9_5_6_4_11_4_2">Import Certificate</a></div>
+      <div class="Definition_Description"><a name="3_5_17_9_5_6_4_11_4_4">Imports the certificate specified.</a></div>
+      <div class="Body"><a name="3_5_17_9_5_6_4_13">If you import a certificate, a link to the Client Certificates Detail Screen appears.</a></div>
+      <div class="Section_Title"><a name="3_5_17_9_5_6_6_3">Current Certificates</a></div>
+      <div class="Body"><a name="3_5_17_9_5_6_6_5">Displays a list of certificates that are mapped to users on </a><span class="ph">Integration Server</span>.</div>
+      <div class="Definition_Term"><a name="3_5_17_9_5_6_6_7_2_2">Subject CN</a></div>
+      <div class="Definition_Description"><a name="3_5_17_9_5_6_6_7_2_4">Specifies the common name of the organization to which the certificate was sent. If the certificate does not contain a subject field, this field displays (none). Click the value in this field to view details about this certificate.</a></div>
+      <div class="Definition_Term"><a name="3_5_17_9_5_6_6_7_4_2">Issuer CN</a></div>
+      <div class="Definition_Description"><a name="3_5_17_9_5_6_6_7_4_4">Specifies the common name of the organization that issued the certificate.</a></div>
+      <div class="Definition_Term"><a name="3_5_17_9_5_6_6_7_6_2">Serial Number</a></div>
+      <div class="Definition_Description"><a name="3_5_17_9_5_6_6_7_6_4">Specifies a number that uniquely identifies this certificate.</a></div>
+      <div class="Definition_Term"><a name="3_5_17_9_5_6_6_7_8_2">User</a></div>
+      <div class="Definition_Description"><a name="3_5_17_9_5_6_6_7_8_4">Specifies the name of the </a><span class="ph">Integration Server</span> user to which this certificate is mapped.</div>
+      <div class="Definition_Term"><a name="3_5_17_9_5_6_6_7_10_2">Usage</a></div>
+      <div class="Definition_Description"><a name="3_5_17_9_5_6_6_7_10_4">Specifies the purpose for which the certificate was imported.</a></div>
+      <div class="Definition_Term"><a name="3_5_17_9_5_6_6_7_12_2">Remove</a></div>
+      <div class="Definition_Description"><a name="3_5_17_9_5_6_6_7_12_4">Removes the mapping for this certificate.</a></div>
+      <div class="Link_List_Title"><a name="3_5_17_9_5_8_1_2">Related Topics</a></div>
+      <div class="Related_Reference">
+        <img src="spacer_24.png" alt="*" border="0" width="24" height="6" /><span class="Link_Text"><a href="javascript:WWHClickedPopup('is_help', 'Menu_Sec_Certificates.html', '');" title="Certificates Screen" name="3_5_17_9_5_8_1_4">Certificates Screen</a></span></div>
+      <div class="Related_Reference">
+        <img src="spacer_24.png" alt="*" border="0" width="24" height="6" /><span class="Link_Text"><a href="javascript:WWHClickedPopup('is_help', 'Menu_Sec_ClientCertificatesDetails.html', '');" title="Client Certificates Details Screen" name="3_5_17_9_5_8_1_6">Client Certificates Details Screen</a></span></div>
+      <div class="Related_Reference">
+        <img src="spacer_24.png" alt="*" border="0" width="24" height="6" /><span class="Link_Text"><a href="javascript:WWHClickedPopup('is_help', 'Menu_Sec_CertificatesMap.html', '');" title="Client Certificates Update User Mapping Screen" name="3_5_17_9_5_8_1_8">Client Certificates Update User Mapping Screen</a></span></div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <div>
+      <hr />
+      <div style="font-family: Arial, Verdana, Helvetica, Sans-Serif; font-size: 12px;margin-top: 20px;margin-bottom: 20px;">
+        <span class="xref">
+          <a href="http://documentation.softwareag.com/legal/" target="external_window">Copyright © <span></span><span></span><span>2007</span><span>-2014</span> Software AG, Darmstadt, Germany</a>
+        </span>.</div>
+    </div>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+  </body>
+</html>

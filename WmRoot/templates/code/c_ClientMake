@@ -1,0 +1,113 @@
+#
+#  Makefile for generated C client:  Make sure you set JDKDIR and 
+#  CLASSPATH for your environment; also set INCLUDES and LIBDIR to 
+#  match the location of the required headers and libraries.
+#
+
+%ifvar platform equals(win)%
+JDKDIR = c:\java\jdk1.1.7
+LIBDIR = c:\Software AG\common\lib
+INCLUDES = $(LIBDIR)
+CLASSES = .;$(JDKDIR)\lib\classes.zip;$(LIBDIR)\wm-isclient.jar;$(LIBDIR)\glassfish\gf.javax.mail.jar
+LIBS = .;$(LIBDIR);$(JDKDIR)\bin;$(PATH)
+
+all: %value svcName%.exe
+
+%value svcName%.exe: %value svcName%.c
+	cl -DWIN32 -I$(JDKDIR)\include -I$(JDKDIR)\include\win32 \
+	    -I$(INCLUDES) %value svcName%.c /Zi /o %value svcName% \
+		/MT $(LIBDIR)\wmJNI.lib $(LIBDIR)\wmJNIc.lib
+
+runtest: %value svcName%.exe
+	set PATH=$(LIBS)
+	set CLASSPATH=$(CLASSES)
+	.\%value svcName%.exe
+
+clean:
+	del %value svcName%.obj
+	del %value svcName%.exe
+
+%else%
+JDKDIR = /usr/local/java/1.1.7
+LIBDIR = /usr/local/Software AG/common/lib
+INCLUDES = $(LIBDIR)
+CLASSES = .:$(JDKDIR)/lib/classes.zip:$(LIBDIR)/wm-isclient.jar:$(LIBDIR)/glassfish/gf.javax.mail.jar
+
+%switch platform%
+%case lnx%
+# Set ARCH to the value returned by `arch`
+COPT = -g -fPIC
+ARCH = i686
+THRDIR = $(JDKDIR)/lib/$(ARCH)/native_threads
+LIBS = .:$(THRDIR):$(LD_LIBRARY_PATH)
+
+all: %value svcName%%nl%
+
+%value svcName%: %value svcName%.c
+	gcc $(COPT) -I$(JDKDIR)/include -I$(JDKDIR)/include/genunix \
+		-I$(INCLUDES) %value svcName%.c $(LIBDIR)/lnx_wmJNI.a \
+		$(LIBDIR)/lnx_wmJNIc.a -L$(THRDIR) -lnet -ljava -lpthread -lc \
+		-o %value svcName%%nl%
+		
+runtest: %value svcName%%nl%
+	LD_LIBRARY_PATH=$(LIBS); CLASSPATH=$(CLASSES); ./%value svcName%
+
+%case sol%
+COPT = -g -fpic
+THRDIR = $(JDKDIR)/lib/sparc/native_threads
+LIBS = .:$(THRDIR):$(LD_LIBRARY_PATH)
+
+all: %value svcName%%nl%
+
+%value svcName%: %value svcName%.c
+	gcc $(COPT) -I$(JDKDIR)/include -I$(JDKDIR)/include/solaris \
+		-I$(INCLUDES) %value svcName%.c $(LIBDIR)/sol_wmJNI.a \
+		$(LIBDIR)/sol_wmJNIc.a -L$(THRDIR) -lnet -ljava \
+		-o %value svcName%%nl%
+		
+runtest: %value svcName%%nl%
+	LD_LIBRARY_PATH=$(LIBS) CLASSPATH=$(CLASSES) ./%value svcName%
+
+%case hpx%
+COPT = -g +z +DAportable +DS2.0
+THRDIR = $(JDKDIR)/lib/PA_RISC/native_threads
+LIBS = .:$(THRDIR):$(LD_LIBRARY_PATH)
+
+all: %value svcName%%nl%
+
+%value svcName%: %value svcName%.c 
+	cc $(COPT) -I$(JDKDIR)/include -I$(JDKDIR)/include/hp-ux \
+		-I$(INCLUDES) %value svcName%.c $(LIBDIR)/hpx_wmJNI.a \
+		$(LIBDIR)/hpx_wmJNIc.a -L$(THRDIR) -ljava -lpthread -lc \
+		-o %value svcName%%nl%
+
+runtest: %value svcName%%nl%
+	export LD_LIBRARY_PATH=$(LIBS); export SHLIB_PATH=$(LIBS); \
+	export CLASSPATH=$(CLASSES); ./%value svcName%
+
+%case aix%
+COPT = -g
+THRDIR = $(JDKDIR)/lib/aix/native_threads
+LIBS = .:$(THRDIR):$(LIBPATH)
+
+all: %value svcName%%nl%
+
+%value svcName%: %value svcName%.c
+	xlc_r $(COPT) -I$(JDKDIR)/include -I$(JDKDIR)/include/aix \
+		-I$(INCLUDES) %value svcName%.c \
+		-L$(LIBDIR) -laix_wmJNI -laix_wmJNIc \
+		-L$(THRDIR) -lnet -ljava -lpthread -lc \
+		-o %value svcName%%nl%
+		
+runtest: %value svcName%%nl%
+	export LIBPATH=$(LIBS); \
+	export CLASSPATH=$(CLASSES); ./%value svcName%
+
+%end%
+
+clean:
+	rm -f %value svcName%.o
+	rm -f %value svcName%
+
+%endif%
+

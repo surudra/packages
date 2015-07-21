@@ -1,0 +1,145 @@
+#
+# webMethods Deployer plugin configuration file
+# 
+
+#
+# Unique identifier for the plugin
+#
+type=Broker
+
+#
+# Deployment Support Type for your plugin server
+# RUNTIME/OFFLINE/BOTH
+#
+deploymentSupportType=BOTH
+
+#
+# The display name for your plugin server
+#
+label=Broker
+
+#
+# Whether or not the Plugin Instance A will be referring to dependencies
+# on Plugin or Server Instance B
+# 
+referencesOtherServers=FALSE
+
+#
+# Just put false here
+#
+isLocal=TRUE
+
+#
+# Path to the web service logic in your plugin web service container
+#
+listObjectsPath=
+pingPath=
+getObjectsPath=
+deployObjectsPath=
+verifyObjectPath=
+getDependenciesPath=
+getConnectionInfoPath=
+
+jar=BrokerPlugin.jar
+className=com.wm.deployer.broker.plugin.BrokerPlugin
+
+#
+# Fields that will be displayed on the plugin connection configuration
+# page for each plugin instance that needs to be accessed by the
+# Deployer.  Leaving a blank value for any of these fields will prevent
+# the Deployer from displaying it
+#
+hostLabel=Host
+portLabel=Port
+userLabel=
+passwordLabel=
+SSLLabel=Client Authentication
+versionLabel=Version
+validVersions=9.6@SPI_2,9.5@SPI_2,9.0@SPI_2,8.2@SPI_1,8.0@SPI_0,7.1@SPI_0
+# hostSuffix_9.0_Repository=wm_caf_deployer_services/services/DeployerPluginSOAP
+connectionProperties=BrokerName,ClientGroup,SSL_DeployerKeystore_1,SSL_KeystoreType_2,SSL_Password_KeystorePassword_3,SSL_DeployerTruststore_4,SSL_TruststoreType_5,BrokerContext,BasicAuth_Username,BasicAuth_Password
+
+connection.BrokerName.label=Broker Name
+connection.BrokerName.type=STRING
+connection.BrokerName.default=Broker #1
+connection.BrokerName.required=TRUE
+
+connection.ClientGroup.label=Client Group
+connection.ClientGroup.type=STRING
+connection.ClientGroup.default=IntegrationServer
+connection.ClientGroup.required=TRUE
+
+connection.SSL_DeployerKeystore_1.label=Deployer Keystore
+connection.SSL_DeployerKeystore_1.type=STRING
+connection.SSL_DeployerKeystore_1.default=
+connection.SSL_DeployerKeystore_1.required=TRUE
+
+connection.SSL_KeystoreType_2.label=Keystore Type
+connection.SSL_KeystoreType_2.type=SELECT
+connection.SSL_KeystoreType_2.default=PKCS12
+connection.SSL_KeystoreType_2.required=TRUE
+
+connection.SSL_Password_KeystorePassword_3.label=Keystore Password
+connection.SSL_Password_KeystorePassword_3.type=STRING
+connection.SSL_Password_KeystorePassword_3.default=
+connection.SSL_Password_KeystorePassword_3.required=TRUE
+
+connection.SSL_DeployerTruststore_4.label=Deployer Truststore
+connection.SSL_DeployerTruststore_4.type=STRING
+connection.SSL_DeployerTruststore_4.default=
+connection.SSL_DeployerTruststore_4.required=TRUE
+
+connection.SSL_TruststoreType_5.label=Truststore Type
+connection.SSL_TruststoreType_5.type=SELECT
+connection.SSL_TruststoreType_5.default=JKS
+connection.SSL_TruststoreType_5.required=TRUE
+
+connection.BrokerContext.label=Context
+connection.BrokerContext.type=STRING
+connection.BrokerContext.default=
+connection.BrokerContext.required=FALSE
+
+connection.BasicAuth_Username.label=Username
+connection.BasicAuth_Username.type=STRING
+connection.BasicAuth_Username.default=
+connection.BasicAuth_Username.required=TRUE
+
+connection.BasicAuth_Password.label=Password
+connection.BasicAuth_Password.type=STRING
+connection.BasicAuth_Password.default=
+connection.BasicAuth_Password.required=TRUE
+
+#
+# List of object types that can be deployed 
+# 
+objectTypes=DocumentType,ClientGroup
+
+#
+# For each object type listed above, need to to know how to label
+# a folder of them, what icon to use, and whether or not an entire
+# folder of them can be deployed as a unique object (usually not)
+#
+objectType.DocumentType.folderName=Document Types
+objectType.DocumentType.iconName=broker-doc.gif
+objectType.DocumentType.foldersAreDeployable=FALSE
+
+objectType.ClientGroup.folderName=Client Groups
+objectType.ClientGroup.iconName=client-group.gif
+objectType.ClientGroup.foldersAreDeployable=FALSE
+
+#
+# Optional list of properties to display (at the project level).
+# Data would be gathered from the user for each one of these objects
+# and that data would be passed to the plugin during each invocation
+# of getObjects (during the Build phase) and deployObjects (during 
+# the deploy phase)
+# 
+projectProperties=
+
+objectType.DocumentType.varSubFields=dummyVarSubField1,dummyVarSubField2,dummyVarSubField3
+objectType.DocumentType.varSubField.dummyVarSubField1.type=STRING
+objectType.DocumentType.varSubField.dummyVarSubField1.label="Dummy Var Sub Field 1"
+objectType.DocumentType.varSubField.dummyVarSubField2.type=STRING
+objectType.DocumentType.varSubField.dummyVarSubField2.label="Dummy Var Sub Field 2"
+objectType.DocumentType.varSubField.dummyVarSubField3.type=BOOLEAN
+objectType.DocumentType.varSubField.dummyVarSubField3.label="Dummy Var Sub Field 3"

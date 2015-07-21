@@ -1,0 +1,1170 @@
+﻿<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+<title>webMethods JDBC Adapter 6.5 Enhancements and Fixes</title>
+<style>
+<!--
+ /* Named Styles */
+
+  .wm-rmBody {
+  	font-family:        "Courier New", Courier, monospace;
+  	font-size:          10.0pt;
+  	font-weight:        normal;
+  	font-style:         normal;
+  	margin-top:         12.0pt;
+  	margin-right:       0in;
+  	margin-bottom:      0in;
+  	margin-left:        0in;  }
+
+
+  .wm-rmBodyIndent {
+  	font-family:        "Courier New", Courier, monospace;
+  	font-size:          10.0pt;
+  	font-weight:        normal;
+  	font-style:         normal;
+  	margin-top:         12.0pt;
+  	margin-right:       0in;
+  	margin-bottom:      0in;
+  	margin-left:       .25in;  }
+
+
+  .wm-rmInstructionsToWriter
+   {
+  	font-family:        "Times New Roman", "Times Roman", serif;
+  	font-size:          9.0pt;
+  	font-style:         italic;
+  	font-weight:        normal;
+  	color:              red;
+  	margin-top:         6.0pt;
+  	margin-right:       0in;
+  	margin-bottom:      0in;
+  	margin-left:        0in;  }
+
+
+  .wm-rmBulletList {
+  	font-family:        "Courier New", Courier, monospace;
+  	font-size:          10.0pt;
+  	font-style:         normal;
+  	font-weight:        normal;
+  	margin-top:         9.0pt;
+  	margin-right:       0in;
+  	margin-bottom:      0in;
+  	margin-left:       .25in;
+  	text-indent:      -.25in;  }
+
+
+  .wm-rmTableHead {
+  	font-family:         Arial, Helvetica, sans-serif;
+  	font-size:           9.0pt;
+  	font-style:          normal;
+  	font-weight:         bold;
+  	margin-top:          12.0pt;
+  	margin-right:        0in;
+  	margin-bottom:       0in;
+  	margin-left:         0in;
+  	border:              bottom;
+  	padding:             0in;  }
+
+
+  .wm-rmTableCell {
+  	font-family:         "Courier New", Courier, monospace;
+  	font-size:           9.0pt;
+  	font-style:          normal;
+  	font-weight:         normal;
+  	margin-top:          6.0pt;
+  	margin-right:        0in;
+  	margin-bottom:       3.0pt;
+  	margin-left:         0in;
+  	padding:             0in;  }
+
+
+  /* Tag Styles */
+
+  h1 {
+  	font-family:     Arial, Helvetica, sans-serif;
+  	font-size:           16.0pt;
+  	font-style:          normal;
+  	font-weight:         bold;
+  	margin-top:          12.0pt;
+  	margin-right:        0in;
+  	margin-left:         0in;
+  	margin-bottom:       3.0pt;
+  	text-align:          center;  }
+
+
+  h2 {
+  	font-family:         Arial, Helvetica, sans-serif;
+  	font-size:           14.0pt;
+  	font-style:          normal;
+  	font-weight:         bold;
+  	margin-top:          12.0pt;
+  	margin-right:        0in;
+  	margin-left:         0in;
+  	margin-bottom:       3.0pt;  }
+
+
+  h3  {
+  	font-family:         Arial, Helvetica, sans-serif;
+  	font-size:           12.0pt;
+  	font-style:          normal;
+  	font-weight:         bold;
+  	margin-top:         .25in;
+  	margin-right:        0in;
+  	margin-bottom:       0in;
+  	margin-left:         0in;  }
+
+
+  a:link {
+  	color:               blue;
+  	text-decoration:     none;  }
+
+
+  a:visited {
+  	color:               purple;
+  	text-decoration:     none;  }
+
+
+  a:hover {
+  	text-decoration   :  underline; }
+
+
+  p {
+  	font-family:        "Courier New", Courier, monospace;
+  	font-size:          10.0pt;
+  	font-weight:        normal;
+  	font-style:         normal;
+  	margin-top:         12.0pt;
+  	margin-right:       0in;
+  	margin-bottom:      0in;
+  	margin-left:        0in;  }
+
+
+  th {
+  	font-family:         Arial, Helvetica, sans-serif;
+  	font-size:           9.0pt;
+  	font-style:          normal;
+  	font-weight:         bold;
+  	margin-top:          12.0pt;
+  	margin-right:        0in;
+  	margin-bottom:       0in;
+  	margin-left:         0in;
+  	border:              bottom;
+  	padding:             0in;  }
+
+
+  td {
+  	font-family:         "Courier New", Courier, monospace;
+  	font-size:           0.0pt;
+  	font-style:          normal;
+  	font-weight:         normal;
+  	margin-top:          6.0pt;
+  	margin-right:        0in;
+  	margin-bottom:       0in;
+  	padding:             0in;
+  	margin-left:         0in;  }
+
+
+  ul {
+  	font-family:        "Courier New", Courier, monospace;
+  	font-size:          10.0pt;
+  	font-style:         normal;
+  	font-weight:        normal;
+  	list-style :        square;  }
+
+
+  ol {
+  	font-family:        "Courier New", Courier, monospace;
+  	font-size:          10.0pt;
+  	font-style:         normal;
+  	font-weight:        normal;  }
+
+
+-->
+</style>
+</head>
+
+<body lang=EN-US link=blue vlink=purple>
+
+<div class=Section1>
+
+<h1><a name="wmRM_title"></a><span class=GramE>webMethods</span> JDBC Adapter 6.5 Enhancements and Fixes </h1>
+
+<div style='border:none;border-bottom:solid windowtext 1.0pt;padding:0in 0in 1.0pt 0in'>
+
+<h2 align=center style='text-align:center'>December 2006</h2>
+
+</div>
+
+<p class=wm-rmBody>This file
+provides important information about enhancements and fixes in webMethods JDBC
+Adapter 6.5. For information about enhancements and fixes in previous webMethods
+JDBC Adapter releases, see the readme for those releases.</p>
+
+<div style='border:none;border-bottom:solid windowtext 1.0pt;padding:0in 0in 1.0pt 0in'>
+
+<h2>Contents</h2>
+
+</div>
+
+<p class=wm-rmBody>1.0 <a
+href="#_1.0_Fixes_and_Service Packs Include">Fixes and Service Packs Included
+in This Release</a></span></p>
+
+<p class=wm-rmBody>2.0 <a
+href="#_2.0_Enhancements">Enhancements</a></span></p>
+
+<p class=wm-rmBody>3.0 <a
+href="#_3.0_Resolved_Issues">Resolved Issues</a></span></p>
+
+<p class=wm-rmBody>4.0 <a
+href="#_4.0_Terminology_Changes_1">Terminology Changes</a></span></p>
+
+<p class=wm-rmBody>5.0 <a
+href="#_5.0_Added_and">Added and Removed Services and APIs</a></span></p>
+
+<p class=wm-rmBody>6.0 <a
+href="#_6.0_Enhancements_and_Fixes in Previ">Enhancements and Fixes in Previous
+Release</a></span></p>
+
+<div style='border:none;border-bottom:solid windowtext 1.0pt;padding:0in 0in 1.0pt 0in'>
+
+<h2><a name="_1.0_Enhancements"></a><a name="_2.0_Included_Fixes"></a><a
+name="_1.0_Fixes_and_Service Packs Include"></a>1.0 Fixes and Service Packs
+Included in This Release</h2>
+
+</div>
+
+<p class=wm-rmBody><span class=GramE>webMethods</span> JDBC Adapter 6.5
+includes the following fixes and service packs that were shipped since the last
+release.</p>
+
+<p class=wm-rmBulletList>- JDBC_6-0-3_Fix1 through JDBC_6-0-3_Fix18 on the JDBC
+Adapter 6.0.3</p>
+
+<p class=wm-rmBulletList>- JDBC_6-0-3_FP1_Fix1 through JDBC_6-0-3_FP1_Fix14 on
+the JDBC Adapter 6.0.3 FP1</p>
+
+<p class=wm-rmBody>For detailed information
+on these fixes and feature packs for webMethods JDBC Adapter, see the <span
+class=MsoHyperlink><a href="http://advantage.webmethods.com/knowledgebase"
+target=newwin>Knowledge Base</a></span> on the <span class=MsoHyperlink><a href="http://advantage.webmethods.com/"
+target=newwin>webMethods Advantage</a></span> Web site.</p>
+
+<div style='border:none;border-bottom:solid windowtext 1.0pt;padding:0in 0in 1.0pt 0in'>
+
+<h2><a name="_3.0_Other_Resolved"></a><a name="_2.0_Enhancements_and_Fixes"></a><a
+name="_2.0_Enhancements"></a>2.0
+Enhancements</h2>
+
+</div>
+
+<p class=wm-rmBody>webMethods
+JDBC Adapter 6.5 includes the following enhancements: </p>
+
+<p class=wm-rmBody><b>Polling Notification Enhancements</b></p>
+
+<p class=wm-rmBulletList>-  Improve the polling
+notification migration by providing better error handling messages when
+migrating in a non-Suspended state.</p>
+
+<p class=wm-rmBulletList>-  Clean up the
+database objects for a given adapter notification using a utility service.</p>
+
+<p class=wm-rmBulletList>-  Enable a Basic
+Notification to not delete processed records in the notification's associated
+table.</p>
+
+<p class=wm-rmBulletList>-  Retrieve the
+old, new, and both old and new values for an Update Notification.</p>
+
+<p class=wm-rmBulletList>-  Include a WHERE
+clause in a Basic Notification.</p>
+
+<p class=wm-rmBulletList>-  Enable the JDBC
+Adapter to obtain the database object information for adapter notifications
+using a utility service.</p>
+
+<p class=wm-rmBulletList>-  Allow a polling
+notification to publish locally to the webMethods Integration Server.</p>
+
+<p class=wm-rmBody><b>Connection Management Enhancements</b></p>
+
+<p class=wm-rmBulletList><b>-  </b>Support the setting of DataSource property
+that <span class=GramE>use ;</span> (semicolons) as delimiters for multiple key
+value pairs.</p>
+
+<p class=wm-rmBulletList>-  Update the
+password of an existing connection programmatically, using a public service.</p>
+
+<p class=wm-rmBulletList>-  Specify the user
+name and password credentials at run time for JDBC Adapter connections.</p>
+
+<p class=wm-rmBulletList>-  Configure the
+JDBC Adapter connections automatically, using a public service.</p>
+
+<p class=wm-rmBulletList>-  Set the transaction
+isolation levels at the JDBC Adapter connection level.</p>
+
+<p class=wm-rmBody><b>Oracle-specific Enhancements</b></p>
+
+<p class=wm-rmBulletList>-  Provide support
+for Oracle-specific CLOB and BLOB data types as a parameter input type, in JDBC
+Adapter services.</p>
+
+<p class=wm-rmBulletList>-  Support the Oracle
+ARRAY and STRUCT data type objects as input and output parameters in the adapter
+services.</p>
+
+<p class=wm-rmBulletList>-  Support streaming
+with the JDBC Adapter.</p>
+
+<p class=wm-rmBody><b>Other Notable Enhancements</b></p>
+
+<p class=wm-rmBulletList>-  Allow a java
+or <span class=GramE>a flow service obtain</span> a connection from the JDBC Adapter connection pool using the new
+adapter service - <span class=SpellE>ExecuteService</span>.</p>
+
+<p class=wm-rmBulletList>-  Expand the <span
+class=SpellE>UpdateServiceSchema</span> service for use with <span
+class=SpellE>StoredProcedure</span> and <span class=SpellE>StoredProcedureWithSignature</span>
+adapter services.</p>
+
+<p class=wm-rmBulletList>-  Provide a new
+dummy string data type <span class=SpellE>SetAsString</span> in the adapter
+services. You can set the value of this dummy data type by passing a value of <span
+class=SpellE>java.lang.string</span> data type. When selecting the <span
+class=SpellE>SetAsString</span> data type, the JDBC Adapter treats the data as
+a string and does not convert it to the underlying database column type or to the
+equivalent JDBC type. </p>
+
+<p class=wm-rmBulletList>-  Expose the
+resulting number of rows for a SelectSQL adapter service and for the Select
+query in CustomSQL and DynamicSQL adapter services.</p>
+
+<p class=wm-rmBulletList>-  Execute the <span
+class=SpellE>CustomSQL</span> and DynamicSQL services for a Select query
+without explicitly specifying the output parameters in the adapter service
+template.</p>
+
+<p class=wm-rmBulletList>-  Provide a new
+data type, <span class=SpellE>java.lang.Object</span> which uses the setObject
+method for all supported JDBC data types.</p>
+
+<p class=wm-rmBulletList>-  Add the Query
+Timeout parameter for adapter services and notifications.</p>
+
+<p class=wm-rmBulletList>-  Suppress the
+error logging when the database is unreachable or down. The suppressed error is
+logged for five consecutive times and then suppressed.</p>
+
+<div style='border:none;border-bottom:solid windowtext 1.0pt;padding:0in 0in 1.0pt 0in'>
+
+<h2><a name="_3.0_Resolved_Issues"></a>3.0 Resolved Issues</h2>
+
+</div>
+
+<p class=wm-rmBody>The issues
+listed below have been addressed in this release.</p>
+
+<p class=wm-rmBody><a name="_4.0_Terminology_Changes"></a>1-157LXR
+(JDBC_6-0-3_FP1_Fix14 and JDBC_6-0-3_Fix18<span class=GramE>)</span><br>
+<b>While executing the StoredProcedure
+service, an error with message &quot;Maximum cursor count(50) exceeded&quot; is
+thrown.<br>
+</b>This error is thrown when the StoredProcedure service that returns multiple
+result sets is executed continuously in a loop. This happens because the Result
+Set objects do not get closed.</p>
+
+<p class=wm-rmBody>1-TLKDI (JDBC_6-0-3_FP1_Fix14 and JDBC_6-0-3_Fix18<span
+class=GramE>)</span><br>
+<b>Errors occur at Integration Server
+restart while loading packages that contain disabled connections and
+notifications.<br>
+</b>When the Integration Server loads a package containing disabled JDBC
+Adapter connections and notifications, the following errors are thrown: <br>
+[ART.0114.1007E] Adapter Runtime: Error Logged. See Error log for details.
+Error: [ADA.1.311] The connection is not available for &quot; <span
+class=SpellE><span class=GramE>initCallBack</span></span><span class=GramE>(</span>)
+&quot;.<br>
+[ART.0116.3038E] Adapter Runtime (Notification): Error in Notification <span
+class=SpellE>Callback<span class=GramE>:initCallback</span></span> notification
+<span class=SpellE>JDBCTest:insertNotification</span>. <br>
+This error occurs because the Adapter Runtime (<span class=SpellE>WmART</span>)
+requires the connection even though it is disabled. </p>
+
+<p class=wm-rmBody>1-15RO9P (JDBC_6-0-3_Fix18<span class=GramE>)</span><br>
+<b>An error &quot;No method <span
+class=SpellE>createSchemaList</span> in class <span class=SpellE>pub.jdbcAdapter</span>&quot;
+is thrown, after installing the JDBC_6-0-3_Fix17.<br>
+</b>This error occurs because the <span class=SpellE>WmJDBCAdapter</span>
+package is not loaded completely during installation.</p>
+
+<p class=wm-rmBody>1-15E7Z4 (JDBC_6-0-3_FP1_Fix13<span class=GramE>)</span><br>
+<b>In webMethods JDBC Adapter 6.0.3, when
+the StoredProcedureWithSignature service is used to invoke a StoredProcedure
+with a CLOB or a BLOB data type as output, an invalid column type error is
+thrown.<br>
+</b>When a StoredProcedureWithSignature service invokes a StoredProcedure
+service which has a CLOB or a BLOB data type as output data type, then the
+adapter sets the CLOB or BLOB data type as 'Other' data type. This happens
+because Oracle returns 'Other' as the metadata for the CLOB and the BLOB data
+type. Due to this, an invalid column type error is thrown.</p>
+
+<p class=wm-rmBody>1-14L10N (JDBC_6-0-3_FP1_Fix13<span class=GramE>)</span><br>
+<b>In webMethods JDBC Adapter 6.0.3, the
+Select service on Oracle databases that has the selected column data type as
+CHAR(n) is handled incorrectly.<br>
+</b>In webMethods JDBC Adapter 6.0.3, for the Select service if the selected
+Oracle database Column Type is <span class=GramE>CHAR(</span>n), the corresponding
+JDBC Type is taken as CHAR. Due to this, the service does not work properly. <br>
+This issue is now resolved by supporting another JDBC data type 'ORACLEFIXED_CHAR'.
+Now, in the Select tab of the Select service, if the Column Type is <span
+class=GramE>CHAR(</span>n), 'ORACLEFIXED_CHAR' is automatically populated in
+the JDBC Type field. But, in the WHERE tab, you need to select the
+corresponding data type in the JDBC Type field.</p>
+
+<p class=wm-rmBody>1-14S6AH (JDBC_6-0-3_FP1_Fix12<span class=GramE>)</span><br>
+<b>In webMethods JDBC Adapter 6.0.3.1, no
+exception is thrown when the commit of a local transaction fails.<br>
+</b>In webMethods JDBC Adapter 6.0.3.1, when the commit of a local transaction
+fails, the adapter logs the exception, and neglects it. It does not throw an
+exception.</p>
+
+<p class=wm-rmBody>1-14JW5P (JDBC_6-0-3_FP1_Fix12 and JDBC_6-0-3_Fix17<span
+class=GramE>)</span><br>
+<b>For an UpdateNotification, when all the
+columns are disabled for notification, an error message is not displayed.<br>
+</b>In webMethods JDBC Adapter, when using the UpdateNotification, at least one
+of the columns of the database table has to be enabled for notification. If all
+the columns are disabled for notification, an error message should be
+displayed. <br>
+This issue is now resolved. If all the columns in the table are disabled for
+notification, an error message is displayed on the Integration Server console,
+and the UpdateNotification cannot be enabled.</p>
+
+<p class=wm-rmBody>1-145RNX (JDBC_6-0-3_FP1_Fix12) (JDBC_6-0-3_Fix17<span
+class=GramE>)</span><br>
+<b>In webMethods JDBC Adapter, the
+StoredProcedure adapter service has a limitation of returning only a maximum
+number of 20 result sets.<br>
+</b>The StoredProcedure service in the webMethods JDBC Adapter can be configured
+to return multiple result sets. By default, the service can return only a
+maximum of 20 result sets. A new result set index cannot be added manually.</p>
+
+<p class=wm-rmBody>This issue is now resolved. A new watt property is
+introduced, <span class=SpellE>watt.adapter.JDBC.StoredProcedureMaxCursorIndex</span>,
+that enables you to specify the required maximum number of result set index.<br>
+To specify the required maximum number of result set index:</p>
+
+<p class=wm-rmBody>1. From the Integration Server Administrator, click Settings
+&gt; Extended.  </p>
+
+<p class=wm-rmBody>2. Click Edit Extended Settings. </p>
+
+<p class=wm-rmBodyIndent>In the Extended Settings editor, type the following:</p>
+
+<p class=wm-rmBodyIndent><span class=SpellE>watt.adapter.JDBC.StoredProcedureMaxCursorIndex</span>=
+&lt;&lt;no of result sets required&gt;&gt;</p>
+
+<p class=wm-rmBodyIndent>  <span
+class=GramE>where</span> &lt;&lt;no of result sets required&gt;&gt; is the
+required maximum number of result sets. For example, to return a maximum number
+of 30 result sets from the StoredProcedure service, set the property as:</p>
+
+<p class=wm-rmBodyIndent><span class=SpellE>watt.adapter.JDBC.StoredProcedureMaxCursorIndex</span>=30</p>
+
+<p class=wm-rmBodyIndent>Note: The parameter name is case sensitive. The value
+of the parameter should be greater than zero but has no upper limits. However,
+it is better to provide a value within the practical limits. A large value can
+lead to an unpredictable behavior of the system. Instead, you can configure
+another StoredProcedure service for the next set of result sets.</p>
+
+<p class=wm-rmBody>3. Click Save Changes. A key for the new property appears in
+the Extended Settings list.</p>
+
+<p class=wm-rmBody>4. Click Show and Hide Keys. You will see &quot;<span
+class=SpellE>watt.adapter.JDBC.StoredProcedureMaxCursorIndex</span>&quot;
+listed as a Key and is visible.</p>
+
+<p class=wm-rmBody>5. Restart the webMethods Integration Server for the changes
+to take effect.</p>
+
+<p class=wm-rmBody>For more information about working with extended
+configuration settings, see the webMethods Integration Server Administrator's Guide.</p>
+
+<p class=wm-rmBody>1-12XS9D (JDBC_6-0-3_FP1_Fix12 and JDBC_6-0-3_Fix17<span
+class=GramE>)</span><br>
+<b>While configuring JDBC services and
+notifications, the default value is set incorrectly in the Maximum Row field.<br>
+</b>In SelectSQL, CustomSQL, DynamicSQL services, and Insert, Update, Delete
+notifications, the default value is set incorrectly in the Maximum Row field.
+By default, the maximum value should be set as 0 which retrieves all the
+records from the database.</p>
+
+<p class=wm-rmBody>1-1070SQ, 1-11FV6H (JDBC_6-0-3_FP1_Fix11 and JDBC_6-0-3_Fix16<span
+class=GramE>)</span><br>
+<b>JDBC Adapter notifications submit the
+same document twice.<br>
+</b>Inserting the same row/identical data in the database more than once results
+in duplicate notifications even if Select 'DISTINCT' is specified at design
+time. This situation occurs for any Insert/Update/Delete notification and
+results in an error for the second document published. <br>
+This issue is now resolved. The JDBC Adapter now suppresses the duplicate
+notification if 'Select DISTINCT' is specified at design time.</p>
+
+<p class=wm-rmBody>1-12ATAF (JDBC_6-0-3_FP1_Fix11 and JDBC_6-0-3_Fix16<span
+class=GramE>)</span><br>
+<b>JDBC Adapter that uses the SQL Server
+2005 JDBC Driver incorrectly displays the stored procedure name and cannot execute
+that procedure.<br>
+</b>Stored Procedure service names are incorrectly displayed as being enclosed
+in quotation marks. For example, the Stored Procedure service named
+sp_GetEmployee<span class=GramE>;1</span> is displayed as &quot;sp_GetAllEmployee;1&quot;.
+At service run time, execution fails with the following messages:</p>
+
+<p class=wm-rmBody>com.wm.app.b2b.server.ServiceException: [ART.117.4002]
+Adapter Runtime (Adapter Service): Unable to invoke adapter service <span
+class=SpellE>com.webmethods.adapters.jdbc.mssql.services.storedprocedure</span>:
+<span class=SpellE>SP_Select</span><span class=GramE>.[</span>ADA.1.316] Cannot
+execute the SQL statement &quot;{call QATest.dbo.&quot;sp_GetAllEmployee<span
+class=GramE>;1</span>&quot;}&quot;. <span class=GramE>&quot; (</span>S00062/2812)
+</p>
+
+<p class=wm-rmBody>Could not find stored procedure 'Test.dbo.sp_GetAllEmployee<span
+class=GramE>;1'</span>.&quot; </p>
+
+<p class=wm-rmBody>Could not find stored procedure 'Test.dbo.sp_GetAllEmployee<span
+class=GramE>;1'</span>.</p>
+
+<p class=wm-rmBody>This issue has been resolved. Stored Procedure service names
+now appear correctly, and the services run successfully.</p>
+
+<p class=wm-rmBody>1-12GCBP (JDBC_6-0-3_FP1_Fix11 and JDBC_6-0-3_Fix16<span
+class=GramE>)</span><br>
+<b>Exception thrown when creating a Stored
+Procedure With Signature Service that uses specific MS SQL Server 2005 data
+types.<br>
+</b>When creating a Stored Procedure With Signature Service with parameters
+whose data types are <span class=SpellE>nchar</span>, <span class=SpellE>ntext</span>,
+<span class=SpellE>nvarchar</span>, <span class=SpellE>nvarchar</span>(MAX), <span
+class=SpellE>uniqueidentifier</span>, and xml, the following exception is
+thrown at execution:<br>
+com.wm.app.b2b.server.ServiceException: [ART.114.205] Adapter Runtime
+(Metadata): Unable to lookup the resource domain <span class=SpellE>values.null</span>
+on <span class=SpellE>procedureSignature.colIndexes</span> [Ljava.lang.String;@7e9c7d
+<span class=SpellE>java.lang.Exception</span>: Adapter values are not
+available.<br>
+This issue has been resolved. The JDBC Adapter now includes support for <span
+class=SpellE>nchar</span>, <span class=SpellE>ntext</span>, <span class=SpellE>nvarchar</span>,
+<span class=SpellE><span class=GramE>nvarchar</span></span><span class=GramE>(</span>MAX),
+<span class=SpellE>uniqueidentifier</span>, and xml data types in MS SQL Server
+2005.</p>
+
+<p class=wm-rmBody>1-12AT6N (JDBC_6-0-3_FP1_Fix11 and JDBC_6-0-3_Fix16<span
+class=GramE>)</span><br>
+<b>The JDBC Adapter does not correctly
+handle certain MS SQL Server 2005 data types, causing notifications to fail.<br>
+</b>Using the JDBC Adapter with the MS SQL Server 2005 driver, the driver
+returns the <span class=SpellE>columnSize</span> in the metadata for the data types
+<span class=SpellE>smallmoney</span>, timestamp and <span class=SpellE>uniqueidentifier</span>.
+(These data types are displayed as <span class=SpellE><span class=GramE>smallmoney</span></span><span
+class=GramE>(</span>10,4), timestamp(8), and <span class=SpellE>uniqueidentifier</span>(36),
+respectively, in the Developer.) The adapter then uses the metadata, including
+the column size, when it creates the buffer table when the notification is enabled.
+However, because MS SQL Server 2005 does not allow tables with these columns to
+be defined with the column size, enabling the notification fails.<br>
+This issue has been resolved. The JDBC Adapter now successfully enables
+notifications for tables that have columns for data <span class=GramE>types</span>
+<span class=SpellE>smallmoney</span>, <span class=SpellE>uniqueidentifier</span>,
+and timestamp.</p>
+
+<p class=wm-rmBody>1-12ASER (JDBC_6-0-3_FP1_Fix11 and JDBC_6-0-3_Fix16)</p>
+
+<p class=wm-rmBody style='margin-top:0in'><b>When enabling an ordered
+notification for the JDBC Adapter on Informix, the adapter throws the following
+error: [ART.116.3038] Adapter Runtime (Notification): Error in <span
+class=GramE>Notification  <span
+class=SpellE>Callback:enableCallback</span></span> notification <span
+class=SpellE>Bossini.test</span>: <span class=SpellE>INot</span>.[ADA.1.316]
+Cannot execute the SQL statement &quot;<span class=SpellE>sql_statement</span>&quot;.<br>
+</b>The &quot;<span class=SpellE>sql_statement</span>&quot; specified indicates
+that the SQL statement was trying to create a procedure for a table in which
+&quot;NOT NULL&quot; is explicitly mentioned in the column descriptions. This
+error occurs because the stored procedure that is called for enabling an
+Informix ordered notification generates a syntax error if a column description
+has a &quot;NOT NULL&quot; clause.</p>
+
+<p class=wm-rmBody>1-111D0X, 1-11FCXF (JDBC_6-0-3_FP1_Fix10 and JDBC_6-0-3_Fix15<span
+class=GramE>)</span><br>
+<span class=SpellE><b>BasicNotification</b></span><b> fails if the database is down during Integration
+Server startup.<br>
+</b>After restarting the Integration Server with the database down, running a <span
+class=SpellE>BasicNotification</span> after the database is brought back up
+throws the following error:<br>
+&lt;notification-name&gt;[ART.116.3001] Adapter Runtime (Notification): Notification
+error during execution of &lt;notification-name&gt;. Error: [ADA.1.316] <span
+class=GramE>Cannot</span> execute the SQL statement &quot;null&quot;.
+&quot;(17104) SQL statement to execute cannot be empty or null&quot;.<br>
+This condition occurs because the <span class=SpellE>BasicNotification</span>
+does not initialize after the database comes back up, resulting in the Select
+query being set to null.<br>
+This issue is now resolved, and the <span class=SpellE>BasicNotification</span>
+is properly re-initialized.</p>
+
+<p class=wm-rmBody>1-ZBTJR (JDBC_6-0-3_FP1_Fix9)<br>
+<b>When the webMethods Integration Server
+is shut down during the execution of a flow service, the JDBC connection is
+closed and open transactions are not explicitly rolled back by ART. As a result,
+the transaction is left open when the connection is closed, and the default
+behavior of the connection resource is applied to the open transaction. With an
+Oracle JDBC driver, the transaction is committed instead of being rolled back.<br>
+</b>Now the JDBC Adapter explicitly rolls back the open transaction instead of
+committing it.</p>
+
+<p class=wm-rmBody>1-ZW3SN (JDBC_6-0-3_FP1_Fix9<span class=GramE>)</span><br>
+<b>Buffer table created with incorrect
+NCHAR column size prevents the corresponding notification from being enabled.<br>
+</b>When a JDBC Adapter notification is configured with the base table containing
+an NCHAR column, the notification cannot be enabled because the JDBC Adapter
+creates a buffer table with the incorrect NCHAR column size.<br>
+Now, the JDBC Adapter creates a buffer table with the correct NCHAR column
+size.</p>
+
+<p class=wm-rmBody>1-Y1X74 (JDBC_6-0-3_FP1_Fix9<span class=GramE>)</span><br>
+<b>In the JDBC Adapter, an <span
+class=SpellE>OrderedNotification</span> throws an error if the column has the
+Identity set.<br>
+</b>In a table where one column has &quot;Identity&quot; set as
+&quot;yes&quot;, creating an ordered notification on that table causes an
+adapter runtime error to be thrown. This error condition is due to a syntax
+error in the generated trigger code.<br>
+Now, the JDBC Adapter ordered notification creates a trigger with the correct
+syntax.</p>
+
+<p class=wm-rmBody>1-XB7IH, 1-ZVYR1 (JDBC_6-0-3_FP1_Fix8 and JDBC_6-0-3_Fix14<span
+class=GramE>)</span><br>
+<b>Notifications do not work after the
+database is down during Integration Server (IS) startup.<br>
+</b>If the database is down during IS startup, the connection pool is disabled.
+For enabled notifications, you will see messages that indicate there is no
+connection available from the pool.<br>
+Even after the database comes back up and the connection pool is enabled, the
+insert/update/delete notification functions still do not work and the
+notification throws the following error<span class=GramE>:</span><br>
+[ADA.1.327] This notification is not ready to be enabled.<br>
+This fix allows enabled notifications to continue to retrieve data from
+existing buffer tables after re-establishing the connection pool.</p>
+
+<p class=wm-rmBody>1-WX8E9 (JDBC_6-0-3_FP1_Fix7 and JDBC_6-0-3_Fix13<span
+class=GramE>)</span><br>
+<b>IS trigger retry with JDBC Adapter
+service in Integration Server 6.5 environment fails.<br>
+</b>With <span class=SpellE>WmART</span> 6.1 and earlier, if the database is
+down, <span class=SpellE>WmART</span> destroys all connections in the pool and
+an IS trigger tries to execute the adapter service. During the retry, <span
+class=SpellE>WmART</span> passes a connection from the connection pool to the
+adapter service and, since all connections were previously destroyed, <span
+class=SpellE>WmART</span> and the JDBC Adapter attempt to make new connections.
+If the attempt fails, the IS trigger continues to retry executing the adapter service.
+The retry attempts continue until the configured number of IS trigger retries
+are exhausted or until the connections are created and the adapter service is
+executed successfully.<br>
+With <span class=SpellE>WmART</span> 6.5, if the database is down, the IS
+trigger tries to execute the adapter service, but makes only one attempt. During
+the retry, if the connections cannot be created, the IS trigger stops and the
+adapter service fails to execute.</p>
+
+<p class=wm-rmBody>The fix addresses this issue by:</p>
+
+<p class=wm-rmBody>- Adding a new extended property named</p>
+
+<p class=wm-rmBody>  <span class=SpellE>watt.adapter.JDBC.database.fatalErrors</span>=+&lt;<span
+class=SpellE>errorcode</span>&gt;</p>
+
+<p class=wm-rmBody>- Adding new fatal error codes that indicate the database is
+down to the adapter's list of fatal error codes. Those error codes are:</p>
+
+<p class=wm-rmBodyIndent>08S01    17410</p>
+
+<p class=wm-rmBodyIndent>28       17416</p>
+
+<p class=wm-rmBodyIndent>1012     40003</p>
+
+<p class=wm-rmBodyIndent>1033     -601</p>
+
+<p class=wm-rmBodyIndent>1089     -30081</p>
+
+<p class=wm-rmBodyIndent>1092     -79716</p>
+
+<p class=wm-rmBodyIndent>3114     -99999</p>
+
+<p class=wm-rmBodyIndent>12571    HY000</p>
+
+<p class=wm-rmBodyIndent>17001    JZ0C0</p>
+
+<p class=wm-rmBodyIndent>17002</p>
+
+<p class=wm-rmBody>This list is a combination of common fatal error codes from
+different databases.</p>
+
+<p class=wm-rmBody>With Integration Server 6.5, if the JDBC Driver returns one
+of the error codes in the list, the IS trigger will retry executing the adapter
+service for the configured number of IS trigger retries. If the IS trigger does
+not retry the adapter service when the database is down, it is most likely due
+to an error code being received that is not in the list. In this case, you can
+add the missing error code to the list using the following procedure:</p>
+
+<p class=wm-rmBody>1. Locate the error code returned when the database is down:</p>
+
+<p class=wm-rmBodyIndent>a. Change the IS logging level to 8.</p>
+
+<p class=wm-rmBodyIndent><span class=GramE>b</span>. In the server log file,
+search for adapter message</p>
+
+<p class=wm-rmBody>      ADA.0001.0113.</p>
+
+<p class=wm-rmBody>      For example, the
+adapter message below shows the error code ORA-12535:</p>
+
+<p class=wm-rmBody>
+[ADA.0001.0113V4] Received <span class=SpellE>SQLException</span>:</p>
+
+<p class=wm-rmBody>
+&quot;(72000/12535) ORA-12535: <span class=SpellE>TNS<span class=GramE>:operation</span></span>
+timed out&quot;.</p>
+
+<p class=wm-rmBody>2. Add the missing error code to error code list:</p>
+
+<p class=wm-rmBodyIndent>a. From the Integration Server Administrator, click &quot;Settings&quot;&gt;&quot;Extended&quot;.</p>
+
+<p class=wm-rmBodyIndent>b. Click &quot;Edit Extended Settings&quot;. In the
+Extended Settings editor, type:</p>
+
+<p class=wm-rmBodyIndent>   <span
+class=SpellE>watt.adapter.JDBC.database.fatalErrors</span>=+&lt;<span
+class=SpellE>errorcode</span>&gt;</p>
+
+<p class=wm-rmBodyIndent>     <span class=GramE>where</span> &lt;<span
+class=SpellE>errorcode</span>&gt; is the error code you are adding.</p>
+
+<p class=wm-rmBody>Using the example above, to add error code ORA-12535 you would
+type:</p>
+
+<p class=wm-rmBodyIndent><span class=SpellE>watt.adapter.JDBC.database.fatalErrors</span>=+12535</p>
+
+<p class=wm-rmBodyIndent>c. Click &quot;Save Changes&quot;.</p>
+
+<p class=wm-rmBodyIndent>d. Restart the webMethods Integration Server for the changes
+to take effect.</p>
+
+<p class=wm-rmBody>For more information about working with extended configuration
+settings, see the webMethods Integration Server Administrator's Guide.</p>
+
+<p class=wm-rmBody>NOTE: The new property is not database-driver specific, but instead
+applies to all database drivers. When using the JDBC Adapter with Integration
+Server 6.5, if you previously customized fatal errors using the property:</p>
+
+<p class=wm-rmBody><span class=SpellE>watt.adapter.JDBC</span><span
+class=GramE>.&lt;</span><span class=SpellE>database_driver</span>&gt;.<span
+class=SpellE>fatalErrors</span>=</p>
+
+<p class=wm-rmBody>(<span class=GramE>as</span> described in the webMethods
+JDBC Adapter User's Guide), those customizations will still be recognized.
+However, we recommend that you use the new property in the future to add fatal
+error codes.</p>
+
+<p class=wm-rmBody>1-WAFLZ (JDBC_6-0-3_FP1_Fix6 and JDBC_6-0-3_Fix12<span
+class=GramE>)</span><br>
+<b>When trying to insert null values into
+an Oracle NCHAR column, the JDBC Adapter throws the exception &quot;(17004)
+Invalid column type&quot;.<br>
+</b>This issue is now resolved.</p>
+
+<p class=wm-rmBody>1-VZUDJ (JDBC_6-0-3_FP1_Fix5<span class=GramE>)</span><br>
+<b>webMethods JDBC Adapter 6.0.3 Fix 12 is
+not compatible with JDBC 6.0.3 FP1. <br>
+</b>This fix corrects the incompatibilities.</p>
+
+<p class=wm-rmBody>1-UI8RZ (JDBC_6-0-3_FP1_Fix5 and JDBC_6-0-3_Fix11<span
+class=GramE>)</span><br>
+<b>Fatal error on extended setting ignored
+on AS400 with <span class=SpellE>JTOpen</span> Driver.<br>
+</b>This fix allows the user to set fatal error code with the JTOPEN driver on
+the IS extended setting using the watt.adapter.JDBC.DB2JTOPEN.fatalErrors=+<span
+class=SpellE>errorCode</span> property.<br>
+To change this property, use the Extended Setting screen available from the
+Settings menu on the Integration Server Administrator navigation panel.</p>
+
+<p class=wm-rmBody>1-TGN80 (JDBC_6-0-3_FP1_Fix4 and JDBC_6-0-3_Fix8<span
+class=GramE>)</span><br>
+<b>Enable complex properties to be set for
+the JDBC Adapter connection.<br>
+</b>This fix enables the user to set the <span class=SpellE>java.util.Properties</span>
+type in the &quot;Other Property&quot; field on the JDBC Adapter connection
+page. The format of complex properties is:</p>
+
+<p class=wm-rmBody><span class=SpellE><span class=GramE>propertyName</span></span>={property1=propertyValue1,property2=propertyvalue2}</p>
+
+<p class=wm-rmBody>For example, Oracle JDBC driver version 8.1.7 maps Oracle
+DATE to <span class=SpellE>java.sql.TIMESTAMP</span> and Oracle JDBC driver
+version 9.2.0.5 maps Oracle DATE to <span class=SpellE>java.sql.DATE</span>. To
+maintain the 8.1.7 driver's mapping using a 9.2.0.5 driver, you can set <span
+class=SpellE>connectionProperties</span><span class=GramE>={</span>oracle.jdbc.V8Compatible=true}
+in the JDBC Adapter's &quot;Other Property&quot; field.</p>
+
+<p class=wm-rmBody>1-UC18Z (JDBC_6-0-3_FP1_Fix3 and JDBC_6-0-3_Fix10<span
+class=GramE>)</span><br>
+<b>Need to call <span class=SpellE>setQueryTimeout</span>
+by JDBC Adapter.<br>
+</b>While performing a query, a socket read occurs and the user must wait for
+the timeout.<br>
+This fix enables you to configure the property:</p>
+
+<p class=wm-rmBody>   <span class=SpellE>watt.adapter.JDBC.QueryTimeout</span>=value
+</p>
+
+<p class=wm-rmBody><span class=GramE>where</span> &quot;value&quot; is the
+number of seconds after which a SQL query will time out. Based on this setting,
+the JDBC Adapter will call <span class=SpellE>setQueryTimeout</span> inside
+each adapter service and notification. To change this property, use the
+Extended Setting screen available from the Settings menu on the Integration
+Server Administrator navigation panel. The user must restart IS server for the
+property to take effect.</p>
+
+<p class=wm-rmBody>1-TSL98 (JDBC_6-0-3_FP1_Fix2 and JDBC_6-0-3_Fix9<span
+class=GramE>)</span><br>
+<b>User wants to be able to change the
+level at which debug-level log messages from the <st1:place><st1:City>ADA</st1:City></st1:place> log facility are displayed.<br>
+</b>Some of JDBC Adapter logging messages, such as connection messages, <span
+class=GramE>are</span> displayed at a default level. By applying this fix, the
+log messages will display at level 8 or higher.</p>
+
+<p class=wm-rmBody>1-QC7CJ (JDBC_6-0-3_FP1_Fix1 and JDBC_6-0-3_Fix3<span
+class=GramE>)</span><br>
+<b>With the Universal Type 4 driver and DB2
+V7 for OS/390, Insert, Delete, Update, Basic, and Ordered Notifications cannot
+be enabled if the source table contains CHAR, VARCHAR, or LONG VARCHAR columns.
+<br>
+</b>This fix corrects this problem.</p>
+
+<p class=wm-rmBody>1-T1VXA (JDBC_6-0-3_Fix7<span class=GramE>)</span><br>
+<b>When the database is down during
+Integration Server startup and the retry count with <span class=SpellE>backoff</span>
+timer is set for retries, the JDBC Adapter does not attempt to reconnect to the
+database based on the number of retries.<br>
+</b>This fix addresses this problem by having the JDBC Adapter issue an <span
+class=SpellE>AdapterConnectionException</span> when the database is down, thus
+allowing the ART connection retry feature to execute when the Integration
+Server is restarted.</p>
+
+<p class=wm-rmBody>1-SKLYX (JDBC_6-0-3_Fix6<span class=GramE>)</span><br>
+<b>When a JDBC Adapter connection was
+configured as a Local Transaction and the database server went down before
+invoking the <span class=SpellE>pub.art.transaction:commitTransaction</span>
+service, the flow service did not stop, but the <span class=SpellE>SQLException</span>
+was logged to the <span class=SpellE>server.log</span> file.<br>
+</b>This fix addresses this problem by adding an <span class=SpellE>AdapterException</span>
+to the <span class=GramE>commit(</span>) and rollback() methods.</p>
+
+<p class=wm-rmBody>1-QSDRK (JDBC_6-0-3_Fix5<span class=GramE>)</span><br>
+<b>When a JDBC Adapter notification is
+configured with the base table containing an NCHAR column, the notification
+cannot be enabled because the JDBC Adapter creates a buffer table with the
+incorrect NCHAR column size.<br>
+</b>This fix addresses this problem by enabling the JDBC Adapter to create a
+buffer table with the correct NCHAR column size.</p>
+
+<p class=wm-rmBody>1-N6MNG (JDBC_6-0-3_Fix4<span class=GramE>)</span><br>
+<b>When the webMethods Integration Server
+is shut down during the execution of a flow service, the JDBC connection is
+closed and transactions are left open. On an Oracle database, this results in
+data being committed.<br>
+</b>This fix addresses this problem by rolling back database changes instead of
+committing them.</p>
+
+<p class=wm-rmBody>1-QC7CJ (JDBC_6-0-3_Fix3<span class=GramE>)</span><br>
+<b>With the Universal Type 4 driver and DB2
+V7 for OS/390, Insert, Delete, Update, Basic, and Ordered Notifications cannot
+be enabled if the source table contains CHAR, VARCHAR, or LONG VARCHAR columns.<br>
+</b>This issue is now resolved.</p>
+
+<p class=wm-rmBody>1-OTGQB (JDBC_6-0-3_Fix2<span class=GramE>)</span><br>
+<b>This fix provides a new flow service
+called <span class=SpellE>pub.jdbcAdapter.UpdateNotificationSchema</span> that
+changes schema names configured in the following types of notifications: <span
+class=SpellE>InsertNotification</span>, <span class=SpellE>DeleteNotification</span>,
+UpdateNotification, <span class=SpellE>OrderedNotification</span>, and <span
+class=SpellE>BasicNotification</span>. The UpdateNotificationSchema service is
+located in the <span class=SpellE>pub.jdbcAdapter</span> folder in <span
+class=SpellE>WmJDBCAdapter</span> package</b>.<br>
+The service always validates the new schemas against the notification settings,
+and sets the state of the notification to the state it is in before it is
+updated, regardless of whether the update is successful.</p>
+
+<p class=wm-rmBody>The flow does the following:</p>
+
+<p class=wm-rmBody>1. The flow checks the current status of the notification.</p>
+
+<p class=wm-rmBody>2. If the notification is enabled, the flow checks the <span
+class=SpellE>forceDisable</span> parameter. If <span class=SpellE>forceDisable</span>
+is false, the flow reports the error. If <span class=SpellE>forceDisable</span>
+is true, the flow disables the notification.</p>
+
+<p class=wm-rmBody>3. The flow validates the schema against the notification's settings.
+The validation requires that the schema be in the same catalog that is
+configured with the notification and that the table, synonym, view, or alias,
+configured in the notification be in the schema. If the schema is not valid, the
+flow throws an exception.</p>
+
+<p class=wm-rmBody>4. The flow updates the notification property with the new schemas,
+and throws an exception if the input fields for the new schemas are not valid.</p>
+
+<p class=wm-rmBody>5. If the original notification state is enabled, the flow enables
+the notification.</p>
+
+<p class=wm-rmBody>The input signature for the service is as follows:</p>
+
+<p class=wm-rmBody>- <span class=SpellE><span class=GramE>nodeName</span></span>
+is a required String field. It sets the name of the notification to be updated.</p>
+
+<p class=wm-rmBody>- <span class=SpellE><span class=GramE>forceDisable</span></span>
+is a required Boolean field. If the value of this field is set to true, the
+service disables the notification that is in the enabled state.</p>
+
+<p class=wm-rmBody>- <span class=SpellE><span class=GramE>allSchemaChange</span></span>
+is an optional Record field. It is used if the update is to occur on every
+schema name in the notification.</p>
+
+<p class=wm-rmBody>  - <span
+class=SpellE><span class=GramE>useCurrentSchema</span></span> is an optional
+Boolean field. It sets all schema names to &lt;current schema&gt;</p>
+
+<p class=wm-rmBody>  - <span
+class=SpellE><span class=GramE>schemaName</span></span> is an optional String
+field. It sets all schema names to the value of this field.</p>
+
+<p class=wm-rmBody>- <span class=SpellE><span class=GramE>schemaChanges</span></span>
+is an optional record list field. It is used to make individual schema changes,
+by searching for any schema name set in the <span class=SpellE>existingSchema</span>
+field and then replacing it <span class=SpellE>withthe</span> corresponding
+schema name set in the <span class=SpellE>newSchema</span> field.</p>
+
+<p class=wm-rmBody>  - <span
+class=SpellE><span class=GramE>existingSchema</span></span> is a required
+Record field. It identifies the schema name to change</p>
+
+<p class=wm-rmBody>    - <span
+class=SpellE><span class=GramE>useCurrentSchema</span></span> is an optional
+Boolean field. It identifies the &lt;current schema&gt;.</p>
+
+<p class=wm-rmBody>    - <span
+class=SpellE><span class=GramE>schemaName</span></span> is an optional String
+field. It sets the schema to be replaced.</p>
+
+<p class=wm-rmBody>  - <span
+class=SpellE><span class=GramE>newSchema</span></span> is a required Record
+field. It defines the new Name.</p>
+
+<p class=wm-rmBody>    - <span
+class=SpellE><span class=GramE>useCurrentSchema</span></span> is an optional
+Boolean field. It sets new schema names to &lt;current schema&gt;</p>
+
+<p class=wm-rmBody>    - <span
+class=SpellE><span class=GramE>schemaName</span></span> is an optional String
+field. It sets new schema names to this name.</p>
+
+<p class=wm-rmBody>Keep the following points in mind when configuring the <span
+class=SpellE>pub.jdbcAdapter.UpdateNotificationSchema</span> service:</p>
+
+<p class=wm-rmBulletList>-  The <span
+class=SpellE>allSchemaChange</span> and <span class=SpellE>schemaChanges</span>
+fields are mutually exclusive. This means that if <span class=SpellE>allSchemaChange</span>
+is set, then <span class=SpellE>schemaChanges</span> will be ignored.</p>
+
+<p class=wm-rmBulletList>-  The <span
+class=SpellE>useCurrentSchema</span> and <span class=SpellE>schemaName</span>
+fields are mutually exclusive everywhere they occur in the input. This means
+that <span class=GramE>If</span> <span class=SpellE>useCurrentSchema</span> is
+set to true, then the value in <span class=SpellE>schemaName</span> will be
+ignored.</p>
+
+<p class=wm-rmBulletList>-  A localized
+string is used for the &lt;current schema&gt;.</p>
+
+<p class=wm-rmBulletList>-  The service
+doesn't generate output. It throws <span class=SpellE>AdapterServiceException</span>
+wrapping exceptions from ART and JDBC Adapter.</p>
+
+<p class=wm-rmBody>The following section lists the input fields to set for
+certain use cases. Fields that <span class=GramE>do</span> not list an input
+value should be left empty.</p>
+
+<p class=wm-rmBody>To set all schemas to the &lt;current schema&gt;:</p>
+
+<p class=wm-rmBody>  - <span
+class=SpellE><span class=GramE>nodeName</span></span>           folder1:notification1</p>
+
+<p class=wm-rmBody>  - <span
+class=SpellE><span class=GramE>forceDisable</span></span>        true</p>
+
+<p class=wm-rmBody>  - <span
+class=SpellE><span class=GramE>allSchemaChange</span></span></p>
+
+<p class=wm-rmBody>    - <span
+class=SpellE><span class=GramE>useCurrentSchema</span></span>true</p>
+
+<p class=wm-rmBody>To set all schemas to schema A:</p>
+
+<p class=wm-rmBody>  - <span
+class=SpellE><span class=GramE>nodeName</span></span>           folder1:notification1</p>
+
+<p class=wm-rmBody>  - <span
+class=SpellE><span class=GramE>forceDisable</span></span>        true</p>
+
+<p class=wm-rmBody>  - <span
+class=SpellE><span class=GramE>allSchemaChange</span></span></p>
+
+<p class=wm-rmBody>    - <span
+class=SpellE><span class=GramE>schemaName</span></span>       A</p>
+
+<p class=wm-rmBody>To change occurrences of the &lt;current schema&gt; to
+schema A:</p>
+
+<p class=wm-rmBody>  - <span
+class=SpellE><span class=GramE>nodeName</span></span>           folder1:notification1</p>
+
+<p class=wm-rmBody>  - <span
+class=SpellE><span class=GramE>forceDisable</span></span>        true</p>
+
+<p class=wm-rmBody>  - <span
+class=SpellE><span class=GramE>schemaChanges</span></span></p>
+
+<p class=wm-rmBody>   - <span
+class=SpellE><span class=GramE>schemaChanges</span></span><span class=GramE>[</span>0]</p>
+
+<p class=wm-rmBody>     - <span
+class=SpellE><span class=GramE>existingSchema</span></span></p>
+
+<p class=wm-rmBody>       - <span
+class=SpellE><span class=GramE>useCurrentSchema</span></span><span class=GramE>  true</span></p>
+
+<p class=wm-rmBody>     - <span class=SpellE><span class=GramE>newSchema</span></span></p>
+
+<p class=wm-rmBody>       - <span
+class=SpellE><span class=GramE>schemName</span></span>          A</p>
+
+<p class=wm-rmBody>To change occurrences of schema A to the &lt;current
+schema&gt;:</p>
+
+<p class=wm-rmBody>  - <span
+class=SpellE><span class=GramE>nodeName</span></span>           folder1:notification1</p>
+
+<p class=wm-rmBody>  - <span
+class=SpellE><span class=GramE>forceDisable</span></span>        true</p>
+
+<p class=wm-rmBody>  - <span
+class=SpellE><span class=GramE>schemaChanges</span></span></p>
+
+<p class=wm-rmBody>    - <span
+class=SpellE><span class=GramE>schemaChanges</span></span><span class=GramE>[</span>0]</p>
+
+<p class=wm-rmBody>      - <span
+class=SpellE><span class=GramE>existingSchema</span></span></p>
+
+<p class=wm-rmBody>        - <span
+class=SpellE><span class=GramE>schemaName</span></span>       A</p>
+
+<p class=wm-rmBody>      - <span
+class=SpellE><span class=GramE>newSchema</span></span></p>
+
+<p class=wm-rmBody>        - <span
+class=SpellE><span class=GramE>useCurrentSchema</span></span><span class=GramE>  true</span></p>
+
+<p class=wm-rmBody>To change occurrences of schema A to schema A1, and
+occurrences of schema B to the &lt;current schema&gt;:</p>
+
+<p class=wm-rmBody>  - <span
+class=SpellE><span class=GramE>nodeName</span></span>           folder1:notification1</p>
+
+<p class=wm-rmBody>  - <span
+class=SpellE><span class=GramE>forceDisable</span></span>        true</p>
+
+<p class=wm-rmBody>  - <span
+class=SpellE><span class=GramE>schemaChanges</span></span></p>
+
+<p class=wm-rmBody>    - <span
+class=SpellE><span class=GramE>schemaChanges</span></span><span class=GramE>[</span>0]</p>
+
+<p class=wm-rmBody>      - <span
+class=SpellE><span class=GramE>existingSchema</span></span></p>
+
+<p class=wm-rmBody>        - <span
+class=SpellE><span class=GramE>schemaName</span></span>     A</p>
+
+<p class=wm-rmBody>      -<span
+class=SpellE>newSchema</span></p>
+
+<p class=wm-rmBody>        - <span
+class=SpellE><span class=GramE>schemaName</span></span>     A1</p>
+
+<p class=wm-rmBody>    - <span
+class=SpellE><span class=GramE>schemaChanges</span></span><span class=GramE>[</span>1]</p>
+
+<p class=wm-rmBody>      - <span
+class=SpellE><span class=GramE>existingSchema</span></span></p>
+
+<p class=wm-rmBody>        - <span
+class=SpellE><span class=GramE>schemaName</span></span>      B</p>
+
+<p class=wm-rmBody>      - <span
+class=SpellE><span class=GramE>newSchema</span></span></p>
+
+<p class=wm-rmBody>        - <span
+class=SpellE><span class=GramE>useCurrentSchema</span></span> true</p>
+
+<p class=wm-rmBody>1-NQE0K (JDBC_6-0-3_Fix1<span class=GramE>)</span><br>
+<b>When using an Ordered Notification to
+monitor insert, update, or delete commands that affect multiple rows with an MS
+SQL database, the Ordered Notification only notifies the Integration Server of
+changes in the first row.<br>
+</b>This fix enables the notification to notify the Integration Server of all
+the rows affected by each command.</p>
+
+<div style='border:none;border-bottom:solid windowtext 1.0pt;padding:0in 0in 1.0pt 0in'>
+
+<h2><a name="_4.0_Terminology_Changes_1"></a>4.0 Terminology Changes</h2>
+
+</div>
+
+<p class=wm-rmBody>None.</p>
+
+<div style='border:none;border-bottom:solid windowtext 1.0pt;padding:0in 0in 1.0pt 0in'>
+
+<h2><a name="_5.0_Added_and"></a><a name="_5.0_Added_and_Removed Services and "></a>5.0 Added and Removed Services and
+APIs</h2>
+
+</div>
+
+<p class=wm-rmBody>None.</p>
+
+<div style='border:none;border-bottom:solid windowtext 1.0pt;padding:0in 0in 1.0pt 0in'>
+
+<h2><a name="_6.0_Link_to"></a><a name="_6.0_Enhancements_and"></a><a
+name="_6.0_Enhancements_and_Fixes in Previ"></a>6.0 Enhancements and Fixes in
+Previous Release</h2>
+
+</div>
+
+<p class=wm-rmBody>To view information about the previous release of webMethods
+JDBC Adapter, see the <span class=MsoHyperlink><a
+href="http://advantage.webmethods.com/article/?id=bookshelf_adapters_jdbc"
+target="_blank">previous readme on the webMethods Bookshelf</a></span>.</p>
+
+<p class=wm-rmBody>ADAPTER-JDBC-E&amp;F-65-20061215</p>
+
+</div>
+
+</body>
+
+</html>

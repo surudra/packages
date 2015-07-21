@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="svc_type">AdapterService</value>
+  <value name="svc_sigtype">unknown</value>
+  <record name="svc_sig" javaclass="com.wm.util.Values">
+    <record name="sig_in" javaclass="com.wm.util.Values">
+      <value name="node_type">record</value>
+      <value name="field_type">record</value>
+      <value name="field_dim">0</value>
+      <value name="nillable">true</value>
+      <array name="rec_fields" type="record" depth="1">
+        <record javaclass="com.wm.util.Values">
+          <value name="node_type">record</value>
+          <value name="field_name">getCustItemIdFromAddrTmpInput</value>
+          <value name="field_type">record</value>
+          <value name="field_dim">0</value>
+          <value name="nillable">true</value>
+          <array name="rec_fields" type="record" depth="1">
+          </array>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="node_type">record</value>
+          <value name="field_name">$connectionName</value>
+          <value name="field_type">string</value>
+          <value name="field_dim">0</value>
+          <value name="field_opt">true</value>
+          <value name="nillable">false</value>
+        </record>
+      </array>
+    </record>
+    <record name="sig_out" javaclass="com.wm.util.Values">
+      <value name="node_type">record</value>
+      <value name="field_type">record</value>
+      <value name="field_dim">0</value>
+      <value name="nillable">true</value>
+      <array name="rec_fields" type="record" depth="1">
+        <record javaclass="com.wm.util.Values">
+          <value name="node_type">record</value>
+          <value name="field_name">getCustItemIdFromAddrTmpOutput</value>
+          <value name="field_type">record</value>
+          <value name="field_dim">0</value>
+          <value name="nillable">true</value>
+          <array name="rec_fields" type="record" depth="1">
+            <record javaclass="com.wm.util.Values">
+              <value name="node_type">unknown</value>
+              <value name="field_name">message</value>
+              <value name="field_type">string</value>
+              <value name="field_dim">0</value>
+              <value name="nillable">true</value>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="node_type">record</value>
+              <value name="field_name">results</value>
+              <value name="field_type">record</value>
+              <value name="field_dim">0</value>
+              <value name="nillable">true</value>
+              <array name="rec_fields" type="record" depth="1">
+                <record javaclass="com.wm.util.Values">
+                  <value name="node_type">record</value>
+                  <value name="field_name">CUST_ITEM_ID</value>
+                  <value name="field_type">record</value>
+                  <value name="field_dim">1</value>
+                  <value name="nillable">true</value>
+                  <value name="is_soap_array_encoding_used">false</value>
+                  <array name="rec_fields" type="record" depth="1">
+                    <record javaclass="com.wm.util.Values">
+                      <value name="node_type">unknown</value>
+                      <value name="field_name">CUSTOMER_ITEM_ID</value>
+                      <value name="field_type">string</value>
+                      <value name="field_dim">0</value>
+                      <value name="nillable">true</value>
+                    </record>
+                  </array>
+                </record>
+              </array>
+            </record>
+          </array>
+        </record>
+      </array>
+    </record>
+  </record>
+  <value name="stateless">no</value>
+  <value name="caching">no</value>
+  <value name="prefetch">no</value>
+  <value name="cache_ttl">15</value>
+  <value name="prefetch_level">1</value>
+  <value name="audit_level">off</value>
+  <value name="check_internal_acls">no</value>
+  <value name="icontext_policy">$null</value>
+  <value name="system_service">no</value>
+  <value name="retry_max">0</value>
+  <value name="retry_interval">0</value>
+  <value name="svc_in_validator_options">none</value>
+  <value name="svc_out_validator_options">none</value>
+  <value name="auditoption">0</value>
+  <record name="auditsettings" javaclass="com.wm.util.Values">
+    <value name="document_data">0</value>
+    <value name="startExecution">false</value>
+    <value name="stopExecution">false</value>
+    <value name="onError">true</value>
+  </record>
+  <value name="node_type">service</value>
+  <value name="IRTNODE_VERSION">1</value>
+  <value name="IRTNODE_PROPERTY">CwQAAAABBQEEGQBjAG8AbQAuAHcAbQAuAGQAYQB0AGEALgBJAFMATQBlAG0ARABhAHQAYQBJAG0AcABsBBMAcwBlAHIAdgBpAGMAZQBUAGUAbQBwAGwAYQB0AGUATgBhAG0AZQQzAGMAbwBtAC4AdwBtAC4AYQBkAGEAcAB0AGUAcgAuAHcAbQBvAGEALgBzAGUAcgB2AGkAYwBlAHMALgBDAG8AbQBwAGwAZQB4AFMAZQBsAGUAYwB0AE8AcABlAHIAYQB0AGkAbwBuBA4AYwBvAG4AbgBlAGMAdABpAG8AbgBOAGEAbQBlBB4ATwBBAEMAbwBuAG4AZQBjAHQAaQBvAG4AcwA6AE8AcgBhAGMAbABlAEEAcABwAHMARABCADEAMgAwADYEEgB0AGUAbQBwAGwAYQB0AGUAUAByAG8AcABlAHIAdABpAGUAcwUBAAIEEABkAGUAcwBpAGcAbgBUAGkAbQBlAEwAbwBjAGEAbABlBAUAZQBuAF8AVQBTBBAAbwB1AHQAcAB1AHQARgBpAGUAbABkAFQAeQBwAGUAcwoCBBAAagBhAHYAYQAuAGwAYQBuAGcALgBTAHQAcgBpAG4AZwAOBBIAagBhAHYAYQAuAGwAYQBuAGcALgBTAHQAcgBpAG4AZwBbAF0EEABvAHUAdABwAHUAdABGAGkAZQBsAGQATgBhAG0AZQBzCgIADgQHAG0AZQBzAHMAYQBnAGUEJwByAGUAcwB1AGwAdABzAC4AQwBVAFMAVABfAEkAVABFAE0AXwBJAEQAWwBdAC4AQwBVAFMAVABPAE0ARQBSAF8ASQBUAEUATQBfAEkARAQXAGgAaQBkAGQAZQBuAF8AbwB1AHQAcAB1AHQARgBpAGUAbABkAE4AYQBtAGUAcwoCAA4AFAAVBBYAaABpAGQAZABlAG4AXwBpAG4AcAB1AHQARgBpAGUAbABkAE4AYQBtAGUAcwoDAA4EFABDAFUAUwBUAE8ATQBFAFIAXwBJAFQARQBNAF8ATgBVAE0AQgBFAFIEDQBDAFUAUwBUAE8ATQBFAFIAXwBOAEEATQBFBAoAQQBEAEQAUgBFAFMAUwBfAEkARAQIAHIAZQBsAGEAdABpAG8AbgQABAMAcwBxAGyEAAABAgBTAEUATABFAEMAVAAgAEMAVQBTAFQATwBNAEUAUgBfAEkAVABFAE0AXwBJAEQAIABGAFIATwBNACAAIAAgAE0AVABMAF8AQwBVAFMAVABPAE0ARQBSAF8ASQBUAEUATQBTAF8AQQBMAEwAXwBWACAATQAsACAAUgBBAF8AQwBVAFMAVABPAE0ARQBSAFMAIABDACAAVwBIAEUAUgBFACAAIAAgAE0ALgBDAFUAUwBUAE8ATQBFAFIAXwBJAFQARQBNAF8ATgBVAE0AQgBFAFIAIAA9ACAAJwAmAEMAVQBTAFQATwBNAEUAUgBfAEkAVABFAE0AXwBOAFUATQBCAEUAUgAqACcAIABBAE4ARAAgAEMALgBQAEEAUgBUAFkAXwBJAEQAIAA9ACAAQwAuAEMAVQBTAFQATwBNAEUAUgBfAEkARAAgAEEATgBEACAAQwAuAEMAVQBTAFQATwBNAEUAUgBfAE4AQQBNAEUAIAA9ACAAJwAmAEMAVQBTAFQATwBNAEUAUgBfAE4AQQBNAEUAKgAnACAAQQBOAEQAIABOAFYATAAoAE0ALgBBAEQARABSAEUAUwBTAF8ASQBEACwAOQA5ADkAOQA5ACkAIAA9ACAATgBWAEwAKAAnACYAQQBEAEQAUgBFAFMAUwBfAEkARAAqACcALAA5ADkAOQA5ADkAKQQJAG4AbwBkAGUATgBhAG0AZQBzBAwAQwBVAFMAVABfAEkAVABFAE0AXwBJAEQECwB0AHIAYQBuAHMAUgBlAGMAbwByAGSEAAADCQA8AD8AeABtAGwAIAB2AGUAcgBzAGkAbwBuAD0AIgAxAC4AMAAiACAAZQBuAGMAbwBkAGkAbgBnAD0AIgBVAFQARgAtADgAIgA/AD4ACgAKADwASQBEAGEAdABhAFgATQBMAEMAbwBkAGUAcgAgAHYAZQByAHMAaQBvAG4APQAiADEALgAwACIAPgAKACAAIAA8AHIAZQBjAG8AcgBkACAAagBhAHYAYQBjAGwAYQBzAHMAPQAiAGMAbwBtAC4AdwBtAC4AZABhAHQAYQAuAEkAUwBNAGUAbQBEAGEAdABhAEkAbQBwAGwAIgA+AAoAIAAgACAAIAA8AHYAYQBsAHUAZQAgAG4AYQBtAGUAPQAiAHQAcgBhAG4AcwBhAGMAdABpAG8AbgBOAGEAbQBlACIAPgBnAGUAdABDAHUAcwB0AEkAdABlAG0ASQBkAEYAcgBvAG0AQQBkAGQAcgBUAG0AcAA8AC8AdgBhAGwAdQBlAD4ACgAgACAAIAAgADwAdgBhAGwAdQBlACAAbgBhAG0AZQA9ACIAdAByAGEAbgBzAGEAYwB0AGkAbwBuAFQAeQBwAGUAIgA+AE8AVQBUADwALwB2AGEAbAB1AGUAPgAKACAAIAAgACAAPABuAHUAbABsACAAbgBhAG0AZQA9ACIAQQBjAGsAbgBvAHcAbABlAGQAZwBlAFMAUQBMACIALwA+AAoAIAAgACAAIAA8AHIAZQBjAG8AcgBkACAAbgBhAG0AZQA9ACIAQwBVAFMAVABfAEkAVABFAE0AXwBJAEQAIgAgAGoAYQB2AGEAYwBsAGEAcwBzAD0AIgBjAG8AbQAuAHcAbQAuAGQAYQB0AGEALgBJAFMATQBlAG0ARABhAHQAYQBJAG0AcABsACIAPgAKACAAIAAgACAAIAAgADwAdgBhAGwAdQBlACAAbgBhAG0AZQA9ACIAUwBRAEwATwB1AHQAIgA+AFMARQBMAEUAQwBUACAAQwBVAFMAVABPAE0ARQBSAF8ASQBUAEUATQBfAEkARAAgAEYAUgBPAE0AIAAgACAATQBUAEwAXwBDAFUAUwBUAE8ATQBFAFIAXwBJAFQARQBNAFMAXwBBAEwATABfAFYAIABNACwAIABSAEEAXwBDAFUAUwBUAE8ATQBFAFIAUwAgAEMAIABXAEgARQBSAEUAIAAgACAATQAuAEMAVQBTAFQATwBNAEUAUgBfAEkAVABFAE0AXwBOAFUATQBCAEUAUgAgAD0AIAAnACYAYQBtAHAAOwBDAFUAUwBUAE8ATQBFAFIAXwBJAFQARQBNAF8ATgBVAE0AQgBFAFIAKgAnACAAQQBOAEQAIABDAC4AUABBAFIAVABZAF8ASQBEACAAPQAgAEMALgBDAFUAUwBUAE8ATQBFAFIAXwBJAEQAIABBAE4ARAAgAEMALgBDAFUAUwBUAE8ATQBFAFIAXwBOAEEATQBFACAAPQAgACcAJgBhAG0AcAA7AEMAVQBTAFQATwBNAEUAUgBfAE4AQQBNAEUAKgAnACAAQQBOAEQAIABOAFYATAAoAE0ALgBBAEQARABSAEUAUwBTAF8ASQBEACwAOQA5ADkAOQA5ACkAIAA9ACAATgBWAEwAKAAnACYAYQBtAHAAOwBBAEQARABSAEUAUwBTAF8ASQBEACoAJwAsADkAOQA5ADkAOQApADwALwB2AGEAbAB1AGUAPgAKACAAIAAgACAAIAAgADwAdgBhAGwAdQBlACAAbgBhAG0AZQA9ACIAUwBRAEwAQQBsAGkAYQBzACIAPgBDAFUAUwBUAF8ASQBUAEUATQBfAEkARAA8AC8AdgBhAGwAdQBlAD4ACgAgACAAIAAgACAAIAA8AHYAYQBsAHUAZQAgAG4AYQBtAGUAPQAiAFMAUQBMAFIAZQBsAGEAdABpAG8AbgAiAD4APAAvAHYAYQBsAHUAZQA+AAoAIAAgACAAIAA8AC8AcgBlAGMAbwByAGQAPgAKACAAIAA8AC8AcgBlAGMAbwByAGQAPgAKADwALwBJAEQAYQB0AGEAWABNAEwAQwBvAGQAZQByAD4ACgQHAHQAeABuAE4AYQBtAGUEGABnAGUAdABDAHUAcwB0AEkAdABlAG0ASQBkAEYAcgBvAG0AQQBkAGQAcgBUAG0AcAIABBkAYQBkAGEAcAB0AGUAcgBTAGUAcgB2AGkAYwBlAE4AbwBkAGUAVgBlAHIAcwBpAG8AbgsEAAAAAgQLAGEAZABhAHAAdABlAHIAVAB5AHAAZQQJAE8AQQBBAGQAYQBwAHQAZQByBA8AaQBuAHAAdQB0AFIAZQBjAG8AcgBkAE4AYQBtAGUEHQBnAGUAdABDAHUAcwB0AEkAdABlAG0ASQBkAEYAcgBvAG0AQQBkAGQAcgBUAG0AcABJAG4AcAB1AHQEEABvAHUAdABwAHUAdABSAGUAYwBvAHIAZABOAGEAbQBlBB4AZwBlAHQAQwB1AHMAdABJAHQAZQBtAEkAZABGAHIAbwBtAEEAZABkAHIAVABtAHAATwB1AHQAcAB1AHQCAA==</value>
+</Values>

@@ -1,0 +1,1 @@
+#!/bin/sh# Change IS_DIR and JVM_DIR to reflect their locations on your system# Note: The JVM must have the JCE extension# # --- LOCATION OF WEBMETHODS INTEGRATION SERVER ---IS_DIR=C:\SoftwareAGWebm97\IntegrationServer

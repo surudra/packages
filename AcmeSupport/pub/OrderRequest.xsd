@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+   <xs:element name="AccountDescription">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element ref="GlobalAccountClassificationCode"/>
+            <xs:element ref="billTo"/>
+            <xs:element ref="accountName"/>
+            <xs:element ref="ProprietaryCIDIdentifier"/>
+            <xs:element ref="expiryDate"/>
+            <xs:element ref="AccountNumber"/>
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="AccountNumber">
+      <xs:complexType/>
+   </xs:element>
+   <xs:element name="CheckNumber">
+      <xs:complexType/>
+   </xs:element>
+   <xs:element name="DUNS" type="xs:string"/>
+   <xs:element name="DateStamp" type="xs:string"/>
+   <xs:element name="DateTimeStamp" type="xs:string"/>
+   <xs:element name="FinancialAmount">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element ref="GlobalCurrencyCode"/>
+            <xs:element ref="MonetaryAmount"/>
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="FreeFormText" type="xs:string"/>
+   <xs:element name="GlobalAccountClassificationCode">
+      <xs:complexType/>
+   </xs:element>
+   <xs:element name="GlobalCountryCode" type="xs:string"/>
+   <xs:element name="GlobalCurrencyCode" type="xs:string"/>
+   <xs:element name="GlobalDocumentFunctionCode">
+      <xs:complexType/>
+   </xs:element>
+   <xs:element name="GlobalFinanceTermsCode">
+      <xs:complexType/>
+   </xs:element>
+   <xs:element name="GlobalLocationIdentifier" type="xs:string"/>
+   <xs:element name="GlobalPartnerClassificationCode" type="xs:string"/>
+   <xs:element name="GlobalPartnerRoleClassificationCode">
+      <xs:complexType/>
+   </xs:element>
+   <xs:element name="GlobalProductIdentifier" type="xs:string"/>
+   <xs:element name="GlobalProductUnitOfMeasureCode" type="xs:string"/>
+   <xs:element name="GlobalPurchaseOrderTypeCode">
+      <xs:complexType/>
+   </xs:element>
+   <xs:element name="GlobalShipmentTermsCode">
+      <xs:complexType/>
+   </xs:element>
+   <xs:element name="GlobalSpecialFulfillmentRequestCode" type="xs:string"/>
+   <xs:element name="LineNumber" type="xs:string"/>
+   <xs:element name="MonetaryAmount" type="xs:string"/>
+   <xs:element name="NationalPostalCode" type="xs:string"/>
+   <xs:element name="PartnerDescription">
+      <xs:complexType/>
+   </xs:element>
+   <xs:element name="PartnerProductIdentification">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element ref="GlobalPartnerClassificationCode"/>
+            <xs:element ref="ProprietaryProductIdentifier"/>
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="PartnerRoleDescription">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element ref="GlobalPartnerRoleClassificationCode"/>
+            <xs:element ref="DUNS" minOccurs="0"/>
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="PhysicalAddress">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element ref="cityName"/>
+            <xs:element ref="addressLine1"/>
+            <xs:element ref="addressLine2"/>
+            <xs:element ref="addressLine3"/>
+            <xs:element ref="NationalPostalCode"/>
+            <xs:element ref="regionName"/>
+            <xs:element ref="postOfficeBoxIdentifier"/>
+            <xs:element ref="GlobalLocationIdentifier"/>
+            <xs:element ref="GlobalCountryCode"/>
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="ProductIdentification">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element ref="GlobalProductIdentifier"/>
+            <xs:element ref="PartnerProductIdentification"/>
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="ProductLineItem">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element ref="shipFrom"/>
+            <xs:element ref="ProductQuantity"/>
+            <xs:element ref="LineNumber"/>
+            <xs:element ref="productUnit"/>
+            <xs:element ref="GlobalSpecialFulfillmentRequestCode"/>
+            <xs:element ref="countryOfOrigin"/>
+            <xs:element ref="requestedShipDate"/>
+            <xs:element ref="contractIdentifier"/>
+            <xs:element ref="GlobalProductUnitOfMeasureCode"/>
+            <xs:element ref="SpecialHandlingInstruction"/>
+            <xs:element ref="requestedPrice"/>
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="ProductPackageDescription">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element ref="ProductIdentification"/>
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="ProductQuantity" type="xs:string"/>
+   <xs:element name="ProprietaryCIDIdentifier">
+      <xs:complexType/>
+   </xs:element>
+   <xs:element name="ProprietaryDocumentIdentifier" type="xs:string"/>
+   <xs:element name="ProprietaryProductIdentifier" type="xs:string"/>
+   <xs:element name="PurchaseOrder">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element ref="deliverTo"/>
+            <xs:element ref="comment"/>
+            <xs:element ref="packListRequirements"/>
+            <xs:element ref="totalCost"/>
+            <xs:element ref="ProductLineItem" maxOccurs="unbounded"/>
+            <xs:element ref="GlobalShipmentTermsCode"/>
+            <xs:element ref="RevisionNumber"/>
+            <xs:element ref="prePaymentCheckNumber"/>
+            <xs:element ref="QuoteIdentifier"/>
+            <xs:element ref="WireTransferIdentifier"/>
+            <xs:element ref="AccountDescription"/>
+            <xs:element ref="generalServicesAdministrationNumber"/>
+            <xs:element ref="secondaryBuyerPurchaseOrderIdentifier"/>
+            <xs:element ref="GlobalFinanceTermsCode"/>
+            <xs:element ref="PartnerDescription"/>
+            <xs:element ref="secondaryBuyer"/>
+            <xs:element ref="GlobalPurchaseOrderTypeCode"/>
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="PurchaseOrderRequest">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element ref="PurchaseOrder"/>
+            <xs:element ref="fromRole"/>
+            <xs:element ref="toRole"/>
+            <xs:element ref="thisDocumentGenerationDateTime"/>
+            <xs:element ref="thisDocumentIdentifier"/>
+            <xs:element ref="GlobalDocumentFunctionCode"/>
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="QuoteIdentifier">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element ref="ProprietaryDocumentIdentifier"/>
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="RevisionNumber">
+      <xs:complexType/>
+   </xs:element>
+   <xs:element name="SpecialHandlingInstruction">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element ref="specialHandlingText"/>
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="WireTransferIdentifier">
+      <xs:complexType/>
+   </xs:element>
+   <xs:element name="accountName">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element ref="FreeFormText"/>
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="addressLine1">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element ref="FreeFormText"/>
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="addressLine2">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element ref="FreeFormText"/>
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="addressLine3">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element ref="FreeFormText"/>
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="billTo">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element ref="PartnerRoleDescription"/>
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="cityName">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element ref="FreeFormText"/>
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="comment">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element ref="FreeFormText"/>
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="contractIdentifier">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element ref="ProprietaryDocumentIdentifier"/>
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="countryOfOrigin">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element ref="GlobalCountryCode"/>
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="deliverTo">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element ref="PhysicalAddress"/>
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="expiryDate">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element ref="DateStamp"/>
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="fromRole">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element ref="PartnerRoleDescription"/>
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="generalServicesAdministrationNumber">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element ref="ProprietaryDocumentIdentifier"/>
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="packListRequirements">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element ref="FreeFormText"/>
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="postOfficeBoxIdentifier">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element ref="FreeFormText"/>
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="prePaymentCheckNumber">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element ref="CheckNumber"/>
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="productUnit">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element ref="ProductPackageDescription"/>
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="regionName">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element ref="FreeFormText"/>
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="requestedPrice">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element ref="FinancialAmount"/>
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="requestedShipDate">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element ref="DateStamp"/>
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="secondaryBuyer">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element ref="PartnerRoleDescription"/>
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="secondaryBuyerPurchaseOrderIdentifier">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element ref="ProprietaryDocumentIdentifier"/>
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="shipFrom">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element ref="GlobalLocationIdentifier"/>
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="specialHandlingText">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element ref="FreeFormText"/>
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="thisDocumentGenerationDateTime">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element ref="DateTimeStamp"/>
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="thisDocumentIdentifier">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element ref="ProprietaryDocumentIdentifier"/>
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="toRole">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element ref="PartnerRoleDescription"/>
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="totalCost" type="xs:string"/>
+</xs:schema>

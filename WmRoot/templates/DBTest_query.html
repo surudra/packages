@@ -1,0 +1,31 @@
+<html>
+
+<head>
+<title>Query results of StockQuote</title>
+</head>
+
+<body>
+<center>
+<table border=1 bgcolor=#dddddd>
+<tr>
+    <td><big><big>Stock Quotes</big></big></td>
+<tr>
+    <td>%value rowCount% rows returned</td>
+<tr>
+    <td>
+    <table border=2 cellpadding=3>
+    <tr>
+        <td>Ticker Symbol</td>
+        <td>Price</td>
+        <td>Volume</td>
+    %loop results%
+    <tr>
+        <td>%value ticker%</td>
+        <td>%value price%</td>
+        <td>%value volume%</td>
+    %endloop%
+    </table>
+</table>
+</center>
+</body>
+</html>

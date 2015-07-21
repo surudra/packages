@@ -1,0 +1,73 @@
+                       Generated C Client
+_____________________________________________________________________
+
+   The C client produced by Software AG Designer demonstrates the most 
+   common uses of the webMethods client API and should serve as a good 
+   starting point for your own development.
+
+   To compile and run the generated C client you need access to several 
+   libraries and header files which constitute the C client API. These 
+   include:
+   
+%ifvar platform equals(win)%
+   wmJNIc.dll    wmJNI.dll
+   wmJNIc.lib    wmJNI.lib
+   wmJNIc.h      wmJNI.h    wmUtil.h
+%else%
+   %value platform%_wmJNI.a    %value platform%_wmJNI.so
+   %value platform%_wmJNIc.a   %value platform%_wmJNIc.so
+   wmJNIc.h    wmJNI.h    wmUtil.h
+%endif%
+   
+   The C client API uses the Java Native Interface (JNI) and its
+   Invocation API to access the webMethods java-based client API.  
+   Therefore, you will need to set several java-related parameters 
+   in the Makefile in order to successfully build and test your client.  
+   
+   Moreover, you must have access to a kernel-threaded version of the
+   Java JDK 1.1 (JDK 1.1.7 or later - required by the invocation API)
+   and the Operating System must provide support for kernel threads
+   (Win32, HP-UX 11.0, Solaris 2.5.1/patched or 2.6, Linux/Native 
+   Threads Pack/glibc).
+   
+   Edit the generated Makefile ([svcName].mak) to reflect the
+   locations of the client API files ([Software AG_directory]/common/lib).  
+   Also, make sure to set JDKDIR, CLASSPATH and any other platform-
+   specific settings to match your installation.
+   
+%ifvar platform equals(win)%
+   You will require the Windows nmake utility (available at
+   ftp://ftp.microsoft.com/Softlib/MSLFILES/nmake15.exe).
+   
+   Compile the generated client:  
+   
+	    > nmake -f [svcName].mak
+   
+   Then, execute the client:
+   
+        > nmake -f [svcName].mak runtest
+%else%
+   
+   Compile the generated client:  
+   
+        > make -f [svcName].mak
+	  
+   Then, execute the client:
+	     
+	    > make -f [svcName].mak runtest
+%endif%   
+
+   This sets the library load path and classpath required to run
+   your client and then executes the client.  The client will connect 
+   to the Integration Server used when generating the client. 
+   
+   If you require a different Integration Server, you can specify an 
+   alternative host and port via optional command-line arguments;
+   if you are accessing protected services, you will need to connect 
+   with an appropriate username and password.  Just edit the makefile
+   'runtest' target and include the needed options on the executable:
+   [<host> <port> <username> <password>].
+
+   The client will prompt for inputs at the command-line.  The results 
+   of the service are displayed on standard output.
+

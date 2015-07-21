@@ -1,0 +1,62 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+%include ../pub/b2bStyle.css%
+<title>Email Service Administration</title>
+</head>
+
+<body>
+
+<h2>Edit Email Service Settings</h2>
+
+<form method="post" action="/invoke/wm.server.email/admin" name="myform">
+  <!--webbot bot="SaveResults" startspan U-File="_private/form_results.txt"
+  S-Format="TEXT/CSV" S-Label-Fields="TRUE" --><!--webbot bot="SaveResults" endspan -->
+<div class="position">
+  <table border="1" width="55%" height="99">
+    <tr>
+      <td width="40%" height="19">Current Status</td>
+      <td width="60%" height="19">%value status%
+      &nbsp;&nbsp;&nbsp; <input type="checkbox" name="statusset" value="ON" %value selected%> &nbsp;&nbsp;&nbsp; (click to change the status)</td>
+    </tr>
+    <tr>
+      <td width="40%" height="19">Server Host</td>
+      <td width="60%" height="19"><input type="text" name="serverhost" size="20"
+      value="%value serverhost%"></td>
+    </tr>
+    <tr>
+      <td width="40%" height="19">Server Type</td>
+      <td width="60%" height="19"><input type="radio" value="pop3" name="servertype" %value popchecked%>POP3
+      &nbsp;&nbsp;&nbsp; <input type="radio" name="servertype" value="imap" %value imapchecked%>IMAP</td>
+    </tr>
+    <tr>
+      <td width="40%" height="19">User Name</td>
+      <td width="60%" height="19"><input type="text" name="username" size="20"
+      value="%value username%"></td>
+    </tr>
+    <tr>
+      <td width="40%" height="18">Password</td>
+      <td width="60%" height="18"><input type="password" name="password" autocomplete="off" size="20"
+      value="%value password%" /></td>
+    </tr>
+    <tr>
+      <td width="40%" height="18">Time Interval</td>
+      <td width="60%" height="18"><input name="interval" size="20"
+      value="%value interval%"></td>
+    </tr>
+	<tr>
+	  <td width="40%" height="18">Global Service</td>
+      <td width="60%" height="18"><input name="service" size="30"
+      value="%value service%"></td>
+    </tr>
+  </table>
+  <p><input 
+  	type="button" onclick="document.myform.submit()"
+	value="Change Settings"> &nbsp;&nbsp; 
+	<input type="button" onclick="document.myform.reset()"
+  value="Reset"> </p>
+</div>
+</form>
+</body>
+</html>

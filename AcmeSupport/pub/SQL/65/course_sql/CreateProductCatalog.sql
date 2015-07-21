@@ -1,0 +1,21 @@
+CREATE SEQUENCE ProductID_SEQ INCREMENT BY 1 MINVALUE 1
+/
+CREATE TABLE ProductCatalog (
+ ProductID INT NOT NULL ,
+ Title VARCHAR (255),
+ Author VARCHAR (150),
+ Description VARCHAR (255),
+ Price FLOAT(10),
+ PRIMARY KEY (ProductID)
+)
+/
+CREATE OR REPLACE TRIGGER NEXT_ProductID
+BEFORE INSERT OR UPDATE OF ProductID ON ProductCatalog
+FOR EACH ROW
+BEGIN
+  SELECT ProductID_SEQ.NEXTVAL
+    INTO :new.ProductID
+    FROM dual ;
+End ;
+/
+;

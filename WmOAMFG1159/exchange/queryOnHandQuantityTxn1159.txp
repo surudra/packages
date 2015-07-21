@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <record name="transactions" javaclass="com.wm.util.Values">
+    <record name="queryOnHandQuantityTxn" javaclass="com.wm.util.Values">
+      <value name="transactionName">queryOnHandQuantityTxn</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="ON_HAND_QUANTITY" javaclass="com.wm.util.Values">
+        <value name="SQLOut">SELECT WEB_TRANSACTION_ID, DOCUMENT_TYPE, DOCUMENT_STATUS, INVENTORY_ITEM_ID, ORGANIZATION_ID,    CONCATENATED_SEGMENTS as ITEM_NUMBER,  REVISION, TOTAL_QOH,   SUBINVENTORY_CODE, LOCATOR, ITEM_DESCRIPTION, PRIMARY_UOM_CODE, ORGANIZATION_CODE,    ORGANIZATION_NAME,  LOCATOR_TYPE, ITEM_REV_CONTROL, ITEM_LOCATOR_CONTROL,  ITEM_LOT_CONTROL,   ITEM_SERIAL_CONTROL FROM WM_INV_ONHAND_QRY_VW  WHERE CONCATENATED_SEGMENTS LIKE NVL('&amp;ITEM_NUMBER*',CONCATENATED_SEGMENTS) AND  NVL(REVISION,'XXXXX') LIKE NVL('&amp;REVISION*',NVL(REVISION,'XXXXX')) AND NVL(ORGANIZATION_NAME,'XXXXX') LIKE NVL('&amp;ORGANIZATION_NAME*', NVL(ORGANIZATION_NAME,'XXXXX') ) AND NVL(SUBINVENTORY_CODE, 'XXXXX') LIKE NVL('&amp;SUBINVENTORY_CODE*', NVL(SUBINVENTORY_CODE, 'XXXXX') )AND   NVL(LOCATOR, 'XXXXX') LIKE NVL('&amp;LOCATOR*', NVL(LOCATOR, 'XXXXX') )</value>
+        <value name="SQLAlias">ON_HAND_QUANTITY</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+  </record>
+  <record name="FILE_INFO" javaclass="com.wm.util.Values">
+    <value name="OA_RELEASE">1159</value>
+    <value name="DESCRIPTION">Query Onhand Quantity Transaction Definition</value>
+    <value name="CREATE_HOST">webMethods</value>
+    <value name="CREATE_IM_VER">3.1</value>
+    <value name="CREATE_DATE">May 10, 2004 2:40:03 PM</value>
+  </record>
+</Values>

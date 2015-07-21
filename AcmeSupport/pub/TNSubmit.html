@@ -1,0 +1,196 @@
+<FORM action="http://localhost:5555/invoke/acmeSupport.examples:getDoc" method=post>
+
+<H1>XML Form Submitter</H1>
+<BR><BR>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD><INPUT type=Submit name="Submit XML" value=Submit>
+      <B><I><FONT color=white>&nbsp;&nbsp;XML:</FONT></I></B> </TD></TR>
+  <TR>
+    <TD><TEXTAREA cols=70 name=$xmldata rows=25><?xml version="1.0"?><!DOCTYPE PurchaseOrderRequest SYSTEM "PurchaseOrderRequest.dtd">
+<!--webMethods BPI for Developers Training Course Sample XML Message Purchase Order Request-->
+<PurchaseOrderRequest>
+   <PurchaseOrder>
+      <deliverTo>
+         <PhysicalAddress>
+            <cityName>
+               <FreeFormText>Fairfax VA</FreeFormText>
+            </cityName>
+            <addressLine1>
+               <FreeFormText>webMethods</FreeFormText>
+            </addressLine1>
+            <addressLine2>
+               <FreeFormText>3930 Pender Dr.</FreeFormText>
+            </addressLine2>
+            <addressLine3>
+               <FreeFormText>Fairfax VA</FreeFormText>
+            </addressLine3>
+            <NationalPostalCode>22030</NationalPostalCode>
+            <regionName>
+               <FreeFormText>USA</FreeFormText>
+            </regionName>
+            <postOfficeBoxIdentifier>
+               <FreeFormText/>
+            </postOfficeBoxIdentifier>
+            <GlobalLocationIdentifier>North America</GlobalLocationIdentifier>
+            <GlobalCountryCode>001</GlobalCountryCode>
+         </PhysicalAddress>
+      </deliverTo>
+      <comment>
+         <FreeFormText>Comments go here</FreeFormText>
+      </comment>
+      <packListRequirements>
+         <FreeFormText>Packing List Requirements</FreeFormText>
+      </packListRequirements>
+      <totalCost>6510</totalCost>
+      <!-- This is the items array series -->
+      <!-- Item 1 -->
+      <ProductLineItem>
+         <shipFrom>
+            <GlobalLocationIdentifier>Whse 1</GlobalLocationIdentifier>
+         </shipFrom>
+         <ProductQuantity>150</ProductQuantity>
+         <LineNumber>1</LineNumber>
+         <productUnit>
+            <ProductPackageDescription>
+               <ProductIdentification>
+                  <GlobalProductIdentifier>1501 CSx</GlobalProductIdentifier>
+                  <PartnerProductIdentification>                     <GlobalPartnerClassificationCode>5644
+</GlobalPartnerClassificationCode>
+           <ProprietaryProductIdentifier>CS-1100</ProprietaryProductIdentifier>
+                  </PartnerProductIdentification>
+               </ProductIdentification>
+            </ProductPackageDescription>
+         </productUnit>
+         <GlobalSpecialFulfillmentRequestCode>3122</GlobalSpecialFulfillmentRequestCode>
+         <countryOfOrigin>
+            <GlobalCountryCode>001</GlobalCountryCode>
+         </countryOfOrigin>
+         <requestedShipDate>
+            <DateStamp>15 April 2002</DateStamp>
+         </requestedShipDate>
+         <contractIdentifier>
+            <ProprietaryDocumentIdentifier/>
+         </contractIdentifier>
+         <GlobalProductUnitOfMeasureCode>EA</GlobalProductUnitOfMeasureCode>
+         <SpecialHandlingInstruction>
+            <specialHandlingText>
+               <FreeFormText>Fragile -- contains electronic equipment</FreeFormText>
+            </specialHandlingText>
+         </SpecialHandlingInstruction>
+         <requestedPrice>
+            <FinancialAmount>
+               <GlobalCurrencyCode>001</GlobalCurrencyCode>
+               <MonetaryAmount>25.00</MonetaryAmount>
+            </FinancialAmount>
+         </requestedPrice>
+      </ProductLineItem>
+      <!-- Item 2 -->
+      <ProductLineItem>
+         <shipFrom>
+            <GlobalLocationIdentifier>Warehouse 1</GlobalLocationIdentifier>
+         </shipFrom>
+         <ProductQuantity>120</ProductQuantity>
+         <LineNumber>2</LineNumber>
+         <productUnit>
+            <ProductPackageDescription>
+               <ProductIdentification>
+                  <GlobalProductIdentifier>1500 CS</GlobalProductIdentifier>
+                  <PartnerProductIdentification>
+                     <GlobalPartnerClassificationCode>5672</GlobalPartnerClassificationCode>
+                     <ProprietaryProductIdentifier>CS-1150</ProprietaryProductIdentifier>
+                  </PartnerProductIdentification>
+               </ProductIdentification>
+            </ProductPackageDescription>
+         </productUnit>
+         <GlobalSpecialFulfillmentRequestCode>3235</GlobalSpecialFulfillmentRequestCode>
+         <countryOfOrigin>
+            <GlobalCountryCode>001</GlobalCountryCode>
+         </countryOfOrigin>
+         <requestedShipDate>
+            <DateStamp>15 April 2002</DateStamp>
+         </requestedShipDate>
+         <contractIdentifier>
+            <ProprietaryDocumentIdentifier/>
+         </contractIdentifier>
+         <GlobalProductUnitOfMeasureCode>EA</GlobalProductUnitOfMeasureCode>
+         <SpecialHandlingInstruction>
+            <specialHandlingText>
+               <FreeFormText>Fragile -- contains electronic equipment</FreeFormText>
+            </specialHandlingText>
+         </SpecialHandlingInstruction>
+         <requestedPrice>
+            <FinancialAmount>
+               <GlobalCurrencyCode>001</GlobalCurrencyCode>
+               <MonetaryAmount>23.00</MonetaryAmount>
+            </FinancialAmount>
+         </requestedPrice>
+      </ProductLineItem>
+      <GlobalShipmentTermsCode>
+   </GlobalShipmentTermsCode>
+      <RevisionNumber>
+   </RevisionNumber>
+      <prePaymentCheckNumber>
+         <CheckNumber>
+      </CheckNumber>
+      </prePaymentCheckNumber>
+      <QuoteIdentifier>
+         <ProprietaryDocumentIdentifier>020401123456</ProprietaryDocumentIdentifier>
+      </QuoteIdentifier>
+      <WireTransferIdentifier>
+   </WireTransferIdentifier>
+      <AccountDescription>
+         <GlobalAccountClassificationCode/>
+         <billTo>
+            <PartnerRoleDescription>
+               <GlobalPartnerRoleClassificationCode/>
+            </PartnerRoleDescription>
+         </billTo>
+         <accountName>
+            <FreeFormText>
+         </FreeFormText>
+         </accountName>
+         <ProprietaryCIDIdentifier/>
+         <expiryDate>
+            <DateStamp>10 May 2002</DateStamp>
+         </expiryDate>
+         <AccountNumber/>
+      </AccountDescription>
+      <generalServicesAdministrationNumber>
+         <ProprietaryDocumentIdentifier/>
+      </generalServicesAdministrationNumber>
+      <secondaryBuyerPurchaseOrderIdentifier>
+         <ProprietaryDocumentIdentifier/>
+      </secondaryBuyerPurchaseOrderIdentifier>
+      <GlobalFinanceTermsCode/>
+      <PartnerDescription/>
+      <secondaryBuyer>
+         <PartnerRoleDescription>
+            <GlobalPartnerRoleClassificationCode/>
+         </PartnerRoleDescription>
+      </secondaryBuyer>
+      <GlobalPurchaseOrderTypeCode/>
+   </PurchaseOrder>
+   <fromRole>
+      <PartnerRoleDescription>
+         <GlobalPartnerRoleClassificationCode/>
+         <DUNS>987654321</DUNS>
+      </PartnerRoleDescription>
+   </fromRole>
+   <toRole>
+      <PartnerRoleDescription>
+         <GlobalPartnerRoleClassificationCode/>
+         <DUNS>123456789</DUNS>
+      </PartnerRoleDescription>
+   </toRole>
+   <thisDocumentGenerationDateTime>
+      <DateTimeStamp>01 April 2002 12:34</DateTimeStamp>
+   </thisDocumentGenerationDateTime>
+   <thisDocumentIdentifier>
+      <ProprietaryDocumentIdentifier>020401123456</ProprietaryDocumentIdentifier>
+   </thisDocumentIdentifier>
+   <GlobalDocumentFunctionCode/>
+</PurchaseOrderRequest>
+</TEXTAREA>
+    </TD></TR></TBODY></TABLE></FORM></BODY></HTML>

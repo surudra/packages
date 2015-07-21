@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<IDataXMLCoder version="1.0">
+  <record javaclass="com.wm.data.ISMemDataImpl">
+    <record name="transactions" javaclass="com.wm.data.ISMemDataImpl">
+      <record name="setRequisitionTxn" javaclass="com.wm.data.ISMemDataImpl">
+        <value name="transactionName">setRequisitionTxn</value>
+        <value name="transactionType">IN</value>
+        <value name="errSQL">SELECT PO_INTERFACE_ERRORS.INTERFACE_TYPE, PO_INTERFACE_ERRORS.INTERFACE_TRANSACTION_ID, 
+PO_INTERFACE_ERRORS.COLUMN_NAME, PO_INTERFACE_ERRORS.ERROR_MESSAGE,
+PO_REQUISITIONS_INTERFACE_ALL.SOURCE_TYPE_CODE, PO_REQUISITIONS_INTERFACE_ALL.QUANTITY
+FROM PO_INTERFACE_ERRORS,PO_REQUISITIONS_INTERFACE_ALL  
+WHERE  PO_REQUISITIONS_INTERFACE_ALL.REQUEST_ID = PO_INTERFACE_ERRORS.REQUEST_ID
+AND PO_REQUISITIONS_INTERFACE_ALL.TRANSACTION_ID = PO_INTERFACE_ERRORS.INTERFACE_TRANSACTION_ID 
+AND PO_INTERFACE_ERRORS.REQUEST_ID = '&amp;REQUEST_ID*'</value>
+        <record name="table0" javaclass="com.wm.data.ISMemDataImpl">
+          <value name="tableName">PO_REQUISITIONS_INTERFACE_ALL</value>
+          <value name="required">true</value>
+        </record>
+        <record name="table1" javaclass="com.wm.data.ISMemDataImpl">
+          <value name="tableName">PO_REQ_DIST_INTERFACE_ALL</value>
+          <value name="required">true</value>
+        </record>
+      </record>
+    </record>
+    <record name="FILE_INFO" javaclass="com.wm.data.ISMemDataImpl">
+      <value name="OA_RELEASE">1213</value>
+      <value name="DESCRIPTION"></value>
+      <value name="CREATE_HOST">WebMethods</value>
+      <value name="CREATE_IM_VER"></value>
+      <value name="CREATE_DATE">May 6, 2005 12:57:13 PM</value>
+    </record>
+  </record>
+</IDataXMLCoder>

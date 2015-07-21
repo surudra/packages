@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <record name="transactions" javaclass="com.wm.util.Values">
+    <record name="queryProductCatalogTxn" javaclass="com.wm.util.Values">
+      <value name="transactionName">queryProductCatalogTxn</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="SUPPLIER_ITEMS" javaclass="com.wm.util.Values">
+        <value name="SQLOut">SELECT PPC.WEB_TRANSACTION_ID, PPC.DOCUMENT_TYPE, PPC.DOCUMENT_STATUS,  PPC.ORG_ID, PPC.ORGANIZATION_NAME, PPC.ITEM_CATEGORY, PPC.ITEM_NUM,  PPC.VENDOR_NAME, PPC.VENDOR_SITE, PPC.ITEM_DESCRIPTION,  PPC.ITEM_REVISION, PPC.SUPPLIER_ITEM FROM WM_PO_PRODUCT_CATALOG_QRY_VW PPC WHERE PPC.VENDOR_NAME LIKE NVL('&amp;VENDOR_NAME*',PPC.VENDOR_NAME) AND NVL(PPC.VENDOR_SITE,'XXXXX') LIKE NVL('&amp;VENDOR_SITE*', NVL(PPC.VENDOR_SITE,'XXXXX')) AND NVL(PPC.ITEM_CATEGORY,'XXXXX') LIKE NVL('&amp;ITEM_CATEGORY*', NVL(PPC.ITEM_CATEGORY,'XXXXX')) AND NVL(PPC.ITEM_NUM,'XXXXX') LIKE NVL('&amp;COMMODITY*', NVL(PPC.ITEM_NUM,'XXXXX')) AND NVL(PPC.ITEM_REVISION,'XXXXX') LIKE NVL('&amp;ITEM_REVISION*', NVL(PPC.ITEM_REVISION,'XXXXX')) AND NVL(PPC.ORGANIZATION_NAME,'XXXXX') LIKE NVL('&amp;ORGANIZATION_NAME*', NVL(PPC.ORGANIZATION_NAME,'XXXXX'))</value>
+        <value name="SQLAlias">SUPPLIER_ITEMS</value>
+        <value name="SQLRelation"></value>
+        <record name="NEGOTIATED_SOURCES" javaclass="com.wm.util.Values">
+          <value name="SQLOut">SELECT VENDOR_NAME, VENDOR_SITE, ITEM_NUM, ITEM_CATEGORY, ITEM_DESCRIPTION, ITEM_REVISION, LINE_UOM, LINE_PRICE,  SUPPLIER_ITEM, BREAK_QUANTITY, BREAK_PRICE FROM WM_PO_NEGOTIATED_SOURCES_VW</value>
+          <value name="SQLAlias">NEGOTIATED_SOURCES</value>
+          <value name="SQLRelation">ORG_ID = SUPPLIER_ITEMS.ORG_ID AND ( ITEM_NUM = SUPPLIER_ITEMS.ITEM_NUM OR SUPPLIER_ITEM = SUPPLIER_ITEMS.SUPPLIER_ITEM )</value>
+        </record>
+        <record name="PRIOR_PURCHASES" javaclass="com.wm.util.Values">
+          <value name="SQLOut">SELECT ORDER_DATE, VENDOR_NAME, VENDOR_SITE, ITEM_NUM, ITEM_CATEGORY, ITEM_DESCRIPTION, ITEM_REVISION, UOM,  SUPPLIER_ITEM, QUANTITY, PRICE FROM WM_PO_PRIOR_PURCHASES_VW</value>
+          <value name="SQLAlias">PRIOR_PURCHASES</value>
+          <value name="SQLRelation">ORG_ID = SUPPLIER_ITEMS.ORG_ID AND ( ITEM_NUM = SUPPLIER_ITEMS.ITEM_NUM  OR SUPPLIER_ITEM = SUPPLIER_ITEMS.SUPPLIER_ITEM )</value>
+        </record>
+        <record name="SOURCING_RULES" javaclass="com.wm.util.Values">
+          <value name="SQLOut">SELECT ORG_ID, RULE, RULE_ID, ITEM_NUM, ITEM_DESCRIPTION,  FROM_DATE, TO_DATE, VENDOR_NAME, VENDOR_SITE,  ORGANIZATION_CODE, VENDOR_ID FROM WM_PO_SOURCING_RULES_VW</value>
+          <value name="SQLAlias">SOURCING_RULES</value>
+          <value name="SQLRelation">ORG_ID = SUPPLIER_ITEMS.ORG_ID AND ITEM_NUM = SUPPLIER_ITEMS.ITEM_NUM</value>
+          <record name="SOURCING_DOCUMENTS" javaclass="com.wm.util.Values">
+            <value name="SQLOut">SELECT ITEM_NUM, ITEM_CATEGORY, VENDOR_ID, RULE_ID,  SEQUENCE_NUM, VENDOR_PRODUCT_NUM, LINE_UOM, LINE_PRICE, BREAK_QUANTITY, BREAK_PRICE FROM WM_PO_SOURCING_DOCS_VW</value>
+            <value name="SQLAlias">SOURCING_DOCUMENTS</value>
+            <value name="SQLRelation">ORG_ID = SOURCING_RULES.ORG_ID AND RULE_ID = SOURCING_RULES.RULE_ID AND VENDOR_ID = SOURCING_RULES.VENDOR_ID</value>
+          </record>
+        </record>
+      </record>
+    </record>
+  </record>
+  <record name="FILE_INFO" javaclass="com.wm.util.Values">
+    <value name="OA_RELEASE">1159</value>
+    <value name="DESCRIPTION"></value>
+    <value name="CREATE_HOST">webMethods</value>
+    <value name="CREATE_IM_VER">3.1</value>
+    <value name="CREATE_DATE">May 9, 2004 11:18:23 AM</value>
+  </record>
+</Values>

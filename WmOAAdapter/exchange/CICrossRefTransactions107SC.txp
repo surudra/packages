@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <record name="transactions" javaclass="com.wm.util.Values">
+    <record name="checkCICrossRefImportStatus" javaclass="com.wm.util.Values">
+      <value name="transactionName">checkCICrossRefImportStatus</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="COUNT_MTL_CI_REF" javaclass="com.wm.util.Values">
+        <value name="SQLOut">SELECT count(*) AS ROWCOUNT FROM MTL_CI_XREFS_INTERFACE	WHERE PROCESS_MODE = 2</value>
+        <value name="SQLAlias">COUNT_MTL_CI_REF</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+    <record name="execCICrossRefConcProg" javaclass="com.wm.util.Values">
+      <value name="transactionName">execCICrossRefConcProg</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="EXECCICROSSREF" javaclass="com.wm.util.Values">
+        <value name="SQLOut">WM_INV_CICRREF_IMP_HANDLER_PKG.WM_HANDLE_CICRREF</value>
+        <value name="SQLAlias">EXECCICROSSREF</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+    <record name="getCustomerItemId" javaclass="com.wm.util.Values">
+      <value name="transactionName">getCustomerItemId</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="CUSTOMER_ITEM_ID" javaclass="com.wm.util.Values">
+        <value name="SQLOut">SELECT CUSTOMER_ITEM_ID 
+FROM MTL_CUSTOMER_ITEMS  MCI,RA_CUSTOMERS RC
+WHERE MCI.CUSTOMER_ID = RC.CUSTOMER_ID
+AND CUSTOMER_ITEM_NUMBER = '&amp;CUSTOMER_ITEM_NUMBER*'
+AND CUSTOMER_NAME = '&amp;CUSTOMER_NAME*'
+AND ITEM_DEFINITION_LEVEL = '&amp;ITEM_DEFINITION_LEVEL*'</value>
+        <value name="SQLAlias">CUSTOMER_ITEM_ID</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+  </record>
+  <record name="FILE_INFO" javaclass="com.wm.util.Values">
+    <value name="OA_RELEASE">107SC</value>
+    <value name="DESCRIPTION"></value>
+    <value name="CREATE_HOST">webMethods</value>
+    <value name="CREATE_IM_VER">3.0</value>
+    <value name="CREATE_DATE">Nov 25, 2002 11:12:03 AM</value>
+  </record>
+</Values>

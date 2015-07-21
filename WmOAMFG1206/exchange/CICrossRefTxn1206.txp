@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<IDataXMLCoder version="1.0">
+  <record javaclass="com.wm.data.ISMemDataImpl">
+    <record name="transactions" javaclass="com.wm.data.ISMemDataImpl">
+      <record name="checkCICrossRefImportStatus" javaclass="com.wm.data.ISMemDataImpl">
+        <value name="transactionName">checkCICrossRefImportStatus</value>
+        <value name="transactionType">OUT</value>
+        <null name="AcknowledgeSQL"/>
+        <record name="COUNT_MTL_CI_REF" javaclass="com.wm.util.Values">
+          <value name="SQLOut">SELECT count(*) AS ROWCOUNT FROM MTL_CI_XREFS_INTERFACE	WHERE PROCESS_MODE = 2</value>
+          <value name="SQLAlias">COUNT_MTL_CI_REF</value>
+          <value name="SQLRelation"></value>
+        </record>
+      </record>
+      <record name="execCICrossRefConcProg" javaclass="com.wm.data.ISMemDataImpl">
+        <value name="transactionName">execCICrossRefConcProg</value>
+        <value name="transactionType">OUT</value>
+        <null name="AcknowledgeSQL"/>
+        <record name="EXECCICROSSREF" javaclass="com.wm.util.Values">
+          <value name="SQLOut">WM_INV_CICRREF_IMP_HANDLER_PKG.WM_HANDLE_CICRREF</value>
+          <value name="SQLAlias">EXECCICROSSREF</value>
+          <value name="SQLRelation"></value>
+        </record>
+      </record>
+    </record>
+    <record name="FILE_INFO" javaclass="com.wm.data.ISMemDataImpl">
+      <value name="OA_RELEASE">1206</value>
+      <value name="DESCRIPTION"></value>
+      <value name="CREATE_HOST">webmethods</value>
+      <value name="CREATE_IM_VER"></value>
+      <value name="CREATE_DATE">May 5, 2005 7:30:31 PM</value>
+    </record>
+  </record>
+</IDataXMLCoder>

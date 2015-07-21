@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseConfiguration dbVendor="MSSQL">
+	<typeMapping>
+		<jdbcType name="SQLXML">
+			<javaType name="STRING"/>
+			<javaType name="OBJECT"/>
+		</jdbcType>
+	</typeMapping>
+	<extTypeMapping>
+		<jdbcType name="DATETIMEOFFSET" code="-155">
+			<javaType name="SQLTIMESTAMP"  />
+		</jdbcType>
+	</extTypeMapping>
+	<columnTypeMapping>
+		<columnType nativeSqlType="bigint" jdbcTypeName="BIGINT"  includeNullable="true" includeColumnSize="false"/>
+		<columnType nativeSqlType="tinyint" jdbcTypeName="TINYINT"  includeNullable="true" includeColumnSize="false"/>
+		<columnType nativeSqlType="smallint" jdbcTypeName="SMALLINT"  includeNullable="true" includeColumnSize="false"/>
+		<columnType nativeSqlType="int" jdbcTypeName="INTEGER"  includeNullable="true" includeColumnSize="false"/>
+		<columnType nativeSqlType="numeric" jdbcTypeName="NUMERIC" includePrecision="true" includeNullable="true"/>
+		<columnType nativeSqlType="decimal" jdbcTypeName="DECIMAL"  includePrecision="true" includeNullable="true"/>
+		<columnType nativeSqlType="bit" jdbcTypeName="BOOLEAN" includeNullable="true" includeColumnSize="false"/>
+		<columnType nativeSqlType="money" jdbcTypeName="DECIMAL" includePrecision="true" includeNullable="true" includeColumnSize="false"/>
+		<columnType nativeSqlType="smallmoney" jdbcTypeName="DECIMAL" includeNullable="true" includeColumnSize="false"/>
+		
+		<columnType nativeSqlType="float" jdbcTypeName="FLOAT" includeColumnSize="false" includeNullable="true"/>
+		<columnType nativeSqlType="real" jdbcTypeName="REAL" includeColumnSize="false" includeNullable="true" />
+		<columnType nativeSqlType="char" jdbcTypeName="CHAR" includeNullable="true" />
+		<columnType nativeSqlType="varchar" jdbcTypeName="VARCHAR" includeNullable="true"/>
+		<columnType nativeSqlType="text" jdbcTypeName="LONGVARCHAR" includeColumnSize="false" includeNullable="true"/>
+		<columnType nativeSqlType="ntext" jdbcTypeName="LONGNVARCHAR" includeNullable="true" includeColumnSize="false"/>
+		<columnType nativeSqlType="nchar" jdbcTypeName="NCHAR" includeNullable="true" />
+		<columnType nativeSqlType="nvarchar" jdbcTypeName="NVARCHAR" includeNullable="true" />
+		
+		<columnType nativeSqlType="timestamp" jdbcTypeName="BINARY" includeColumnSize="false"/>
+		<!-- check the jdbc type name for the uniqueidentifier type below-->
+		<columnType nativeSqlType="uniqueidentifier" jdbcTypeName="CHAR" includeColumnSize="false" />
+		<columnType nativeSqlType="date" jdbcTypeName="DATE" includeColumnSize="false" includeNullable="true"/>
+		<columnType nativeSqlType="time" jdbcTypeName="TIME" includeColumnSize="false" includeNullable="true"/>
+		<columnType nativeSqlType="datetime" jdbcTypeName="TIMESTAMP" includeColumnSize="false" includeNullable="true"/>
+		<columnType nativeSqlType="datetime2" jdbcTypeName="TIMESTAMP" includeColumnSize="false" includeNullable="true"/>
+		<columnType nativeSqlType="smalldatetime" jdbcTypeName="TIMESTAMP" includeColumnSize="false" includeNullable="true"/>
+		<columnType nativeSqlType="datetimeoffset" jdbcTypeName="DATETIMEOFFSET" includeColumnSize="false" includeNullable="true"/>
+		
+		<columnType nativeSqlType="binary" jdbcTypeName="BINARY" includeNullable="true"/>
+		<columnType nativeSqlType="varbinary" jdbcTypeName="VARBINARY" includeNullable="true"/>
+		<columnType nativeSqlType="image" jdbcTypeName="VARBINARY" includeNullable="true" includeColumnSize="false"/>
+		<columnType nativeSqlType="cursor" jdbcTypeName="OTHER" includeNullable="true"/>
+		<columnType nativeSqlType="xml" jdbcTypeName="SQLXML" includeNullable="true" includeColumnSize="false"/>
+	</columnTypeMapping>
+</databaseConfiguration>

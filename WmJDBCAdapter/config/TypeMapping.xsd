@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="javaType">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="implementingClass" type="javaClass"
+					maxOccurs="1" minOccurs="0">
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="name" type="xs:string" use="required"></xs:attribute>
+			<xs:attribute name="alternateName" type="xs:string"></xs:attribute>
+			<xs:attribute name="setter" type="xs:string"
+				use="optional">
+			</xs:attribute>
+			<xs:attribute name="getter" type="xs:string"></xs:attribute>		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="jdbcType">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="javaType" minOccurs="1" maxOccurs="unbounded" />
+			</xs:sequence>
+			<xs:attribute name="name" type="xs:string" use="required"></xs:attribute>
+			<xs:attribute name="code" type="xs:int" use="optional"></xs:attribute>
+			<xs:attribute name="typeClassName" type="xs:string" use="optional"></xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="columnType">
+		<xs:complexType>
+			<xs:attribute name="nativeSqlType" type="xs:string" use="required"></xs:attribute>
+			<xs:attribute name="jdbcTypeName" type="xs:string" use="required"></xs:attribute>
+			<xs:attribute name="alternativeName" type="xs:string" use="optional"></xs:attribute>
+			<xs:attribute name="includeNullable" type="xs:boolean" default="false"></xs:attribute>
+			<xs:attribute name="includeColumnSize" type="xs:boolean" default="true"></xs:attribute>
+			<xs:attribute name="resizeFactor" type="xs:double" default="1"></xs:attribute>
+			<xs:attribute name="includePrecision" type="xs:boolean" default="false"></xs:attribute>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="columnTypeMapping">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="columnType" minOccurs="0" maxOccurs="unbounded"></xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="typeMapping">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="jdbcType" minOccurs="0" maxOccurs="unbounded"></xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="extTypeMapping">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="jdbcType" minOccurs="0"
+					maxOccurs="unbounded">
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="overrideDefault" type="xs:boolean" default="false"></xs:attribute>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="defaultTypeDefinition">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="javaType" minOccurs="1" maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="databaseConfiguration">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="defaultTypeDefinition" minOccurs="0" maxOccurs="1"/>
+				<xs:element ref="typeMapping" minOccurs="0" maxOccurs="1"/>
+				<xs:element ref="extTypeMapping" minOccurs="0" maxOccurs="1"/>
+				<xs:element ref="columnTypeMapping" minOccurs="0" maxOccurs="1"/>
+			</xs:sequence>
+			<xs:attribute name="dbVendor" type="xs:string" />
+		</xs:complexType>
+	</xs:element>
+
+	<xs:complexType name="javaClass">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="isArray" type="xs:boolean"
+					default="false">
+				</xs:attribute>
+				<xs:attribute name="usePrimitive" type="xs:boolean"
+					default="false">
+				</xs:attribute>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+</xs:schema>

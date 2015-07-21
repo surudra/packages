@@ -1,0 +1,459 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="GENERATOR" content="Quadralay WebWorks Publisher Professional Edition 7.0" />
+  <meta name="TEMPLATEBASE" content="wM_WWH20030908" />
+  <meta name="LASTUPDATED" content="12/04/06 19:31:53" />
+  <title>UpdateNotification Template Screens    </title>
+  <link rel="StyleSheet" href="document.css" type="text/css" />
+  <link rel="StyleSheet" href="catalog.css" type="text/css" />
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+ </head>
+
+ <body onLoad="WWHUpdate();">
+
+
+<a name="wp1120403"> </a><h2 class="pNewHTMLPage">
+UpdateNotification Template Screens    
+</h2><a name="wp1093494"> </a><p class="pBody">
+The UpdateNotification adapter notification publishes notification of UPDATE operations on a database table to the webMethods Integration Platform.
+</p>
+<a name="wp1107873"> </a><p class="pAnchor">
+</p><div align="left">
+<table border="0">
+  <caption></caption>
+  <tr align="left" valign="top">    <td><a name="wp1107877"> </a><p class="px_Note">
+&#160;
+<img src="images/note_icon.gif" height="25" width="25" border="1" alt="Note" />
+</p>
+</td>
+    <td><a name="wp1107879"> </a><p class="pNote">
+<b>Note:</b> UpdateNotifications are not supported using Teradata databases.
+</p>
+</td>
+</tr>
+</table>
+</div>
+<p class="pAnchor">
+</p>
+<a name="wp1093713"> </a><p class="pBody">
+This adapter notification template includes the following tabs:
+</p>
+<a name="wp1085679"> </a><p class="pChapterTOC">
+<img src="images/bullet.gif" height="13" width="10" border="0" />
+<a  href="ScreenLevelHelp27.html#wp1122067">Notification Configure Tab</a>
+</p>
+<a name="wp1085683"> </a><p class="pChapterTOC">
+<img src="images/bullet.gif" height="13" width="10" border="0" />
+<a  href="ScreenLevelHelp27.html#wp1072419">Tables Tab</a>
+</p>
+<a name="wp1085687"> </a><p class="pChapterTOC">
+<img src="images/bullet.gif" height="13" width="10" border="0" />
+<a  href="ScreenLevelHelp27.html#wp1072420">Joins Tab</a>
+</p>
+<a name="wp1085691"> </a><p class="pChapterTOC">
+<img src="images/bullet.gif" height="13" width="10" border="0" />
+<a  href="ScreenLevelHelp27.html#wp1072421">SELECT Tab</a>
+</p>
+<a name="wp1085695"> </a><p class="pChapterTOC">
+<img src="images/bullet.gif" height="13" width="10" border="0" />
+<a  href="ScreenLevelHelp27.html#wp1072422">WHEN Tab</a>
+</p>
+<a name="wp1122067"> </a><h4 class="pHeading3">
+Notification Configure Tab 
+</h4>
+<a name="wp1086922"> </a><p class="pBody">
+Use the <b class="cBold">Notification Configure</b> tab as follows:</p><div align="left">
+<table border="0">
+  <caption></caption>
+  <tr align="left" valign="bottom">    <th><a name="wp1086899"> </a><div style="text-align: left" class="pCellHeading">
+Field
+<hr />
+</div>
+</th>
+    <th><a name="wp1086901"> </a><div style="text-align: left" class="pCellHeading">
+Description
+<hr />
+</div>
+</th>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1107378"> </a><p class="pBody">
+<b class="cBold">Base Name</b>
+</p>
+</td>
+    <td><a name="wp1107380"> </a><p class="pBody">
+The base name used to generate the <b class="cBold">Resource Name</b> created by the JDBC Adapter.
+</p>
+<a name="wp1107384"> </a><p class="pBody">
+The base name determines the corresponding <b class="cBold">Resource Types </b>and<b class="cBold"> Resource Name</b>.
+</p>
+<a name="wp1107385"> </a><p class="pNote">
+<b>Note:</b> For OS/390 DB2V7.2, the <b class="cBold">Base Name </b>you create below must be no more than 5 characters because triggers on OS/390 name cannot be more than 8 characters.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1119330"> </a><p class="pBody">
+<b class="cBold">Publish Locally</b>
+</p>
+</td>
+    <td><a name="wp1119332"> </a><p class="pBody">
+Specifies whether to publish the notification’s publishable document to the local Integration Server.
+</p>
+<a name="wp1119336"> </a><p class="pBody">
+By default, this option is not selected, that is, if the webMethods Broker is configured to the Integration Server, the publishable document is published to the Broker; otherwise the publishable document is published to the local Integration Server.
+</p>
+<a name="wp1119340"> </a><p class="pBody">
+Selecting the <b class="cBold">Publish Locally</b> option reduces performance problems, if the Integration Server is connecting to a remotely located Broker that is in turn triggering a service on the local Integration Server.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1096776"> </a><p class="pBody">
+<b class="cBold">Resource Type</b>
+</p>
+</td>
+    <td><a name="wp1096778"> </a><p class="pBody">
+Types are buffer table, trigger, and sequence.
+</p>
+<a name="wp1096781"> </a><p class="pBody">
+For information about resource types, see the <em class="cEmphasis">webMethods JDBC Adapter User’s Guide</em>.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1096784"> </a><p class="pBody">
+<b class="cBold">Resource Name</b>
+</p>
+</td>
+    <td><a name="wp1096786"> </a><p class="pBody">
+To ensure uniqueness, the resource name combines the following elements. You do not edit this name.
+</p>
+<div class="pSmartList1" style="margin-top: 7pt"><ul class="pSmartList1" style="margin-top: 7pt">
+<a name="wp1096787"> </a><div style="margin-top: 7pt" class="pSmartList1"><li>Resource prefix (WMB, WMT, and WMS for buffer table, trigger, and sequence respectively)</li></div>
+<a name="wp1096788"> </a><div style="margin-top: 7pt" class="pSmartList1"><li>The name you typed in the <b class="cBold">Base Name </b>field</li></div>
+<a name="wp1096789"> </a><div style="margin-top: 7pt" class="pSmartList1"><li>A suffix, based on a system timestamp</li></div>
+</ul></div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1105845"> </a><p class="pBody">
+<b class="cBold">File Record Format</b>
+</p>
+</td>
+    <td><a name="wp1105847"> </a><p class="pBody">
+The format of the file record.
+</p>
+<a name="wp1105848"> </a><p class="pBody">
+Optional field used by DB2 for AS/400 V4R5 only.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1105840"> </a><p class="pBody">
+<b class="cBold">Database Name</b>
+</p>
+</td>
+    <td><a name="wp1105842"> </a><p class="pBody">
+The name of the database where the buffer tables will be created.
+</p>
+<a name="wp1105843"> </a><p class="pBody">
+Optional field used by DB2 for OS/390 only.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1105835"> </a><p class="pBody">
+<b class="cBold">Table Space Name</b>
+</p>
+</td>
+    <td><a name="wp1105837"> </a><p class="pBody">
+The table space where the buffer tables will be created.
+</p>
+<a name="wp1105838"> </a><p class="pBody">
+Optional field used by DB2 for OS/390 only.
+</p>
+</td>
+</tr>
+</table>
+</div>
+<p class="pBody">
+</p>
+<a name="wp1072419"> </a><h4 class="pHeading3">
+Tables Tab 
+</h4>
+<a name="wp1093215"> </a><p class="pBody">
+Use the <b class="cBold">Tables</b> tab to set the following fields:</p><div align="left">
+<table border="0">
+  <caption></caption>
+  <tr align="left" valign="bottom">    <th><a name="wp1093200"> </a><div style="text-align: left" class="pCellHeading">
+Field
+<hr />
+</div>
+</th>
+    <th><a name="wp1093202"> </a><div style="text-align: left" class="pCellHeading">
+Description
+<hr />
+</div>
+</th>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1093204"> </a><p class="pBody">
+<b class="cBold">Table Alias</b>
+</p>
+</td>
+    <td><a name="wp1093206"> </a><p class="pBody">
+The table alias is automatically assigned when you select more than one table in the <b class="cBold">Table Name</b> field. The default is <code class="cCode">t1</code>. 
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1093208"> </a><p class="pBody">
+<b class="cBold">Table Name</b>
+</p>
+</td>
+    <td><a name="wp1093210"> </a><p class="pBody">
+Select a table. The default for the associated catalog name is <code class="cCode">current catalog</code>. The default for the associated schema name is <code class="cCode">current schema</code>. 
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1093212"> </a><p class="pBody">
+<b class="cBold">Type</b>
+</p>
+</td>
+    <td><a name="wp1093214"> </a><p class="pBody">
+The table type automatically displays based on the table you select.
+</p>
+</td>
+</tr>
+</table>
+</div>
+<p class="pBody">
+</p>
+<a name="wp1072420"> </a><h4 class="pHeading3">
+Joins Tab 
+</h4>
+<a name="wp1093184"> </a><p class="pBody">
+Use the <b class="cBold">Joins</b> tab to specify the columns for joining the tables you configured on the <b class="cBold">Tables</b> tab. If you are not joining tables, skip this tab.
+</p>
+<div class="pSmartList1" style="margin-top: 5pt"><ol type="1" class="pSmartList1" style="margin-top: 5pt">
+<a name="wp1093188"> </a><div style="margin-top: 5pt" class="pSmartList1"><li>Select the <b class="cBold">Insert Row</b> icon <img src="images/table_insertrow.gif" border="0" hspace="0" vspace="0"/> to create new left and right columns. </li></div>
+<a name="wp1093241"> </a><div style="margin-top: 7pt" class="pSmartList1"><li>Select <b class="cBold">Left Column</b> and select the first table’s joining column.</li></div>
+<a name="wp1093244"> </a><div style="margin-top: 7pt" class="pSmartList1"><li>Select the appropriate <b class="cBold">Operator</b>.</li></div>
+<a name="wp1093247"> </a><div style="margin-top: 7pt" class="pSmartList1"><li>Select <b class="cBold">Right Column</b> and select the next table’s joining column.</li></div>
+<a name="wp1093250"> </a><div style="margin-top: 7pt" class="pSmartList1"><li>Repeat until you have defined all the joins.</li></div>
+</ol></div>
+<a name="wp1072421"> </a><h4 class="pHeading3">
+SELECT Tab </h4><div align="left">
+<table border="0">
+  <caption></caption>
+  <tr align="left" valign="top">    <td><a name="wp1129078"> </a><p class="px_Note">
+&#160;
+<img src="images/note_icon.gif" height="25" width="25" border="1" alt="Note" />
+</p>
+</td>
+    <td><a name="wp1129080"> </a><p class="pNote">
+<b>Note:</b> When using the Join clause, select only the fields of the monitor table in the <b class="cBold">Select</b> tab.
+</p>
+</td>
+</tr>
+</table>
+</div>
+<h4 class="pHeading3">
+</h4>
+<a name="wp1093122"> </a><p class="pBody">
+Use the <b class="cBold">SELECT</b> tab to define the columns and fields to be selected.
+</p>
+<div class="pSmartList1" style="margin-top: 5pt"><ol type="1" class="pSmartList1" style="margin-top: 5pt">
+<a name="wp1093123"> </a><div style="margin-top: 5pt" class="pSmartList1"><li>In the <b class="cBold">ALL/DISTINCT</b> field, select <b class="cBold">ALL</b> to include duplicate rows or <b class="cBold">DISTINCT</b> to suppress duplicate rows. Otherwise leave this field blank.</li></div>
+<a name="wp1093256"> </a><div style="margin-top: 7pt" class="pSmartList1"><li>Select the <b class="cBold">Insert Row</b> icon <img src="images/table_insertrow.gif" border="0" hspace="0" vspace="0"/> (or the <b class="cBold">Fill in all rows to the table</b> icon <img src="images/append_all_rows.gif" border="0" hspace="0" vspace="0"/>) to create new fields as needed.</li></div>
+<a name="wp1093259"> </a><div style="margin-top: 7pt" class="pSmartList1"><li>In the <b class="cBold">Expression</b> field, select a column or type any valid SQL expression. The corresponding <b class="cBold">Column Type</b>, <b class="cBold">JDBC Type</b>, <b class="cBold">Output Field Type</b>, and <b class="cBold">Output Field </b>display for each column you select in the <b class="cBold">Expression</b> field. Use the following fields:</li></div>
+<a name="wp1093164"> </a><p class="pAnchor">
+<div align="left">
+<table border="0">
+  <caption></caption>
+  <tr align="left" valign="bottom">    <th><a name="wp1119362"> </a><div style="text-align: left" class="pCellHeading">
+Field
+<hr />
+</div>
+</th>
+    <th><a name="wp1119364"> </a><div style="text-align: left" class="pCellHeading">
+Description
+<hr />
+</div>
+</th>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1119366"> </a><p class="pBody">
+<b class="cBold">Expression</b>
+</p>
+</td>
+    <td><a name="wp1119368"> </a><p class="pBody">
+The column name or SQL expression.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1119370"> </a><p class="pBody">
+<b class="cBold">Column Type</b>
+</p>
+</td>
+    <td><a name="wp1119372"> </a><p class="pBody">
+The column data type defined in the database table.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1119374"> </a><p class="pBody">
+<b class="cBold">JDBC Type</b>
+</p>
+</td>
+    <td><a name="wp1119376"> </a><p class="pBody">
+The JDBC type of the corresponding <b class="cBold">Output Field</b>.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1119378"> </a><p class="pBody">
+<b class="cBold">Output Field Type</b>
+</p>
+</td>
+    <td><a name="wp1119383"> </a><p class="pBody">
+The data type of the output field. The JDBC Adapter automatically converts database-specific types to Java data types. 
+</p>
+<a name="wp1119384"> </a><p class="pBody">
+For a list of JDBC-Type to Java-Type mappings, see the <em class="cEmphasis">webMethods JDBC Adapter User’s Guide</em>.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1119389"> </a><p class="pBody">
+<b class="cBold">Output Field</b>
+</p>
+</td>
+    <td><a name="wp1119391"> </a><p class="pBody">
+The name of the field containing the output from the SELECT operation. An output field name displays when you select an expression.
+</p>
+<a name="wp1119392"> </a><p class="pBody">
+You can also modify the output field names as required.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1119398"> </a><p class="pBody">
+<b class="cBold">Notify On Update</b>
+</p>
+</td>
+    <td><a name="wp1119400"> </a><p class="pBody">
+Enable this option to indicate which of the columns specified in the <b class="cBold">SELECT</b> tab you want notification if updated. Select:
+</p>
+<div class="pSmartList1" style="margin-top: 7pt"><ul class="pSmartList1" style="margin-top: 7pt">
+<a name="wp1124811"> </a><div style="margin-top: 7pt" class="pSmartList1"><li><b class="cBold">Yes</b>: you want notification if this column of data has been updated. <b class="cBold">Yes</b> is the default value</li></div>
+<a name="wp1119402"> </a><div style="margin-top: 7pt" class="pSmartList1"><li><b class="cBold">No</b>: you do not want notification if this column of data has been updated</li></div>
+<a name="wp1119403"> </a><p class="pBodyRelative">
+For example, you configure the following three output fields: <b class="cBold">MyName</b>, <b class="cBold">MyNumber</b>, and <b class="cBold">MyLocation. </b>You want notification only if the<b class="cBold"> MyLocation </b>output field is updated. In this case, you would select <b class="cBold">Yes </b>for the <b class="cBold">MyLocation</b> output field, and select <b class="cBold">No</b> for the <b class="cBold">MyName</b> and <b class="cBold">MyNumber</b> output fields.
+</p>
+</ul></div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1124670"> </a><p class="pBody">
+<b class="cBold">Output Value Type</b>
+</p>
+</td>
+    <td><a name="wp1124672"> </a><p class="pBody">
+Specifies which output value to retrieve from the database table. By default, the UpdateNotification retrieves the new value from the database table. Select either of the following output value types:
+</p>
+<div class="pSmartList1" style="margin-top: 7pt"><ul class="pSmartList1" style="margin-top: 7pt">
+<a name="wp1124673"> </a><div style="margin-top: 7pt" class="pSmartList1"><li><b class="cBold">Old</b>: Retrieves the old value from the database table</li></div>
+<a name="wp1124674"> </a><div style="margin-top: 7pt" class="pSmartList1"><li><b class="cBold">New</b>: Retrieves the new value from the database table</li></div>
+</ul></div>
+<a name="wp1124676"> </a><p class="pBody">
+To retrieve both the old and the new values, create two rows and then select an <b class="cBold">Output Value Type</b> as <b class="cBold">Old</b> in one row and an <b class="cBold">Output Value Type</b> as <b class="cBold">New</b> in the other row. While doing so, ensure that the <b class="cBold">Output Field</b> is unique for both the old and the new values.
+</p>
+<a name="wp1129092"> </a><p class="pNote">
+<b>Note:</b> If you created Update Notifications using the JDBC Adapter 6.0.3, the values of this field, that is, <b class="cBold">New</b> and <b class="cBold">Old </b>are not displayed in the list. The workaround is to click the icon <b class="cBold">Reload values from the adapter </b><img src="images/ScreenLevelHelpa7.gif" height="20" width="18" border="0" hspace="0" vspace="0"/>.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1119431"> </a><p class="pBody">
+<b class="cBold">Maximum Row</b>
+</p>
+</td>
+    <td><a name="wp1119433"> </a><p class="pBody">
+Specifies the number of rows to be retrieved from the buffer table. This field is useful when you are working with a large number of records and you want to limit the number of documents sent each time the notification polls.
+</p>
+<a name="wp1119435"> </a><p class="pBody">
+Use a value of <code class="cCode">0</code> to indicate no limit on the number of rows retrieved.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1119437"> </a><p class="pBody">
+<b class="cBold">Query Time Out</b>
+</p>
+</td>
+    <td><a name="wp1123189"> </a><p class="pBody">
+Specify the query time out value in seconds. This value is the amount of time the JDBC Adapter waits for the notification to execute before stopping the SQL operation.
+</p>
+<a name="wp1123193"> </a><p class="pBody">
+The default value is -1. Use the default value to have the notification use the value indicated on the <code class="cCode">watt.adapter.JDBC.QueryTimeout</code> property as the time out. 
+</p>
+<a name="wp1123194"> </a><p class="pBody">
+If you specify a value equal to 0, or if the <code class="cCode">watt.adapter.JDBC.QueryTimeout</code> property is not set, the notification executes without a time out.
+</p>
+<a name="wp1123195"> </a><p class="pBody">
+If you specify a value greater than 0, the notification executes with the specified value as the time out.
+</p>
+<a name="wp1123196"> </a><p class="pNote">
+<b>Note:</b> -1 is the only permissible negative value for this field.
+</p>
+<a name="wp1123197"> </a><p class="pBody">
+For more information about the <code class="cCode">watt.adapter.JDBC.QueryTimeout</code> property, see the <em class="cEmphasis">webMethods JDBC Adapter User’s Guide.</em>
+</p>
+</td>
+</tr>
+</table>
+</div>
+
+</p>
+</ol></div>
+<a name="wp1072422"> </a><h4 class="pHeading3">
+WHEN Tab   
+</h4>
+<a name="wp1093099"> </a><p class="pBody">
+Use the <b class="cBold">WHEN</b> tab to specify the conditions for selecting information.</p><div align="left">
+<table border="0">
+  <caption></caption>
+  <tr align="left" valign="top">    <td><a name="wp1108198"> </a><p class="px_Note">
+&#160;
+<img src="images/note_icon.gif" height="25" width="25" border="1" alt="Note" />
+</p>
+</td>
+    <td><a name="wp1108200"> </a><p class="pNote">
+<b>Note:</b> If you use Microsoft SQL Server or AS/400 DB2 using a jt400.jar file, do not use the <b class="cBold">WHEN</b> tab because this feature is not supported. An exception will be generated if you try to use this tab in these cases.
+</p>
+</td>
+</tr>
+</table>
+</div>
+<p class="pBody">
+</p>
+<div class="pSmartList1" style="margin-top: 5pt"><ol type="1" class="pSmartList1" style="margin-top: 5pt">
+<a name="wp1093103"> </a><div style="margin-top: 5pt" class="pSmartList1"><li>Select the <b class="cBold">Insert Row</b> icon <img src="images/table_insertrow.gif" border="0" hspace="0" vspace="0"/> to define new WHEN clause fields. </li></div>
+<a name="wp1093271"> </a><div style="margin-top: 7pt" class="pSmartList1"><li>Select the <b class="cBold">Column</b> field and choose a column from the list. </li></div>
+<a name="wp1096846"> </a><div style="margin-top: 7pt" class="pSmartList1"><li>Select a logical operator from the <b class="cBold">AND/OR</b> field, an <b class="cBold">Operator</b>, and separators (the left and right parentheses) as needed.</li></div>
+<a name="wp1101322"> </a><div style="margin-top: 7pt" class="pSmartList1"><li>Type a fixed value in the <b class="cBold">Value</b> field now or at run time. Be sure that it is a valid value, or an exception will be generated at run time.</li></div>
+<a name="wp1093280"> </a><div style="margin-top: 7pt" class="pSmartList1"><li>If necessary, use the <b class="cBold">Shift Up</b> <img src="images/btn_shift_up.gif" border="0" hspace="0" vspace="0"/> or <b class="cBold">Shift Down</b> <img src="images/btn_shift_down.gif" border="0" hspace="0" vspace="0"/> icons to change the order of the WHEN clause to ensure the parameters are parsed in the correct order.</li></div>
+<a name="wp1093283"> </a><div style="margin-top: 7pt" class="pSmartList1"><li>Repeat until you have specified all WHEN parameters.</li></div>
+</ol></div>
+
+ <hr />
+
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag());
+   // -->
+  </script>
+
+ </body>
+</html>

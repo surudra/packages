@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <record name="transactions" javaclass="com.wm.util.Values">
+    <record name="setJournalTxn" javaclass="com.wm.util.Values">
+      <value name="transactionName">setJournalTxn</value>
+      <value name="transactionType">IN</value>
+      <value name="errSQL">SELECT gli.set_of_books_id,
+gls.short_name,
+gli.accounting_date,
+gli.currency_code,
+gli.created_by,
+gli.actual_flag,
+gli.user_je_category_name,
+gli.user_je_source_name,
+gli.currency_conversion_date,
+gli.encumbrance_type_id,
+gle.encumbrance_type,
+gli.budget_version_id,
+gli.user_currency_conversion_type,
+gli.currency_conversion_rate,
+gli.entered_dr,
+gli.entered_cr,
+gli.accounted_dr,
+gli.accounted_cr,
+gli.reference1,
+gli.period_name,
+glv.concatenated_segments,
+gli.group_id,
+gli.status_description
+FROM
+gl_interface gli,
+gl_sets_of_books gls,
+gl_code_combinations_kfv glv,
+gl_encumbrance_types gle
+WHERE
+gli.code_combination_id  = glv.code_combination_id(+)
+AND gls.set_of_books_id =  gli.set_of_books_id(+)
+AND gli.encumbrance_type_id=gle.encumbrance_type_id(+)
+AND gli.status NOT  IN ('NEW','P')
+AND gli.request_id = '&amp;P_REQUEST_ID*'</value>
+      <record name="table0" javaclass="com.wm.util.Values">
+        <value name="tableName">GL_INTERFACE</value>
+        <value name="required">true</value>
+      </record>
+    </record>
+  </record>
+  <record name="FILE_INFO" javaclass="com.wm.util.Values">
+    <value name="OA_RELEASE">107SC</value>
+    <value name="DESCRIPTION">Journal Inbound Transaction Definition</value>
+    <value name="CREATE_HOST">webMethods</value>
+    <value name="CREATE_IM_VER">3.0</value>
+    <value name="CREATE_DATE">Nov 22, 2002 12:03:08 PM</value>
+  </record>
+</Values>

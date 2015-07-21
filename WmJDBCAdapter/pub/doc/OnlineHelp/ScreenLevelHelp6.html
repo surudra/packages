@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="GENERATOR" content="Quadralay WebWorks Publisher Professional Edition 7.0" />
+  <meta name="TEMPLATEBASE" content="wM_WWH20030908" />
+  <meta name="LASTUPDATED" content="12/04/06 19:31:53" />
+  <title>Polling Notifications Screen</title>
+  <link rel="StyleSheet" href="document.css" type="text/css" />
+  <link rel="StyleSheet" href="catalog.css" type="text/css" />
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+ </head>
+
+ <body onLoad="WWHUpdate();">
+
+
+<a name="wp1072350"> </a><h2 class="pNewHTMLPage">
+Polling Notifications Screen
+</h2><a name="wp1078581"> </a><p class="pBody">
+The Polling Notification Screen allows you to schedule and manage adapter notifications.
+</p>
+<a name="wp1078053"> </a><p class="pAnchor">
+</p><div align="left">
+<table border="0">
+  <caption></caption>
+  <tr align="left" valign="top">    <td><a name="wp1107400"> </a><p class="px_Note">
+&#160;
+<img src="images/note_icon.gif" height="25" width="25" border="1" alt="Note" />
+</p>
+</td>
+    <td><a name="wp1107402"> </a><p class="pNote">
+<b>Note:</b>  If you use an XA-Transaction connection, you cannot enable a notification. 
+</p>
+</td>
+</tr>
+</table>
+</div>
+<p class="pAnchor">
+</p>
+<a name="wp1107396"> </a><p class="pBody">
+From the <b class="cBold">Notification Name</b> list, use the following fields to manage each adapter notification:
+</p>
+<a name="wp1084113"> </a><p class="pAnchor">
+</p><div align="left">
+<table border="0">
+  <caption></caption>
+  <tr align="left" valign="bottom">    <th><a name="wp1084194"> </a><div style="text-align: left" class="pCellHeading">
+Field
+<hr />
+</div>
+</th>
+    <th><a name="wp1084196"> </a><div style="text-align: left" class="pCellHeading">
+Description
+<hr />
+</div>
+</th>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1097790"> </a><p class="pBody">
+<b class="cBold">Package Name</b>
+</p>
+</td>
+    <td><a name="wp1097792"> </a><p class="pBody">
+The name of the package that contains the notification.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1084175"> </a><p class="pBody">
+<b class="cBold">State</b>
+</p>
+</td>
+    <td><a name="wp1128922"> </a><p class="pNote">
+<b>Note:</b> You must schedule a polling notification before you can enable it. To schedule a polling notification, use the <b class="cBold">Edit Schedule</b> <img src="images/edit.gif" border="0" hspace="0" vspace="0"/> icon described in these procedures.
+</p>
+<a name="wp1129030"> </a><p class="pBody">
+After you schedule a polling notification, you can use this option’s dropdown list to set the polling notification’s state:
+</p>
+<div class="pSmartList1" style="margin-top: 7pt"><ul class="pSmartList1" style="margin-top: 7pt">
+<a name="wp1129031"> </a><div style="margin-top: 7pt" class="pSmartList1"><li><b class="cBold">Enabled</b>:  The polling notification performs as scheduled.</li></div>
+<a name="wp1129032"> </a><div style="margin-top: 7pt" class="pSmartList1"><li><b class="cBold">Suspended</b>:  The polling notification is removed from the scheduler but the database trigger and buffer table are not dropped.</li></div>
+<a name="wp1129033"> </a><div style="margin-top: 7pt" class="pSmartList1"><li><b class="cBold">Disabled</b>:  The polling notification is removed from the scheduler and the database trigger and buffer table are dropped.</li></div>
+</ul></div>
+<a name="wp1129034"> </a><p class="pBody">
+The <b class="cBold">Suspend all enabled</b> and <b class="cBold">Enable all suspended</b> links help you change states quickly for multiple polling notifications.
+</p>
+<a name="wp1129035"> </a><p class="pBody">
+Enabling, suspending, and disabling a notification affects how its trigger and buffer tables are created and dropped. For details, see <em class="cEmphasis">webMethods JDBC Adapter User’s Guide</em>.
+</p>
+<a name="wp1129039"> </a><p class="pBody">
+If there is no polling notification scheduled for a given adapter notification, control for this field is disabled. Use the <b class="cBold">Edit Schedule</b> <img src="images/edit.gif" border="0" hspace="0" vspace="0"/> icon to create a polling notification.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1084180"> </a><p class="pBody">
+<b class="cBold">Edit Schedule</b>
+</p>
+</td>
+    <td><a name="wp1084185"> </a><p class="pBody">
+Click on the <b class="cBold">Edit Schedule</b> <img src="images/edita.gif" border="0" hspace="0" vspace="0"/> icon to create or modify polling notification parameters. You must disable the polling notification before you can edit it.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1084190"> </a><p class="pBody">
+<b class="cBold">View Schedule</b>
+</p>
+</td>
+    <td><a name="wp1084192"> </a><p class="pBody">
+Click on the <b class="cBold">View Schedule</b> icon to review the parameters for the selected polling notification. Click <b class="cBold">Return to JDBCAdapter Notifications</b> to go back to the main polling notification page.
+</p>
+</td>
+</tr>
+</table>
+</div>
+<p class="pAnchor">
+</p>
+
+ <hr />
+
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag());
+   // -->
+  </script>
+
+ </body>
+</html>

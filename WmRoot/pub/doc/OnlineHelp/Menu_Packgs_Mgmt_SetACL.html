@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="keywords" content="ACLs (Access Control Lists),assigning to services and folders,folders,assigning ACLs to,services,assigning ACLs to,folders,changing ACL assignment,services,changing ACL assignment" />
+    <title>Set ACL Screen</title>
+    <link rel="StyleSheet" href="css/_is_admin_help.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+  <body style="background-color: White; margin-bottom: 25px; margin-left: 25px; margin-right: 25px; margin-top: 0px; padding-top: 0px" onload="WWHUpdate();" onunload="WWHUnload();" onkeydown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onkeypress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onkeyup="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <table align="left" role="presentation">
+      <tr>
+        <td class="WebWorks_Company_Logo_Top">
+          <img src="sag_online.png" />
+        </td>
+      </tr>
+    </table>
+    <br clear="all" />
+    <hr align="left" />
+    <blockquote>
+      <div class="Heading_3"><a name="3_5_11_5_30_2">Set ACL Screen</a></div>
+      <div class="Body"><span class="emphasis"><a name="3_5_11_5_30_6_2_3">Screen Heading</a></span>: <span class="uicontrol">Packages &gt; Management &gt;</span> <span class="varname">folderName</span> <span class="uicontrol">&gt; Set ACLs</span></div>
+      <div class="Body"><a name="3_5_11_5_30_6_2_5">Use the Set ACL screen to change the Access Control List (ACL) assignments of a folder or service. (You can also change this setting with </a><span class="ph">Software&nbsp;AG Designer</span>.) To change ACL settings for other elements, such as Schemas and Triggers, you must use <span class="ph">Software&nbsp;AG Designer</span>.</div>
+      <div class="Body"><a name="3_5_11_5_30_6_2_7">To open the Set ACL screen, go to the </a><span class="heading-no-quotes"><a href="javascript:WWHClickedPopup('is_help', 'Menu_Packgs_Mgmt.html', '');" title="Packages Management Screen">Packages Management Screen</a></span> and click <span class="uicontrol">Browse Folders</span>. The <span class="heading-no-quotes"><a href="javascript:WWHClickedPopup('is_help', 'Menu_Packgs_Mgmt_BrowseFldrs.html', '');" title="Browse Folders Screen">Browse Folders Screen</a></span> will be displayed. Click a folder name to display sub-folders and services, then click on the current setting under any of the ACL columns (List, Read, Write, Execute) to display the Set ACL screen and change the settings.</div>
+      <div class="List_1_outer" style="margin-left: 24px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_1_inner" style="width: 18pt; white-space: nowrap">
+                <img src="bullet1.png" alt="*" border="0" width="10" height="10" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_1_inner"><a name="3_5_11_5_30_6_2_9_2">Click </a><span class="uicontrol">Return to browsing folderName</span> to return to the parent folder.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Definition_Term"><a name="3_5_11_5_30_6_2_11_2_2">Target</a></div>
+      <div class="Definition_Description"><a name="3_5_11_5_30_6_2_11_2_4">Displays the name of the resource (folder or service) whose ACL setting you want to change.</a></div>
+      <div class="Definition_Term"><a name="3_5_11_5_30_6_2_11_4_2">List ACL</a></div>
+      <div class="Definition_Description"><a name="3_5_11_5_30_6_2_11_4_4">The List ACL controls who can list a resource on screens in </a><span class="ph">Designer</span> and <span class="ph">Integration Server Administrator</span>. List access also allows a user to view an element's metadata. Resources that do not have a specific List ACL assignment will inherit one from their parent folder. Angle brackets &lt;&gt; around an ACL name indicate that the ACL setting is inherited. To change the List ACL assigned to the resource specified in <span class="uicontrol">Target</span>, select a new ACL from the list.</div>
+      <div class="Definition_Term"><a name="3_5_11_5_30_6_2_11_6_2">Read ACL</a></div>
+      <div class="Definition_Description"><a name="3_5_11_5_30_6_2_11_6_4">The Read ACL has no meaning for a folder itself, but resources contained in the folder will inherit this setting for Read ACL if they have not already been assigned one. For services, the Read ACL controls who can view the main source through </a><span class="ph">Designer</span> and <span class="ph">Integration Server Administrator</span>. Angle brackets &lt;&gt; around an ACL name indicate that the Read ACL setting is inherited. To change the Read ACL assigned to the resource specified in <span class="uicontrol">Target</span>, select a new ACL from the list.</div>
+      <div class="Definition_Term"><a name="3_5_11_5_30_6_2_11_8_2">Write ACL</a></div>
+      <div class="Definition_Description"><a name="3_5_11_5_30_6_2_11_8_4">For folders, the Write ACL controls who can add, edit, and delete resources in the folder. The Write ACL also controls who can change ACL assignments for the folder. Resources contained in the folder will inherit this setting for Write ACL if they have not already been assigned one. For services, the Write ACL controls who can edit the service. Angle brackets &lt;&gt; around an ACL name indicate that the Write ACL setting is inherited. To change the Write ACL assigned to the resource specified in </a><span class="uicontrol">Target</span>, select a new ACL from the list.</div>
+      <div class="Definition_Term"><a name="3_5_11_5_30_6_2_11_10_2">Execute ACL</a></div>
+      <div class="Definition_Description"><a name="3_5_11_5_30_6_2_11_10_4">For folders, the Execute ACL has no meaning for the folder itself, but resources contained in the folder will inherit this setting for Execute ACL if they have not already been assigned one. For services, the Execute ACL controls who can execute the service. This access also gives the user access to files the server serves, such as DSP and .htm files. Angle brackets &lt;&gt; around an ACL name indicate that the folder inherits its Execute ACL setting from the parent folder. To change the Execute ACL assigned to the resource specified in </a><span class="uicontrol">Target</span>, select a new ACL from the list.</div>
+      <div class="Definition_Term"><a name="3_5_11_5_30_6_2_11_12_2">Enforce ACL on Internal Invokes</a></div>
+      <div class="Definition_Description"><a name="3_5_11_5_30_6_2_11_12_4">(Displayed for services only.) Specifies whether access to this service is controlled on internal invokes (when the service is invoked internally by another service) and external invokes (when the service is requested by an external client). When a service is externally invoked, the server always performs an ACL check to verify that the requester is authorized to invoke that service. However, it does not perform an ACL check on internally invoked services unless the </a><span class="uicontrol">Enforce ACL on Internal Invoke</span> option is enabled on the service being invoked.</div>
+      <div class="Definition_Term"><a name="3_5_11_5_30_6_2_11_14_2">Save Changes</a></div>
+      <div class="Definition_Description"><a name="3_5_11_5_30_6_2_11_14_4">Applies the ACL settings to the resources specified in </a><span class="uicontrol">Target</span>. The changes take effect immediately.</div>
+      <div class="Link_List_Title"><a name="3_5_11_5_30_8_1_2">Related Topics</a></div>
+      <div class="Related_Reference">
+        <img src="spacer_24.png" alt="*" border="0" width="24" height="6" /><span class="Link_Text"><a href="javascript:WWHClickedPopup('is_help', 'Menu_Sec_ACLs.html', '');" title="Access Control Lists (ACLs) Screen" name="3_5_11_5_30_8_1_4">Access Control Lists (ACLs) Screen</a></span></div>
+      <div class="Related_Reference">
+        <img src="spacer_24.png" alt="*" border="0" width="24" height="6" /><span class="Link_Text"><a href="javascript:WWHClickedPopup('is_help', 'Menu_Sec_Certificates.html', '');" title="Certificates Screen" name="3_5_11_5_30_8_1_6">Certificates Screen</a></span></div>
+      <div class="Related_Reference">
+        <img src="spacer_24.png" alt="*" border="0" width="24" height="6" /><span class="Link_Text"><a href="javascript:WWHClickedPopup('is_help', 'Menu_Sec_Users_Passwd.html', '');" title="Password Security Settings Screen" name="3_5_11_5_30_8_1_8">Password Security Settings Screen</a></span></div>
+      <div class="Related_Reference">
+        <img src="spacer_24.png" alt="*" border="0" width="24" height="6" /><span class="Link_Text"><a href="javascript:WWHClickedPopup('is_help', 'Menu_Packgs_Mgmt.html', '');" title="Packages Management Screen" name="3_5_11_5_30_8_1_10">Packages Management Screen</a></span></div>
+      <div class="Related_Reference">
+        <img src="spacer_24.png" alt="*" border="0" width="24" height="6" /><span class="Link_Text"><a href="javascript:WWHClickedPopup('is_help', 'Menu_Packgs_Pubs.html', '');" title="Publishing Packages Screen" name="3_5_11_5_30_8_1_12">Publishing Packages Screen</a></span></div>
+      <div class="Related_Reference">
+        <img src="spacer_24.png" alt="*" border="0" width="24" height="6" /><span class="Link_Text"><a href="javascript:WWHClickedPopup('is_help', 'Menu_Packgs_Sub.html', '');" title="Subscribing Screen" name="3_5_11_5_30_8_1_14">Subscribing Screen</a></span></div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <div>
+      <hr />
+      <div style="font-family: Arial, Verdana, Helvetica, Sans-Serif; font-size: 12px;margin-top: 20px;margin-bottom: 20px;">
+        <span class="xref">
+          <a href="http://documentation.softwareag.com/legal/" target="external_window">Copyright © <span></span><span></span><span>2007</span><span>-2014</span> Software AG, Darmstadt, Germany</a>
+        </span>.</div>
+    </div>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+  </body>
+</html>

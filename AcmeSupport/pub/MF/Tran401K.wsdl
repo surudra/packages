@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<wsdl:definitions name="D306Exercises_Transactions" targetNamespace="http://localhost/"
+			xmlns:webM="http://www.webMethods.com/noNamespace/"
+			xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+			xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"
+			xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+			xmlns:http="http://schemas.xmlsoap.org/wsdl/http/"
+			xmlns:tns="http://localhost/"
+			xmlns:wsdns1="http://localhost/D306Exercises/Transactions/Tran401K"
+			xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<wsdl:types>
+        <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://localhost/D306Exercises/Transactions/Tran401K" xmlns:tns="http://localhost/D306Exercises/Transactions/Tran401K">
+          <xsd:complexType name="__input">
+            <xsd:sequence>
+              <xsd:element name="inRec" nillable="true" type="tns:__inRec"/>
+              <xsd:element name="lockSession" nillable="true" type="xsd:string" minOccurs="0"/>
+              <xsd:element name="correlator" nillable="true" type="xsd:string" minOccurs="0"/>
+              <xsd:element name="throwException" nillable="true" type="xsd:string" minOccurs="0"/>
+              <xsd:element name="tranTimeout" nillable="true" type="xsd:string" minOccurs="0"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="__inRec">
+            <xsd:sequence>
+              <xsd:element name="iREQUEST-TYPE" nillable="true" type="xsd:string"/>
+              <xsd:element name="iUSERID" nillable="true" type="xsd:string"/>
+              <xsd:element name="iUSER-PASSWORD" nillable="true" type="xsd:string"/>
+              <xsd:element name="iCOMPANY-NAME" nillable="true" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="__output">
+            <xsd:sequence>
+              <xsd:element name="outRec" nillable="true" type="tns:__outRec"/>
+              <xsd:element name="errorFlag" nillable="true" type="xsd:anyType" minOccurs="0"/>
+              <xsd:element name="errorMsg" nillable="true" type="xsd:string" minOccurs="0"/>
+              <xsd:element name="correlator" nillable="true" type="xsd:string" minOccurs="0"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="__outRec">
+            <xsd:sequence>
+              <xsd:element name="oCOMPANY-NAME" nillable="true" type="xsd:string"/>
+              <xsd:element name="oUNIT-SHARE-PRICE" nillable="true" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:schema>
+
+	</wsdl:types>
+	
+	<wsdl:message name="Tran401KInput">
+		<wsdl:part name="inRec" type="wsdns1:__inRec"/>
+		<wsdl:part name="lockSession" type="xsd:string"/>
+		<wsdl:part name="correlator" type="xsd:string"/>
+		<wsdl:part name="throwException" type="xsd:string"/>
+		<wsdl:part name="tranTimeout" type="xsd:string"/>
+	</wsdl:message>
+	
+	<wsdl:message name="Tran401KOutput">
+		<wsdl:part name="outRec" type="wsdns1:__outRec"/>
+		<wsdl:part name="errorFlag" type="xsd:anyType"/>
+		<wsdl:part name="errorMsg" type="xsd:string"/>
+		<wsdl:part name="correlator" type="xsd:string"/>
+	</wsdl:message>
+	<wsdl:portType name="D306Exercises_TransactionsPortType">
+		<wsdl:operation name="Tran401K">
+			<wsdl:input message="tns:Tran401KInput"/>
+			<wsdl:output message="tns:Tran401KOutput"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="D306Exercises_TransactionsBinding" type="tns:D306Exercises_TransactionsPortType">
+		<soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="Tran401K">
+			<soap:operation soapAction=""/>
+			<wsdl:input>
+				<soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="Tran401K" use="encoded"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="Tran401K" use="encoded"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="D306Exercises_TransactionsService">
+		<wsdl:port name="D306Exercises_TransactionsPort0" binding="tns:D306Exercises_TransactionsBinding">
+			<soap:address location="http://localhost:5556/soap/rpc"/>
+		</wsdl:port>
+	</wsdl:service>
+	</wsdl:definitions>

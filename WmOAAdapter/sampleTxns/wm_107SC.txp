@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <record name="transactions" javaclass="com.wm.util.Values">
+    <record name="APInvoice" javaclass="com.wm.util.Values">
+      <value name="transactionName">APInvoice</value>
+      <value name="transactionType">IN</value>
+      <value name="errSQL">select vendor_id,vendor_site_id,invoice_num,source,reject_code  from ap_expense_report_headers_all apxr ,FND_USER fnd WHERE apxr.created_by = fnd.user_id and fnd.user_name like NVL('&amp;Wm_User*','%') and apxr.reject_code is not null and apxr.source like NVL('&amp;Source*','%')</value>
+      <record name="table0" javaclass="com.wm.util.Values">
+        <value name="tableName">AP_EXPENSE_REPORT_HEADERS_ALL</value>
+        <value name="required">true</value>
+      </record>
+      <record name="table1" javaclass="com.wm.util.Values">
+        <value name="tableName">AP_EXPENSE_REPORT_LINES_ALL</value>
+        <value name="required">false</value>
+      </record>
+    </record>
+    <record name="ARCustomers" javaclass="com.wm.util.Values">
+      <value name="transactionName">ARCustomers</value>
+      <value name="transactionType">IN</value>
+      <value name="errSQL">select orig_system_customer_ref,customer_name, Interface_status from RA_CUSTOMERS_INTERFACE_ALL racust, FND_USER fnd where racust.created_by=fnd.user_id and fnd.user_name like NVL('&amp;Wm_User*','%') and customer_name like NVL('&amp;Customer_Name*','%') and interface_status is not null</value>
+      <record name="table0" javaclass="com.wm.util.Values">
+        <value name="tableName">RA_CUSTOMERS_INTERFACE_ALL</value>
+        <value name="required">true</value>
+      </record>
+      <record name="table1" javaclass="com.wm.util.Values">
+        <value name="tableName">RA_CUSTOMER_BANKS_INT_ALL</value>
+        <value name="required">false</value>
+      </record>
+      <record name="table2" javaclass="com.wm.util.Values">
+        <value name="tableName">RA_CUST_PAY_METHOD_INT_ALL</value>
+        <value name="required">false</value>
+      </record>
+      <record name="table3" javaclass="com.wm.util.Values">
+        <value name="tableName">RA_CONTACT_PHONES_INT_ALL</value>
+        <value name="required">false</value>
+      </record>
+      <record name="table4" javaclass="com.wm.util.Values">
+        <value name="tableName">RA_CUSTOMER_PROFILES_INT_ALL</value>
+        <value name="required">true</value>
+      </record>
+    </record>
+    <record name="INVDemand" javaclass="com.wm.util.Values">
+      <value name="transactionName">INVDemand</value>
+      <value name="transactionType">IN</value>
+      <value name="errSQL">select schedule_group_id,demand_source_type,action_code, lock_flag,organization_id,Inventory_item_id,meaning as error, user_name from MTL_DEMAND_INTERFACE mtl, MFG_LOOKUPS mfg, FND_USER fnd  where mtl.created_by = fnd.user_id and fnd.user_name like NVL('&amp;Wm_User*','%') and mtl.error_code is not null and mtl.error_code = mfg.lookup_code and mfg.lookup_type='MTL_DEMAND_INTERFACE_ERRORS'</value>
+      <record name="table0" javaclass="com.wm.util.Values">
+        <value name="tableName">MTL_DEMAND_INTERFACE</value>
+        <value name="required">true</value>
+      </record>
+    </record>
+    <record name="INVItems" javaclass="com.wm.util.Values">
+      <value name="transactionName">INVItems</value>
+      <value name="transactionType">IN</value>
+      <value name="errSQL">select item_number,description,transaction_type, process_flag, error_message from MTL_SYSTEM_ITEMS_INTERFACE , MTL_INTERFACE_ERRORS , FND_USER_VIEW where MTL_SYSTEM_ITEMS_INTERFACE.Transaction_ID =MTL_INTERFACE_ERRORS.Transaction_id   and   MTL_SYSTEM_ITEMS_INTERFACE.created_by = FND_USER_VIEW.user_id and     FND_USER_VIEW.user_name like NVL('&amp;Wm_User*','%')   order by unique_id</value>
+      <record name="table0" javaclass="com.wm.util.Values">
+        <value name="tableName">MTL_SYSTEM_ITEMS_INTERFACE</value>
+        <value name="required">true</value>
+      </record>
+      <record name="table1" javaclass="com.wm.util.Values">
+        <value name="tableName">MTL_ITEM_REVISIONS_INTERFACE</value>
+        <value name="required">false</value>
+      </record>
+    </record>
+    <record name="INVOpenTransactions" javaclass="com.wm.util.Values">
+      <value name="transactionName">INVOpenTransactions</value>
+      <value name="transactionType">IN</value>
+      <value name="errSQL">select inventory_item_id, transaction_quantity, error_explanation, transaction_source_name  from MTL_TRANSACTIONS_INTERFACE, FND_USER_VIEW where MTL_TRANSACTIONS_INTERFACE.created_by= FND_USER_VIEW.user_id and FND_USER_VIEW.user_name like NVL('&amp;Wm_User*','%')</value>
+      <record name="table0" javaclass="com.wm.util.Values">
+        <value name="tableName">MTL_TRANSACTIONS_INTERFACE</value>
+        <value name="required">true</value>
+      </record>
+      <record name="table1" javaclass="com.wm.util.Values">
+        <value name="tableName">MTL_TRANSACTION_LOTS_INTERFACE</value>
+        <value name="required">false</value>
+      </record>
+      <record name="table2" javaclass="com.wm.util.Values">
+        <value name="tableName">MTL_SERIAL_NUMBERS_INTERFACE</value>
+        <value name="required">false</value>
+      </record>
+    </record>
+    <record name="INVReplenishment" javaclass="com.wm.util.Values">
+      <value name="transactionName">INVReplenishment</value>
+      <value name="transactionType">IN</value>
+      <value name="errSQL">select mtl1.replenishment_header_id as Header_Id, mtl2.replenishment_line_id as Line_Id,mtl1.replenishment_count_name as Count_Name, mtl1.subinventory_code, mtl1.organization_id,mfg1.meaning as Header_Error,mfg2.meaning as Line_Error, mtl2.Inventory_Item_Id, user_name from MTL_REPLENISH_HEADERS_INT mtl1, MFG_LOOKUPS mfg1,MTL_REPLENISH_LINES_INT mtl2, MFG_LOOKUPS mfg2, FND_USER fnd where mtl1.created_by = fnd.user_id and fnd.user_name like NVL('&amp;Wm_User*','%') and mtl1.replenishment_count_name like NVL('&amp;CountName*','%') and mtl1.error_flag = mfg1.lookup_code and mfg1.lookup_type='MTL_REPLENISHMENT_ERROR' and mtl1.replenishment_header_id=mtl2.replenishment_header_id (+) and mtl2.error_flag = mfg2.lookup_code and mfg2.lookup_type='MTL_REPLENISHMENT_ERROR'</value>
+      <record name="table0" javaclass="com.wm.util.Values">
+        <value name="tableName">MTL_REPLENISH_HEADERS_INT</value>
+        <value name="required">true</value>
+      </record>
+      <record name="table1" javaclass="com.wm.util.Values">
+        <value name="tableName">MTL_REPLENISH_LINES_INT</value>
+        <value name="required">true</value>
+      </record>
+    </record>
+    <record name="OEOrderImport" javaclass="com.wm.util.Values">
+      <value name="transactionName">OEOrderImport</value>
+      <value name="transactionType">IN</value>
+      <value name="errSQL">select original_system_reference,purchase_order_num,customer_number, customer_name,interface_status  from SO_HEADERS_INTERFACE_ALL ,  FND_USER_VIEW where SO_HEADERS_INTERFACE_ALL.created_by = FND_USER_VIEW.user_id and  FND_USER_VIEW.user_name like NVL('&amp;Wm_User*','%') and error_flag = 'Y'    and original_system_reference like NVL('&amp;Original_System_Ref*','%') and NVL(purchase_order_num,'*') like  NVL('&amp;PO_Number*','%')  and NVL(customer_number,'*') like NVL('&amp;Customer_Number*','%')  and NVL(customer_name,'*') like NVL('&amp;Customer_name*','%')  ORDER BY original_system_reference,purchase_order_num,customer_number    </value>
+      <record name="table0" javaclass="com.wm.util.Values">
+        <value name="tableName">SO_HEADERS_INTERFACE_ALL</value>
+        <value name="required">true</value>
+      </record>
+      <record name="table1" javaclass="com.wm.util.Values">
+        <value name="tableName">SO_LINES_INTERFACE_ALL</value>
+        <value name="required">true</value>
+      </record>
+      <record name="table2" javaclass="com.wm.util.Values">
+        <value name="tableName">SO_LINE_DETAILS_INTERFACE</value>
+        <value name="required">false</value>
+      </record>
+      <record name="table3" javaclass="com.wm.util.Values">
+        <value name="tableName">SO_SALES_CREDITS_INTERFACE</value>
+        <value name="required">false</value>
+      </record>
+      <record name="table4" javaclass="com.wm.util.Values">
+        <value name="tableName">SO_PRICE_ADJUSTMENTS_INTERFACE</value>
+        <value name="required">false</value>
+      </record>
+    </record>
+    <record name="OEShipConfirm" javaclass="com.wm.util.Values">
+      <value name="transactionName">OEShipConfirm</value>
+      <value name="transactionType">IN</value>
+      <value name="errSQL">Select TRANSACTION_ID, PICK_SLIP_NUMBER, WAYBILL_NUM, DATE_SHIPPED, ACTION_CODE, ERROR_EXPLANATION from WSH_PICKING_HEADERS_INTERFACE wsh , FND_USER fnd WHERE wsh.created_by = fnd.user_id and fnd.user_name like NVL('&amp;Wm_User*','%') and wsh.PROCESS_FLAG = 3   and wsh.PICK_SLIP_NUMBER like      NVL('&amp;PickSlip_Number*','%')  ORDER BY PICK_SLIP_NUMBER,WAYBILL_NUM,DATE_SHIPPED</value>
+      <record name="table0" javaclass="com.wm.util.Values">
+        <value name="tableName">WSH_PICKING_HEADERS_INTERFACE</value>
+        <value name="required">true</value>
+      </record>
+      <record name="table1" javaclass="com.wm.util.Values">
+        <value name="tableName">WSH_FREIGHT_CHARGES_INTERFACE</value>
+        <value name="required">false</value>
+      </record>
+      <record name="table2" javaclass="com.wm.util.Values">
+        <value name="tableName">WSH_PICKING_DETAILS_INTERFACE</value>
+        <value name="required">false</value>
+      </record>
+    </record>
+    <record name="PORequisitions" javaclass="com.wm.util.Values">
+      <value name="transactionName">PORequisitions</value>
+      <value name="transactionType">IN</value>
+      <value name="errSQL">select Interface_type, PO_INTERFACE_ERRORS.Interface_transaction_id, PO_INTERFACE_ERRORS.column_name, Error_message, source_type_code, quantity  from PO_INTERFACE_ERRORS,PO_REQUISITIONS_INTERFACE , FND_USER_VIEW  where   PO_REQUISITIONS_INTERFACE.created_by = FND_USER_VIEW.user_id and     FND_USER_VIEW.user_name like NVL('&amp;Wm_User*','%')     and PO_REQUISITIONS_INTERFACE.Transaction_Id =PO_INTERFACE_ERRORS.Interface_Transaction_id</value>
+      <record name="table0" javaclass="com.wm.util.Values">
+        <value name="tableName">PO_REQUISITIONS_INTERFACE_ALL</value>
+        <value name="required">true</value>
+      </record>
+    </record>
+    <record name="PORescheduleRequisitions" javaclass="com.wm.util.Values">
+      <value name="transactionName">PORescheduleRequisitions</value>
+      <value name="transactionType">IN</value>
+      <value name="errSQL"></value>
+      <record name="table0" javaclass="com.wm.util.Values">
+        <value name="tableName">PO_RESCHEDULE_INTERFACE</value>
+        <value name="required">true</value>
+      </record>
+    </record>
+    <record name="AdvanceShipNotice" javaclass="com.wm.util.Values">
+      <value name="transactionName">AdvanceShipNotice</value>
+      <value name="transactionType">OUT</value>
+      <value name="AcknowledgeSQL">APPS_APPDEMO.WM_ASNO_TRANSACTION.WM_ASNO_UPDATE </value>
+      <record name="HEADER" javaclass="com.wm.util.Values">
+        <value name="SQLOut">Select * 
+FROM WM_ASNO_HEADERS_V
+WHERE picking_batch like nvl('&amp;picking_batch*','%')
+AND pick_slip_number &gt;= '&amp;pick_slip_number_from*'
+AND pick_slip_number &lt;= '&amp;pick_slip_number_to*'
+AND customer_name like nvl('&amp;customer_name*','%')</value>
+        <value name="SQLAlias">HEADER</value>
+        <value name="SQLRelation"></value>
+        <record name="LINES" javaclass="com.wm.util.Values">
+          <value name="SQLOut">Select * from WM_ASNO_LINES_V
+</value>
+          <value name="SQLAlias">LINES</value>
+          <value name="SQLRelation">PICKING_HEADER_ID = HEADER.PICKING_HEADER_ID</value>
+          <record name="SHIPMENTS" javaclass="com.wm.util.Values">
+            <value name="SQLOut">SELECT * FROM WM_ASNO_SHIPMENTS_V</value>
+            <value name="SQLAlias">SHIPMENTS</value>
+            <value name="SQLRelation">PICKING_LINE_ID = LINES.SHIPMENT_LINE_NUMBER</value>
+          </record>
+        </record>
+      </record>
+    </record>
+    <record name="InvoiceOutbound" javaclass="com.wm.util.Values">
+      <value name="transactionName">InvoiceOutbound</value>
+      <value name="transactionType">OUT</value>
+      <value name="AcknowledgeSQL">APPS_APPDEMO.WM_INO_TRANSACTION.WM_UPDATE_INO_AR				  				  		  </value>
+      <record name="HEADER" javaclass="com.wm.util.Values">
+        <value name="SQLOut">Select *   FROM WM_INO_HEADER_V   WHERE   ORG_ID LIKE NVL('&amp;org_id*','%')  AND bill_to_customer_name like nvl('&amp;Bill_to_Customer_Name*','%')  AND site_use_code like nvl('&amp;Site_use_code*','%')  AND transaction_number like nvl('&amp;transaction_number*','%')  AND creation_date &gt;= '&amp;Creation_date_from*'  AND creation_date &lt;= '&amp;Creation_date_to*'</value>
+        <value name="SQLAlias">HEADER</value>
+        <value name="SQLRelation"> </value>
+        <record name="P_GET_REMIT_ADDR" javaclass="com.wm.util.Values">
+          <value name="SQLOut">APPS_APPDEMO.WM_INO_TRANSACTION.WM_GET_REMIT_ADDRESS</value>
+          <value name="SQLAlias">P_GET_REMIT_ADDR</value>
+          <value name="SQLRelation">HEADER.TRANSACTION_ID</value>
+        </record>
+        <record name="P_GET_PAYMENT" javaclass="com.wm.util.Values">
+          <value name="SQLOut">APPS_APPDEMO.WM_INO_TRANSACTION.WM_GET_PAYMENT</value>
+          <value name="SQLAlias">P_GET_PAYMENT</value>
+          <value name="SQLRelation">HEADER.TRANSACTION_ID, HEADER.INSTALLMENT_NUMBER</value>
+        </record>
+        <record name="P_GET_TERM_DISCOUNT" javaclass="com.wm.util.Values">
+          <value name="SQLOut">APPS_APPDEMO.WM_INO_TRANSACTION.WM_GET_TERM_DISCOUNT</value>
+          <value name="SQLAlias">P_GET_TERM_DISCOUNT</value>
+          <value name="SQLRelation">HEADER.DOCUMENT_TYPE, HEADER.PAYMENT_TERM_ID, HEADER.INSTALLMENT_NUMBER</value>
+        </record>
+        <record name="LINE" javaclass="com.wm.util.Values">
+          <value name="SQLOut">SELECT * FROM WM_INO_LINE_V  	 </value>
+          <value name="SQLAlias">LINE</value>
+          <value name="SQLRelation">TRANSACTION_ID = HEADER.TRANSACTION_ID</value>
+          <record name="LINE_TAX" javaclass="com.wm.util.Values">
+            <value name="SQLOut">SELECT * FROM WM_INO_LINE_TAX_V  	    </value>
+            <value name="SQLAlias">LINE_TAX</value>
+            <value name="SQLRelation">TRANSACTION_ID = LINE.TRANSACTION_ID AND LINE_NUMBER = LINE.LINE_NUMBER</value>
+          </record>
+        </record>
+      </record>
+    </record>
+    <record name="PurchaseOrderChange" javaclass="com.wm.util.Values">
+      <value name="transactionName">PurchaseOrderChange</value>
+      <value name="transactionType">OUT</value>
+      <value name="AcknowledgeSQL">APPS_APPDEMO.WM_POCO_UPDATE.WM_UPDATE_POCO	 		  				  				  		     </value>
+      <record name="HEADERS" javaclass="com.wm.util.Values">
+        <value name="SQLOut">SELECT * FROM WM_POCO_HEADERS_V     WHERE  revision_num != 0 AND Creation_date &gt;= '&amp;Create_Date_From*'      AND Creation_date &lt;= '&amp;Create_Date_To*'      AND supplier_number = '&amp;Supplier Number*'      AND vendor_site_id = '&amp;Vendor_site_id*'      AND document_type = '&amp;document_type*'      AND po_number &gt;= '&amp;po_number_from*'      AND po_number &lt;= '&amp;po_number_to*'      ORDER BY PO_NUMBER, POR_RELEASE_NUM</value>
+        <value name="SQLAlias">HEADERS</value>
+        <value name="SQLRelation"></value>
+        <record name="LINES" javaclass="com.wm.util.Values">
+          <value name="SQLOut">SELECT * FROM WM_POCO_LINES_V</value>
+          <value name="SQLAlias">LINES</value>
+          <value name="SQLRelation">PO_HEADER_ID = HEADERS.PO_HEADER_ID  
+AND  
+POR_RELEASE_NUM  = HEADERS.POR_RELEASE_NUM  
+AND  
+(( MTL_ORGANIZATION_ID =    HEADERS.FSP_INVENTORY_ORGANIZATION_ID )  
+		OR
+(MTL_ORGANIZATION_ID IS NULL AND ITEM_ID IS NULL)
+)
+ORDER BY LINE_NUM</value>
+          <record name="SHIPMENTS" javaclass="com.wm.util.Values">
+            <value name="SQLOut">SELECT * FROM WM_POCO_SHIPMENTS_V</value>
+            <value name="SQLAlias">SHIPMENTS</value>
+            <value name="SQLRelation">PO_HEADER_ID = LINES.PO_HEADER_ID   
+AND PO_LINE_ID = LINES.PO_LINE_ID  
+AND POR_RELEASE_NUM = LINES.POR_RELEASE_NUM   
+AND 
+(
+ (POR_RELEASE_NUM = 0) 
+	OR
+ (POR_RELEASE_NUM &lt;&gt; 0 AND SHIPMENT_NUMBER =   LINES.LINE_NUM )
+)
+ORDER BY SHIPMENT_NUMBER</value>
+          </record>
+        </record>
+      </record>
+    </record>
+    <record name="PurchaseOrderNew" javaclass="com.wm.util.Values">
+      <value name="transactionName">PurchaseOrderNew</value>
+      <value name="transactionType">OUT</value>
+      <value name="AcknowledgeSQL">APPS_APPDEMO.WM_POO_UPDATE.WM_UPDATE_PO		 		  				  		   </value>
+      <record name="HEADERS" javaclass="com.wm.util.Values">
+        <value name="SQLOut">SELECT  *  FROM WM_POO_HEADERS_V WHERE Creation_date &gt;= '&amp;Create_Date_From*'    AND Creation_date &lt;= '&amp;Create_Date_To*'    AND supplier_number = '&amp;Supplier Number*'    AND vendor_site_id = '&amp;Vendor_site_id*'    AND document_type = '&amp;document_type*'    AND po_number &gt;= '&amp;po_number_from*'    AND po_number &lt;= '&amp;po_number_to*'    ORDER BY PO_NUMBER, POR_RELEASE_NUM</value>
+        <value name="SQLAlias">HEADERS</value>
+        <value name="SQLRelation"></value>
+        <record name="LINES" javaclass="com.wm.util.Values">
+          <value name="SQLOut">SELECT * FROM WM_POO_LINES_V</value>
+          <value name="SQLAlias">LINES</value>
+          <value name="SQLRelation">PO_HEADER_ID = HEADERS.PO_HEADER_ID  AND POR_RELEASE_NUM = HEADERS.POR_RELEASE_NUM  
+AND(( MTL_ORGANIZATION_ID =  HEADERS.FSP_INVENTORY_ORGANIZATION_ID ) OR
+( MTL_ORGANIZATION_ID IS NULL AND ITEM_ID IS NULL )
+)
+ORDER BY LINE_NUM</value>
+          <record name="SHIPMENTS" javaclass="com.wm.util.Values">
+            <value name="SQLOut">SELECT * FROM WM_POO_SHIPMENTS_V  </value>
+            <value name="SQLAlias">SHIPMENTS</value>
+            <value name="SQLRelation">PO_HEADER_ID = LINES.PO_HEADER_ID  AND PO_LINE_ID =  LINES.PO_LINE_ID AND POR_RELEASE_NUM =  LINES.POR_RELEASE_NUM   
+AND(
+( POR_RELEASE_NUM = 0 ) OR
+( POR_RELEASE_NUM &lt;&gt; 0 AND SHIPMENT_NUMBER =  LINES.LINE_NUM  )
+)
+ORDER BY SHIPMENT_NUMBER</value>
+          </record>
+        </record>
+      </record>
+    </record>
+  </record>
+  <record name="FILE_INFO" javaclass="com.wm.util.Values">
+    <value name="OA_RELEASE">107SC</value>
+    <value name="DESCRIPTION">Oracle Applications 10.7SC transactions</value>
+    <value name="CREATE_HOST">webMethods</value>
+    <value name="CREATE_IM_VER">3.0</value>
+    <value name="CREATE_DATE">Sep 5, 2001 5:45:28 PM</value>
+  </record>
+</Values>

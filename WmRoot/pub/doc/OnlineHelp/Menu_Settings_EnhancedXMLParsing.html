@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <title>Enhanced XML Parsing Screen</title>
+    <link rel="StyleSheet" href="css/_is_admin_help.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+  <body style="background-color: White; margin-bottom: 25px; margin-left: 25px; margin-right: 25px; margin-top: 0px; padding-top: 0px" onload="WWHUpdate();" onunload="WWHUnload();" onkeydown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onkeypress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onkeyup="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <table align="left" role="presentation">
+      <tr>
+        <td class="WebWorks_Company_Logo_Top">
+          <img src="sag_online.png" />
+        </td>
+      </tr>
+    </table>
+    <br clear="all" />
+    <hr align="left" />
+    <blockquote>
+      <div class="Heading_2"><a name="3_5_19_11_1">Enhanced XML Parsing Screen</a></div>
+      <div class="Body"><span class="emphasis"><a name="3_5_19_11_3_2_3">Screen Heading</a></span>: <span class="uicontrol">Settings &gt; Enhanced XML Parsing</span></div>
+      <div class="Body"><a name="3_5_19_11_3_2_5">Use the Enhanced XML Parsing screen to view the default configuration that </a><span class="ph">Integration Server</span> uses for parsing an XML document using the enhanced XML parser. You can also indicate whether or not the enhanced XML parser uses cache and/or <span class="ph">BigMemory</span>.</div>
+      <div class="Body"><a name="3_5_19_11_3_2_7">To open the Enhanced XML Parsing screen, click </a><span class="uicontrol">Enhanced XML Parsing</span> under the <span class="uicontrol">Settings</span> menu on the Navigation panel.</div>
+      <div class="List_1_outer" style="margin-left: 24px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_1_inner" style="width: 18pt; white-space: nowrap">
+                <img src="bullet1.png" alt="*" border="0" width="10" height="10" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_1_inner"><a name="3_5_19_11_3_2_9_2">Click </a><span class="uicontrol">Edit Enhanced XML Parsing Settings</span> to change the enhanced XML parsing settings for this server.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Section_Title"><a name="3_5_19_11_3_4_3">Enhanced Parser Settings</a></div>
+      <div class="Definition_Term"><a name="3_5_19_11_3_4_5_2_2">Default partition size</a></div>
+      <div class="Definition_Description"><a name="3_5_19_11_3_4_5_2_4">The size, measured in bytes, of the partitions on the heap where the enhanced XML parser stores parsed document information.</a></div>
+      <div class="Section_Title"><a name="3_5_19_11_3_6_3">Caching</a></div>
+      <div class="Definition_Term"><a name="3_5_19_11_3_6_5_2_2">Enabled</a></div>
+      <div class="Definition_Description"><a name="3_5_19_11_3_6_5_2_4">Indicates if </a><span class="ph">Integration Server</span> makes use of cache with the enhanced XML parser.</div>
+      <div class="Definition_Description"><span class="uicontrol"><a name="3_5_19_11_3_6_5_2_4_5">Yes</a></span> indicates that during parsing of an XML document, <span class="ph">Integration Server</span> moves partitions to an off-heap area on disk when the on-heap partition space becomes full and retrieves the partitions as needed during processing.</div>
+      <div class="Definition_Description"><span class="uicontrol"><a name="3_5_19_11_3_6_5_2_4_7">No</a></span> indicates that <span class="ph">Integration Server</span> does not cache partitions when parsing an XML document.</div>
+      <div class="Definition_Term"><a name="3_5_19_11_3_6_5_4_2">Maximum heap allocation for all documents combined</a></div>
+      <div class="Definition_Description"><a name="3_5_19_11_3_6_5_4_4">Maximum amount of heap space that the parser can allocate to process documents concurrently.</a></div>
+      <div class="Definition_Term"><a name="3_5_19_11_3_6_5_6_2">Maximum heap allocation for any single document</a></div>
+      <div class="Definition_Description"><a name="3_5_19_11_3_6_5_6_4">Maximum amount of heap space, that the parser can allocate to process a single document.</a></div>
+      <div class="Section_Title"><span class="ph"><a name="3_5_19_11_3_8_3">BigMemory</a></span> Caching</div>
+      <div class="Definition_Term"><a name="3_5_19_11_3_8_5_2_2">Enabled</a></div>
+      <div class="Definition_Description"><a name="3_5_19_11_3_8_5_2_4">Indicates if </a><span class="ph">BigMemory</span> is used with the enhanced XML parser.</div>
+      <div class="Definition_Description"><span class="uicontrol"><a name="3_5_19_11_3_8_5_2_4_5">Yes</a></span> indicates that when parsing an XML document using the enhanced XML parser <span class="ph">Integration Server</span> moves partitions to <span class="ph">BigMemory</span> once the on-heap cache is full. When <span class="ph">BigMemory</span> becomes full partitions are move to disk. <span class="ph">Integration Server</span> retrieves partitions from disk or <span class="ph">BigMemory</span> as needed.</div>
+      <div class="Definition_Description"><span class="uicontrol"><a name="3_5_19_11_3_8_5_2_4_7">No</a></span> indicates that when parsing an XML document using the enhanced XML parser <span class="ph">Integration Server</span> does not use <span class="ph">BigMemory</span> to store cached partitions.</div>
+      <div class="Definition_Term"><a name="3_5_19_11_3_8_5_4_2">Maximum </a><span class="ph">BigMemory</span> allocation</div>
+      <div class="Definition_Description"><a name="3_5_19_11_3_8_5_4_4">Maximum amount of non-heap memory to allocate to </a><span class="ph">BigMemory</span>.</div>
+      <div class="Section_Title"><a name="3_5_19_11_3_10_3">Peak Usage Statistics</a></div>
+      <div class="Definition_Term"><a name="3_5_19_11_3_10_5_2_2">Peak heap allocation for all documents combined</a></div>
+      <div class="Definition_Description"><a name="3_5_19_11_3_10_5_2_4">The maximum amount of heap used by the enhanced XML parser for parsing multiple documents at one time.</a></div>
+      <div class="Definition_Term"><a name="3_5_19_11_3_10_7_2_2">Peak heap allocation for any single document</a></div>
+      <div class="Definition_Description"><a name="3_5_19_11_3_10_7_2_4">Maximum amount of heap used by the enhanced XML parser for parsing one document.</a></div>
+      <div class="Definition_Term"><a name="3_5_19_11_3_10_9_2_2">Peak </a><span class="ph">BigMemory</span> use</div>
+      <div class="Definition_Description"><a name="3_5_19_11_3_10_9_2_4">Maximum amount of </a><span class="ph">BigMemory</span> used by the enhanced XML parser at one time.</div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <div>
+      <hr />
+      <div style="font-family: Arial, Verdana, Helvetica, Sans-Serif; font-size: 12px;margin-top: 20px;margin-bottom: 20px;">
+        <span class="xref">
+          <a href="http://documentation.softwareag.com/legal/" target="external_window">Copyright © <span></span><span></span><span>2007</span><span>-2014</span> Software AG, Darmstadt, Germany</a>
+        </span>.</div>
+    </div>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+  </body>
+</html>

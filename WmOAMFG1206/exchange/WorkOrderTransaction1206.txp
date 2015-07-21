@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<IDataXMLCoder version="1.0">
+  <record javaclass="com.wm.data.ISMemDataImpl">
+    <record name="transactions" javaclass="com.wm.data.ISMemDataImpl">
+      <record name="checkWorkOrderImportStatus" javaclass="com.wm.data.ISMemDataImpl">
+        <value name="transactionName">checkWorkOrderImportStatus</value>
+        <value name="transactionType">OUT</value>
+        <null name="AcknowledgeSQL"/>
+        <record name="WORKORDER" javaclass="com.wm.util.Values">
+          <value name="SQLOut">SELECT COUNT(*) AS WORKORDER_ERRCOUNT FROM WIP_JOB_SCHEDULE_INTERFACE WIP, WIP_INTERFACE_ERRORS ERR WHERE WIP.GROUP_ID = '&amp;GROUP_ID*'  AND WIP.INTERFACE_ID = ERR.INTERFACE_ID</value>
+          <value name="SQLAlias">WORKORDER</value>
+          <value name="SQLRelation"></value>
+        </record>
+      </record>
+      <record name="execWorkOrderConcProg" javaclass="com.wm.data.ISMemDataImpl">
+        <value name="transactionName">execWorkOrderConcProg</value>
+        <value name="transactionType">OUT</value>
+        <null name="AcknowledgeSQL"/>
+        <record name="HANDLE_WIP" javaclass="com.wm.util.Values">
+          <value name="SQLOut">Wm_Wip_Imp_Handler_Pkg.WM_HANDLE_WIP_JOB</value>
+          <value name="SQLAlias">HANDLE_WIP</value>
+          <value name="SQLRelation"></value>
+        </record>
+      </record>
+      <record name="getStandardOperationId" javaclass="com.wm.data.ISMemDataImpl">
+        <value name="transactionName">getStandardOperationId</value>
+        <value name="transactionType">OUT</value>
+        <null name="AcknowledgeSQL"/>
+        <record name="STANDARD_OPERATION_ID" javaclass="com.wm.util.Values">
+          <value name="SQLOut">select standard_operation_id from bom_standard_operations b,org_organization_definitions o where b.operation_code='&amp;STANDARD_OPERATION_CODE*' and o.organization_id=b.organization_id and o.organization_name='&amp;ORGANIZATION_NAME*'</value>
+          <value name="SQLAlias">STANDARD_OPERATION_ID</value>
+          <value name="SQLRelation"></value>
+        </record>
+      </record>
+    </record>
+    <record name="FILE_INFO" javaclass="com.wm.data.ISMemDataImpl">
+      <value name="OA_RELEASE">1206</value>
+      <value name="DESCRIPTION"></value>
+      <value name="CREATE_HOST">webmethods</value>
+      <value name="CREATE_IM_VER"></value>
+      <value name="CREATE_DATE">May 5, 2005 7:13:57 PM</value>
+    </record>
+  </record>
+</IDataXMLCoder>

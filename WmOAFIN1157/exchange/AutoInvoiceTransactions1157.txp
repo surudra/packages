@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <record name="transactions" javaclass="com.wm.util.Values">
+    <record name="checkAutoInvImportStatus" javaclass="com.wm.util.Values">
+      <value name="transactionName">checkAutoInvImportStatus</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="CHECKAUTOINV" javaclass="com.wm.util.Values">
+        <value name="SQLOut">SELECT 
+count(*) as rowcount
+FROM RA_INTERFACE_ERRORS_ALL rae, 
+RA_INTERFACE_LINES_ALL ral 
+WHERE ral.INTERFACE_LINE_ID = rae.INTERFACE_LINE_ID 
+AND ral.BATCH_SOURCE_NAME = '&amp;BATCH_SOURCE_NAME*' </value>
+        <value name="SQLAlias">CHECKAUTOINV</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+    <record name="execAutoInvConcProg" javaclass="com.wm.util.Values">
+      <value name="transactionName">execAutoInvConcProg</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="WM_HANDLE_RECEIVING" javaclass="com.wm.util.Values">
+        <value name="SQLOut">WM_AUTOINVOICE_IMP_HANDLER_PKG.WM_HANDLE_AUTOINVOICE</value>
+        <value name="SQLAlias">WM_HANDLE_RECEIVING</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+    <record name="getInventoryItemId" javaclass="com.wm.util.Values">
+      <value name="transactionName">getInventoryItemId</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="INVENTORY" javaclass="com.wm.util.Values">
+        <value name="SQLOut">select inventory_item_id from mtl_system_items_b_kfv
+mtl,org_organization_definitions org
+where concatenated_segments = '&amp;INVENTORY_ITEM*'
+and org.organization_id = mtl.organization_id
+and org.organization_name = '&amp;ORGANIZATION_NAME*'</value>
+        <value name="SQLAlias">INVENTORY</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+    <record name="getSetOfBooksId" javaclass="com.wm.util.Values">
+      <value name="transactionName">getSetOfBooksId</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="SOB_ID" javaclass="com.wm.util.Values">
+        <value name="SQLOut">SELECT SET_OF_BOOKS_ID FROM GL_SETS_OF_BOOKS WHERE NAME= '&amp;SET_OF_BOOKS_NAME*'</value>
+        <value name="SQLAlias">SOB_ID</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+    <record name="getTerritoryId" javaclass="com.wm.util.Values">
+      <value name="transactionName">getTerritoryId</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="TERRITORY" javaclass="com.wm.util.Values">
+        <value name="SQLOut">select territory_id from ra_territories where name = '&amp;TERRITORY_NAME*'</value>
+        <value name="SQLAlias">TERRITORY</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+    <record name="getWarehouseId" javaclass="com.wm.util.Values">
+      <value name="transactionName">getWarehouseId</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="WAREHOUSE" javaclass="com.wm.util.Values">
+        <value name="SQLOut">SELECT  ORGANIZATION_ID FROM  HR_ALL_ORGANIZATION_UNITS
+WHERE NAME = '&amp;WAREHOUSE_NAME*'</value>
+        <value name="SQLAlias">WAREHOUSE</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+  </record>
+  <record name="FILE_INFO" javaclass="com.wm.util.Values">
+    <value name="OA_RELEASE">11i</value>
+    <value name="DESCRIPTION"></value>
+    <value name="CREATE_HOST">webMethods</value>
+    <value name="CREATE_IM_VER">3.0</value>
+    <value name="CREATE_DATE">Oct 9, 2002 8:18:58 PM</value>
+  </record>
+</Values>

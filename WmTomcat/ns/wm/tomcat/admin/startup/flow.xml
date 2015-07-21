@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<FLOW VERSION="3.0" CLEANUP="true">
+
+  <!-- nodes -->
+
+<INVOKE TIMEOUT="" SERVICE="wm.tomcat.admin:fixupACLs" VALIDATE-IN="$none" VALIDATE-OUT="$none">
+  <COMMENT>Checkup on the ACLs of the WmTomcat package</COMMENT>
+
+  <!-- nodes -->
+
+<MAP MODE="INPUT">
+</MAP>
+
+<MAP MODE="OUTPUT">
+</MAP>
+</INVOKE>
+
+<INVOKE TIMEOUT="" SERVICE="wm.tomcat.admin:initContainer" VALIDATE-IN="$none" VALIDATE-OUT="$none">
+  <COMMENT>Startup Tomcat</COMMENT>
+
+  <!-- nodes -->
+
+<MAP MODE="INPUT">
+</MAP>
+
+<MAP MODE="OUTPUT">
+</MAP>
+</INVOKE>
+
+<INVOKE TIMEOUT="" SERVICE="wm.tomcat.admin:deployPackages" VALIDATE-IN="$none" VALIDATE-OUT="$none">
+  <COMMENT>Deploy any packages that are already running that have stuff in /web directories</COMMENT>
+
+  <!-- nodes -->
+
+<MAP MODE="INPUT">
+</MAP>
+
+<MAP MODE="OUTPUT">
+</MAP>
+</INVOKE>
+</FLOW>

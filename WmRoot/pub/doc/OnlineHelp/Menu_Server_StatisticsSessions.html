@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="keywords" content="sessions,active sessions, details,sessions,total on server,servers,active sessions, viewing details" />
+    <title>Current Sessions Screen</title>
+    <link rel="StyleSheet" href="css/_is_admin_help.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+  <body style="background-color: White; margin-bottom: 25px; margin-left: 25px; margin-right: 25px; margin-top: 0px; padding-top: 0px" onload="WWHUpdate();" onunload="WWHUnload();" onkeydown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onkeypress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onkeyup="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <table align="left" role="presentation">
+      <tr>
+        <td class="WebWorks_Company_Logo_Top">
+          <img src="sag_online.png" />
+        </td>
+      </tr>
+    </table>
+    <br clear="all" />
+    <hr align="left" />
+    <blockquote>
+      <div class="Heading_3"><a name="3_5_7_7_10_2">Current Sessions Screen</a></div>
+      <div class="Body"><span class="emphasis"><a name="3_5_7_7_10_6_2_3">Screen Heading</a></span>: <span class="uicontrol">Server &gt; Statistics &gt; Sessions</span></div>
+      <div class="Body"><a name="3_5_7_7_10_6_2_5">Use the Sessions screen to view detailed information about the active sessions on the </a><span class="ph">webMethods Integration Server</span>.</div>
+      <div class="Body"><a name="3_5_7_7_10_6_2_7">To open the Current Sessions screen, first go to the </a><span class="heading-no-quotes"><a href="javascript:WWHClickedPopup('is_help', 'Menu_Server_Statistics.html', '');" title="Statistics Screen">Statistics Screen</a></span>. In the <span class="uicontrol">Usage</span> section, find the <span class="uicontrol">Total Sessions</span> row or the <span class="uicontrol">Stateful Sessions</span> row and click the number link in the <span class="uicontrol">Current</span> column.</div>
+      <div class="List_1_outer" style="margin-left: 24px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_1_inner" style="width: 18pt; white-space: nowrap">
+                <img src="bullet1.png" alt="*" border="0" width="10" height="10" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_1_inner"><a name="3_5_7_7_10_6_2_9_2">Click </a><span class="uicontrol">Return to Server Statistics</span> to return to the main statistics screen.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Definition_Term"><a name="3_5_7_7_10_6_2_11_2_2">User</a></div>
+      <div class="Definition_Description"><a name="3_5_7_7_10_6_2_11_2_4">Displays name of the directory and user who initiated session (e.g., Administrator).</a></div>
+      <div class="Definition_Term"><a name="3_5_7_7_10_6_2_11_4_2">From</a></div>
+      <div class="Definition_Description"><a name="3_5_7_7_10_6_2_11_4_4">Identifies the source from which the user initiated the session.</a></div>
+      <div class="Definition_Term"><a name="3_5_7_7_10_6_2_11_6_2">Stateful</a></div>
+      <div class="Definition_Description"><a name="3_5_7_7_10_6_2_11_6_4">Indicates whether or not the session is a stateful session. </a><span class="uicontrol">True</span> indicates that the session is stateful.</div>
+      <div class="Definition_Term"><a name="3_5_7_7_10_6_2_11_8_2">Requests</a></div>
+      <div class="Definition_Description"><a name="3_5_7_7_10_6_2_11_8_4">Displays number of service invocations that this user has requested during this session.</a></div>
+      <div class="Definition_Term"><a name="3_5_7_7_10_6_2_11_10_2">Connect Time</a></div>
+      <div class="Definition_Description"><a name="3_5_7_7_10_6_2_11_10_4">Displays the amount of time (in seconds) that the session has been active.</a></div>
+      <div class="Definition_Term"><a name="3_5_7_7_10_6_2_11_12_2">Last Request</a></div>
+      <div class="Definition_Description"><a name="3_5_7_7_10_6_2_11_12_4">Displays the amount of time (in seconds) since the last service invocation made during this session.</a></div>
+      <div class="Definition_Term"><a name="3_5_7_7_10_6_2_11_14_2">Session Expires</a></div>
+      <div class="Definition_Description"><a name="3_5_7_7_10_6_2_11_14_4">Displays the amount of time (in seconds) until the session expires if the server doesn't receive another request from this user.</a></div>
+      <div class="Definition_Term"><a name="3_5_7_7_10_6_2_11_16_2">Kill</a></div>
+      <div class="Definition_Description"><a name="3_5_7_7_10_6_2_11_16_4">Cancels the session immediately. To cancel a session, click the icon in this field.</a></div>
+      <div class="Link_List_Title"><a name="3_5_7_7_10_8_1_2">Related Topics</a></div>
+      <div class="Related_Reference">
+        <img src="spacer_24.png" alt="*" border="0" width="24" height="6" /><span class="Link_Text"><a href="javascript:WWHClickedPopup('is_help', 'Menu_Server_SystemThreads.html', '');" title="System Threads Screen" name="3_5_7_7_10_8_1_4">System Threads Screen</a></span></div>
+      <div class="Related_Reference">
+        <img src="spacer_24.png" alt="*" border="0" width="24" height="6" /><span class="Link_Text"><a href="javascript:WWHClickedPopup('is_help', 'Menu_Server_Statistics.html', '');" title="Statistics Screen" name="3_5_7_7_10_8_1_6">Statistics Screen</a></span></div>
+      <div class="Related_Reference">
+        <img src="spacer_24.png" alt="*" border="0" width="24" height="6" /><span class="Link_Text"><a href="javascript:WWHClickedPopup('is_help', 'Menu_Server_SvcUsage.html', '');" title="Service Usage Screen" name="3_5_7_7_10_8_1_8">Service Usage Screen</a></span></div>
+      <div class="Related_Reference">
+        <img src="spacer_24.png" alt="*" border="0" width="24" height="6" /><span class="Link_Text"><a href="javascript:WWHClickedPopup('is_help', 'Menu_Server_Scheduler.html', '');" title="Scheduler Screen" name="3_5_7_7_10_8_1_10">Scheduler Screen</a></span></div>
+      <div class="Related_Reference">
+        <img src="spacer_24.png" alt="*" border="0" width="24" height="6" /><span class="Link_Text"><a href="javascript:WWHClickedPopup('is_help', 'Menu_Server_ShutdownRestart.html', '');" title="Shut Down and Restart Screen" name="3_5_7_7_10_8_1_12">Shut Down and Restart Screen</a></span></div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <div>
+      <hr />
+      <div style="font-family: Arial, Verdana, Helvetica, Sans-Serif; font-size: 12px;margin-top: 20px;margin-bottom: 20px;">
+        <span class="xref">
+          <a href="http://documentation.softwareag.com/legal/" target="external_window">Copyright © <span></span><span></span><span>2007</span><span>-2014</span> Software AG, Darmstadt, Germany</a>
+        </span>.</div>
+    </div>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+  </body>
+</html>

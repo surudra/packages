@@ -1,0 +1,20 @@
+Detailed information about '%value name%':
+
+   Source Package Name: %value source_pkg_name%%nl%
+   Name: %value name%%nl%
+   Version: %value version%%nl%
+   Build Number: %value build%%nl%
+   Patch Numbers: %value patch_nums%%nl%
+   Time Released: %value time%%nl%
+   Published by: %value pubhost%:%value pubport%%nl%
+   Publisher Server Version: %value source_server_version%%nl%
+   JVM Version: %value jvm_version%%nl%
+   Description: %value description%%nl%
+
+%ifvar pullSvcName%
+You could get this package by invoking service
+
+   %value pullSvcName% 
+
+on the Publisher Server %value pubhost%:%value pubport%
+%endif%

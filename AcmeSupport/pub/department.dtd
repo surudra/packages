@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT department (employee)*>
+<!ELEMENT employee (name, (email | url))>
+<!ATTLIST employee id CDATA #REQUIRED>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT email (#PCDATA)>
+<!ELEMENT url EMPTY>
+<!ATTLIST url href CDATA #REQUIRED>

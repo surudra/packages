@@ -1,0 +1,181 @@
+<div id="remoteVFSItemForm" class="customForm">
+    <table width="100%">
+        <tr>
+            <td class="itemPropertyLabel">
+                <label for="remoteVFSItem_option_itemType">
+                    Item type : </label>
+            </td>
+            <td>
+                <select id="remoteVFSItem_option_itemType" class="ignoreBind inputBox excludeXML">
+                    <option value="file">File</option>
+                    <option value="ftp">FTP</option>
+                    <option value="ftps">FTPS</option>
+                    <option value="ftpes">FTPES</option>
+                    <option value="sftp">SFTP</option>
+                    <option value="http">HTTP</option>
+                    <option value="https">HTTPS</option>
+                    <option value="webdav">WEBDAV</option>
+                    <option value="webdavs">WEBDAVS</option>
+                    <option value="s3">S3</option>
+                </select>
+            </td>
+        </tr>
+        <tr style="display:none;">
+            <td class="itemPropertyLabel">
+                <label for="remoteVFSItem_option_url">URL : </label>
+            </td>
+            <td>
+                <input class="bigInputBox" type="text" _name="destPath" id="remoteVFSItem_option_url"  />
+                <input class="ui-helper-hidden excludeXML" type="text" _name="destPath" id="remoteVFSItem_option_url_static" />
+                <input class="ui-helper-hidden excludeXML" type="text" _name="name" id="remoteVFSItem_option_name_static" />
+                <input class="ui-helper-hidden excludeXML" type="text" _name="type" id="remoteVFSItem_option_type_static" />
+            </td>
+        </tr>
+        <tr class="noFileOption">
+            <td class="itemPropertyLabel">
+                <label for="remoteVFSItem_option_host">Host : </label>
+            </td>
+            <td>
+                <input class="bigInputBox" type="text" _name="host" id="remoteVFSItem_option_host"  />
+            </td>
+        </tr>
+        <tr class="noFileOption">
+            <td class="itemPropertyLabel">
+                <label for="remoteVFSItem_option_port">Port : </label>
+            </td>
+            <td>
+                <input class="smallInputBox" type="text" _name="port" id="remoteVFSItem_option_port"  />
+            </td>
+        </tr>
+        <tr>
+            <td class="itemPropertyLabel">
+                <label for="remoteVFSItem_option_path">Path : </label>
+            </td>
+            <td>
+                <input class="bigInputBox" type="text" _name="path" id="remoteVFSItem_option_path"  />
+            </td>
+        </tr>
+        <tr class="ftpCredentials">
+            <td class="itemPropertyLabel">
+                <label for="remoteVFSItem_option_user_name">User name : </label>
+            </td>
+            <td>
+                <input type="text" id="remoteVFSItem_option_user_name" />
+                &nbsp;
+                <label for="remoteVFSItem_option_password">Password : </label>
+                <input type="password" id="remoteVFSItem_option_password" />
+            </td>
+        </tr>
+        <tr class="HAOptions">
+            <td></td>
+            <td style="padding-bottom: 10px;display:none;">
+                <input type="checkbox"_name="haDownload"  id="remoteVFSItem_option_haDownload" />
+                <label for="remoteVFSItem_option_haDownload">HA Download Recovery</label>
+                <span class="spacer"></span>
+                <input type="checkbox"_name="haUpload"  id="remoteVFSItem_option_haUpload" />
+                <label for="remoteVFSItem_option_haUpload">HA Upload Recovery</label>
+            </td>
+        </tr>
+        <tr class="ftpOptions">
+            <td></td>
+            <td style="padding-bottom: 10px;">
+                <input checked="checked" type="checkbox" id="remoteVFSItem_option_pasv" _name="pasv" />
+                <label for="remoteVFSItem_option_pasv">Passive?</label>
+            </td>
+        </tr>
+        <tr class="ftpOptions">
+            <td class="itemPropertyLabel">
+                <label for="remoteVFSItem_option_ftpEncryption">Encryption Mode : </label>
+            </td>
+            <td>
+                <select id="remoteVFSItem_option_ftpEncryption" _name="secure">
+                    <option value="false">Plain</option>
+                    <option value="true">TLS</option>
+                </select>
+            </td>
+        </tr>
+        <tr class="SSLOptions">
+            <td colspan="2">
+                <span class="ui-state-highlight ui-corner-all warning" style="padding:3px;display:block;margin:5px 3px;">
+                    <span style="float: left; margin-right: 0.3em;" class="ui-icon ui-icon-info"></span>
+                    <span class="">
+                        Use below options only when SSL client authentication is required.
+                    </span>
+                </span>
+            </td>
+        </tr>
+        <tr class="SSLOptions">
+            <td class="itemPropertyLabel">
+                <label for="remoteVFSItem_option_keystore">
+                    Keystore :
+                </label>
+            </td>
+            <td>
+                <input _name="keystore" type="text" class="excludeXML" id="remoteVFSItem_option_keystore" />
+            </td>
+        </tr>
+        <tr class="SSLOptions">
+            <td class="itemPropertyLabel">
+                <label for="remoteVFSItem_option_keystore_pass">
+                    Keystore Password :
+                </label>
+            </td>
+            <td>
+                <input _name="keystore_pass" type="password" class="encryptPass excludeXML" id="remoteVFSItem_option_keystore_pass" />
+            </td>
+        </tr>
+        <tr class="SSLOptions">
+            <td class="itemPropertyLabel">
+                <label for="remoteVFSItem_option_key_pass">
+                    Key Password :
+                </label>
+            </td>
+            <td>
+                <input _name="key_pass" type="password" class="encryptPass excludeXML" id="remoteVFSItem_option_key_pass" />
+            </td>
+        </tr>
+        <tr class="s3Credentials">
+            <td class="itemPropertyLabel">
+                <label for="remoteVFSItem_option_secretKeyID">User name : </label>
+            </td>
+            <td>
+                <input type="text" _name="secretKeyID" name="s3KeyID" class="excludeXML" id="remoteVFSItem_option_secretKeyID" />
+                &nbsp;
+                <label for="remoteVFSItem_option_secretKey">Password : </label>
+                <input type="password" _name="secretKey" name="s3Key" class="excludeXML" id="remoteVFSItem_option_secretKey" />
+            </td>
+        </tr>
+        <tr class="privateOptions">
+            <td colspan="2">
+                <label for="remoteVFSItem_option_private_key_file_path">Private key file path : </label>
+                &nbsp;
+                <input class="bigInputBox" type="text" _name="ssh_private_key" id="remoteVFSItem_option_private_key_file_path" />
+                <a href="#" PickType="file" class="button slim serverFilePickButton" rel="remoteVFSItem_option_private_key_file_path" style="top:10px;padding:3px 12px;">
+                    <span style='display:inline-block;margin:0px 3px 0px -7px;float:left;' class='pointer ui-icon ui-icon-folder-open'></span>
+                    Browse
+                </a>
+            </td>
+        </tr>
+        <tr class="privateOptions">
+            <td colspan="2">
+                <label for="remoteVFSItem_option_private_key_file_pass">Private key file pass : </label>
+                &nbsp;
+                <input class="bigInputBox encryptPass" type="password" _name="ssh_private_key_pass" id="remoteVFSItem_option_private_key_file_pass" />
+            </td>
+        </tr>
+        <tr class="privateOptions">
+            <td colspan="2">
+                <input type="checkbox" _name="ssh_two_factor" id="remoteVFSItem_option_two_factor_authentication" />
+                <label for="remoteVFSItem_option_two_factor_authentication">Two factor authentication</label>
+            </td>
+        </tr>
+        <tr class="ui-helper-hidden">
+            <td class="itemPropertyLabel">
+                <label for="path">Path : </label>
+            </td>
+            <td>
+                <input readonly="true" class="bigInputBox" type="text" _name="path" id="remoteVFSItem_option_path" />
+            </td>
+        </tr>
+    </table>
+</div>

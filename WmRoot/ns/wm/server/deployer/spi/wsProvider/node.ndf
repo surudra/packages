@@ -1,0 +1,461 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="node_type">webServiceDescriptor</value>
+  <value name="node_nsName">wm.server.deployer.spi:wsProvider</value>
+  <value name="node_pkg">WmRoot</value>
+  <value name="node_comment"></value>
+  <value name="is_public">false</value>
+  <Boolean name="inbound">true</Boolean>
+  <Boolean name="WSICompliant">false</Boolean>
+  <value name="SOAPProtocol">SOAP 1.2 Protocol</value>
+  <value name="targetNamespace">http://www.webmethods.com/provider/DeployerPlugin2/</value>
+  <Boolean name="attachmentEnabled">true</Boolean>
+  <number name="mtomThreshold" type="Integer">0</number>
+  <array name="externalWSDLSources" type="record" depth="1">
+    <record javaclass="com.wm.util.Values">
+      <value name="contextURI">http://localhost:5555/</value>
+      <value name="locationURI">wm.server.deployer.spi.wsProvider?wsdl=wsdl0</value>
+      <null name="source"/>
+      <number name="type" type="Integer">1</number>
+    </record>
+  </array>
+  <value name="externalWSDLURL">file:/C:/Spark/Downloads/DeployerPlugin2.wsdl</value>
+  <value name="WSDLURL">http://localhost:5555/ws/wm.server.deployer.spi:wsProvider?WSDL</value>
+  <value name="definitionName">DeployerPlugin2</value>
+  <value name="version">_8_2</value>
+  <value name="schemaDomain">ceac4b3544c7060a131cfd34218</value>
+  <Boolean name="rawArray">true</Boolean>
+  <array name="handlerList" type="record" depth="1">
+  </array>
+  <array name="binderList" type="record" depth="1">
+    <record javaclass="com.wm.util.Values">
+      <value name="binderName">provider_DeployerPlugin2_Binder</value>
+      <value name="portAddress"></value>
+      <value name="portAlias"></value>
+      <value name="bindingName">provider_DeployerPlugin2_Binder</value>
+      <value name="bindingStyle">document</value>
+      <value name="bindingUse">literal</value>
+      <value name="bindingType">SOAP</value>
+      <value name="portName">provider_DeployerPlugin2_Port</value>
+      <value name="portTypeName">DeployerPlugin2</value>
+      <value name="bindingTransport">http://schemas.xmlsoap.org/soap/http</value>
+      <value name="transportType">http</value>
+      <record name="operationMap" javaclass="com.wm.util.Values">
+        <value name="provider_DeployerPlugin2_Binder_ListObjects">ListObjects</value>
+        <value name="provider_DeployerPlugin2_Binder_Ping">Ping</value>
+        <value name="provider_DeployerPlugin2_Binder_DeployObjects">DeployObjects</value>
+        <value name="provider_DeployerPlugin2_Binder_VerifyObject">VerifyObject</value>
+        <value name="provider_DeployerPlugin2_Binder_GetDependencies">GetDependencies</value>
+        <value name="provider_DeployerPlugin2_Binder_GetObjects">GetObjects</value>
+        <value name="provider_DeployerPlugin2_Binder_DeployObjectsWithVarsub">DeployObjectsWithVarsub</value>
+        <value name="provider_DeployerPlugin2_Binder_GetObjectsWithACDL">GetObjectsWithACDL</value>
+        <value name="provider_DeployerPlugin2_Binder_GetConnectionInfo">GetConnectionInfo</value>
+        <value name="provider_DeployerPlugin2_Binder_GetObjectVarSub">GetObjectVarSub</value>
+        <value name="provider_DeployerPlugin2_Binder_DeployObjectsWithACDL">DeployObjectsWithACDL</value>
+      </record>
+      <value name="SOAPProtocol">SOAP 1.2 Protocol</value>
+      <value name="SOAPDirective">ws</value>
+      <Boolean name="useCSQ">false</Boolean>
+    </record>
+  </array>
+  <array name="operationList" type="record" depth="1">
+    <record javaclass="com.wm.util.Values">
+      <value name="operationName">DeployObjects</value>
+      <value name="serviceName">wm.server.deployer.spi.wsProvider_.services:DeployObjects</value>
+      <value name="originalMEPType">MEP_URI_IN_OUT</value>
+      <record name="requestElement" javaclass="com.wm.util.Values">
+        <array name="headers" type="record" depth="1">
+        </array>
+        <record name="body" javaclass="com.wm.util.Values">
+          <value name="name">http://www.webmethods.com/provider/DeployerPlugin2/:DeployerPlugin2_DeployObjects_Input</value>
+          <value name="docType">wm.server.deployer.spi.wsProvider_.docTypes:DeployerPlugin2_DeployObjects_Input</value>
+          <value name="nsOwner">wm.server.deployer.spi.wsProvider_.docTypes:DeployerPlugin2_DeployObjects_Input</value>
+          <number name="nsOwnerType" type="Integer">3</number>
+          <Boolean name="addedByClient">false</Boolean>
+          <value name="action">http://www.webmethods.com/provider/DeployerPlugin2//DeployerPlugin2/DeployObjectsRequest</value>
+          <null name="originalDocName"/>
+        </record>
+        <array name="faults" type="record" depth="1">
+        </array>
+      </record>
+      <record name="responseElement" javaclass="com.wm.util.Values">
+        <array name="headers" type="record" depth="1">
+        </array>
+        <record name="body" javaclass="com.wm.util.Values">
+          <value name="name">http://www.webmethods.com/provider/DeployerPlugin2/:DeployerPlugin2_DeployObjects_Output</value>
+          <value name="docType">wm.server.deployer.spi.wsProvider_.docTypes:DeployerPlugin2_DeployObjects_Output</value>
+          <value name="nsOwner">wm.server.deployer.spi.wsProvider_.docTypes:DeployerPlugin2_DeployObjects_Output</value>
+          <number name="nsOwnerType" type="Integer">3</number>
+          <Boolean name="addedByClient">false</Boolean>
+          <null name="originalDocName"/>
+        </record>
+        <array name="faults" type="record" depth="1">
+        </array>
+      </record>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="operationName">DeployObjectsWithVarsub</value>
+      <value name="serviceName">wm.server.deployer.spi.wsProvider_.services:DeployObjectsWithVarsub</value>
+      <value name="originalMEPType">MEP_URI_IN_OUT</value>
+      <record name="requestElement" javaclass="com.wm.util.Values">
+        <array name="headers" type="record" depth="1">
+        </array>
+        <record name="body" javaclass="com.wm.util.Values">
+          <value name="name">http://www.webmethods.com/provider/DeployerPlugin2/:DeployerPlugin2_DeployObjectsWithVarsub_Input</value>
+          <value name="docType">wm.server.deployer.spi.wsProvider_.docTypes:DeployerPlugin2_DeployObjectsWithVarsub_Input</value>
+          <value name="nsOwner">wm.server.deployer.spi.wsProvider_.docTypes:DeployerPlugin2_DeployObjectsWithVarsub_Input</value>
+          <number name="nsOwnerType" type="Integer">3</number>
+          <Boolean name="addedByClient">false</Boolean>
+          <value name="action">http://www.webmethods.com/provider/DeployerPlugin2//DeployerPlugin2/DeployObjectsWithVarsubRequest</value>
+          <null name="originalDocName"/>
+        </record>
+        <array name="faults" type="record" depth="1">
+        </array>
+      </record>
+      <record name="responseElement" javaclass="com.wm.util.Values">
+        <array name="headers" type="record" depth="1">
+        </array>
+        <record name="body" javaclass="com.wm.util.Values">
+          <value name="name">http://www.webmethods.com/provider/DeployerPlugin2/:DeployerPlugin2_DeployObjectsWithVarsub_Output</value>
+          <value name="docType">wm.server.deployer.spi.wsProvider_.docTypes:DeployerPlugin2_DeployObjectsWithVarsub_Output</value>
+          <value name="nsOwner">wm.server.deployer.spi.wsProvider_.docTypes:DeployerPlugin2_DeployObjectsWithVarsub_Output</value>
+          <number name="nsOwnerType" type="Integer">3</number>
+          <Boolean name="addedByClient">false</Boolean>
+          <null name="originalDocName"/>
+        </record>
+        <array name="faults" type="record" depth="1">
+        </array>
+      </record>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="operationName">GetConnectionInfo</value>
+      <value name="serviceName">wm.server.deployer.spi.wsProvider_.services:GetConnectionInfo</value>
+      <value name="originalMEPType">MEP_URI_IN_OUT</value>
+      <record name="requestElement" javaclass="com.wm.util.Values">
+        <array name="headers" type="record" depth="1">
+        </array>
+        <record name="body" javaclass="com.wm.util.Values">
+          <value name="name">http://www.webmethods.com/provider/DeployerPlugin2/:DeployerPlugin2_GetConnectionInfo_Input</value>
+          <value name="docType">wm.server.deployer.spi.wsProvider_.docTypes:DeployerPlugin2_GetConnectionInfo_Input</value>
+          <value name="nsOwner">wm.server.deployer.spi.wsProvider_.docTypes:DeployerPlugin2_GetConnectionInfo_Input</value>
+          <number name="nsOwnerType" type="Integer">3</number>
+          <Boolean name="addedByClient">false</Boolean>
+          <value name="action">http://www.webmethods.com/provider/DeployerPlugin2//DeployerPlugin2/GetConnectionInfoRequest</value>
+          <null name="originalDocName"/>
+        </record>
+        <array name="faults" type="record" depth="1">
+        </array>
+      </record>
+      <record name="responseElement" javaclass="com.wm.util.Values">
+        <array name="headers" type="record" depth="1">
+        </array>
+        <record name="body" javaclass="com.wm.util.Values">
+          <value name="name">http://www.webmethods.com/provider/DeployerPlugin2/:DeployerPlugin2_GetConnectionInfo_Output</value>
+          <value name="docType">wm.server.deployer.spi.wsProvider_.docTypes:DeployerPlugin2_GetConnectionInfo_Output</value>
+          <value name="nsOwner">wm.server.deployer.spi.wsProvider_.docTypes:DeployerPlugin2_GetConnectionInfo_Output</value>
+          <number name="nsOwnerType" type="Integer">3</number>
+          <Boolean name="addedByClient">false</Boolean>
+          <null name="originalDocName"/>
+        </record>
+        <array name="faults" type="record" depth="1">
+        </array>
+      </record>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="operationName">GetDependencies</value>
+      <value name="serviceName">wm.server.deployer.spi.wsProvider_.services:GetDependencies</value>
+      <value name="originalMEPType">MEP_URI_IN_OUT</value>
+      <record name="requestElement" javaclass="com.wm.util.Values">
+        <array name="headers" type="record" depth="1">
+        </array>
+        <record name="body" javaclass="com.wm.util.Values">
+          <value name="name">http://www.webmethods.com/provider/DeployerPlugin2/:DeployerPlugin2_GetDependencies_Input</value>
+          <value name="docType">wm.server.deployer.spi.wsProvider_.docTypes:DeployerPlugin2_GetDependencies_Input</value>
+          <value name="nsOwner">wm.server.deployer.spi.wsProvider_.docTypes:DeployerPlugin2_GetDependencies_Input</value>
+          <number name="nsOwnerType" type="Integer">3</number>
+          <Boolean name="addedByClient">false</Boolean>
+          <value name="action">http://www.webmethods.com/provider/DeployerPlugin2//DeployerPlugin2/GetDependenciesRequest</value>
+          <null name="originalDocName"/>
+        </record>
+        <array name="faults" type="record" depth="1">
+        </array>
+      </record>
+      <record name="responseElement" javaclass="com.wm.util.Values">
+        <array name="headers" type="record" depth="1">
+        </array>
+        <record name="body" javaclass="com.wm.util.Values">
+          <value name="name">http://www.webmethods.com/provider/DeployerPlugin2/:DeployerPlugin2_GetDependencies_Output</value>
+          <value name="docType">wm.server.deployer.spi.wsProvider_.docTypes:DeployerPlugin2_GetDependencies_Output</value>
+          <value name="nsOwner">wm.server.deployer.spi.wsProvider_.docTypes:DeployerPlugin2_GetDependencies_Output</value>
+          <number name="nsOwnerType" type="Integer">3</number>
+          <Boolean name="addedByClient">false</Boolean>
+          <null name="originalDocName"/>
+        </record>
+        <array name="faults" type="record" depth="1">
+        </array>
+      </record>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="operationName">GetObjects</value>
+      <value name="serviceName">wm.server.deployer.spi.wsProvider_.services:GetObjects</value>
+      <value name="originalMEPType">MEP_URI_IN_OUT</value>
+      <record name="requestElement" javaclass="com.wm.util.Values">
+        <array name="headers" type="record" depth="1">
+        </array>
+        <record name="body" javaclass="com.wm.util.Values">
+          <value name="name">http://www.webmethods.com/provider/DeployerPlugin2/:DeployerPlugin2_GetObjects_Input</value>
+          <value name="docType">wm.server.deployer.spi.wsProvider_.docTypes:DeployerPlugin2_GetObjects_Input</value>
+          <value name="nsOwner">wm.server.deployer.spi.wsProvider_.docTypes:DeployerPlugin2_GetObjects_Input</value>
+          <number name="nsOwnerType" type="Integer">3</number>
+          <Boolean name="addedByClient">false</Boolean>
+          <value name="action">http://www.webmethods.com/provider/DeployerPlugin2//DeployerPlugin2/GetObjectsRequest</value>
+          <null name="originalDocName"/>
+        </record>
+        <array name="faults" type="record" depth="1">
+        </array>
+      </record>
+      <record name="responseElement" javaclass="com.wm.util.Values">
+        <array name="headers" type="record" depth="1">
+        </array>
+        <record name="body" javaclass="com.wm.util.Values">
+          <value name="name">http://www.webmethods.com/provider/DeployerPlugin2/:DeployerPlugin2_GetObjects_Output</value>
+          <value name="docType">wm.server.deployer.spi.wsProvider_.docTypes:DeployerPlugin2_GetObjects_Output</value>
+          <value name="nsOwner">wm.server.deployer.spi.wsProvider_.docTypes:DeployerPlugin2_GetObjects_Output</value>
+          <number name="nsOwnerType" type="Integer">3</number>
+          <Boolean name="addedByClient">false</Boolean>
+          <null name="originalDocName"/>
+        </record>
+        <array name="faults" type="record" depth="1">
+        </array>
+      </record>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="operationName">GetObjectVarSub</value>
+      <value name="serviceName">wm.server.deployer.spi.wsProvider_.services:GetObjectVarSub</value>
+      <value name="originalMEPType">MEP_URI_IN_OUT</value>
+      <record name="requestElement" javaclass="com.wm.util.Values">
+        <array name="headers" type="record" depth="1">
+        </array>
+        <record name="body" javaclass="com.wm.util.Values">
+          <value name="name">http://www.webmethods.com/provider/DeployerPlugin2/:DeployerPlugin2_GetObjectVarSub_Input</value>
+          <value name="docType">wm.server.deployer.spi.wsProvider_.docTypes:DeployerPlugin2_GetObjectVarSub_Input</value>
+          <value name="nsOwner">wm.server.deployer.spi.wsProvider_.docTypes:DeployerPlugin2_GetObjectVarSub_Input</value>
+          <number name="nsOwnerType" type="Integer">3</number>
+          <Boolean name="addedByClient">false</Boolean>
+          <value name="action">http://www.webmethods.com/provider/DeployerPlugin2//DeployerPlugin2/GetObjectVarSubRequest</value>
+          <null name="originalDocName"/>
+        </record>
+        <array name="faults" type="record" depth="1">
+        </array>
+      </record>
+      <record name="responseElement" javaclass="com.wm.util.Values">
+        <array name="headers" type="record" depth="1">
+        </array>
+        <record name="body" javaclass="com.wm.util.Values">
+          <value name="name">http://www.webmethods.com/provider/DeployerPlugin2/:DeployerPlugin2_GetObjectVarSub_Output</value>
+          <value name="docType">wm.server.deployer.spi.wsProvider_.docTypes:DeployerPlugin2_GetObjectVarSub_Output</value>
+          <value name="nsOwner">wm.server.deployer.spi.wsProvider_.docTypes:DeployerPlugin2_GetObjectVarSub_Output</value>
+          <number name="nsOwnerType" type="Integer">3</number>
+          <Boolean name="addedByClient">false</Boolean>
+          <null name="originalDocName"/>
+        </record>
+        <array name="faults" type="record" depth="1">
+        </array>
+      </record>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="operationName">ListObjects</value>
+      <value name="serviceName">wm.server.deployer.spi.wsProvider_.services:ListObjects</value>
+      <value name="originalMEPType">MEP_URI_IN_OUT</value>
+      <record name="requestElement" javaclass="com.wm.util.Values">
+        <array name="headers" type="record" depth="1">
+        </array>
+        <record name="body" javaclass="com.wm.util.Values">
+          <value name="name">http://www.webmethods.com/provider/DeployerPlugin2/:DeployerPlugin2_ListObjects_Input</value>
+          <value name="docType">wm.server.deployer.spi.wsProvider_.docTypes:DeployerPlugin2_ListObjects_Input</value>
+          <value name="nsOwner">wm.server.deployer.spi.wsProvider_.docTypes:DeployerPlugin2_ListObjects_Input</value>
+          <number name="nsOwnerType" type="Integer">3</number>
+          <Boolean name="addedByClient">false</Boolean>
+          <value name="action">http://www.webmethods.com/provider/DeployerPlugin2//DeployerPlugin2/ListObjectsRequest</value>
+          <null name="originalDocName"/>
+        </record>
+        <array name="faults" type="record" depth="1">
+        </array>
+      </record>
+      <record name="responseElement" javaclass="com.wm.util.Values">
+        <array name="headers" type="record" depth="1">
+        </array>
+        <record name="body" javaclass="com.wm.util.Values">
+          <value name="name">http://www.webmethods.com/provider/DeployerPlugin2/:DeployerPlugin2_ListObjects_Output</value>
+          <value name="docType">wm.server.deployer.spi.wsProvider_.docTypes:DeployerPlugin2_ListObjects_Output</value>
+          <value name="nsOwner">wm.server.deployer.spi.wsProvider_.docTypes:DeployerPlugin2_ListObjects_Output</value>
+          <number name="nsOwnerType" type="Integer">3</number>
+          <Boolean name="addedByClient">false</Boolean>
+          <null name="originalDocName"/>
+        </record>
+        <array name="faults" type="record" depth="1">
+        </array>
+      </record>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="operationName">Ping</value>
+      <value name="serviceName">wm.server.deployer.spi.wsProvider_.services:Ping</value>
+      <value name="originalMEPType">MEP_URI_IN_OUT</value>
+      <record name="requestElement" javaclass="com.wm.util.Values">
+        <array name="headers" type="record" depth="1">
+        </array>
+        <record name="body" javaclass="com.wm.util.Values">
+          <value name="name">http://www.webmethods.com/provider/DeployerPlugin2/:DeployerPlugin2_Ping_Input</value>
+          <value name="docType">wm.server.deployer.spi.wsProvider_.docTypes:DeployerPlugin2_Ping_Input</value>
+          <value name="nsOwner">wm.server.deployer.spi.wsProvider_.docTypes:DeployerPlugin2_Ping_Input</value>
+          <number name="nsOwnerType" type="Integer">3</number>
+          <Boolean name="addedByClient">false</Boolean>
+          <value name="action">http://www.webmethods.com/provider/DeployerPlugin2//DeployerPlugin2/PingRequest</value>
+          <null name="originalDocName"/>
+        </record>
+        <array name="faults" type="record" depth="1">
+        </array>
+      </record>
+      <record name="responseElement" javaclass="com.wm.util.Values">
+        <array name="headers" type="record" depth="1">
+        </array>
+        <record name="body" javaclass="com.wm.util.Values">
+          <value name="name">http://www.webmethods.com/provider/DeployerPlugin2/:DeployerPlugin2_Ping_Output</value>
+          <value name="docType">wm.server.deployer.spi.wsProvider_.docTypes:DeployerPlugin2_Ping_Output</value>
+          <value name="nsOwner">wm.server.deployer.spi.wsProvider_.docTypes:DeployerPlugin2_Ping_Output</value>
+          <number name="nsOwnerType" type="Integer">3</number>
+          <Boolean name="addedByClient">false</Boolean>
+          <null name="originalDocName"/>
+        </record>
+        <array name="faults" type="record" depth="1">
+        </array>
+      </record>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="operationName">VerifyObject</value>
+      <value name="serviceName">wm.server.deployer.spi.wsProvider_.services:VerifyObject</value>
+      <value name="originalMEPType">MEP_URI_IN_OUT</value>
+      <record name="requestElement" javaclass="com.wm.util.Values">
+        <array name="headers" type="record" depth="1">
+        </array>
+        <record name="body" javaclass="com.wm.util.Values">
+          <value name="name">http://www.webmethods.com/provider/DeployerPlugin2/:DeployerPlugin2_VerifyObject_Input</value>
+          <value name="docType">wm.server.deployer.spi.wsProvider_.docTypes:DeployerPlugin2_VerifyObject_Input</value>
+          <value name="nsOwner">wm.server.deployer.spi.wsProvider_.docTypes:DeployerPlugin2_VerifyObject_Input</value>
+          <number name="nsOwnerType" type="Integer">3</number>
+          <Boolean name="addedByClient">false</Boolean>
+          <value name="action">http://www.webmethods.com/provider/DeployerPlugin2//DeployerPlugin2/VerifyObjectRequest</value>
+          <null name="originalDocName"/>
+        </record>
+        <array name="faults" type="record" depth="1">
+        </array>
+      </record>
+      <record name="responseElement" javaclass="com.wm.util.Values">
+        <array name="headers" type="record" depth="1">
+        </array>
+        <record name="body" javaclass="com.wm.util.Values">
+          <value name="name">http://www.webmethods.com/provider/DeployerPlugin2/:DeployerPlugin2_VerifyObject_Output</value>
+          <value name="docType">wm.server.deployer.spi.wsProvider_.docTypes:DeployerPlugin2_VerifyObject_Output</value>
+          <value name="nsOwner">wm.server.deployer.spi.wsProvider_.docTypes:DeployerPlugin2_VerifyObject_Output</value>
+          <number name="nsOwnerType" type="Integer">3</number>
+          <Boolean name="addedByClient">false</Boolean>
+          <null name="originalDocName"/>
+        </record>
+        <array name="faults" type="record" depth="1">
+        </array>
+      </record>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="operationName">DeployObjectsWithACDL</value>
+      <value name="serviceName">wm.server.deployer.spi.wsProvider_.services:DeployObjectsWithACDL</value>
+      <value name="originalMEPType">MEP_URI_IN_OUT</value>
+      <record name="requestElement" javaclass="com.wm.util.Values">
+        <array name="headers" type="record" depth="1">
+        </array>
+        <record name="body" javaclass="com.wm.util.Values">
+          <value name="name">http://www.webmethods.com/provider/DeployerPlugin2/:DeployerPlugin2_DeployObjectsWithACDL_Input</value>
+          <value name="docType">wm.server.deployer.spi.wsProvider_.docTypes:DeployerPlugin2_DeployObjectsWithACDL_Input</value>
+          <value name="nsOwner">wm.server.deployer.spi.wsProvider_.docTypes:DeployerPlugin2_DeployObjectsWithACDL_Input</value>
+          <number name="nsOwnerType" type="Integer">3</number>
+          <Boolean name="addedByClient">false</Boolean>
+          <value name="action">http://www.webmethods.com/provider/DeployerPlugin2//DeployerPlugin2/DeployObjectsWithACDLRequest</value>
+          <null name="originalDocName"/>
+        </record>
+        <array name="faults" type="record" depth="1">
+        </array>
+      </record>
+      <record name="responseElement" javaclass="com.wm.util.Values">
+        <array name="headers" type="record" depth="1">
+        </array>
+        <record name="body" javaclass="com.wm.util.Values">
+          <value name="name">http://www.webmethods.com/provider/DeployerPlugin2/:DeployerPlugin2_DeployObjectsWithACDL_Output</value>
+          <value name="docType">wm.server.deployer.spi.wsProvider_.docTypes:DeployerPlugin2_DeployObjectsWithACDL_Output</value>
+          <value name="nsOwner">wm.server.deployer.spi.wsProvider_.docTypes:DeployerPlugin2_DeployObjectsWithACDL_Output</value>
+          <number name="nsOwnerType" type="Integer">3</number>
+          <Boolean name="addedByClient">false</Boolean>
+          <null name="originalDocName"/>
+        </record>
+        <array name="faults" type="record" depth="1">
+        </array>
+      </record>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="operationName">GetObjectsWithACDL</value>
+      <value name="serviceName">wm.server.deployer.spi.wsProvider_.services:GetObjectsWithACDL</value>
+      <value name="originalMEPType">MEP_URI_IN_OUT</value>
+      <record name="requestElement" javaclass="com.wm.util.Values">
+        <array name="headers" type="record" depth="1">
+        </array>
+        <record name="body" javaclass="com.wm.util.Values">
+          <value name="name">http://www.webmethods.com/provider/DeployerPlugin2/:DeployerPlugin2_GetObjectsWithACDL_Input</value>
+          <value name="docType">wm.server.deployer.spi.wsProvider_.docTypes:DeployerPlugin2_GetObjectsWithACDL_Input</value>
+          <value name="nsOwner">wm.server.deployer.spi.wsProvider_.docTypes:DeployerPlugin2_GetObjectsWithACDL_Input</value>
+          <number name="nsOwnerType" type="Integer">3</number>
+          <Boolean name="addedByClient">false</Boolean>
+          <value name="action">http://www.webmethods.com/provider/DeployerPlugin2//DeployerPlugin2/GetObjectsWithACDLRequest</value>
+          <null name="originalDocName"/>
+        </record>
+        <array name="faults" type="record" depth="1">
+        </array>
+      </record>
+      <record name="responseElement" javaclass="com.wm.util.Values">
+        <array name="headers" type="record" depth="1">
+        </array>
+        <record name="body" javaclass="com.wm.util.Values">
+          <value name="name">http://www.webmethods.com/provider/DeployerPlugin2/:DeployerPlugin2_GetObjectsWithACDL_Output</value>
+          <value name="docType">wm.server.deployer.spi.wsProvider_.docTypes:DeployerPlugin2_GetObjectsWithACDL_Output</value>
+          <value name="nsOwner">wm.server.deployer.spi.wsProvider_.docTypes:DeployerPlugin2_GetObjectsWithACDL_Output</value>
+          <number name="nsOwnerType" type="Integer">3</number>
+          <Boolean name="addedByClient">false</Boolean>
+          <null name="originalDocName"/>
+        </record>
+        <array name="faults" type="record" depth="1">
+        </array>
+      </record>
+    </record>
+  </array>
+  <record name="namespaces" javaclass="com.wm.util.Values">
+    <value name="tns">http://www.webmethods.com/provider/DeployerPlugin2/</value>
+    <value name="HDR1">http://www.webmethods.com/DeployerPlugin2/</value>
+    <value name="soap12">http://schemas.xmlsoap.org/wsdl/soap12/</value>
+    <value name="mime">http://schemas.xmlsoap.org/wsdl/mime/</value>
+    <value name="http">http://schemas.xmlsoap.org/wsdl/http/</value>
+    <value name="soapjms">http://www.w3.org/2008/07/soap/bindings/JMS/</value>
+    <value name="soapenc">http://schemas.xmlsoap.org/soap/encoding/</value>
+    <value name="xsd">http://www.w3.org/2001/XMLSchema</value>
+    <value name="soap">http://schemas.xmlsoap.org/wsdl/soap/</value>
+    <value name="wsdl">http://schemas.xmlsoap.org/wsdl/</value>
+  </record>
+  <Boolean name="HeadersInPipelineEnabled">false</Boolean>
+  <Boolean name="validateSOAPResponse">true</Boolean>
+  <Boolean name="enableCompatibility">false</Boolean>
+  <array name="policyIds" type="value" depth="1">
+  </array>
+  <Boolean name="registerDoctypes">false</Boolean>
+  <Boolean name="allTypes">false</Boolean>
+  <Boolean name="generateXOPObjectForBase64Binary">true</Boolean>
+  <value name="originURI">file://C:\Spark\Downloads\DeployerPlugin2.wsdl</value>
+  <value name="modifiable">false</value>
+  <value name="externalServiceName">{http://www.webmethods.com/provider/DeployerPlugin2/}DeployerPlugin2</value>
+</Values>

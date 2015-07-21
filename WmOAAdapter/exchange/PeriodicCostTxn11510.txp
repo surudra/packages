@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<IDataXMLCoder version="1.0">
+  <record javaclass="com.wm.data.ISMemDataImpl">
+    <record name="transactions" javaclass="com.wm.data.ISMemDataImpl">
+      <record name="checkLaborImportStatus" javaclass="com.wm.data.ISMemDataImpl">
+        <value name="transactionName">checkLaborImportStatus</value>
+        <value name="transactionType">OUT</value>
+        <null name="AcknowledgeSQL"/>
+        <record name="CHECKINTERFACE" javaclass="com.wm.util.Values">
+          <value name="SQLOut">SELECT count(*) as rowcount
+FROM  pa_transaction_interface_all pat
+WHERE pat.batch_name = '&amp;BATCH_NAME*' AND pat.transaction_status_code = 'R'</value>
+          <value name="SQLAlias">CHECKINTERFACE</value>
+          <value name="SQLRelation"></value>
+        </record>
+      </record>
+      <record name="checkPeriodicCostImportStatus" javaclass="com.wm.data.ISMemDataImpl">
+        <value name="transactionName">checkPeriodicCostImportStatus</value>
+        <value name="transactionType">OUT</value>
+        <null name="AcknowledgeSQL"/>
+        <record name="HEADERIMPORTSTATUS" javaclass="com.wm.util.Values">
+          <value name="SQLOut">SELECT COUNT (*) AS ROWCOUNT FROM CST_PC_ITEM_COST_INTERFACE WHERE  PROCESS_FLAG =3 AND REQUEST_ID ='&amp;REQUEST_ID*'</value>
+          <value name="SQLAlias">HEADERIMPORTSTATUS</value>
+          <value name="SQLRelation"></value>
+        </record>
+      </record>
+    </record>
+    <record name="FILE_INFO" javaclass="com.wm.data.ISMemDataImpl">
+      <value name="OA_RELEASE">11510</value>
+      <value name="DESCRIPTION"></value>
+      <value name="CREATE_HOST">Webmethods</value>
+      <value name="CREATE_IM_VER"></value>
+      <value name="CREATE_DATE">May 4, 2005 12:06:50 PM</value>
+    </record>
+  </record>
+</IDataXMLCoder>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<IDataXMLCoder version="1.0">
+  <record javaclass="com.wm.data.ISMemDataImpl">
+    <record name="transactions" javaclass="com.wm.data.ISMemDataImpl">
+      <record name="checkRCVImportStatus" javaclass="com.wm.data.ISMemDataImpl">
+        <value name="transactionName">checkRCVImportStatus</value>
+        <value name="transactionType">OUT</value>
+        <null name="AcknowledgeSQL"/>
+        <record name="RCV_INTERFACE_TABLE_STATUS" javaclass="com.wm.util.Values">
+          <value name="SQLOut">SELECT COUNT(*) as ROWCOUNT FROM PO_INTERFACE_ERRORS WHERE request_id= '&amp;REQUEST_ID*'</value>
+          <value name="SQLAlias">RCV_INTERFACE_TABLE_STATUS</value>
+          <value name="SQLRelation"></value>
+        </record>
+      </record>
+      <record name="execRCVConcProg" javaclass="com.wm.data.ISMemDataImpl">
+        <value name="transactionName">execRCVConcProg</value>
+        <value name="transactionType">OUT</value>
+        <null name="AcknowledgeSQL"/>
+        <record name="WM_HANDLE_RECEIVING" javaclass="com.wm.util.Values">
+          <value name="SQLOut">WM_RECEIVING_IMP_HANDLER_PKG.WM_HANDLE_RECEIVING</value>
+          <value name="SQLAlias">WM_HANDLE_RECEIVING</value>
+          <value name="SQLRelation"></value>
+        </record>
+      </record>
+    </record>
+    <record name="FILE_INFO" javaclass="com.wm.data.ISMemDataImpl">
+      <value name="OA_RELEASE">11510</value>
+      <value name="DESCRIPTION"></value>
+      <value name="CREATE_HOST">WebMethods</value>
+      <value name="CREATE_IM_VER"></value>
+      <value name="CREATE_DATE">May 6, 2005 12:52:37 PM</value>
+    </record>
+  </record>
+</IDataXMLCoder>

@@ -1,0 +1,19 @@
+# Make file for generated C# client:  
+# Set CS_CMPLR to your installation of the Microsoft .NET Framework's csc.exe.
+# Set CS_SRC to match the location of the generated C# source file (%value svcName%.cs).
+# Set CS_REF to the installation directory of the C# client API support dlls.
+# The resultant %value svcName%.exe will be generated to the CS_REF directory to facilitate runtime execution. 
+
+CS_FILE=%value svcName%
+
+CS_SRC=[codegen target dir]
+CS_REF=[Software AG_directory]\Developer\DotNet
+CS_CMPLR=C:\WINDOWS\Microsoft.NET\Framework\v1.1.4322
+
+all: $(CS_FILE)
+
+$(CS_FILE): $(CS_FILE).cs
+	set PATH=$(PATH);$(CS_CMPLR)
+	csc.exe /r:$(CS_REF)\wmClientAPI.dll /out:$(CS_REF)\$(CS_FILE).exe $(CS_SRC)\$(CS_FILE).cs
+clean:
+	del $(CS_FILE).exe

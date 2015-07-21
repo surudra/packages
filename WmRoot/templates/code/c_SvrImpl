@@ -1,0 +1,256 @@
+/*
+ * %value svcName%Impl.c:  Generated Service for "%value literalFullSvcName%".
+ *
+ */
+
+#include "wmJNI.h"
+#include "wmUtil.h"
+
+/*
+ * Document API for "%value literalFullSvcName%".
+ *
+ *  The following table lays out the names and types (named DOCUMENT or STRING)
+ *  of each document and field used by this service's input and output. The
+ *  table is followed by a series of name declarations that must be used to
+ *  access (set or get) the field values.
+ *
+ *  Names are constructed from the DOCUMENT name and the VARIABLE name within
+ *  the document.  E.g., 'Order_shipTo' for DOCUMENT 'Order' and VARIABLE
+ *  'shipTo'.
+ *
+ *  Note that fields within arrays and tables are unnamed as they are
+ *  accessed by index or indices (indicated by '[]' below).
+ *
+%loop records%
+    %value name%:  DOCUMENT {
+%loop fields%%switch fieldType%
+%case str%        String %value name%,
+%case strarray%        String[] %value name%,
+%case strtable%        String[][] %value name%,
+%case rec%        %value bindToRec% %value name%,
+%case recarray%        %value bindToRec%[] %value name%,
+%end%%endloop%
+    }%endloop%
+
+ *
+ */
+%loop records%%loop fields%
+static WmName %value ../name%_%value name%=0;
+%endloop%%endloop%
+
+
+/**************************** Generated Functions ****************************/
+
+static int initialized=0;
+
+int
+init_%value svcName%(
+    WmContext  *con)
+{
+    if (initialized)
+        return 1;
+
+    if (!WmRecInit(con))
+        return 0;
+
+    /*
+     * Setup generated document/field names:
+     *  Add calls to initialize your custom fields (defined above) here.
+     *
+     */
+%loop records%%loop fields%
+    if ((%value ../name%_%value name% = makeWmName(con, "%value literalName%")) == 0) return 0;
+%endloop%%endloop%
+    initialized = 1;
+    return 1;
+}
+
+WmRecord *
+prepToInvoke_%value svcName%(
+    JNIEnv    *env,
+    jobject   oSession,
+    jobject   oIn,
+    WmContext *con,
+    WmRecord  **session,
+    WmRecord  **in,
+    WmRecord  **out)
+{
+
+    initWmContext(con, env, WM_SVR_CONTEXT);
+
+    if (!init_%value svcName%(con))
+        return throwWmServiceErrorMsg(con, "Unable to initialize %value svcName%");
+
+    *session = makeWmRec(con, oSession, WM_RECORD, 0, 0);
+    if (*session == 0) {
+        fprintf(stderr, "Unable to construct 'session' handle");
+        return throwWmServiceErrorMsg(con, "Unable to construct 'session' handle");
+    }
+    if (oIn == 0) {
+        *in = 0;
+        *out = newWmRec(con);
+        if (*out == 0) {
+            fprintf(stderr, "Unable to construct 'out' handle");
+            freeWmRec(session);
+            return throwWmServiceErrorMsg(con, "Unable to construct 'out' handle");
+        }
+    } else {
+        *in = makeWmRec(con, oIn, WM_RECORD, 0, 0);
+        if (*in == 0) {
+            fprintf(stderr, "Unable to construct 'in' handle");
+            freeWmRec(out);
+            freeWmRec(session);
+            return throwWmServiceErrorMsg(con, "Unable to construct 'in' handle");
+        }
+        *out = *in;
+    }
+
+    return NULL;
+}
+
+jobject wrapupInvoke_%value svcName%(
+    WmContext   *con,
+    WmRecord    **in,
+    WmRecord    **out,
+    WmRecord    **session)
+{
+    jobject oOut = (*out)->ref;
+
+    freeWmRec(session);
+    clearWmContext(con);
+
+    return oOut;
+}
+
+JNIEXPORT jobject JNICALL
+Java_%value jniIfcName%_c%value jniSvcName% (
+    JNIEnv  *env,
+    jclass  cServices,
+    jobject oSession,
+    jobject oIn)
+{
+    WmRecord *session, *in, *out;
+    WmContext con;
+    WmRecord *rec;
+
+%ifvar inputRec%    WmRecord *%value inputRecName%;%endif%
+%ifvar outputRec%    WmRecord *%value outputRecName%;%endif%
+%nl%
+    /***************************************************/
+    /********** Declare your variables here ************/
+    /***************************************************/
+
+    /* [default implementation for demo purposes only] */
+%loop inputRec%
+%loop fields%%switch fieldType%
+%case str%    char *i_%value name%=NULL;
+%case strarray%
+    WmRecord *i_%value name%=NULL;
+    char *isa_%value name%=NULL;
+%case strtable%
+    WmRecord *i_%value name%=NULL;
+    char *ist_%value name%=NULL;
+    jsize iz1_%value name%=0, iz2_%value name%=0;
+%case rec%    WmRecord *i_%value name%=NULL;
+%case recarray%    WmRecord *ir_%value name%=NULL, *ia_%value name%=NULL;
+%end%%endloop%%endloop%
+
+%loop outputRec%
+%loop fields%%switch fieldType%
+%case strarray%    WmRecord *o_%value name%=NULL;
+%case strtable%    WmRecord *o_%value name%=NULL;
+%case rec%    WmRecord *o_%value name%=NULL;
+%case recarray%    WmRecord *or_%value name%=NULL, *oa_%value name%=NULL;
+%end%%endloop%%endloop%
+
+    /***************************************************/
+    /********** End of custom declarations *************/
+    /***************************************************/
+
+    rec = prepToInvoke_%value svcName%(env, oSession, oIn, &con, &session, &in, &out);
+    if(rec != NULL )
+        return wrapupInvoke_%value svcName%(&con, &in, &rec, &session);
+
+%ifvar inputRec%    %value inputRecName% = in;%endif%%nl%
+%ifvar outputRec%    %value outputRecName% = out;%endif%%nl%
+
+    /***************************************************/
+    /****** Add your custom service logic here *********/
+    /***************************************************/
+
+    /* [default implementation for demo purposes only] */
+    /* [access inputs] */
+%loop inputRec%
+%loop fields%%switch fieldType%
+%case str%    i_%value name% = getWmString(%value ../name%, %value ../name%_%value name%);
+%case strarray%
+    i_%value name% = getWmStringArray(%value ../name%, %value ../name%_%value name%);
+    if (i_%value name% != NULL && getWmArraySize(i_%value name%) > 0)
+        isa_%value name% = getWmStringByIdx(i_%value name%, 0);
+%case strtable%
+    i_%value name% = getWmStringTable(%value ../name%, %value ../name%_%value name%);
+    if (i_%value name% != NULL)
+        getWmTableSize(i_%value name%, &iz1_%value name%, &iz2_%value name%);
+    if (iz1_%value name% > 0 && iz2_%value name% > 0)
+        ist_%value name% = getWmStringByIndices(i_%value name%, 0, 0);
+%case rec%    i_%value name% = getWmRec(%value ../name%, %value ../name%_%value name%);
+%case recarray%
+    ia_%value name% = getWmRecArray(%value ../name%, %value ../name%_%value name%);
+    if (ia_%value name% != NULL && getWmArraySize(ia_%value name%) > 0)
+        ir_%value name% = getWmRecByIdx(ia_%value name%, 0);
+%end%%endloop%%endloop%%nl%
+    /* [process inputs here...] */
+
+    /* [set outputs] */
+%loop outputRec%%loop fields%%switch fieldType%
+%case str%    setWmString(%value ../name%, %value ../name%_%value name%, "%value literalName%");
+%case strarray%
+    o_%value name% = newWmStringArray(&con, 1);
+    setWmStringByIdx(o_%value name%, 0, "%value literalName%");
+    setWmStringArray(%value ../name%, %value ../name%_%value name%, o_%value name%);
+%case strtable%
+    o_%value name% = newWmStringTable(&con, 1, 1);
+    setWmStringByIndices(o_%value name%, 0, 0, "%value literalName%");
+    setWmStringTable(%value ../name%, %value ../name%_%value name%, o_%value name%);
+%case rec%
+    o_%value name% = newWmRec(&con);
+    setWmRec(%value ../name%, %value ../name%_%value name%, o_%value name%);
+%case recarray%
+    or_%value name% = newWmRec(&con);
+    oa_%value name% = newWmRecArray(&con, 1);
+    setWmRecByIdx(oa_%value name%, 0, or_%value name%);
+    setWmRecArray(%value ../name%, %value ../name%_%value name%, oa_%value name%);
+%end%%endloop%%endloop%
+
+    /* [cleanup] */
+%loop inputRec%
+%loop fields%%switch fieldType%
+%case str%    freeWmString(&i_%value name%);
+%case strarray%
+    freeWmRec(&i_%value name%);
+    freeWmString(&isa_%value name%);
+%case strtable%
+    freeWmRec(&i_%value name%);
+    freeWmString(&ist_%value name%);
+%case rec%    freeWmRec(&i_%value name%);
+%case recarray%
+    freeWmRec(&ir_%value name%);
+    freeWmRec(&ia_%value name%);
+%end%%endloop%%endloop%
+%loop outputRec%
+%loop fields%%switch fieldType%
+%case strarray%    freeWmRec(&o_%value name%);
+%case strtable%    freeWmRec(&o_%value name%);
+%case rec%    freeWmRec(&o_%value name%);
+%case recarray%
+    freeWmRec(&or_%value name%);
+    freeWmRec(&oa_%value name%);
+%end%%endloop%%endloop%%nl%
+    /***************************************************/
+    /****** End of custom service logic ****************/
+    /***************************************************/
+
+    return wrapupInvoke_%value svcName%(&con, &in, &out, &session);
+
+}
+

@@ -1,0 +1,136 @@
+#                   Generated C-Service Makefile
+#
+#  %value svcName%.mak:  DO NOT USE THIS FILE DIRECTLY.
+#		This file has been generated for %value svcName%; please 
+#		create and/or augment %value ifcNodeName%.mak with the contents
+#  		of this file. 
+#
+#  %value svcName%.c:  DO NOT EXTEND THIS FILE.
+#		Copy this file to %value svcName%Impl.c and customize in
+#		order to prevent overwriting by subsequent code gens.
+#
+#  %value ifcNodeName%.mak:  CONSTRUCT AND MAKE THIS FILE.
+#		Use this file to make the shared library for your interface
+#		which will be loaded by the B2B server.
+#
+#  Environment Settings:  make sure you set JDKDIR and SERVDIR for 
+#               your deployment.                         
+#
+
+
+%ifvar platform equals(win)%
+#  Set these:
+JDKDIR = C:\java\jdk1.1.7
+SERVDIR = %value svrHomeDir%
+
+#  Copy SRC value to %value ifcNodeName%.mak:
+SRC = %value svcName%Impl.c
+
+PKGDIR = $(SERVDIR)\packages\%value pkgName +nl%
+LIBSDIR = $(PKGDIR)\code\libs
+
+all: install
+
+install:  %value ifcNodeName%.dll
+	if exist $(LIBSDIR)\%value ifcName%.dlx \
+		del $(LIBSDIR)\%value ifcName%.dlx
+	if exist $(LIBSDIR)\%value ifcName%.dll \
+		rename $(LIBSDIR)\%value ifcName%.dll %value ifcName%.dlx
+	copy %value ifcNodeName%.dll $(LIBSDIR)\%value ifcName%.dll
+
+%value ifcNodeName%.dll: $(SRC)
+	cl -DWIN32 -I$(JDKDIR)\include -I$(JDKDIR)\include\win32 \
+		-I$(SERVDIR)\lib -I$(LIBSDIR) -LD $(SRC) \
+		$(SERVDIR)\lib\wmJNI.lib -MT -Fe%value ifcNodeName%.dll
+
+clean:
+	del *.obj
+	del *.exp
+	del *.lib
+	del %value ifcNodeName%.dll
+
+%else%
+#  Set these:
+JDKDIR = /usr/local/java/1.1.7
+SERVDIR = %value svrHomeDir%
+
+#  Copy OBJ value to %value ifcNodeName%.mak:
+OBJ = %value svcName%Impl.o
+
+PKGDIR = $(SERVDIR)/packages/%value pkgName%%nl%
+LIBSDIR = $(PKGDIR)/code/libs
+
+.SUFFIXES:
+.SUFFIXES: .c .o
+
+%switch platform%
+%case lnx%
+COPT = -g -fPIC
+SO = so
+
+all: install
+
+.c.o:  
+	gcc $(COPT) -I$(JDKDIR)/include -I$(JDKDIR)/include/genunix \
+		-I$(SERVDIR)/lib -I$(LIBSDIR) -c $< -o $@
+
+%value ifcNodeName%.$(SO): $(OBJ)
+	gcc -shared $(OBJ) $(SERVDIR)/lib/lnx_wmJNI.$(SO) \
+		-o %value ifcNodeName%.$(SO)
+		
+%case sol%
+COPT = -g -fpic
+SO = so
+
+all: install
+
+.c.o:  
+	gcc $(COPT) -I$(JDKDIR)/include -I$(JDKDIR)/include/solaris \
+		-I$(SERVDIR)/lib -I$(LIBSDIR) -c $< -o $@
+
+
+%value ifcNodeName%.$(SO): $(OBJ)
+	gcc -shared $(OBJ) $(SERVDIR)/lib/sol_wmJNI.$(SO) \
+		-o %value ifcNodeName%.$(SO)
+
+%case hpx%
+COPT = -g +z +DAportable +DS2.0 -Ae +u4 -DNATIVE -D_POSIX_C_SOURCE=199506L
+LOPT = -b +s
+SO = sl
+
+all: install
+
+.c.o:  
+	cc $(COPT) -I$(JDKDIR)/include -I$(JDKDIR)/include/hp-ux \
+		-I$(SERVDIR)/lib -I$(LIBSDIR) -c $< -o $@
+
+%value ifcNodeName%.$(SO): $(OBJ)
+	ld $(LOPT) $(OBJ) $(SERVDIR)/lib/hpx_wmJNI.$(SO) \
+		-o %value ifcNodeName%.$(SO)
+
+%case aix%
+COPT = -g
+SHARED_LD_LINK = makeC++SharedLib_r
+SO = a
+
+all: install
+
+.c.o:
+	xlc_r $(COPT) -I$(JDKDIR)/include -I$(JDKDIR)/include/aix \
+		-I$(SERVDIR)/lib -I$(LIBSDIR) -c $< -o $@
+
+%value ifcNodeName%.$(SO): $(OBJ)
+	$(SHARED_LD_LINK) $(OBJ) -p2000 -L$(SERVDIR)/lib/ -laix_wmJNI \
+		-o %value ifcNodeName%.$(SO)
+
+%end%
+
+install:  %value ifcNodeName%.$(SO)
+	chmod a+x %value ifcNodeName%.$(SO)
+	cp %value ifcNodeName%.$(SO) $(LIBSDIR)/lib%value ifcName%.$(SO)
+
+clean:
+	rm -f core *.o %value ifcNodeName%.$(SO)
+
+%endif%
+

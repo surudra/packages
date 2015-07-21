@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<IDataXMLCoder version="1.0">
+  <record javaclass="com.wm.data.ISMemDataImpl">
+    <record name="transactions" javaclass="com.wm.data.ISMemDataImpl">
+      <record name="setRCVTxn" javaclass="com.wm.data.ISMemDataImpl">
+        <value name="transactionName">setRCVTxn</value>
+        <value name="transactionType">IN</value>
+        <value name="errSQL">SELECT  FNDU.USER_NAME, POE.INTERFACE_TYPE,  POE.INTERFACE_TRANSACTION_ID,  POE.COLUMN_NAME,  POE.ERROR_MESSAGE  FROM  PO_INTERFACE_ERRORS POE, RCV_HEADERS_INTERFACE POI,  RCV_TRANSACTIONS_INTERFACE PTI,  FND_USER_VIEW FNDU WHERE  POI.CREATED_BY = FNDU.USER_ID    AND POI.HEADER_INTERFACE_ID = PTI.HEADER_INTERFACE_ID AND (POI.HEADER_INTERFACE_ID = POE.INTERFACE_HEADER_ID OR  PTI.INTERFACE_TRANSACTION_ID = POE.INTERFACE_TRANSACTION_ID) AND POE.REQUEST_ID ='&amp;P_REQUEST_ID*'</value>
+        <record name="table0" javaclass="com.wm.data.ISMemDataImpl">
+          <value name="tableName">RCV_HEADERS_INTERFACE</value>
+          <value name="required">true</value>
+        </record>
+        <record name="table1" javaclass="com.wm.data.ISMemDataImpl">
+          <value name="tableName">RCV_TRANSACTIONS_INTERFACE</value>
+          <value name="required">true</value>
+        </record>
+      </record>
+    </record>
+    <record name="FILE_INFO" javaclass="com.wm.data.ISMemDataImpl">
+      <value name="OA_RELEASE">1213</value>
+      <value name="DESCRIPTION"></value>
+      <value name="CREATE_HOST">webMethods</value>
+      <value name="CREATE_IM_VER"></value>
+      <value name="CREATE_DATE">May 6, 2005 12:56:11 PM</value>
+    </record>
+  </record>
+</IDataXMLCoder>

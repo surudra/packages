@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<IDataXMLCoder version="1.0">
+  <record javaclass="com.wm.data.ISMemDataImpl">
+    <record name="transactions" javaclass="com.wm.data.ISMemDataImpl">
+      <record name="setAPInvoiceTxn" javaclass="com.wm.data.ISMemDataImpl">
+        <value name="transactionName">setAPInvoiceTxn</value>
+        <value name="transactionType">IN</value>
+        <value name="errSQL">SELECT distinct
+i.invoice_num, 
+i.invoice_id,
+Decode(r.parent_table,'AP_INVOICE_LINES_INTERFACE',l.line_number,'AP_INVOICES_INTERFACE',0)  Line_Number,
+c.description,  
+c.displayed_field, 
+i.po_number, 
+i.vendor_id,
+i.vendor_num, 
+i.vendor_name,  
+i.vendor_site_id,
+i.vendor_site_code
+FROM 
+ap_interface_rejections r, 
+ap_invoices_interface i,  
+ap_lookup_codes c, 
+ap_invoice_lines_interface l
+WHERE i.status =  'REJECTED' and
+Decode(r.parent_table,'AP_INVOICE_LINES_INTERFACE',l.invoice_line_id,'AP_INVOICES_INTERFACE',i.invoice_id)
+ =r.parent_id  and
+c.lookup_type = 'REJECT CODE'   and
+r.reject_lookup_code = c.lookup_code and
+i.invoice_id = l.invoice_id (+)   and
+i.group_id LIKE '&amp;GROUP_ID*'</value>
+        <record name="table0" javaclass="com.wm.data.ISMemDataImpl">
+          <value name="tableName">AP_INVOICES_INTERFACE</value>
+          <value name="required">true</value>
+        </record>
+        <record name="table1" javaclass="com.wm.data.ISMemDataImpl">
+          <value name="tableName">AP_INVOICE_LINES_INTERFACE</value>
+          <value name="required">true</value>
+        </record>
+      </record>
+    </record>
+    <record name="FILE_INFO" javaclass="com.wm.data.ISMemDataImpl">
+      <value name="OA_RELEASE">11510</value>
+      <value name="DESCRIPTION"></value>
+      <value name="CREATE_HOST">webMethods</value>
+      <value name="CREATE_IM_VER"></value>
+      <value name="CREATE_DATE">May 2, 2005 4:56:06 PM</value>
+    </record>
+  </record>
+</IDataXMLCoder>

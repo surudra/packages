@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <record name="transactions" javaclass="com.wm.util.Values">
+    <record name="setSalesOrderTxn" javaclass="com.wm.util.Values">
+      <value name="transactionName">setSalesOrderTxn</value>
+      <value name="transactionType">IN</value>
+      <value name="errSQL">SELECT E.REQUEST_ID, H.ORIG_SYS_DOCUMENT_REF, H.CUSTOMER_PO_NUMBER, E.MESSAGE_TEXT 
+FROM OE_PROCESSING_MSGS_VL E,OE_HEADERS_IFACE_ALL H,FND_CONC_REQ_SUMMARY_V CONC
+WHERE E.REQUEST_ID = H.REQUEST_ID
+AND CONC.REQUEST_ID = H.REQUEST_ID
+AND CONC.PARENT_REQUEST_ID = '&amp;PARENT_REQUEST_ID*'</value>
+      <record name="table0" javaclass="com.wm.util.Values">
+        <value name="tableName">OE_LINES_IFACE_ALL</value>
+        <value name="required">false</value>
+      </record>
+      <record name="table1" javaclass="com.wm.util.Values">
+        <value name="tableName">OE_PRICE_ADJS_IFACE_ALL</value>
+        <value name="required">false</value>
+      </record>
+      <record name="table2" javaclass="com.wm.util.Values">
+        <value name="tableName">OE_CREDITS_IFACE_ALL</value>
+        <value name="required">false</value>
+      </record>
+      <record name="table3" javaclass="com.wm.util.Values">
+        <value name="tableName">OE_LOTSERIALS_IFACE_ALL</value>
+        <value name="required">false</value>
+      </record>
+      <record name="table4" javaclass="com.wm.util.Values">
+        <value name="tableName">OE_RESERVTNS_IFACE_ALL</value>
+        <value name="required">false</value>
+      </record>
+      <record name="table5" javaclass="com.wm.util.Values">
+        <value name="tableName">OE_ACTIONS_IFACE_ALL</value>
+        <value name="required">false</value>
+      </record>
+      <record name="table6" javaclass="com.wm.util.Values">
+        <value name="tableName">OE_HEADERS_IFACE_ALL</value>
+        <value name="required">true</value>
+      </record>
+      <record name="table7" javaclass="com.wm.util.Values">
+        <value name="tableName">OE_PRICE_ATTS_IFACE_ALL</value>
+        <value name="required">false</value>
+      </record>
+    </record>
+  </record>
+  <record name="FILE_INFO" javaclass="com.wm.util.Values">
+    <value name="OA_RELEASE">11i</value>
+    <value name="DESCRIPTION">Inbound Sales Order Transaction Definition</value>
+    <value name="CREATE_HOST">webMethods</value>
+    <value name="CREATE_IM_VER">3.0</value>
+    <value name="CREATE_DATE">Nov 6, 2002 1:04:18 PM</value>
+  </record>
+</Values>

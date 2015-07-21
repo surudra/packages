@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<IDataXMLCoder version="1.0">
+  <record javaclass="com.wm.data.ISMemDataImpl">
+    <record name="transactions" javaclass="com.wm.data.ISMemDataImpl">
+      <record name="setInvTransactionTxn" javaclass="com.wm.data.ISMemDataImpl">
+        <value name="transactionName">setInvTransactionTxn</value>
+        <value name="transactionType">IN</value>
+        <value name="errSQL">SELECT ERROR_CODE, ERROR_EXPLANATION, TRANSACTION_INTERFACE_ID, TRANSACTION_HEADER_ID SOURCE_CODE, SOURCE_LINE_ID, SOURCE_HEADER_ID, REVISION, ORGANIZATION_NAME, TRANSACTION_QUANTITY, TRANSACTION_UOM, TRANSACTION_DATE, SUBINVENTORY_CODE, TRANSACTION_SOURCE_NAME, TRANSACTION_REFERENCE, TRANSFER_COST, CURRENCY_CODE, CUSTOMER_SHIP_ID, SCHEDULE_NUMBER FROM MTL_TRANSACTIONS_INTERFACE M, ORG_ORGANIZATION_DEFINITIONS O WHERE O.ORGANIZATION_ID = M.ORGANIZATION_ID AND M.TRANSACTION_HEADER_ID='&amp;TRANSACTION_HEADER_ID*'</value>
+        <record name="table0" javaclass="com.wm.data.ISMemDataImpl">
+          <value name="tableName">MTL_TRANSACTIONS_INTERFACE</value>
+          <value name="required">true</value>
+        </record>
+        <record name="table1" javaclass="com.wm.data.ISMemDataImpl">
+          <value name="tableName">CST_COMP_SNAP_INTERFACE</value>
+          <value name="required">false</value>
+        </record>
+        <record name="table2" javaclass="com.wm.data.ISMemDataImpl">
+          <value name="tableName">MTL_SERIAL_NUMBERS_INTERFACE</value>
+          <value name="required">false</value>
+        </record>
+        <record name="table3" javaclass="com.wm.data.ISMemDataImpl">
+          <value name="tableName">MTL_TRANSACTION_LOTS_INTERFACE</value>
+          <value name="required">false</value>
+        </record>
+      </record>
+    </record>
+    <record name="FILE_INFO" javaclass="com.wm.data.ISMemDataImpl">
+      <value name="OA_RELEASE">1206</value>
+      <value name="DESCRIPTION"></value>
+      <value name="CREATE_HOST">webmethods</value>
+      <value name="CREATE_IM_VER"></value>
+      <value name="CREATE_DATE">May 6, 2005 2:48:45 PM</value>
+    </record>
+  </record>
+</IDataXMLCoder>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <record name="transactions" javaclass="com.wm.util.Values">
+    <record name="queryJournalTxn" javaclass="com.wm.util.Values">
+      <value name="transactionName">queryJournalTxn</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="JOURNAL" javaclass="com.wm.util.Values">
+        <value name="SQLOut">SELECT WEB_TRANSACTION_ID,
+DOCUMENT_TYPE,
+DOCUMENT_STATUS,
+JE_LINE_ID,
+SET_OF_BOOKS_SHORT_NAME,	
+ACCOUNTING_DATE,
+CURRENCY_CODE,
+ACTUAL_FLAG,	
+CATEGORY_NAME,	
+SOURCE_NAME,	
+CURRENCY_CONVERSION_DATE,
+ENCUMBRANCE_TYPE,
+BUDGET_NAME,
+USER_CURRENCY_CONVERSION_TYPE,	
+CURRENCY_CONVERSION_RATE,	
+ENTERED_DR,			
+ENTERED_CR,
+ACCOUNTED_DR,
+ACCOUNTED_CR,
+REFERENCE,
+BATCH_NAME,
+PERIOD_NAME,
+ACCOUNT_CODE,
+STAT_AMOUNT,
+INVOICE_DATE,
+TAX_CODE,
+INVOICE_IDENTIFIER,
+INVOICE_AMOUNT,
+USSGL_TRANSACTION_CODE,
+JGZZ_RECON_REF,
+AVERAGE_JOURNAL,
+ORIGINATING_BAL_SEGMENT_VALUE,
+POSTED_DATE
+FROM 
+WM_GL_JOURNALS_QRY_VW
+WHERE 
+NVL(BATCH_NAME,'XXXXX') LIKE NVL('&amp;BATCH_NAME*',NVL(BATCH_NAME,'XXXXX'))
+AND NVL(SOURCE_NAME,'XXXXX') LIKE 
+NVL('&amp;SOURCE_NAME*',NVL(SOURCE_NAME,'XXXXX'))
+AND NVL(CATEGORY_NAME,'XXXXX') LIKE 
+NVL('&amp;CATEGORY_NAME*',NVL(CATEGORY_NAME,'XXXXX'))
+AND NVL(TO_CHAR(POSTED_DATE),'XXXXX') = 
+NVL(TO_CHAR(TO_DATE('&amp;POSTED_DATE*')),NVL(TO_CHAR(POSTED_DATE),'XXXXX'))
+
+</value>
+        <value name="SQLAlias">JOURNAL</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+  </record>
+  <record name="FILE_INFO" javaclass="com.wm.util.Values">
+    <value name="OA_RELEASE">1159</value>
+    <value name="DESCRIPTION">Outbound Journal Query Transaction Definition</value>
+    <value name="CREATE_HOST">webMethods</value>
+    <value name="CREATE_IM_VER">3.1</value>
+    <value name="CREATE_DATE">May 6, 2004 11:08:16 AM</value>
+  </record>
+</Values>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <record name="transactions" javaclass="com.wm.util.Values">
+    <record name="setSalesOrderTxn" javaclass="com.wm.util.Values">
+      <value name="transactionName">setSalesOrderTxn</value>
+      <value name="transactionType">IN</value>
+      <value name="errSQL">SELECT request_id, original_system_reference, customer_number, customer_name,
+        purchase_order_num, 'SO_HEADERS_INTERFACE' AS table_name,
+        interface_status AS error_text
+   FROM so_headers_interface
+  WHERE request_id = '&amp;REQUEST_ID*' AND interface_status IS NOT NULL
+UNION
+ SELECT line.request_id, line.original_system_reference, head.customer_number,
+         head.customer_name, head.purchase_order_num,
+         'SO_LINES_INTERFACE' AS table_name, line.interface_status
+               AS error_text
+    FROM so_lines_interface line, so_headers_interface head
+   WHERE line.original_system_reference = head.original_system_reference
+     AND line.request_id = '&amp;REQUEST_ID*'
+     AND line.interface_status IS NOT NULL
+UNION
+ SELECT det.request_id, det.original_system_reference, head.customer_number,
+         head.customer_name, head.purchase_order_num,
+         'SO_LINE_DETAILS_INTERFACE' AS table_name,
+         det.interface_status AS error_text
+    FROM so_line_details_interface det, so_headers_interface_all head
+   WHERE det.original_system_reference = head.original_system_reference
+     AND det.request_id = '&amp;REQUEST_ID*'
+     AND det.interface_status IS NOT NULL
+UNION
+ SELECT adj.request_id, adj.original_system_reference, head.customer_number,
+         head.customer_name, head.purchase_order_num,
+         'SO_PRICE_ADJUSTMENTS_INTERFACE' AS table_name,
+         adj.interface_status AS error_text
+    FROM so_price_adjustments_interface adj, so_headers_interface_all head
+   WHERE adj.original_system_reference = head.original_system_reference
+     AND adj.request_id = '&amp;REQUEST_ID*'
+     AND adj.interface_status IS NOT NULL
+UNION
+ SELECT sales.request_id, sales.original_system_reference,
+         head.customer_number, head.customer_name, head.purchase_order_num,
+         'SO_SALES_CREDITS_INTERFACE' AS table_name,
+         sales.interface_status AS error_text
+    FROM so_sales_credits_interface sales, so_headers_interface_all head
+   WHERE sales.original_system_reference = head.original_system_reference
+     AND sales.request_id = '&amp;REQUEST_ID*'
+     AND sales.interface_status IS NOT NULL</value>
+      <record name="table0" javaclass="com.wm.util.Values">
+        <value name="tableName">SO_HEADERS_INTERFACE</value>
+        <value name="required">true</value>
+      </record>
+      <record name="table1" javaclass="com.wm.util.Values">
+        <value name="tableName">SO_LINES_INTERFACE</value>
+        <value name="required">false</value>
+      </record>
+      <record name="table2" javaclass="com.wm.util.Values">
+        <value name="tableName">SO_SALES_CREDITS_INTERFACE</value>
+        <value name="required">false</value>
+      </record>
+      <record name="table3" javaclass="com.wm.util.Values">
+        <value name="tableName">SO_PRICE_ADJUSTMENTS_INTERFACE</value>
+        <value name="required">false</value>
+      </record>
+      <record name="table4" javaclass="com.wm.util.Values">
+        <value name="tableName">SO_LINE_DETAILS_INTERFACE</value>
+        <value name="required">false</value>
+      </record>
+    </record>
+  </record>
+  <record name="FILE_INFO" javaclass="com.wm.util.Values">
+    <value name="OA_RELEASE">107SC</value>
+    <value name="DESCRIPTION">Sales Order Inbound Transaction Definition</value>
+    <value name="CREATE_HOST">webMethods</value>
+    <value name="CREATE_IM_VER">3.0</value>
+    <value name="CREATE_DATE">Nov 25, 2002 10:51:34 AM</value>
+  </record>
+</Values>

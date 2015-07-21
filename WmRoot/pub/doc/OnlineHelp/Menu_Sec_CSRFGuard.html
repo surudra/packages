@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="keywords" content="secu rity,csrf guard" />
+    <title>CSRF Guard Settings Screen</title>
+    <link rel="StyleSheet" href="css/_is_admin_help.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+  <body style="background-color: White; margin-bottom: 25px; margin-left: 25px; margin-right: 25px; margin-top: 0px; padding-top: 0px" onload="WWHUpdate();" onunload="WWHUnload();" onkeydown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onkeypress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onkeyup="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <table align="left" role="presentation">
+      <tr>
+        <td class="WebWorks_Company_Logo_Top">
+          <img src="sag_online.png" />
+        </td>
+      </tr>
+    </table>
+    <br clear="all" />
+    <hr align="left" />
+    <blockquote>
+      <div class="Heading_2"><a name="3_5_17_11_1">CSRF Guard Settings Screen</a></div>
+      <div class="Body"><span class="emphasis"><a name="3_5_17_11_3_2_3">Screen Heading</a></span>: <span class="uicontrol">Security &gt; CSRF Guard</span></div>
+      <div class="Body"><a name="3_5_17_11_3_2_5">The CSRF Guard Settings screen displays the CSRF guard settings in </a><span class="ph">Integration Server</span>.</div>
+      <div class="Body"><span class="ph"><a name="3_5_17_11_3_2_7">Integration Server</a></span> uses the <span class="term">CSRF guard</span> feature to prevent CSRF attacks. <span class="ph">Integration Server</span> applies CSRF guard by creating one CSRF secure token per session and adding it to the subsequent requests until the session expires. <span class="ph">Integration Server</span> creates a CSRF secure token when you log in. This token expires when the session ends.</div>
+      <div class="Body"><a name="3_5_17_11_3_2_9">When you send a request, </a><span class="ph">Integration Server</span> verifies the existence and validity of the token in the request and compare it to the token in the session. If the token is not found in the request or if the token in the request does not match the token in the session, <span class="ph">Integration Server</span> terminates the request. <span class="ph">Integration Server</span> also logs the event as a potential CSRF attack in the server log and the security audit log.</div>
+      <div class="Body"><a name="3_5_17_11_3_2_11">To open the CSRF Guard Settings screen, click </a><span class="uicontrol">CSRF Guard</span> under the <span class="uicontrol">Security</span> menu on the Navigation panel.</div>
+      <div class="List_1_outer" style="margin-left: 24px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_1_inner" style="width: 18pt; white-space: nowrap">
+                <img src="bullet1.png" alt="*" border="0" width="10" height="10" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_1_inner"><a name="3_5_17_11_3_2_13_2">Click </a><span class="uicontrol">Edit CSRF Guard Settings</span> to enable or disable CSRF guard and to configure the CSRF guard settings.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Definition_Term"><a name="3_5_17_11_3_2_15_2_2">Enabled</a></div>
+      <div class="Definition_Description"><a name="3_5_17_11_3_2_15_2_4">Specifies whether CSRF guard is enabled in </a><span class="ph">Integration Server</span>. <span class="uicontrol">True</span> indicates that CSRF guard is enabled. <span class="uicontrol">False</span> indicates that CSRF is not enabled. CSRF guard is disabled by default.</div>
+      <div class="Definition_Term"><a name="3_5_17_11_3_2_15_4_2">Excluded User Agents</a></div>
+      <div class="Definition_Description"><a name="3_5_17_11_3_2_15_4_4">Displays the list of user agents for which </a><span class="ph">Integration Server</span> does not apply CSRF guard. If CSRF guard is enabled, <span class="ph">Integration Server</span> requires that HTTP requests coming from user agents that are not specified in this field must contain CSRF secure tokens.</div>
+      <div class="Definition_Term"><a name="3_5_17_11_3_2_15_6_2">Landing Pages</a></div>
+      <div class="Definition_Description"><a name="3_5_17_11_3_2_15_6_4">Displays the list of landing pages for the packages in your </a><span class="ph">Integration Server</span>. A landing page is the home page for a package. <span class="ph">Integration Server</span> does not check for CSRF secure tokens in the landing pages, but inserts a token for that page. <span class="ph">Integration Server</span> guards all further requests from these landing pages with CSRF secure tokens.</div>
+      <div class="Definition_Term"><a name="3_5_17_11_3_2_15_8_2">Unprotected URLs</a></div>
+      <div class="Definition_Description"><a name="3_5_17_11_3_2_15_8_4">Displays the URLs for which </a><span class="ph">Integration Server</span> does not check for CSRF secure tokens. <span class="ph">Integration Server</span> requires that the requests coming from all URLs that are not specified in this field must contain CSRF secure tokens.</div>
+      <div class="Definition_Description"><a name="3_5_17_11_3_2_15_8_4_7">If you specify a DSP file as an unprotected URL, </a><span class="ph">Integration Server</span> will not insert a CSRF secure token for that file. If you attempt to access any other protected page from this DSP page, <span class="ph">Integration Server</span> issues an error or redirects you to the home page of <span class="ph">Integration Server Administrator</span> depending on your <span class="uicontrol">Denial Action</span> configuration.</div>
+      <div class="Definition_Term"><a name="3_5_17_11_3_2_15_10_2">Denial Action</a></div>
+      <div class="Definition_Description"><a name="3_5_17_11_3_2_15_10_4">Displays the action that you have configured </a><span class="ph">Integration Server</span> to perform when it detects that a request does not contain a CSRF secure token or contains an invalid CSRF secure token.</div>
+      <div class="Definition_Description"><span class="uicontrol"><a name="3_5_17_11_3_2_15_10_4_5">Error</a></span> indicates that you want <span class="ph">Integration Server</span> to throw an access denied error and terminate the request. This is the default.</div>
+      <div class="Definition_Description"><span class="uicontrol"><a name="3_5_17_11_3_2_15_10_4_7">Redirect</a></span> specifies that <span class="ph">Integration Server</span> is to redirect the user to a confirmation page or the home page of <span class="ph">Integration Server Administrator</span>.</div>
+      <div class="Link_List_Title"><a name="3_5_17_11_4_2_2">Related Topics</a></div>
+      <div class="Related_Reference">
+        <img src="spacer_24.png" alt="*" border="0" width="24" height="6" /><span class="Link_Text"><a href="javascript:WWHClickedPopup('is_help', 'Menu_Sec_CSRFGuardEdit.html', '');" title="Edit CSRF Settings Screen" name="3_5_17_11_4_2_4">Edit CSRF Settings Screen</a></span></div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <div>
+      <hr />
+      <div style="font-family: Arial, Verdana, Helvetica, Sans-Serif; font-size: 12px;margin-top: 20px;margin-bottom: 20px;">
+        <span class="xref">
+          <a href="http://documentation.softwareag.com/legal/" target="external_window">Copyright © <span></span><span></span><span>2007</span><span>-2014</span> Software AG, Darmstadt, Germany</a>
+        </span>.</div>
+    </div>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+  </body>
+</html>

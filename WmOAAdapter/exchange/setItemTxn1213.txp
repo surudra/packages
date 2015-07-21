@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<IDataXMLCoder version="1.0">
+  <record javaclass="com.wm.data.ISMemDataImpl">
+    <record name="transactions" javaclass="com.wm.data.ISMemDataImpl">
+      <record name="setItemTxn" javaclass="com.wm.data.ISMemDataImpl">
+        <value name="transactionName">setItemTxn</value>
+        <value name="transactionType">IN</value>
+        <value name="errSQL">SELECT ITEM_NUMBER,DESCRIPTION,  ORGANIZATION_NAME, TABLE_NAME, MESSAGE_NAME, COLUMN_NAME, ERROR_MESSAGE FROM MTL_SYSTEM_ITEMS_INTERFACE , MTL_INTERFACE_ERRORS,ORG_ORGANIZATION_DEFINITIONS WHERE MTL_INTERFACE_ERRORS.TRANSACTION_ID = MTL_SYSTEM_ITEMS_INTERFACE.TRANSACTION_ID AND ORG_ORGANIZATION_DEFINITIONS.ORGANIZATION_ID = MTL_SYSTEM_ITEMS_INTERFACE.ORGANIZATION_ID AND SET_PROCESS_ID ='&amp;SET_PROCESS_ID*' AND PROCESS_FLAG IN (3,4)</value>
+        <record name="table0" javaclass="com.wm.data.ISMemDataImpl">
+          <value name="tableName">MTL_SYSTEM_ITEMS_INTERFACE</value>
+          <value name="required">true</value>
+        </record>
+        <record name="table1" javaclass="com.wm.data.ISMemDataImpl">
+          <value name="tableName">MTL_ITEM_REVISIONS_INTERFACE</value>
+          <value name="required">false</value>
+        </record>
+        <record name="table2" javaclass="com.wm.data.ISMemDataImpl">
+          <value name="tableName">MTL_ITEM_CATEGORIES_INTERFACE</value>
+          <value name="required">false</value>
+        </record>
+      </record>
+    </record>
+    <record name="FILE_INFO" javaclass="com.wm.data.ISMemDataImpl">
+      <value name="OA_RELEASE">1213</value>
+      <value name="DESCRIPTION"></value>
+      <value name="CREATE_HOST">webmethods</value>
+      <value name="CREATE_IM_VER"></value>
+      <value name="CREATE_DATE">May 10, 2005 1:30:03 PM</value>
+    </record>
+  </record>
+</IDataXMLCoder>

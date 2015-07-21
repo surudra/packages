@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:acdl="http://namespaces.softwareag.com/acdl/1.0" elementFormDefault="qualified" targetNamespace="http://namespaces.softwareag.com/acdl/1.0">
+
+	<complexType name="PropertyType">
+		<sequence>
+			<element maxOccurs="unbounded" minOccurs="0" name="value" type="anySimpleType"/>
+		</sequence>
+		<!-- TBD: could the property name have space? -->
+		<attribute name="name" type="string" use="required"/>
+		<attribute default="false" name="many" type="boolean"/>
+		<attribute name="data_type" use="optional">
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="string"/>
+					<enumeration value="number"/>
+					<enumeration value="url"/>
+					<enumeration value="datetime"/>
+					<enumeration value="boolean"/>
+          <enumeration value="text"/>
+				</restriction>
+			</simpleType>
+		</attribute>
+		<attribute default="false" name="isSecure" type="boolean"/>
+		<attribute name="displayName" type="string" use="optional"/>
+	</complexType>
+
+	<complexType name="Implementation">
+		<sequence>
+			<any maxOccurs="unbounded" minOccurs="0" namespace="##other" processContents="lax"/>
+		</sequence>
+		<attribute name="type" type="string" use="required"/>
+	</complexType>
+
+	<complexType name="ACDLComponent">
+		<sequence>
+			<element name="implementation.generic" type="acdl:Implementation"/>
+			<choice maxOccurs="unbounded" minOccurs="0">
+				<element name="property" type="acdl:PropertyType"/>
+				<!-- The string must have an explicit format: "run-time type : full asset names"
+					the format is mandatory for all dependencies: internal for the composite
+					and the external ones.
+				-->
+				<element name="dependsOn" type="acdl:DependsOn"/>
+			</choice>
+		</sequence>
+
+		<!-- the name should be encoded using a common/encode/decode algorithm -->
+		<attribute name="name" type="string" use="required"/>
+		<attribute name="displayName" type="string" use="optional"/>
+		<attribute default="true" name="isDeployable" type="boolean" use="optional"/>
+	</complexType>
+	
+	<complexType name="DependsOn">
+    <simpleContent>
+      <extension base="string">
+        <attribute name="logicalServer" type="string" use="optional"/>
+      </extension>
+    </simpleContent>
+  </complexType>
+
+	<complexType name="BuildInfo">
+		<attribute name="name" type="string"/>
+		<attribute name="value" type="string"/>
+	</complexType>
+
+	<element name="asset_composite" type="acdl:ACDLComposite"/>
+	<complexType name="ACDLComposite">
+		<sequence>
+			<element minOccurs="0" name="implementation.generic" type="acdl:Implementation"/>
+			<choice maxOccurs="unbounded" minOccurs="0">
+				<element name="property" type="acdl:PropertyType"/>
+				<element name="asset" type="acdl:ACDLComponent"/>
+				<element name="buildInfo" type="acdl:BuildInfo"/>
+			</choice>
+		</sequence>
+		<!-- Change: The name attribute is obsolete. The actual unique name is the ACDL file name it self
+Change 2: The unique name is back in the schema as per the discussion here: http://iwiki.eur.ad.sag:8080/display/SHRPROD/Discussion+about+bringing+the+name+of+the+composite+back+in+the+ACDL+file+itself
+
+-->
+		<attribute name="name" type="string" use="required"/>
+		<attribute name="displayName" type="string" use="optional"/>
+		<attribute name="targetNamespace" type="anyURI" use="required"/>
+		<attribute name="runtimeVersion" type="string" use="required"/>
+	</complexType>
+</schema>

@@ -1,0 +1,718 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+<title>webMethods JDBC Adapter 6.5 readme</title>
+<style>
+<!--
+  /* Named Styles */
+
+    .wm-rmBody {
+    	font-family:        "Courier New", Courier, monospace;
+    	font-size:          10.0pt;
+    	font-weight:        normal;
+    	font-style:         normal;
+    	margin-top:         12.0pt;
+    	margin-right:       0in;
+    	margin-bottom:      0in;
+    	margin-left:        0in;  }
+
+
+    .wm-rmBodyIndent {
+    	font-family:        "Courier New", Courier, monospace;
+    	font-size:          10.0pt;
+    	font-weight:        normal;
+    	font-style:         normal;
+    	margin-top:         12.0pt;
+    	margin-right:       0in;
+    	margin-bottom:      0in;
+    	margin-left:       .25in;  }
+
+
+    .wm-rmInstructionsToWriter
+     {
+    	font-family:        "Times New Roman", "Times Roman", serif;
+    	font-size:          9.0pt;
+    	font-style:         italic;
+    	font-weight:        normal;
+    	color:              red;
+    	margin-top:         6.0pt;
+    	margin-right:       0in;
+    	margin-bottom:      0in;
+    	margin-left:        0in;  }
+
+
+    .wm-rmBulletList {
+    	font-family:        "Courier New", Courier, monospace;
+    	font-size:          10.0pt;
+    	font-style:         normal;
+    	font-weight:        normal;
+    	margin-top:         9.0pt;
+    	margin-right:       0in;
+    	margin-bottom:      0in;
+    	margin-left:       .25in;
+    	text-indent:      -.25in;  }
+
+
+    .wm-rmTableHead {
+    	font-family:         Arial, Helvetica, sans-serif;
+    	font-size:           9.0pt;
+    	font-style:          normal;
+    	font-weight:         bold;
+    	margin-top:          12.0pt;
+    	margin-right:        0in;
+    	margin-bottom:       0in;
+    	margin-left:         0in;
+    	border:              bottom;
+    	padding:             0in;  }
+
+
+    .wm-rmTableCell {
+    	font-family:         "Courier New", Courier, monospace;
+    	font-size:           9.0pt;
+    	font-style:          normal;
+    	font-weight:         normal;
+    	margin-top:          6.0pt;
+    	margin-right:        0in;
+    	margin-bottom:       3.0pt;
+    	margin-left:         0in;
+    	padding:             0in;  }
+
+
+    /* Tag Styles */
+
+    h1 {
+    	font-family:     Arial, Helvetica, sans-serif;
+    	font-size:           16.0pt;
+    	font-style:          normal;
+    	font-weight:         bold;
+    	margin-top:          12.0pt;
+    	margin-right:        0in;
+    	margin-left:         0in;
+    	margin-bottom:       3.0pt;
+    	text-align:          center;  }
+
+
+    h2 {
+    	font-family:         Arial, Helvetica, sans-serif;
+    	font-size:           14.0pt;
+    	font-style:          normal;
+    	font-weight:         bold;
+    	margin-top:          12.0pt;
+    	margin-right:        0in;
+    	margin-left:         0in;
+    	margin-bottom:       3.0pt;  }
+
+
+    h3  {
+    	font-family:         Arial, Helvetica, sans-serif;
+    	font-size:           12.0pt;
+    	font-style:          normal;
+    	font-weight:         bold;
+    	margin-top:         .25in;
+    	margin-right:        0in;
+    	margin-bottom:       0in;
+    	margin-left:         0in;  }
+
+
+    a:link {
+    	color:               blue;
+    	text-decoration:     none;  }
+
+
+    a:visited {
+    	color:               purple;
+    	text-decoration:     none;  }
+
+
+    a:hover {
+    	text-decoration   :  underline; }
+
+
+    p {
+    	font-family:        "Courier New", Courier, monospace;
+    	font-size:          10.0pt;
+    	font-weight:        normal;
+    	font-style:         normal;
+    	margin-top:         12.0pt;
+    	margin-right:       0in;
+    	margin-bottom:      0in;
+    	margin-left:        0in;  }
+
+
+    th {
+    	font-family:         Arial, Helvetica, sans-serif;
+    	font-size:           9.0pt;
+    	font-style:          normal;
+    	font-weight:         bold;
+    	margin-top:          12.0pt;
+    	margin-right:        0in;
+    	margin-bottom:       0in;
+    	margin-left:         0in;
+    	border:              bottom;
+    	padding:             0in;  }
+
+
+    td {
+    	font-family:         "Courier New", Courier, monospace;
+    	font-size:           0.0pt;
+    	font-style:          normal;
+    	font-weight:         normal;
+    	margin-top:          6.0pt;
+    	margin-right:        0in;
+    	margin-bottom:       0in;
+    	padding:             0in;
+    	margin-left:         0in;  }
+
+
+    ul {
+    	font-family:        "Courier New", Courier, monospace;
+    	font-size:          10.0pt;
+    	font-style:         normal;
+    	font-weight:        normal;
+    	list-style :        square;  }
+
+
+    ol {
+    	font-family:        "Courier New", Courier, monospace;
+    	font-size:          10.0pt;
+    	font-style:         normal;
+    	font-weight:        normal;  }
+
+
+-->
+</style>
+</head>
+
+<body lang=EN-US link=blue vlink=purple>
+
+<div class=Section1>
+
+<h1><a name="wmRM_title">webMethods JDBC Adapter 6.5
+readme</a></h1>
+
+<div style='border:none;border-bottom:solid windowtext 1.0pt;padding:0in 0in 1.0pt 0in'>
+
+<h2 align=center style='text-align:center'>December 2006</h2>
+
+</div>
+
+<p class=wm-rmBody>This file provides important information you should read
+before using webMethods JDBC Adapter 6.5.</p>
+
+<p class=wm-rmBody>Installation and upgrade instructions are located in the <span
+class=MsoHyperlink><i><a
+href="http://advantage.webmethods.com/article/?id=bookshelf_adapters_jdbc"
+target="_blank">webMethods JDBC Adapter 6.5 Installation Guide</a></i></span>.
+For a complete list of webMethods JDBC Adapter 6.5 documentation, see section <span
+class=MsoHyperlink><a href="#_7.0_Documentation">8.0 Documentation</a></span>
+in this readme. </p>
+
+<p class=wm-rmBody>For information about technical support, see the <span
+class=MsoHyperlink><a
+href="http://advantage.webmethods.com/releases_adapter_support" target="_blank">Adapter
+Support Policy</a></span>.</p>
+
+<p class=wm-rmBody>Information in this readme might have been updated since you
+last downloaded it. Go to the <a
+href="http://advantage.webmethods.com/bookshelf" target="_blank">webMethods
+Bookshelf</a> or the webMethods Installer for the latest version of the readme.</p>
+
+<div style='border:none;border-bottom:solid windowtext 1.0pt;padding:0in 0in 1.0pt 0in'>
+
+<h2>Contents</h2>
+
+</div>
+
+<p class=wm-rmBody>1.0 <a href="#_1.0_Critical_Information">Critical Information</a></p>
+
+<p class=wm-rmBody>2.0 <a href="#_2.0_Known_Issues">Known Issues</a></p>
+
+<p class=wm-rmBody>3.0 <a href="#_3.0_Usage_Notes_1">Usage Notes</a></p>
+
+<p class=wm-rmBody>4.0 <a href="#_4.0_Enhancements_and">Enhancements and Fixes</a></p>
+
+<p class=wm-rmBody>5.0 <a href="#_5.0_Deprecated_Items_1">Deprecated Items</a></p>
+
+<p class=wm-rmBody>6.0 <a href="#_6.0_Globalization">Globalization</a></p>
+
+<p class=wm-rmBody>    6.1 <a
+href="#_6.1_Certification">Configuration</a></p>
+
+<p class=wm-rmBody>    6.2 <a
+href="#_6.2_Localization">Localization</a></p>
+
+<p class=wm-rmBody>7.0 <a href="#_7.0_Core_Security">Core Security Facilities</a></p>
+
+<p class=wm-rmBody>    7.1 <a
+href="#_7.1_Authenticated_Network">Authenticated Network Traffic</a></p>
+
+<p class=wm-rmBody>    7.2 <a
+href="#_7.2_Encrypted_Network">Encrypted Network Traffic</a></p>
+
+<p class=wm-rmBody>    7.3 <a
+href="#_7.3_Inbound_Password">Inbound Password Protection</a></p>
+
+<p class=wm-rmBody>    7.4 <a
+href="#_7.4_Outbound_Password">Outbound Password Protection</a> </p>
+
+<p class=wm-rmBody>    7.5 <a
+href="#_7.5_Private_Key"><span class=GramE>Private Key Protection</span></a></p>
+
+<p class=wm-rmBody>    7.6 <a
+href="#_7.6_Security_Auditing">Security Auditing</a></p>
+
+<p class=wm-rmBody>    7.7 <a
+href="#_7.7_Hardwired_Passwords">Hardwired Passwords</a></p>
+
+<p class=wm-rmBody>8.0 <a href="#_6.3_Known_Globalization">Documentation</a></p>
+
+<p class=wm-rmBody>    8.1 <a
+href="#_8.1_Major_Documentation">Major Documentation Changes</a></p>
+
+<p class=wm-rmBody>    8.2 <a
+href="#_8.2_Known_Documentation">Known Documentation Issues</a></p>
+
+<p class=wm-rmBody>9.0 <a href="#_9.0_Copyright_Information">Copyright Information</a></p>
+
+<p class=wm-rmBody>10.0 <a href="#_9.0_Contacting_webMethods">Contacting <span
+class=SpellE>webMethods</span></a></p>
+
+<p class=wm-rmBody>11.0 <a href="#_10.0_Viewing_the">Viewing the readme for the
+Previous Version</a></p>
+
+<div style='border:none;border-bottom:solid windowtext 1.0pt;padding:0in 0in 1.0pt 0in'>
+
+<h2><a name="_1.0_Critical_Information"></a>1.0 Critical Information</h2>
+
+</div>
+
+<p class=wm-rmBody><a name="_2.0_Known_Issues_1"></a>None.</p>
+
+<p class=wm-rmBody>For late-breaking critical information, refer to the <span
+class=MsoHyperlink><a href="http://advantage.webmethods.com/criticalinfo"
+target=newwin>Critical Information area</a></span> on the <span
+class=MsoHyperlink><a href="http://advantage.webmethods.com/" target="_blank"><span
+class=SpellE>webMethods</span> Advantage Web site</a></span>. </p>
+
+<div style='border:none;border-bottom:solid windowtext 1.0pt;padding:0in 0in 1.0pt 0in'>
+
+<h2><a name="_2.0_Known_Issues"></a>2.0 Known Issues</h2>
+
+</div>
+
+<h3><a name="_3.0_Usage_Notes"></a>2.1 Adapter Issues</h3>
+
+<p class=wm-rmBody style='margin-left:.15in;text-indent:-.15in'>- During
+configuration of the <span class=SpellE>StoredProcedureWithSignature</span>
+service, the value of the Output Field changes if you change an IN expression
+from '?' to a 'fixed value', or vice versa.&nbsp; To resolve this, after making
+changes to the IN expression field, select or type the Output Field name again.</p>
+
+<p class=wm-rmbody0 style='margin-left:.15in;text-indent:-.15in'>- For DB2 for
+OS/390, non repeatable read does not function when the transaction isolation
+level is set to 2. For Teradata, non repeatable read cannot be avoided even
+after setting the transaction isolation level to 8.</p>
+
+<p class=wm-rmbody0 style='margin-left:.15in;text-indent:-.15in'>- For Informix,
+phantom read does not function when the transaction isolation level is set to
+4. For Teradata, phantom read cannot be avoided even after setting the
+transaction isolation level to 8.</p>
+
+<p class=wm-rmbody0 style='margin-left:.15in;text-indent:-.15in'>- For Oracle,
+when using Oracle Array or <span class=SpellE>Struct</span> as OUT parameters
+in an Oracle stored procedure, use the <span class=SpellE>StoredProcedureWithSignature</span>
+service. <span class=SpellE>StoredProcedure</span> service currently does not
+support Oracle procedures with a similar signature.</p>
+
+<p class=wm-rmbody0 style='margin-left:.15in;text-indent:-.15in'>- For
+Teradata, dirty read does not function when the transaction isolation level is
+set to 1.</p>
+
+<p class=wm-rmbody0 style='margin-left:.15in;text-indent:-.15in'>- For Teradata,
+the table type is shown as ‘T’ instead of ‘Table’. This is because the driver
+returns ‘T’ as the <span class=GramE>type for the table, during table name look</span>
+up in service templates.</p>
+
+<p class=wm-rmbody0 style='margin-left:.15in;text-indent:-.15in'>- For
+Teradata, the <span class=SpellE>ExecuteService</span> adapter service does not
+honor the transaction boundaries laid down by ART.</p>
+
+<p class=wm-rmbody0 style='margin-left:.15in;text-indent:-.15in'>- For Oracle
+10g, <span class=SpellE>StoredProcedureWithSignature</span> adapter service
+does not work with Oracle functions having an Array type in its signature.</p>
+
+<p class=wm-rmBody style='margin-left:.15in;text-indent:-.15in'>- To avoid a
+file conflict when using Informix, you must disable the WmTomcat package in the
+Integration Server.&nbsp; Be aware that this also disables support for JSPs.</p>
+
+<p class=wm-rmBody style='margin-left:.15in;text-indent:-.15in'>- When using
+the BatchInsert or BatchUpdate service with Sybase, you may receive the
+following error message, if the service attempts to return a large number of
+records: </p>
+
+<p class=wm-rmBody style='margin-left:.15in'>&quot;JZ0BE:BatchUPdateException:Error
+occurred while executing batch statement:Too many parameters--symbol table
+overflow&quot;</p>
+
+<p class=wm-rmBody style='margin-left:.15in'>To resolve this problem, apply a
+jConnect 5.5 emergency bug <span class=GramE>fix</span> EBF 11473, which is
+available at: <span class=MsoHyperlink><a
+href="http://downloads.sybase.com/swd/swx/sdfile.stm" target="_blank">http://downloads.sybase.com/swd/swx/sdfile.stm</a></span><span
+class=wm-rmbodyChar0>.</span></p>
+
+<p class=wm-rmBody style='margin-left:.15in;text-indent:-.15in'>- You cannot
+enable C-JDBC 3.2 driver connections using JVM 1.4.1_01, 1.4.1_03, or 1.4.1_05.</p>
+
+<p class=wm-rmBody><b><span
+style='font-size:12.0pt;font-family:Arial'>2.2 Driver Limitations</span></b></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width=603
+ style='width:452.55pt;border-collapse:collapse;'>
+ <tr>
+  <td width=150 valign=top style='width:112.85pt;border:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=wm-rmbody0>Database/Platform Affected</p>
+  </td>
+  <td width=118 valign=top style='width:88.85pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=wm-rmbody0><br>
+  Driver</p>
+  </td>
+  <td width=334 valign=top style='width:250.85pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=wm-rmbody0><br>
+  Limitation Description and Solution</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=150 valign=top style='width:112.85pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=wm-rmbody0>DB2 UDB 7.2 and 8.1</p>
+  </td>
+  <td width=118 valign=top style='width:88.85pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=wm-rmbody0>Type 2 App, Type 3 Net</p>
+  </td>
+  <td width=334 valign=top style='width:250.85pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=wm-rmbody0>StoredProcedure and StoredProcedureWithSignature adapter
+   services, and StoredProcedure and StoredProcdeureNotificationWithSignature adapter
+   notifications do not display functions in the Procedure Name field.&nbsp;</p>
+  <p class=wm-rmbody0>Instead, use the StoredProcedure service or StoredProcedure notification
+  and type the function name in the Procedure Name field.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=150 valign=top style='width:112.85pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=wm-rmbody0>Oracle 8i, 9i, and 10g</p>
+  </td>
+  <td width=118 valign=top style='width:88.85pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=wm-rmbody0>Oracle 8i, 9i, and 10g Thin and OCI JDBC classes12
+  drivers</p>
+  </td>
+  <td width=334 valign=top style='width:250.85pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=wm-rmbody0>StoredProcedureWithSignature services and
+  StoredProcedureNotificationWithSignature notifications do not work with Stored
+  Procedures containing a parameter of type Oracle Cursor, when the ref cursor
+  is declared as a cursor type that is defined as a strong type with the
+  %ROWTYPE attribute.&nbsp;</p>
+  <p class=wm-rmbody0>Instead, define the ref cursor as a weak type.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=150 valign=top style='width:112.85pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=wm-rmbody0>DB2 for OS/390 V7</p>
+  </td>
+  <td width=118 valign=top style='width:88.85pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=wm-rmbody0>Type 3 Net</p>
+  </td>
+  <td width=334 valign=top style='width:250.85pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=wm-rmbody0>StoredProcedureWithSignature services and
+  StoredProcedureNotificationWithSignature notifications are supported only on
+  DB2 for OS/390 V6. </p>
+  <p class=wm-rmbody0>Instead, use the StoredProcedure service or StoredProcedure notification.&nbsp;</p>
+  </td>
+ </tr>
+</table>
+
+<p class=wm-rmBody>For other known issues and troubleshooting information about
+webMethods JDBC Adapter 6.5, go to the <span class=MsoHyperlink><a
+href="http://advantage.webmethods.com/article/?id=536945763" target="_blank"><span
+class=SpellE>webMethods</span> Advantage Knowledge Base</a></span>.</p>
+
+<div style='border:none;border-bottom:solid windowtext 1.0pt;padding:0in 0in 1.0pt 0in'>
+
+<h2><a name="_3.0_Usage_Notes_1"></a>3.0 Usage Notes</h2>
+
+</div>
+
+<p class=wm-rmBulletList>None.</p>
+
+<div style='border:none;border-bottom:solid windowtext 1.0pt;padding:0in 0in 1.0pt 0in'>
+
+<h2><a name="_4.0_Enhancements_and"></a>4.0 Enhancements and Fixes</h2>
+
+</div>
+
+<p class=wm-rmBody>For information about enhancements and fixes in webMethods
+JDBC Adapter 6.5, see the <a name="_5.0_Deprecated_Items"></a><span
+class=MsoHyperlink><a
+href="http://advantage.webmethods.com/article/?id=bookshelf_adapters_jdbc"
+target="_blank">webMethods JDBC Adapter 6.5 Enhancements and Fixes document</a></span>.</p>
+
+<div style='border:none;border-bottom:solid windowtext 1.0pt;padding:0in 0in 1.0pt 0in'>
+
+<h2><a name="_5.0_Deprecated_Items_1"></a>5.0 Deprecated Items</h2>
+
+</div>
+
+<p class=wm-rmBulletList>None.</p>
+
+<div style='border:none;border-bottom:solid windowtext 1.0pt;padding:0in 0in 1.0pt 0in'>
+
+<h2><a name="_6.0_Globalization"></a><a name="_7.0_Core_Security_1"></a>6.0
+Globalization</h2>
+
+</div>
+
+<p class=wm-rmBody><span class=GramE>webMethods</span> JDBC Adapter 6.5
+conforms to the internationalization standards of webMethods and includes
+support for operation in any country, locale, or language as specified in the
+webMethods Installation Guide. It was tested with non-English configurations
+and non-ASCII data.</p>
+
+<h3><a name="_6.1_Certification"></a><a name="_6.1_Configuration"></a>6.1
+Configuration </h3>
+
+<p class=wm-rmBody>If you expect to display non-English data in your webMethods
+tools, make sure an appropriate font is installed in your operating
+environment. If you see hollow boxes or black squares where you expect to see
+non-English characters, modify your JRE <span class=SpellE>font.properties</span>
+file to reference an appropriate font. For information on modifying your <span
+class=SpellE>font.properties</span> file, go to Sun's Java website. For
+instructions, see:
+
+<p class=MsoNormal><span class=MsoHyperlink><span style='font-size:10.0pt;font-family:"Courier New"'><a
+href="http://java.sun.com/j2se/1.4.2/docs/guide/intl/fontprop.html"
+target="_blank"
+title="http://java.sun.com/j2se/1.4.2/docs/guide/intl/fontprop.html">http://java.sun.com/j2se/1.4.2/docs/guide/intl/fontprop.html</a></span></span></p>
+
+<p class=MsoNormal><span class=MsoHyperlink><span style='font-size:10.0pt;font-family:"Courier New"'><a
+href="http://java.sun.com/j2se/1.5.0/docs/guide/intl/fontconfig.html"
+target="_blank"
+title="http://java.sun.com/j2se/1.5.0/docs/guide/intl/fontconfig.html">http://java.sun.com/j2se/1.5.0/docs/guide/intl/fontconfig.html</a></span></span></p>
+
+<p class=MsoNormal><span class=MsoHyperlink><span style='font-size:10.0pt;font-family:"Courier New"'><a
+href="http://www.unicode.org/help/display_problems.html" target="_blank"
+title="http://www.unicode.org/help/display problems.html">http://www.unicode.org/help/display_problems.html</a></span></span></p>
+
+<p class=wm-rmBody>The configuration of the database you use with webMethods
+JDBC Adapter 6.5 affects the characters the database can contain. If you select
+a non-Unicode encoding for the database, characters from outside that encoding
+will be lost when you store data in the database. <span class=GramE>webMethods</span>
+recommends that you use the most appropriate Unicode encoding for your database
+character set. See the webMethods Installation Guide and your database vendor's
+documentation for instructions on choosing and setting the character encoding
+for your database and environment.</p>
+
+<h3><a name="_6.3_Localization"></a><a name="_6.2_Localization"></a>6.2
+Localization </h3>
+
+<p class=wm-rmBody><span class=SpellE><span class=GramE>webMethods</span></span>
+JDBC Adapter 6.5 is provided with an English user interface, messages, and
+documentation. Language packs containing support for other languages, when
+available, can be installed at any time using the webMethods Installer. <span
+class=GramE>webMethods</span> JDBC Adapter 6.5 supports simultaneous
+multi-locale operation.</p>
+
+<div style='border:none;border-bottom:solid windowtext 1.0pt;padding:0in 0in 1.0pt 0in'>
+
+<h2><a name="_7.0_Core_Security"></a>7.0 Core Security Facilities</h2>
+
+</div>
+
+<p class=wm-rmBody>Effective with webMethods 7, all webMethods products address
+seven core security facilities, either by providing all of them or explaining
+what aspects are not met. Additional information can be found on Advantage in <a
+href="https://advantage.webmethods.com/product_security_information"
+target="_blank">https://advantage.webmethods.com/product_security_information</a></span>.</p>
+
+<p class=wm-rmBody><span class=SpellE>webMethods</span> JDBC Adapter does not
+conform to all webMethods core security facilities requirements as described in
+the following paragraphs. </p>
+
+<h3><a name="_7.1_Authenticated_Network"></a>7.1 Authenticated Network Traffic </h3>
+
+<p class=wm-rmBody>webMethods JDBC Adapter is capable of authenticating all
+network traffic. Instructions on configuring webMethods JDBC Adapter to perform
+authentication can be found in the <i>webMethods JDBC Adapter User’s Guide</i>
+(see section <span class=MsoHyperlink><a href="#_7.0_Documentation">8.0
+Documentation</a></span> in this readme).</p>
+
+<h3><a name="_7.2_Encrypted_Network"></a>7.2 Encrypted Network Traffic </h3>
+
+<p class=wm-rmBody>webMethods JDBC Adapter is not capable of encrypting any
+network traffic.</p>
+
+<p class=wm-rmBody>webMethods suggests using a Virtual Private Network (VPN) as
+an alternative to encryption.</p>
+
+<h3><a name="_7.3_Inbound_Password"></a>7.3 Inbound Password Protection</h3>
+
+<p class=wm-rmBody>webMethods JDBC Adapter does not include any inbound
+passwords, so this requirement is not applicable.</p>
+
+<h3><a name="_7.4_Outbound_Password"></a>7.4 Outbound Password Protection </h3>
+
+<p class=wm-rmBody>webMethods JDBC Adapter stores all outbound passwords in
+encrypted form, which are resistant to tampering or theft even if they are
+stolen.</p>
+
+<h3><a name="_7.5_Private_Key"></a>7.5 Private Key Protection </h3>
+
+<p class=wm-rmBody>webMethods JDBC Adapter does not include any private keys,
+so this requirement is not applicable.</p>
+
+<h3><a name="_7.6_Security_Auditing"></a>7.6 Security Auditing</h3>
+
+<p class=wm-rmBody>webMethods JDBC Adapter relies on the hosting Integration
+Server to provide security auditing. See the corresponding section of the
+Integration Server readme which provides directions on Integration Server
+security auditing.</p>
+
+<h3><a name="_7.7_Hardwired_Passwords"></a>7.7 Hardwired Passwords </h3>
+
+<p class=wm-rmBody>webMethods JDBC Adapter does not contain any hardwired
+(unchangeable) passwords.</p>
+
+<div style='border:none;border-bottom:solid windowtext 1.0pt;padding:0in 0in 1.0pt 0in'>
+
+<h2><a name="_6.3_Known_Globalization"></a><a name="_7.0_Documentation"></a><a
+name="_8.0_Documentation"></a>8.0 Documentation</h2>
+
+</div>
+
+<p class=wm-rmBody><a name="_7.1_Major_Documentation"></a>For webMethods JDBC
+Adapter 6.5 technical documentation, go to the IntegrationServer/packages/WmJDBCAdapter/doc
+directory or the <span class=MsoHyperlink><a
+href="http://advantage.webmethods.com/article/?id=bookshelf_adapters_jdbc"
+target="_blank">JDBC Adapter page on the webMethods Advantage Bookshelf</a></span>.
+These manuals are provided as PDF files: </p>
+
+<p class=wm-rmBulletList>-  <i>webMethods
+JDBC Adapter Installation Guide</i></p>
+
+<p class=wm-rmBulletList>-  <i>webMethods
+JDBC Adapter User’s Guide</i></p>
+
+<p class=wm-rmBody>To view the documentation, you must have <span
+class=MsoHyperlink><a href="http://www.adobe.com/products/acrobat/readstep.html"
+target="_blank">Adobe Acrobat Reader 5.0 or later</a></span>.</p>
+
+<h3><a name="_8.1_Major_Documentation"></a>8.1 Major Documentation Changes</h3>
+
+<p class=wm-rmBody><a name="_7.2_Known_Documentation"></a>None.</p>
+
+<h3><a name="_8.2_Known_Documentation"></a>8.2 Known Documentation Issues</h3>
+
+<p class=wm-rmBody><a name="_8.0_Copyright_Information"></a>None.</p>
+
+<div style='border:none;border-bottom:solid windowtext 1.0pt;padding:0in 0in 1.0pt 0in'>
+
+<h2><a name="_9.0_Copyright_Information"></a>9.0 Copyright Information</h2>
+
+</div>
+
+<p class=wm-rmBody>webMethods Access, webMethods Administrator, webMethods
+Broker, webMethods Dashboard, webMethods Developer, webMethods Fabric,
+webMethods Glue, webMethods Installer, webMethods Integration Server,
+webMethods Mainframe, webMethods Manager, webMethods Modeler, webMethods
+Monitor, webMethods Optimize, webMethods Portal, webMethods Servicenet,
+webMethods Trading Networks, and webMethods Workflow are trademarks of
+webMethods, Inc. </p>
+
+<p class=wm-rmBody>webMethods and the webMethods logo are registered trademarks
+of webMethods, Inc.</p>
+
+<p class=wm-rmBody>All other marks are the property of their respective owners.
+</p>
+
+<p class=wm-rmBody>Copyright (c) 2006 by webMethods, Inc. All rights reserved,
+including the right of reproduction in whole or in part in any form.</p>
+
+<h3>9.2 Other Product Copyrights</h3>
+
+<p class=wm-rmBody>For information about third-party copyrights, see &lt;webMethods_directory&gt;\3rdPartyLic.txt.</p>
+
+<div style='border:none;border-bottom:solid windowtext 1.0pt;padding:0in 0in 1.0pt 0in'>
+
+<h2><a name="_9.0_Contacting_webMethods"></a><a
+name="_10.0_Contacting_webMethods"></a>10.0 Contacting webMethods</h2>
+
+</div>
+
+<p class=wm-rmBody>Authorized technical support contacts can reach webMethods
+Customer Care for support via:</p>
+
+<p class=wm-rmBody><b><span
+style='font-size:12.0pt;font-family:Arial'>Web:      </span></b><span class=MsoHyperlink><a
+href="http://advantage.webmethods.com/" target="_blank"><span class=SpellE>webMethods</span>
+Advantage</a></span>  <span class=SpellE>webMethods</span>
+online support center</p>
+
+<p class=wm-rmBody><b><span
+style='font-size:12.0pt;font-family:Arial'>E-mail:   </span></b><span class=MsoHyperlink><a
+href="mailto:support@webMethods.com">support@webMethods.com</a></span></p>
+
+<p class=wm-rmBody style='margin-left:.7in;text-indent:-.7in'><b><span style='font-size:12.0pt;font-family:
+Arial'>Phone:   </span></b>North
+America&nbsp; +1-888-222-8215 or +1 703 460 2584<br>
+Europe&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; +800 963 84-637 or +31
+20 77 83 640<br>
+Asia Pacific&nbsp;&nbsp; +1800 117 411
+or 8913 1111 <br>Japan&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;0120-979-762 (Toll Free in <st1:place><st1:country-region>Japan</st1:country-region></st1:place>)&nbsp;<br>               or +81-3-6229-3751</p>
+
+<p class=wm-rmBody>Contact information for webMethods offices not listed here is
+available at <a href="http://advantage.webmethods.com/contact_us"
+target="_blank">http://advantage.webmethods.com/contact_us</a>.</span></p>
+
+<p class=wm-rmBody>In addition, self-service support is available in the <span
+class=MsoHyperlink><a href="http://advantage.webmethods.com/knowledgebase"
+target="_blank"><span class=SpellE>webMethods</span> Advantage Knowledge Base</a></span>
+and in the <span class=MsoHyperlink><a
+href="http://advantage.webmethods.com/forums" target="_blank"><span
+class=SpellE>webMethods</span> Advantage Customer Forums</a></span>.</p>
+
+<div style='border:none;border-bottom:solid windowtext 1.0pt;padding:0in 0in 1.0pt 0in'>
+
+<h2><a name="_10.0_Viewing_the"></a><a name="_11.0_Viewing_the"></a>11.0
+Viewing the readme for the Previous Version</h2>
+
+</div>
+
+<p class=wm-rmBody>To view information about the previous release of webMethods
+JDBC Adapter 6.5, see the <span class=MsoHyperlink><a
+href="http://advantage.webmethods.com/article/?id=bookshelf_adapters_jdbc"
+target="_blank">previous readme on the webMethods Bookshelf</a></span>.</p>
+
+<p class=wm-rmBody>ADAPTER-JDBC-RM-65-20061215</p>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <record name="transactions" javaclass="com.wm.util.Values">
+    <record name="checkItemImportStatus" javaclass="com.wm.util.Values">
+      <value name="transactionName">checkItemImportStatus</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="IMPORT_STATUS" javaclass="com.wm.util.Values">
+        <value name="SQLOut">SELECT count(*) AS ITEM_ERRCOUNT FROM MTL_SYSTEM_ITEMS_INTERFACE  WHERE SET_PROCESS_ID ='&amp;SET_PROCESS_ID*'  AND PROCESS_FLAG IN (3,4) </value>
+        <value name="SQLAlias">IMPORT_STATUS</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+    <record name="execItemConcProg" javaclass="com.wm.util.Values">
+      <value name="transactionName">execItemConcProg</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="WM_HANDLE_INV_ITEM" javaclass="com.wm.util.Values">
+        <value name="SQLOut">WM_INV_ITEM_IMP_HANDLER_PKG.WM_HANDLE_INV_ITEM</value>
+        <value name="SQLAlias">WM_HANDLE_INV_ITEM</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+    <record name="getCoverageScheduleId" javaclass="com.wm.util.Values">
+      <value name="transactionName">getCoverageScheduleId</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="COVERAGE_SCHEDULE" javaclass="com.wm.util.Values">
+        <value name="SQLOut">SELECT  COVERAGE_SCHEDULE_ID FROM CS_COVERAGE_SCHEDULES WHERE NAME ='&amp;COVERAGE_SCHEDULE_NAME*'</value>
+        <value name="SQLAlias">COVERAGE_SCHEDULE</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+    <record name="getFACategoryId" javaclass="com.wm.util.Values">
+      <value name="transactionName">getFACategoryId</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="FA_CATEGORY" javaclass="com.wm.util.Values">
+        <value name="SQLOut">SELECT CATEGORY_ID FROM FA_CATEGORIES_B_KFV WHERE CONCATENATED_SEGMENTS ='&amp;ASSET_CATEGORY*'</value>
+        <value name="SQLAlias">FA_CATEGORY</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+    <record name="getFNDLookUpCode" javaclass="com.wm.util.Values">
+      <value name="transactionName">getFNDLookUpCode</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="FND_LOOKUP" javaclass="com.wm.util.Values">
+        <value name="SQLOut">SELECT LOOKUP_CODE FROM FND_COMMON_LOOKUPS WHERE LOOKUP_TYPE = 'ITEM_TYPE' AND MEANING='&amp;TYPE*'</value>
+        <value name="SQLAlias">FND_LOOKUP</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+    <record name="getHazardClassId" javaclass="com.wm.util.Values">
+      <value name="transactionName">getHazardClassId</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="HAZARD_CLASS" javaclass="com.wm.util.Values">
+        <value name="SQLOut">SELECT HAZARD_CLASS_ID FROM PO_HAZARD_CLASSES_B WHERE HAZARD_CLASS ='&amp;HAZARD_CLASS*'</value>
+        <value name="SQLAlias">HAZARD_CLASS</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+    <record name="getItemGroupId" javaclass="com.wm.util.Values">
+      <value name="transactionName">getItemGroupId</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="ITEM_GROUP" javaclass="com.wm.util.Values">
+        <value name="SQLOut">SELECT ITEM_CATALOG_GROUP_ID FROM MTL_ITEM_CATALOG_GROUPS WHERE DESCRIPTION='&amp;DESCRIPTION*'</value>
+        <value name="SQLAlias">ITEM_GROUP</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+    <record name="getLookUpCode" javaclass="com.wm.util.Values">
+      <value name="transactionName">getLookUpCode</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="LOOKUP_CODE" javaclass="com.wm.util.Values">
+        <value name="SQLOut">SELECT LOOKUP_CODE FROM MFG_LOOKUPS WHERE LOOKUP_TYPE='&amp;LOOKUP_TYPE*' AND MEANING ='&amp;MEANING*'</value>
+        <value name="SQLAlias">LOOKUP_CODE</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+    <record name="getPOVendorId" javaclass="com.wm.util.Values">
+      <value name="transactionName">getPOVendorId</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="PO_VENDOR" javaclass="com.wm.util.Values">
+        <value name="SQLOut">SELECT VENDOR_ID FROM PO_VENDORS WHERE VENDOR_NAME ='&amp;VENDOR_NAME*'</value>
+        <value name="SQLAlias">PO_VENDOR</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+    <record name="getPaymentTermId" javaclass="com.wm.util.Values">
+      <value name="transactionName">getPaymentTermId</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="PAYMENT_TERM" javaclass="com.wm.util.Values">
+        <value name="SQLOut">SELECT TERM_ID FROM RA_TERMS_B WHERE NAME ='&amp;PAYMENT_TERM_NAME*'</value>
+        <value name="SQLAlias">PAYMENT_TERM</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+    <record name="getRoutingHeaderId" javaclass="com.wm.util.Values">
+      <value name="transactionName">getRoutingHeaderId</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="ROUTING_HEADER" javaclass="com.wm.util.Values">
+        <value name="SQLOut">SELECT  ROUTING_HEADER_ID FROM RCV_ROUTING_HEADERS WHERE ROUTING_NAME ='&amp;ROUTING_NAME*'</value>
+        <value name="SQLAlias">ROUTING_HEADER</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+    <record name="getRuleId" javaclass="com.wm.util.Values">
+      <value name="transactionName">getRuleId</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="RULE_ID" javaclass="com.wm.util.Values">
+        <value name="SQLOut">SELECT RULE_ID FROM RA_RULES WHERE NAME ='&amp;RULE_NAME*'</value>
+        <value name="SQLAlias">RULE_ID</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+    <record name="getServiceableItemClassId" javaclass="com.wm.util.Values">
+      <value name="transactionName">getServiceableItemClassId</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="SERVICEABLE_ITEM" javaclass="com.wm.util.Values">
+        <value name="SQLOut">SELECT  SERVICEABLE_ITEM_CLASS_ID FROM CS_SERVICEABLE_ITEM_CLASSES WHERE NAME ='&amp;SERVICEABLE_ITEM_CLASS_NAME*'</value>
+        <value name="SQLAlias">SERVICEABLE_ITEM</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+    <record name="getTransactionSourceId" javaclass="com.wm.util.Values">
+      <value name="transactionName">getTransactionSourceId</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="TRANSACTION_SOURCE_TYPE" javaclass="com.wm.util.Values">
+        <value name="SQLOut">SELECT  TRANSACTION_SOURCE_TYPE_ID FROM MTL_TXN_SOURCE_TYPES WHERE TRANSACTION_SOURCE_TYPE_NAME ='&amp;TRANSACTION_SOURCE_TYPE_NAME*'</value>
+        <value name="SQLAlias">TRANSACTION_SOURCE_TYPE</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+  </record>
+  <record name="FILE_INFO" javaclass="com.wm.util.Values">
+    <value name="OA_RELEASE">1159</value>
+    <value name="DESCRIPTION">Inbound Item Utils Transaction Definition</value>
+    <value name="CREATE_HOST">webMethods</value>
+    <value name="CREATE_IM_VER">3.1</value>
+    <value name="CREATE_DATE">May 7, 2004 8:00:09 PM</value>
+  </record>
+</Values>

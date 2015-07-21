@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <record name="transactions" javaclass="com.wm.util.Values">
+    <record name="getPickDetailTxn" javaclass="com.wm.util.Values">
+      <value name="transactionName">getPickDetailTxn</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="PICK_DETAILS" javaclass="com.wm.util.Values">
+        <value name="SQLOut">SELECT WEB_TRANSACTION_ID, 
+DOCUMENT_TYPE, 
+DOCUMENT_STATUS, 
+PICKING_HEADER_ID, 
+BATCH_NAME, 
+ORDER_NUMBER, 
+ORDER_CATEGORY, 
+PICK_SLIP_RULE, 
+ORDER_CURRENCY_CODE, 
+CUSTOMER_NAME, 
+FREIGHT_TERMS, 
+ORDER_TYPE_NAME, 
+FROM_ORGANIZATION_NAME, 
+SHIP_TO_SITE_USE_LOCATION, 
+STATUS_CODE, 
+PICK_SLIP_NUMBER, 
+WAYBILL_NUM, 
+PICKER_NAME, 
+PACKER_NAME, 
+WEIGHT, 
+WEIGHT_UNIT_CODE, 
+NUMBER_OF_BOXES, 
+SHIP_METHOD_CODE, 
+SHIP_METHOD_NAME, 
+INVOICED_LINES, 
+DATE_RELEASED, 
+DATE_SHIPPED, 
+DATE_CONFIRMED, 
+EXPECTED_ARRIVAL_DATE 
+FROM WM_SO_PICKING_HEADERS_VW
+WHERE rownum &lt;= NVL('&amp;RECORDS_TO_FETCH*',100000)
+ORDER BY WEB_TRANSACTION_ID</value>
+        <value name="SQLAlias">PICK_DETAILS</value>
+        <value name="SQLRelation"></value>
+        <record name="PICKING_LINES" javaclass="com.wm.util.Values">
+          <value name="SQLOut">SELECT PICKING_LINE_ID, 
+PICKING_HEADER_ID, 
+PICK_SLIP_NUMBER, 
+PICKING_RULE_NAME, 
+SEQUENCE_NUMBER, 
+COMPONENT_CODE, 
+COMPONENT_RATIO, 
+REQUESTED_QUANTITY, 
+ITEM_DESCRIPTION, 
+SUBINV_RESTRICTED_FLAG, 
+REVISION_CONTROL_FLAG, 
+LOT_CONTROL_FLAG, 
+SERIAL_NUMBER_CONTROL_FLAG, 
+INCLUDED_ITEM_FLAG, 
+RESERVABLE_FLAG, 
+DATE_REQUESTED, 
+ORIGINAL_REQUESTED_QUANTITY, 
+ORGANIZATION_NAME, 
+SHIPPED_QUANTITY, 
+CANCELLED_QUANTITY, 
+SHIPMENT_PRIORITY_CODE, 
+SHIP_METHOD_CODE, 
+DATE_CONFIRMED, 
+INVOICED_QUANTITY, 
+INVENTORY_STATUS, 
+UNIT_CODE, 
+PRIMARY_UOM_CODE, 
+SCHEDULE_DATE, 
+DEMAND_CLASS_CODE, 
+CONFIGURATION_ITEM_FLAG, 
+LATEST_ACCEPTABLE_DATE 
+FROM WM_SO_PICKING_LINES_VW</value>
+          <value name="SQLAlias">PICKING_LINES</value>
+          <value name="SQLRelation">PICKING_HEADER_ID = PICK_DETAILS.PICKING_HEADER_ID</value>
+        </record>
+      </record>
+    </record>
+  </record>
+  <record name="FILE_INFO" javaclass="com.wm.util.Values">
+    <value name="OA_RELEASE">107SC</value>
+    <value name="DESCRIPTION"></value>
+    <value name="CREATE_HOST">webMethods</value>
+    <value name="CREATE_IM_VER">3.0</value>
+    <value name="CREATE_DATE">Nov 27, 2002 4:43:11 PM</value>
+  </record>
+</Values>

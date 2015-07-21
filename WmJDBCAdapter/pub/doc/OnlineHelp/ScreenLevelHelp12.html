@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="GENERATOR" content="Quadralay WebWorks Publisher Professional Edition 7.0" />
+  <meta name="TEMPLATEBASE" content="wM_WWH20030908" />
+  <meta name="LASTUPDATED" content="12/04/06 19:31:53" />
+  <title>BatchUpdateSQL Service Template Screens</title>
+  <link rel="StyleSheet" href="document.css" type="text/css" />
+  <link rel="StyleSheet" href="catalog.css" type="text/css" />
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+ </head>
+
+ <body onLoad="WWHUpdate();">
+
+
+<a name="wp1106787"> </a><h2 class="pNewHTMLPage">
+BatchUpdateSQL Service Template Screens
+</h2><a name="wp1106795"> </a><p class="pBody">
+The BatchUpdateSQL service updates information in a database table that involves a large volume of data.
+</p>
+<a name="wp1107621"> </a><p class="pAnchor">
+</p><div align="left">
+<table border="0">
+  <caption></caption>
+  <tr align="left" valign="top">    <td><a name="wp1107625"> </a><p class="px_Note">
+&#160;
+<img src="images/note_icon.gif" height="25" width="25" border="1" alt="Note" />
+</p>
+</td>
+    <td><a name="wp1107627"> </a><p class="pNote">
+<b>Note:</b> BatchUpdateSQL services do not work with Teradata databases.
+</p>
+</td>
+</tr>
+</table>
+</div>
+<p class="pAnchor">
+</p>
+<a name="wp1106796"> </a><p class="pBody">
+This service template includes the following tabs:
+</p>
+<a name="wp1106793"> </a><p class="pChapterTOC">
+<img src="images/bullet.gif" height="13" width="10" border="0" />
+<a  href="ScreenLevelHelp12.html#wp1106826">Table Tab</a>
+</p>
+<a name="wp1107309"> </a><p class="pChapterTOC">
+<img src="images/bullet.gif" height="13" width="10" border="0" />
+<a  href="ScreenLevelHelp12.html#wp1106831">UPDATE Tab</a>
+</p>
+<a name="wp1107314"> </a><p class="pChapterTOC">
+<img src="images/bullet.gif" height="13" width="10" border="0" />
+<a  href="ScreenLevelHelp12.html#wp1117202">WHERE Tab</a>
+</p>
+<a name="wp1107319"> </a><p class="pChapterTOC">
+<img src="images/bullet.gif" height="13" width="10" border="0" />
+<a  href="ScreenLevelHelp12.html#wp1124819">Batch Result Tab</a>
+</p>
+<a name="wp1106826"> </a><h4 class="pHeading3">
+Table Tab
+</h4>
+<a name="wp1106833"> </a><p class="pBody">
+Select the <b class="cBold">Table</b> tab to configure the database table to be updated and set the fields as follows:
+</p>
+<a name="wp1106848"> </a><p class="pAnchor">
+</p><div align="left">
+<table border="0">
+  <caption></caption>
+  <tr align="left" valign="bottom">    <th><a name="wp1106836"> </a><div style="text-align: left" class="pCellHeading">
+Field
+<hr />
+</div>
+</th>
+    <th><a name="wp1106838"> </a><div style="text-align: left" class="pCellHeading">
+Description/Action
+<hr />
+</div>
+</th>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1106840"> </a><p class="pBody">
+<b class="cBold">Table Name</b>
+</p>
+</td>
+    <td><a name="wp1106842"> </a><p class="pBody">
+Select a table name. The default for the associated catalog name is <code class="cCode">current catalog</code>. The default for the associated schema name is <code class="cCode">current schema</code>.
+</p>
+<a name="wp1106843"> </a><p class="pNote">
+<b>Note:</b> Informix databases do not allow you to specify a catalog and database name because you can only access the current catalog. 
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1106845"> </a><p class="pBody">
+<b class="cBold">Type</b>
+</p>
+</td>
+    <td><a name="wp1106847"> </a><p class="pBody">
+The table type displays automatically based on the table you select.
+</p>
+</td>
+</tr>
+</table>
+</div>
+<p class="pAnchor">
+</p>
+<a name="wp1106831"> </a><h4 class="pHeading3">
+UPDATE Tab
+</h4>
+<div class="pSmartList1" style="margin-top: 5pt"><ol type="1" class="pSmartList1" style="margin-top: 5pt">
+<a name="wp1106875"> </a><div style="margin-top: 5pt" class="pSmartList1"><li>Select the <b class="cBold">UPDATE</b> tab and use the <b class="cBold">Column</b>, <b class="cBold">Column Type, JDBC Type</b> and <b class="cBold">Expression</b> fields on the top row of the tab to define the columns and fields, as follows:</li></div>
+<a name="wp1106882"> </a><p class="pBodyRelative">
+Use the <b class="cBold">Insert Row</b> icon <img src="images/table_insertrow.gif" border="0" hspace="0" vspace="0"/> (or the <b class="cBold">Fill in all rows to the table</b> icon <img src="images/append_all_rows.gif" border="0" hspace="0" vspace="0"/>) to create new rows as needed.
+</p>
+<a name="wp1106911"> </a><p class="pAnchor">
+<div align="left">
+<table border="0">
+  <caption></caption>
+  <tr align="left" valign="bottom">    <th><a name="wp1121235"> </a><div style="text-align: left" class="pCellHeading">
+Field
+<hr />
+</div>
+</th>
+    <th><a name="wp1121237"> </a><div style="text-align: left" class="pCellHeading">
+Description/Action
+<hr />
+</div>
+</th>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1121239"> </a><p class="pBody">
+<b class="cBold">Column</b>
+</p>
+</td>
+    <td><a name="wp1121241"> </a><p class="pBody">
+The UPDATE column name in the database table.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1121243"> </a><p class="pBody">
+<b class="cBold">Column Type</b>
+</p>
+</td>
+    <td><a name="wp1121245"> </a><p class="pBody">
+The UPDATE column data type in the database table.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1121250"> </a><p class="pBody">
+<b class="cBold">JDBC Type</b>
+</p>
+</td>
+    <td><a name="wp1121255"> </a><p class="pBody">
+The JDBC type of the corresponding <b class="cBold">Input Field</b>.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1121257"> </a><p class="pBody">
+<b class="cBold">Expression</b>
+</p>
+</td>
+    <td><a name="wp1121259"> </a><p class="pBody">
+The default value is <code class="cCode">?</code>, which acts as a placeholder for the variable so that you can set the input variable for that column at run time, or get input external to this adapter service. It adds one row with the same column name to the table.
+</p>
+<a name="wp1121260"> </a><p class="pBody">
+You can also type a fixed value in this field now or at run time. If you type a fixed value, be sure that it is valid, or an exception will be generated at run time.
+</p>
+</td>
+</tr>
+</table>
+</div>
+
+</p>
+<a name="wp1106952"> </a><div style="margin-top: 7pt" class="pSmartList1"><li>If you insert additional rows using the default <b class="cBold">Expression</b> value of <code class="cCode">?</code>, the corresponding<b class="cBold"> Input Field</b> and <b class="cBold">Input Field Type</b> display on the second row of the UPDATE tab:<div align="left">
+<table border="0">
+  <caption></caption>
+  <tr align="left" valign="bottom">    <th><a name="wp1117143"> </a><div style="text-align: left" class="pCellHeading">
+Field
+<hr />
+</div>
+</th>
+    <th><a name="wp1117145"> </a><div style="text-align: left" class="pCellHeading">
+Description/Action
+<hr />
+</div>
+</th>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1117147"> </a><p class="pBody">
+<b class="cBold">Column</b>
+</p>
+</td>
+    <td><a name="wp1117149"> </a><p class="pBody">
+The UPDATE column name in the database table.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1117151"> </a><p class="pBody">
+<b class="cBold">Column Type</b>
+</p>
+</td>
+    <td><a name="wp1117153"> </a><p class="pBody">
+The column data type defined in the database table.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1117155"> </a><p class="pBody">
+<b class="cBold">Input Field*</b>
+</p>
+</td>
+    <td><a name="wp1117157"> </a><p class="pBody">
+The input field name. You can change this name if needed.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1117159"> </a><p class="pBody">
+<b class="cBold">Input Field Type</b>
+</p>
+</td>
+    <td><a name="wp1117161"> </a><p class="pBody">
+The data type of the input field. You can change this type if needed.
+</p>
+<a name="wp1117163"> </a><p class="pNote">
+<b>Note:</b> If you use WmFlatFile services to generate the document list as input, the input field type must be java.lang.String. This is because fields from WmFlatFile services generate documents are that have String fields.
+</p>
+</td>
+</tr>
+</table>
+</div>
+<div align="left">
+<table border="0">
+  <caption></caption>
+  <tr align="left" valign="top">    <td><a name="wp1117177"> </a><p class="px_Note">
+&#160;
+<img src="images/note_icon.gif" height="25" width="25" border="1" alt="Note" />
+</p>
+</td>
+    <td><a name="wp1117179"> </a><p class="pNote">
+<b>Note:</b> *For Oracle users, if you use a CHAR(n) data type and enter a value in the <b class="cBold">Input Field</b>, the JDBC Adapter automatically sets the ORACLEFIXED_CHAR data type as the JDBC data type.
+</p>
+</td>
+</tr>
+</table>
+</div>
+</li></div>
+<a name="wp1117211"> </a><div style="margin-top: 7pt" class="pSmartList1"><li>Specify the query time out value of the <b class="cBold">BatchUpdateSQL</b> service you are configuring in the following field:<div align="left">
+<table border="0">
+  <caption></caption>
+  <tr align="left" valign="bottom">    <th><a name="wp1117214"> </a><div style="text-align: left" class="pCellHeading">
+Field
+<hr />
+</div>
+</th>
+    <th><a name="wp1117216"> </a><div style="text-align: left" class="pCellHeading">
+Description
+<hr />
+</div>
+</th>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1117218"> </a><p class="pBody">
+<b class="cBold">Query Time Out</b>
+</p>
+</td>
+    <td><a name="wp1122418"> </a><p class="pBody">
+The query time out value in seconds. This value is the amount of time the JDBC Adapter waits for the service to execute before stopping the SQL operation.
+</p>
+<a name="wp1122422"> </a><p class="pBody">
+The default value is -1. Use the default value to have the service use the value indicated on the <code class="cCode">watt.adapter.JDBC.QueryTimeout</code> property as the time out. 
+</p>
+<a name="wp1122423"> </a><p class="pBody">
+If you specify a value equal to 0, or if the <code class="cCode">watt.adapter.JDBC.QueryTimeout</code> property is not set, the service executes without a time out.
+</p>
+<a name="wp1122424"> </a><p class="pBody">
+If you specify a value greater than 0, the service executes with the specified value as the time out.
+</p>
+<a name="wp1122425"> </a><p class="pNote">
+<b>Note:</b> -1 is the only permissible negative value for this field.
+</p>
+<a name="wp1121491"> </a><p class="pBody">
+For more information about the <code class="cCode">watt.adapter.JDBC.QueryTimeout</code> property, see the <em class="cEmphasis">webMethods JDBC Adapter User’s Guide</em>.
+</p>
+</td>
+</tr>
+</table>
+</div>
+</li></div>
+</ol></div>
+<a name="wp1117202"> </a><h4 class="pHeading3">
+WHERE Tab
+</h4>
+<a name="wp1117169"> </a><p class="pBody">
+Use the <b class="cBold">WHERE</b> tab to specify the conditions for selecting information:
+</p>
+<a name="wp1107002"> </a><p class="pBody">
+Select the <b class="cBold">Insert Row</b> icon <img src="images/table_insertrow.gif" border="0" hspace="0" vspace="0"/> to define new WHERE clause fields. Select a logical operator from the <b class="cBold">AND/OR</b> field, an <b class="cBold">Operator</b>, and separators (the left and right parentheses) as needed. Use the following fields:</p><div align="left">
+<table border="0">
+  <caption></caption>
+  <tr align="left" valign="bottom">    <th><a name="wp1107025"> </a><div style="text-align: left" class="pCellHeading">
+Field
+<hr />
+</div>
+</th>
+    <th><a name="wp1107027"> </a><div style="text-align: left" class="pCellHeading">
+Description/Action
+<hr />
+</div>
+</th>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1107029"> </a><p class="pBody">
+<b class="cBold">AND/OR</b>
+</p>
+</td>
+    <td><a name="wp1107031"> </a><p class="pBody">
+The logical operator.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1107033"> </a><p class="pBody">
+<b class="cBold">Column</b>
+</p>
+</td>
+    <td><a name="wp1107035"> </a><p class="pBody">
+The name of the column you want to use in the WHERE clause.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1107037"> </a><p class="pBody">
+<b class="cBold">Operator</b>
+</p>
+</td>
+    <td><a name="wp1107039"> </a><p class="pBody">
+The operator used with the <b class="cBold">Column</b> and <b class="cBold">Input Field</b>.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1107041"> </a><p class="pBody">
+<b class="cBold">Input Field*</b>
+</p>
+</td>
+    <td><a name="wp1107043"> </a><p class="pBody">
+The default value is <code class="cCode">?</code>, which acts as a placeholder for the variable so that you can set the input variable for that column at run time, or get input external to this adapter service. 
+</p>
+<a name="wp1107044"> </a><p class="pBody">
+You can also type a fixed value in this field now or at run time. If you type a fixed value, be sure that it is valid, or an exception will be generated at run time.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1107049"> </a><p class="pBody">
+JDBC<b class="cBold"> Type</b>
+</p>
+</td>
+    <td><a name="wp1107054"> </a><p class="pBody">
+The JDBC type of the corresponding <b class="cBold">Input Field</b>.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1107056"> </a><p class="pBody">
+<b class="cBold">Input Field Type*</b>
+</p>
+</td>
+    <td><a name="wp1107058"> </a><p class="pBody">
+The corresponding input field’s Java type.
+</p>
+<a name="wp1107064"> </a><p class="pBody">
+ For a list of JDBC type to Java type mappings, see the <em class="cEmphasis">webMethods JDBC Adapter User’s Guide</em>.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1107067"> </a><p class="pBody">
+<b class="cBold">Input Field<br />(second occurrence of this field)</b>
+</p>
+</td>
+    <td><a name="wp1107069"> </a><p class="pBody">
+Type the name of the input field.
+</p>
+<a name="wp1107070"> </a><p class="pBody">
+If you use the default <code class="cCode">?</code> variable placeholder as the <b class="cBold">Input Field</b> value in the where clause, be sure to enter the corresponding <b class="cBold">Input Field</b> and its <b class="cBold">JDBC Field Type</b> in the same order as they appear on the top portion of the WHERE tab. 
+</p>
+</td>
+</tr>
+</table>
+</div>
+<p class="pBody"></p><div align="left">
+<table border="0">
+  <caption></caption>
+  <tr align="left" valign="top">    <td><a name="wp1124830"> </a><p class="px_Note">
+&#160;
+<img src="images/note_icon.gif" height="25" width="25" border="1" alt="Note" />
+</p>
+</td>
+    <td><a name="wp1124832"> </a><p class="pNote">
+<b>Note:</b> The WHERE clause does not support the java.sql.array data type.
+</p>
+</td>
+</tr>
+</table>
+</div>
+<p class="pBody">
+</p>
+<a name="wp1124819"> </a><h4 class="pHeading3">
+Batch Result Tab
+</h4>
+<a name="wp1107639"> </a><p class="pBody">
+Use the <b class="cBold">Batch</b> <b class="cBold">Result Output Name</b> to specify the output field name for the batch operation. The output of the batch operation is a string list. The elements of the string list are ordered according to the order in which commands were added to the batch. Depending on the JDBC driver you use, the elements in the string list may be one of the following: 
+</p>
+<div class="pSmartList1" style="margin-top: 7pt"><ul class="pSmartList1" style="margin-top: 7pt">
+<a name="wp1107643"> </a><div style="margin-top: 7pt" class="pSmartList1"><li>A number greater than or equal to zero that indicates that the command was successfully executed and the number of rows in the database affected.</li></div>
+<a name="wp1107644"> </a><div style="margin-top: 7pt" class="pSmartList1"><li>A value of SUCCESS_INFO that indicates that the command was processed successfully but the number of rows affected is unknown.</li></div>
+</ul></div>
+
+ <hr />
+
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag());
+   // -->
+  </script>
+
+ </body>
+</html>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="keywords" content="clustering,settings,viewing,settings,clustering" />
+    <title>Clustering Screen</title>
+    <link rel="StyleSheet" href="css/_is_admin_help.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+  <body style="background-color: White; margin-bottom: 25px; margin-left: 25px; margin-right: 25px; margin-top: 0px; padding-top: 0px" onload="WWHUpdate();" onunload="WWHUnload();" onkeydown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onkeypress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onkeyup="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <table align="left" role="presentation">
+      <tr>
+        <td class="WebWorks_Company_Logo_Top">
+          <img src="sag_online.png" />
+        </td>
+      </tr>
+    </table>
+    <br clear="all" />
+    <hr align="left" />
+    <blockquote>
+      <div class="Heading_2"><a name="3_5_19_9_1">Clustering Screen</a></div>
+      <div class="Body"><span class="emphasis"><a name="3_5_19_9_3_2_3">Screen Heading</a></span>: <span class="uicontrol">Settings &gt; Cluster</span></div>
+      <div class="Body"><a name="3_5_19_9_3_2_5">Use the Clustering screen to view the cluster settings for this server.</a></div>
+      <div class="Body"><a name="3_5_19_9_3_2_7">To open the Clustering screen, click </a><span class="uicontrol">Clustering</span> under the <span class="uicontrol">Settings</span> menu.</div>
+      <div class="List_1_outer" style="margin-left: 24px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_1_inner" style="width: 18pt; white-space: nowrap">
+                <img src="bullet1.png" alt="*" border="0" width="10" height="10" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_1_inner"><a name="3_5_19_9_3_2_9_2">Click </a><span class="uicontrol">Edit Cluster Settings</span> to enable/disable clustering or to change the cluster settings for this server.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Section_Title"><a name="3_5_19_9_3_4_3">General</a></div>
+      <div class="Body"><a name="3_5_19_9_3_4_5">This section displays general information about your server as a member of a cluster.</a></div>
+      <div class="Definition_Term"><a name="3_5_19_9_3_4_7_2_2">Clustering Status</a></div>
+      <div class="Definition_Description"><a name="3_5_19_9_3_4_7_2_4_3">Indicates whether the server is a member of a cluster. To enable this server to operate in a cluster, click the </a><span class="uicontrol">Enable Cluster</span> link and specify the clustering settings. If this <span class="ph">Integration Server</span> has been enabled or disabled but not yet restarted, this field will include the text "<span class="uicontrol">pending restart</span>". The status of this <span class="ph">Integration Server</span> will not change in the list of cluster hosts shown on other <span class="ph">Integration Server</span>s in the cluster until this <span class="ph">Integration Server</span> is restarted.</div>
+      <div class="Definition_Term"><a name="3_5_19_9_3_4_7_4_2">Cluster Name</a></div>
+      <div class="Definition_Description"><a name="3_5_19_9_3_4_7_4_4_3">Name of the cluster to which this </a><span class="ph">Integration Server</span> belongs. If you specify a name that does not already exist, the caching software creates a new cache for this cluster. If you specify the name of a cluster that already exists, the caching software adds this <span class="ph">Integration Server</span> to that cluster. An enterprise can have more than one cluster. The cluster name allows the caching software to form separate caches for each cluster. Without a cluster name, all <span class="ph">Integration Server</span>s that share the same Discovery Address and Discovery Port would form a single cache.</div>
+      <div class="Definition_Term"><a name="3_5_19_9_3_4_7_6_2">Session Timeout</a></div>
+      <div class="Definition_Description"><a name="3_5_19_9_3_4_7_6_4_3">Number of minutes an inactive session will be retained in the clustered session store. Default is 60.</a></div>
+      <div class="Definition_Term"><span class="ph"><a name="3_5_19_9_3_4_7_8_2">Terracotta Server Array</a></span> URLs</div>
+      <div class="Definition_Description"><a name="3_5_19_9_3_4_7_8_4_3">A comma separated list of the URLs for the </a><span class="ph">Terracotta Server Array</span> that contain the distributed system caches for the cluster.</div>
+      <div class="Definition_Term"><span class="ph"><a name="3_5_19_9_3_4_9_2_2">   </a></span>Cluster Hosts</div>
+      <div class="Definition_Description"><a name="3_5_19_9_3_4_9_2_4_3">This section displays information about other </a><span class="ph">Integration Server</span>s in the cluster.</div>
+      <div class="Definition_Term"><a name="3_5_19_9_3_4_11_2_2">Name</a></div>
+      <div class="Definition_Description"><a name="3_5_19_9_3_4_11_2_4_3">Domain and host name of the machine on which the </a><span class="ph">Integration Server</span> runs.</div>
+      <div class="Definition_Term"><a name="3_5_19_9_3_4_13_2_2">Address</a></div>
+      <div class="Definition_Description"><a name="3_5_19_9_3_4_13_2_4_3">IP address of the machine on which the </a><span class="ph">Integration Server</span> runs.</div>
+      <div class="Definition_Term"><a name="3_5_19_9_3_4_15_2_2">Server Start Time</a></div>
+      <div class="Definition_Description"><a name="3_5_19_9_3_4_15_2_4_3">Time the </a><span class="ph">Integration Server</span> started.</div>
+      <div class="Definition_Term"><a name="3_5_19_9_3_4_15_4_2">Server Up Time</a></div>
+      <div class="Definition_Description"><a name="3_5_19_9_3_4_15_4_4_3">Length of time (hh:mm:ss) that the server has been running since it was last started.</a></div>
+      <div class="Definition_Term"><a name="3_5_19_9_3_4_15_6_2">Total Memory</a></div>
+      <div class="Definition_Description"><a name="3_5_19_9_3_4_15_6_4_3">Total amount of memory available to the Java virtual machine.</a></div>
+      <div class="Definition_Term"><a name="3_5_19_9_3_4_15_8_2">Free Memory</a></div>
+      <div class="Definition_Description"><a name="3_5_19_9_3_4_15_8_4_3">Amount of unused memory that is currently available to the Java virtual machine.</a></div>
+      <div class="Definition_Term"><a name="3_5_19_9_3_4_15_10_2">Used Memory</a></div>
+      <div class="Definition_Description"><a name="3_5_19_9_3_4_15_10_4_3">Amount of memory currently used by the Java virtual machine.</a></div>
+      <div class="Definition_Term"><a name="3_5_19_9_3_4_15_12_2">Current Server Threads</a></div>
+      <div class="Definition_Description"><a name="3_5_19_9_3_4_15_12_4_3">Number of running services currently active.</a></div>
+      <div class="Definition_Term"><a name="3_5_19_9_3_4_15_14_2">Max Server Threads</a></div>
+      <div class="Definition_Description"><a name="3_5_19_9_3_4_15_14_4_3">Maximum number of threads that the server maintains in the server thread pool. If this maximum number is reached, the server waits until processes complete and return threads to the pool before starting more processes. The default is 75.</a></div>
+      <div class="Definition_Term"><a name="3_5_19_9_3_4_15_16_2">Current System Threads</a></div>
+      <div class="Definition_Description"><a name="3_5_19_9_3_4_15_16_4_3">Number of system threads currently active. Click this number to display the Threads screen, which contains detailed information about the threads that are currently active.</a></div>
+      <div class="Definition_Term"><a name="3_5_19_9_3_4_15_18_2">Max System Threads</a></div>
+      <div class="Definition_Description"><a name="3_5_19_9_3_4_15_18_4_3">Highest number of system threads that have ever been active concurrently on the server.</a></div>
+      <div class="Definition_Term"><a name="3_5_19_9_3_4_15_20_2">Total Requests</a></div>
+      <div class="Definition_Description"><a name="3_5_19_9_3_4_15_20_4_3">Total number of requests that were completed during the polling interval (the last 10 minutes on most servers).</a></div>
+      <div class="Definition_Term"><a name="3_5_19_9_3_4_15_22_2">Average Duration</a></div>
+      <div class="Definition_Description"><a name="3_5_19_9_3_4_15_22_4_3">Average time to complete a request.</a></div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <div>
+      <hr />
+      <div style="font-family: Arial, Verdana, Helvetica, Sans-Serif; font-size: 12px;margin-top: 20px;margin-bottom: 20px;">
+        <span class="xref">
+          <a href="http://documentation.softwareag.com/legal/" target="external_window">Copyright © <span></span><span></span><span>2007</span><span>-2014</span> Software AG, Darmstadt, Germany</a>
+        </span>.</div>
+    </div>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+  </body>
+</html>

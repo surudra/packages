@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="keywords" content="servers,logs,Session Log,logs,Session Log,session log,viewing,server session log,servers,viewing session log" />
+    <title>Session Log Screen</title>
+    <link rel="StyleSheet" href="css/_is_admin_help.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+  </head>
+  <body style="background-color: White; margin-bottom: 25px; margin-left: 25px; margin-right: 25px; margin-top: 0px; padding-top: 0px" onload="WWHUpdate();" onunload="WWHUnload();" onkeydown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onkeypress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onkeyup="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <table align="left" role="presentation">
+      <tr>
+        <td class="WebWorks_Company_Logo_Top">
+          <img src="sag_online.png" />
+        </td>
+      </tr>
+    </table>
+    <br clear="all" />
+    <hr align="left" />
+    <blockquote>
+      <div class="Heading_2"><a name="3_5_9_11_2">Session Log Screen</a></div>
+      <div class="Body"><span class="emphasis"><a name="3_5_9_11_6_2_3">Screen Heading</a></span>: <span class="uicontrol">Logs &gt; Session</span></div>
+      <div class="Body"><a name="3_5_9_11_6_2_5">Use the Session Log screen to view information in the server's Session Log. The Session Log (WMSESSION_</a><span class="varname">yyyymmdd_hhmmss</span>.log) maintains information about sessions that are established with the <span class="ph">webMethods Integration Server</span>. The <span class="ph">webMethods Integration Server</span> creates a session when a developer connects to the server with <span class="ph">Software&nbsp;AG Designer</span> or a <span class="ph">webMethods</span> client connects to the server to execute services. Each record in the Session Log includes a timestamp indicating when a user established a connection with the <span class="ph">webMethods Integration Server</span>. For information about changing the display of this log, see <span class="ph"> </span><span class="Citation">webMethods Audit Logging Guide</span><span class="ph"> </span>.</div>
+      <div class="Body"><a name="3_5_9_11_6_2_7">To open the Session Log screen, click </a><span class="uicontrol">Session</span> under the <span class="uicontrol">Logs</span> menu on the Navigation panel.</div>
+      <div class="Section_Title"><a name="3_5_9_11_6_4_3">Log display controls</a></div>
+      <div class="Definition_Term"><a name="3_5_9_11_6_4_5_2_2">Display Log Entries oldest to the newest starting from the beginning</a></div>
+      <div class="Definition_Description"><a name="3_5_9_11_6_4_5_2_4">View entries in the log from the oldest to the most current.</a></div>
+      <div class="Definition_Term"><a name="3_5_9_11_6_4_5_4_2">Display Log Entries newest to the oldest starting from the end</a></div>
+      <div class="Definition_Description"><a name="3_5_9_11_6_4_5_4_4">View entries in the log from the most current to the oldest.</a></div>
+      <div class="Definition_Term"><a name="3_5_9_11_6_4_5_6_2">Number of entries to display</a></div>
+      <div class="Definition_Description"><a name="3_5_9_11_6_4_5_6_4">By default, the </a><span class="ph">Integration Server Administrator</span> displays the 35 most recent entries in the log. You can change the number of entries displayed.</div>
+      <table class="note2" summary="">
+        <tr>
+          <td class="Table_Cell" style="vertical-align: top; width: 14.285714285714284%">
+            <div class="tip">
+              <span style="font-family: Arial, Verdana, Helvetica, Sans-Serif; font-weight: bold">Tip!    </span><a name="3_5_9_11_6_4_5_6_4_5_1_3_1_2_2">&nbsp;</a></div>
+          </td>
+          <td class="Table_Cell" style="vertical-align: top; width: 85.71428571428571%">
+            <div class="Table_Cell"><a name="3_5_9_11_6_4_5_6_4_5_1_3_1_3">If you have Administrator privileges, you can permanently change the default value of this field. Go to the </a><span class="uicontrol">Settings &gt; Extended</span> page and modify the watt.server.log.maxEntries parameter.</div>
+          </td>
+        </tr>
+      </table>
+      <div class="Definition_Term"><a name="3_5_9_11_6_4_5_8_2">From/To</a></div>
+      <div class="Definition_Description"><a name="3_5_9_11_6_4_5_8_4">Specify, in </a><span class="codeph">YYYY-MM-DD HH:MM:SS</span> date format, the range of dates and times for which you want log entries to be displayed.</div>
+      <table class="note2" summary="">
+        <tr>
+          <td class="Table_Cell" style="vertical-align: top; width: 14.285714285714284%">
+            <div class="Note">
+              <span style="font-family: Arial, Verdana, Helvetica, Sans-Serif; font-weight: bold">Note:    </span><a name="3_5_9_11_6_4_5_8_4_5_1_3_1_2_2">&nbsp;</a></div>
+          </td>
+          <td class="Table_Cell" style="vertical-align: top; width: 85.71428571428571%">
+            <div class="Table_Cell"><a name="3_5_9_11_6_4_5_8_4_5_1_3_1_3">The </a><span class="uicontrol">From/To</span> fields are displayed only if the logger associated with this log is configured to write to a database. For more information, see the <span class="ph"> </span><span class="Citation">webMethods Audit Logging Guide</span><span class="ph"> </span>.</div>
+          </td>
+        </tr>
+      </table>
+      <div class="Definition_Term"><a name="3_5_9_11_6_4_5_10_2">Refresh</a></div>
+      <div class="Definition_Description"><a name="3_5_9_11_6_4_5_10_4">Click this button to update the display after changing the log display controls.</a></div>
+      <table class="note2" summary="">
+        <tr>
+          <td class="Table_Cell" style="vertical-align: top; width: 14.285714285714284%">
+            <div class="tip">
+              <span style="font-family: Arial, Verdana, Helvetica, Sans-Serif; font-weight: bold">Tip!    </span><a name="3_5_9_11_6_4_5_10_4_3_1_3_1_2_2">&nbsp;</a></div>
+          </td>
+          <td class="Table_Cell" style="vertical-align: top; width: 85.71428571428571%">
+            <div class="Table_Cell"><a name="3_5_9_11_6_4_5_10_4_3_1_3_1_3">If you have Administrator privileges, you can change the default refresh interval for log entries (the default is 90 seconds). Go to the </a><span class="uicontrol">Settings &gt; Extended</span> page and modify the watt.server.log.refreshInterval.</div>
+          </td>
+        </tr>
+      </table>
+      <div class="Section_Title"><a name="3_5_9_11_6_6_3">Session Log Entries as of </a><span class="varname">mm-dd hh:mm:ss</span></div>
+      <div class="Definition_Term"><a name="3_5_9_11_6_6_5_2_2">Time Stamp</a></div>
+      <div class="Definition_Description"><a name="3_5_9_11_6_6_5_2_4">Date and time the entry was written to the log.</a></div>
+      <div class="Definition_Term"><a name="3_5_9_11_6_6_5_4_2">Server Id</a></div>
+      <div class="Definition_Description"><a name="3_5_9_11_6_6_5_4_4">Identity of the server on which the audit event occurred. The ID can be DNSname:port or ipaddress:port.</a></div>
+      <div class="Definition_Term"><a name="3_5_9_11_6_6_5_6_2">User Id</a></div>
+      <div class="Definition_Description"><a name="3_5_9_11_6_6_5_6_4">Identity of the user that is connected for this session.</a></div>
+      <div class="Definition_Term"><a name="3_5_9_11_6_6_5_8_2">Client IP</a></div>
+      <div class="Definition_Description"><a name="3_5_9_11_6_6_5_8_4">IP address of the client machine. The word "system" appears for session requests from </a><span class="ph">Integration Server</span> for operations such as running a scheduled service or refreshing the display.</div>
+      <div class="Definition_Term"><a name="3_5_9_11_6_6_5_10_2">Session State</a></div>
+      <div class="Definition_Description"><a name="3_5_9_11_6_6_5_10_4">Possible values are STARTED, EXPIRED, and ENDED.</a></div>
+      <div class="Definition_Term"><a name="3_5_9_11_6_6_5_12_2">RPCs</a></div>
+      <div class="Definition_Description"><a name="3_5_9_11_6_6_5_12_4">Number of times the service has been invoked this session.</a></div>
+      <div class="Definition_Term"><a name="3_5_9_11_6_6_5_14_2">Age</a></div>
+      <div class="Definition_Description"><a name="3_5_9_11_6_6_5_14_4">How long the session existed (in milliseconds) before it expired or ended.</a></div>
+      <div class="Definition_Term"><a name="3_5_9_11_6_6_5_16_2">Session ID</a></div>
+      <div class="Definition_Description"><a name="3_5_9_11_6_6_5_16_4">A string the server generates to identify each session uniquely.</a></div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <div>
+      <hr />
+      <div style="font-family: Arial, Verdana, Helvetica, Sans-Serif; font-size: 12px;margin-top: 20px;margin-bottom: 20px;">
+        <span class="xref">
+          <a href="http://documentation.softwareag.com/legal/" target="external_window">Copyright © <span></span><span></span><span>2007</span><span>-2014</span> Software AG, Darmstadt, Germany</a>
+        </span>.</div>
+    </div>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+  </body>
+</html>

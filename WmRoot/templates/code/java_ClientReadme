@@ -1,0 +1,59 @@
+               			Generated Java Client
+_____________________________________________________________________
+
+   The Java code that Software AG Designer produces demonstrates the most 
+   common uses of the webMethods client API and can serve as a good starting 
+   point for your own development.
+
+   Make sure you have installed a fully functional JDK and 
+   Integration Server is running.
+   
+   If you are running the client with a JVM, other than the one 
+   installed with Integration Server or Designer, see the 
+   'Building a Java Client' section in the webMethods Service Development 
+   Help for the files required in the JVM for the Java client to support 
+   signed libraries:
+   
+   Next, make sure that your classpath consists of at least the following:
+   
+   %ifvar platform equals(win)%
+      .;[COMMON DIR]\lib\wm-isclient.jar;[COMMON DIR]\lib\glassfish\gf.javax.mail.jar
+   
+   %else%
+      .:[COMMON DIR]/lib/wm-isclient.jar:[COMMON DIR]/lib/glassfish/gf.javax.mail.jar
+   
+   %endif%
+   
+   If the client intends to connect to Integration Server using the 
+   Secure Socket Layer (SSL), you need to
+      
+   (1) uncomment line context.setSecure(true).
+   (2) edit authentication certificates information and uncomment
+       line context.setSSLCertificates(cert, privKey, cacert).
+   (3) Make sure that your classpath also consists of:
+   
+   %ifvar platform equals(win)%
+       [COMMON DIR]\lib\ext\enttoolkit.jar
+   %else%
+       [COMMON DIR]/lib/ext/enttoolkit.jar   
+   %endif%
+  
+   The client will attempt to connect to the Integration Server used when 
+   generating the client. If you require a different Integration Server, 
+   modify as indicated in the source. Also, for protected services, edit the 
+   source to supply your username and password.
+   
+   You will be prompted to supply values for all input variables of type 
+   string, string list, and string table at the command line.
+   
+   Compile the generated Java classes:
+
+        > javac *.java
+
+   You can then invoke a generated service 'svcName' by typing
+
+        > java [svcName]
+
+   
+   The results of the service are displayed on standard output.
+

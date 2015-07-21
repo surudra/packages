@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<IDataXMLCoder version="1.0">
+  <record javaclass="com.wm.data.ISMemDataImpl">
+    <record name="transactions" javaclass="com.wm.data.ISMemDataImpl">
+      <record name="queryGLBalanceTxn" javaclass="com.wm.data.ISMemDataImpl">
+        <value name="transactionName">queryGLBalanceTxn</value>
+        <value name="transactionType">OUT</value>
+        <null name="AcknowledgeSQL"/>
+        <record name="GLBALANCE" javaclass="com.wm.util.Values">
+          <value name="SQLOut">SELECT WEB_TRANSACTION_ID, DOCUMENT_TYPE, DOCUMENT_STATUS, SET_OF_BOOKS_NAME, ACCOUNT_CODE, CURRENCY_CODE, PERIOD_NAME, ACTUAL_FLAG, BUDGET_VERSION_NAME, ENCUMBRANCE_TYPE, REVALUATION_STATUS, PERIOD_TYPE, PERIOD_YEAR, PERIOD_NUMBER, PERIOD_NET_DR, PERIOD_NET_CR, PERIOD_TO_DATE_ADB, QUARTER_TO_DATE_DR, QUARTER_TO_DATE_CR, QUARTER_TO_DATE_ADB, YEAR_TO_DATE_ADB, PROJECT_TO_DATE_DR, PROJECT_TO_DATE_CR, PROJECT_TO_DATE_ADB, BEGIN_BALANCE_DR, BEGIN_BALANCE_CR, PERIOD_NET_DR_BEQ, PERIOD_NET_CR_BEQ, BEGIN_BALANCE_DR_BEQ, BEGIN_BALANCE_CR_BEQ, SUMMARY_TEMPLATE_NAME  FROM WM_GL_BALANCES_QRY_VW  WHERE  NVL(PERIOD_NAME,'XXXXX') LIKE NVL('&amp;PERIOD_NAME*',NVL(PERIOD_NAME,'XXXXX')) AND NVL(PERIOD_TYPE,'XXXXX') LIKE  NVL('&amp;PERIOD_TYPE*',NVL(PERIOD_TYPE,'XXXXX')) AND NVL(CURRENCY_CODE,'XXXXX') LIKE  NVL('&amp;CURRENCY_CODE*',NVL(CURRENCY_CODE,'XXXXX')) AND NVL(SET_OF_BOOKS_NAME,'XXXXX') LIKE  NVL('&amp;SET_OF_BOOKS_NAME*',NVL(SET_OF_BOOKS_NAME,'XXXXX')) </value>
+          <value name="SQLAlias">GLBALANCE</value>
+          <value name="SQLRelation"></value>
+        </record>
+      </record>
+    </record>
+    <record name="FILE_INFO" javaclass="com.wm.data.ISMemDataImpl">
+      <value name="OA_RELEASE">11510</value>
+      <value name="DESCRIPTION">GL Balance Query Transaction Definition</value>
+      <value name="CREATE_HOST">webMethods</value>
+      <value name="CREATE_IM_VER"></value>
+      <value name="CREATE_DATE">May 2, 2005 4:51:12 PM</value>
+    </record>
+  </record>
+</IDataXMLCoder>

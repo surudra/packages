@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="checkStock" targetNamespace="http://DAEAP83210.eur.ad.sag/acmeSupport.ws.provider:checkStock" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapjms="http://www.w3.org/2010/soapjms/" xmlns:tns="http://DAEAP83210.eur.ad.sag/acmeSupport.ws.provider:checkStock" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://DAEAP83210.eur.ad.sag/acmeSupport.ws.provider:checkStock" xmlns:tns="http://DAEAP83210.eur.ad.sag/acmeSupport.ws.provider:checkStock" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+          <xsd:element name="demoService" type="tns:demoService"/>
+          <xsd:element name="demoServiceResponse" type="tns:demoServiceResponse"/>
+          <xsd:element name="setPrices" type="tns:setPrices"/>
+          <xsd:element name="setPricesResponse" type="tns:setPricesResponse"/>
+          <xsd:complexType name="demoService">
+            <xsd:sequence>
+              <xsd:element name="num1" nillable="true" type="xsd:string"/>
+              <xsd:element name="num2" nillable="true" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="demoServiceResponse">
+            <xsd:sequence>
+              <xsd:element name="result" nillable="true" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="setPrices">
+            <xsd:sequence>
+              <xsd:element name="ShipNotice" nillable="true" type="tns:TestShipNotice"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="TestShipNotice">
+            <xsd:sequence>
+              <xsd:element name="Header" nillable="true" type="tns:Header"/>
+              <xsd:element maxOccurs="unbounded" name="Items" nillable="true" type="tns:Items"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="Header">
+            <xsd:sequence>
+              <xsd:element name="OrderID" nillable="true" type="xsd:string"/>
+              <xsd:element name="TransactionID" nillable="true" type="xsd:string"/>
+              <xsd:element name="OrderDate" nillable="true" type="xsd:string"/>
+              <xsd:element name="TotalCost" nillable="true" type="xsd:string"/>
+              <xsd:element name="isValid" nillable="true" type="xsd:string"/>
+              <xsd:element name="Sender" nillable="true" type="tns:Sender"/>
+              <xsd:element name="Receiver" nillable="true" type="tns:Receiver"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="Sender">
+            <xsd:sequence>
+              <xsd:element name="ID" nillable="true" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="Receiver">
+            <xsd:sequence>
+              <xsd:element name="ID" nillable="true" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="Items">
+            <xsd:sequence>
+              <xsd:element name="SKU" nillable="true" type="xsd:string"/>
+              <xsd:element name="Quantity" nillable="true" type="xsd:string"/>
+              <xsd:element name="UnitCost" nillable="true" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="setPricesResponse">
+            <xsd:sequence>
+              <xsd:element name="ShipNotice" nillable="true" type="tns:TestShipNotice"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        	</xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="checkStock_PortType_demoService">
+    <wsdl:part name="parameters" element="tns:demoService">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="checkStock_PortType_setPrices">
+    <wsdl:part name="parameters" element="tns:setPrices">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="checkStock_PortType_demoServiceResponse">
+    <wsdl:part name="parameters" element="tns:demoServiceResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="checkStock_PortType_setPricesResponse">
+    <wsdl:part name="parameters" element="tns:setPricesResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="checkStock_PortType">
+    <wsdl:operation name="demoService">
+      <wsdl:input message="tns:checkStock_PortType_demoService">
+    </wsdl:input>
+      <wsdl:output message="tns:checkStock_PortType_demoServiceResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setPrices">
+      <wsdl:input message="tns:checkStock_PortType_setPrices">
+    </wsdl:input>
+      <wsdl:output message="tns:checkStock_PortType_setPricesResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="acmeSupport_ws_provider_checkStock_Binder" type="tns:checkStock_PortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="demoService">
+      <soap:operation soapAction="acmeSupport_ws_provider_checkStock_Binder_demoService" style="document"/>
+      <wsdl:input>
+        <soap:body parts="parameters" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body parts="parameters" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setPrices">
+      <soap:operation soapAction="acmeSupport_ws_provider_checkStock_Binder_setPrices" style="document"/>
+      <wsdl:input>
+        <soap:body parts="parameters" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body parts="parameters" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="acmeSupport.ws.provider.checkStock">
+    <wsdl:port name="acmeSupport_ws_provider_checkStock_Port" binding="tns:acmeSupport_ws_provider_checkStock_Binder">
+      <soap:address location="http://DAEAP83210.eur.ad.sag:5555/ws/acmeSupport.ws.provider.checkStock/acmeSupport_ws_provider_checkStock_Port"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

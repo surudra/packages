@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<IDataXMLCoder version="1.0">
+  <record javaclass="com.wm.data.ISMemDataImpl">
+    <record name="transactions" javaclass="com.wm.data.ISMemDataImpl">
+      <record name="execCustomerConcProgram" javaclass="com.wm.data.ISMemDataImpl">
+        <value name="transactionName">execCustomerConcProgram</value>
+        <value name="transactionType">OUT</value>
+        <null name="AcknowledgeSQL"/>
+        <record name="EXEC_CUSTOMER" javaclass="com.wm.util.Values">
+          <value name="SQLOut">Wm_Customer_Imp_Handler_Pkg.WM_HANDLE_CUSTOMER</value>
+          <value name="SQLAlias">EXEC_CUSTOMER</value>
+          <value name="SQLRelation"></value>
+        </record>
+      </record>
+
+      <record name="execDQMStagingProg" javaclass="com.wm.data.ISMemDataImpl">
+        <value name="transactionName">execDQMStagingProg</value>
+        <value name="transactionType">OUT</value>
+        <null name="AcknowledgeSQL"/>
+        <record name="EXEC_DQM_STAGING" javaclass="com.wm.data.ISMemDataImpl">
+          <value name="SQLOut">Wm_Customer_Imp_Handler_Pkg.WM_DQM_STAGING</value>
+          <value name="SQLAlias">EXEC_DQM_STAGING</value>
+          <value name="SQLRelation"></value>
+        </record>
+      </record>
+    </record>
+    <record name="FILE_INFO" javaclass="com.wm.data.ISMemDataImpl">
+      <value name="OA_RELEASE">1213</value>
+      <value name="DESCRIPTION">Customer Inbound Utils Transaction Configuration</value>
+      <value name="CREATE_HOST">webMethods</value>
+      <value name="CREATE_IM_VER"></value>
+      <value name="CREATE_DATE">May 2, 2005 4:19:18 PM</value>
+    </record>
+  </record>
+</IDataXMLCoder>

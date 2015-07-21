@@ -1,0 +1,620 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="DeployerPlugin"
+	targetNamespace="http://www.webmethods.com/DeployerPlugin/"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:dp="http://www.webmethods.com/DeployerPlugin/">
+	<wsdl:types>
+		<xsd:schema
+			targetNamespace="http://www.webmethods.com/DeployerPlugin/"
+			xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+			xmlns:dp="http://www.webmethods.com/DeployerPlugin/"
+			xmlns:soap_enc="http://schemas.xmlsoap.org/soap/encoding/"
+			xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+			<xsd:import
+				namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+				
+			<xsd:complexType name="AssetArtifactsType">
+				<xsd:sequence>
+					<xsd:element name="assetBinaryFile" type="xsd:base64Binary"></xsd:element>
+					<xsd:element name="acdlFile" type="xsd:base64Binary"></xsd:element>					
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="ArrayOfstring">
+				<xsd:complexContent>
+					<xsd:restriction base="soap_enc:Array">
+						<xsd:attribute ref="soap_enc:arrayType" wsdl:arrayType="xsd:string[]"/>
+					</xsd:restriction>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:complexType name="ArrayOfAssetArtifactsType">
+							<xsd:complexContent>
+								<xsd:restriction base="soap_enc:Array">
+									<xsd:attribute ref="soap_enc:arrayType"
+										wsdl:arrayType="dp:AssetArtifactsType[]" />
+								</xsd:restriction>
+			            </xsd:complexContent>
+			</xsd:complexType>
+
+                        <xsd:complexType name="ACDLReportMessageType">
+				<xsd:sequence>
+					<xsd:element name="type" type="xsd:int"></xsd:element>
+					<xsd:element name="text" type="xsd:string"></xsd:element>
+					<xsd:element name="timestamp" type="xsd:dateTime"></xsd:element>
+					<xsd:element name="assetName" type="xsd:string" minOccurs="0"></xsd:element>
+					<xsd:element name="assetType" type="xsd:string" minOccurs="0"></xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+
+			<xsd:complexType name="ArrayOfACDLReportMessageType">
+				<xsd:complexContent>
+					<xsd:restriction base="soap_enc:Array">
+						<xsd:attribute ref="soap_enc:arrayType"
+							wsdl:arrayType="dp:ACDLReportMessageType[]" />
+					</xsd:restriction>
+				</xsd:complexContent>
+			</xsd:complexType>
+
+
+			<xsd:complexType name="ObjectIdentifierType">
+				<xsd:sequence>
+					<xsd:element name="type" type="xsd:string"></xsd:element>
+					<xsd:element name="id" type="xsd:string"></xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+
+			<xsd:complexType name="ArrayOfObjectIdentifierType">
+				<xsd:complexContent>
+					<xsd:restriction base="soap_enc:Array">
+						<xsd:attribute ref="soap_enc:arrayType"
+							wsdl:arrayType="dp:ObjectIdentifierType[]" />
+					</xsd:restriction>
+				</xsd:complexContent>
+			</xsd:complexType>
+
+			<xsd:complexType name="ObjectType">
+				<xsd:complexContent>
+					<xsd:extension base="dp:ObjectIdentifierType">
+						<xsd:sequence>
+							<xsd:element name="name"
+								type="xsd:string" nillable="true" minOccurs="0">
+							</xsd:element>
+							 <xsd:element name="path" nillable="true" type="dp:ArrayOfstring" minOccurs="0">
+							</xsd:element>
+							<xsd:element name="parentId"
+								type="xsd:string" nillable="true" minOccurs="0">
+							</xsd:element>
+							<xsd:element name="fullName"
+								type="xsd:string" nillable="true" minOccurs="0">
+							</xsd:element>
+						</xsd:sequence>
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+
+			<xsd:complexType name="ArrayOfObjectType">
+				<xsd:complexContent>
+					<xsd:restriction base="soap_enc:Array">
+						<xsd:attribute ref="soap_enc:arrayType"
+							wsdl:arrayType="dp:ObjectType[]" />
+					</xsd:restriction>
+				</xsd:complexContent>
+			</xsd:complexType>
+
+			<xsd:complexType name="ObjectDependencyType">
+				<xsd:sequence>
+					<xsd:element name="objectKey"
+						type="dp:ObjectType">
+					</xsd:element>
+					<xsd:element name="serverIdentifier"
+						type="xsd:string" nillable="true" minOccurs="0">
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+
+			<xsd:complexType name="ArrayOfObjectDependencyType">
+				<xsd:complexContent>
+					<xsd:restriction base="soap_enc:Array">
+						<xsd:attribute ref="soap_enc:arrayType"
+							wsdl:arrayType="dp:ObjectDependencyType[]" />
+					</xsd:restriction>
+				</xsd:complexContent>
+			</xsd:complexType>
+
+			<xsd:complexType name="PropertyType">
+				<xsd:sequence>
+					<xsd:element name="key" type="xsd:string"></xsd:element>
+					<xsd:element name="value" type="xsd:string"></xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+			
+			<xsd:complexType name="VarsubItemType">
+				<xsd:sequence>
+					<xsd:element name="type" type="xsd:string"></xsd:element>
+					<xsd:element name="name" type="xsd:string"></xsd:element>
+					<xsd:element name="varsubs" type="dp:ArrayOfPropertyType"></xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+
+			<xsd:complexType name="ArrayOfPropertyType">
+				<xsd:complexContent>
+					<xsd:restriction base="soap_enc:Array">
+						<xsd:attribute ref="soap_enc:arrayType"
+							wsdl:arrayType="dp:PropertyType[]" />
+					</xsd:restriction>
+				</xsd:complexContent>
+			</xsd:complexType>
+			
+			<xsd:complexType name="ArrayOfVarsubItemType">
+				<xsd:complexContent>
+					<xsd:restriction base="soap_enc:Array">
+						<xsd:attribute ref="soap_enc:arrayType"
+							wsdl:arrayType="dp:VarsubItemType[]" />
+					</xsd:restriction>
+				</xsd:complexContent>
+			</xsd:complexType>
+
+			<xsd:complexType name="ReportMessageType">
+				<xsd:sequence>
+					<xsd:element name="type" type="xsd:int"></xsd:element>
+					<xsd:element name="text" type="xsd:string"></xsd:element>
+					<xsd:element name="timestamp" type="xsd:dateTime"></xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+
+			<xsd:complexType name="ArrayOfReportMessageType">
+				<xsd:complexContent>
+					<xsd:restriction base="soap_enc:Array">
+						<xsd:attribute ref="soap_enc:arrayType"
+							wsdl:arrayType="dp:ReportMessageType[]" />
+					</xsd:restriction>
+				</xsd:complexContent>
+			</xsd:complexType>
+
+			<xsd:complexType name="GetObjectType">
+				<xsd:sequence>
+					<xsd:element name="objectKey"
+						type="dp:ObjectIdentifierType">
+					</xsd:element>
+					<xsd:element name="sequence" type="xsd:int"></xsd:element>
+                    <xsd:element name="version" type="xsd:string"></xsd:element>
+                    <xsd:element name="objectData" type="xsd:string">
+					</xsd:element>
+					<xsd:element name="missing" type="xsd:boolean"></xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+
+			<xsd:complexType name="ArrayOfGetObjectType">
+				<xsd:complexContent>
+					<xsd:restriction base="soap_enc:Array">
+						<xsd:attribute ref="soap_enc:arrayType"
+							wsdl:arrayType="dp:GetObjectType[]" />
+					</xsd:restriction>
+				</xsd:complexContent>
+			</xsd:complexType>
+
+			<xsd:complexType name="DeployObjectType">
+				<xsd:sequence>
+					<xsd:element name="objectKey"
+						type="dp:ObjectType">
+					</xsd:element>
+					<xsd:element name="sequence" type="xsd:int"></xsd:element>
+                    <xsd:element name="version" type="xsd:string"></xsd:element>
+                    <xsd:element name="objectData" type="xsd:string" nillable="true" minOccurs="0">
+					</xsd:element>
+					<xsd:element name="missing" type="xsd:boolean"></xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+
+			<xsd:complexType name="ArrayOfDeployObjectType">
+				<xsd:complexContent>
+					<xsd:restriction base="soap_enc:Array">
+						<xsd:attribute ref="soap_enc:arrayType"
+							wsdl:arrayType="dp:DeployObjectType[]" />
+					</xsd:restriction>
+				</xsd:complexContent>
+			</xsd:complexType>
+		</xsd:schema>
+	</wsdl:types>
+
+	<wsdl:message name="PingRequest">
+		<wsdl:part name="type" type="xsd:string" />
+		<wsdl:part name="connectionProperties"
+			type="dp:ArrayOfPropertyType">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="PingResponse">
+		<wsdl:part name="version" type="xsd:string" />
+	</wsdl:message>
+	<wsdl:message name="GetConnectionInfoRequest">
+		<wsdl:part name="serverIdentifier" type="xsd:string"></wsdl:part>
+		<wsdl:part name="connectionProperties"
+			type="dp:ArrayOfPropertyType">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="GetConnectionInfoResponse">
+		<wsdl:part name="message" type="xsd:string"></wsdl:part>
+		<wsdl:part name="status" type="xsd:int"></wsdl:part>
+		<wsdl:part name="host" type="xsd:string"></wsdl:part>
+		<wsdl:part name="port" type="xsd:string"></wsdl:part>
+		<wsdl:part name="user" type="xsd:string"></wsdl:part>
+		<wsdl:part name="password" type="xsd:string"></wsdl:part>
+		<wsdl:part name="useSSL" type="xsd:boolean"></wsdl:part>
+		<wsdl:part name="reuseConnectionInfo" type="xsd:boolean"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="ListObjectsRequest">
+		<wsdl:part name="objectType" type="xsd:string"></wsdl:part>
+		<wsdl:part name="connectionProperties"
+			type="dp:ArrayOfPropertyType">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="ListObjectsResponse">
+		<wsdl:part name="message" type="xsd:string"></wsdl:part>
+		<wsdl:part name="status" type="xsd:int"></wsdl:part>
+		<wsdl:part name="objectKeys" type="dp:ArrayOfObjectType"></wsdl:part>
+	</wsdl:message>
+
+	<wsdl:message name="GetDependenciesRequest">
+		<wsdl:part name="objectKey" type="dp:ObjectIdentifierType"></wsdl:part>
+		<wsdl:part name="connectionProperties"
+			type="dp:ArrayOfPropertyType">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="GetDependenciesResponse">
+		<wsdl:part name="message" type="xsd:string"></wsdl:part>
+		<wsdl:part name="status" type="xsd:int"></wsdl:part>
+		<wsdl:part name="dependencies"
+			type="dp:ArrayOfObjectDependencyType">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="GetObjectsRequest">
+		<wsdl:part name="checkpoint" type="xsd:boolean"></wsdl:part>
+		<wsdl:part name="pluginProjectProperties"
+			type="dp:ArrayOfPropertyType">
+		</wsdl:part>
+		<wsdl:part name="objectKeys"
+			type="dp:ArrayOfObjectIdentifierType">
+		</wsdl:part>
+		<wsdl:part name="connectionProperties"
+			type="dp:ArrayOfPropertyType">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="GetObjectsResponse">
+		<wsdl:part name="messages" type="dp:ArrayOfReportMessageType"></wsdl:part>
+		<wsdl:part name="objects" type="dp:ArrayOfGetObjectType">
+		</wsdl:part>
+	</wsdl:message>
+	
+	<wsdl:message name="GetObjectsWithACDLRequest">
+		<wsdl:part name="checkpoint" type="xsd:boolean"></wsdl:part>
+		<wsdl:part name="pluginProjectProperties"
+			type="dp:ArrayOfPropertyType">
+		</wsdl:part>
+		<wsdl:part name="objectKeys"
+			type="dp:ArrayOfObjectIdentifierType">
+		</wsdl:part>
+		<wsdl:part name="connectionProperties"
+			type="dp:ArrayOfPropertyType">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="GetObjectsWithACDLResponse">
+		<wsdl:part name="messages" type="dp:ArrayOfACDLReportMessageType"></wsdl:part>
+		<wsdl:part name="assetArtifacts" type="dp:ArrayOfAssetArtifactsType">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="VerifyObjectRequest">
+		<wsdl:part name="objectKey" type="dp:ObjectIdentifierType"></wsdl:part>
+		<wsdl:part name="connectionProperties"
+			type="dp:ArrayOfPropertyType">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="VerifyObjectResponse">
+		<wsdl:part name="message" type="xsd:string"></wsdl:part>
+		<wsdl:part name="status" type="xsd:int"></wsdl:part>
+		<wsdl:part name="exists" type="xsd:boolean"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="GetObjectVarSubRequest">
+		<wsdl:part name="objectKey" type="dp:ObjectIdentifierType"></wsdl:part>
+		<wsdl:part name="connectionProperties"
+			type="dp:ArrayOfPropertyType">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="GetObjectVarSubResponse">
+		<wsdl:part name="message" type="xsd:string"></wsdl:part>
+		<wsdl:part name="status" type="xsd:int"></wsdl:part>
+		<wsdl:part name="varSubFields" type="dp:ArrayOfPropertyType"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="DeployObjectsRequest">
+		<wsdl:part name="simulate" type="xsd:boolean"></wsdl:part>
+		<wsdl:part name="rollback" type="xsd:boolean"></wsdl:part>
+		<wsdl:part name="pluginProjectProperties"
+			type="dp:ArrayOfPropertyType">
+		</wsdl:part>
+		<wsdl:part name="objects" type="dp:ArrayOfDeployObjectType"></wsdl:part>
+		<wsdl:part name="connectionProperties"
+			type="dp:ArrayOfPropertyType">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="DeployObjectsRequestWithVarsub">
+		<wsdl:part name="simulate" type="xsd:boolean"></wsdl:part>
+		<wsdl:part name="rollback" type="xsd:boolean"></wsdl:part>
+		<wsdl:part name="pluginProjectProperties"
+			type="dp:ArrayOfPropertyType">
+		</wsdl:part>
+		<wsdl:part name="objects" type="dp:ArrayOfDeployObjectType"></wsdl:part>
+		<wsdl:part name="connectionProperties"
+			type="dp:ArrayOfPropertyType">
+		</wsdl:part>
+		<wsdl:part name="varsubItems"
+			type="dp:ArrayOfVarsubItemType">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="DeployObjectsResponse">
+		<wsdl:part name="messages" type="dp:ArrayOfReportMessageType"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="DeployObjectsWithACDLRequest">
+	    <wsdl:part name="simulate" type="xsd:boolean"></wsdl:part>
+		<wsdl:part name="rollback" type="xsd:boolean"></wsdl:part>
+		<wsdl:part name="pluginProjectProperties"
+			type="dp:ArrayOfPropertyType">
+		</wsdl:part>
+		<wsdl:part name="assetArtifacts" type="dp:ArrayOfAssetArtifactsType">
+		</wsdl:part>
+		<wsdl:part name="connectionProperties"
+			type="dp:ArrayOfPropertyType">
+		</wsdl:part>			</wsdl:message>
+	<wsdl:message name="DeployObjectsWithACDLResponse">
+		<wsdl:part name="messages" type="dp:ArrayOfACDLReportMessageType"></wsdl:part>
+	</wsdl:message>
+	<wsdl:portType name="DeployerPlugin">
+		<wsdl:operation name="Ping">
+			<wsdl:input message="dp:PingRequest" />
+			<wsdl:output message="dp:PingResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="GetConnectionInfo">
+			<wsdl:input message="dp:GetConnectionInfoRequest" />
+			<wsdl:output message="dp:GetConnectionInfoResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="ListObjects">
+			<wsdl:input message="dp:ListObjectsRequest" />
+			<wsdl:output message="dp:ListObjectsResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="GetDependencies">
+			<wsdl:input message="dp:GetDependenciesRequest" />
+			<wsdl:output message="dp:GetDependenciesResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="GetObjects">
+			<wsdl:input message="dp:GetObjectsRequest" />
+			<wsdl:output message="dp:GetObjectsResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="VerifyObject">
+			<wsdl:input message="dp:VerifyObjectRequest" />
+			<wsdl:output message="dp:VerifyObjectResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="GetObjectVarSub">
+			<wsdl:input message="dp:GetObjectVarSubRequest" />
+			<wsdl:output message="dp:GetObjectVarSubResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="DeployObjects">
+			<wsdl:input message="dp:DeployObjectsRequest" />
+			<wsdl:output message="dp:DeployObjectsResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="DeployObjectsWithVarsub">
+			<wsdl:input message="dp:DeployObjectsRequestWithVarsub" />
+			<wsdl:output message="dp:DeployObjectsResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="GetObjectsWithACDL">
+			<wsdl:input message="dp:GetObjectsWithACDLRequest" />
+			<wsdl:output message="dp:GetObjectsWithACDLResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="DeployObjectsWithACDL">
+			<wsdl:input message="dp:DeployObjectsWithACDLRequest"></wsdl:input>
+			<wsdl:output message="dp:DeployObjectsWithACDLResponse"></wsdl:output>
+		</wsdl:operation>
+	</wsdl:portType>
+
+	<wsdl:binding name="DeployerPluginSOAP" type="dp:DeployerPlugin">
+
+		<soap:binding style="rpc"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="Ping">
+
+			<soap:operation
+				soapAction="http://www.webmethods.com/DeployerPlugin/Ping" />
+			<wsdl:input>
+
+				<soap:body use="encoded"
+					namespace="http://www.webmethods.com/DeployerPlugin/wm.designer.Modeler"
+					encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+			</wsdl:input>
+			<wsdl:output>
+
+				<soap:body use="encoded"
+					namespace="http://www.webmethods.com/DeployerPlugin/wm.designer.Modeler"
+					encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+			</wsdl:output>
+		</wsdl:operation>
+
+		<wsdl:operation name="GetConnectionInfo">
+
+			<soap:operation
+				soapAction="http://www.webmethods.com/DeployerPlugin/GetConnectionInfo" />
+			<wsdl:input>
+
+				<soap:body use="encoded"
+					namespace="http://www.webmethods.com/DeployerPlugin/wm.designer.Modeler"
+					encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+			</wsdl:input>
+			<wsdl:output>
+
+				<soap:body use="encoded"
+					namespace="http://www.webmethods.com/DeployerPlugin/wm.designer.Modeler"
+					encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+			</wsdl:output>
+		</wsdl:operation>
+
+		<wsdl:operation name="ListObjects">
+
+			<soap:operation
+				soapAction="http://www.webmethods.com/DeployerPlugin/ListObjects" />
+			<wsdl:input>
+
+				<soap:body use="encoded"
+					namespace="http://www.webmethods.com/DeployerPlugin/wm.designer.Modeler"
+					encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+			</wsdl:input>
+			<wsdl:output>
+
+				<soap:body use="encoded"
+					namespace="http://www.webmethods.com/DeployerPlugin/wm.designer.Modeler"
+					encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+			</wsdl:output>
+		</wsdl:operation>
+
+		<wsdl:operation name="GetDependencies">
+
+			<soap:operation
+				soapAction="http://www.webmethods.com/DeployerPlugin/GetDependencies" />
+			<wsdl:input>
+
+				<soap:body use="encoded"
+					namespace="http://www.webmethods.com/DeployerPlugin/wm.designer.Modeler"
+					encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+			</wsdl:input>
+			<wsdl:output>
+
+				<soap:body use="encoded"
+					namespace="http://www.webmethods.com/DeployerPlugin/wm.designer.Modeler"
+					encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+			</wsdl:output>
+		</wsdl:operation>
+
+		<wsdl:operation name="GetObjects">
+
+			<soap:operation
+				soapAction="http://www.webmethods.com/DeployerPlugin/GetObjects" />
+			<wsdl:input>
+
+				<soap:body use="encoded"
+					namespace="http://www.webmethods.com/DeployerPlugin/wm.designer.Modeler"
+					encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+			</wsdl:input>
+			<wsdl:output>
+
+				<soap:body use="encoded"
+					namespace="http://www.webmethods.com/DeployerPlugin/wm.designer.Modeler"
+					encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+			</wsdl:output>
+		</wsdl:operation>
+
+		<wsdl:operation name="VerifyObject">
+
+			<soap:operation
+				soapAction="http://www.webmethods.com/DeployerPlugin/VerifyObject" />
+			<wsdl:input>
+
+				<soap:body use="encoded"
+					namespace="http://www.webmethods.com/DeployerPlugin/wm.designer.Modeler"
+					encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+			</wsdl:input>
+			<wsdl:output>
+
+				<soap:body use="encoded"
+					namespace="http://www.webmethods.com/DeployerPlugin/wm.designer.Modeler"
+					encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+			</wsdl:output>
+		</wsdl:operation>
+
+		<wsdl:operation name="GetObjectVarSub">
+
+			<soap:operation
+				soapAction="http://www.webmethods.com/DeployerPlugin/GetObjectVarSub" />
+			<wsdl:input>
+
+				<soap:body use="encoded"
+					namespace="http://www.webmethods.com/DeployerPlugin/wm.designer.Modeler"
+					encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+			</wsdl:input>
+			<wsdl:output>
+
+				<soap:body use="encoded"
+					namespace="http://www.webmethods.com/DeployerPlugin/wm.designer.Modeler"
+					encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+			</wsdl:output>
+		</wsdl:operation>
+
+		<wsdl:operation name="DeployObjects">
+
+			<soap:operation
+				soapAction="http://www.webmethods.com/DeployerPlugin/DeployObjects" />
+			<wsdl:input>
+
+				<soap:body use="encoded"
+					namespace="http://www.webmethods.com/DeployerPlugin/wm.designer.Modeler"
+					encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+			</wsdl:input>
+			<wsdl:output>
+
+				<soap:body use="encoded"
+					namespace="http://www.webmethods.com/DeployerPlugin/wm.designer.Modeler"
+					encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="DeployObjectsWithVarsub">
+
+			<soap:operation
+				soapAction="http://www.webmethods.com/DeployerPlugin/DeployObjectsWithVarsub" />
+			<wsdl:input>
+
+				<soap:body use="encoded"
+					namespace="http://www.webmethods.com/DeployerPlugin/wm.designer.Modeler"
+					encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+			</wsdl:input>
+			<wsdl:output>
+
+				<soap:body use="encoded"
+					namespace="http://www.webmethods.com/DeployerPlugin/wm.designer.Modeler"
+					encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="DeployObjectsWithACDL">
+
+			<soap:operation
+				soapAction="http://www.webmethods.com/DeployerPlugin/DeployObjectsWithACDL" />
+			<wsdl:input>
+
+				<soap:body use="encoded"
+					namespace="http://www.webmethods.com/DeployerPlugin/wm.designer.Modeler"
+					encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+			</wsdl:input>
+			<wsdl:output>
+
+				<soap:body use="encoded"
+					namespace="http://www.webmethods.com/DeployerPlugin/wm.designer.Modeler"
+					encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="GetObjectsWithACDL">
+			<soap:operation
+				soapAction="http://www.webmethods.com/DeployerPlugin/GetObjectsWithACDL" />
+			<wsdl:input>
+				<soap:body use="encoded"
+					namespace="http://www.webmethods.com/DeployerPlugin/wm.designer.Modeler"
+					encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="encoded"
+					namespace="http://www.webmethods.com/DeployerPlugin/wm.designer.Modeler"
+					encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+
+	<wsdl:service name="DeployerPlugin">
+		<wsdl:port binding="dp:DeployerPluginSOAP"
+			name="DeployerPluginSOAP">
+			<soap:address location="http://www.webmethods.com/" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

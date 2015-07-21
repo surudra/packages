@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<IDataXMLCoder version="1.0">
+  <record javaclass="com.wm.data.ISMemDataImpl">
+    <record name="transactions" javaclass="com.wm.data.ISMemDataImpl">
+      <record name="checkBankStatementImportStatus" javaclass="com.wm.data.ISMemDataImpl">
+        <value name="transactionName">checkBankStatementImportStatus</value>
+        <value name="transactionType">OUT</value>
+        <null name="AcknowledgeSQL"/>
+        <record name="CHECKBANKSTATEMENTSTATUS" javaclass="com.wm.util.Values">
+          <value name="SQLOut">SELECT COUNT(*) AS ROWCOUNT FROM CE_STATEMENT_HEADERS_INT_ALL  WHERE STATEMENT_NUMBER = '&amp;STATEMENT_NUMBER*' AND RECORD_STATUS_FLAG = 'E'</value>
+          <value name="SQLAlias">CHECKBANKSTATEMENTSTATUS</value>
+          <value name="SQLRelation"></value>
+        </record>
+      </record>
+      <record name="execBankStatementConcProg" javaclass="com.wm.data.ISMemDataImpl">
+        <value name="transactionName">execBankStatementConcProg</value>
+        <value name="transactionType">OUT</value>
+        <null name="AcknowledgeSQL"/>
+        <record name="WM_HANDLE_CEBANK" javaclass="com.wm.util.Values">
+          <value name="SQLOut">WM_CE_BANK_IMP_HANDLER_PKG.WM_HANDLE_CEBANK</value>
+          <value name="SQLAlias">WM_HANDLE_CEBANK</value>
+          <value name="SQLRelation"></value>
+        </record>
+      </record>
+    </record>
+    <record name="FILE_INFO" javaclass="com.wm.data.ISMemDataImpl">
+      <value name="OA_RELEASE">11510</value>
+      <value name="DESCRIPTION"></value>
+      <value name="CREATE_HOST">webMethods</value>
+      <value name="CREATE_IM_VER"></value>
+      <value name="CREATE_DATE">May 2, 2005 4:17:04 PM</value>
+    </record>
+  </record>
+</IDataXMLCoder>

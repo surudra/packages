@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <record name="transactions" javaclass="com.wm.util.Values">
+    <record name="getGLCodeCombinationId" javaclass="com.wm.util.Values">
+      <value name="transactionName">getGLCodeCombinationId</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="CODE_COMBINATION_ID" javaclass="com.wm.util.Values">
+        <value name="SQLOut">SELECT CODE_COMBINATION_ID FROM GL_CODE_COMBINATIONS C,GL_SETS_OF_BOOKS S WHERE 
+NVL(SEGMENT1,'XXXX') LIKE NVL('&amp;SEGMENT1*','XXXX') AND
+NVL(SEGMENT2,'XXXX') LIKE NVL('&amp;SEGMENT2*','XXXX') AND
+NVL(SEGMENT3,'XXXX') LIKE NVL('&amp;SEGMENT3*','XXXX') AND 
+NVL(SEGMENT4,'XXXX') LIKE NVL('&amp;SEGMENT4*','XXXX') AND
+NVL(SEGMENT5,'XXXX') LIKE NVL('&amp;SEGMENT5*','XXXX') AND
+NVL(SEGMENT6,'XXXX') LIKE NVL('&amp;SEGMENT6*','XXXX') AND
+NVL(SEGMENT7,'XXXX') LIKE NVL('&amp;SEGMENT7*','XXXX') AND
+NVL(SEGMENT8,'XXXX') LIKE NVL('&amp;SEGMENT8*','XXXX') AND
+NVL(SEGMENT9,'XXXX') LIKE NVL('&amp;SEGMENT9*','XXXX') AND
+NVL(SEGMENT10,'XXXX') LIKE NVL('&amp;SEGMENT10*','XXXX') AND
+NVL(SEGMENT11,'XXXX') LIKE NVL('&amp;SEGMENT11*','XXXX') AND
+NVL(SEGMENT12,'XXXX') LIKE NVL('&amp;SEGMENT12*','XXXX') AND
+NVL(SEGMENT13,'XXXX') LIKE NVL('&amp;SEGMENT13*','XXXX') AND
+NVL(SEGMENT14,'XXXX') LIKE NVL('&amp;SEGMENT14*','XXXX') AND
+NVL(SEGMENT15,'XXXX') LIKE NVL('&amp;SEGMENT15*','XXXX') AND
+NVL(SEGMENT16,'XXXX') LIKE NVL('&amp;SEGMENT16*','XXXX') AND
+NVL(SEGMENT17,'XXXX') LIKE NVL('&amp;SEGMENT17*','XXXX') AND
+NVL(SEGMENT18,'XXXX') LIKE NVL('&amp;SEGMENT18*','XXXX') AND
+NVL(SEGMENT19,'XXXX') LIKE NVL('&amp;SEGMENT19*','XXXX') AND
+NVL(SEGMENT20,'XXXX') LIKE NVL('&amp;SEGMENT20*','XXXX') AND
+NVL(SEGMENT21,'XXXX') LIKE NVL('&amp;SEGMENT21*','XXXX') AND
+NVL(SEGMENT22,'XXXX') LIKE NVL('&amp;SEGMENT22*','XXXX') AND
+NVL(SEGMENT23,'XXXX') LIKE NVL('&amp;SEGMENT23*','XXXX') AND
+NVL(SEGMENT24,'XXXX') LIKE NVL('&amp;SEGMENT24*','XXXX') AND
+NVL(SEGMENT25,'XXXX') LIKE NVL('&amp;SEGMENT25*','XXXX') AND
+NVL(SEGMENT26,'XXXX') LIKE NVL('&amp;SEGMENT26*','XXXX') AND
+NVL(SEGMENT27,'XXXX') LIKE NVL('&amp;SEGMENT27*','XXXX') AND
+NVL(SEGMENT28,'XXXX') LIKE NVL('&amp;SEGMENT28*','XXXX') AND
+NVL(SEGMENT29,'XXXX') LIKE NVL('&amp;SEGMENT29*','XXXX') AND
+NVL(SEGMENT30,'XXXX') LIKE NVL('&amp;SEGMENT30*','XXXX') AND
+C.CHART_OF_ACCOUNTS_ID =S.CHART_OF_ACCOUNTS_ID AND
+S.NAME ='&amp;SET_OF_BOOKS_NAME*'</value>
+        <value name="SQLAlias">CODE_COMBINATION_ID</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+    <record name="getSOBVersionEntityId" javaclass="com.wm.util.Values">
+      <value name="transactionName">getSOBVersionEntityId</value>
+      <value name="transactionType">OUT</value>
+      <null name="AcknowledgeSQL"/>
+      <record name="SOB_VERSION_ENTITY" javaclass="com.wm.util.Values">
+        <value name="SQLOut">SELECT gb.set_of_books_id set_of_books_id, gbe.budget_entity_id budget_entity_id, gbv.budget_version_id budget_version_id
+FROM   gl_budgets gb, gl_budget_versions gbv, gl_budget_entities gbe
+WHERE gbe.set_of_books_id = gb.set_of_books_id
+AND gb.budget_name = gbv.budget_name
+AND gb.budget_name = '&amp;P_BUDGET_NAME*'
+AND gbe.name = '&amp;P_BUDGET_ORGANIZATION*'</value>
+        <value name="SQLAlias">SOB_VERSION_ENTITY</value>
+        <value name="SQLRelation"></value>
+      </record>
+    </record>
+  </record>
+  <record name="FILE_INFO" javaclass="com.wm.util.Values">
+    <value name="OA_RELEASE">107SC</value>
+    <value name="DESCRIPTION">GL Budget utils Transaction Definition</value>
+    <value name="CREATE_HOST">webMethods</value>
+    <value name="CREATE_IM_VER">3.0</value>
+    <value name="CREATE_DATE">Nov 19, 2002 2:53:02 PM</value>
+  </record>
+</Values>
